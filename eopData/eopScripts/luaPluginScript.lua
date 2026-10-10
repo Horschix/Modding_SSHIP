@@ -10,3 +10,7 @@ require('sship.main')
 -- Recruitment costs population (Horschix/Modding_DAC-EUR). Must stay AFTER require('sship.main').
 -- To switch it off, delete the next line.
 require('sship.population_recruitment')
+
+-- Forts can be turned into outposts (minor settlements). Must stay AFTER require('sship.main').
+-- To switch it off, delete the next line.
+require('sship.fort_settlement')
