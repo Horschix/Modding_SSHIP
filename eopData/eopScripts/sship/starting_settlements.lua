@@ -32,11 +32,61 @@ local SS = {}
 
 -- internal name = "hxstart_" .. key. capital = internal name of the region's main settlement (owner lookup).
 -- names: greek / middle_eastern / european are the culture names; a faction name can be added as a key too.
+-- Anatolia (user, 13 Oct 2026). default = name while rebels hold it (SSHIP itself never renames for rebels).
+-- Alanya and Kastamonu are missing on purpose: their land is impassable on SSHIP's map (to be opened first).
 local SETTS = {
-    {
-        key = "bursa", x = 285, y = 136, capital = "Nicaea", level = 3, population = 15000,
-        names = { greek = "Proúsa", middle_eastern = "Bursa", european = "Prusa" },
-    },
+    -- region Nicaea (Byzantium)
+    { key = "bursa", x = 285, y = 136, capital = "Nicaea", level = 3, population = 15000,
+      names = { greek = "Proúsa", middle_eastern = "Bursa", european = "Prusa" } },
+    { key = "izmit", x = 292, y = 139, capital = "Nicaea", level = 3, population = 15000,
+      names = { greek = "Nikomīdeia", middle_eastern = "İznikomid", european = "Nicomedia" } },
+    { key = "kutahya", x = 290, y = 130, capital = "Nicaea", level = 2, population = 7500,       -- GPS tile is mountain
+      names = { greek = "Kotýaion", middle_eastern = "Kütahya", european = "Cotyaeum" } },
+    { key = "poimanenon", x = 277, y = 131, capital = "Nicaea", level = 1, population = 1000,   -- on Balıkesir's tile
+      names = { greek = "Poimanīnon", middle_eastern = "Manyas", european = "Poemanenum" } },
+    -- region Smyrna (Byzantium)
+    { key = "bergama", x = 272, y = 127, capital = "Smyrna", level = 2, population = 7500,
+      names = { greek = "Pérgamon", middle_eastern = "Bergama", european = "Pergamum" } },
+    { key = "manisa", x = 273, y = 123, capital = "Smyrna", level = 2, population = 7500,
+      names = { greek = "Magnīsía", middle_eastern = "Manisa", european = "Magnesia" } },
+    { key = "birgi", x = 278, y = 121, capital = "Smyrna", level = 2, population = 7500,
+      names = { greek = "Pyrgíon", middle_eastern = "Birgi", european = "Pyrgion" } },
+    { key = "alasehir", x = 281, y = 122, capital = "Smyrna", level = 2, population = 7500,
+      names = { greek = "Philadélpheia", middle_eastern = "Âlâşehir", european = "Philadelphia" } },
+    { key = "denizli", x = 286, y = 119, capital = "Smyrna", level = 2, population = 7500,
+      names = { greek = "Laodíkeia", middle_eastern = "Lazkiye", european = "Laodicea" } },
+    { key = "milas", x = 276, y = 115, capital = "Smyrna", level = 2, population = 7500,
+      names = { greek = "Mýlasa", middle_eastern = "Milas", european = "Mylasa" } },
+    -- region Angora (Rum)
+    { key = "afyon", x = 296, y = 125, capital = "Angora", level = 2, population = 7500,
+      names = { greek = "Akroinón", middle_eastern = "Karahisar-ı Sâhib", european = "Acroinum" } },
+    { key = "uluborlu", x = 294, y = 121, capital = "Angora", level = 2, population = 7500,     -- GPS tile is mountain
+      names = { greek = "Sōzópolis", middle_eastern = "Uluborlu", european = "Sozopolis" } },
+    -- rebel regions (Danishmend lands, Armenian Cilicia)
+    { key = "amasya", x = 335, y = 138, capital = "Sives", level = 3, population = 15000,
+      names = { greek = "Amáseia", middle_eastern = "Amasya", european = "Amasea", default = "Amasya" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "niksar", x = 343, y = 138, capital = "Sives", level = 2, population = 7500,
+      names = { greek = "Neokaisáreia", middle_eastern = "Niksar", european = "Neocaesarea", default = "Niksar" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "ladik", x = 333, y = 140, capital = "Sives", level = 2, population = 7500,
+      names = { greek = "Laodíkeia Pontikī", middle_eastern = "Lâdik", european = "Laodicea Pontica", default = "Lâdik" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "bafra", x = 335, y = 145, capital = "Sinop", level = 2, population = 7500,
+      names = { greek = "Gadilōn", middle_eastern = "Bafra", european = "Gadilon", default = "Bafra" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "elbistan", x = 344, y = 121, capital = "Malatya", level = 2, population = 7500,
+      names = { greek = "Plastentía", middle_eastern = "Elbistan", european = "Plastentia", default = "Plastentía" },
+      rebels = { "Armenians of Celicia", "Ahdath Militia" } },
+    { key = "tarsus", x = 328, y = 112, capital = "Sis", level = 2, population = 7500,
+      names = { greek = "Tarsós", middle_eastern = "Tarsus", european = "Tarsus", default = "Tarson" },
+      rebels = { "Armenians of Celicia", "Armenians of Celicia" } },
+}
+
+-- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
+local GARRISON = {
+    byzantium = { "Contaratoi", "Contaratoi" },
+    rum       = { "Ahdath Militia", "Ahdath Militia" },
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -59,7 +109,7 @@ local STARTER = {
 local UNHINTERLAND = true
 local UNHINTERLAND_CHAINS = { "hinterland_roads", "hinterland_farms", "hinterland_mines" }
 -- TEMPORARY check (13 Oct 2026): what the game lets these settlements build next. Logged once per map load.
-local CHECK_SETTS  = { "hxstart_bursa", "Nicaea" }
+local CHECK_SETTS  = {}   -- was { "hxstart_bursa", "Nicaea" }: check done (13 Oct 2026), switched off
 local CHECK_CHAINS = { "hinterland_roads", "hinterland_farms", "builders", "water_supply", "hinterland_mines",
                        "temple_orthodox", "market", "city_hall", "port", "barracks", "landowners" }
 local EUROPEAN = { northern_european = true, southern_european = true, eastern_european = true }
@@ -94,7 +144,8 @@ end
 -- the name an owner should show, or nil (rebels and unknown cultures keep the current name)
 local function nameFor(entry, faction)
     local fname = get(faction, "name")
-    if fname == nil or fname == "slave" then return nil end
+    if fname == nil then return nil end
+    if fname == "slave" then return entry.names.default end
     if entry.names[fname] then return entry.names[fname] end
     local culture = cultureOf(faction)
     if culture == nil then return nil end
@@ -206,6 +257,19 @@ function SS.onMapLoaded(why)
     end
 end
 
+local function giveGarrison(entry, sett, owner)
+    local list = (get(owner, "name") == "slave") and entry.rebels or GARRISON[get(owner, "name")]
+    if list == nil then log("no garrison for owner " .. tostring(get(owner, "name"))); return end
+    local okA, army = pcall(function() return sett:createArmyInSettlement() end)
+    if not okA or army == nil then log("garrison: createArmyInSettlement failed " .. tostring(army)); return end
+    local res = {}
+    for i = 1, #list do
+        local okU, unit = pcall(function() return army:createUnit(list[i], 0, 0, 0) end)
+        res[#res + 1] = list[i] .. " " .. ((okU and unit ~= nil) and "ok" or ("FAILED " .. tostring(unit)))
+    end
+    log("garrison " .. tostring(get(sett, "name")) .. ": " .. table.concat(res, ", "))
+end
+
 local function createOne(entry)
     local name = "hxstart_" .. entry.key
     if settlementByName(name) ~= nil then log(name .. " exists already - skipped"); return end
@@ -234,6 +298,8 @@ local function createOne(entry)
             coreNote = core .. " " .. tostring(okB) .. (okB and "" or (" " .. tostring(errB)))
         end
     end
+    local okW, errW = pcall(giveGarrison, entry, sett, owner)
+    if not okW then log("ERROR garrison " .. name .. ": " .. tostring(errW)) end
     local okG, errG = pcall(giveStarter, entry, sett, "created")
     if not okG then log("ERROR starter " .. name .. ": " .. tostring(errG)) end
     local okP = pcall(function() sett.settlementStats.population = entry.population end)

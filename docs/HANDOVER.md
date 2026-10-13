@@ -224,4 +224,14 @@ other game regions later. The candidate list and every decision are in issue #4.
   proxy chains ("Expand farms" etc.) only for settlements with a marker building; on completion the script removes
   the proxy and raises the real hinterland building one level (keeps the 34 requirement lines that point at
   farms / roads levels working).
+- EXPERIMENT A: WORKS (user, 13 Oct) - roads / farms buildable in Prousa. Build CHECK switched off (CHECK_SETTS = {}).
+- ALL ANATOLIA installed 13 Oct, read back identical, mock OK (18 towns): Nicaea region (Byz): Prousa 285,136 (3),
+  Nikomedeia 292,139 (3), Kotyaion 290,130 (2; GPS tile mountain), Poimanenon 277,131 (1, 1000, Balıkesir's tile);
+  Smyrna region (Byz): Pergamon 272,127, Magnesia 273,123, Pyrgion 278,121, Philadelpheia 281,122, Laodikeia
+  (Denizli) 286,119, Mylasa 276,115; Angora region (Rum): Akroinon (Afyon) 296,125, Sozopolis (Uluborlu) 294,121
+  (GPS tile mountain); rebel regions: Amasya 335,138 (3) / Niksar 343,138 / Ladik 333,140 (Sives), Bafra 335,145
+  (Sinop), Elbistan 344,121 (Malatya), Tarsus 328,112 (Sis). Alanya / Kastamonu left out (terrain).
+- Garrison at creation (user): byzantium 2 Contaratoi, rum 2 Ahdath Militia (`createArmyInSettlement` + `createUnit`).
+  Rebels (my choice, not yet confirmed by the user): Danishmend towns 2 Ahdath Militia, Tarsus 2 Armenians of
+  Celicia, Elbistan 1 Armenians of Celicia + 1 Ahdath Militia. Rebel-held towns show `names.default`.
 - Revert: delete the fourth require line (settlements already created stay in that save).
