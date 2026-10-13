@@ -15,6 +15,9 @@
       - onNewGameLoaded (a new campaign, first time its data exists): every entry of SETTS is created once.
         Nothing is created in a campaign that was started before this file was installed.
         If a settlement of that internal name already exists, it is skipped (never twice).
+      - starter buildings (table STARTER, by level) at creation, and missing ones again at every map load (so an
+        existing campaign with Prousa gets them too; a chain that exists is never touched).
+      - TEMPORARY check at every map load: CHECK lines with what Prousa and Nicaea may build (remove after the test).
       - names are set again when the map is loaded (a loaded save may not keep them), after a capture and at
         every faction's turn start (covers gifts, rebellions and other owner changes).
 
@@ -38,6 +41,22 @@ local SETTS = {
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
                      [4] = "large_stone_wall", [5] = "huge_stone_wall" }
+
+-- Starter buildings per settlement level (user, 13 Oct 2026): SSHIP's chains hang on roads -> builders1 (temples,
+-- water, port, town hall, mines ...), farms2 needs builders1. A settlement added by script starts with walls only,
+-- and the player of an EXTRA settlement could not build farms or roads in the test (EUR has its own minor_farms /
+-- minor_roads chains for that reason). { chain, level } - a chain that is already there is left alone.
+local STARTER = {
+    [1] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders1" } },
+    [2] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders1" },
+            { "water_supply", "water1_wells" } },
+    [3] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms2" }, { "builders", "builders2" },
+            { "water_supply", "water1_wells" } },
+}
+-- TEMPORARY check (13 Oct 2026): what the game lets these settlements build next. Logged once per map load.
+local CHECK_SETTS  = { "hxstart_bursa", "Nicaea" }
+local CHECK_CHAINS = { "hinterland_roads", "hinterland_farms", "builders", "water_supply", "hinterland_mines",
+                       "temple_orthodox", "market", "city_hall", "port", "barracks", "landowners" }
 local EUROPEAN = { northern_european = true, southern_european = true, eastern_european = true }
 
 local function log(text)
@@ -94,6 +113,74 @@ function SS.refreshNames(why)
     end
 end
 
+-- adds the starter buildings of the entry's level that are missing (never touches a chain that exists)
+local function giveStarter(entry, sett, why)
+    local list = STARTER[entry.level]
+    if list == nil then return end
+    local done = {}
+    for i = 1, #list do
+        local chain, level = list[i][1], list[i][2]
+        local okHas, has = pcall(function() return sett:buildingPresent(chain) end)
+        if not (okHas and has) then
+            local okB, errB = pcall(function() sett:createBuilding(level) end)
+            local okNow, now = pcall(function() return sett:buildingPresent(chain) end)
+            done[#done + 1] = level .. " " .. ((okB and okNow and now) and "ok" or ("FAILED " .. tostring(errB)))
+        end
+    end
+    if #done > 0 then
+        log("starter buildings " .. tostring(get(sett, "name")) .. " (" .. tostring(why) .. "): " .. table.concat(done, ", "))
+    end
+end
+
+-- TEMPORARY: logs the buildings and, per chain, which levels the game would let the settlement build
+local function checkBuildable(name)
+    local sett = settlementByName(name)
+    if sett == nil then return end
+    local have = {}
+    local n = get(sett, "buildingsNum") or 0
+    for i = 0, n - 1 do
+        local okB, b = pcall(function() return sett:getBuilding(i) end)
+        if okB and b ~= nil then
+            local okT, t = pcall(function() return b:getType() end)
+            local okN, nm = pcall(function() return b:getName() end)
+            have[#have + 1] = tostring(okT and t) .. "/" .. tostring(okN and nm)
+        end
+    end
+    log("CHECK " .. name .. " (minor " .. tostring(get(sett, "isMinorSettlement")) .. ", level " .. tostring(get(sett, "level"))
+        .. ") has: " .. table.concat(have, ", "))
+    for i = 1, #CHECK_CHAINS do
+        local chain = CHECK_CHAINS[i]
+        local okE, e = pcall(function() return EDB.getBuildingByName(chain) end)
+        if okE and e ~= nil then
+            local count = get(e, "buildingLevelCount") or 0
+            local res = {}
+            for lv = 0, count - 1 do
+                local okC, can = pcall(function() return sett:canConstructBuilding(e, lv) end)
+                res[#res + 1] = lv .. "=" .. (okC and tostring(can) or "err")
+            end
+            log("CHECK " .. name .. " " .. chain .. " (hinterland " .. tostring(get(e, "isHinterland")) .. ", farm "
+                .. tostring(get(e, "isFarm")) .. "): " .. table.concat(res, " "))
+        else
+            log("CHECK " .. chain .. ": no EDB entry")
+        end
+    end
+end
+
+function SS.onMapLoaded(why)
+    SS.refreshNames(why)
+    for i = 1, #SETTS do
+        local sett = settlementByName("hxstart_" .. SETTS[i].key)
+        if sett ~= nil then
+            local ok, err = pcall(giveStarter, SETTS[i], sett, why)
+            if not ok then log("ERROR starter " .. SETTS[i].key .. ": " .. tostring(err)) end
+        end
+    end
+    for i = 1, #CHECK_SETTS do
+        local ok, err = pcall(checkBuildable, CHECK_SETTS[i])
+        if not ok then log("ERROR check " .. CHECK_SETTS[i] .. ": " .. tostring(err)) end
+    end
+end
+
 local function createOne(entry)
     local name = "hxstart_" .. entry.key
     if settlementByName(name) ~= nil then log(name .. " exists already - skipped"); return end
@@ -122,6 +209,8 @@ local function createOne(entry)
             coreNote = core .. " " .. tostring(okB) .. (okB and "" or (" " .. tostring(errB)))
         end
     end
+    local okG, errG = pcall(giveStarter, entry, sett, "created")
+    if not okG then log("ERROR starter " .. name .. ": " .. tostring(errG)) end
     local okP = pcall(function() sett.settlementStats.population = entry.population end)
     pcall(function() sett.populationSize = entry.population end)
     applyName(entry, sett, "created")
@@ -154,7 +243,7 @@ end
 if not SS.installed then
     SS.installed = true
     afterHook("onNewGameLoaded", SS.createAll, "new game")
-    afterHook("onCampaignMapLoaded", SS.refreshNames, "map loaded")
+    afterHook("onCampaignMapLoaded", SS.onMapLoaded, "map loaded")
     afterHook("onGeneralCaptureSettlement", SS.refreshNames, "captured")
     afterHook("onPreFactionTurnStart", SS.refreshNames, "turn start")
 end

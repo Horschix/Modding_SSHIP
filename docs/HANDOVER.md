@@ -203,4 +203,16 @@ other game regions later. The candidate list and every decision are in issue #4.
 - UNKNOWN until tested: does addSettlement at level 3 work at new-game time; walls created or already there;
   population accepted; the city model / battle map; name survives save/load; SSHIP's scripts with 2+ settlements
   in a region (same open point as the outposts).
+- FIRST TEST (user, 13 Oct, new Byzantine campaign): WORKS - log: level 3, walls "already there" (addSettlement
+  adds the core building itself), population 15000, name Proúsa. PROBLEM: very little buildable, no farm.
+- Cause found: SSHIP's chains hang on roads -> builders1 (30 chains need builders: temples, water, port, town hall,
+  mines, ...); farms2 needs builders1. The new town had walls only. The player could not build farms / roads in it
+  although their first levels need no building: EUR shows why - it has separate chains `minor_farms` / `minor_roads`
+  (marker building `minor_sett`, given by script) because extra settlements do not build the hinterland chains;
+  the engine flags chains with `edbEntry.isHinterland`.
+- FIX installed 13 Oct, read back identical (user agreed): STARTER table - level 3: roads, farms2, builders2,
+  water1_wells; level 2: roads, farms1, builders1, water1_wells; level 1: roads, farms1, builders1. Given at creation
+  and missing ones at every map load (works in the existing campaign). TEMPORARY CHECK lines at every map load:
+  buildings of Prousa and Nicaea and `canConstructBuilding` per level for 11 chains (remove CHECK_SETTS / the call
+  after the test). Open: can the player UPGRADE roads / farms in Prousa? If not -> EUR-style minor chains.
 - Revert: delete the fourth require line (settlements already created stay in that save).
