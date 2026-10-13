@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 13 Oct 2026 (first session, 10-13 Oct). Read this first in a new session. The user's standing rules and the tooling notes are in
+Last updated 13 Oct 2026 evening (first session, 10-13 Oct). Read this first in a new session. The user's standing rules and the tooling notes are in
 `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR` and apply here too; this file only holds what is SSHIP-specific.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
 
@@ -9,8 +9,10 @@ Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files 
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
 - #1 Recruitment costs population - CLOSED, works in game (user, 13 Oct).
 - #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
-- #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - BUILT and installed 13 Oct, every
-  file read back and compared, label "needs test". NEXT STEP: the user's test (see the section below), then read full.log.
+- #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - CLOSED 13 Oct, works as intended
+  (user). Settlers recruitable from turn 2 of a new campaign - accepted by the user.
+NEXT STEP: none open on the board. Leftover: remove the TEMPORARY `require('sship.settler_check')` line (third require
+line of `luaPluginScript.lua`) and `sship/settler_check.lua` - only logs SETTCHK lines; ask the user first.
 Still to watch in play: SSHIP's own scripts with a second settlement in a region over many turns; the outpost's map
 model, battle map and buildings; disband refund, save/load and AI blocking of #1.
 - Logs: our lines (prefixes `POPREC`, `FORTSETT`) are in `mods\sship\full.log` (about 12 MB; staging often needs
@@ -20,7 +22,9 @@ model, battle map and buildings; disband refund, save/load and AI blocking of #1
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
-- `luaPluginScript.lua` ends with two require lines: population_recruitment, fort_settlement. Revert = delete the line.
+- `luaPluginScript.lua` ends with three require lines: population_recruitment, fort_settlement and the TEMPORARY
+  settler_check. Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+  settler recruit lines need - removing it stops settler recruitment too.
 
 ## Recruitment costs population (10 Oct 2026) - how it works
 User wish: port the population cost for recruitment from EUR (Modding_DAC-EUR issue #5) to SSHIP.
@@ -48,7 +52,7 @@ Minimums stay 400 (player) / 1000 (AI) - user decision.
 - EUR note of 10 Oct: a turn-end crash in EUR came right after two `onRemoveFromUnitQueue` events (cause open, trace
   lines added there). SSHIP runs the same population code - read the log before a restart if SSHIP crashes at turn end.
 
-## Forts -> outposts (minor settlements) - STEP 1 WORKS, STEP 2 INSTALLED (issues #2, #3)
+## Forts -> outposts (minor settlements) - BOTH STEPS WORK (issues #2, #3, closed)
 User wish: port EUR's "fort upgradable to a minor settlement" (Modding_DAC-EUR #35). Decisions: two steps; fort
 price 2000; founding an outpost costs 5000 in the final version; settlers = FOUR units, one each for catholic,
 muslim, orthodox and pagan factions (numbers as in EUR unless he says otherwise: 250 men on his unit size, cost 300,
@@ -92,7 +96,7 @@ STEP 2 (issue #3): see the section "Settlers" at the end. Research notes from be
   not ours (that file is untouched).
 - RESULT (user, 13 Oct): "it works" - founding from inside the fort now goes through. Issues #1 and #2 closed.
 
-## Settlers - outposts step 2 (issue #3), built 13 Oct 2026, NOT yet seen in game
+## Settlers - outposts step 2 (issue #3), built 13 Oct 2026, WORKS (user, 13 Oct, fourth test)
 Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures by size).
 - `fort_settlement.lua`: `TEST = false` -> window only while the player's fort holds >= 500 men in settler units
   (`SETTLER_UNITS`), button "Found settlement - 5000 gold" (grey below 5000), settler units removed with
@@ -166,3 +170,8 @@ Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures
   founding dry run unchanged. settler_check.lua now also logs hx_player_<owner>.
 - Expected: settlers in the recruitment panel from the first player turn after loading (stock 2, then +1 per turn).
 - STILL TO DO after the next test: remove settler_check.lua's require line if the settlers work.
+
+### Fourth test (user, 13 Oct): WORKS
+- "It works as intended now, but only at turn 2 which is fine." Turn 1 of a new campaign has no settler stock: the
+  stock is filled at turn start, and on a new game the counters are only set afterwards (map loaded). Accepted.
+- Issue #3 closed. settler_check.lua still loaded (leftover above).
