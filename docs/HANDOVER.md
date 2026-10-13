@@ -50,10 +50,12 @@ and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SS
   names by culture, roads / farms buildable in them, map edits (Nicaea moved, Sinop's port, passes, Kastamonu and the
   south coast opened). Engine confirmed all 7 test routes (getMovePath, 13 Oct). Kept OPEN for the other regions
   (user: "we will add the settlements for other game regions later"). Details: `docs/notes/features/04_starting_settlements.md`.
-CAUCASUS installed 13 Oct: 20 towns, no map edit. Test 1: 5 towns unreachable (low-mountain tiles) -> moved.
-  Georgia's region towns level 1; Ganja, Sukhumi, Artanuji start as rebels (entry field `ownerFrom`). Waiting for the
-  user's test (new campaign); read STARTSETT lines in full.log. Then: NEXT STEP the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
-GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
+CAUCASUS DONE, WORKS (user, 13 Oct, test 2): 20 towns, all reachable after moving 5 off low-mountain tiles; Georgia's
+  region towns level 1; Ganja, Sukhumi, Artanuji start as rebels (entry field `ownerFrom`); downgrades confirmed.
+  NEXT STEP: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
+  GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
+  LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
+  neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
 Leftover: delete `sship/settler_check.lua` on the PC (no longer required). DUMP stays on as the route checker.
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a

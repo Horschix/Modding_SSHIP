@@ -141,3 +141,5 @@ other game regions later. The candidate list and every decision are in issue #4.
   that settlement instead of `capital`). Ganja, Sukhumi, Artanuji: ownerFrom = "Ani" (rebel-held) -> start as rebels,
   level 1 / 1000. Garrisons: Ganja 2 Ahdath Militia, Sukhumi / Artanuji 2 georgian light spearmen (my choice -
   Christian towns). Georgia keeps Gori, Dmanisi, Telavi, Akhaltsikhe (level 1).
+- CAUCASUS TEST 2 (user, 13 Oct): the five moved towns (Van, Ahlat, Erzincan, Gladzor, Shamakhi) are reachable now;
+  the level downgrades (Georgia's towns, the three rebel towns) work. Caucasus finished; #4 stays open for the next region.
