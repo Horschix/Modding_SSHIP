@@ -70,7 +70,7 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
   2-3 tries). `mods\sship\eop.log` is SSHIP's own Lua log. Read the log after every user test, before he restarts.
 - A new session starts with no folder connected: ask for `...\Medieval II Total War\mods` (covers SSHIP and EUR).
 - Map files changed for #4 (originals in `backups/2026-10-13_before_map/`, rebuilt by `docs/tools/edit_map.py`):
-  `data/world/maps/base/map_regions.tga`, `map_ground_types.tga`, `map_heights.tga`, `campaign/imperial_campaign/
+  `data/world/maps/base/map_regions.tga`, `map_ground_types.tga`, `map_heights.tga`, `map_features.tga`, `campaign/imperial_campaign/
   descr_strat.txt`, `descr_events.txt`. After any map change the user must delete `map.rwm` (session cannot delete).
 - Changed SSHIP game files (originals in `backups/`): `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts),
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
