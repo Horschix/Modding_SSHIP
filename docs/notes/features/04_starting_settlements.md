@@ -200,3 +200,7 @@ other game regions later. The candidate list and every decision are in issue #4.
   Levels: EU5 cities 3 / 15000, all others 2 / 7500 (user). Garrison Ahdath Militia x2 everywhere (user; GARRISON egypt,
   moors added). Names: arabic (= default) + Latin + Greek + Turkish. All 32 reachable from their capitals in the
   BFS model. DUMP_PATHS = 8 North Africa routes. Check image rendered. Waiting for the user's test.
+- NORTH AFRICA fix 1 (user, 13 Oct), installed, read back identical: removed Akhmim, Bahnasa, Bilbeis; moved Faiyum
+  298,56, Asyut 301,40, Kairouan 148,102, Tangier 35,102, Safi 12,77, Sfax 152,94; added level 1 / 1000: Suez
+  (al-Qulzum) 311,61 (Cairo), Melilla 54,99 (Fes). Ceuta 38,104 was NOT seen in game (user) -> set to level 1; cause
+  open - check the log (STARTSETT ceuta) after the next test. 31 towns.
