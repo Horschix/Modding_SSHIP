@@ -9,12 +9,17 @@ Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files 
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
 - #1 Recruitment costs population - CLOSED, works in game (user, 13 Oct).
 - #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
-- #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - OPEN, NOT built. NEXT STEP.
+- #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - BUILT and installed 13 Oct, every
+  file read back and compared, label "needs test". NEXT STEP: the user's test (see the section below), then read full.log.
 Still to watch in play: SSHIP's own scripts with a second settlement in a region over many turns; the outpost's map
 model, battle map and buildings; disband refund, save/load and AI blocking of #1.
 - Logs: our lines (prefixes `POPREC`, `FORTSETT`) are in `mods\sship\full.log` (about 12 MB; staging often needs
   2-3 tries). `mods\sship\eop.log` is SSHIP's own Lua log. Read the log after every user test, before he restarts.
 - A new session starts with no folder connected: ask for `...\Medieval II Total War\mods` (covers SSHIP and EUR).
+- Changed SSHIP game files (originals in `backups/`): `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts),
+  `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
+  `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga` / `<x>_settlers_info.tga` in
+  `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
 - `luaPluginScript.lua` ends with two require lines: population_recruitment, fort_settlement. Revert = delete the line.
 
 ## Recruitment costs population (10 Oct 2026) - how it works
@@ -43,7 +48,7 @@ Minimums stay 400 (player) / 1000 (AI) - user decision.
 - EUR note of 10 Oct: a turn-end crash in EUR came right after two `onRemoveFromUnitQueue` events (cause open, trace
   lines added there). SSHIP runs the same population code - read the log before a restart if SSHIP crashes at turn end.
 
-## Forts -> outposts (minor settlements) - STEP 1 of 2 WORKS (issues #2, #3)
+## Forts -> outposts (minor settlements) - STEP 1 WORKS, STEP 2 INSTALLED (issues #2, #3)
 User wish: port EUR's "fort upgradable to a minor settlement" (Modding_DAC-EUR #35). Decisions: two steps; fort
 price 2000; founding an outpost costs 5000 in the final version; settlers = FOUR units, one each for catholic,
 muslim, orthodox and pagan factions (numbers as in EUR unless he says otherwise: 250 men on his unit size, cost 300,
@@ -64,7 +69,7 @@ STEP 1 = TEST VERSION, INSTALLED 10 Oct (fix 13 Oct), WORKS in game (user, 13 Oc
 - STILL OPEN after the working test: does SSHIP cope LONG-TERM with a second settlement in a region? SSHIP's own Lua loops over
   settlements in about 50 places and none checks `isMinorSettlement`. Read `mods\sship\full.log` for Lua errors. Also unreported: map model, battle map, what can be built in the outpost. The fort
   changes worked in the user's existing Byzantine campaign (no new campaign was needed).
-STEP 2 (issue #3, not built): four settler units + recruit lines + `TEST = false`.
+STEP 2 (issue #3): see the section "Settlers" at the end. Research notes from before it was built:
 - 494 of 500 unit slots are used in `data\export_descr_unit.txt` - four fit.
 - `data XII\data` and `data XIII\data` hold their OWN `export_descr_unit.txt` (era variants, swapped in by the
   launcher presumably): the settler units must go into all three files.
@@ -86,3 +91,34 @@ STEP 2 (issue #3, not built): four settler units + recruit lines + `TEST = false
 - Unrelated: SSHIP's own building file logs many "Script Error ... export_descr_buildings.txt, at line 44774" at start -
   not ours (that file is untouched).
 - RESULT (user, 13 Oct): "it works" - founding from inside the fort now goes through. Issues #1 and #2 closed.
+
+## Settlers - outposts step 2 (issue #3), built 13 Oct 2026, NOT yet seen in game
+Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures by size).
+- `fort_settlement.lua`: `TEST = false` -> window only while the player's fort holds >= 500 men in settler units
+  (`SETTLER_UNITS`), button "Found settlement - 5000 gold" (grey below 5000), settler units removed with
+  `unit:kill` until 500 men are gone, population = men removed (min 400), `add_money -5000` via `M2TWEOP.callConsole`.
+  Message without a general: "A general must lead the settlers into the fort." Dry-run with a mock: 2 units + 9000
+  gold -> founded, 2 units killed, 5000 charged; 1 unit -> no window; 3000 gold -> grey button.
+- Tool `docs/tools/add_settlers.py <copy of mods\sship> <OUT>` (refuses files that already have the settlers) adds:
+  - 4 units at the END of all three `export_descr_unit.txt` (`data`, `data XII\data`, `data XIII\data` - they differ
+    only in AI recruit priorities; 494 -> 498 of 500): Catholic / Orthodox / Muslim / Pagan Settlers, dictionary
+    `<X>_Settlers`. Models chosen because the model database has a look for EVERY faction of the group:
+    `Peasants` (catholic), `Southern_Peasants` (orthodox), `ME_Spear_Militia` (islam), `EE_Spear_Militia` (pagan).
+    soldier 100 (= 250 on huge; SSHIP factor 2.5 like EUR: Scoutatoi 60 -> 150 queued), attack 1, armour 0,
+    morale 1 low untrained, cost 300, upkeep 100, `no_custom`, `card_pic_dir mercs`, `info_pic_dir merc`.
+  - Groups from `descr_sm_factions.txt` religions: catholic 16 (venice sicily denmark scotland france hre england
+    portugal poland spain hungary aragon norway jerusalem pisa papal_states), orthodox 5 (byzantium russia kievan_rus
+    serbia georgia), islam 6 (abbasid egypt turks moors zengid rum), pagan 2 (cumans lithuania). Left out: slave
+    (heretic) and `symbol` (islam, but not in descr_strat - not on the map).
+  - Recruitment: 4 `recruit_pool` lines (2 / 0.1 / 2 / 0, `requires factions {...} and event_counter is_the_player 1`)
+    at the top of the first capability block of all 5 levels of `core_building` and all 5 of `core_castle_building`
+    (the wall / town hall buildings - SSHIP has no recruitment there otherwise). Lines marked `;--- Modding_SSHIP #3`.
+  - Texts in `text/export_units.txt` (UTF-16): name, short and long description per unit. The game rebuilds
+    `export_units.txt.strings.bin` itself because the .txt is newer.
+  - Cards (copies, see `cards.txt`): Hunters (catholic), Slav Levies (orthodox), Syrian Auxiliaries (muslim), Woodsmen (pagan).
+- Recruiting settlers costs the settlement 250 people (#1); founding gives them back as the outpost's people.
+- UNKNOWN until tested: whether the game starts with the unit / building changes in the existing campaign (units were
+  appended at the end, so old saves should keep their unit indices) or needs a new one; whether `is_the_player`
+  hides them from the AI as intended; the cards; the models in battle.
+- If the game does not load: restore the five text files from `backups/2026-10-13_before_settlers/` (keeps the forts
+  and the test-free founding only if `TEST` is set back to true).

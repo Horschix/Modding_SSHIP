@@ -26,10 +26,10 @@ local SETT_LEVEL  = 1        -- 1 = town / wooden castle. Level 0 castle (motte 
                              -- cultures of descr_cultures.txt: the dwarves got the Weathertop model for it (8 Oct)
 local SETT_CASTLE = false    -- a town, not a castle (user, 8 Oct 2026)
 local NAME_PREFIX = "hxsett_"
-local TEST        = true     -- step 1: free, no settlers needed. Set to false for the final rules.
+local TEST        = false    -- true = step 1 test version: free, no settlers needed (worked 13 Oct 2026)
 local COST        = 5000     -- gold for founding an outpost, charged when the town is created (user, 10 Oct 2026)
 local NEED        = 500      -- settlers (men) that must be in the fort; they are removed and become the population
-local SETTLER_UNITS = {      -- unit types of step 2 (one per religion group; not in the unit file yet)
+local SETTLER_UNITS = {      -- unit types of docs/tools/add_settlers.py (one per religion group, Modding_SSHIP #3)
     ["Catholic Settlers"] = true, ["Orthodox Settlers"] = true, ["Muslim Settlers"] = true, ["Pagan Settlers"] = true,
 }
 if TEST then COST, NEED = 0, 0 end
@@ -325,7 +325,7 @@ function FS.found(x, y, state)
     local inside, scanned = charactersAt(x, y)
     if not scanned then say("Failed at step 1: could not check who is in the fort."); return end
 
-    if state ~= "inside" or #inside == 0 then say("A general must stand in the fort."); return end
+    if state ~= "inside" or #inside == 0 then say(TEST and "A general must stand in the fort." or "A general must lead the settlers into the fort."); return end
     fortInfo.key = nil
     local men, units = fortState(x, y)
     if men < NEED then say("Not enough settlers in the fort: " .. men .. " of " .. NEED .. "."); return end
