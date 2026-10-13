@@ -57,9 +57,11 @@ SYRIA AND THE LEVANT DONE (user, 13 Oct): 10 towns. New name key `arabic` (egypt
 NORTH AFRICA DONE (user, 13 Oct): 31 towns.
 LOWER MESOPOTAMIA + PERSIA DONE (user, 14 Oct): 34 towns.
 ARABIA + STEPPE + VOLGA DONE (user moved on, 14 Oct): 10 towns; Saqsin moved to the Cumans in descr_strat.
-RUSSIA installed 14 Oct, fix 1 read back identical (Rostov moved to Novgorod in descr_strat): 14 towns (Novgorod, Rostov, Suzdal, Ryazan, Polotsk, Goroden, Volodymyr,
-  Halych, Chernigov, Smolensk, Pereyaslav regions). No map edit. Names: faction keys russia / kievan_rus / poland /
-  lithuania. Waiting for the user's test in a new campaign (DUMP has 9 Russia routes; read STARTSETT lines in full.log).
+RUSSIA + MUSCAT installed 14 Oct, read back identical: 15 Rus' towns (Tver, Moscow [ownerFrom Suzdal = Kievan Rus],
+  Vologda, Beloozero, Murom, Nizhny, Pronsk, Minsk, Vitebsk, Brest, Lutsk, Lviv, Przemysl, Starodub, Toropets) + Muscat (Oman);
+  Rostov moved to Novgorod in descr_strat; Jeddah moved to 358,5; Khaybar removed. Pskov = SSHIP's "Pleskov" (name kept).
+  Waiting for the user's test in a new campaign (DUMP has the Russia / Muscat / Jeddah routes; read STARTSETT lines).
+  Offered, not taken (yet): Pskov-region towns, Tartu / Otepaa, Koknese / Jersika, Sohar, Julfar, Qatar.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

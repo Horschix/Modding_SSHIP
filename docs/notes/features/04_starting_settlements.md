@@ -284,3 +284,4 @@ other game regions later. The candidate list and every decision are in issue #4.
   Qatar 446,31; Bahrain has no island on SSHIP's map; Abu Dhabi founded 1761).
 - MUSCAT added 14 Oct (user: anywhere in the area), read back identical: 496,13 (Al_Ahsa region, rebels, level 2 / 7500, 2 Ahdath Militia; coast is mountains, so 3-4 tiles inland). DUMP + AlAhsa-Muscat.
 - PSKOV REGION towns REVERTED 14 Oct (user meant Pskov itself; SSHIP names it "Pleskov" in imperial_campaign_regions_and_settlement_names.txt). Back to 14 Russia towns + Muscat.
+- COUNT correction: Russia has 15 towns (20 minus Vladimir, Bryansk, Torzhok, Poltava, Novgorod-Seversky), not 14.
