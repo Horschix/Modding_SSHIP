@@ -93,9 +93,6 @@ local SETTS = {
     { key = "ganja", x = 411, y = 138, capital = "Tbilisi", ownerFrom = "Ani", level = 1, population = 1000,  -- EU5 town; Seljuk until 1138, starts Georgian (user)
       names = { greek = "Ganja", middle_eastern = "Ganja", european = "Ganja", default = "Ganja" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "gladzor", x = 401, y = 132, capital = "Ani", level = 1, population = 1000,  -- moved 13 Oct: low-mountain tile not reachable in game
-      names = { greek = "Gladzor", middle_eastern = "Gladzor", european = "Gladzor", default = "Gladzor" },
-      rebels = { "Armenian Archers", "Armenian Archers" } },
     { key = "gori", x = 395, y = 149, capital = "Tbilisi", level = 1, population = 1000,  -- GPS tile 396,148 is river
       names = { greek = "Gori", middle_eastern = "Gori", european = "Gori", default = "Gori" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
@@ -316,7 +313,7 @@ local SETTS = {
     { key = "melilla", x = 54, y = 99, capital = "Fes", level = 1, population = 1000,  -- Almoravids; tier 1 (user)
       names = { greek = "Rhyssádeiron", middle_eastern = "Melile", arabic = "Mliliya", european = "Melilla", default = "Mliliya" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    -- LOWER MESOPOTAMIA + PERSIA (13 Oct 2026): 43 towns; doubtful ones level 1 (user), Hamadan / Alamut region towns Seljuk (user),
+    -- LOWER MESOPOTAMIA + PERSIA (13 Oct 2026): 34 towns after the user removed 10 (+ Gladzor in the Caucasus); doubtful ones level 1 (user), Hamadan / Alamut region towns Seljuk (user),
     -- big ones level 3 (user); Urmia moved to open ground (user); Lahijan added after map round 4 (Gilan coast opened)
     { key = "kufa", x = 399, y = 78, capital = "Baghdad", level = 3, population = 15000,  -- Abbasid; Mazyadid area
       names = { greek = "Koúfa", middle_eastern = "Kûfe", arabic = "al-Kufa", european = "Cufa", default = "al-Kufa" },
@@ -324,17 +321,11 @@ local SETTS = {
     { key = "hilla", x = 398, y = 82, capital = "Baghdad", level = 3, population = 15000,  -- Mazyadid capital (founded 1101)
       names = { greek = "Chílla", middle_eastern = "Hille", arabic = "al-Hilla", european = "Hilla", default = "al-Hilla" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "samarra", x = 393, y = 93, capital = "Baghdad", level = 1, population = 1000,  -- much reduced by 1132
-      names = { greek = "Samárra", middle_eastern = "Samarra", arabic = "Samarra", european = "Sumere", default = "Samarra" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "hulwan", x = 404, y = 95, capital = "Baghdad", level = 1, population = 1000,  -- in decline
       names = { greek = "Chála", middle_eastern = "Hulvan", arabic = "Hulwan", european = "Chala", default = "Hulwan" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "kirkuk", x = 395, y = 102, capital = "Mosul", level = 2, population = 7500,  -- Zengids
       names = { greek = "Karká", middle_eastern = "Kerkük", arabic = "Karkhini", european = "Carcha", default = "Karkhini" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "ahvaz", x = 428, y = 71, capital = "Basra", level = 2, population = 7500,
-      names = { greek = "Achváz", middle_eastern = "Ahvaz", arabic = "al-Ahwaz", european = "Ahwaz", default = "al-Ahwaz" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "ramhormoz", x = 434, y = 70, capital = "Basra", level = 2, population = 7500,
       names = { greek = "Ramormízd", middle_eastern = "Râmhürmüz", arabic = "Ramhurmuz", european = "Ramormuz", default = "Ramhormoz" },
@@ -345,14 +336,8 @@ local SETTS = {
     { key = "shushtar", x = 429, y = 77, capital = "Al_Wasit", level = 2, population = 7500,
       names = { greek = "Soústar", middle_eastern = "Şuşter", arabic = "Tustar", european = "Tostar", default = "Shushtar" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "dezful", x = 425, y = 79, capital = "Al_Wasit", level = 1, population = 1000,  -- small; Jundishapur nearly gone
-      names = { greek = "Dizfoúl", middle_eastern = "Dizful", arabic = "Dizful", european = "Desful", default = "Dezful" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "kermanshah", x = 415, y = 92, capital = "Hamadan", ownerFrom = "Isfahan", level = 3, population = 15000,  -- EU5 city; Seljuk (user)
       names = { greek = "Kirmasín", middle_eastern = "Kirmanşah", arabic = "Qirmisin", european = "Chermesin", default = "Kermanshah" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "dinavar", x = 417, y = 97, capital = "Hamadan", ownerFrom = "Isfahan", level = 2, population = 7500,  -- Seljuk (user)
-      names = { greek = "Dinavár", middle_eastern = "Dinever", arabic = "al-Dinawar", european = "Dinaver", default = "Dinavar" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "nahavand", x = 421, y = 92, capital = "Hamadan", ownerFrom = "Isfahan", level = 2, population = 7500,  -- Seljuk (user)
       names = { greek = "Laodíkeia", middle_eastern = "Nihavend", arabic = "Nihawand", european = "Laodicea", default = "Nahavand" },
@@ -362,9 +347,6 @@ local SETTS = {
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "qom", x = 444, y = 96, capital = "Ray", level = 3, population = 15000,  -- EU5 city
       names = { greek = "Koúm", middle_eastern = "Kum", arabic = "Qumm", european = "Com", default = "Qom" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "astarabad", x = 467, y = 113, capital = "Ray", level = 2, population = 7500,  -- EU5 town
-      names = { greek = "Astarabád", middle_eastern = "Esterâbâd", arabic = "Astarabadh", european = "Astrabat", default = "Astarabad" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "jurjan", x = 472, y = 114, capital = "Ray", level = 3, population = 15000,  -- big city (user: level 3)
       names = { greek = "Gourgán", middle_eastern = "Cürcan", arabic = "Jurjan", european = "Hyrcania", default = "Gorgan" },
@@ -377,9 +359,6 @@ local SETTS = {
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "kashan", x = 449, y = 91, capital = "Yazd", level = 2, population = 7500,
       names = { greek = "Kasán", middle_eastern = "Kâşan", arabic = "Qashan", european = "Cascian", default = "Kashan" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "saveh", x = 440, y = 100, capital = "Alamut", ownerFrom = "Ray", level = 2, population = 7500,  -- Seljuk (user)
-      names = { greek = "Sabá", middle_eastern = "Save", arabic = "Sawa", european = "Saba", default = "Saveh" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "qazvin", x = 436, y = 105, capital = "Alamut", ownerFrom = "Ray", level = 2, population = 7500,  -- Seljuk (user)
       names = { greek = "Kasbín", middle_eastern = "Kazvin", arabic = "Qazwin", european = "Casvin", default = "Qazvin" },
@@ -408,9 +387,6 @@ local SETTS = {
     { key = "sabzevar", x = 489, y = 111, capital = "Neyshabur", level = 2, population = 7500,  -- Bayhaq
       names = { greek = "Sabzabár", middle_eastern = "Sebzevar", arabic = "Sabzawar", european = "Sabzevar", default = "Sabzevar" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "esfarayen", x = 493, y = 109, capital = "Neyshabur", level = 2, population = 7500,
-      names = { greek = "Isfaraín", middle_eastern = "İsferayin", arabic = "Isfara'in", european = "Esfarain", default = "Esfarayen" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "turshiz", x = 495, y = 98, capital = "Neyshabur", level = 2, population = 7500,
       names = { greek = "Tourshíz", middle_eastern = "Türşiz", arabic = "Turaythith", european = "Tursiz", default = "Turshiz" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
@@ -420,20 +396,11 @@ local SETTS = {
     { key = "tabas", x = 490, y = 92, capital = "Neyshabur", level = 2, population = 7500,
       names = { greek = "Tabás", middle_eastern = "Tabes", arabic = "Tabas", european = "Tabas", default = "Tabas" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "kazerun", x = 455, y = 61, capital = "Shiraz", level = 2, population = 7500,
-      names = { greek = "Kazeroún", middle_eastern = "Kâzerun", arabic = "Kazarun", european = "Casarun", default = "Kazerun" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "fasa", x = 468, y = 51, capital = "Shiraz", level = 2, population = 7500,
       names = { greek = "Fása", middle_eastern = "Fesa", arabic = "Fasa", european = "Fasa", default = "Fasa" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "darab", x = 473, y = 55, capital = "Shiraz", level = 2, population = 7500,
-      names = { greek = "Darabgérd", middle_eastern = "Darabcird", arabic = "Darabjird", european = "Darabgerd", default = "Darab" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "firuzabad", x = 459, y = 49, capital = "Shiraz", level = 2, population = 7500,
       names = { greek = "Gór", middle_eastern = "Firuzâbâd", arabic = "Jur", european = "Gor", default = "Firuzabad" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "siraf", x = 458, y = 45, capital = "Shiraz", level = 1, population = 1000,  -- EU5 town; in decline after 977
-      names = { greek = "Siráf", middle_eastern = "Siraf", arabic = "Siraf", european = "Siraf", default = "Siraf" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "abarkuh", x = 463, y = 70, capital = "Shiraz", level = 2, population = 7500,
       names = { greek = "Abarkoúh", middle_eastern = "Ebergûh", arabic = "Abarquh", european = "Abarcu", default = "Abarkuh" },
@@ -663,7 +630,7 @@ local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia n
 local DUMP_PATHS = {    -- Lower Mesopotamia + Persia (13 Oct 2026)
     { "Tabriz-Urmia", 411, 119, 396, 118 }, { "Tabriz-Ardabil", 411, 119, 428, 126 }, { "Baghdad-Hulwan", 396, 88, 404, 95 },
     { "Basra-Arrajan", 421, 65, 438, 64 }, { "Kerman-Jiroft", 487, 64, 493, 48 }, { "Kerman-Hormuz", 487, 64, 488, 41 },
-    { "Ray-Jurjan", 449, 101, 472, 114 }, { "Shiraz-Siraf", 457, 57, 458, 45 },
+    { "Ray-Jurjan", 449, 101, 472, 114 }, { "Shiraz-Firuzabad", 457, 57, 459, 49 },
     { "Alamut-Lahijan", 438, 108, 434, 115 }, { "Ardabil-Lahijan", 428, 126, 434, 115 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }

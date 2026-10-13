@@ -236,3 +236,6 @@ other game regions later. The candidate list and every decision are in issue #4.
   436,113, 437,112-110, 436,110 (swamp / low mountain -> hills, 14 -> 203, step 31.5). Model: Alamut -> Lahijan 9 tiles,
   Tabriz -> Lahijan 30, also with steps < 40. Lahijan 434,115 (Alamut region, rebels, level 2) back in: 44 towns.
   DUMP_PATHS + Alamut-Lahijan, Ardabil-Lahijan. map.rwm must be deleted (user), new campaign.
+- PERSIA TEST 1 (user, 13 Oct): removed Darab, Kazerun, Siraf, Esfarayen, Astarabad, Saveh, Dinavar, Ahvaz, Dezful,
+  Samarra, and Gladzor in the Caucasus. Installed, read back identical: 34 towns in this region. DUMP Shiraz-Siraf ->
+  Shiraz-Firuzabad.
