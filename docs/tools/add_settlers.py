@@ -116,7 +116,10 @@ def add_recruitment(path_in, path_out):
             i += 1
             out.append(";--- Modding_SSHIP #3: settlers, player only")
             for name, dic, model, factions, card in GROUPS:
-                out.append(f'        recruit_pool "{name}"  2   0.1   2  0  requires factions {{ {factions}, }} and event_counter is_the_player 1')
+                # refill 1 per turn (13 Oct 2026): SSHIP sets is_the_player only at each faction's turn start
+                # (globalEvents.isPlayer in onPreFactionTurnStart), so a new campaign begins with stock 0, not 2;
+                # with 0.1 per turn the first unit only appeared after 10 turns
+                out.append(f'        recruit_pool "{name}"  2   1   2  0  requires factions {{ {factions}, }} and event_counter is_the_player 1')
             added += 1
         i += 1
     if added != 10:

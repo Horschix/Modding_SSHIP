@@ -110,7 +110,7 @@ Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures
     portugal poland spain hungary aragon norway jerusalem pisa papal_states), orthodox 5 (byzantium russia kievan_rus
     serbia georgia), islam 6 (abbasid egypt turks moors zengid rum), pagan 2 (cumans lithuania). Left out: slave
     (heretic) and `symbol` (islam, but not in descr_strat - not on the map).
-  - Recruitment: 4 `recruit_pool` lines (2 / 0.1 / 2 / 0, `requires factions {...} and event_counter is_the_player 1`)
+  - Recruitment: 4 `recruit_pool` lines (2 / 1 / 2 / 0, `requires factions {...} and event_counter is_the_player 1`)
     at the top of the first capability block of all 5 levels of `core_building` and all 5 of `core_castle_building`
     (the wall / town hall buildings - SSHIP has no recruitment there otherwise). Lines marked `;--- Modding_SSHIP #3`.
   - Texts in `text/export_units.txt` (UTF-16): name, short and long description per unit. The game rebuilds
@@ -122,3 +122,15 @@ Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures
   hides them from the AI as intended; the cards; the models in battle.
 - If the game does not load: restore the five text files from `backups/2026-10-13_before_settlers/` (keeps the forts
   and the test-free founding only if `TEST` is set back to true).
+
+### First test of the settlers (user, 13 Oct, NEW Byzantine campaign) and fix
+- Game starts. The settlers show in the building info of the wall / castle line, but NOT in the recruitment panel.
+  Not our population script (no POPREC line in full.log at all - nothing was withheld).
+- Cause: SSHIP sets `is_the_player` / `is_the_ai` only in `globalEvents.isPlayer(faction)`, called from
+  `onPreFactionTurnStart` (main.lua). When a new campaign is set up the counter is 0, so the pools start at 0 instead of
+  the initial 2, and refilled by 0.1 per turn the first unit would have appeared after 10 turns. SSHIP's own
+  player-only recruit lines (82 of them) start at 0 anyway.
+- FIX installed 13 Oct, read back identical: refill 1 per turn (pool max still 2), in the tool and the building file
+  (only the 40 settler lines changed). Expected: settlers recruitable from the player's next turn.
+- If they still do not appear after a turn end: check `freeze_recr_pool` / the 64-entry recruitment limit per
+  settlement, or give the stock from Lua at the player's turn start.

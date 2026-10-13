@@ -572,10 +572,10 @@ building core_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; WOODEN PALLISADE - GENERAL
 
@@ -763,10 +763,10 @@ building core_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; WOODEN WALL - GENERAL
         wall_level 1
@@ -957,10 +957,10 @@ building core_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; STONE WALL - GENERAL
 
@@ -1152,10 +1152,10 @@ building core_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; LARGE STONE WALL - GENERAL
 		wall_level 3
@@ -1343,10 +1343,10 @@ building core_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; HUGE STONE WALL - GENERAL
 
@@ -1523,10 +1523,10 @@ building core_castle_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; MOTTE AND BAILEY - GENERAL
 
@@ -1702,10 +1702,10 @@ building core_castle_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; WOODEN CASTLE - GENERAL
 		wall_level 1
@@ -1882,10 +1882,10 @@ building core_castle_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; CASTLE - GENERAL
 		wall_level 2
@@ -2058,10 +2058,10 @@ building core_castle_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; FORTRESS - GENERAL
 		wall_level 3
@@ -2233,10 +2233,10 @@ building core_castle_building
       capability
       {
 ;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   0.1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   0.1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   0.1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   0.1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; CITADEL - GENERAL
 		wall_level 4
