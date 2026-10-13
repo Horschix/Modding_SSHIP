@@ -208,3 +208,24 @@ other game regions later. The candidate list and every decision are in issue #4.
   true", DUMP Fes-Ceuta 0 tiles. 38,104 is the promontory at the Gibraltar strait crossing (37,105 beach links to
   Spain) - the engine refuses it. LESSON: keep towns off strait / land-bridge crossing tiles. Fix installed, read back
   identical: Ceuta -> 39,103 (fertile, 4 from Tangier); Suez 1 north -> 311,62 (user).
+- NORTH AFRICA TEST 3 (user, 13 Oct): all fine - North Africa done.
+- LOWER MESOPOTAMIA + PERSIA installed 13 Oct, read back identical (1 file, no map edit, map.rwm stays). EU5 (iraq_arabi,
+  persia_region, western_khorasan): 21 towns - 10 are SSHIP settlements, Zaranj / Kabul / Ghazni / Quetta off the map,
+  Soltaniyeh founded 1305, Rasht too small; taken: Kermanshah, Qom, Hormuz (old, mainland) level 3, Astarabad. 39 extras
+  (known history, not checked page by page). Fit: affine on 17 SSHIP settlements + IDW (Merv residual -11, map edge).
+  Tiles: nearest open tile (no mountain / dense forest / swamp 0,255,128 / river / beach, relief <= 30, a few 36),
+  >= 4 from new towns, >= 3 from any settlement; BFS (step < 60) from each capital reaches all.
+  Baghdad: Kufa 399,78 (3), Hilla 398,82 (3), Samarra 393,93 (1), Hulwan 404,95 (1); Mosul: Kirkuk 395,102; Basra: Ahvaz
+  428,71, Ramhormoz 434,70, Arrajan 438,64 (1); Al_Wasit: Shushtar 429,77, Dezful 425,79 (1); Hamadan (ownerFrom Isfahan =
+  Seljuk, user): Kermanshah 415,92 (3), Dinavar 417,97, Nahavand 421,92, Borujerd 430,91; Ray: Qom 444,96 (3), Astarabad
+  467,113, Jurjan 472,114 (3), Damghan 468,105, Semnan 463,99; Yazd: Kashan 449,91; Alamut (ownerFrom Ray, user): Saveh
+  440,100, Qazvin 436,105, Zanjan 427,109; Tabriz (rebels): Maragheh 410,111 (3), Khoy 403,124, Miyaneh 416,115, Ardabil
+  428,126 (3; 4-5 NE of GPS), Urmia 396,118 (user wanted it; west lake shore all low mountain, moved ~6 W, BFS 20 from
+  Tabriz); Neyshabur: Sabzevar 489,111, Esfarayen 493,109, Turshiz 495,98, Qaen 498,87, Tabas 490,92; Shiraz: Kazerun
+  455,61, Fasa 468,51, Darab 473,55, Firuzabad 459,49, Siraf 458,45 (1), Abarkuh 463,70, Sirjan 475,61; Kerman (rebels):
+  Hormuz 488,41 (3), Bam 501,55, Jiroft 493,48 (west of the river). Others level 2 / 7500; level 1 = the doubtful ones (user).
+  Left out: Lahijan (Gilan coast 433-434,114-115 is a closed 3-tile pocket), Amol / Sari (dense forest + swamp), Marand,
+  Tus (relief 67 next to Merv), Khorramabad (Zagros too steep), Bistam, Istakhr, Jahrom, Hit, Anbar, Sarakhs.
+  Names: default Persian (Arabic in Iraq), arabic for abbasid, Turkish for turks / zengid, Greek + Latin (Harmozeia /
+  Ormus, Hekatompylos, Laodikeia = Nahavand, Camadi = Jiroft). GARRISON turks 2 Ahdath Militia, abbasid 2 Shurtah Militia.
+  DUMP_PATHS = 8 Persia routes. Waiting for the user's test (new campaign).
