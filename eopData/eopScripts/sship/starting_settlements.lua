@@ -53,6 +53,11 @@ local STARTER = {
     [3] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms2" }, { "builders", "builders2" },
             { "water_supply", "water1_wells" } },
 }
+-- EXPERIMENT A (user, 13 Oct 2026): the build menu of an EXTRA settlement offers no hinterland chain although
+-- canConstructBuilding says the levels are allowed. The flag edbEntry.isHinterland is set to 0 for these chains
+-- (for ALL settlements - watch roads / farm fields on the map and the AI). false = leave the flags alone.
+local UNHINTERLAND = true
+local UNHINTERLAND_CHAINS = { "hinterland_roads", "hinterland_farms", "hinterland_mines" }
 -- TEMPORARY check (13 Oct 2026): what the game lets these settlements build next. Logged once per map load.
 local CHECK_SETTS  = { "hxstart_bursa", "Nicaea" }
 local CHECK_CHAINS = { "hinterland_roads", "hinterland_farms", "builders", "water_supply", "hinterland_mines",
@@ -166,7 +171,27 @@ local function checkBuildable(name)
     end
 end
 
+function SS.clearHinterlandFlags()
+    if not UNHINTERLAND then return end
+    local res = {}
+    for i = 1, #UNHINTERLAND_CHAINS do
+        local chain = UNHINTERLAND_CHAINS[i]
+        local okE, e = pcall(function() return EDB.getBuildingByName(chain) end)
+        if okE and e ~= nil then
+            local before = get(e, "isHinterland")
+            local okS = pcall(function() e.isHinterland = 0 end)
+            res[#res + 1] = chain .. " " .. tostring(before) .. "->" .. tostring(get(e, "isHinterland"))
+                .. (okS and "" or " (write failed)")
+        else
+            res[#res + 1] = chain .. " no EDB entry"
+        end
+    end
+    log("hinterland flags: " .. table.concat(res, ", "))
+end
+
 function SS.onMapLoaded(why)
+    local okH, errH = pcall(SS.clearHinterlandFlags)
+    if not okH then log("ERROR hinterland flags: " .. tostring(errH)) end
     SS.refreshNames(why)
     for i = 1, #SETTS do
         local sett = settlementByName("hxstart_" .. SETTS[i].key)

@@ -215,4 +215,13 @@ other game regions later. The candidate list and every decision are in issue #4.
   and missing ones at every map load (works in the existing campaign). TEMPORARY CHECK lines at every map load:
   buildings of Prousa and Nicaea and `canConstructBuilding` per level for 11 chains (remove CHECK_SETTS / the call
   after the test). Open: can the player UPGRADE roads / farms in Prousa? If not -> EUR-style minor chains.
+- SECOND TEST (user, 13 Oct): more buildable now. CHECK lines: canConstructBuilding allows paved roads, highways and
+  farms up to farms6 in Prousa (mines blocked in Nicaea too - no resource), yet the build menu shows none of them:
+  the engine hides chains with `edbEntry.isHinterland` in extra settlements.
+- EXPERIMENT A installed 13 Oct, read back identical (user's choice): `UNHINTERLAND = true` sets isHinterland 0 for
+  hinterland_roads / hinterland_farms / hinterland_mines at every map load (log line "hinterland flags"). Affects ALL
+  settlements - watch roads / farm fields on the map and the AI. If it fails or has side effects: option B =
+  proxy chains ("Expand farms" etc.) only for settlements with a marker building; on completion the script removes
+  the proxy and raises the real hinterland building one level (keeps the 34 requirement lines that point at
+  farms / roads levels working).
 - Revert: delete the fourth require line (settlements already created stay in that save).
