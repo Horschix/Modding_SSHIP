@@ -192,41 +192,17 @@ local SETTS = {
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     -- Syria and the Levant (13 Oct 2026): no EU5 towns beyond SSHIP's own; user-approved extras, small ones skipped.
     -- arabic = name for egypt / abbasid / moors; middle_eastern = Turkish; default (rebels) = Arabic
-    { key = "latakia", x = 336, y = 102, capital = "Antioch", level = 2, population = 7500,  -- Principality of Antioch
-      names = { greek = "Laodíkeia", middle_eastern = "Lazkiye", arabic = "Al-Ladhiqiyya", european = "Laodicea", default = "Al-Ladhiqiyya" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "maarrat", x = 342, y = 103, capital = "Antioch", level = 2, population = 7500,  -- Antioch until 1135
-      names = { greek = "Árra", middle_eastern = "Maarretünnuman", arabic = "Ma'arrat al-Nu'man", european = "Marra", default = "Ma'arrat al-Nu'man" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "tartus", x = 337, y = 99, capital = "Tripoli", level = 2, population = 7500,  -- County of Tripoli
+    { key = "tartus", x = 337, y = 100, capital = "Tripoli", level = 2, population = 7500,  -- County of Tripoli; 1 north (user)
       names = { greek = "Antárados", middle_eastern = "Tartus", arabic = "Tartus", european = "Tortosa", default = "Tartus" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "jubail", x = 336, y = 95, capital = "Tripoli", level = 2, population = 7500,  -- County of Tripoli (Embriaco)
-      names = { greek = "Býblos", middle_eastern = "Cübeyl", arabic = "Jubayl", european = "Gibelet", default = "Jubayl" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "beirut", x = 334, y = 91, capital = "Tripoli", level = 2, population = 7500,  -- Kingdom of Jerusalem; steep coast - route checked by DUMP
       names = { greek = "Bērytós", middle_eastern = "Beyrut", arabic = "Bayrut", european = "Baruth", default = "Bayrut" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "sidon", x = 333, y = 88, capital = "Acre", level = 2, population = 7500,  -- Kingdom of Jerusalem
-      names = { greek = "Sidṓn", middle_eastern = "Sayda", arabic = "Sayda", european = "Sagitta", default = "Sayda" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "tyre", x = 332, y = 86, capital = "Acre", level = 3, population = 15000,  -- Kingdom of Jerusalem since 1124; level 3 (user)
       names = { greek = "Týros", middle_eastern = "Sur", arabic = "Sur", european = "Tyrus", default = "Sur" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "caesarea", x = 329, y = 80, capital = "Acre", level = 2, population = 7500,  -- Kingdom of Jerusalem
-      names = { greek = "Kaisáreia", middle_eastern = "Kayseriye", arabic = "Qaysariyya", european = "Caesarea", default = "Qaysariyya" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "tiberias", x = 332, y = 81, capital = "Acre", level = 2, population = 7500,  -- Principality of Galilee
-      names = { greek = "Tiberiás", middle_eastern = "Taberiye", arabic = "Tabariyya", european = "Tiberias", default = "Tabariyya" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "nablus", x = 331, y = 77, capital = "Jerusalem", level = 2, population = 7500,  -- Kingdom of Jerusalem
-      names = { greek = "Neápolis", middle_eastern = "Nablus", arabic = "Nablus", european = "Neapolis", default = "Nablus" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "jaffa", x = 328, y = 77, capital = "Jerusalem", level = 2, population = 7500,  -- Kingdom of Jerusalem
       names = { greek = "Ióppē", middle_eastern = "Yafa", arabic = "Yafa", european = "Joppe", default = "Yafa" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "ramla", x = 328, y = 75, capital = "Jerusalem", level = 2, population = 7500,  -- Kingdom of Jerusalem
-      names = { greek = "Rámla", middle_eastern = "Remle", arabic = "Al-Ramla", european = "Rames", default = "Al-Ramla" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "marash", x = 344, y = 115, capital = "Edessa", level = 2, population = 7500,  -- Lordship of Marash
       names = { greek = "Germaníkeia", middle_eastern = "Maraş", arabic = "Mar'ash", european = "Marasch", default = "Mar'ash" },
@@ -242,9 +218,6 @@ local SETTS = {
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "homs", x = 342, y = 97, capital = "Damascus", level = 3, population = 15000,  -- emir Khirkhan -> rebels; level 3 (user)
       names = { greek = "Émesa", middle_eastern = "Humus", arabic = "Hims", european = "La Chamelle", default = "Hims" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "baalbek", x = 342, y = 93, capital = "Damascus", level = 2, population = 7500,  -- Burids -> rebels
-      names = { greek = "Hēlioúpolis", middle_eastern = "Balbek", arabic = "Ba'labakk", european = "Malbec", default = "Ba'labakk" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "bosra", x = 341, y = 81, capital = "Damascus", level = 2, population = 7500,  -- Burids -> rebels
       names = { greek = "Bóstra", middle_eastern = "Busra", arabic = "Busra", european = "Bostrum", default = "Busra" },
@@ -455,10 +428,9 @@ end
 -------------------------------------------------------------------------
 local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
-local DUMP_PATHS = {    -- Syria and the Levant (13 Oct 2026)
-    { "Tripoli-Beirut", 336, 97, 334, 91 }, { "Tripoli-Jubail", 336, 97, 336, 95 }, { "Acre-Sidon", 331, 83, 333, 88 },
-    { "Acre-Tyre", 331, 83, 332, 86 }, { "Antioch-Latakia", 338, 106, 336, 102 }, { "Damascus-Baalbek", 343, 90, 342, 93 },
-    { "Damascus-Bosra", 343, 90, 341, 81 }, { "Edessa-Marash", 355, 114, 344, 115 },
+local DUMP_PATHS = {    -- Syria and the Levant, after the thinning (13 Oct 2026)
+    { "Tripoli-Beirut", 336, 97, 334, 91 }, { "Tripoli-Tortosa", 336, 97, 337, 100 }, { "Acre-Tyre", 331, 83, 332, 86 },
+    { "Damascus-Bosra", 343, 90, 341, 81 }, { "Edessa-Marash", 355, 114, 344, 115 }, { "Aleppo-Hama", 347, 108, 343, 100 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

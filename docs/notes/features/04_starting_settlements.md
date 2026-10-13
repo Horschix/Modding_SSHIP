@@ -177,3 +177,7 @@ other game regions later. The candidate list and every decision are in issue #4.
   Names (user): Latin (crusader forms) + Greek + Turkish (middle_eastern) + Arabic. New name key `arabic`, used for the
   factions in table ARABIC (egypt, abbasid, moors); default (rebels) = Arabic. Garrisons as before (Jerusalem Spear
   Militia, Zengids Shurtah Militia, rebels Ahdath Militia). DUMP_PATHS = 8 Levant routes. Waiting for the user's test.
+- LEVANT TEST 1 (user, 13 Oct): all 19 work but too crowded. Removed (user): Ramla, Caesarea, Tiberias, Nablus, Sidon,
+  Baalbek, Jubail ("Gitzelbekk" read as Gibelet), Latakia, Ma'arrat. Tortosa 337,99 -> 337,100 (1 north). 10 towns left:
+  Tortosa, Beirut, Tyre (3), Jaffa, Marash, Ayntab, Manbij, Hama (3), Homs (3), Bosra. Installed, read back identical
+  (the commit tool reused the cached upload again on the same output path - fresh folder fixed it).
