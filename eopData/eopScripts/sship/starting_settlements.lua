@@ -433,13 +433,10 @@ local SETTS = {
     { key = "sudak", x = 329, y = 170, capital = "Chersonesos", level = 2, population = 7500,  -- EU5 town; Byzantium
       names = { greek = "Sougdaía", middle_eastern = "Suğdak", arabic = "Sudaq", european = "Soldaia", default = "Sougdaía" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "kaffa", x = 333, y = 172, capital = "Chersonesos", level = 1, population = 500,  -- Genoese 1266 - founded later, level 1 / 500 (user)
-      names = { greek = "Theodosía", middle_eastern = "Kefe", arabic = "Kafa", european = "Caffa", default = "Kaffa" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "kerch", x = 336, y = 171, capital = "Chersonesos", level = 2, population = 7500,  -- EU5 town; 3 tiles from the strait (Ceuta lesson)
       names = { greek = "Bósporos", middle_eastern = "Kerç", arabic = "Karsh", european = "Vosporo", default = "Bósporos" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "kursk", x = 338, y = 218, capital = "Chernigov", level = 2, population = 7500,  -- EU5 town; rebels
+    { key = "kursk", x = 338, y = 218, capital = "Chernigov", ownerFrom = "Aktobe", level = 2, population = 7500,  -- EU5 town; Cumans (user, 14 Oct)
       names = { greek = "Koúrsk", middle_eastern = "Kursk", arabic = "Kursk", european = "Kursk", default = "Kursk" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "bilyar", x = 442, y = 241, capital = "Bulgar", level = 3, population = 15000,  -- largest Volga Bulgar city; rebels
@@ -448,17 +445,8 @@ local SETTS = {
     { key = "kazan", x = 434, y = 247, capital = "Bulgar", level = 1, population = 1000,  -- EU5 town, founding disputed; rebels
       names = { greek = "Kazán", middle_eastern = "Kazan", arabic = "Qazan", european = "Casan", default = "Qazan" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "juketau", x = 448, y = 244, capital = "Bulgar", level = 1, population = 1000,  -- Bulgar town on the Kama; rebels
-      names = { greek = "Zoukotín", middle_eastern = "Cüketau", arabic = "Juketau", european = "Zhukotin", default = "Jüketau" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "astrakhan", x = 424, y = 182, capital = "Saqsin", level = 1, population = 500,  -- 13th c. - founded later; rebels
-      names = { greek = "Astrachán", middle_eastern = "Hacı Tarhan", arabic = "Hajji Tarkhan", european = "Gitarcan", default = "Xacitarxan" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "sarai", x = 407, y = 195, capital = "Saqsin", level = 1, population = 500,  -- 1330s - founded later; rebels
+    { key = "sarai", x = 407, y = 195, capital = "Saqsin", ownerFrom = "Aktobe", level = 1, population = 500,  -- 1330s - founded later; Cumans (user, 14 Oct; Saqsin itself moved to the Cumans in descr_strat)
       names = { greek = "Sarái", middle_eastern = "Saray-ı Cedid", arabic = "Saray al-Jadid", european = "Sarai", default = "Saray al-Jadid" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "saraychik", x = 449, y = 187, capital = "Aktobe", level = 1, population = 500,  -- 13th c. - founded later; Cumans
-      names = { greek = "Saraitzík", middle_eastern = "Saraycık", arabic = "Sarayjuq", european = "Saraichik", default = "Saraychik" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
 }
 
@@ -673,7 +661,7 @@ local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
 local DUMP_PATHS = {    -- Arabia, steppe, Volga (14 Oct 2026)
     { "Mecca-Medina", 364, 1, 365, 23 }, { "Mecca-Jeddah", 364, 1, 361, 1 }, { "AlAhsa-Qatif", 435, 29, 435, 37 },
-    { "Chersonesos-Kerch", 319, 167, 336, 171 }, { "Saqsin-Sarai", 423, 178, 407, 195 }, { "Aktobe-Saraychik", 445, 186, 449, 187 },
+    { "Chersonesos-Kerch", 319, 167, 336, 171 }, { "Chersonesos-Sudak", 319, 167, 329, 170 }, { "Saqsin-Sarai", 423, 178, 407, 195 },
     { "Bulgar-Bilyar", 433, 241, 442, 241 }, { "Chernigov-Kursk", 314, 218, 338, 218 }, { "Bulgar-Kazan", 433, 241, 434, 247 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }

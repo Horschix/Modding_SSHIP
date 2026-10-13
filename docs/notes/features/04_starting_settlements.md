@@ -253,3 +253,8 @@ other game regions later. The candidate list and every decision are in issue #4.
   (Cumans): Saraychik 449,187 (1 / 500). 14 towns. BFS (swamp passable) reaches all from their capitals.
   Garrisons: Arabs / Bulgars 2 Ahdath Militia, Crimea Byz 2 Contaratoi, Kursk / steppe rebels 2 EE Spear Militia,
   new GARRISON cumans = 2 EE Spear Militia. DUMP_PATHS = 9 routes of this region. Waiting for the user's test.
+- ARABIA/STEPPE fix 1 (user, 14 Oct), installed, both files read back identical: removed Kaffa (Theodosia), Astrakhan
+  (Xacitarxan), Saraychik, Juketau. Kursk and Sarai al-Jadid start Cuman (ownerFrom = "Aktobe"). SAQSIN given to the
+  Cumans in descr_strat: its settlement block moved from the slave section to the end of the cumans settlements, and its
+  governor Turgut (was "sub_faction cumans" under slave, same army) moved to the cumans characters after Yesugatai.
+  10 towns. NEW campaign needed; map.rwm can stay (no map image change). Watch SSHIP scripts that expect Saqsin rebel.

@@ -56,7 +56,7 @@ UPPER MESOPOTAMIA DONE (user moved on, 13 Oct): 14 towns.
 SYRIA AND THE LEVANT DONE (user, 13 Oct): 10 towns. New name key `arabic` (egypt / abbasid / moors).
 NORTH AFRICA DONE (user, 13 Oct): 31 towns.
 LOWER MESOPOTAMIA + PERSIA DONE (user, 14 Oct): 34 towns.
-ARABIA + STEPPE + VOLGA installed 14 Oct, read back identical: 14 towns (Siberia: nothing on the map). No map edit.
+ARABIA + STEPPE + VOLGA installed 14 Oct, fix 1 read back identical: 10 towns; Saqsin moved to the Cumans in descr_strat (Siberia: nothing on the map). No map edit.
   Waiting for the user's test in a new campaign (DUMP has 9 routes; read STARTSETT lines in full.log).
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).

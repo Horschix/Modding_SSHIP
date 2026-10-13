@@ -3350,6 +3350,54 @@ settlement
 }
 
 ; SHARUKAN
+; SAQSIN - has HR cumans so hinterland_farms will grow only to lvl4.
+settlement
+{
+	level large_town
+	region Saqsin_Province
+
+	year_founded 0
+	population 8500
+	plan_set default_set
+	faction_creator cumans
+	building
+	{
+		type core_building wooden_wall
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms1
+	}
+	building
+	{
+		type builders builders2
+	}
+	building
+	{
+		type water_supply water1_wells
+	}
+	building
+	{
+		type grasslands nomad_headquarters
+	}	
+	building
+	{
+		type barracks town_guard
+	}
+	building
+	{
+		type taverns inn
+	}
+	building
+	{
+		type market corn_exchange
+	}	
+}
+
 character	Sharuq of_the_Kimak, named character, male, leader, age 53, x 338, y 203 
 traits Factionleader 3 , LogisticalSkill 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 3 , GoodCommander 2 , HaveChilds 1 , StrategyDread 2 , PublicFaith 1 , GoodAdministrator 2 , ReligionStarter 1 , Royal_Blood_Cumans 1 , KingsAuthority 3 , HighPersonalSecurity 1 , MerchantSkills 1
 ancillaries spymaster, black_stallion
@@ -3416,6 +3464,17 @@ unit		Cuman Bodyguard				exp 3 armour 0 weapon_lvl 0
 unit		Turkomans					exp 1 armour 0 weapon_lvl 0	
 unit		Cuman Horse Militia			exp 7 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 0 armour 0 weapon_lvl 0
+
+; SAQSIN
+character	Turgut, named character, male, age 29, x 423, y 178 
+traits ReligionStarter 1 , LoyaltyStarter 1, GovernorInclination 1 , Intelligent 7 , GoodCommander 1 , GoodTrader 2 , Energetic 3 , ReligiousActivity 1 
+army
+unit		Kasogi Senior Militia		exp 4 armour 0 weapon_lvl 0
+unit		Chude Militia				exp 1 armour 0 weapon_lvl 0
+unit		Kasogi						exp 7 armour 0 weapon_lvl 0
+unit		Kasogi						exp 0 armour 0 weapon_lvl 0
+unit		Dismounted Cuman Militia	exp 7 armour 0 weapon_lvl 0
+unit		Dismounted Cuman Militia	exp 0 armour 0 weapon_lvl 0
 
 character	Feti, merchant, male, age 25, x 491, y 277 			; gold from Perm
 traits NaturalMerchantSkill 3 , MerchantCompetence 6
@@ -13392,53 +13451,6 @@ settlement castle
 	}
 }
 
-; SAQSIN - has HR cumans so hinterland_farms will grow only to lvl4.
-settlement
-{
-	level large_town
-	region Saqsin_Province
-
-	year_founded 0
-	population 8500
-	plan_set default_set
-	faction_creator cumans
-	building
-	{
-		type core_building wooden_wall
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-	building
-	{
-		type hinterland_farms farms1
-	}
-	building
-	{
-		type builders builders2
-	}
-	building
-	{
-		type water_supply water1_wells
-	}
-	building
-	{
-		type grasslands nomad_headquarters
-	}	
-	building
-	{
-		type barracks town_guard
-	}
-	building
-	{
-		type taverns inn
-	}
-	building
-	{
-		type market corn_exchange
-	}	
-}
 
 settlement castle
 {
@@ -15343,16 +15355,6 @@ unit		Hunters						exp 0 armour 0 weapon_lvl 0
 
 ;--- STEPPES  ----------------------------------------------------------------------------------------
 
-; SAQSIN
-character	sub_faction cumans, Turgut, named character, male, age 29, x 423, y 178 
-traits ReligionStarter 1 , LoyaltyStarter 1, GovernorInclination 1 , Intelligent 7 , GoodCommander 1 , GoodTrader 2 , Energetic 3 , ReligiousActivity 1 
-army
-unit		Kasogi Senior Militia		exp 4 armour 0 weapon_lvl 0
-unit		Chude Militia				exp 1 armour 0 weapon_lvl 0
-unit		Kasogi						exp 7 armour 0 weapon_lvl 0
-unit		Kasogi						exp 0 armour 0 weapon_lvl 0
-unit		Dismounted Cuman Militia	exp 7 armour 0 weapon_lvl 0
-unit		Dismounted Cuman Militia	exp 0 armour 0 weapon_lvl 0
 
 
 ;--- HRE ----------------------------------------------------------------------------------------
