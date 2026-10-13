@@ -450,15 +450,6 @@ local SETTS = {
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     -- Russia / Rus' (user, 14 Oct 2026): Russian names for Novgorod, Kievan Rus and rebels, Polish for Poland,
     -- Lithuanian for Lithuania, Latin for other Europeans, Greek, Turkish. Garrison EE Spear Militia.
-    { key = "izborsk", x = 279, y = 259, capital = "Pskov", level = 2, population = 7500,  -- old fortress town, existed 1132; Pskov region (user, 14 Oct)
-      names = { russia = "Izborsk", kievan_rus = "Izborsk", poland = "Izborsk", lithuania = "Izborskas", european = "Isborscum", greek = "Ízborsk", middle_eastern = "İzborsk", default = "Izborsk" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "porkhov", x = 291, y = 261, capital = "Pskov", level = 1, population = 500,  -- first mentioned 1239 - founded later; Pskov region (user, 14 Oct)
-      names = { russia = "Porkhov", kievan_rus = "Porkhov", poland = "Porchów", lithuania = "Porchovas", european = "Porchovia", greek = "Pórchov", middle_eastern = "Porhov", default = "Porkhov" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "velikie_luki", x = 299, y = 252, capital = "Pskov", level = 1, population = 500,  -- first mentioned 1166 - founded later; Pskov region (user, 14 Oct)
-      names = { russia = "Luki", kievan_rus = "Luki", poland = "Wielkie Łuki", lithuania = "Didieji Lukai", european = "Lucae Magnae", greek = "Velíkie Lúki", middle_eastern = "Velikiye Luki", default = "Luki" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "tver", x = 335, y = 255, capital = "Novgorod", level = 1, population = 500,  -- EU5 city, founded c. 1135
       names = { russia = "Tver'", kievan_rus = "Tver'", poland = "Twer", lithuania = "Tverė", european = "Tveria", greek = "Tvéri", middle_eastern = "Tver", default = "Tver'" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
@@ -720,8 +711,7 @@ local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia n
 local DUMP_PATHS = {    -- Russia (14 Oct 2026); Rostov moved to Novgorod (russia) in descr_strat
     { "Novgorod-Tver", 304, 267, 335, 255 }, { "Rostov-Moscow", 355, 259, 347, 248 }, { "Rostov-Beloozero", 355, 259, 343, 278 },
     { "Ryazan-Nizhny", 374, 239, 392, 253 }, { "Polotsk-Minsk", 282, 244, 275, 234 }, { "Halych-Przemysl", 262, 200, 245, 205 },
-    { "Mecca-Jeddah", 364, 1, 358, 5 }, { "AlAhsa-Muscat", 435, 29, 496, 13 },
-    { "Pskov-Izborsk", 283, 260, 279, 259 }, { "Pskov-Porkhov", 283, 260, 291, 261 }, { "Pskov-VLuki", 283, 260, 299, 252 }, { "Novgorod-Rostov", 304, 267, 355, 259 },
+    { "Mecca-Jeddah", 364, 1, 358, 5 }, { "AlAhsa-Muscat", 435, 29, 496, 13 }, { "Novgorod-Rostov", 304, 267, 355, 259 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
