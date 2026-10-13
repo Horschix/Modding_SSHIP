@@ -417,6 +417,49 @@ local SETTS = {
     { key = "jiroft", x = 493, y = 48, capital = "Kerman", level = 2, population = 7500,  -- rebels; west bank of the river
       names = { greek = "Tziróft", middle_eastern = "Cîruft", arabic = "Jiruft", european = "Camadi", default = "Jiroft" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    -- ARABIA, STEPPE, VOLGA (14 Oct 2026, user: all proposed + optional ones; towns founded after 1132 = level 1 / 500)
+    { key = "medina", x = 365, y = 23, capital = "Mecca", level = 2, population = 7500,  -- EU5 town; Egypt
+      names = { greek = "Iathrippa", middle_eastern = "Medine", arabic = "al-Madina", european = "Medina", default = "al-Madina" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "jeddah", x = 361, y = 1, capital = "Mecca", level = 2, population = 7500,  -- EU5 town, Mecca's port, map edge
+      names = { greek = "Tzidda", middle_eastern = "Cidde", arabic = "Judda", european = "Gedda", default = "Judda" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "khaybar", x = 360, y = 29, capital = "Mecca", level = 1, population = 1000,  -- oasis town (optional, user took it)
+      names = { greek = "Chaibar", middle_eastern = "Hayber", arabic = "Khaybar", european = "Chaibar", default = "Khaybar" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "qatif", x = 435, y = 37, capital = "Al_Ahsa", level = 2, population = 7500,  -- EU5 town; rebels
+      names = { greek = "Katif", middle_eastern = "Katif", arabic = "al-Qatif", european = "Catif", default = "al-Qatif" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "sudak", x = 329, y = 170, capital = "Chersonesos", level = 2, population = 7500,  -- EU5 town; Byzantium
+      names = { greek = "Sougdaía", middle_eastern = "Suğdak", arabic = "Sudaq", european = "Soldaia", default = "Sougdaía" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "kaffa", x = 333, y = 172, capital = "Chersonesos", level = 1, population = 500,  -- Genoese 1266 - founded later, level 1 / 500 (user)
+      names = { greek = "Theodosía", middle_eastern = "Kefe", arabic = "Kafa", european = "Caffa", default = "Kaffa" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "kerch", x = 336, y = 171, capital = "Chersonesos", level = 2, population = 7500,  -- EU5 town; 3 tiles from the strait (Ceuta lesson)
+      names = { greek = "Bósporos", middle_eastern = "Kerç", arabic = "Karsh", european = "Vosporo", default = "Bósporos" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "kursk", x = 338, y = 218, capital = "Chernigov", level = 2, population = 7500,  -- EU5 town; rebels
+      names = { greek = "Koúrsk", middle_eastern = "Kursk", arabic = "Kursk", european = "Kursk", default = "Kursk" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "bilyar", x = 442, y = 241, capital = "Bulgar", level = 3, population = 15000,  -- largest Volga Bulgar city; rebels
+      names = { greek = "Bilár", middle_eastern = "Bilär", arabic = "Bilyar", european = "Biliar", default = "Bilär" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "kazan", x = 434, y = 247, capital = "Bulgar", level = 1, population = 1000,  -- EU5 town, founding disputed; rebels
+      names = { greek = "Kazán", middle_eastern = "Kazan", arabic = "Qazan", european = "Casan", default = "Qazan" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "juketau", x = 448, y = 244, capital = "Bulgar", level = 1, population = 1000,  -- Bulgar town on the Kama; rebels
+      names = { greek = "Zoukotín", middle_eastern = "Cüketau", arabic = "Juketau", european = "Zhukotin", default = "Jüketau" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "astrakhan", x = 424, y = 182, capital = "Saqsin", level = 1, population = 500,  -- 13th c. - founded later; rebels
+      names = { greek = "Astrachán", middle_eastern = "Hacı Tarhan", arabic = "Hajji Tarkhan", european = "Gitarcan", default = "Xacitarxan" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "sarai", x = 407, y = 195, capital = "Saqsin", level = 1, population = 500,  -- 1330s - founded later; rebels
+      names = { greek = "Sarái", middle_eastern = "Saray-ı Cedid", arabic = "Saray al-Jadid", european = "Sarai", default = "Saray al-Jadid" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "saraychik", x = 449, y = 187, capital = "Aktobe", level = 1, population = 500,  -- 13th c. - founded later; Cumans
+      names = { greek = "Saraitzík", middle_eastern = "Saraycık", arabic = "Sarayjuq", european = "Saraichik", default = "Saraychik" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -430,6 +473,7 @@ local GARRISON = {
     moors     = { "Ahdath Militia", "Ahdath Militia" },       -- North Africa (user, 13 Oct)
     turks     = { "Ahdath Militia", "Ahdath Militia" },       -- Persia: cheapest militia (13 Oct)
     abbasid   = { "Shurtah Militia", "Shurtah Militia" },     -- Iraq: cheapest militia (13 Oct)
+    cumans    = { "EE Spear Militia", "EE Spear Militia" },   -- steppe: cheapest militia (14 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -627,11 +671,10 @@ end
 -------------------------------------------------------------------------
 local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
-local DUMP_PATHS = {    -- Lower Mesopotamia + Persia (13 Oct 2026)
-    { "Tabriz-Urmia", 411, 119, 396, 118 }, { "Tabriz-Ardabil", 411, 119, 428, 126 }, { "Baghdad-Hulwan", 396, 88, 404, 95 },
-    { "Basra-Arrajan", 421, 65, 438, 64 }, { "Kerman-Jiroft", 487, 64, 493, 48 }, { "Kerman-Hormuz", 487, 64, 488, 41 },
-    { "Ray-Jurjan", 449, 101, 472, 114 }, { "Shiraz-Firuzabad", 457, 57, 459, 49 },
-    { "Alamut-Lahijan", 438, 108, 434, 115 }, { "Ardabil-Lahijan", 428, 126, 434, 115 },
+local DUMP_PATHS = {    -- Arabia, steppe, Volga (14 Oct 2026)
+    { "Mecca-Medina", 364, 1, 365, 23 }, { "Mecca-Jeddah", 364, 1, 361, 1 }, { "AlAhsa-Qatif", 435, 29, 435, 37 },
+    { "Chersonesos-Kerch", 319, 167, 336, 171 }, { "Saqsin-Sarai", 423, 178, 407, 195 }, { "Aktobe-Saraychik", 445, 186, 449, 187 },
+    { "Bulgar-Bilyar", 433, 241, 442, 241 }, { "Chernigov-Kursk", 314, 218, 338, 218 }, { "Bulgar-Kazan", 433, 241, 434, 247 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

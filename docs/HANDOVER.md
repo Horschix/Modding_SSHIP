@@ -55,14 +55,14 @@ CAUCASUS DONE, WORKS (user, 13 Oct, test 2): 20 towns, all reachable after movin
 UPPER MESOPOTAMIA DONE (user moved on, 13 Oct): 14 towns.
 SYRIA AND THE LEVANT DONE (user, 13 Oct): 10 towns. New name key `arabic` (egypt / abbasid / moors).
 NORTH AFRICA DONE (user, 13 Oct): 31 towns.
-LOWER MESOPOTAMIA + PERSIA installed 13 Oct, read back identical: 34 towns after test 1 removals (Gladzor gone too); map round 4 opened the Gilan coast
-  (2 corridors + 2 river crossings in map_features.tga) for Lahijan - map.rwm to be deleted. Seljuk owners via ownerFrom for the Hamadan / Alamut regions. Waiting for the user's test in a new campaign
-  (DUMP has 8 Persia routes; read STARTSETT lines in full.log).
+LOWER MESOPOTAMIA + PERSIA DONE (user, 14 Oct): 34 towns.
+ARABIA + STEPPE + VOLGA installed 14 Oct, read back identical: 14 towns (Siberia: nothing on the map). No map edit.
+  Waiting for the user's test in a new campaign (DUMP has 9 routes; read STARTSETT lines in full.log).
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
-Leftover: delete `sship/settler_check.lua` on the PC (no longer required). DUMP stays on as the route checker.
+DUMP stays on as the route checker (settler_check.lua deleted by the user, 14 Oct).
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a
 farm / road queued in an extra settlement finishes after the hinterland flag is restored at turn start.

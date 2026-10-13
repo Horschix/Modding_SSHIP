@@ -239,3 +239,17 @@ other game regions later. The candidate list and every decision are in issue #4.
 - PERSIA TEST 1 (user, 13 Oct): removed Darab, Kazerun, Siraf, Esfarayen, Astarabad, Saveh, Dinavar, Ahvaz, Dezful,
   Samarra, and Gladzor in the Caucasus. Installed, read back identical: 34 towns in this region. DUMP Shiraz-Siraf ->
   Shiraz-Firuzabad.
+- PERSIA: approved (user, 14 Oct). settler_check.lua deleted on the PC (user).
+- ARABIA + STEPPE + VOLGA (+ Siberia) installed 14 Oct, read back identical (1 file, no map edit, map.rwm stays). EU5
+  (arabia_region, steppes_region, ural_region, west_siberia_region). User: take all proposed + optional; towns founded
+  after 1132 as level 1 / 500; skip Theodoro (2 tiles from Chersonesos) and Al-Hajr (Najd impassable on SSHIP).
+  Not possible: Chimgi-Tura (Siberia, GPS tile x 546 = east of the map), Aden / Taizz / Taif (south of the map edge).
+  Left out: Ar-Rabadha (ruined 930, not "founded later"), Tana (= Azaq). Fit: affine + IDW (Arabia on 11 settlements,
+  steppe on 17); Crimea is compressed - set by hand (relief 67 there = sea slope, normal).
+  Tiles: Mecca (Egypt): Medina 365,23 (2), Jeddah 361,1 (2, map edge), Khaybar 360,29 (1 / 1000); Al_Ahsa (rebels):
+  al-Qatif 435,37 (2); Chersonesos (Byz): Sudak 329,170 (2), Kaffa 333,172 (1 / 500), Kerch 336,171 (2; 3 tiles from
+  the strait); Chernigov (rebels): Kursk 338,218 (2); Bulgar (rebels): Bilyar 442,241 (3), Kazan 434,247 (1 / 1000),
+  Juketau 448,244 (1 / 1000); Saqsin (rebels): Astrakhan 424,182 (1 / 500), Sarai al-Jadid 407,195 (1 / 500); Aktobe
+  (Cumans): Saraychik 449,187 (1 / 500). 14 towns. BFS (swamp passable) reaches all from their capitals.
+  Garrisons: Arabs / Bulgars 2 Ahdath Militia, Crimea Byz 2 Contaratoi, Kursk / steppe rebels 2 EE Spear Militia,
+  new GARRISON cumans = 2 EE Spear Militia. DUMP_PATHS = 9 routes of this region. Waiting for the user's test.
