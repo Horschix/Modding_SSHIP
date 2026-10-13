@@ -52,7 +52,9 @@ and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SS
   (user: "we will add the settlements for other game regions later"). Details: `docs/notes/features/04_starting_settlements.md`.
 CAUCASUS DONE, WORKS (user, 13 Oct, test 2): 20 towns, all reachable after moving 5 off low-mountain tiles; Georgia's
   region towns level 1; Ganja, Sukhumi, Artanuji start as rebels (entry field `ownerFrom`); downgrades confirmed.
-  NEXT STEP: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
+UPPER MESOPOTAMIA installed 13 Oct, read back identical: 15 towns (EU5 Amid 3 / Mardin / Nusaybin + 12 extras), no
+  map edit, map.rwm stays; Tikrit starts rebel (ownerFrom Hasankeyf). Waiting for the user's test (new campaign).
+  THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.

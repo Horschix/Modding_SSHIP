@@ -143,3 +143,17 @@ other game regions later. The candidate list and every decision are in issue #4.
   Christian towns). Georgia keeps Gori, Dmanisi, Telavi, Akhaltsikhe (level 1).
 - CAUCASUS TEST 2 (user, 13 Oct): the five moved towns (Van, Ahlat, Erzincan, Gladzor, Shamakhi) are reachable now;
   the level downgrades (Georgia's towns, the three rebel towns) work. Caucasus finished; #4 stays open for the next region.
+- UPPER MESOPOTAMIA installed 13 Oct, read back identical (1 file, no map edit). EU5 jazira_area has Amid (city), Urfa
+  (= SSHIP Edessa), Mardin, Kozluk (towns), Mosul (= SSHIP), Nusaybin (city). Kozluk dropped (no 1132 evidence).
+  Extras checked on Wikipedia / known history (user: must have been town-sized): Mayyafariqin, Harran, Ras al-Ayn,
+  Saruj, Samosata, Tell Bashir, Cizre, Sinjar, Erbil, Al-Rahba, Tikrit, Kharput (user). Left out: Siirt (centre only
+  14th c.), Arzan, Dara, Balis, Qarqisiya, Balad; Anah and Birecik (user: no; Birecik is next to Tell Bashir).
+  SSHIP's Hasankeyf settlement already stands for Hasankeyf (rebel region of Amid / Mardin / Mayyafariqin).
+  Tiles (fit on 15 SSHIP settlements, IDW): Amid 366,119 (3, 15000), Mardin 370,115, Mayyafariqin 372,121 (Hasankeyf,
+  rebels); Kharput 359,124 (Erzurum, rebels); Nusaybin 374,113 (2, user), Harran 358,112, Ras al-Ayn 366,112 (Ar Raqqah,
+  Zengids); Saruj 353,113, Samosata 353,117, Tell Bashir 351,112 (Edessa, Jerusalem); Cizre 381,115, Sinjar 379,108,
+  Erbil 393,107, Al-Rahba 369,99 (Mosul, Zengids); Tikrit 391,96 (Mosul region, ownerFrom Hasankeyf = rebels, user).
+  All level 2 / 7500 except Amid. All on open ground (hills, fertile, sparse forest, or black = wilderness, which is
+  passable - SSHIP's Tayma stands on it), 3x3 relief <= 25. Garrisons: Zengids 2 Shurtah Militia, Jerusalem 2 Spear
+  Militia (user), rebels 2 Ahdath Militia. Names: EU5 names for Muslim owners, Latin for Jerusalem (Turbessel,
+  Sororgia, Carrhae ...), Greek for Byzantium. DUMP_PATHS = 8 Mesopotamia routes (getMovePath unreliable on long ones).

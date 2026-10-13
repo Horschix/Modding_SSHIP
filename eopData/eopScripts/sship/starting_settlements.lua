@@ -147,6 +147,52 @@ local SETTS = {
     { key = "beylagan", x = 419, y = 132, capital = "Baku", level = 2, population = 7500,
       names = { greek = "Beylagan", middle_eastern = "Beylagan", european = "Beylagan", default = "Beylagan" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    -- Upper Mesopotamia (13 Oct 2026): EU5 Amid / Mardin / Nusaybin + user-approved extras
+    { key = "amid", x = 366, y = 119, capital = "Hasankeyf", level = 3, population = 15000,  -- EU5 city; Inalids
+      names = { greek = "Ámida", middle_eastern = "Amid", european = "Amida", default = "Amid" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "mardin", x = 370, y = 115, capital = "Hasankeyf", level = 2, population = 7500,  -- EU5 town; Artuqid seat
+      names = { greek = "Mardē", middle_eastern = "Mardin", european = "Mardin", default = "Mardin" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "mayyafariqin", x = 372, y = 121, capital = "Hasankeyf", level = 2, population = 7500,  -- Marwanid capital, Artuqid from 1118
+      names = { greek = "Martyrópolis", middle_eastern = "Mayyafariqin", european = "Martyropolis", default = "Mayyafariqin" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "tikrit", x = 391, y = 96, capital = "Mosul", ownerFrom = "Hasankeyf", level = 2, population = 7500,  -- Seljuk governor in 1132 -> starts rebel (user)
+      names = { greek = "Tikrit", middle_eastern = "Tikrit", european = "Tikrit", default = "Tikrit" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "kharput", x = 359, y = 124, capital = "Erzurum", level = 2, population = 7500,  -- Artuqid town (user)
+      names = { greek = "Charpetē", middle_eastern = "Harput", european = "Harput", default = "Harput" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "nusaybin", x = 374, y = 113, capital = "Ar_Raqqah", level = 2, population = 7500,  -- EU5 city, level 2 (user)
+      names = { greek = "Nísibis", middle_eastern = "Nusaybin", european = "Nisibis", default = "Nusaybin" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "harran", x = 358, y = 112, capital = "Ar_Raqqah", level = 2, population = 7500,
+      names = { greek = "Kárrhai", middle_eastern = "Harran", european = "Carrhae", default = "Harran" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "ras_ayn", x = 366, y = 112, capital = "Ar_Raqqah", level = 2, population = 7500,
+      names = { greek = "Rhésaina", middle_eastern = "Ras al-Ayn", european = "Resaina", default = "Ras al-Ayn" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "saruj", x = 353, y = 113, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa
+      names = { greek = "Bátnai", middle_eastern = "Suruç", european = "Sororgia", default = "Suruç" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "samosata", x = 353, y = 117, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa
+      names = { greek = "Samósata", middle_eastern = "Samsat", european = "Samosata", default = "Samsat" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "tell_bashir", x = 351, y = 112, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa
+      names = { greek = "Telbésar", middle_eastern = "Tell Bashir", european = "Turbessel", default = "Tell Bashir" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "cizre", x = 381, y = 115, capital = "Mosul", level = 2, population = 7500,
+      names = { greek = "Bezabdē", middle_eastern = "Cizre", european = "Bezabde", default = "Cizre" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "sinjar", x = 379, y = 108, capital = "Mosul", level = 2, population = 7500,
+      names = { greek = "Síngara", middle_eastern = "Sinjar", european = "Singara", default = "Sinjar" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "erbil", x = 393, y = 107, capital = "Mosul", level = 2, population = 7500,
+      names = { greek = "Árbēla", middle_eastern = "Erbil", european = "Arbela", default = "Erbil" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "rahba", x = 369, y = 99, capital = "Mosul", level = 2, population = 7500,  -- Zengi's governor from 1127
+      names = { greek = "Al-Rahba", middle_eastern = "Al-Rahba", european = "Rahaba", default = "Al-Rahba" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -154,6 +200,8 @@ local GARRISON = {
     byzantium = { "Contaratoi", "Contaratoi" },
     rum       = { "Ahdath Militia", "Ahdath Militia" },
     georgia   = { "georgian light spearmen", "georgian light spearmen" },   -- cheapest local (user, 13 Oct)
+    zengid    = { "Shurtah Militia", "Shurtah Militia" },     -- cheapest militia (user, 13 Oct)
+    jerusalem = { "Spear Militia", "Spear Militia" },         -- user, 13 Oct
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -348,12 +396,12 @@ end
 -- TEMPORARY terrain dump (13 Oct 2026): what the ENGINE blocks. Logged once per game session at map load.
 -------------------------------------------------------------------------
 local DUMP = true
-local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus needed no map edit
-local DUMP_PATHS = {
-    { "Ani-Van", 393, 136, 391, 122 }, { "Erzurum-Ahlat", 374, 134, 380, 126 },
-    { "Erzurum-Erzincan", 374, 134, 361, 135 }, { "Kutaisi-Sukhumi", 386, 151, 374, 155 },
-    { "Tbilisi-Ganja", 400, 146, 411, 138 }, { "Ani-Nakhchivan", 393, 136, 402, 127 },
-    { "Baku-Shaki", 434, 137, 416, 140 }, { "Baku-Barda", 434, 137, 416, 136 },
+local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
+local DUMP_PATHS = {    -- Upper Mesopotamia (13 Oct 2026)
+    { "Hasankeyf-Amid", 370, 118, 366, 119 }, { "Hasankeyf-Mayyafariqin", 370, 118, 372, 121 },
+    { "Erzurum-Kharput", 374, 134, 359, 124 }, { "Mosul-Erbil", 387, 108, 393, 107 },
+    { "Mosul-Tikrit", 387, 108, 391, 96 }, { "Raqqah-Rahba", 361, 106, 369, 99 },
+    { "Edessa-Samosata", 355, 114, 353, 117 }, { "Edessa-TellBashir", 355, 114, 351, 112 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
