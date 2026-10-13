@@ -17,3 +17,7 @@ require('sship.fort_settlement')
 
 -- TEMPORARY check for the settler units (13 Oct 2026). Delete the next line when done.
 require('sship.settler_check')
+
+-- Towns and cities that already existed in 1132, added at the start of a NEW campaign (Modding_SSHIP #4).
+-- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
+require('sship.starting_settlements')

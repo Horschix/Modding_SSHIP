@@ -11,7 +11,9 @@ and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SS
 - #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
 - #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - CLOSED 13 Oct, works as intended
   (user). Settlers recruitable from turn 2 of a new campaign - accepted by the user.
-NEXT STEP: none open on the board. Leftover: remove the TEMPORARY `require('sship.settler_check')` line (third require
+- #4 Settlements that existed in 1132 (Anatolia first) - TEST with Prousa installed 13 Oct, needs a NEW campaign.
+  See the section "Starting settlements" at the end.
+NEXT STEP: read the user's #4 test (STARTSETT lines in full.log). Leftover: remove the TEMPORARY `require('sship.settler_check')` line (third require
 line of `luaPluginScript.lua`) and `sship/settler_check.lua` - only logs SETTCHK lines; ask the user first.
 Still to watch in play: SSHIP's own scripts with a second settlement in a region over many turns; the outpost's map
 model, battle map and buildings; disband refund, save/load and AI blocking of #1.
@@ -175,3 +177,30 @@ Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures
 - "It works as intended now, but only at turn 2 which is fine." Turn 1 of a new campaign has no settler stock: the
   stock is filled at turn start, and on a new game the counters are only set afterwards (map loaded). Accepted.
 - Issue #3 closed. settler_check.lua still loaded (leftover above).
+
+## Starting settlements - towns that existed in 1132 (issue #4), TEST with Prousa installed 13 Oct 2026
+User wish: towns and cities of EU5's 1337 start that already existed at SSHIP's start (summer 1132) become extra
+(minor) settlements from the start of a NEW campaign. Each one checked on Wikipedia. Anatolia first (test area),
+other game regions later. The candidate list and every decision are in issue #4.
+- Rules (user): EU5 city -> level 3 + `stone_wall`, 15000 people; EU5 town -> level 2 + `wooden_wall`, 7500 people.
+  Poimanenon (Manyas): tier 1, 1000 people, on Balıkesir's tile (39.647 N, 27.888 E - tile still to compute).
+- Names: Greek (greek culture), Turkish (middle_eastern), Latin (the three European cultures), faction-specific
+  names possible - the same rule as SSHIP's `settlementSituation.updateName` (which only knows its own settlements
+  and logs a harmless warning for ours). EU5 sources: `game/main_menu/localization/english/location_names/`
+  (`location_names_l_english.yml` = the Turkish base names, `location_names_greek_l_english.yml`).
+- Placement: GPS (Wikipedia, same as Google Maps) -> SSHIP tile with an affine fit on 15 SSHIP settlements
+  (residual <= 2 tiles) plus inverse-distance correction. Settlement tiles of SSHIP = black pixels of
+  `map_regions.tga` (510 x 288, y flipped). Tiles checked on `map_ground_types.tga` / `map_heights.tga` (2x+1 size).
+  Prousa = 285,136 (plain at the north foot of Uludağ, which is at 286-291,134-135); Poimanenon GPS = 277,134.
+- Alanya and Kastamonu: impassable land on SSHIP's map (user) - needs ground type / height edits and a rebuilt
+  map.rwm before they can be added.
+- Script `eopData/eopScripts/sship/starting_settlements.lua` (log prefix `STARTSETT`) + FOURTH require line of
+  `luaPluginScript.lua`. Table `SETTS` (key, x, y, capital = region's main settlement for the owner, level,
+  population, names). `onNewGameLoaded`: creates each entry once with `owner:addSettlement` (skips a name that
+  exists), adds the wall building, sets population and the name. Names applied again at map load, after a
+  capture and at every faction's turn start (a save may not keep localizedName - unknown).
+  Internal names `hxstart_<key>`. Mock dry run OK (create, no double, Greek/Turkish/Latin, rebels keep the name).
+- UNKNOWN until tested: does addSettlement at level 3 work at new-game time; walls created or already there;
+  population accepted; the city model / battle map; name survives save/load; SSHIP's scripts with 2+ settlements
+  in a region (same open point as the outposts).
+- Revert: delete the fourth require line (settlements already created stay in that save).
