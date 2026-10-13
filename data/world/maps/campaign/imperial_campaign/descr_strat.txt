@@ -8546,6 +8546,49 @@ settlement
 	}
 }
 
+settlement castle
+{
+	level town
+	region Rustov_Province
+
+	year_founded 0
+	population 3100
+	plan_set default_set
+	faction_creator russia
+	building
+	{
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type hinterland_farms farms1
+	}
+	building
+	{
+		type rus_monastery rus_monastery_2skit
+	}	
+	building
+	{
+		type builders builders1
+	}
+	building
+	{
+		type chude_building chude2_town		
+	}	
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type missiles bowyer
+	}
+}
+
 ; between POLOCK and NOVGOROD
 character	Svyatoslav Chernigovskii, named character, male, heir, battle_model kiev_duke, age 50, x 294, y 261
 traits GovernorInclination 1 , GoodCommander 1 , ReligionStarter 1 , LoyaltyStarter 1 , Royal_Blood_Russian 1 , Factionleader 2 , LogisticalSkill 2 , WifeIsCumans 1 
@@ -8583,6 +8626,14 @@ traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , Intelligent 
 army
 unit		EE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Senior Mounted Militia		exp 1 armour 0 weapon_lvl 0
+
+; ROSTOV governor (moved from kievan_rus with Rostov, user 14 Oct 2026)
+character	Volodar, general, male, age 28, x 355, y 259 
+army
+unit		Rus Senior Militia			exp 0 armour 0 weapon_lvl 0
+unit		Chude Militia				exp 1 armour 0 weapon_lvl 0
+unit		Chude Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
 character	Petr Odinets, diplomat, male, age 22, x 302, y 267		; diplomat for Novgorod
 traits NaturalDiplomatSkill 1 
@@ -9951,49 +10002,6 @@ settlement
 	}
 }
 
-settlement castle
-{
-	level town
-	region Rustov_Province
-
-	year_founded 0
-	population 3100
-	plan_set default_set
-	faction_creator russia
-	building
-	{
-		type core_castle_building wooden_castle
-	}
-	building
-	{
-		type hinterland_farms farms1
-	}
-	building
-	{
-		type rus_monastery rus_monastery_2skit
-	}	
-	building
-	{
-		type builders builders1
-	}
-	building
-	{
-		type chude_building chude2_town		
-	}	
-	building
-	{
-		type castle_barracks mustering_hall
-	}
-	building
-	{
-		type equestrian stables
-	}
-	building
-	{
-		type missiles bowyer
-	}
-}
-
 settlement
 {
 	level town
@@ -10073,13 +10081,6 @@ unit		Junior Militia				exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
 ; ROSTOV
-character	Volodar, general, male, age 28, x 355, y 259 
-army
-unit		Rus Senior Militia			exp 0 armour 0 weapon_lvl 0
-unit		Chude Militia				exp 1 armour 0 weapon_lvl 0
-unit		Chude Militia				exp 0 armour 0 weapon_lvl 0
-unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
-
 ; SUZDAL
 character	Yurii Monomakh, named character, male, age 44, x 364, y 252 
 traits ReligionStarter 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , HaveChilds 1 , Energetic 1 , PublicFaith 1 , GoodBuilder 1 , Disloyal 1 , IWantTheCrown 1 

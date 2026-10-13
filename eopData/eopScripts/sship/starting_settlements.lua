@@ -421,11 +421,8 @@ local SETTS = {
     { key = "medina", x = 365, y = 23, capital = "Mecca", level = 2, population = 7500,  -- EU5 town; Egypt
       names = { greek = "Iathrippa", middle_eastern = "Medine", arabic = "al-Madina", european = "Medina", default = "al-Madina" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "jeddah", x = 361, y = 1, capital = "Mecca", level = 2, population = 7500,  -- EU5 town, Mecca's port, map edge
+    { key = "jeddah", x = 358, y = 5, capital = "Mecca", level = 2, population = 7500,  -- EU5 town, Mecca's port, map edge
       names = { greek = "Tzidda", middle_eastern = "Cidde", arabic = "Judda", european = "Gedda", default = "Judda" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "khaybar", x = 360, y = 29, capital = "Mecca", level = 1, population = 1000,  -- oasis town (optional, user took it)
-      names = { greek = "Chaibar", middle_eastern = "Hayber", arabic = "Khaybar", european = "Chaibar", default = "Khaybar" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "qatif", x = 435, y = 37, capital = "Al_Ahsa", level = 2, population = 7500,  -- EU5 town; rebels
       names = { greek = "Katif", middle_eastern = "Katif", arabic = "al-Qatif", european = "Catif", default = "al-Qatif" },
@@ -453,9 +450,6 @@ local SETTS = {
     { key = "tver", x = 335, y = 255, capital = "Novgorod", level = 1, population = 500,  -- EU5 city, founded c. 1135
       names = { russia = "Tver'", kievan_rus = "Tver'", poland = "Twer", lithuania = "Tverė", european = "Tveria", greek = "Tvéri", middle_eastern = "Tver", default = "Tver'" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "torzhok", x = 328, y = 257, capital = "Novgorod", level = 1, population = 1000,  -- Novyi Torg, first mentioned 1139 (doubtful)
-      names = { russia = "Novyi Torg", kievan_rus = "Novyi Torg", poland = "Torżek", lithuania = "Toržokas", european = "Torzocum", greek = "Torzhók", middle_eastern = "Torjok", default = "Novyi Torg" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "moscow", x = 347, y = 248, capital = "Rustov", level = 1, population = 500,  -- EU5 city, first mentioned 1147
       names = { russia = "Moskva", kievan_rus = "Moskva", poland = "Moskwa", lithuania = "Maskva", european = "Moscovia", greek = "Moschóbion", middle_eastern = "Moskova", default = "Moskva" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
@@ -464,9 +458,6 @@ local SETTS = {
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "beloozero", x = 343, y = 278, capital = "Rustov", level = 2, population = 7500,  -- existed 1132
       names = { russia = "Beloozero", kievan_rus = "Beloozero", poland = "Białe Jezioro", lithuania = "Baltežeris", european = "Bieloosero", greek = "Belóozero", middle_eastern = "Akgöl", default = "Beloozero" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "vladimir", x = 364, y = 249, capital = "Suzdal", level = 2, population = 7500,  -- EU5 town, 3 tiles from Suzdal (user ok)
-      names = { russia = "Vladimir", kievan_rus = "Vladimir", poland = "Włodzimierz Zaleski", lithuania = "Vladimiras", european = "Vladimiria", greek = "Vladímir", middle_eastern = "Vladimir", default = "Vladimir" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "murom", x = 379, y = 247, capital = "Suzdal", level = 2, population = 7500,  -- existed 1132
       names = { russia = "Murom", kievan_rus = "Murom", poland = "Murom", lithuania = "Muromas", european = "Muroma", greek = "Moúrom", middle_eastern = "Murom", default = "Murom" },
@@ -495,20 +486,11 @@ local SETTS = {
     { key = "przemysl", x = 245, y = 205, capital = "Halych", level = 2, population = 7500,  -- existed 1132; rebels
       names = { russia = "Peremyshl'", kievan_rus = "Peremyshl'", poland = "Przemyśl", lithuania = "Pšemislis", european = "Premislia", greek = "Peremýsl", middle_eastern = "Peremişl", default = "Peremyshl'" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "novgorod_seversky", x = 320, y = 222, capital = "Chernigov", level = 2, population = 7500,  -- existed 1132; rebels
-      names = { russia = "Novgorod-Severskii", kievan_rus = "Novgorod-Severskii", poland = "Nowogród Siewierski", lithuania = "Naugardas Severskis", european = "Novogardia Severiae", greek = "Nóvgorod Severskí", middle_eastern = "Novgorod-Seversk", default = "Novgorod-Severskii" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "starodub", x = 317, y = 225, capital = "Chernigov", level = 2, population = 7500,  -- existed 1132; rebels
       names = { russia = "Starodub", kievan_rus = "Starodub", poland = "Starodub", lithuania = "Starodubas", european = "Starodubum", greek = "Starodoúb", middle_eastern = "Starodub", default = "Starodub" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "toropets", x = 305, y = 252, capital = "Smolensk", level = 1, population = 1000,  -- first mention disputed (doubtful)
       names = { russia = "Toropets", kievan_rus = "Toropets", poland = "Toropiec", lithuania = "Toropecas", european = "Toropecia", greek = "Torópets", middle_eastern = "Toropets", default = "Toropets" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "bryansk", x = 327, y = 230, capital = "Smolensk", level = 1, population = 1000,  -- Debryansk, first mentioned 1146
-      names = { russia = "Debryansk", kievan_rus = "Debryansk", poland = "Briańsk", lithuania = "Brianskas", european = "Brianscum", greek = "Briánsk", middle_eastern = "Bryansk", default = "Debryansk" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "poltava", x = 330, y = 203, capital = "Pereyaslav", level = 1, population = 500,  -- EU5 town, first mentioned 1174
-      names = { russia = "Ltava", kievan_rus = "Ltava", poland = "Połtawa", lithuania = "Poltava", european = "Pultava", greek = "Póltava", middle_eastern = "Poltava", default = "Ltava" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
 }
 
@@ -723,10 +705,10 @@ end
 -------------------------------------------------------------------------
 local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
-local DUMP_PATHS = {    -- Russia (14 Oct 2026)
+local DUMP_PATHS = {    -- Russia (14 Oct 2026); Rostov moved to Novgorod (russia) in descr_strat
     { "Novgorod-Tver", 304, 267, 335, 255 }, { "Rostov-Moscow", 355, 259, 347, 248 }, { "Rostov-Beloozero", 355, 259, 343, 278 },
     { "Ryazan-Nizhny", 374, 239, 392, 253 }, { "Polotsk-Minsk", 282, 244, 275, 234 }, { "Halych-Przemysl", 262, 200, 245, 205 },
-    { "Smolensk-Bryansk", 309, 241, 327, 230 }, { "Pereyaslav-Poltava", 305, 205, 330, 203 }, { "Novgorod-Torzhok", 304, 267, 328, 257 },
+    { "Mecca-Jeddah", 364, 1, 358, 5 }, { "Novgorod-Rostov", 304, 267, 355, 259 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

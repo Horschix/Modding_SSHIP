@@ -273,3 +273,12 @@ other game regions later. The candidate list and every decision are in issue #4.
   (1/500). Others level 2 / 7500. Moscow / Tver: founded-after rule (1/500), user did not object. All reachable in the BFS model.
   Names (user): Russian for russia / kievan_rus / rebels, Polish for poland, Lithuanian for lithuania, Latin, Greek, Turkish.
   GARRISON russia / kievan_rus = 2 EE Spear Militia (rebels too). DUMP_PATHS = 9 Russia routes. Waiting for the user's test.
+- RUSSIA fix 1 (user, 14 Oct), installed, both files read back identical: removed Vladimir ("Suzdal" read as Vladimir, the
+  town 3 tiles from Suzdal - CONFIRM), Bryansk (Debryansk), Torzhok (Novyi Torg), Poltava (Ltava), Novgorod-Seversky, and
+  Khaybar (Arabia). ROSTOV given to Novgorod (russia) in descr_strat: settlement block moved from kievan_rus to the end of
+  the russia settlements, governor Volodar + army moved to the russia characters (campaign_script has no Rostov
+  reference). So Beloozero, Vologda and Moscow (region Rustov) start Novgorodian. Jeddah 361,1 -> 358,5 (user: 4 up,
+  3 west; low fertile, reachable from Mecca in 6). 14 Russia towns. NEW campaign; map.rwm can stay.
+  PROPOSED, not installed: Pskov area (Izborsk 279,259; Porkhov; Velikiye Luki; Tartu / Otepaa in Kolyvan region;
+  Koknese / Jersika in Riga region) and Oman / Gulf (Sohar 482,18, Julfar 478,29, Muscat 496,13 (inland, relief 45),
+  Qatar 446,31; Bahrain has no island on SSHIP's map; Abu Dhabi founded 1761).
