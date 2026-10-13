@@ -1,15 +1,27 @@
 # Handover - SSHIP submod
 
-Last updated 10 Oct 2026 (first session). The user's standing rules and the tooling notes are in
+Last updated 13 Oct 2026 (first session, 10-13 Oct). Read this first in a new session. The user's standing rules and the tooling notes are in
 `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR` and apply here too; this file only holds what is SSHIP-specific.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
+
+## Where things stand - START HERE
+Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
+and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
+- #1 Recruitment costs population - CLOSED, works in game (user, 13 Oct).
+- #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
+- #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - OPEN, NOT built. NEXT STEP.
+Still to watch in play: SSHIP's own scripts with a second settlement in a region over many turns; the outpost's map
+model, battle map and buildings; disband refund, save/load and AI blocking of #1.
+- Logs: our lines (prefixes `POPREC`, `FORTSETT`) are in `mods\sship\full.log` (about 12 MB; staging often needs
+  2-3 tries). `mods\sship\eop.log` is SSHIP's own Lua log. Read the log after every user test, before he restarts.
+- A new session starts with no folder connected: ask for `...\Medieval II Total War\mods` (covers SSHIP and EUR).
+- `luaPluginScript.lua` ends with two require lines: population_recruitment, fort_settlement. Revert = delete the line.
 
 ## Recruitment costs population (10 Oct 2026) - how it works
 User wish: port the population cost for recruitment from EUR (Modding_DAC-EUR issue #5) to SSHIP.
 Minimums stay 400 (player) / 1000 (AI) - user decision.
-- INSTALLED 10 Oct, read back and compared byte for byte, NOT yet started in game:
-  `eopData\eopScripts\sship\population_recruitment.lua` (log prefix `POPREC`, written with `M2TWEOP.logGame` -
-  check whether it lands in `logs\system.log.txt` or in `mods\sship\eop.log`) and one
+- INSTALLED 10 Oct, read back and compared byte for byte. WORKS in game (user, 13 Oct: queue / cancel seen in the log):
+  `eopData\eopScripts\sship\population_recruitment.lua` (log prefix `POPREC`, lands in `mods\sship\full.log`) and one
   `require('sship.population_recruitment')` line at the END of `eopData\eopScripts\luaPluginScript.lua`
   (after `require('sship.main')`, which defines the event and save/load functions the script wraps).
 - Revert: delete the require line (original loader in `backups/2026-10-10_original/`).
@@ -22,8 +34,7 @@ Minimums stay 400 (player) / 1000 (AI) - user decision.
   queue / trained / disbanded events (`populationCap.lua` is an unfinished army cap). 199 settlements start with
   800-101000 people (median 7900; 3 below 1000, 13 below 1500); units 20-80 soldiers in the unit file.
 - NOT checked: whether SSHIP scripts disband or replace PLAYER units (would refund men never charged); whether an
-  existing SSHIP save loads cleanly (state simply starts empty). No Lua in the session: the file was not syntax-checked,
-  only diffed against the EUR script that runs in game.
+  existing SSHIP save loads cleanly (state simply starts empty). Passes `loadfile` with the session's Lua 5.1.
 
 ## Tooling found on 10 Oct
 - A Lua 5.1 can be built in the session (see the EUR handover): `git clone --depth 1 --branch v5.1.1 https://github.com/lua/lua`,
@@ -32,12 +43,12 @@ Minimums stay 400 (player) / 1000 (AI) - user decision.
 - EUR note of 10 Oct: a turn-end crash in EUR came right after two `onRemoveFromUnitQueue` events (cause open, trace
   lines added there). SSHIP runs the same population code - read the log before a restart if SSHIP crashes at turn end.
 
-## Forts -> outposts (minor settlements), 10 Oct 2026 - STEP 1 of 2 installed
+## Forts -> outposts (minor settlements) - STEP 1 of 2 WORKS (issues #2, #3)
 User wish: port EUR's "fort upgradable to a minor settlement" (Modding_DAC-EUR #35). Decisions: two steps; fort
 price 2000; founding an outpost costs 5000 in the final version; settlers = FOUR units, one each for catholic,
 muslim, orthodox and pagan factions (numbers as in EUR unless he says otherwise: 250 men on his unit size, cost 300,
 upkeep 100, 500 men needed, player only).
-STEP 1 = TEST VERSION, INSTALLED 10 Oct, read back and compared byte for byte, NOT yet started in game:
+STEP 1 = TEST VERSION, INSTALLED 10 Oct (fix 13 Oct), WORKS in game (user, 13 Oct):
 - `data\descr_campaign_db.xml`: `can_build_forts` false -> true (`destroy_empty_forts` was already true: empty forts
   vanish). `data\descr_cultures.txt`: `fort_cost` 20000 -> 2000 (5 cultures). Originals in `backups/2026-10-10_original/data/`.
   SSHIP's starting map has no forts. The AI may build forts now too (`allow_enemy_forts` stays false).
@@ -50,11 +61,10 @@ STEP 1 = TEST VERSION, INSTALLED 10 Oct, read back and compared byte for byte, N
   marker building (not in SSHIP); only the player's OWN forts count; window uses SSHIP's `SCREEN` size; EUR's
   starting-fort block and fort-button override dropped. Dry-run against a mocked game in the session: full
   sequence ran (step out, fort deleted, settlement added, walk in).
-- WHAT THE TEST MUST SHOW: does SSHIP cope with a second settlement in a region? SSHIP's own Lua loops over
-  settlements in about 50 places and none checks `isMinorSettlement`. Read `logs\system.log.txt` / `mods\sship\eop.log`
-  after the test for Lua errors. Also unseen: map model, battle map, what can be built in the outpost, whether
-  the fort button shows at all, whether campaign_db / cultures changes need a new campaign.
-STEP 2 (not built): four settler units + recruit lines + `TEST = false`.
+- STILL OPEN after the working test: does SSHIP cope LONG-TERM with a second settlement in a region? SSHIP's own Lua loops over
+  settlements in about 50 places and none checks `isMinorSettlement`. Read `mods\sship\full.log` for Lua errors. Also unreported: map model, battle map, what can be built in the outpost. The fort
+  changes worked in the user's existing Byzantine campaign (no new campaign was needed).
+STEP 2 (issue #3, not built): four settler units + recruit lines + `TEST = false`.
 - 494 of 500 unit slots are used in `data\export_descr_unit.txt` - four fit.
 - `data XII\data` and `data XIII\data` hold their OWN `export_descr_unit.txt` (era variants, swapped in by the
   launcher presumably): the settler units must go into all three files.
@@ -75,3 +85,4 @@ STEP 2 (not built): four settler units + recruit lines + `TEST = false`.
   wherever he stands; walking back in uses whoever of them stands within 2 tiles.
 - Unrelated: SSHIP's own building file logs many "Script Error ... export_descr_buildings.txt, at line 44774" at start -
   not ours (that file is untouched).
+- RESULT (user, 13 Oct): "it works" - founding from inside the fort now goes through. Issues #1 and #2 closed.
