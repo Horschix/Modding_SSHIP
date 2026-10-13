@@ -134,3 +134,15 @@ Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures
   (only the 40 settler lines changed). Expected: settlers recruitable from the player's next turn.
 - If they still do not appear after a turn end: check `freeze_recr_pool` / the 64-entry recruitment limit per
   settlement, or give the stock from Lua at the player's turn start.
+
+### Second test of the settlers (user, 13 Oct, after the refill fix): still not in the recruitment panel
+- User started ANOTHER new Byzantine campaign (eop.log: "NEW GAME CREATED" 16:16) and played one turn: settlers still
+  missing. `is_the_player` is set for byzantium at its pre-turn (seen in eop.log). No POPREC / settler lines in full.log.
+- The game also crashed when closed. full.log ends with the normal shutdown lines (trigger statistics), eop.log with
+  "Scroll closed" lines - nothing points at our scripts. Watch whether it repeats.
+- Suspect: the engine keeps at most 64 recruitment capabilities per settlement (LuaDocs: getRecruitmentCapability
+  "max 64!") and SSHIP's lists are long - lines past 64 may be dropped.
+- CHECK installed 13 Oct, read back identical: `eopData\eopScripts\sship\settler_check.lua` + a THIRD require line in
+  `luaPluginScript.lua` (marked TEMPORARY). For each player settlement selected / recruitment panel opened (once per
+  turn) it logs `SETTCHK` lines: is_the_player, number of capabilities and pools, the settler capability and stock if
+  present, and the last 5 capabilities. Changes nothing. Remove the require line after the diagnosis.

@@ -14,3 +14,6 @@ require('sship.population_recruitment')
 -- Forts can be turned into outposts (minor settlements). Must stay AFTER require('sship.main').
 -- To switch it off, delete the next line.
 require('sship.fort_settlement')
+
+-- TEMPORARY check for the settler units (13 Oct 2026). Delete the next line when done.
+require('sship.settler_check')
