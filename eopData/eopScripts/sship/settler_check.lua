@@ -41,7 +41,8 @@ function SC.check(sett, why)
         log("unit file: " .. SETTLERS[i] .. " index " .. tostring(ok and idx or "ERROR " .. tostring(idx)))
     end
     local counter = "?"
-    pcall(function() counter = M2TWEOP.getScriptCounter("is_the_player") end)
+    pcall(function() counter = M2TWEOP.getScriptCounter("is_the_player") .. ", hx_player_" .. tostring(get(owner, "name"))
+        .. " " .. M2TWEOP.getScriptCounter("hx_player_" .. tostring(get(owner, "name"))) end)
     local caps = get(sett, "recruitmentCapabilityNum") or -1
     local pools = get(sett, "recruitmentPoolCount") or -1
     log(why .. ": " .. key .. " owner " .. tostring(get(owner, "name")) .. ", is_the_player " .. tostring(counter)

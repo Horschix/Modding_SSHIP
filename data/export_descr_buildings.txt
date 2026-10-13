@@ -571,11 +571,36 @@ building core_building
       convert_to 1
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; WOODEN PALLISADE - GENERAL
 
@@ -762,11 +787,36 @@ building core_building
       convert_to 2
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; WOODEN WALL - GENERAL
         wall_level 1
@@ -956,11 +1006,36 @@ building core_building
     {
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; STONE WALL - GENERAL
 
@@ -1151,11 +1226,36 @@ building core_building
     {
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; LARGE STONE WALL - GENERAL
 		wall_level 3
@@ -1342,11 +1442,36 @@ building core_building
     {
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; HUGE STONE WALL - GENERAL
 
@@ -1522,11 +1647,36 @@ building core_castle_building
     {
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; MOTTE AND BAILEY - GENERAL
 
@@ -1701,11 +1851,36 @@ building core_castle_building
       convert_to 0
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; WOODEN CASTLE - GENERAL
 		wall_level 1
@@ -1881,11 +2056,36 @@ building core_castle_building
       convert_to 1
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; CASTLE - GENERAL
 		wall_level 2
@@ -2057,11 +2257,36 @@ building core_castle_building
       convert_to 2
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; FORTRESS - GENERAL
 		wall_level 3
@@ -2232,11 +2457,36 @@ building core_castle_building
       convert_to 2
       capability
       {
-;--- Modding_SSHIP #3: settlers, player only
-        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, sicily, denmark, scotland, france, hre, england, portugal, poland, spain, hungary, aragon, norway, jerusalem, pisa, papal_states, } and event_counter is_the_player 1
-        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, russia, kievan_rus, serbia, georgia, } and event_counter is_the_player 1
-        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, egypt, turks, moors, zengid, rum, } and event_counter is_the_player 1
-        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, lithuania, } and event_counter is_the_player 1
+;--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { venice, } and event_counter hx_player_venice 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { sicily, } and event_counter hx_player_sicily 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { denmark, } and event_counter hx_player_denmark 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { scotland, } and event_counter hx_player_scotland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { france, } and event_counter hx_player_france 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hre, } and event_counter hx_player_hre 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { england, } and event_counter hx_player_england 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { portugal, } and event_counter hx_player_portugal 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { poland, } and event_counter hx_player_poland 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { spain, } and event_counter hx_player_spain 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { hungary, } and event_counter hx_player_hungary 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { aragon, } and event_counter hx_player_aragon 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { norway, } and event_counter hx_player_norway 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { jerusalem, } and event_counter hx_player_jerusalem 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { pisa, } and event_counter hx_player_pisa 1
+        recruit_pool "Catholic Settlers"  2   1   2  0  requires factions { papal_states, } and event_counter hx_player_papal_states 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { byzantium, } and event_counter hx_player_byzantium 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { russia, } and event_counter hx_player_russia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { kievan_rus, } and event_counter hx_player_kievan_rus 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { serbia, } and event_counter hx_player_serbia 1
+        recruit_pool "Orthodox Settlers"  2   1   2  0  requires factions { georgia, } and event_counter hx_player_georgia 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { cumans, } and event_counter hx_player_cumans 1
+        recruit_pool "Pagan Settlers"  2   1   2  0  requires factions { lithuania, } and event_counter hx_player_lithuania 1
 ;----------------------------------------------------------------------------------------------------------------------------------
 ; CITADEL - GENERAL
 		wall_level 4

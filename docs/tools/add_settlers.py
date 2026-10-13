@@ -114,12 +114,14 @@ def add_recruitment(path_in, path_out):
         if building in want and line.strip() == "capability" and i + 1 < len(lines) and lines[i + 1].strip() == "{":
             out.append(lines[i + 1])
             i += 1
-            out.append(";--- Modding_SSHIP #3: settlers, player only")
+            out.append(";--- Modding_SSHIP #3: settlers, player only (counter hx_player_<faction> set by fort_settlement.lua)")
+            # 13 Oct 2026: "event_counter is_the_player 1" never worked here - the engine fills the stock at the
+            # player's turn start BEFORE SSHIP sets is_the_player (onPreFactionTurnStart), i.e. while it still holds
+            # the last AI faction's 0. The settlers were in the list (capability) but got no stock (no pool).
+            # Now one line per faction with a counter that our script sets once and never flips during the turn order.
             for name, dic, model, factions, card in GROUPS:
-                # refill 1 per turn (13 Oct 2026): SSHIP sets is_the_player only at each faction's turn start
-                # (globalEvents.isPlayer in onPreFactionTurnStart), so a new campaign begins with stock 0, not 2;
-                # with 0.1 per turn the first unit only appeared after 10 turns
-                out.append(f'        recruit_pool "{name}"  2   1   2  0  requires factions {{ {factions}, }} and event_counter is_the_player 1')
+                for fac in [f.strip() for f in factions.split(",")]:
+                    out.append(f'        recruit_pool "{name}"  2   1   2  0  requires factions {{ {fac}, }} and event_counter hx_player_{fac} 1')
             added += 1
         i += 1
     if added != 10:

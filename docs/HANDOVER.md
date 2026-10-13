@@ -110,7 +110,8 @@ Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures
     portugal poland spain hungary aragon norway jerusalem pisa papal_states), orthodox 5 (byzantium russia kievan_rus
     serbia georgia), islam 6 (abbasid egypt turks moors zengid rum), pagan 2 (cumans lithuania). Left out: slave
     (heretic) and `symbol` (islam, but not in descr_strat - not on the map).
-  - Recruitment: 4 `recruit_pool` lines (2 / 1 / 2 / 0, `requires factions {...} and event_counter is_the_player 1`)
+  - Recruitment (CHANGED 13 Oct, see "Third test" below): one `recruit_pool` line PER FACTION (29), 2 / 1 / 2 / 0,
+    `requires factions { <f>, } and event_counter hx_player_<f> 1` - first version used is_the_player and failed.
     at the top of the first capability block of all 5 levels of `core_building` and all 5 of `core_castle_building`
     (the wall / town hall buildings - SSHIP has no recruitment there otherwise). Lines marked `;--- Modding_SSHIP #3`.
   - Texts in `text/export_units.txt` (UTF-16): name, short and long description per unit. The game rebuilds
@@ -146,3 +147,22 @@ Installed 13 Oct, all 14 files read back (6 text files byte for byte, 8 pictures
   `luaPluginScript.lua` (marked TEMPORARY). For each player settlement selected / recruitment panel opened (once per
   turn) it logs `SETTCHK` lines: is_the_player, number of capabilities and pools, the settler capability and stock if
   present, and the last 5 capabilities. Changes nothing. Remove the require line after the diagnosis.
+
+### Third test (user, 13 Oct; SETTCHK lines read) - cause found and fixed
+- User: still no settlers; 1-10 recruitment entries per settlement (so NOT the 64 limit). SETTCHK for Constantinople,
+  Nicaea, Adrianople, Tarnovo, Thessalonica, Sredets: `is_the_player 1`, settler capability present as entry 0
+  ("Orthodox Settlers initial 2 refill 1 max 2"), but NO recruitment pool for it - pools 11 for 12 capabilities in
+  Constantinople, etc. So the unit is in the list but never gets any stock.
+- Cause (inference from that): the engine fills the stock at a faction's turn start BEFORE SSHIP sets is_the_player in
+  onPreFactionTurnStart, i.e. while the counter still holds the previous (AI) faction's 0. The building info and the
+  check read the counter later, when it is 1. SSHIP's own 82 positive `is_the_player 1` recruit lines (Smolensk
+  Infantry etc., all also needing faction_size_small and a leap-year counter) probably never get stock either -
+  not checked, not ours.
+- FIX installed 13 Oct, all three files read back identical: per-faction counters `hx_player_<faction>` (1 for the
+  player's faction, 0 for the others; only written when the value changes, logged as `FORTSETT counters (...)`), set in
+  `fort_settlement.lua` after SSHIP's onCampaignMapLoaded, onNewGameStart and onPreFactionTurnStart. They do not flip
+  during the turn order, so they are right whenever the engine fills the stock. Building file: 29 lines per level
+  (each faction only its own settler type), 290 + 10 marker lines. Mock: counters set, SSHIP's hook still called,
+  founding dry run unchanged. settler_check.lua now also logs hx_player_<owner>.
+- Expected: settlers in the recruitment panel from the first player turn after loading (stock 2, then +1 per turn).
+- STILL TO DO after the next test: remove settler_check.lua's require line if the settlers work.

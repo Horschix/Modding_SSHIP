@@ -476,6 +476,53 @@ function FS.draw()
     end
 end
 
+-------------------------------------------------------------------------
+--- Counters for the settler recruitment (Modding_SSHIP #3, 13 Oct 2026)
+--- The building file lets a faction recruit settlers only with "event_counter hx_player_<faction> 1".
+--- SSHIP's own is_the_player could not be used: the engine fills the recruitment stock at the player's turn start
+--- before SSHIP sets is_the_player, so the settlers never got any stock. These counters are set to 1 for the
+--- player's faction and 0 for all others, and they do not change during the turn order.
+--- Set when the campaign map is loaded and at every faction's turn start (only written when the value changes).
+-------------------------------------------------------------------------
+function FS.setPlayerCounters(why)
+    local campaign = get(M2TW, "campaign")
+    local n = get(campaign, "numberOfFactions")
+    if type(n) ~= "number" then return end
+    local changed = {}
+    for f = 0, n - 1 do
+        local okF, faction = pcall(function() return campaign:getFactionByOrder(f) end)
+        local name = okF and get(faction, "name") or nil
+        if type(name) == "string" then
+            local want = (get(faction, "isPlayerControlled") == 1) and 1 or 0
+            local counter = "hx_player_" .. name
+            local okG, now = pcall(function() return M2TWEOP.getScriptCounter(counter) end)
+            if not okG or now ~= want then
+                local okS = pcall(function() M2TWEOP.setScriptCounter(counter, want) end)
+                changed[#changed + 1] = counter .. "=" .. want .. (okS and "" or " FAILED")
+            end
+        end
+    end
+    if #changed > 0 then log("counters (" .. tostring(why) .. "): " .. table.concat(changed, ", ")) end
+end
+
+local function afterHook(name, why)
+    local previous = _G[name]
+    _G[name] = function(arg)
+        local result = nil
+        if previous then result = previous(arg) end
+        local ok, err = pcall(FS.setPlayerCounters, why)
+        if not ok then log("ERROR setting counters: " .. tostring(err)) end
+        return result
+    end
+end
+
+if not FS.countersInstalled then
+    FS.countersInstalled = true
+    afterHook("onCampaignMapLoaded", "map loaded")
+    afterHook("onNewGameStart", "new game")
+    afterHook("onPreFactionTurnStart", "turn start")
+end
+
 if not FS.installed then
     FS.installed = true
     local previous = _G["draw"]
