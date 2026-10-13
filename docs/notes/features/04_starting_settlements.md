@@ -258,3 +258,18 @@ other game regions later. The candidate list and every decision are in issue #4.
   Cumans in descr_strat: its settlement block moved from the slave section to the end of the cumans settlements, and its
   governor Turgut (was "sub_faction cumans" under slave, same army) moved to the cumans characters after Yesugatai.
   10 towns. NEW campaign needed; map.rwm can stay (no map image change). Watch SSHIP scripts that expect Saqsin rebel.
+- ARABIA/STEPPE: user moved on to Russia (14 Oct) - taken as passed.
+- RUSSIA installed 14 Oct, read back identical (1 file, no map edit, map.rwm stays). EU5 russian_region + ruthenia_region
+  towns; Novgorod, Pskov, Smolensk, Polotsk, Kyiv, Chernihiv, Rostov, Grodno are SSHIP settlements. Fit: affine on 19
+  settlements (Novgorod ... Plock, Bulgar; residuals up to 9 - SSHIP's Rus is distorted) + IDW; nearest open tile
+  (no mountain / dense forest / swamp / river / beach, relief <= 30, >= 3 from any settlement, >= 7 open neighbours).
+  User removed: Staraya Ladoga, Staraya Russa, Gomel, Terebovlia, Yaroslavl ("don't add Rostov" read as Yaroslavl - 3 tiles
+  from Rostov; CONFIRM), Pinsk (Pripet marsh, no open tile). Left out for spacing: Izborsk, Vyshgorod, Belgorod, Lyubech, Kolomna.
+  Tiles: Novgorod reg (russia): Tver 335,255 (1/500), Torzhok 328,257 (1/1000); Rustov (kievan_rus): Moscow 347,248 (1/500),
+  Vologda 358,271 (1/500), Beloozero 343,278; Suzdal: Vladimir 364,249, Murom 379,247; Ryazan (rebels): Nizhny 392,253
+  (1/500), Pronsk 367,237 (1/1000); Polotsk (rebels): Minsk 275,234, Vitebsk 295,242; Goroden (rebels): Brest 250,221;
+  Volodymyr: Lutsk 262,212, Lviv 255,206 (1/500); Halych (rebels): Przemysl 245,205; Chernigov (rebels): Novgorod-Seversky
+  320,222, Starodub 317,225; Smolensk: Toropets 305,252 (1/1000), Bryansk 327,230 (1/1000); Pereyaslav: Poltava 330,203
+  (1/500). Others level 2 / 7500. Moscow / Tver: founded-after rule (1/500), user did not object. All reachable in the BFS model.
+  Names (user): Russian for russia / kievan_rus / rebels, Polish for poland, Lithuanian for lithuania, Latin, Greek, Turkish.
+  GARRISON russia / kievan_rus = 2 EE Spear Militia (rebels too). DUMP_PATHS = 9 Russia routes. Waiting for the user's test.

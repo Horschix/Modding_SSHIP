@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 13 Oct 2026 (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
+Last updated 14 Oct 2026 (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4). The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
@@ -56,8 +56,10 @@ UPPER MESOPOTAMIA DONE (user moved on, 13 Oct): 14 towns.
 SYRIA AND THE LEVANT DONE (user, 13 Oct): 10 towns. New name key `arabic` (egypt / abbasid / moors).
 NORTH AFRICA DONE (user, 13 Oct): 31 towns.
 LOWER MESOPOTAMIA + PERSIA DONE (user, 14 Oct): 34 towns.
-ARABIA + STEPPE + VOLGA installed 14 Oct, fix 1 read back identical: 10 towns; Saqsin moved to the Cumans in descr_strat (Siberia: nothing on the map). No map edit.
-  Waiting for the user's test in a new campaign (DUMP has 9 routes; read STARTSETT lines in full.log).
+ARABIA + STEPPE + VOLGA DONE (user moved on, 14 Oct): 10 towns; Saqsin moved to the Cumans in descr_strat.
+RUSSIA installed 14 Oct, read back identical: 20 towns (Novgorod, Rostov, Suzdal, Ryazan, Polotsk, Goroden, Volodymyr,
+  Halych, Chernigov, Smolensk, Pereyaslav regions). No map edit. Names: faction keys russia / kievan_rus / poland /
+  lithuania. Waiting for the user's test in a new campaign (DUMP has 9 Russia routes; read STARTSETT lines in full.log).
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
