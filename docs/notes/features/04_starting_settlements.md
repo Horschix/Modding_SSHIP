@@ -137,3 +137,7 @@ other game regions later. The candidate list and every decision are in issue #4.
   Erzincan 361,135, Gladzor 401,132, Shamakhi 425,137. User: the 7 towns in Georgia's two regions (Tbilisi, Kutaisi)
   are level 1 / 1000. NOTE: the commit tool reused a cached upload of the same output path once - always commit
   from a NEW output folder name and re-check the size.
+- Rebel owners (user, 13 Oct), installed, read back identical: new optional entry field `ownerFrom` (owner taken from
+  that settlement instead of `capital`). Ganja, Sukhumi, Artanuji: ownerFrom = "Ani" (rebel-held) -> start as rebels,
+  level 1 / 1000. Garrisons: Ganja 2 Ahdath Militia, Sukhumi / Artanuji 2 georgian light spearmen (my choice -
+  Christian towns). Georgia keeps Gori, Dmanisi, Telavi, Akhaltsikhe (level 1).

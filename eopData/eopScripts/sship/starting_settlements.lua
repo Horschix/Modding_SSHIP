@@ -90,7 +90,7 @@ local SETTS = {
     { key = "van", x = 391, y = 122, capital = "Tabriz", level = 3, population = 15000,  -- moved 13 Oct: low-mountain tile not reachable in game
       names = { greek = "Van", middle_eastern = "Van", european = "Van", default = "Van" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "ganja", x = 411, y = 138, capital = "Tbilisi", level = 1, population = 1000,  -- EU5 town; Seljuk until 1138, starts Georgian (user)
+    { key = "ganja", x = 411, y = 138, capital = "Tbilisi", ownerFrom = "Ani", level = 1, population = 1000,  -- EU5 town; Seljuk until 1138, starts Georgian (user)
       names = { greek = "Ganja", middle_eastern = "Ganja", european = "Ganja", default = "Ganja" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "gladzor", x = 401, y = 132, capital = "Ani", level = 1, population = 1000,  -- moved 13 Oct: low-mountain tile not reachable in game
@@ -105,12 +105,12 @@ local SETTS = {
     { key = "telavi", x = 404, y = 146, capital = "Tbilisi", level = 1, population = 1000,  -- GPS tile dense forest
       names = { greek = "Telavi", middle_eastern = "Telavi", european = "Telavi", default = "Telavi" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "sukhumi", x = 374, y = 155, capital = "Kutaisi", level = 1, population = 1000,
+    { key = "sukhumi", x = 374, y = 155, capital = "Kutaisi", ownerFrom = "Ani", level = 1, population = 1000,
       names = { greek = "Sukhumi", middle_eastern = "Sukhumi", european = "Sukhumi", default = "Sukhumi" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "artanuji", x = 381, y = 142, capital = "Kutaisi", level = 1, population = 1000,
+      rebels = { "georgian light spearmen", "georgian light spearmen" } },
+    { key = "artanuji", x = 381, y = 142, capital = "Kutaisi", ownerFrom = "Ani", level = 1, population = 1000,
       names = { greek = "Art'anuji", middle_eastern = "Art'anuji", european = "Art'anuji", default = "Art'anuji" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+      rebels = { "georgian light spearmen", "georgian light spearmen" } },
     { key = "akhaltsikhe", x = 387, y = 145, capital = "Kutaisi", level = 1, population = 1000,  -- GPS tile 388,146 is river
       names = { greek = "Akhaltsikhe", middle_eastern = "Akhaltsikhe", european = "Akhaltsikhe", default = "Akhaltsikhe" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
@@ -441,7 +441,8 @@ end
 local function createOne(entry)
     local name = "hxstart_" .. entry.key
     if settlementByName(name) ~= nil then log(name .. " exists already - skipped"); return end
-    local capital = settlementByName(entry.capital)
+    -- ownerFrom (optional): take the owner from this settlement instead (e.g. a rebel-held one)
+    local capital = settlementByName(entry.ownerFrom or entry.capital)
     local owner = get(capital, "ownerFaction")
     if owner == nil then log(name .. ": no owner found (capital " .. entry.capital .. ") - skipped"); return end
     local okFree, free = pcall(function() return M2TWEOP.isTileFree(entry.x, entry.y) end)
