@@ -119,3 +119,13 @@ other game regions later. The candidate list and every decision are in issue #4.
   Kastamonu-Sinop 15 tiles (it prefers the north pass and the coast), -Angora 13, -Nikomedeia 30, -north coast 5,
   Alanya-Tarsus 22 along the shore, Konya-Alanya 9, Attaleia-Alanya 11. Anatolia finished; #4 stays open for the
   other regions.
+- CAUCASUS installed 13 Oct, read back identical (2 files, no map edit, map.rwm stays). EU5 has only 5 towns here
+  (Van city, Tbilisi city, Gladzor, Ganja, Ani); Tbilisi / Ani are SSHIP capitals. User added 17 extras (all existed
+  1132, my list): 20 towns. Levels: Van 3, Gladzor 1 / 1000 (user), all others 2 / 7500. One name for every culture
+  (EU5 has no Armenian / Georgian names for them). Georgia garrison 2 georgian light spearmen (user); rebels
+  2 Ahdath Militia, Kars / Gladzor 2 Armenian Archers. Ganja starts Georgian (user). Tiles moved off river / dense
+  forest: Gori 395,149, Telavi 404,146, Akhaltsikhe 387,145, Nakhchivan 402,127, Shaki 416,140; Ahlat 381,125 (GPS
+  tile behind a 60+ height step at Lake Van). Model (BFS, engine rules above) reaches all 20 from their capitals.
+  DUMP_BOXES = {}, DUMP_PATHS = 8 Caucasus routes. settler_check require line removed (user); the file
+  sship/settler_check.lua is still on the PC (unused, session cannot delete). Wikipedia check not done per town -
+  checked against known history only.

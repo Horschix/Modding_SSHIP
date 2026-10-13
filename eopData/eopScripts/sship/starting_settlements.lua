@@ -86,13 +86,74 @@ local SETTS = {
       rebels = { "Armenians of Celicia", "Ahdath Militia" } },
     { key = "tarsus", x = 328, y = 112, capital = "Sis", level = 2, population = 7500,
       names = { greek = "Tarsós", middle_eastern = "Tarsus", european = "Tarsus", default = "Tarson" },
-      rebels = { "Armenians of Celicia", "Armenians of Celicia" } },
+      rebels = { "Armenians of Celicia", "Armenians of Celicia" } },    -- Caucasus (13 Oct 2026): EU5 Van / Ganja / Gladzor + user-approved extras; one name for every culture
+    { key = "van", x = 389, y = 123, capital = "Tabriz", level = 3, population = 15000,  -- EU5 city; Shah-Armens
+      names = { greek = "Van", middle_eastern = "Van", european = "Van", default = "Van" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "ganja", x = 411, y = 138, capital = "Tbilisi", level = 2, population = 7500,  -- EU5 town; Seljuk until 1138, starts Georgian (user)
+      names = { greek = "Ganja", middle_eastern = "Ganja", european = "Ganja", default = "Ganja" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "gladzor", x = 403, y = 132, capital = "Ani", level = 1, population = 1000,  -- EU5 town; level 1 (user)
+      names = { greek = "Gladzor", middle_eastern = "Gladzor", european = "Gladzor", default = "Gladzor" },
+      rebels = { "Armenian Archers", "Armenian Archers" } },
+    { key = "gori", x = 395, y = 149, capital = "Tbilisi", level = 2, population = 7500,  -- GPS tile 396,148 is river
+      names = { greek = "Gori", middle_eastern = "Gori", european = "Gori", default = "Gori" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "dmanisi", x = 397, y = 143, capital = "Tbilisi", level = 2, population = 7500,
+      names = { greek = "Dmanisi", middle_eastern = "Dmanisi", european = "Dmanisi", default = "Dmanisi" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "telavi", x = 404, y = 146, capital = "Tbilisi", level = 2, population = 7500,  -- GPS tile dense forest
+      names = { greek = "Telavi", middle_eastern = "Telavi", european = "Telavi", default = "Telavi" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "sukhumi", x = 374, y = 155, capital = "Kutaisi", level = 2, population = 7500,
+      names = { greek = "Sukhumi", middle_eastern = "Sukhumi", european = "Sukhumi", default = "Sukhumi" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "artanuji", x = 381, y = 142, capital = "Kutaisi", level = 2, population = 7500,
+      names = { greek = "Art'anuji", middle_eastern = "Art'anuji", european = "Art'anuji", default = "Art'anuji" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "akhaltsikhe", x = 387, y = 145, capital = "Kutaisi", level = 2, population = 7500,  -- GPS tile 388,146 is river
+      names = { greek = "Akhaltsikhe", middle_eastern = "Akhaltsikhe", european = "Akhaltsikhe", default = "Akhaltsikhe" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "kars", x = 389, y = 137, capital = "Ani", level = 2, population = 7500,
+      names = { greek = "Kars", middle_eastern = "Kars", european = "Kars", default = "Kars" },
+      rebels = { "Armenian Archers", "Armenian Archers" } },
+    { key = "dvin", x = 399, y = 133, capital = "Ani", level = 2, population = 7500,  -- Shaddadids
+      names = { greek = "Dvin", middle_eastern = "Dvin", european = "Dvin", default = "Dvin" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "nakhchivan", x = 402, y = 127, capital = "Ani", level = 2, population = 7500,  -- GPS tile 403,128 is river
+      names = { greek = "Nakhchivan", middle_eastern = "Nakhchivan", european = "Nakhchivan", default = "Nakhchivan" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "ahlat", x = 381, y = 125, capital = "Erzurum", level = 2, population = 7500,  -- GPS tile 382,125 cut off by a height step
+      names = { greek = "Ahlat", middle_eastern = "Ahlat", european = "Ahlat", default = "Ahlat" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "manzikert", x = 383, y = 128, capital = "Erzurum", level = 2, population = 7500,
+      names = { greek = "Malazgirt", middle_eastern = "Malazgirt", european = "Malazgirt", default = "Malazgirt" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "erzincan", x = 361, y = 132, capital = "Erzurum", level = 2, population = 7500,  -- Mengujekids
+      names = { greek = "Erzincan", middle_eastern = "Erzincan", european = "Erzincan", default = "Erzincan" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "bayburt", x = 366, y = 136, capital = "Erzurum", level = 2, population = 7500,  -- Saltukids
+      names = { greek = "Bayburt", middle_eastern = "Bayburt", european = "Bayburt", default = "Bayburt" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "shamakhi", x = 426, y = 138, capital = "Baku", level = 2, population = 7500,  -- Shirvanshahs
+      names = { greek = "Shamakhi", middle_eastern = "Shamakhi", european = "Shamakhi", default = "Shamakhi" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "shaki", x = 416, y = 140, capital = "Baku", level = 2, population = 7500,  -- GPS tile dense forest
+      names = { greek = "Shaki", middle_eastern = "Shaki", european = "Shaki", default = "Shaki" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "barda", x = 416, y = 136, capital = "Baku", level = 2, population = 7500,
+      names = { greek = "Barda", middle_eastern = "Barda", european = "Barda", default = "Barda" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "beylagan", x = 419, y = 132, capital = "Baku", level = 2, population = 7500,
+      names = { greek = "Beylagan", middle_eastern = "Beylagan", european = "Beylagan", default = "Beylagan" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
 local GARRISON = {
     byzantium = { "Contaratoi", "Contaratoi" },
     rum       = { "Ahdath Militia", "Ahdath Militia" },
+    georgia   = { "georgian light spearmen", "georgian light spearmen" },   -- cheapest local (user, 13 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -287,12 +348,12 @@ end
 -- TEMPORARY terrain dump (13 Oct 2026): what the ENGINE blocks. Logged once per game session at map load.
 -------------------------------------------------------------------------
 local DUMP = true
-local DUMP_BOXES = { { "kastamonu", 286, 336, 135, 151 }, { "south", 294, 334, 103, 121 } }
+local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus needed no map edit
 local DUMP_PATHS = {
-    { "Kastamonu-Sinop", 319, 143, 329, 148 }, { "Kastamonu-Angora", 319, 143, 312, 132 },
-    { "Kastamonu-Nikomedeia", 319, 143, 290, 139 }, { "Kastamonu-coast", 319, 143, 319, 147 },
-    { "Alanya-Tarsus", 307, 110, 328, 112 }, { "Konya-Alanya", 310, 118, 307, 110 },
-    { "Attaleia-Alanya", 297, 114, 307, 110 },
+    { "Ani-Van", 393, 136, 389, 123 }, { "Erzurum-Ahlat", 374, 134, 381, 125 },
+    { "Erzurum-Erzincan", 374, 134, 361, 132 }, { "Kutaisi-Sukhumi", 386, 151, 374, 155 },
+    { "Tbilisi-Ganja", 400, 146, 411, 138 }, { "Ani-Nakhchivan", 393, 136, 402, 127 },
+    { "Baku-Shaki", 434, 137, 416, 140 }, { "Baku-Barda", 434, 137, 416, 136 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

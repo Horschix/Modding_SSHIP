@@ -50,11 +50,10 @@ and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SS
   names by culture, roads / farms buildable in them, map edits (Nicaea moved, Sinop's port, passes, Kastamonu and the
   south coast opened). Engine confirmed all 7 test routes (getMovePath, 13 Oct). Kept OPEN for the other regions
   (user: "we will add the settlements for other game regions later"). Details: `docs/notes/features/04_starting_settlements.md`.
-NEXT STEP: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
+CAUCASUS installed 13 Oct (20 towns, no map edit) - waiting for the user's test (new campaign); read STARTSETT
+lines incl. DUMP path lines in full.log. Then: NEXT STEP the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
 GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
-Leftovers (ask the user first): remove the TEMPORARY `require('sship.settler_check')` line (third require line of
-`luaPluginScript.lua`) and `sship/settler_check.lua` (only logs SETTCHK lines); set `DUMP = false` in
-starting_settlements.lua (or keep it as a tool: change DUMP_BOXES / DUMP_PATHS for the next region's routes).
+Leftover: delete `sship/settler_check.lua` on the PC (no longer required). DUMP stays on as the route checker.
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a
 farm / road queued in an extra settlement finishes after the hinterland flag is restored at turn start.
@@ -68,8 +67,8 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
-- `luaPluginScript.lua` ends with four require lines: population_recruitment, fort_settlement, the TEMPORARY
-  settler_check and starting_settlements (#4). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+- `luaPluginScript.lua` ends with three require lines: population_recruitment, fort_settlement and
+  starting_settlements (#4). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
   settler recruit lines need - removing it stops settler recruitment too.
 
 ## Tooling
