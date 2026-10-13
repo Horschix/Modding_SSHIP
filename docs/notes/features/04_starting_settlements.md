@@ -129,3 +129,11 @@ other game regions later. The candidate list and every decision are in issue #4.
   DUMP_BOXES = {}, DUMP_PATHS = 8 Caucasus routes. settler_check require line removed (user); the file
   sship/settler_check.lua is still on the PC (unused, session cannot delete). Wikipedia check not done per town -
   checked against known history only.
+- CAUCASUS TEST 1 (user, 13 Oct): all 20 created (log OK); Erzincan, Ahlat, Gladzor, Shamakhi, Van NOT reachable -
+  all five were on low-mountain tiles (Ganja, Sukhumi, Artanuji are too and work - cause not fully clear; my BFS
+  model said all reachable, so the model is too lenient here). getMovePath returned 0 tiles for 5 of 8 routes incl.
+  ones that work in play - not usable as proof for long routes. FIX installed 13 Oct, read back identical: moved to
+  open, gentle tiles (non-mountain ground, 3x3 relief <= 60, >= 3 open neighbours): Van 391,122 (hills), Ahlat 380,126,
+  Erzincan 361,135, Gladzor 401,132, Shamakhi 425,137. User: the 7 towns in Georgia's two regions (Tbilisi, Kutaisi)
+  are level 1 / 1000. NOTE: the commit tool reused a cached upload of the same output path once - always commit
+  from a NEW output folder name and re-check the size.
