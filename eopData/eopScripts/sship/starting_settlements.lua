@@ -424,6 +424,9 @@ local SETTS = {
     { key = "jeddah", x = 358, y = 5, capital = "Mecca", level = 2, population = 7500,  -- EU5 town, Mecca's port, map edge
       names = { greek = "Tzidda", middle_eastern = "Cidde", arabic = "Judda", european = "Gedda", default = "Judda" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "muscat", x = 496, y = 13, capital = "Al_Ahsa", level = 2, population = 7500,  -- Oman port (user, 14 Oct); coast is mountains on SSHIP's map, so 3-4 tiles inland; rebels
+      names = { greek = "Moskha", middle_eastern = "Maskat", arabic = "Masqat", european = "Mascate", default = "Masqat" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "qatif", x = 435, y = 37, capital = "Al_Ahsa", level = 2, population = 7500,  -- EU5 town; rebels
       names = { greek = "Katif", middle_eastern = "Katif", arabic = "al-Qatif", european = "Catif", default = "al-Qatif" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
@@ -708,7 +711,7 @@ local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia n
 local DUMP_PATHS = {    -- Russia (14 Oct 2026); Rostov moved to Novgorod (russia) in descr_strat
     { "Novgorod-Tver", 304, 267, 335, 255 }, { "Rostov-Moscow", 355, 259, 347, 248 }, { "Rostov-Beloozero", 355, 259, 343, 278 },
     { "Ryazan-Nizhny", 374, 239, 392, 253 }, { "Polotsk-Minsk", 282, 244, 275, 234 }, { "Halych-Przemysl", 262, 200, 245, 205 },
-    { "Mecca-Jeddah", 364, 1, 358, 5 }, { "Novgorod-Rostov", 304, 267, 355, 259 },
+    { "Mecca-Jeddah", 364, 1, 358, 5 }, { "AlAhsa-Muscat", 435, 29, 496, 13 }, { "Novgorod-Rostov", 304, 267, 355, 259 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

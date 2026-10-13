@@ -282,3 +282,4 @@ other game regions later. The candidate list and every decision are in issue #4.
   PROPOSED, not installed: Pskov area (Izborsk 279,259; Porkhov; Velikiye Luki; Tartu / Otepaa in Kolyvan region;
   Koknese / Jersika in Riga region) and Oman / Gulf (Sohar 482,18, Julfar 478,29, Muscat 496,13 (inland, relief 45),
   Qatar 446,31; Bahrain has no island on SSHIP's map; Abu Dhabi founded 1761).
+- MUSCAT added 14 Oct (user: anywhere in the area), read back identical: 496,13 (Al_Ahsa region, rebels, level 2 / 7500, 2 Ahdath Militia; coast is mountains, so 3-4 tiles inland). DUMP + AlAhsa-Muscat.
