@@ -229,3 +229,10 @@ other game regions later. The candidate list and every decision are in issue #4.
   Names: default Persian (Arabic in Iraq), arabic for abbasid, Turkish for turks / zengid, Greek + Latin (Harmozeia /
   Ormus, Hekatompylos, Laodikeia = Nahavand, Camadi = Jiroft). GARRISON turks 2 Ahdath Militia, abbasid 2 Shurtah Militia.
   DUMP_PATHS = 8 Persia routes. Waiting for the user's test (new campaign).
+- MAP ROUND 4 (user, 13 Oct: open the Gilan coast from both sides, add Lahijan), installed, all 4 files read back
+  identical. edit_map.py now also writes map_features.tga (original added to backups/2026-10-13_before_map) with
+  CROSSINGS: rivers 432,115 and 435,115 -> crossings (0,255,255). CORRIDORS: Ardabil-Gilan coast 428,122-117, 429,116,
+  430,115 (impassable / low mountain / dense forest -> hills, heights 7 -> 14 h10 = coastal flat); Gilan coast-Alamut
+  436,113, 437,112-110, 436,110 (swamp / low mountain -> hills, 14 -> 203, step 31.5). Model: Alamut -> Lahijan 9 tiles,
+  Tabriz -> Lahijan 30, also with steps < 40. Lahijan 434,115 (Alamut region, rebels, level 2) back in: 44 towns.
+  DUMP_PATHS + Alamut-Lahijan, Ardabil-Lahijan. map.rwm must be deleted (user), new campaign.

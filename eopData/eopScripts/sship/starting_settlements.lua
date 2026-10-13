@@ -317,7 +317,7 @@ local SETTS = {
       names = { greek = "Rhyssádeiron", middle_eastern = "Melile", arabic = "Mliliya", european = "Melilla", default = "Mliliya" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     -- LOWER MESOPOTAMIA + PERSIA (13 Oct 2026): 43 towns; doubtful ones level 1 (user), Hamadan / Alamut region towns Seljuk (user),
-    -- big ones level 3 (user); Urmia moved to open ground (user); Lahijan left out (Gilan coast is a closed pocket on SSHIP map)
+    -- big ones level 3 (user); Urmia moved to open ground (user); Lahijan added after map round 4 (Gilan coast opened)
     { key = "kufa", x = 399, y = 78, capital = "Baghdad", level = 3, population = 15000,  -- Abbasid; Mazyadid area
       names = { greek = "Koúfa", middle_eastern = "Kûfe", arabic = "al-Kufa", european = "Cufa", default = "al-Kufa" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
@@ -386,6 +386,9 @@ local SETTS = {
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "zanjan", x = 427, y = 109, capital = "Alamut", ownerFrom = "Ray", level = 2, population = 7500,  -- Seljuk (user)
       names = { greek = "Zantzán", middle_eastern = "Zencan", arabic = "Zanjan", european = "Zengian", default = "Zanjan" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "lahijan", x = 434, y = 115, capital = "Alamut", level = 2, population = 7500,  -- Gilan, rebels; coast opened from both sides (map round 4, user)
+      names = { greek = "Lachitzán", middle_eastern = "Lâhican", arabic = "Lahijan", european = "Lahigian", default = "Lahijan" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "maragheh", x = 410, y = 111, capital = "Tabriz", level = 3, population = 15000,  -- Ahmadilis, rebels; level 3 (user)
       names = { greek = "Marágha", middle_eastern = "Merâga", arabic = "al-Maragha", european = "Maraga", default = "Maragheh" },
@@ -661,6 +664,7 @@ local DUMP_PATHS = {    -- Lower Mesopotamia + Persia (13 Oct 2026)
     { "Tabriz-Urmia", 411, 119, 396, 118 }, { "Tabriz-Ardabil", 411, 119, 428, 126 }, { "Baghdad-Hulwan", 396, 88, 404, 95 },
     { "Basra-Arrajan", 421, 65, 438, 64 }, { "Kerman-Jiroft", 487, 64, 493, 48 }, { "Kerman-Hormuz", 487, 64, 488, 41 },
     { "Ray-Jurjan", 449, 101, 472, 114 }, { "Shiraz-Siraf", 457, 57, 458, 45 },
+    { "Alamut-Lahijan", 438, 108, 434, 115 }, { "Ardabil-Lahijan", 428, 126, 434, 115 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

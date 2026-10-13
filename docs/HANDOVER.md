@@ -55,8 +55,8 @@ CAUCASUS DONE, WORKS (user, 13 Oct, test 2): 20 towns, all reachable after movin
 UPPER MESOPOTAMIA DONE (user moved on, 13 Oct): 14 towns.
 SYRIA AND THE LEVANT DONE (user, 13 Oct): 10 towns. New name key `arabic` (egypt / abbasid / moors).
 NORTH AFRICA DONE (user, 13 Oct): 31 towns.
-LOWER MESOPOTAMIA + PERSIA installed 13 Oct, read back identical: 43 towns, no map edit (Lahijan left out - closed
-  pocket). Seljuk owners via ownerFrom for the Hamadan / Alamut regions. Waiting for the user's test in a new campaign
+LOWER MESOPOTAMIA + PERSIA installed 13 Oct, read back identical: 44 towns; map round 4 opened the Gilan coast
+  (2 corridors + 2 river crossings in map_features.tga) for Lahijan - map.rwm to be deleted. Seljuk owners via ownerFrom for the Hamadan / Alamut regions. Waiting for the user's test in a new campaign
   (DUMP has 8 Persia routes; read STARTSETT lines in full.log).
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).

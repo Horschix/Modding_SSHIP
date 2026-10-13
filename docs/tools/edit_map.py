@@ -8,6 +8,7 @@ Reads <backup>/data/world/maps/... and writes the same paths under <OUT>:
   base/map_ground_types.tga  passes (Karahisar, Kastamonu, south coast, Konya - Alanya) opened to hills;
                              impassable tiles of the Kastamonu belt -> dense forest
   base/map_heights.tga       heights along the passes smoothed (no cliffs)
+  base/map_features.tga      river crossings beside Lahijan (Gilan coast, round 4)
   campaign/imperial_campaign/descr_strat.txt   Ioannis Axouchos (Nicaea's governor) 291,137 -> 290,136
   campaign/imperial_campaign/descr_events.txt  event position 291, 137 -> 290, 136
 Each TGA is written in its original form (RLE / uncompressed, bit depth, row order, footer) and read back.
@@ -65,7 +66,15 @@ CORRIDORS = [
     ("Alanya-Tarsus coast", [(308, 109), (309, 108), (310, 107), (311, 106), (312, 106), (313, 106), (314, 106),
                              (315, 106), (316, 107), (317, 107), (318, 107), (319, 107), (320, 107), (321, 108),
                              (322, 108)], 93, 2),
+    # round 4 (13 Oct, Persia): the Gilan coast (Lahijan 434,115) was a closed 3-tile pocket - opened from both sides
+    ("Ardabil-Gilan coast", [(428, 122), (428, 121), (428, 120), (428, 119), (428, 118), (428, 117), (429, 116),
+                             (430, 115)], 7, 14),
+    ("Gilan coast-Alamut", [(436, 113), (437, 112), (437, 111), (437, 110), (436, 110)], 14, 203),
 ]
+# river crossings (map_features.tga, one pixel per tile, 0,0,255 river -> 0,255,255 crossing): the two rivers on
+# both sides of the Lahijan pocket
+CROSSINGS = [(432, 115), (435, 115)]
+RIVER, CROSSING = (0, 0, 255), (0, 255, 255)
 MAX_STEP = 12
 
 
@@ -210,6 +219,15 @@ def main(src, out):
             steps.append(grey)
         print("heights corridor", name, "grey", steps, "(step about", round(abs(h1 - h0) / (n + 1), 1), "h10)")
     write_tga(hm, ha, os.path.join(base_out, "map_heights.tga"))
+
+    # river crossings
+    fm = read_tga(os.path.join(base_in, "map_features.tga"))
+    fa = fm["img"].copy()
+    for c in CROSSINGS:
+        assert tuple(fa[px(c)][:3]) == RIVER, c
+        fa[px(c)][:3] = CROSSING
+        print("features: river crossing", c)
+    write_tga(fm, fa, os.path.join(base_out, "map_features.tga"))
 
     # descr_strat / descr_events (latin-1, line endings kept)
     for name, old, new in (("descr_strat.txt", b"x 291, y 137", b"x 290, y 136"),
