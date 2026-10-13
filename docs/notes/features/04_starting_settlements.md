@@ -157,3 +157,5 @@ other game regions later. The candidate list and every decision are in issue #4.
   passable - SSHIP's Tayma stands on it), 3x3 relief <= 25. Garrisons: Zengids 2 Shurtah Militia, Jerusalem 2 Spear
   Militia (user), rebels 2 Ahdath Militia. Names: EU5 names for Muslim owners, Latin for Jerusalem (Turbessel,
   Sororgia, Carrhae ...), Greek for Byzantium. DUMP_PATHS = 8 Mesopotamia routes (getMovePath unreliable on long ones).
+- Mesopotamia fix (user, 13 Oct), read back identical: Saruj (Sororgia) removed; Samosata 353,117 -> 352,117 (was on a
+  river; new tile sparse forest, relief 9). 14 towns.

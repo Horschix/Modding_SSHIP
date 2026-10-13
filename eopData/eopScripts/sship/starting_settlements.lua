@@ -172,10 +172,7 @@ local SETTS = {
     { key = "ras_ayn", x = 366, y = 112, capital = "Ar_Raqqah", level = 2, population = 7500,
       names = { greek = "Rhésaina", middle_eastern = "Ras al-Ayn", european = "Resaina", default = "Ras al-Ayn" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "saruj", x = 353, y = 113, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa
-      names = { greek = "Bátnai", middle_eastern = "Suruç", european = "Sororgia", default = "Suruç" },
-      rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "samosata", x = 353, y = 117, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa
+    { key = "samosata", x = 352, y = 117, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa; moved 1 west off the river (user)
       names = { greek = "Samósata", middle_eastern = "Samsat", european = "Samosata", default = "Samsat" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "tell_bashir", x = 351, y = 112, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa
