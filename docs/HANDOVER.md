@@ -261,5 +261,16 @@ other game regions later. The candidate list and every decision are in issue #4.
   old port tile 335,146 -> Sinop region colour 255,255,176 (it is land). Checked: all 119 ports land + sea + region
   beside, no city pixel on water. map.rwm must be deleted AGAIN (it was rebuilt with the bad port).
   LESSON: after any map_regions edit run that port / city check.
-- NEXT (user): open the Kastamonu area (grey impassable 64,64,64) and the south coast, then add Kastamonu and Alanya.
+- FIFTH TEST (user, 13 Oct): works. Asked whether roads can lead to the extra settlements: NO - map roads only join
+  region capitals (and ports), computed when map.rwm is built; M2TWEOP can read roads (campaign:getRoad, tile.road)
+  but not create them. User rejected placing towns on the existing roads; splitting regions is out (SSHIP uses 199 of
+  about 200 regions). Left as is.
+- MAP ROUND 2 installed 13 Oct, read back identical (edit_map.py rebuilt from the same originals): Kastamonu belt
+  x 312-327 y 141-147: all 21 impassable tiles -> dense forest, valley 318-320 x 142-144 + 319,141 + row 143 x 321-325
+  -> hills; south coast 304,111 / 305,110 / 306,110 / 307,110 / 308,110 / row 109 x 308-321 -> hills; Konya -> Alanya
+  310,112 / 309,112 / 309,111 / 308,111 -> hills (user's wish). Heights of all pass tiles smoothed (5x5 mean, up to 4
+  rounds until the steepest step <= 12; coast tiles end at 18-22 because of the slope to the sea - normal: passable
+  coast tiles of the area reach 17 at the 90th and 34 at the 99th percentile). Ports / cities checked again.
+- Script: Alanya / Kalón Óros 307,110 (Attaleia, Byz, 2 Contaratoi), Kastamonu / Kastamōn 319,143 (Sinop, rebels,
+  2 Ahdath Militia) - 20 towns now. map.rwm to be deleted, new campaign.
 - Revert: delete the fourth require line (settlements already created stay in that save).

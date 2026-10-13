@@ -33,7 +33,7 @@ local SS = {}
 -- internal name = "hxstart_" .. key. capital = internal name of the region's main settlement (owner lookup).
 -- names: greek / middle_eastern / european are the culture names; a faction name can be added as a key too.
 -- Anatolia (user, 13 Oct 2026). default = name while rebels hold it (SSHIP itself never renames for rebels).
--- Alanya and Kastamonu are missing on purpose: their land is impassable on SSHIP's map (to be opened first).
+-- Kastamonu and Alanya: their land was opened in the map edit of 13 Oct 2026 (docs/tools/edit_map.py, round 2).
 local SETTS = {
     -- region Nicaea (Byzantium)
     { key = "bursa", x = 285, y = 136, capital = "Nicaea", level = 3, population = 15000,
@@ -62,7 +62,13 @@ local SETTS = {
       names = { greek = "Akroinón", middle_eastern = "Karahisar-ı Sâhib", european = "Acroinum" } },
     { key = "uluborlu", x = 294, y = 121, capital = "Angora", level = 2, population = 7500,     -- GPS tile is mountain
       names = { greek = "Sōzópolis", middle_eastern = "Uluborlu", european = "Sozopolis" } },
+    -- region Attaleia (Byzantium)
+    { key = "alanya", x = 307, y = 110, capital = "Attaleia", level = 2, population = 7500,
+      names = { greek = "Kalón Óros", middle_eastern = "Alaiye", european = "Candelore" } },
     -- rebel regions (Danishmend lands, Armenian Cilicia)
+    { key = "kastamonu", x = 319, y = 143, capital = "Sinop", level = 2, population = 7500,  -- Danishmend until 1133
+      names = { greek = "Kastamōn", middle_eastern = "Kastamonu", european = "Castamon", default = "Kastamonu" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "amasya", x = 335, y = 138, capital = "Sives", level = 3, population = 15000,
       names = { greek = "Amáseia", middle_eastern = "Amasya", european = "Amasea", default = "Amasya" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },

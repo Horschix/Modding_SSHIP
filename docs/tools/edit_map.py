@@ -5,7 +5,8 @@
 
 Reads <backup>/data/world/maps/... and writes the same paths under <OUT>:
   base/map_regions.tga       Nicaea's city pixel 291,137 -> 290,136; Sinop's port 335,146 (beside Bafra) -> 331,146
-  base/map_ground_types.tga  passes to Karahisar (Afyon): tiles opened to hills
+  base/map_ground_types.tga  passes (Karahisar, Kastamonu, south coast, Konya - Alanya) opened to hills;
+                             impassable tiles of the Kastamonu belt -> dense forest
   base/map_heights.tga       heights along the passes smoothed (no cliffs)
   campaign/imperial_campaign/descr_strat.txt   Ioannis Axouchos (Nicaea's governor) 291,137 -> 290,136
   campaign/imperial_campaign/descr_events.txt  event position 291, 137 -> 290, 136
@@ -28,7 +29,27 @@ NICAEA_RGB = (33, 59, 131)
 HILLS = (128, 128, 64)
 # Kutahya 290,130 -> 291,130 -> 291,129 -> 292,129 -> hills 293,129 / 293,128 -> ... -> Afyon 296,125
 # Nicaea -> plains 293,133 / 293,132 -> 293,131 -> 293,130 -> hills 293,129
-PASS_TILES = [(291, 130), (291, 129), (292, 129), (293, 131), (293, 130)]
+DENSE_FOREST = (0, 64, 0)
+IMPASSABLE = (64, 64, 64)
+# tile -> new ground type. Heights of every tile listed here are smoothed.
+PASS_TILES = {}
+def _hills(*tiles):
+    for t in tiles:
+        PASS_TILES[t] = HILLS
+# round 1 (13 Oct): Kutahya 290,130 -> 291,130 -> 291,129 -> 292,129 -> hills 293,129 -> ... -> Karahisar (Afyon) 296,125
+#                   Nicaea -> plains 293,133 / 293,132 -> 293,131 -> 293,130 -> hills 293,129
+_hills((291, 130), (291, 129), (292, 129), (293, 131), (293, 130))
+# round 2 (13 Oct): Kastamonu 319,143 - valley 318-320 x 142-144, south to 319,140, east along row 143 to 326,143
+_hills(*[(x, y) for x in range(318, 321) for y in range(142, 145)])
+_hills((319, 141), (321, 143), (322, 143), (323, 143), (324, 143), (325, 143))
+# south coast Attaleia -> Alanya 307,110 -> Tarsus: 303,111 (hills) -> 304,111 -> 305,110 -> 306,110 -> 307,110 ->
+# 308,110 -> row 109 from 308 to 321 -> hills 322,109 ...
+_hills((304, 111), (305, 110), (306, 110), (307, 110), (308, 110), *[(x, 109) for x in range(308, 322)])
+# Konya 310,118 -> 310,113 (sparse forest) -> 310,112 -> 309,112 -> 309,111 -> 308,111 -> 308,110 (coast) -> Alanya
+_hills((310, 112), (309, 112), (309, 111), (308, 111))
+# every remaining IMPASSABLE tile of the Kastamonu belt (x 312-327, y 141-147) -> dense forest (not smoothed)
+FOREST_BOX = (312, 327, 141, 147)
+MAX_STEP = 12
 
 
 def read_tga(path):
@@ -118,28 +139,41 @@ def main(src, out):
     # ground types
     g = read_tga(os.path.join(base_in, "map_ground_types.tga"))
     ga = g["img"].copy()
-    for t in PASS_TILES:
+    for t, ground in PASS_TILES.items():
         before = tuple(int(v) for v in ga[tile_block(ga, *t)][1, 1])
-        ga[tile_block(ga, *t)] = HILLS
-        print("ground", t, before, "-> hills")
+        ga[tile_block(ga, *t)] = ground
+        print("ground", t, before, "->", ground)
+    x0, x1, y0, y1 = FOREST_BOX
+    for x in range(x0, x1 + 1):
+        for y in range(y0, y1 + 1):
+            if (x, y) not in PASS_TILES and tuple(int(v) for v in ga[tile_block(ga, x, y)][1, 1]) == IMPASSABLE:
+                ga[tile_block(ga, x, y)] = DENSE_FOREST
+                print("ground", (x, y), IMPASSABLE, "-> dense forest")
     write_tga(g, ga, os.path.join(base_out, "map_ground_types.tga"))
 
-    # heights: each pass tile and its border pixels get the mean of a 5x5 neighbourhood (land only)
+    # heights: each pass tile gets the mean of a 5x5 neighbourhood (land only), repeated (up to 4 rounds) while the
+    # steepest step inside the tile is above MAX_STEP
     hm = read_tga(os.path.join(base_in, "map_heights.tga"))
     ha = hm["img"].copy()
-    orig = hm["img"][:, :, 0].astype(float)
-    HH = ha.shape[0]
-    for t in PASS_TILES:
+
+    def steepest(t):
         rs, cs = tile_block(ha, *t)
-        changed = []
-        for r in range(rs.start, rs.stop):
-            for c in range(cs.start, cs.stop):
-                if tuple(ha[r, c]) != (ha[r, c, 0],) * 3:
-                    continue    # water (blue) - leave alone
-                v = int(round(orig[max(r - 2, 0):r + 3, max(c - 2, 0):c + 3].mean()))
-                changed.append((int(ha[r, c, 0]), v))
-                ha[r, c] = (v, v, v)
-        print("heights", t, changed)
+        blk = ha[rs, cs, 0].astype(int)
+        return int(max(np.abs(np.diff(blk, axis=0)).max(), np.abs(np.diff(blk, axis=1)).max()))
+    for t in PASS_TILES:
+        start = steepest(t)
+        for _ in range(4):
+            cur = ha[:, :, 0].astype(float)
+            rs, cs = tile_block(ha, *t)
+            for r in range(rs.start, rs.stop):
+                for c in range(cs.start, cs.stop):
+                    if not (ha[r, c, 0] == ha[r, c, 1] == ha[r, c, 2]):
+                        continue    # water (blue) - leave alone
+                    v = int(round(cur[max(r - 2, 0):r + 3, max(c - 2, 0):c + 3].mean()))
+                    ha[r, c] = (v, v, v)
+            if steepest(t) <= MAX_STEP:
+                break
+        print("heights", t, "steepest step", start, "->", steepest(t))
     write_tga(hm, ha, os.path.join(base_out, "map_heights.tga"))
 
     # descr_strat / descr_events (latin-1, line endings kept)
