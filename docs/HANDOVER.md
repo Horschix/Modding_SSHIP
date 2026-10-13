@@ -254,5 +254,12 @@ other game regions later. The candidate list and every decision are in issue #4.
   has one of his extra settlements selected (draw hook), restored otherwise and before every faction's turn ->
   AI-held extra settlements cannot build roads / farms / mines (they keep the starter pack). Open: does a queued farm /
   road in an extra settlement still finish when the flag is back to 1 at turn end? Did the road come back?
+- FOURTH TEST (user, 13 Oct): campaign start dropped back to the main menu. full.log: descr_strat line 12768 (Sinop)
+  "Settlement specifies port, but this region is not allowed a port" + "could not create settlement". Cause: the port
+  pixel was put on a SEA tile (330,149). A port pixel must be a COASTAL LAND tile (all 119 SSHIP ports are on land
+  ground types, with sea beside them). FIX installed 13 Oct, read back identical: port -> 331,146 (coast, sea north),
+  old port tile 335,146 -> Sinop region colour 255,255,176 (it is land). Checked: all 119 ports land + sea + region
+  beside, no city pixel on water. map.rwm must be deleted AGAIN (it was rebuilt with the bad port).
+  LESSON: after any map_regions edit run that port / city check.
 - NEXT (user): open the Kastamonu area (grey impassable 64,64,64) and the south coast, then add Kastamonu and Alanya.
 - Revert: delete the fourth require line (settlements already created stay in that save).

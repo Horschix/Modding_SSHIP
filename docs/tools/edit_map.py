@@ -4,7 +4,7 @@
     python3 docs/tools/edit_map.py backups/2026-10-13_before_map <OUT>
 
 Reads <backup>/data/world/maps/... and writes the same paths under <OUT>:
-  base/map_regions.tga       Nicaea's city pixel 291,137 -> 290,136; Sinop's port 335,146 (beside Bafra) -> 330,149
+  base/map_regions.tga       Nicaea's city pixel 291,137 -> 290,136; Sinop's port 335,146 (beside Bafra) -> 331,146
   base/map_ground_types.tga  passes to Karahisar (Afyon): tiles opened to hills
   base/map_heights.tga       heights along the passes smoothed (no cliffs)
   campaign/imperial_campaign/descr_strat.txt   Ioannis Axouchos (Nicaea's governor) 291,137 -> 290,136
@@ -21,8 +21,9 @@ import numpy as np
 from PIL import Image
 
 NICAEA_OLD, NICAEA_NEW = (291, 137), (290, 136)
-PORT_OLD, PORT_NEW = (335, 146), (330, 149)
+PORT_OLD, PORT_NEW = (335, 146), (331, 146)   # a port pixel must be a COASTAL LAND tile (all 119 SSHIP ports are)
 SEA = (41, 140, 233)
+SINOP_RGB = tuple(int(v) for v in '255 255 176'.split())
 NICAEA_RGB = (33, 59, 131)
 HILLS = (128, 128, 64)
 # Kutahya 290,130 -> 291,130 -> 291,129 -> 292,129 -> hills 293,129 / 293,128 -> ... -> Afyon 296,125
@@ -106,10 +107,10 @@ def main(src, out):
     def px(p):
         return H - 1 - p[1], p[0]
     assert tuple(a[px(NICAEA_OLD)][:3]) == (0, 0, 0) and tuple(a[px(NICAEA_NEW)][:3]) == NICAEA_RGB
-    assert tuple(a[px(PORT_OLD)][:3]) == (255, 255, 255) and tuple(a[px(PORT_NEW)][:3]) == SEA
+    assert tuple(a[px(PORT_OLD)][:3]) == (255, 255, 255) and tuple(a[px(PORT_NEW)][:3]) == SINOP_RGB
     a[px(NICAEA_OLD)][:3] = NICAEA_RGB
     a[px(NICAEA_NEW)][:3] = (0, 0, 0)
-    a[px(PORT_OLD)][:3] = SEA
+    a[px(PORT_OLD)][:3] = SINOP_RGB      # the old port tile is land: it becomes part of the Sinop region
     a[px(PORT_NEW)][:3] = (255, 255, 255)
     write_tga(m, a, os.path.join(base_out, "map_regions.tga"))
     print("regions: Nicaea", NICAEA_OLD, "->", NICAEA_NEW, ", Sinop port", PORT_OLD, "->", PORT_NEW)
