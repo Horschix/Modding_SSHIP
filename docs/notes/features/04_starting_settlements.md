@@ -159,3 +159,5 @@ other game regions later. The candidate list and every decision are in issue #4.
   Sororgia, Carrhae ...), Greek for Byzantium. DUMP_PATHS = 8 Mesopotamia routes (getMovePath unreliable on long ones).
 - Mesopotamia fix (user, 13 Oct), read back identical: Saruj (Sororgia) removed; Samosata 353,117 -> 352,117 (was on a
   river; new tile sparse forest, relief 9). 14 towns.
+- MESOPOTAMIA TEST 1 log (user, 13 Oct, before the Saruj / Samosata fix): all 15 created with the right owner, level,
+  population, garrison and name (Tikrit rebel, Nusaybin 2, Turbessel / Sororgia Latin). Reachability still to report.
