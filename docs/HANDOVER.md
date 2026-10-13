@@ -61,3 +61,17 @@ STEP 2 (not built): four settler units + recruit lines + `TEST = false`.
 - Player-only recruit lines: SSHIP's building file already uses `event_counter is_the_player 1` (2228 times).
 - SSHIP peasant units are split by culture (`Peasants`, `Southern_Peasants`, `EE_Peasants`, ...): candidate models.
 - Unit names prepared in the script: Catholic / Orthodox / Muslim / Pagan Settlers.
+
+### First test of step 1 (user, 13 Oct; logs read) and fix
+- Game starts; population cost works (POPREC lines: queue / cancel in Constantinople correct); fort building works.
+- LOGS: our lines (`M2TWEOP.logGame`) go to `mods\sship\full.log` (12 MB, staging needed 2-3 tries), NOT to `eop.log`
+  (SSHIP's own Lua log) and not to `logs\system.log.txt`. 
+- Founding failed: log `moveTactical false/no army, moveToTile true/nil`. In SSHIP's engine a general standing in a
+  fort has `character.army == nil` (the troops are the fort's army). `character:moveToTile` moved him once, but not
+  onto the chosen tile, so the script (which waited for exactly that tile) gave up after 12 s; once he did not move at all.
+- FIX installed 13 Oct, read back identical, dry-run against a mock that copies this behaviour: the order goes to
+  `tile.fort.army:moveTactical` when the character has no army; if he is still in the fort after 3 s the next free
+  land tile beside it is tried (straight neighbours first, `isLand`, no cliff); success = nobody left on the fort tile,
+  wherever he stands; walking back in uses whoever of them stands within 2 tiles.
+- Unrelated: SSHIP's own building file logs many "Script Error ... export_descr_buildings.txt, at line 44774" at start -
+  not ours (that file is untouched).

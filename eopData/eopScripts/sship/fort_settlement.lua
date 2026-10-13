@@ -160,13 +160,19 @@ local function selectedFortTile()
     return nil
 end
 
-local function freeTileBeside(x, y)
-    for dx = -1, 1 do
-        for dy = -1, 1 do
-            if (dx ~= 0 or dy ~= 0) and tileFree(x + dx, y + dy) then return x + dx, y + dy end
+-- free land tiles beside the fort, straight neighbours first (test of 10 Oct 2026: the first tile picked was
+-- not reached, so the script now tries the next one when the army does not move)
+local function freeTilesBeside(x, y)
+    local list = {}
+    local order = { {0,-1}, {1,0}, {0,1}, {-1,0}, {1,-1}, {1,1}, {-1,1}, {-1,-1} }
+    for i = 1, #order do
+        local tx, ty = x + order[i][1], y + order[i][2]
+        local tile = getTile(tx, ty)
+        if tileFree(tx, ty) and get(tile, "isLand") ~= 0 and get(tile, "hasCliff") ~= true then
+            list[#list + 1] = { tx, ty }
         end
     end
-    return nil, nil
+    return list
 end
 
 -- the settler units of an army: list of units and their men
@@ -237,11 +243,13 @@ local function createSettlement(player, x, y)
     return shown, sett
 end
 
-local job = nil     -- founding from inside: { phase, x, y, tx, ty, deadline, nextCheck }
+local job = nil     -- founding from inside: { phase, x, y, tiles, try, deadline, nextCheck, ... }
 
 -- a normal move order, as if the player had clicked (needs movement points)
-local function orderMove(char, tx, ty)
-    local army = get(char, "army")
+-- fortArmy: in SSHIP's engine a general standing in a fort has no army of his own (character.army is nil,
+-- log of 10 Oct 2026); the troops are the fort's army, so that one gets the order.
+local function orderMove(char, tx, ty, fortArmy)
+    local army = get(char, "army") or get(char, "visitingArmy") or fortArmy
     local okA, errA = false, "no army"
     if army ~= nil then okA, errA = pcall(function() army:moveTactical(tx, ty, false) end) end
     local how = "moveTactical " .. tostring(okA) .. "/" .. tostring(errA)
@@ -324,12 +332,28 @@ function FS.found(x, y, state)
     local money = get(player, "money")
     if type(money) == "number" and money < COST then say("Not enough gold: founding an outpost costs " .. COST .. "."); return end
 
-    local tx, ty = freeTileBeside(x, y)
-    if tx == nil then say("No free tile beside the fort for the army to step on."); return end
-    log("start (inside) at " .. x .. "," .. y .. ", characters inside: " .. #inside .. " " .. describe(inside))
-    for i = 1, #inside do orderMove(inside[i], tx, ty) end
-    job = { phase = "out", settlers = units, chars = inside, x = x, y = y, tx = tx, ty = ty, deadline = os.clock() + 12, nextCheck = os.clock() + 0.5 }
+    local tiles = freeTilesBeside(x, y)
+    if #tiles == 0 then say("No free tile beside the fort for the army to step on."); return end
+    local fortArmy = get(get(getTile(x, y), "fort"), "army")
+    log("start (inside) at " .. x .. "," .. y .. ", characters inside: " .. #inside .. " " .. describe(inside)
+        .. ", fort army " .. tostring(fortArmy) .. ", free tiles beside: " .. #tiles)
+    for i = 1, #inside do orderMove(inside[i], tiles[1][1], tiles[1][2], fortArmy) end
+    job = { phase = "out", settlers = units, chars = inside, x = x, y = y, tiles = tiles, try = 1, fortArmy = fortArmy,
+            retryAt = os.clock() + 3, deadline = os.clock() + 3 * #tiles + 3, nextCheck = os.clock() + 0.5 }
     say("The army steps out of the fort ...")
+end
+
+-- characters of the list that stand within two tiles of x, y (but not on it)
+local function besideOf(chars, x, y)
+    local found = {}
+    for i = 1, #chars do
+        local cx, cy = get(chars[i], "xCoord"), get(chars[i], "yCoord")
+        if type(cx) == "number" and type(cy) == "number" and math.abs(cx - x) <= 2 and math.abs(cy - y) <= 2
+            and not (cx == x and cy == y) then
+            found[#found + 1] = chars[i]
+        end
+    end
+    return found
 end
 
 local function allAt(chars, x, y)
@@ -348,7 +372,7 @@ function FS.tick()
     local player = playerFaction()
     if job.phase == "out" then
         local inside = charactersAt(job.x, job.y)
-        if #inside == 0 and allAt(job.chars, job.tx, job.ty) then
+        if #inside == 0 then
             local shown, sett = replaceFort(player, job.x, job.y)
             if shown == nil then job = nil; return end
             settleDown(job.settlers, sett)
@@ -356,12 +380,12 @@ function FS.tick()
                 local okPay, errPay = pcall(function() M2TWEOP.callConsole("add_money", "-" .. tostring(COST)) end)
                 log("charged " .. COST .. " gold: " .. tostring(okPay) .. " " .. tostring(errPay))
             end
-            -- a captain may have died with his settler unit: look afresh who stands there, never use the old list
-            job.chars = charactersAt(job.tx, job.ty)
+            -- whoever of them stands beside the town now (the engine may have picked another tile than ordered)
+            job.chars = besideOf(job.chars, job.x, job.y)
             log("walk in: " .. #job.chars .. " " .. describe(job.chars))
             if #job.chars == 0 then
                 lastInside = nil
-                say("Settlement founded: " .. shown .. ". The settlers have moved in.")
+                say("Settlement founded: " .. shown .. ". Walk your army in.")
                 job = nil
                 return
             end
@@ -369,13 +393,20 @@ function FS.tick()
             lastInside = nil
             job.phase, job.shown, job.deadline = "in", shown, now + 12
             say("Settlement founded: " .. shown .. ". The army walks in ...")
+        elseif now >= job.retryAt and job.try < #job.tiles then
+            -- did not move (blocked tile?): try the next tile beside the fort
+            job.try = job.try + 1
+            job.retryAt = now + 3
+            local t = job.tiles[job.try]
+            log("still in the fort, try " .. job.try .. " of " .. #job.tiles .. ": " .. describe(inside))
+            for i = 1, #inside do orderMove(inside[i], t[1], t[2], job.fortArmy) end
         elseif now > job.deadline then
             log("gave up: " .. #inside .. " still in the fort " .. describe(inside))
             job = nil
             say("The army did not leave the fort (no movement left?). Nothing was changed - try again next turn.")
         end
     elseif job.phase == "in" then
-        local outside = charactersAt(job.tx, job.ty)
+        local outside = besideOf(job.chars, job.x, job.y)
         if allAt(job.chars, job.x, job.y) then
             local sett = get(getTile(job.x, job.y), "settlement")
             log("done: army inside, settlement army " .. tostring(get(sett, "army")) .. ", governor " .. tostring(get(sett, "governor")))
