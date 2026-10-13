@@ -283,7 +283,71 @@ function SS.draw()
     end
 end
 
+-------------------------------------------------------------------------
+-- TEMPORARY terrain dump (13 Oct 2026): what the ENGINE blocks. Logged once per game session at map load.
+-------------------------------------------------------------------------
+local DUMP = true
+local DUMP_BOXES = { { "kastamonu", 286, 336, 135, 151 }, { "south", 294, 334, 103, 121 } }
+local DUMP_PATHS = {
+    { "Kastamonu-Sinop", 319, 143, 329, 148 }, { "Kastamonu-Angora", 319, 143, 312, 132 },
+    { "Kastamonu-Nikomedeia", 319, 143, 290, 139 }, { "Kastamonu-coast", 319, 143, 319, 147 },
+    { "Alanya-Tarsus", 307, 110, 328, 112 }, { "Konya-Alanya", 310, 118, 307, 110 },
+    { "Attaleia-Alanya", 297, 114, 307, 110 },
+}
+local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
+local dumped = false
+
+function SS.dumpTerrain()
+    if not DUMP or dumped then return end
+    dumped = true
+    local costs = {}
+    for gt = 0, 15 do
+        local ok, c = pcall(function() return M2TWEOP.getGroundTypeMoveCost(gt) end)
+        costs[#costs + 1] = gt .. "=" .. tostring(ok and c)
+    end
+    log("DUMP move costs: " .. table.concat(costs, " "))
+    for b = 1, #DUMP_BOXES do
+        local name, x0, x1, y0, y1 = unpack(DUMP_BOXES[b])
+        log("DUMP box " .. name .. " x " .. x0 .. "-" .. x1 .. " (ground letter, then ! = cliff, r = river, H = height/10)")
+        for y = y1, y0, -1 do
+            local g, h = {}, {}
+            for x = x0, x1 do
+                local okT, tile = pcall(function() return M2TW.stratMap.getTile(x, y) end)
+                if okT and tile ~= nil then
+                    local gt = get(tile, "groundType")
+                    local mark = (get(tile, "hasCliff") == true and "!") or (get(tile, "hasRiver") == true and "r") or "."
+                    g[#g + 1] = (GROUND_LETTER[gt] or "?") .. mark
+                    local hv = get(tile, "height")
+                    h[#h + 1] = type(hv) == "number" and string.format("%2d", math.floor(hv / 10)) or "??"
+                else
+                    g[#g + 1] = "??"; h[#h + 1] = "??"
+                end
+            end
+            log("DUMP " .. name .. " y" .. y .. " G " .. table.concat(g, " "))
+            log("DUMP " .. name .. " y" .. y .. " H " .. table.concat(h, " "))
+        end
+    end
+    for i = 1, #DUMP_PATHS do
+        local name, fx, fy, tx, ty = unpack(DUMP_PATHS[i])
+        local okP, path = pcall(function() return M2TW.stratMap.getMovePath(fx, fy, tx, ty) end)
+        if okP and path ~= nil then
+            local n = get(path, "totalTiles") or 0
+            local pts = {}
+            for k = 0, n - 1 do
+                local okC, c = pcall(function() return path:getPathCoords(k) end)
+                if okC and c ~= nil then pts[#pts + 1] = tostring(get(c, "xCoord")) .. "," .. tostring(get(c, "yCoord")) end
+            end
+            log("DUMP path " .. name .. ": tiles " .. tostring(n) .. ", cost " .. tostring(get(path, "totalCost"))
+                .. " : " .. table.concat(pts, " "))
+        else
+            log("DUMP path " .. name .. ": none (" .. tostring(path) .. ")")
+        end
+    end
+end
+
 function SS.onMapLoaded(why)
+    local okD, errD = pcall(SS.dumpTerrain)
+    if not okD then log("ERROR dump: " .. tostring(errD)) end
     local okH, errH = pcall(SS.setHinterlandFlags, false, why)
     if not okH then log("ERROR hinterland flags: " .. tostring(errH)) end
     SS.refreshNames(why)
