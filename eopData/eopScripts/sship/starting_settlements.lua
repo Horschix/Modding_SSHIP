@@ -450,7 +450,7 @@ local SETTS = {
     { key = "tver", x = 335, y = 255, capital = "Novgorod", level = 1, population = 500,  -- EU5 city, founded c. 1135
       names = { russia = "Tver'", kievan_rus = "Tver'", poland = "Twer", lithuania = "Tverė", european = "Tveria", greek = "Tvéri", middle_eastern = "Tver", default = "Tver'" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "moscow", x = 347, y = 248, capital = "Rustov", level = 1, population = 500,  -- EU5 city, first mentioned 1147
+    { key = "moscow", x = 347, y = 248, capital = "Rustov", ownerFrom = "Suzdal", level = 1, population = 500,  -- EU5 city, first mentioned 1147; stays Kievan Rus (user, 14 Oct)
       names = { russia = "Moskva", kievan_rus = "Moskva", poland = "Moskwa", lithuania = "Maskva", european = "Moscovia", greek = "Moschóbion", middle_eastern = "Moskova", default = "Moskva" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "vologda", x = 358, y = 271, capital = "Rustov", level = 1, population = 500,  -- EU5 town, first mentioned 1147

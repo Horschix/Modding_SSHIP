@@ -277,7 +277,7 @@ other game regions later. The candidate list and every decision are in issue #4.
   town 3 tiles from Suzdal - CONFIRM), Bryansk (Debryansk), Torzhok (Novyi Torg), Poltava (Ltava), Novgorod-Seversky, and
   Khaybar (Arabia). ROSTOV given to Novgorod (russia) in descr_strat: settlement block moved from kievan_rus to the end of
   the russia settlements, governor Volodar + army moved to the russia characters (campaign_script has no Rostov
-  reference). So Beloozero, Vologda and Moscow (region Rustov) start Novgorodian. Jeddah 361,1 -> 358,5 (user: 4 up,
+  reference). So Beloozero and Vologda (region Rustov) start Novgorodian; Moscow ownerFrom = "Suzdal" -> stays Kievan Rus (user, 14 Oct). Jeddah 361,1 -> 358,5 (user: 4 up,
   3 west; low fertile, reachable from Mecca in 6). 14 Russia towns. NEW campaign; map.rwm can stay.
   PROPOSED, not installed: Pskov area (Izborsk 279,259; Porkhov; Velikiye Luki; Tartu / Otepaa in Kolyvan region;
   Koknese / Jersika in Riga region) and Oman / Gulf (Sohar 482,18, Julfar 478,29, Muscat 496,13 (inland, relief 45),
