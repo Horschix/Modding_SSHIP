@@ -1,0 +1,786 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;      HISTORICAL EVENTS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Be careful with changing something in this file:
+; - events are used in EDB and script, some also in EDCT, EDA, DFS, descr_mercenaries.
+; - there may be path-dependence: an event from here may be used in the script to unlock / trigger other events.
+; - change of the name of the event must be accompanied by the change in historic_events.txt (otherwised you'd get a crasha when the event happens).
+; - events may have their special, dedicated pictures - you need to add them in 5 diffrent directories (the same file is enough, no need to change name).
+; - some events in this file (they begin with ;;;;;; ) are only for a modder information purpose as they are defined in script.txt (they usually depict reforms).
+; - events "INFO_" should not be here - all should be in the script on even turns. They should never be used in other files: they are just to inform the player about mechanics.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; WHEN AN EVENT HAPPENS / SHOWS UP:
+;   date 0 is 1132 (and date 1 is 1133)
+;   events in this file pop-out on odd turns (summer): turn = ( date x 2 ) + 1
+;      (except of 0 - doesn't show at all - it may be used for triggering earlier events)
+;   you can create events happening on even turns (winter) using the script.txt: turn = I_TurnNumber + 1
+;   events scheduled for the same turn are shown-in game (to the player - that icon falling on the left side of the screen at the beginning of a turn):
+;   - first: in the reverse order if coded in this file (second before the first etc.)
+;   - second: in the normal order if coded in campaign.txt
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; MERCENARIES - you can use "events" only from this file - keep it in mind when you transform something into the script.txt
+;
+; so: DON'T TRANSFROM ARMOUR-RELATED EVENTS to script. Leave them here.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; CODING
+; Events are followed by a category, and a label
+; labels are used as lookups into historic_events.txt for title and body strings,
+; and also as image names for the event picture
+;
+; Currently supported categories are:
+; - counter  - increases a counter
+; - historic - increases a counter AND generates a pop-out window (message) for the player
+; - volcano  - triggers a volcano if there is one on the map at the position specified
+; - plague   - triggers a plague in settlements at the specified positions
+; - emergent_faction - triggers the emergence of the given faction. This faction must be marked as emergent in descr_strat.txt.
+; - fire - 
+;
+; event descriptions are followed by a date (year as offset from starting date) or a date range
+; and either a list of positions, or list of regions.  Each position/region specification must appear on
+; a seperate line below the date
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; WHAT HAS BEEN INCLUDED IN THIS SSHIP FILE
+; - great muslim scholars from Broken Crescent
+; - many events made by SSHIP team
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; IDEAS FOR THE NEW HISTORICAL EVENTS TO BE INTRODUCED
+;
+; Cluny reforms - rolled out in 12th century so they're worth describing
+; 1140 Assisi Regnum Siciliae - first reform for Sicily
+; 1135 Slavic raid on Konungahella - event is there, NO reforms yet
+; - Lateranum II has forbidden use of the crossbow for the Catholics - used for crossbows already
+; - some more consequences of Lateranum IV: (ie development of schools - it was a crucial event)
+; - The Cathar crusade at the beginning of 13c. - FR reforms already
+; - 1264 - tolerance for the Jews in Poland (the Calisia act) - PL event already
+; - 1300 first denarius grossus minted in Bohemia (availability of upper tier mines in the east or maybe of markets)
+; - Venice 1428 - Toleta de Marteloio - improvement in navigation
+; 1242 battle on the Ice
+; 1397 Union of Kalmar
+; 1399 Battle of Vorskla River
+; Silk production in Europe
+; settlement of the Cumans in Hungary (event for Hungary providing with more units)
+; - futuwwa - as a system
+; - rotgiesserei (ludwisarnia)
+;- Kirillo-Beloozersky Monaster - when Russia builds 10 monastiers a reform is taking place
+; - switch in Makuria: no more baqt but now jizyah (ca. 1274)
+; Die gelaufige Fachwerktechnik im Hausbau ist in Mitteleuropa erst seit der ersten Halfte des 12. Jahrhunderts fassbar.
+
+; IDEAS FOR THE NEW GREAT PEOPLE TO BE INTRODUCED
+;
+; - monks: Otto von Bamberg +1139, Bernard de Clerveau
+; - historians: Saxo Gramaticus, Kosmas of Praque, Jan Dlugosz
+; - philosophers: OCKHAM, Albertus Magnus (is already in SSHIP), BACON, Gerard of Cremona (added aready)
+; - architecture: Romanic, Gothic
+; - for Georgia: book The Life of Kartli
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; EVENTS:
+
+event	historic	early_era
+date	0
+
+;;;;;;	1 (turn 3):	cath: EDUCATION_BOLOGNA_UNIVERSITY, orth: BYZANTINE_PANTOKRATOR, muslm: omar_khayyam
+		
+;;;;;;	1	SOCIETY_KNIGHTS
+
+;;;;;;	7	ORDER_OMNE_DATUM_OPTIMUM_BULL				; Military Orders Recruitment starts
+
+;;;;;;	3	NORWAY2_KONUNGAHELLA						; Norway evolution
+
+event	historic	info_diplomacy						; Diplomacy manual
+date	1
+
+event	historic	diplomacy_hint1						; How to end unwanted war explanation
+date	3
+
+event	historic	lateran_council2					; more Canons of St Sepulchre available to KoJ; crossbow militia available in the cities in the Christian world
+date	8
+
+event	historic	SCIENCE_BOOK_ALCHEMY
+date	12 15
+
+;;;;;;	15			SCOTLAND2_DAVIDIAN_REVOLUTION		; new units in Scotland
+
+;;;;;;	15	MOSCOW_FOUNDED								; Crossbowmen available for Kiev
+
+
+;;;;;;	15			albigensian_heresy					; step in evolution of France
+
+event	historic	SCIENCE_BOOK_OF_SENTENCES			; benefits from the universities for NE and SE increased; there's a nice pic
+date	20 28
+
+;;;;;;	42	anna_comnena								; currently unlocks many benefits for the Byzantines, but it should be changed
+
+;;;;;;	22			HRE21_HILDEGARD_OF_BINGEN
+
+event	historic	TECHNOLOGY_HEAVY_PLOUGH				; increases farm fertility in certain cultures
+date	23 30
+
+event	historic	BOOKS_EUROPEAN_PAPER				; catholics can build paper mills
+date	25 45
+
+;;;;;;	20-60		HANSEATIC_LEAGUE					(lvl1 building available for Hansa Teutonica, Mailed Knights for Denmark)
+
+event	historic	SEA1_USE_OF_MAPS					; increased range for the Catholic mediterranean factions
+date	26
+
+;;;;;;	20-40		DENMARK2_SANKT_ERIK					(1st reforms for Denmark), Shrine of St Erik is available to be built in Sigtuna
+
+;;;;;;	23-28		notre_dame	- in script
+
+;;;;;;	30-32		EDUCATION_PRIVILEGIUM_SCHOLASTICUM	kicks-off the mechnism of making universities buildable for the Catholic; enables recruitment of the Mangonels for the player
+;;;;;;	later		EDUCATION_UNIVERSITIES_BUILDABLE  	universities buildable for the Catholic factions
+		
+;;;;;;	35 or later	al_idrisi - added by script after building the Palazzo dei Normani - unlocks ancillaries "Books - Maps"
+
+;;;;;;	38			ENGLAND2_THOMAS_BECKET						; used in EDB in recuitment
+
+event	historic	SCIENCE_TRANSLATION_MOVEMENT
+date	41
+
+event	historic	SCIENCE_TRANSLATION_GERARD
+date	42 80
+
+event	historic	BOOK_WINCHESTER_BIBLE
+date	44 54
+
+event	historic	FIRST_WINDMILL
+date	45 60
+
+event	historic	BOOK_PRESTER_JOHN_LETTER			; no effect yet - maybe increase of piety? maybe additional book? maybe more pay off from crusade / gift to crusaders?
+date	45
+
+event	historic	lateran_council3
+date	46
+
+event	historic	first_rudder
+date	48
+
+event	historic	TECHNOLOGY_SAWMILL
+date	50 70
+
+;;;;;;	40-65 		GEORGIAN2_GOLDEN_AGE 				(1st reforms for Georgia)
+
+;;;;;;	50-60		OSTSIEDLUNG							(reforms for Poland and Hungary; buildings available for Hansa Teutonica)
+
+event	historic	HISTORIC_HAMBURG_CITY_RIGHTS		; no specific pic yet, it should also be resetricted in visibility only to the northern factions
+date	49
+
+event	historic	NAVAL_COMPASS_MUSLIM				; to be moved from here to script.txt
+date	50
+
+event	historic	first_magnetic_compass				; increases movement range of the admirals (throug a trait in EDCT)
+date	50
+
+event	historic	BOOKS_CLAY_MOVABLE_TYPE				; no pic yet
+date	50 59
+
+event	historic	ad_abolendam						; inquisitors are going to be stronger (for difficulties)
+date	51 60
+
+;;;;	56			BATTLE_HATTIN
+
+;;;;;;	60-100		HANSEATIC_LEAGUE_EXPANDS			(lvl2 building available for Hansa Teutonica)
+
+event	historic	maimonides
+date	59 
+
+event	historic	SCIENCE_TRANSLATION_LIBER_SECRETORUM	; Alchemist Lab available for 
+date	60 90
+
+event	historic	HEAVY_MAIL_ARMOR					; _____ ESSENTIAL reform for many units _____
+date	60 80
+
+event	historic	ROLES_D_OLERON						; upper levels of ports of the NE factions provide now more trade income
+date	62
+
+event	historic	suhrawardi
+date	63
+
+event	historic	CHARITY_BEGUINES_BEGINNING			; no pic yet, no coding
+date	65 80
+
+event	historic	rushd
+date	69
+
+event	historic	science_maths_zero_europe			; (Liber Abaci): more benefits from universities; also South Italian buildings provide more benefits
+date	70
+
+;;;;	70			EUPHROSYNE							; reforms for Rus factions and multiple EDB benefits
+
+event	historic	BOOK_CHRETIEN_DE_TROYES				; no effects
+date	72
+
+event	historic	ECONOMY_SCYTHE_INTRODUCED			; increased population growth in upper levels of farms
+date	73
+
+event	historic	TECHNOLOGY_WHEELBARROW				; increases discounts from Quarries and Stonemasons
+date	75 85
+
+event	historic	childrens_crusade
+date	76
+
+event	historic	jazari								; Muslim Universities provide more benefits.
+date	77
+
+event	historic	franciscan_order_founded			; huge cathedrals increase the limit of priests
+date	78
+
+;;;;;;	75-110		GEORGIAN3_SHOTA_RUSTAVELI 			(2nd reforms for Georgia)
+
+event	historic	mongols_invasion_warn				; MONGOLS ARE COMING (triggers scripts in script.txt)
+date	79 86
+
+;;;;;;	80			ENGLAND3_MAGNA_CARTA				; used in EDB in recuitment
+
+event	historic	dominican_order_founded				; abbeys increase the limit of priests
+date	82
+
+event	historic	lateran_council4					; a lot of benefits increase for the Latin factions
+date	84
+
+;;;;;;	85	BYZANTIUM7_METEORA							; additional priest from huge cathedrals
+
+event	historic	ECONOMY_NEW_USES_OF_WATER_POWER		; to be modified!
+date	87
+
+event	historic	BOOK_WOLFRAM_VON_ESCHENBACH			; no effects
+date	88
+
+event	historic	torre_del_oro
+date	90
+
+event	historic	ARCHITECTURE_CHATEAU_GAILLARD		; no pic yet, no coding
+date	90 110
+
+;;;;;;	??			HUNGARY5_GOLDEN_BULL				; reforms for Hungary
+
+event	historic	MOUNTED_CROSSBOWS					; _____ ESSENTIAL reform for many units _____
+date	90 120
+
+;;;;;;	100-150		GEORGIAN4_CROSSBOW_IN_CAUCASUS		(Gasmouli for Georgia)
+
+event	historic	gunpowder_discovered
+date	90 110
+movie	event/gunpowder_invented.bik
+
+;;;;;;	100			LITHUANIA3_MINDAUGAS				reforms for Lithuania
+
+event	historic	inquisition							; inquisitors are going to be stronger (for difficulties)
+date	93 103
+
+event	historic	Francis_of_Assisi
+date	94
+
+event	historic	athir								; Muslim Libraries provide more benefits.
+date	99
+
+;;;;;;	100-130		HANSEATIC_LUBECK					(lvl3 building in Lubeck available for Hansa Teutonica)
+
+;;;;;;	90 120		POLAND3_FIRST_TOURNEY				; reforms for Poland
+
+;;;;;;	100			ENGLAND4_MAPPA_MUNDI_HEREFORD		; (not yet used but should be!)
+
+;;;;;;	104			early_era ends (counter switches to 0), high_era begins	(counter switches to 1)
+
+;;;;;;	120			HUNGARY7_CUMANS						; reforms for Hungary: settlement of Cumans after Mongol invasion
+
+event	historic	LLYWELYN_FAWR						; no pic
+date	109
+
+event	historic	BYZANTIUM21_ADELPHOPOIESIS			; bonus for Mints/Banks
+date	109 120
+
+event	historic	baitar								; Muslim Universities provide more benefits. Farms lvl 3 also provide more.
+date	110
+
+event	historic	tusi
+date	113
+
+event	historic	TECHNOLOGY_HARBOUR_CRANE			; Great Crane possible to be built in Gdansk; in the future: more income from ports
+date	115 190
+
+event	historic	nafis
+date	120
+
+event	historic	MONEY_FIRST_FLORIN					; increases income from mints for Pisa and allows it avoiding some corruption
+date	110 130
+
+event	historic	MONEY_FIRST_DUCATO					; increases income from mints for Venice and allows it avoiding some corruption
+date	115 140
+
+event	historic	BOOK_SPECULUM_MAIUS					; no effects yet
+date	120 140
+
+event	historic	ISLAM_BARID
+date	121 140
+
+event	historic	CONCENTRIC_CASTLES					; _____ ESSENTIAL reform for many units _____
+date	123 153
+
+event	historic	rumi								; Muslim theologian guilds provide more benefits
+date	124
+
+event	historic	1258_BAGHDAD_SACKED
+date	126
+
+;;;;;;	125 150		POLAND4_LOCATION_OF_CRACOW			reforms for Poland
+
+;;;;;;	125-160		HANSEATIC_WARS						(lvl3 unique buildings available for Hansa Teutonica)
+
+event	historic	POLAND4A_STATUTE_OF_KALISZ
+date	132
+
+event	historic	dante_born							; upper levels of Palazzo possible to be built; in the future may be turned into a mechanism
+date	133
+
+event	earthquake	earthquake_in_cilicia
+date	136
+position	335, 115
+
+;;;;;;	150			ENGLAND5_ENGLISH_ARCHERS			; Archer Militia unit available in Britain	
+
+event	historic	MONEY_BARDI_BANK					; Enables building bank for Catholics. Raises the limit of mints. Raised the limit of money hording without loss due to thieves.
+date	140 170
+
+event	historic	CARTA_PISANA						; bonus for SE ports; increases movement range of the SE admirals (through a trait in EDCT)
+date	141 151
+
+event	historic	SCIENCE_BOOK_SUMMA_THEOLOGICA		; more benefits for the Latins from universities
+date	142
+
+event	historic	marco								; more units from Merchant guild for IT factions
+date	143
+
+event	historic	NEW_TRADE_ROUTES					; more units from Merchant guild for ES catholic factions
+date	145
+
+event	historic	first_mechanical_clock
+date	148
+
+event	historic	SCIENCE_BOOK_ALBERTUS_MAGNUS		; no pic, maybe should be made in relation to the ancillary
+date	149 160
+
+event	historic	CANNONS								; _____ ESSENTIAL reform for many units _____
+date	150 175
+
+event	historic	NAVIGATION_IN_WINTER				; no bonuses coded yet
+date	152 162
+
+;;;;;;	135-180 	GEORGIAN6_REVIVAL 					(3rd reforms for Georgia)
+
+;;;;;;	150-175		HANSEATIC_COG						(buildings available for Hansa Teutonica)
+
+;;;;;;	150 185		POLAND5_COUNCIL_OF_LECZYCA			(reforms for Poland)
+
+event	historic	first_eyeglasses
+date	154
+
+event	historic	JEWS_FIRST_EXPULSIONS
+date	158
+
+event	historic	SWISS_LEAGUE						; HRE turmoil points no longer reset
+date	159
+
+event	historic	TRANSITIONAL_ARMOR					; _____ ESSENTIAL reform for many units _____
+date	160 180
+
+event	historic	new_era_begins						; used in many places but should be remade into a few events: new trade routs, practical application of gundpowder etc
+date	168
+
+event	earthquake	earthquake_in_alexandria
+date	170
+position	293, 71
+
+;;;;;;	175-225		HANSEATIC_CONFEDERATION_OF_COLOGNE	(additional benefits for Hansa Teutonica)
+
+;;;;;;	175			LITHUANIA5_LITHUANIAN_EMPIRE		late reforms for Lithuania
+
+event	historic	shirazi
+date	171
+
+event	earthquake	earthquake_in_alexandria_2
+date	180
+position	293, 71
+
+event	historic	PAVISE_SHIELDS						; _____ ESSENTIAL reform for many units _____
+date	180 200
+
+event	historic	MONEY_KREMNICA_MINT					; enables building of Banks by Poland and Hungary
+date	182 200
+
+event	historic	HRE20_SACHSENSPIEGEL				; not used yet
+date	185 215
+
+event	historic	yunus_emre							; Muslim racing tracks give benefits
+date	188
+
+event	historic	FRANCE20_HOPITAL_TONNERRE 
+date	189 199
+
+event	historic	SCOTLAND_WARS_OF_INDEPENDENCE		; new units in Scotland
+date	190 210
+
+event	historic	KANKAN_MUSA							; _____ reform for many Muslim units _____
+date	195 205
+
+event	historic	kathir								; Muslim Libraries provide more benefits.
+date	197
+
+event	historic	BOOK_DEFENSOR_PACIS 
+date	199
+
+event	historic	first_blast_furnace
+date	200
+
+;;;;;;	200 235		POLAND6_UNITED_KINGDOM				reforms for Poland
+
+event	historic	first_public_clock
+date	202
+
+event	historic	science_weather_forecast
+date	204
+
+event	historic	hundred_years_war
+date	206
+
+event	historic	HALF_PLATE_ARMOR					; _____ ESSENTIAL reform for many units _____
+date	210 230
+
+event	historic	MONEY_BARDI_BANK_BANKRUPT			; no consequences yet, just a follow-up of a historical story
+date	212
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; WARNING (OCT 2022)! THE COORDINATES MAY BE OUTDATED SINCE THE SETTLEMENTS WERE MORE MOVED FROM PLACE TO PLACE
+event	plague	black_death_hits
+date	214
+position	474, 212
+position	505, 147
+position	433, 242
+position	423, 178
+position	430, 262
+position	495, 120
+position	508, 114
+position	500, 107
+position	472, 78
+position	449, 107
+position	438, 108
+position	453, 81
+position	383, 190
+position	362, 186
+position	319, 166
+movie	event/black_death.bik
+
+event	historic	ORDER_GARTER
+date	216
+
+event	plague	black_death_1
+date	216
+position	434, 136
+position	425, 147
+position	400, 146
+position	386, 151
+position	370, 118
+position	362, 141
+position	346, 171
+position	329, 148
+position	333, 124
+position	310, 118
+position	335, 115
+position	338, 106
+position	336, 97
+position	343, 90
+position	331, 83
+position	325, 72
+position	323, 69
+position	306, 72
+position	302, 61
+position	313, 132
+position	291, 137
+position	297, 114
+position	318, 99
+position	271, 122
+position	344, 132
+position	374, 134
+position	258, 99
+position	242, 118
+position	229, 126
+position	284, 142
+position	268, 145
+position	223, 76
+position	173, 119
+position	393, 113
+position	351, 122
+position	242, 139
+position	218, 142
+position	206, 154
+position	199, 142
+position	174, 159
+position	168, 173
+position	161, 167
+position	158, 160
+position	169, 146
+position	182, 139
+position	144, 174
+position	142, 166
+position	113, 160
+position	355, 114
+position	142, 129
+position	387, 108
+position	425, 97
+position	361, 106
+position	347, 109
+position	457, 57
+position	421, 65
+position	329, 59
+position	355, 44
+position	363, 22
+position	364, 1
+position	396, 88
+position	293, 71
+position	191, 120
+position	153, 158
+position	130, 160
+position	218, 149
+position	157, 172
+
+event	plague	black_death_2
+date	218
+position	172, 82
+position	157, 101
+position	151, 109
+position	100, 110
+position	66, 97
+position	98, 130
+position	70, 120
+position	75, 131
+position	93, 143
+position	71, 145
+position	66, 153
+position	88, 159
+position	72, 169
+position	113, 174
+position	98, 176
+position	73, 187
+position	94, 198
+position	115, 186
+position	131, 189
+position	141, 186
+position	166, 197
+position	193, 177
+position	222, 157
+position	247, 152
+position	245, 168
+position	276, 185
+position	297, 209
+position	230, 183
+position	248, 178
+position	309, 180
+position	305, 218
+position	304, 206
+position	374, 239
+position	384, 250
+position	105, 201
+position	80, 180
+position	91, 190
+position	105, 192
+position	177, 174
+position	186, 163
+position	262, 156
+position	214, 189
+
+event	historic	HANDGUN								; _____ ESSENTIAL reform for many units _____
+date	218 243
+
+event	plague	black_death_3
+date	220
+position	312, 31
+position	17, 76
+position	41, 92
+position	51, 114
+position	43, 119
+position	19, 114
+position	11, 125
+position	28, 126
+position	49, 134
+position	36, 114
+position	19, 144
+position	37, 152
+position	51, 150
+position	35, 62
+position	66, 192
+position	76, 199
+position	95, 207
+position	111, 211
+position	126, 202
+position	56, 214
+position	77, 216
+position	19, 135
+position	69, 226
+position	70, 235
+position	47, 227
+position	114, 220
+position	103, 213
+position	161, 202
+position	179, 194
+position	198, 193
+position	209, 197
+position	141, 205
+position	181, 206
+position	140, 226
+position	170, 222
+position	142, 244
+position	180, 230
+position	199, 214
+position	15, 154
+position	253, 200
+position	282, 244
+position	309, 241
+position	355, 259
+position	127, 212
+position	137, 199
+position	154, 211
+position	155, 233
+
+event	plague	black_death_4
+date	222
+position	304, 266
+position	283, 260
+position	240, 280
+position	255, 273
+position	256, 237
+position	248, 241
+position	250, 255
+position	224, 239
+position	212, 235
+position	164, 246
+position	172, 247
+position	193, 253
+position	210, 260
+position	174, 265
+position	206, 275
+position	154, 276
+position	116, 281
+position	32, 229
+position	57, 248
+position	49, 258
+
+event	historic	battuta								; increases movement range of the Muslim admirals (throug a trait in EDCT)
+date	223
+
+event	historic	TIMURIDS_INVASION_WARN				; only event here
+date	235
+
+event	historic	CATALAN_ATLAS
+date	242
+
+event	historic	SHATIR								; Muslim Libraries provide more benefits.
+date	243
+
+event	historic	khaldun								; Muslim Universities provide more benefits.
+date	244
+
+event	historic	FULL_PLATE_ARMOR					; _____ ESSENTIAL reform for many units _____
+date	250 270
+
+;;;;;;	258			high_era ends (counter switches to 0), late_era begins	(counter switches to 1)
+
+event	historic	THE_TIMURIDS_EMERGE				; only event here, EDB: changes
+date	260
+
+;;;;;;	260 300		GEORGIAN7_LAST_UNITED_KINGDOM		last reforms for Georgia
+
+event	historic	MONEY_MEDICI_FAMILY					; SE factions can build the highest level of bank
+date	260 280
+
+event	historic	first_piano
+date	268
+
+event	historic	IMPROVED_METALLURGY					; _____ ESSENTIAL reform for many units _____
+date	268
+
+event	historic	world_is_round
+date	268 274
+
+event	historic	BOOKS_XYLOGRAPHICA					; no pic yet
+date	270 300
+
+event	historic	BOOK_CITY_OF_LADIES
+date	273
+
+event	historic	ORDER_DRAGON
+date	276
+
+event	historic	MONEY_FUGGER_FAMILY					; NE and EE factions can build the highest level of bank
+date	280 300
+
+event	historic	MATCHLOCK
+date	288 308
+
+event	historic	first_oil_painting
+date	288
+
+;;;;;;	280 320		POLAND7_GOLDEN_AGE					last reforms for Poland
+
+event	historic	ORDER_GOLDEN_FLEECE
+date	298
+
+event	historic	GOTHIC_ARMOR						; _____ ESSENTIAL reform for many units _____
+date	310 330
+
+event	historic	science_de_docta_ignorantia
+date	312
+
+event	earthquake	earthquake_in_naples
+date	324
+position	182, 139
+
+event	historic	spain_unify
+date	337
+
+event	historic	spanish_inquisition
+date	349
+
+event	historic	malleus_maleficarum
+date	354
+
+event	historic	science_da_vinci_ornithopter
+date	360
+
+event	historic	BOOK_LIBER_CHRONICARUM
+date	350 370
+
+event	historic	musket_invented					; used in descr_mercenaries
+date	378
+
+event	historic	first_watch
+date	378
+
+event	historic	pike_and_shot					; _____ ESSENTIAL reform for many units _____
+date	398
+
+event	historic	the_wheellock
+date	398
+
+event	historic	ADVANCED_METALLURGY
+date	398
+
+event	historic	ADV_MATCHLOCK
+date	418 423
+
+event	historic	the_flintlock
+date	424 425
+
+event	historic	end_of_game						; technical event used in EDB in order for certain buildings not to be shown in the buildable roster
+date	427

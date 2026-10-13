@@ -234,4 +234,25 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Garrison at creation (user): byzantium 2 Contaratoi, rum 2 Ahdath Militia (`createArmyInSettlement` + `createUnit`).
   Rebels (my choice, not yet confirmed by the user): Danishmend towns 2 Ahdath Militia, Tarsus 2 Armenians of
   Celicia, Elbistan 1 Armenians of Celicia + 1 Ahdath Militia. Rebel-held towns show `names.default`.
+- THIRD TEST (user, 13 Oct): all 18 in. Wishes: move Nicaea / Nikomedeia and Smyrna / Magnesia apart, Magnesia and
+  Mylasa off the river, Sinop's port away from Bafra, passes to Karahisar (Afyon) from Kutahya and Nicaea. Also: the
+  map road Nicaea - Prousa - Smyrna was gone (blamed on experiment A: isHinterland 0 for the whole game).
+- MAP EDIT installed 13 Oct, all 6 files read back identical. Tool `docs/tools/edit_map.py
+  backups/2026-10-13_before_map <OUT>` (writes each TGA in its original format: regions RLE 32 bit bottom-up,
+  ground types RLE 24 bit bottom-up, heights uncompressed 24 bit TOP-DOWN; its writer reproduces the untouched
+  originals byte for byte). Changes: Nicaea's city pixel 291,137 -> 290,136 (map_regions), Ioannis Axouchos in
+  descr_strat and the event position in descr_events moved with it (only references found in descr_*, campaign_script
+  and SSHIP's Lua); Sinop's port pixel 335,146 -> 330,149; ground 291,130 / 291,129 / 292,129 (Kutahya pass) and
+  293,131 / 293,130 (Nicaea pass) from low mountains (98,65,65) to hills, heights there smoothed (5x5 mean).
+  Copies of the installed files in repo `data/world/maps/`. map.rwm must be DELETED by the user (session cannot
+  delete) - the game rebuilds it; NEW campaign needed.
+- Ground type colours (TWC lesson 2): 64,64,64 impassable; 196,128,128 mountains high; 98,65,65 mountains low;
+  128,128,64 hills; 0,0,0 wilderness; 255,255,255 beach; 0,128,0 / 0,64,0 forest; 96,160,64 / 101,124,0 / 0,128,128
+  fertility; 64,0,0 / 128,0,0 / 196,0,0 water. Rivers: map_features.tga (510x288) blue 0,0,255, crossings 0,255,255.
+  Ports: white pixels in map_regions; sea colour 41,140,233.
+- Script: Nikomedeia 290,139, Magnesia 273,124, Mylasa 276,116 (no river). isHinterland is now 0 ONLY while the player
+  has one of his extra settlements selected (draw hook), restored otherwise and before every faction's turn ->
+  AI-held extra settlements cannot build roads / farms / mines (they keep the starter pack). Open: does a queued farm /
+  road in an extra settlement still finish when the flag is back to 1 at turn end? Did the road come back?
+- NEXT (user): open the Kastamonu area (grey impassable 64,64,64) and the south coast, then add Kastamonu and Alanya.
 - Revert: delete the fourth require line (settlements already created stay in that save).

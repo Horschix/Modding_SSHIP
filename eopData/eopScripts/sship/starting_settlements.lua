@@ -38,7 +38,7 @@ local SETTS = {
     -- region Nicaea (Byzantium)
     { key = "bursa", x = 285, y = 136, capital = "Nicaea", level = 3, population = 15000,
       names = { greek = "Proúsa", middle_eastern = "Bursa", european = "Prusa" } },
-    { key = "izmit", x = 292, y = 139, capital = "Nicaea", level = 3, population = 15000,
+    { key = "izmit", x = 290, y = 139, capital = "Nicaea", level = 3, population = 15000,
       names = { greek = "Nikomīdeia", middle_eastern = "İznikomid", european = "Nicomedia" } },
     { key = "kutahya", x = 290, y = 130, capital = "Nicaea", level = 2, population = 7500,       -- GPS tile is mountain
       names = { greek = "Kotýaion", middle_eastern = "Kütahya", european = "Cotyaeum" } },
@@ -47,7 +47,7 @@ local SETTS = {
     -- region Smyrna (Byzantium)
     { key = "bergama", x = 272, y = 127, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Pérgamon", middle_eastern = "Bergama", european = "Pergamum" } },
-    { key = "manisa", x = 273, y = 123, capital = "Smyrna", level = 2, population = 7500,
+    { key = "manisa", x = 273, y = 124, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Magnīsía", middle_eastern = "Manisa", european = "Magnesia" } },
     { key = "birgi", x = 278, y = 121, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Pyrgíon", middle_eastern = "Birgi", european = "Pyrgion" } },
@@ -55,7 +55,7 @@ local SETTS = {
       names = { greek = "Philadélpheia", middle_eastern = "Âlâşehir", european = "Philadelphia" } },
     { key = "denizli", x = 286, y = 119, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Laodíkeia", middle_eastern = "Lazkiye", european = "Laodicea" } },
-    { key = "milas", x = 276, y = 115, capital = "Smyrna", level = 2, population = 7500,
+    { key = "milas", x = 276, y = 116, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Mýlasa", middle_eastern = "Milas", european = "Mylasa" } },
     -- region Angora (Rum)
     { key = "afyon", x = 296, y = 125, capital = "Angora", level = 2, population = 7500,
@@ -103,9 +103,11 @@ local STARTER = {
     [3] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms2" }, { "builders", "builders2" },
             { "water_supply", "water1_wells" } },
 }
--- EXPERIMENT A (user, 13 Oct 2026): the build menu of an EXTRA settlement offers no hinterland chain although
--- canConstructBuilding says the levels are allowed. The flag edbEntry.isHinterland is set to 0 for these chains
--- (for ALL settlements - watch roads / farm fields on the map and the AI). false = leave the flags alone.
+-- Hinterland chains (roads, farms, mines): the build menu of an EXTRA settlement hides chains with
+-- edbEntry.isHinterland = 1. Experiment A (flag 0 for the whole game) made them buildable but the map road
+-- Nicaea - Prousa - Smyrna disappeared (user, 13 Oct 2026). So the flag is now 0 ONLY while the player has an
+-- extra settlement selected (its build menu is open) and back to its original value otherwise.
+-- AI-held extra settlements therefore cannot build these chains (they keep the starter buildings).
 local UNHINTERLAND = true
 local UNHINTERLAND_CHAINS = { "hinterland_roads", "hinterland_farms", "hinterland_mines" }
 -- TEMPORARY check (13 Oct 2026): what the game lets these settlements build next. Logged once per map load.
@@ -222,26 +224,61 @@ local function checkBuildable(name)
     end
 end
 
-function SS.clearHinterlandFlags()
-    if not UNHINTERLAND then return end
-    local res = {}
+local flagEntries = nil     -- { entry, original value } read once per game session
+local flagsCleared = false
+
+local function hinterlandEntries()
+    if flagEntries ~= nil then return flagEntries end
+    flagEntries = {}
     for i = 1, #UNHINTERLAND_CHAINS do
-        local chain = UNHINTERLAND_CHAINS[i]
-        local okE, e = pcall(function() return EDB.getBuildingByName(chain) end)
+        local okE, e = pcall(function() return EDB.getBuildingByName(UNHINTERLAND_CHAINS[i]) end)
         if okE and e ~= nil then
-            local before = get(e, "isHinterland")
-            local okS = pcall(function() e.isHinterland = 0 end)
-            res[#res + 1] = chain .. " " .. tostring(before) .. "->" .. tostring(get(e, "isHinterland"))
-                .. (okS and "" or " (write failed)")
-        else
-            res[#res + 1] = chain .. " no EDB entry"
+            local v = get(e, "isHinterland")
+            if v == 0 then v = 1 end    -- a save loaded after the old experiment: the chains are hinterland chains
+            flagEntries[#flagEntries + 1] = { entry = e, value = v, chain = UNHINTERLAND_CHAINS[i] }
         end
     end
-    log("hinterland flags: " .. table.concat(res, ", "))
+    return flagEntries
+end
+
+-- clear = true: flag 0 (extra settlement selected); false: original value. Only written when it changes.
+function SS.setHinterlandFlags(clear, why)
+    if not UNHINTERLAND then return end
+    local list = hinterlandEntries()
+    local res = {}
+    for i = 1, #list do
+        local want = clear and 0 or list[i].value
+        if get(list[i].entry, "isHinterland") ~= want then
+            local ok = pcall(function() list[i].entry.isHinterland = want end)
+            res[#res + 1] = list[i].chain .. "=" .. want .. (ok and "" or " FAILED")
+        end
+    end
+    flagsCleared = clear
+    if #res > 0 and why ~= "selection" then log("hinterland flags (" .. tostring(why) .. "): " .. table.concat(res, ", ")) end
+end
+
+-- called every frame: is an extra settlement of the player selected?
+local function extraSelected()
+    local sett = get(get(M2TW, "selectionInfo"), "selectedSettlement")
+    if sett == nil then return false end
+    local minor = get(sett, "isMinorSettlement")
+    if not (minor == true or minor == 1) then return false end
+    return get(get(sett, "ownerFaction"), "isPlayerControlled") == 1
+end
+
+function SS.draw()
+    local want = extraSelected()
+    if want ~= flagsCleared then
+        SS.setHinterlandFlags(want, "selection")
+        if not SS.selectionLogged then
+            SS.selectionLogged = true
+            log("hinterland flags follow the selection (first switch: " .. tostring(want) .. ")")
+        end
+    end
 end
 
 function SS.onMapLoaded(why)
-    local okH, errH = pcall(SS.clearHinterlandFlags)
+    local okH, errH = pcall(SS.setHinterlandFlags, false, why)
     if not okH then log("ERROR hinterland flags: " .. tostring(errH)) end
     SS.refreshNames(why)
     for i = 1, #SETTS do
@@ -337,6 +374,17 @@ if not SS.installed then
     afterHook("onCampaignMapLoaded", SS.onMapLoaded, "map loaded")
     afterHook("onGeneralCaptureSettlement", SS.refreshNames, "captured")
     afterHook("onPreFactionTurnStart", SS.refreshNames, "turn start")
+    -- restore the flags before every faction's turn (the AI and the turn end never see them cleared)
+    afterHook("onPreFactionTurnStart", function(why) SS.setHinterlandFlags(false, why) end, "turn start")
+    local previous = _G["draw"]
+    _G["draw"] = function(pDevice)
+        if previous then previous(pDevice) end
+        local ok, err = pcall(SS.draw)
+        if not ok and not SS.drawErrorLogged then
+            SS.drawErrorLogged = true
+            log("ERROR in draw: " .. tostring(err))
+        end
+    end
 end
 
 StartingSettlements = SS
