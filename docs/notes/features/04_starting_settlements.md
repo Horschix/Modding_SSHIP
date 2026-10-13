@@ -181,3 +181,22 @@ other game regions later. The candidate list and every decision are in issue #4.
   Baalbek, Jubail ("Gitzelbekk" read as Gibelet), Latakia, Ma'arrat. Tortosa 337,99 -> 337,100 (1 north). 10 towns left:
   Tortosa, Beirut, Tyre (3), Jaffa, Marash, Ayntab, Manbij, Hama (3), Homs (3), Bosra. Installed, read back identical
   (the commit tool reused the cached upload again on the same output path - fresh folder fixed it).
+- LEVANT: marked done (user, 13 Oct).
+- NORTH AFRICA, Egypt to Morocco, installed 13 Oct, read back identical (1 file, no map edit, map.rwm stays). EU5 lists
+  (north_africa areas): cities Mahdia, Marrakesh, Rabat, Annaba, Bejaia, Fez, Meknes, Constantine, Sijilmasa, Tlemcen,
+  Tunis, Oran, Alexandria, Asyut, Cairo, Damietta, Mansoura, Qus; towns Algiers, Kairouan, Azemmour, Noul Lamta, Cherchell,
+  Tahert, Taza, Tidsi, Tripoli. Out: Mansoura (founded 1219), Rabat -> Salé (Ribat al-Fath 1150), Tidsi -> Taroudant,
+  Noul Lamta (map edge), Aghmat (2 tiles from Marrakesh), Damanhur, Msila, Setif, Bizerte, Beja, Tozeur, Suez, Zawila;
+  optional ones the user did not take: Tinnis, Sirt, Miliana. User added Sousse and Tangier. 32 towns.
+  Fit: affine on 19 settlements (N Africa + Granada, Murcia, Palermo, Chandax, Lefkosia, Ascalon, Aqaba) + IDW; then the
+  nearest open tile (not sea / impassable / mountain, relief <= 30, >= 5 open neighbours, >= 2 tiles from any
+  settlement). Moroccan Atlantic coast is compressed: Salé, Azemmour moved 2-3 tiles, Safi 4 tiles inland.
+  Tiles: Damietta reg (Egypt): Rosetta 297,71, Mahalla 302,68, Bilbeis 304,64; Cairo: Faiyum 299,56, Bahnasa 297,50,
+  Asyut 301,41 (3); Qus: Akhmim 305,36, Aswan 313,18; Alexandria reg: Barqa 226,79 (ownerFrom Tarabulus = rebels, user);
+  Tarabulus: Ajdabiya 221,66; Al-Mahdiya: Kairouan 149,102, Sousse 153,103, Sfax 153,95, Gabes 149,89; Tunis: Gafsa 139,93;
+  Algiers (rebels): Bejaia 114,110 (3), Constantine 125,107 (3), Annaba 133,111 (3), Qal'at Bani Hammad 112,102, Biskra
+  118,96; Tlemcen (Moors): Oran 72,103 (3), Tenes 86,108, Cherchell 93,109, Tahert 86,100; Fes (Moors): Meknes 36,91 (3),
+  Salé 26,89, Taza 46,93, Ceuta 38,104, Tangier 36,103; Marrakesh (Moors): Azemmour 16,84, Safi 11,77, Taroudant 10,67.
+  Levels: EU5 cities 3 / 15000, all others 2 / 7500 (user). Garrison Ahdath Militia x2 everywhere (user; GARRISON egypt,
+  moors added). Names: arabic (= default) + Latin + Greek + Turkish. All 32 reachable from their capitals in the
+  BFS model. DUMP_PATHS = 8 North Africa routes. Check image rendered. Waiting for the user's test.

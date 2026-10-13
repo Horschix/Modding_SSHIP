@@ -222,6 +222,103 @@ local SETTS = {
     { key = "bosra", x = 341, y = 81, capital = "Damascus", level = 2, population = 7500,  -- Burids -> rebels
       names = { greek = "Bóstra", middle_eastern = "Busra", arabic = "Busra", european = "Bostrum", default = "Busra" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    -- North Africa, Egypt to Morocco (user, 13 Oct 2026): 32 towns; garrison Ahdath Militia everywhere (user)
+    { key = "rosetta", x = 297, y = 71, capital = "Damietta", level = 2, population = 7500,  -- Fatimid Egypt
+      names = { greek = "Bolbitínē", middle_eastern = "Reşid", arabic = "Rashid", european = "Rosetta", default = "Rashid" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "mahalla", x = 302, y = 68, capital = "Damietta", level = 2, population = 7500,  -- Fatimid Egypt
+      names = { greek = "Mahallá", middle_eastern = "Mahalle-i Kübra", arabic = "al-Mahalla al-Kubra", european = "Mehalla", default = "al-Mahalla al-Kubra" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "bilbeis", x = 304, y = 64, capital = "Damietta", level = 2, population = 7500,  -- Fatimid Egypt
+      names = { greek = "Phelbés", middle_eastern = "Bilbis", arabic = "Bilbays", european = "Belbeis", default = "Bilbays" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "faiyum", x = 299, y = 56, capital = "Cairo", level = 2, population = 7500,  -- Fatimid Egypt
+      names = { greek = "Arsinóē", middle_eastern = "Feyyum", arabic = "al-Fayyum", european = "Fayum", default = "al-Fayyum" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "bahnasa", x = 297, y = 50, capital = "Cairo", level = 2, population = 7500,  -- Fatimid Egypt
+      names = { greek = "Oxýrrhynchos", middle_eastern = "Behnese", arabic = "al-Bahnasa", european = "Oxyrhynchus", default = "al-Bahnasa" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "asyut", x = 301, y = 41, capital = "Cairo", level = 3, population = 15000,  -- EU5 city
+      names = { greek = "Lykópolis", middle_eastern = "Asyut", arabic = "Asyut", european = "Lycopolis", default = "Asyut" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "akhmim", x = 305, y = 36, capital = "Qus", level = 2, population = 7500,  -- Fatimid Egypt
+      names = { greek = "Panópolis", middle_eastern = "Ahmim", arabic = "Akhmim", european = "Panopolis", default = "Akhmim" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "aswan", x = 313, y = 18, capital = "Qus", level = 2, population = 7500,  -- Fatimid Egypt
+      names = { greek = "Syḗnē", middle_eastern = "Asvan", arabic = "Aswan", european = "Syene", default = "Aswan" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "barqa", x = 226, y = 79, capital = "Alexandria", ownerFrom = "Tarabulus", level = 2, population = 7500,  -- Alexandria region; Arab tribes in 1132 -> rebels (user)
+      names = { greek = "Bárkē", middle_eastern = "Berka", arabic = "Barqa", european = "Barca", default = "Barqa" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "ajdabiya", x = 221, y = 66, capital = "Tarabulus", level = 2, population = 7500,  -- rebels
+      names = { greek = "Ajdabiya", middle_eastern = "Ecdabiye", arabic = "Ajdabiya", european = "Agedabia", default = "Ajdabiya" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "kairouan", x = 149, y = 102, capital = "Al-Mahdiya", level = 2, population = 7500,  -- EU5 town; Zirid lands -> rebels
+      names = { greek = "Kairouán", middle_eastern = "Kayrevan", arabic = "al-Qayrawan", european = "Cairoan", default = "al-Qayrawan" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "sousse", x = 153, y = 103, capital = "Al-Mahdiya", level = 2, population = 7500,  -- rebels (user added)
+      names = { greek = "Hadrýmēton", middle_eastern = "Sus", arabic = "Susa", european = "Susa", default = "Susa" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "sfax", x = 153, y = 95, capital = "Al-Mahdiya", level = 2, population = 7500,  -- rebels
+      names = { greek = "Táphrouros", middle_eastern = "Sefakus", arabic = "Safaqus", european = "Sfax", default = "Safaqus" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "gabes", x = 149, y = 89, capital = "Al-Mahdiya", level = 2, population = 7500,  -- Banu Jami -> rebels
+      names = { greek = "Tákapē", middle_eastern = "Kabis", arabic = "Qabis", european = "Capes", default = "Qabis" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "gafsa", x = 139, y = 93, capital = "Tunis", level = 2, population = 7500,  -- rebels
+      names = { greek = "Kápsa", middle_eastern = "Kafsa", arabic = "Qafsa", european = "Capsa", default = "Qafsa" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "bejaia", x = 114, y = 110, capital = "Algiers", level = 3, population = 15000,  -- EU5 city; Hammadid capital -> rebels
+      names = { greek = "Saldaí", middle_eastern = "Bicaye", arabic = "Bijaya", european = "Bugia", default = "Bijaya" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "constantine", x = 125, y = 107, capital = "Algiers", level = 3, population = 15000,  -- EU5 city; Hammadids -> rebels
+      names = { greek = "Kōnstantínē", middle_eastern = "Kostantine", arabic = "Qusantina", european = "Constantina", default = "Qusantina" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "annaba", x = 133, y = 111, capital = "Algiers", level = 3, population = 15000,  -- EU5 city; Hammadids -> rebels
+      names = { greek = "Hippṓn", middle_eastern = "Annabe", arabic = "Buna", european = "Bona", default = "Buna" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "qala", x = 112, y = 102, capital = "Algiers", level = 2, population = 7500,  -- old Hammadid capital -> rebels
+      names = { greek = "Qal'a", middle_eastern = "Kale-i Beni Hammad", arabic = "Qal'at Bani Hammad", european = "Kalaa", default = "Qal'at Bani Hammad" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "biskra", x = 118, y = 96, capital = "Algiers", level = 2, population = 7500,  -- rebels
+      names = { greek = "Ouéskera", middle_eastern = "Biskara", arabic = "Biskra", european = "Vescera", default = "Biskra" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "oran", x = 72, y = 103, capital = "Tlemcen", level = 3, population = 15000,  -- EU5 city; Almoravids
+      names = { greek = "Ouahrán", middle_eastern = "Vehran", arabic = "Wahran", european = "Orano", default = "Wahran" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "tenes", x = 86, y = 108, capital = "Tlemcen", level = 2, population = 7500,  -- Almoravids
+      names = { greek = "Kartennas", middle_eastern = "Tenes", arabic = "Tanas", european = "Tenez", default = "Tanas" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "cherchell", x = 93, y = 109, capital = "Tlemcen", level = 2, population = 7500,  -- EU5 town; Almoravids
+      names = { greek = "Kaisáreia", middle_eastern = "Şerşel", arabic = "Sharshal", european = "Cesarea", default = "Sharshal" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "tahert", x = 86, y = 100, capital = "Tlemcen", level = 2, population = 7500,  -- EU5 town; Almoravids
+      names = { greek = "Tahert", middle_eastern = "Tihert", arabic = "Tahart", european = "Tiaret", default = "Tahart" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "meknes", x = 36, y = 91, capital = "Fes", level = 3, population = 15000,  -- EU5 city; Almoravids
+      names = { greek = "Miknás", middle_eastern = "Miknas", arabic = "Miknasa", european = "Mequinez", default = "Miknasa" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "sale", x = 26, y = 89, capital = "Fes", level = 2, population = 7500,  -- for EU5 Rabat (founded 1150); Almoravids
+      names = { greek = "Sála", middle_eastern = "Sela", arabic = "Sala", european = "Salé", default = "Sala" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "taza", x = 46, y = 93, capital = "Fes", level = 2, population = 7500,  -- EU5 town; Almoravids
+      names = { greek = "Táza", middle_eastern = "Taza", arabic = "Taza", european = "Tazza", default = "Taza" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "ceuta", x = 38, y = 104, capital = "Fes", level = 2, population = 7500,  -- Almoravids
+      names = { greek = "Septon", middle_eastern = "Sebte", arabic = "Sabta", european = "Septa", default = "Sabta" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "tangier", x = 36, y = 103, capital = "Fes", level = 2, population = 7500,  -- Almoravids (user added)
+      names = { greek = "Tíngis", middle_eastern = "Tanca", arabic = "Tanja", european = "Tingis", default = "Tanja" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "azemmour", x = 16, y = 84, capital = "Marrakesh", level = 2, population = 7500,  -- EU5 town; Almoravids
+      names = { greek = "Azamór", middle_eastern = "Azemmur", arabic = "Azammur", european = "Azamor", default = "Azammur" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "safi", x = 11, y = 77, capital = "Marrakesh", level = 2, population = 7500,  -- coast squeezed - 4 tiles inland; Almoravids
+      names = { greek = "Saphí", middle_eastern = "Safi", arabic = "Asfi", european = "Saffi", default = "Asfi" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "taroudant", x = 10, y = 67, capital = "Marrakesh", level = 2, population = 7500,  -- for EU5 Tidsi (Sous); Almoravids
+      names = { greek = "Taroudánt", middle_eastern = "Tarudant", arabic = "Tarudant", european = "Tarudant", default = "Tarudant" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -231,6 +328,8 @@ local GARRISON = {
     georgia   = { "georgian light spearmen", "georgian light spearmen" },   -- cheapest local (user, 13 Oct)
     zengid    = { "Shurtah Militia", "Shurtah Militia" },     -- cheapest militia (user, 13 Oct)
     jerusalem = { "Spear Militia", "Spear Militia" },         -- user, 13 Oct
+    egypt     = { "Ahdath Militia", "Ahdath Militia" },       -- North Africa (user, 13 Oct)
+    moors     = { "Ahdath Militia", "Ahdath Militia" },       -- North Africa (user, 13 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -428,9 +527,10 @@ end
 -------------------------------------------------------------------------
 local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
-local DUMP_PATHS = {    -- Syria and the Levant, after the thinning (13 Oct 2026)
-    { "Tripoli-Beirut", 336, 97, 334, 91 }, { "Tripoli-Tortosa", 336, 97, 337, 100 }, { "Acre-Tyre", 331, 83, 332, 86 },
-    { "Damascus-Bosra", 343, 90, 341, 81 }, { "Edessa-Marash", 355, 114, 344, 115 }, { "Aleppo-Hama", 347, 108, 343, 100 },
+local DUMP_PATHS = {    -- North Africa (13 Oct 2026)
+    { "Qus-Aswan", 313, 32, 313, 18 }, { "Alexandria-Barqa", 293, 70, 226, 79 }, { "Tarabulus-Ajdabiya", 172, 82, 221, 66 },
+    { "Algiers-Bejaia", 100, 110, 114, 110 }, { "Tlemcen-Tahert", 66, 97, 86, 100 }, { "Fes-Ceuta", 41, 92, 38, 104 },
+    { "Marrakesh-Safi", 17, 76, 11, 77 }, { "Marrakesh-Taroudant", 17, 76, 10, 67 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
