@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 13 Oct 2026 evening (first session, 10-13 Oct). Read this first in a new session. The user's standing rules and the tooling notes are in
+Last updated 13 Oct 2026 late evening (first session, 10-13 Oct). Read this first in a new session. The user's standing rules and the tooling notes are in
 `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR` and apply here too; this file only holds what is SSHIP-specific.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
 
@@ -11,21 +11,30 @@ and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SS
 - #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
 - #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - CLOSED 13 Oct, works as intended
   (user). Settlers recruitable from turn 2 of a new campaign - accepted by the user.
-- #4 Settlements that existed in 1132 (Anatolia first) - TEST with Prousa installed 13 Oct, needs a NEW campaign.
-  See the section "Starting settlements" at the end.
-NEXT STEP: read the user's #4 test (STARTSETT lines in full.log). Leftover: remove the TEMPORARY `require('sship.settler_check')` line (third require
-line of `luaPluginScript.lua`) and `sship/settler_check.lua` - only logs SETTCHK lines; ask the user first.
-Still to watch in play: SSHIP's own scripts with a second settlement in a region over many turns; the outpost's map
-model, battle map and buildings; disband refund, save/load and AI blocking of #1.
+- #4 Settlements that existed in 1132 - ANATOLIA DONE, WORKS (user, 13 Oct): 20 towns, starter buildings, garrisons,
+  names by culture, roads / farms buildable in them, map edits (Nicaea moved, Sinop's port, passes, Kastamonu and the
+  south coast opened). Engine confirmed all 7 test routes (getMovePath, 13 Oct). Kept OPEN for the other regions
+  (user: "we will add the settlements for other game regions later"). See the section "Starting settlements" at the end.
+NEXT STEP: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
+GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
+Leftovers (ask the user first): remove the TEMPORARY `require('sship.settler_check')` line (third require line of
+`luaPluginScript.lua`) and `sship/settler_check.lua` (only logs SETTCHK lines); set `DUMP = false` in
+starting_settlements.lua (or keep it as a tool: change DUMP_BOXES / DUMP_PATHS for the next region's routes).
+Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
+five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a
+farm / road queued in an extra settlement finishes after the hinterland flag is restored at turn start.
 - Logs: our lines (prefixes `POPREC`, `FORTSETT`) are in `mods\sship\full.log` (about 12 MB; staging often needs
   2-3 tries). `mods\sship\eop.log` is SSHIP's own Lua log. Read the log after every user test, before he restarts.
 - A new session starts with no folder connected: ask for `...\Medieval II Total War\mods` (covers SSHIP and EUR).
+- Map files changed for #4 (originals in `backups/2026-10-13_before_map/`, rebuilt by `docs/tools/edit_map.py`):
+  `data/world/maps/base/map_regions.tga`, `map_ground_types.tga`, `map_heights.tga`, `campaign/imperial_campaign/
+  descr_strat.txt`, `descr_events.txt`. After any map change the user must delete `map.rwm` (session cannot delete).
 - Changed SSHIP game files (originals in `backups/`): `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts),
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
-- `luaPluginScript.lua` ends with three require lines: population_recruitment, fort_settlement and the TEMPORARY
-  settler_check. Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+- `luaPluginScript.lua` ends with four require lines: population_recruitment, fort_settlement, the TEMPORARY
+  settler_check and starting_settlements (#4). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
   settler recruit lines need - removing it stops settler recruitment too.
 
 ## Recruitment costs population (10 Oct 2026) - how it works
@@ -293,3 +302,7 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Script: Alanya / Kalón Óros 307,110 (Attaleia, Byz, 2 Contaratoi), Kastamonu / Kastamōn 319,143 (Sinop, rebels,
   2 Ahdath Militia) - 20 towns now. map.rwm to be deleted, new campaign.
 - Revert: delete the fourth require line (settlements already created stay in that save).
+- SEVENTH TEST (user, 13 Oct): "Works now." Engine dump after round 3: all 7 routes found by getMovePath -
+  Kastamonu-Sinop 15 tiles (it prefers the north pass and the coast), -Angora 13, -Nikomedeia 30, -north coast 5,
+  Alanya-Tarsus 22 along the shore, Konya-Alanya 9, Attaleia-Alanya 11. Anatolia finished; #4 stays open for the
+  other regions.
