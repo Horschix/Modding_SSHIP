@@ -161,3 +161,19 @@ other game regions later. The candidate list and every decision are in issue #4.
   river; new tile sparse forest, relief 9). 14 towns.
 - MESOPOTAMIA TEST 1 log (user, 13 Oct, before the Saruj / Samosata fix): all 15 created with the right owner, level,
   population, garrison and name (Tikrit rebel, Nusaybin 2, Turbessel / Sororgia Latin). Reachability still to report.
+- MESOPOTAMIA: user moved on to the next region (13 Oct) - taken as test passed, Upper Mesopotamia done.
+- SYRIA AND THE LEVANT installed 13 Oct, read back identical (1 file, no map edit, map.rwm stays). EU5 has only
+  Antioch, Aleppo, Damascus, Jerusalem, Acre here - all SSHIP settlements already, so all 19 towns are extras.
+  Fit: affine on 14 SSHIP settlements (Jerusalem, Acre, Tripoli, Antioch, Damascus, Aleppo, Edessa, Ar Raqqah, Ascalon,
+  Al Aqaba, Lefkosia, Sis, Hasankeyf, Tayma) + IDW. SSHIP's coast is compressed (Acre - Tripoli 14 tiles), so towns keep
+  Chebyshev distance >= 2 to every settlement and were set by hand on open, non-river, non-low-mountain tiles.
+  Tiles: Antioch region (Franks): Latakia 336,102, Ma'arrat 342,103; Tripoli region: Tartus 337,99, Jubail 336,95,
+  Beirut 334,91 (Lebanese coast steep, land relief 87 - watch the DUMP route); Acre region: Sidon 333,88, Tyre 332,86 (3),
+  Caesarea 329,80, Tiberias 332,81; Jerusalem region: Nablus 331,77, Jaffa 328,77, Ramla 328,75; Edessa region (Franks):
+  Marash 344,115, Ayntab 347,113; Aleppo region (Zengids): Manbij 351,109, Hama 343,100 (3); Damascus region (rebels):
+  Homs 342,97 (3), Baalbek 342,93, Bosra 341,81. Level 2 / 7500, Tyre / Homs / Hama level 3 / 15000 (user).
+  Skipped (user: no small ones): Harim, Hebron, Banias; left out for spacing / size: Jableh, Valania, Apamea, Shaizar,
+  al-Bab, Haifa, Gaza (ruined until 1149), Amman, Palmyra, Salamiyya, Kilis, Safed.
+  Names (user): Latin (crusader forms) + Greek + Turkish (middle_eastern) + Arabic. New name key `arabic`, used for the
+  factions in table ARABIC (egypt, abbasid, moors); default (rebels) = Arabic. Garrisons as before (Jerusalem Spear
+  Militia, Zengids Shurtah Militia, rebels Ahdath Militia). DUMP_PATHS = 8 Levant routes. Waiting for the user's test.
