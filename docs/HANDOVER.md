@@ -57,7 +57,7 @@ SYRIA AND THE LEVANT DONE (user, 13 Oct): 10 towns. New name key `arabic` (egypt
 NORTH AFRICA DONE (user, 13 Oct): 31 towns.
 LOWER MESOPOTAMIA + PERSIA DONE (user, 14 Oct): 34 towns.
 ARABIA + STEPPE + VOLGA DONE (user moved on, 14 Oct): 10 towns; Saqsin moved to the Cumans in descr_strat.
-RUSSIA installed 14 Oct, fix 1 read back identical (Rostov moved to Novgorod in descr_strat): 14 towns (Novgorod, Rostov, Suzdal, Ryazan, Polotsk, Goroden, Volodymyr,
+RUSSIA installed 14 Oct, fixes read back identical (Rostov moved to Novgorod in descr_strat): 17 towns + Muscat (Novgorod, Rostov, Suzdal, Ryazan, Polotsk, Goroden, Volodymyr,
   Halych, Chernigov, Smolensk, Pereyaslav regions). No map edit. Names: faction keys russia / kievan_rus / poland /
   lithuania. Waiting for the user's test in a new campaign (DUMP has 9 Russia routes; read STARTSETT lines in full.log).
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
