@@ -55,7 +55,7 @@ CAUCASUS DONE, WORKS (user, 13 Oct, test 2): 20 towns, all reachable after movin
 UPPER MESOPOTAMIA DONE (user moved on, 13 Oct): 14 towns.
 SYRIA AND THE LEVANT DONE (user, 13 Oct): 10 towns. New name key `arabic` (egypt / abbasid / moors).
 NORTH AFRICA (Egypt to Morocco): 31 towns after fix 1 (13 Oct), read back identical, no map edit; Barqa starts rebel;
-  Ahdath Militia garrison everywhere. Ceuta not seen in game - check log. Waiting for the user's test in a new campaign (DUMP has 8 Africa routes).
+  Ahdath Militia garrison everywhere. Ceuta moved off the Gibraltar crossing (engine refused 38,104). Waiting for the user's test in a new campaign (DUMP has 8 Africa routes).
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

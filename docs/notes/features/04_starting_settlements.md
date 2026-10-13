@@ -204,3 +204,7 @@ other game regions later. The candidate list and every decision are in issue #4.
   298,56, Asyut 301,40, Kairouan 148,102, Tangier 35,102, Safi 12,77, Sfax 152,94; added level 1 / 1000: Suez
   (al-Qulzum) 311,61 (Cairo), Melilla 54,99 (Fes). Ceuta 38,104 was NOT seen in game (user) -> set to level 1; cause
   open - check the log (STARTSETT ceuta) after the next test. 31 towns.
+- NORTH AFRICA TEST 2 log (user, 13 Oct): all created except Ceuta - "addSettlement failed at 38,104 (nil), tile free
+  true", DUMP Fes-Ceuta 0 tiles. 38,104 is the promontory at the Gibraltar strait crossing (37,105 beach links to
+  Spain) - the engine refuses it. LESSON: keep towns off strait / land-bridge crossing tiles. Fix installed, read back
+  identical: Ceuta -> 39,103 (fertile, 4 from Tangier); Suez 1 north -> 311,62 (user).

@@ -295,7 +295,7 @@ local SETTS = {
     { key = "taza", x = 46, y = 93, capital = "Fes", level = 2, population = 7500,  -- EU5 town; Almoravids
       names = { greek = "Táza", middle_eastern = "Taza", arabic = "Taza", european = "Tazza", default = "Taza" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "ceuta", x = 38, y = 104, capital = "Fes", level = 1, population = 1000,  -- not seen in game -> level 1 (user); Almoravids
+    { key = "ceuta", x = 39, y = 103, capital = "Fes", level = 1, population = 1000,  -- 38,104 refused by the engine (strait crossing) -> 39,103; level 1 (user); Almoravids
       names = { greek = "Septon", middle_eastern = "Sebte", arabic = "Sabta", european = "Septa", default = "Sabta" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "tangier", x = 35, y = 102, capital = "Fes", level = 2, population = 7500,  -- moved (user, 13 Oct); Almoravids (user added)
@@ -310,7 +310,7 @@ local SETTS = {
     { key = "taroudant", x = 10, y = 67, capital = "Marrakesh", level = 2, population = 7500,  -- for EU5 Tidsi (Sous); Almoravids
       names = { greek = "Taroudánt", middle_eastern = "Tarudant", arabic = "Tarudant", european = "Tarudant", default = "Tarudant" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "suez", x = 311, y = 61, capital = "Cairo", level = 1, population = 1000,  -- al-Qulzum; tier 1 (user)
+    { key = "suez", x = 311, y = 62, capital = "Cairo", level = 1, population = 1000,  -- al-Qulzum; tier 1, 1 north (user)
       names = { greek = "Klýsma", middle_eastern = "Süveyş", arabic = "al-Qulzum", european = "Clisma", default = "al-Qulzum" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "melilla", x = 54, y = 99, capital = "Fes", level = 1, population = 1000,  -- Almoravids; tier 1 (user)
@@ -526,7 +526,7 @@ local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
 local DUMP_PATHS = {    -- North Africa (13 Oct 2026)
     { "Qus-Aswan", 313, 32, 313, 18 }, { "Alexandria-Barqa", 293, 70, 226, 79 }, { "Tarabulus-Ajdabiya", 172, 82, 221, 66 },
-    { "Algiers-Bejaia", 100, 110, 114, 110 }, { "Tlemcen-Tahert", 66, 97, 86, 100 }, { "Fes-Ceuta", 41, 92, 38, 104 },
+    { "Algiers-Bejaia", 100, 110, 114, 110 }, { "Tlemcen-Tahert", 66, 97, 86, 100 }, { "Fes-Ceuta", 41, 92, 39, 103 },
     { "Marrakesh-Safi", 17, 76, 11, 77 }, { "Marrakesh-Taroudant", 17, 76, 10, 67 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
