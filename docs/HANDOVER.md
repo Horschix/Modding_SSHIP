@@ -271,6 +271,25 @@ other game regions later. The candidate list and every decision are in issue #4.
   310,112 / 309,112 / 309,111 / 308,111 -> hills (user's wish). Heights of all pass tiles smoothed (5x5 mean, up to 4
   rounds until the steepest step <= 12; coast tiles end at 18-22 because of the slope to the sea - normal: passable
   coast tiles of the area reach 17 at the 90th and 34 at the 99th percentile). Ports / cities checked again.
+- SIXTH TEST (user, 13 Oct): Kastamonu -> Angora works; -> Nikomedeia and -> Sinop do not; wishes: a pass straight
+  north to the coast, the Konya - Alanya pass lower, the Alanya - Tarsus pass along the coastline.
+- ENGINE DUMP (temporary, DUMP = true in starting_settlements.lua, once per session at map load; lines
+  `STARTSETT DUMP ...` in full.log): move cost per ground type, per tile ground / cliff / river / height for the boxes
+  x 286-336 y 135-151 and x 294-334 y 103-121, and stratMap.getMovePath for 7 routes. FINDINGS:
+  * move costs: lowFert 10, medFert 11, highFert 11, wilderness 12, HIGH MOUNTAINS 999, low mountains 15, hills 14,
+    DENSE FOREST 999 (!), woodland 13, swamp 20, impassable 999. So round 2's "impassable -> dense forest" opened nothing.
+  * engine-like rules that reproduce all 7 results: 8 directions, no diagonal step between two blocked tiles, river
+    tiles blocked except crossings (map_features 0,255,255), height steps of 38 (tile.height/10) pass, 60+ fail;
+    getMovePath also seems to give up on long detours. Model: /tmp scripts of the session (eng.py) - not kept.
+  * tile.height/10 = 2.393 * grey of the tile's CENTRE pixel in map_heights.tga (exact, 1018 tiles).
+- MAP ROUND 3 installed 13 Oct, read back identical: edit_map.py CORRIDORS = chains of hill tiles with the heights
+  ramped evenly (whole 3x3 block per tile): Kastamonu-Sinop (row 143 x 320-327, then 327,144-147; 177 -> 14),
+  Kastamonu-north coast (319,144-148; 177 -> 45), Kastamonu-Nikomedeia (row 143 x 318-304; 177 -> 2, then the
+  existing coast lowland), Konya-Alanya (310,117-112, 309,112, 309,111, 308,111, 308,110; 177 -> 93, much lower than
+  the old 200-300), Alanya-Tarsus along the shore (308,109 309,108 310,107 311-315,106 316-320,107 321,108
+  322,108; 93 -> 2). Round 2's row-109 corridor dropped (inland tiles back to original). Model check of the new map:
+  all 7 routes pass, steepest step 24-38. The former impassable tiles of the Kastamonu belt are dense forest =
+  still blocked (only the corridors cross the belt).
 - Script: Alanya / Kalón Óros 307,110 (Attaleia, Byz, 2 Contaratoi), Kastamonu / Kastamōn 319,143 (Sinop, rebels,
   2 Ahdath Militia) - 20 towns now. map.rwm to be deleted, new campaign.
 - Revert: delete the fourth require line (settlements already created stay in that save).

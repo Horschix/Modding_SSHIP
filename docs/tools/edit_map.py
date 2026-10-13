@@ -41,14 +41,31 @@ def _hills(*tiles):
 _hills((291, 130), (291, 129), (292, 129), (293, 131), (293, 130))
 # round 2 (13 Oct): Kastamonu 319,143 - valley 318-320 x 142-144, south to 319,140, east along row 143 to 326,143
 _hills(*[(x, y) for x in range(318, 321) for y in range(142, 145)])
-_hills((319, 141), (321, 143), (322, 143), (323, 143), (324, 143), (325, 143))
+_hills((319, 141))
 # south coast Attaleia -> Alanya 307,110 -> Tarsus: 303,111 (hills) -> 304,111 -> 305,110 -> 306,110 -> 307,110 ->
 # 308,110 -> row 109 from 308 to 321 -> hills 322,109 ...
-_hills((304, 111), (305, 110), (306, 110), (307, 110), (308, 110), *[(x, 109) for x in range(308, 322)])
-# Konya 310,118 -> 310,113 (sparse forest) -> 310,112 -> 309,112 -> 309,111 -> 308,111 -> 308,110 (coast) -> Alanya
-_hills((310, 112), (309, 112), (309, 111), (308, 111))
+_hills((304, 111), (305, 110), (306, 110), (307, 110), (308, 110))
+# (round 2 also had a row-109 coast corridor and the Konya tiles - replaced by the CORRIDORS of round 3)
 # every remaining IMPASSABLE tile of the Kastamonu belt (x 312-327, y 141-147) -> dense forest (not smoothed)
 FOREST_BOX = (312, 327, 141, 147)
+
+# Round 3 (13 Oct, after the engine dump): what really blocks the engine - dense forest costs 999 in SSHIP (as
+# impassable), rivers only open at crossings, no diagonal step between two blocked tiles, and big height steps
+# (38 in tile.height/10 units passes, 60+ does not). tile.height/10 = 2.393 * grey value of the tile's centre pixel.
+# So every route is a chain of hill tiles whose heights ramp evenly between the two ends.
+# (name, ordered tiles, start height, end height) - heights in tile.height/10 units; the ends of the list are set too.
+H10_PER_GREY = 2.393
+CORRIDORS = [
+    ("Kastamonu-Sinop", [(320, 143), (321, 143), (322, 143), (323, 143), (324, 143), (325, 143), (326, 143),
+                         (327, 143), (327, 144), (327, 145), (327, 146), (327, 147)], 177, 14),
+    ("Kastamonu-north coast", [(319, 144), (319, 145), (319, 146), (319, 147), (319, 148)], 177, 45),
+    ("Kastamonu-Nikomedeia", [(x, 143) for x in range(318, 303, -1)], 177, 2),
+    ("Konya-Alanya", [(310, 117), (310, 116), (310, 115), (310, 114), (310, 113), (310, 112), (309, 112),
+                      (309, 111), (308, 111), (308, 110)], 177, 93),
+    ("Alanya-Tarsus coast", [(308, 109), (309, 108), (310, 107), (311, 106), (312, 106), (313, 106), (314, 106),
+                             (315, 106), (316, 107), (317, 107), (318, 107), (319, 107), (320, 107), (321, 108),
+                             (322, 108)], 93, 2),
+]
 MAX_STEP = 12
 
 
@@ -143,6 +160,10 @@ def main(src, out):
         before = tuple(int(v) for v in ga[tile_block(ga, *t)][1, 1])
         ga[tile_block(ga, *t)] = ground
         print("ground", t, before, "->", ground)
+    for name, tiles, _, _ in CORRIDORS:
+        for t in tiles:
+            ga[tile_block(ga, *t)] = HILLS
+        print("ground corridor", name, len(tiles), "tiles -> hills")
     x0, x1, y0, y1 = FOREST_BOX
     for x in range(x0, x1 + 1):
         for y in range(y0, y1 + 1):
@@ -174,6 +195,20 @@ def main(src, out):
             if steepest(t) <= MAX_STEP:
                 break
         print("heights", t, "steepest step", start, "->", steepest(t))
+    # corridors: whole 3x3 block of each tile = its ramp height (flat tile, even steps between tiles)
+    for name, tiles, h0, h1 in CORRIDORS:
+        n = len(tiles)
+        steps = []
+        for i, tl in enumerate(tiles):
+            h10 = h0 + (h1 - h0) * (i + 1) / (n + 1) if n > 1 else (h0 + h1) / 2
+            grey = int(round(h10 / H10_PER_GREY))
+            rs, cs = tile_block(ha, *tl)
+            for r in range(rs.start, rs.stop):
+                for c in range(cs.start, cs.stop):
+                    if ha[r, c, 0] == ha[r, c, 1] == ha[r, c, 2]:      # leave water pixels alone
+                        ha[r, c] = (grey, grey, grey)
+            steps.append(grey)
+        print("heights corridor", name, "grey", steps, "(step about", round(abs(h1 - h0) / (n + 1), 1), "h10)")
     write_tga(hm, ha, os.path.join(base_out, "map_heights.tga"))
 
     # descr_strat / descr_events (latin-1, line endings kept)
