@@ -541,3 +541,12 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Not added (spacing <= 2 tiles to a bigger neighbour; taken as accepted, user only answered the ownership question):
   Aix, Beauvais, Beziers, Montauban, Saint-Flour, Montbrison, Provins, Vienne. Left for the HRE round: Metz, Strasbourg,
   Colmar, Mulhouse (Trier / Basel provinces). DUMP_PATHS +34 (France block). Check image `france_check.png`.
+- FRANCE fix 1 (user, 14 Oct), installed, 3 files read back identical:
+  - Removed: Sens, Nimes, Perpignan. Saint-Omer replaced by Calais 91,212 (2 NW of its tile; coastal, 5 open neighbours;
+    village until the 1181 charter -> 1/500, rebels). Moves: Arras 96,207 (1 W), Laon 100,201 (1 S 2 W), Autun 107,182 (1 SW),
+    Le Puy 108,173 (1 NW, 6 open neighbours). -> 31 French towns.
+  - MAP ROUND 10 (edit_map.py CORRIDORS "Turin-Aosta-Valais"; only map_ground_types / map_heights changed, 11 tiles):
+    Turin 133,170 -> 132,170 -> 132,171 ... 130,174 (Aosta) -> 129,175-177 (Great St Bernard) -> 128,177 -> Valais hills
+    128,178 at the east end of Lake Geneva; hills, heights ramped 31 -> 225 h10 (steps about 16). Diff against the
+    installed maps: only those pixels. DUMP_PATHS: Turin-Valais pass, Turin-Lake Geneva (129,180), Turin-Lyon.
+  - map.rwm must be deleted; NEW campaign.

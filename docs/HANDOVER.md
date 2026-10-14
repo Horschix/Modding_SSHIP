@@ -92,7 +92,9 @@ ITALY + ISLANDS installed 14 Oct, read back identical (script only, NEW campaign
   (read back identical): 8 removed, 10 moved, Malta a castle, Reggio moved (MAP ROUND 9), Italian garrisons = Urban Spear
   Militia -> 47 towns; fix 2: Udine back as rebels (48). User: delete map.rwm, NEW campaign. ITALY DONE (user, 14 Oct).
 FRANCE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 34 towns (france 7,
-  england 3, hre 6 incl. Le Puy, rebels 18) - see the feature note. Waiting for the user's test.
+  england 3, hre 6 incl. Le Puy, rebels 18) - see the feature note. FIX 1 installed 14 Oct (read back identical):
+  Sens, Nimes, Perpignan removed; Saint-Omer -> Calais; 4 moves; MAP ROUND 10 = Alpine pass Turin - Aosta - Great
+  St Bernard - Valais (Lake Geneva) -> 31 towns. User: delete map.rwm, NEW campaign. Waiting for the user's test.
   THEN: next region. Left: HRE (Germany, Bohemia, Low Countries; Metz, Strasbourg, Colmar, Mulhouse go there),
   British Isles, Scandinavia.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,

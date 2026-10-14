@@ -10,6 +10,7 @@ Reads <backup>/data/world/maps/... and writes the same paths under <OUT>:
   base/map_heights.tga       heights along the passes smoothed (no cliffs)
   base/map_features.tga      river crossings beside Lahijan (Gilan coast, round 4)
   round 5 (14 Oct): Lycian coast corridor Milas - Attaleia (ground + heights)
+  round 10 (14 Oct): Alpine pass Turin - Aosta - Great St Bernard - Valais / Lake Geneva (ground + heights)
   campaign/imperial_campaign/descr_strat.txt   Ioannis Axouchos (Nicaea's governor) 291,137 -> 290,136
   campaign/imperial_campaign/descr_events.txt  event position 291, 137 -> 290, 136
 Each TGA is written in its original form (RLE / uncompressed, bit depth, row order, footer) and read back.
@@ -96,6 +97,10 @@ CORRIDORS = [
     ("Lycian coast", [(280, 112), (281, 111), (282, 111), (283, 111), (284, 111), (285, 111), (286, 111),
                       (287, 111)] + [(x, 110) for x in range(287, 298)] + [(297, 111), (297, 112), (297, 113)],
      60, 79),
+    # round 10 (14 Oct, user, France fix 1): pass Turin (133,170) - Aosta - Great St Bernard - Valais hills (128,178)
+    # at the east end of Lake Geneva; from the hill tile 132,170 (h10 31) to 128,178 (h10 225), orthogonal steps only
+    ("Turin-Aosta-Valais", [(132, 171), (131, 171), (131, 172), (131, 173), (130, 173), (130, 174), (130, 175),
+                            (129, 175), (129, 176), (129, 177), (128, 177)], 31, 225),
 ]
 # river crossings (map_features.tga, one pixel per tile, 0,0,255 river -> 0,255,255 crossing): the two rivers on
 # both sides of the Lahijan pocket

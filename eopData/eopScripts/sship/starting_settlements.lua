@@ -875,11 +875,9 @@ local SETTS = {
       names = { france = "Amiens", england = "Amiens", hre = "Amiens", european = "Ambianum", default = "Amiens" } },
     { key = "chartres", x = 88, y = 194, capital = "Paris", level = 2, population = 7500,  -- EU5 town; Blois-Champagne, vassal; owner france
       names = { france = "Chartres", england = "Chartres", hre = "Chartres", european = "Carnutum", default = "Chartres" } },
-    { key = "sens", x = 100, y = 193, capital = "Paris", level = 2, population = 7500,  -- EU5 town; royal; owner france
-      names = { france = "Sens", england = "Sens", hre = "Sens", european = "Senonae", default = "Sens" } },
     { key = "chalons", x = 107, y = 198, capital = "Rheims", level = 2, population = 7500,  -- EU5 town; owner france
       names = { france = "Châlons", england = "Châlons", hre = "Châlons", european = "Catalaunum", default = "Châlons" } },
-    { key = "laon", x = 102, y = 202, capital = "Rheims", level = 2, population = 7500,  -- EU5 town; royal; owner france
+    { key = "laon", x = 100, y = 201, capital = "Rheims", level = 2, population = 7500,  -- EU5 town; royal; owner france; moved 1 south 2 west (user, 14 Oct, France fix 1)
       names = { france = "Laon", england = "Laon", hre = "Laon", european = "Laudunum", default = "Laon" } },
     { key = "blois", x = 87, y = 188, capital = "Orleans", level = 2, population = 7500,  -- EU5 town; owner france
       names = { france = "Blois", england = "Blois", hre = "Blois", european = "Blesae", default = "Blois" } },
@@ -927,25 +925,19 @@ local SETTS = {
     { key = "montpellier", x = 103, y = 160, capital = "Toulouse", level = 3, population = 15000,  -- EU5 city; Guilhem lords; 1 west of GPS for spacing; owner slave
       names = { france = "Montpellier", england = "Montpellier", hre = "Montpellier", european = "Mons Pessulanus", default = "Montpellier" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "nimes", x = 107, y = 161, capital = "Toulouse", level = 2, population = 7500,  -- EU5 town; owner slave
-      names = { france = "Nîmes", england = "Nîmes", hre = "Nîmes", european = "Nemausus", default = "Nîmes" },
-      rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "perpignan", x = 97, y = 154, capital = "Toulouse", level = 2, population = 7500,  -- EU5 town; Roussillon; owner slave
-      names = { france = "Perpignan", england = "Perpignan", hre = "Perpignan", european = "Perpinianum", default = "Perpignan" },
-      rebels = { "Spear Militia", "Spear Militia" } },
     { key = "rodez", x = 96, y = 166, capital = "Clermont", level = 2, population = 7500,  -- EU5 town; Rouergue; owner slave
       names = { france = "Rodez", england = "Rodez", hre = "Rodez", european = "Ruteni", default = "Rodez" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "le_puy", x = 109, y = 172, capital = "Lyon", level = 2, population = 7500,  -- EU5 town; Lyon_Province -> hre (user, 14 Oct)
+    { key = "le_puy", x = 108, y = 173, capital = "Lyon", level = 2, population = 7500,  -- EU5 town; Lyon_Province -> hre (user, 14 Oct); moved 1 NW (user, 14 Oct, France fix 1)
       names = { france = "Le Puy", england = "Le Puy", hre = "Le Puy", european = "Anicium", default = "Le Puy" } },
-    { key = "autun", x = 108, y = 183, capital = "Dijon", level = 2, population = 7500,  -- EU5 town; Burgundy; owner slave
+    { key = "autun", x = 107, y = 182, capital = "Dijon", level = 2, population = 7500,  -- EU5 town; Burgundy; owner slave; moved 1 SW (user, 14 Oct, France fix 1)
       names = { france = "Autun", england = "Autun", hre = "Autun", european = "Augustodunum", default = "Autun" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "arras", x = 97, y = 207, capital = "Ghent", level = 3, population = 15000,  -- EU5 city; Flanders; owner slave
+    { key = "arras", x = 96, y = 207, capital = "Ghent", level = 3, population = 15000,  -- EU5 city; Flanders; owner slave; moved 1 west (user, 14 Oct, France fix 1)
       names = { france = "Arras", england = "Arras", hre = "Arras", european = "Atrebatum", default = "Arras" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "saint_omer", x = 93, y = 210, capital = "Ghent", level = 2, population = 7500,  -- EU5 town; Flanders; owner slave
-      names = { france = "Saint-Omer", england = "Saint-Omer", hre = "Saint-Omer", european = "Audomaropolis", default = "Saint-Omer" },
+    { key = "calais", x = 91, y = 212, capital = "Ghent", level = 1, population = 500,  -- replaces Saint-Omer, 2 NW of its tile (user, 14 Oct, France fix 1); village, charter 1181 -> 1/500; owner slave
+      names = { france = "Calais", england = "Calais", hre = "Calais", european = "Caletum", default = "Calais" },
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "besancon", x = 121, y = 186, capital = "Lyon", level = 2, population = 7500,  -- EU5 town; County of Burgundy; owner hre
       names = { france = "Besançon", england = "Besançon", hre = "Bisanz", european = "Vesontio", default = "Besançon" } },
@@ -1304,9 +1296,8 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     -- France (14 Oct 2026)
     { "Paris-amiens", 94, 198, 94, 203 },
     { "Paris-chartres", 94, 198, 88, 194 },
-    { "Paris-sens", 94, 198, 100, 193 },
     { "Rheims-chalons", 105, 201, 107, 198 },
-    { "Rheims-laon", 105, 201, 102, 202 },
+    { "Rheims-laon", 105, 201, 100, 201 },
     { "Orleans-blois", 91, 190, 87, 188 },
     { "Orleans-bourges", 91, 190, 94, 184 },
     { "Rouen-caen", 85, 202, 74, 199 },
@@ -1324,17 +1315,16 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Toulouse-carcassonne", 88, 159, 94, 157 },
     { "Toulouse-narbonne", 88, 159, 99, 157 },
     { "Toulouse-montpellier", 88, 159, 103, 160 },
-    { "Toulouse-nimes", 88, 159, 107, 161 },
-    { "Toulouse-perpignan", 88, 159, 97, 154 },
     { "Clermont-rodez", 98, 176, 96, 166 },
-    { "Lyon-le_puy", 113, 174, 109, 172 },
-    { "Dijon-autun", 115, 186, 108, 183 },
-    { "Ghent-arras", 103, 211, 97, 207 },
-    { "Ghent-saint_omer", 103, 211, 93, 210 },
+    { "Lyon-le_puy", 113, 174, 108, 173 },
+    { "Dijon-autun", 115, 186, 107, 182 },
+    { "Ghent-arras", 103, 211, 96, 207 },
+    { "Ghent-calais", 103, 211, 91, 212 },
     { "Lyon-besancon", 113, 174, 121, 186 },
     { "Lyon-valence", 113, 174, 112, 169 },
     { "Arles-avignon", 110, 160, 112, 163 },
     { "Arles-marseille", 110, 160, 117, 159 },
+    { "Turin-Valais pass", 133, 170, 128, 178 }, { "Turin-Lake Geneva", 133, 170, 129, 180 }, { "Turin-Lyon", 133, 170, 113, 174 },
     { "Arles-sisteron", 110, 160, 119, 165 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
