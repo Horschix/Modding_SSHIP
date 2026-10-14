@@ -340,3 +340,6 @@ other game regions later. The candidate list and every decision are in issue #4.
   set to hills, heights ramped 60 -> 79 h10. Only map_ground_types.tga and map_heights.tga installed (edit_map's
   descr_strat output is OLD - never install it, the repo's descr_strat has later edits). BFS model: Milas - Attaleia
   23 steps. map.rwm must be deleted by the user; NEW campaign.
+- BALKANS fix 1 (user, 14 Oct), installed, read back identical: Berroia removed; Ohrid 230,145, Serres 248,141,
+  Ioannina 225,132, Plovdiv 256,150 (all open tiles). 25 towns. Script only - map.rwm and the new campaign as before.
+  Note: the first commit wrote a stale copy (same output name re-used); a new file name fixed it - always cmp.

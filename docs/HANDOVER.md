@@ -63,7 +63,7 @@ RUSSIA + MUSCAT installed 14 Oct, read back identical: 15 Rus' towns (Tver, Mosc
   CAMPAIGN TEST 14 Oct (Rum, turn 17): towns work, AI takes rebel towns, BUT AI civil wars - cause = SSHIP's
   internalAffairs.lua counted every settlement over 10 as +10 revolt points; now 2.5 (installed 14 Oct, see note end).
   Offered, not taken (yet): Pskov-region towns, Tartu / Otepaa, Koknese / Jersika, Sohar, Julfar, Qatar.
-BALKANS + GREECE installed 14 Oct, read back identical: 26 towns (Rhodes a castle) + Lycian coast corridor (map round 5,
+BALKANS + GREECE installed 14 Oct, read back identical: 25 towns (fix 1: Berroia out, 4 moved) (Rhodes a castle) + Lycian coast corridor (map round 5,
   delete map.rwm). Waiting for the user's test. Feature note has the details.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
