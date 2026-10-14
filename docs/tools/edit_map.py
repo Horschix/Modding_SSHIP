@@ -45,7 +45,9 @@ CITY_MOVES = [((224, 208), (218, 208)),   # Krakow 6 tiles west
               # round 8 (14 Oct, user, Romania fix 1): SSHIP's Iasi ("Siret") 1 east, Ragusa 1 NW, Arta 1 east
               ((276, 185), (277, 185)),
               ((208, 153), (207, 154)),
-              ((228, 128), (229, 128))]
+              ((228, 128), (229, 128)),
+              # round 9 (14 Oct, user, Italy fix 1): SSHIP's Reggio 1 east
+              ((191, 120), (192, 120))]
 HILLS = (128, 128, 64)
 # Kutahya 290,130 -> 291,130 -> 291,129 -> 292,129 -> hills 293,129 / 293,128 -> ... -> Afyon 296,125
 # Nicaea -> plains 293,133 / 293,132 -> 293,131 -> 293,130 -> hills 293,129

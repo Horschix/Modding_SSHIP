@@ -516,3 +516,13 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Names: Italian for sicily / papal_states / venice / pisa / rebels, German hre, Latin european, Greek, Arabic, Turkish.
 - Not placeable: Amalfi, Chioggia, Piacenza, Bergamo, Lodi, Monza, Pistoia, Rimini, Imola, Cesena, Reggio Emilia, Macerata,
   Benevento, Mazara, Crotone, Trento, Alessandria, Manfredonia. DUMP_PATHS +55 (Italy block). Check image `italy_check.png`.
+- ITALY fix 1 (user's test, 14 Oct), installed, 4 files read back identical:
+  - Malta works -> now a castle (castle = true), named "Malta" for every owner.
+  - Removed 8: Cefalu, Modica, Catania, Brindisi, Melfi, Pesaro, Udine ("Weiden" = its hre name), Villa di Chiesa (Iglesias).
+  - Moves (script): Girgenti 177,115; Syracuse 186,111; Messina 188,120; Catanzaro 200,127; Gaeta 176,144; Spoleto 170,152;
+    Viterbo 166,149; Padua 163,172; Savona 138,165 (relief 32); Bilbao (Iberia) 63,157 (7 east, 1 north, still Pamplona region).
+  - MAP ROUND 9 (edit_map.py CITY_MOVES, only map_regions.tga changed - 2 pixels): SSHIP's Reggio ("Regium") 191,120 ->
+    192,120 (hills, relief 45); Tancredi Guiskard (descr_strat) and the event position (descr_events) moved by hand.
+  - Garrisons: plain Spear Militia is NOT ownable by sicily / papal_states / venice / pisa (all three export_descr_unit.txt)
+    -> GARRISON for those four and the Italian rebel lists = 2 Urban Spear Militia.
+  - 47 Italian towns. map.rwm must be deleted (was older than the new map_regions.tga); NEW campaign.

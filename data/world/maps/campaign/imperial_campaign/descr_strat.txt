@@ -1785,7 +1785,7 @@ unit		Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 
 
 ; REGGIO
-character	Tancredi Guiskard, named character, male, age 14, x 191, y 120 
+character	Tancredi Guiskard, named character, male, age 14, x 192, y 120 
 traits ReligionStarter 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Intelligent 6 , Handsome 6  , Royal_Blood_Sicilian 1 
 army
 unit		SE Bodyguard				exp 0 armour 0 weapon_lvl 0

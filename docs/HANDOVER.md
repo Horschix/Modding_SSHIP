@@ -88,7 +88,9 @@ IBERIA installed 14 Oct, read back identical (script only, NEW campaign, map.rwm
   back identical): 13 removed, Bilbao added, Algeciras 1 east, SSHIP's Salamanca renamed Valladolid (text file) and our
   Salamanca on 31,138, Isaccea priest moved -> 32 towns. IBERIA DONE (user, 14 Oct).
 ITALY + ISLANDS installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 55 towns incl.
-  Mdina (Malta) and Bonifacio (Corsica) - see the feature note. Waiting for the user's test (Malta passable?).
+  Mdina (Malta) and Bonifacio (Corsica) - see the feature note. Malta works. FIX 1 installed 14 Oct
+  (read back identical): 8 removed, 10 moved, Malta a castle, Reggio moved (MAP ROUND 9), Italian garrisons = Urban Spear
+  Militia -> 47 towns. User: delete map.rwm, NEW campaign. Waiting for the user's test.
   THEN: next region. Left: HRE (Germany, Bohemia, Low Countries), France, British Isles, Scandinavia.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
