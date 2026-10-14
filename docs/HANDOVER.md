@@ -61,7 +61,7 @@ RUSSIA + MUSCAT installed 14 Oct, read back identical: 15 Rus' towns (Tver, Mosc
   Vologda, Beloozero, Murom, Nizhny, Pronsk, Minsk, Vitebsk, Brest, Lutsk, Lviv, Przemysl, Starodub, Toropets) + Muscat (Oman);
   Rostov moved to Novgorod in descr_strat; Jeddah moved to 358,5; Khaybar removed. Pskov = SSHIP's "Pleskov" (name kept).
   CAMPAIGN TEST 14 Oct (Rum, turn 17): towns work, AI takes rebel towns, BUT AI civil wars - cause = SSHIP's
-  internalAffairs.lua counts every settlement over 10 as +10 revolt points. Fix proposed, see feature note (end).
+  internalAffairs.lua counted every settlement over 10 as +10 revolt points; now 2.5 (installed 14 Oct, see note end).
   Offered, not taken (yet): Pskov-region towns, Tartu / Otepaa, Koknese / Jersika, Sohar, Julfar, Qatar.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
@@ -77,7 +77,7 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
 - Map files changed for #4 (originals in `backups/2026-10-13_before_map/`, rebuilt by `docs/tools/edit_map.py`):
   `data/world/maps/base/map_regions.tga`, `map_ground_types.tga`, `map_heights.tga`, `map_features.tga`, `campaign/imperial_campaign/
   descr_strat.txt`, `descr_events.txt`. After any map change the user must delete `map.rwm` (session cannot delete).
-- Changed SSHIP game files (originals in `backups/`): `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts),
+- Changed SSHIP game files (originals in `backups/`): `eopData/eopScripts/sship/internalAffairs.lua` (civil war), `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts),
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).

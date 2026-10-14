@@ -303,3 +303,11 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Proposed fix (waiting for the user's choice): wrap `countRevoltPoints` from our script and subtract 10 per
   hxstart_ settlement the faction owns (or count each as a fraction); optionally make hxstart_ towns harder to lose
   in `civilWarRise`. Asked the user for a log cut: `InternalA: the total rebelion points|Civil war begins|STARTSETT|ERROR`.
+- CONFIRMED by eop.log (14 Oct): Byzantium settlNumberFactor 150 (25 settlements), total 79 points; civil wars
+  moors, turks, byzantium x2; rebelled: 41 settlements incl. many hxstart_. Only error lines: SSHIP's own
+  `shortcut waypoint_display::show_waypoints does not exist` (2130x, not ours). full.log (59 MB) could not be staged.
+- Player: same countRevoltPoints, but warnings for 5-8 turns before the war, difficulty relief 0/10/20, no -35.
+- FIX installed 14 Oct, read back identical (user's choice: modify SSHIP's script, every settlement counts the same,
+  a quarter): `internalAffairs.lua` new `local SETTL_POINTS = 2.5` (was 10) used in the formula, the debug line and
+  the player's warning text. Original in `backups/2026-10-14_before_civilwar/`. Byzantium now ~ -33 instead of 79.
+- Starter pack (barracks town_watch + level-1 temple): user's idea, not built yet - waiting for his answer.
