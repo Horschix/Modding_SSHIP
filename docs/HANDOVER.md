@@ -100,7 +100,8 @@ BRITISH ISLES installed 14 Oct, read back identical (script only, NEW campaign, 
   identical): Lynn removed; Exeter, Cardiff, Lancaster, Glasgow, Downpatrick added -> 21 towns. Waiting for the user's test.
   Install tip: use a NEW output file name per install (a reused one re-sent an old cached copy).
 HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 51 towns (hre 36, rebels 15) -
-  see the feature note. Waiting for the user's test (he looks at it when built).
+  see the feature note. FIX 1 installed 14 Oct (read back identical): 4 removed, 4 moved, Amsterdam + Marburg added -> 49.
+  Waiting for the user's test.
   THEN: next region. Left: Scandinavia (last one).
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).

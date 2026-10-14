@@ -593,3 +593,9 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Dropped for spacing: Worms, Liege, Ypres, Brussels, Maastricht, Middelburg, Dortmund, Soest, Osnabruck, Brunswick,
   Luneburg, Konstanz, Colmar, Mulhouse, Wetzlar, Rothenburg, Zutphen, Memmingen, Munich, Rostock, Heidelberg,
   's-Hertogenbosch, Zwolle, The Hague, Amsterdam, Beeskow, Sint-Niklaas. DUMP_PATHS +51 (HRE block).
+- HRE fix 1 (user, 14 Oct), installed, read back identical:
+  - Removed: Dordrecht, Tournai, Landau, Kempten. Moves: Mons 105,207 (1 S), Bruges 98,212 (2 W), Luxembourg 120,201
+    (2 W; hre name Luxemburg instead of Lützelburg), Bern 131,182 (1 S).
+  - Added: Amsterdam 112,222 (GPS tile, wood in marsh, 2 tiles from SSHIP's Utrecht 114,220; rebels, 1/500) - no wider
+    land tile there; Marburg (Maribor) 193,181 (Carinthia region, north of the Drava river, hre, 1/1000).
+  - 49 HRE towns. NEW campaign; map.rwm stays.

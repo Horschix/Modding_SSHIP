@@ -1012,7 +1012,7 @@ local SETTS = {
       names = { hre = "Augsburg", european = "Augusta Vindelicorum", default = "Augsburg" } },
     { key = "erfurt", x = 158, y = 212, capital = "Frankfurt", level = 3, population = 15000,  -- EU5 city; owner hre (HRE, 14 Oct)
       names = { hre = "Erfurt", european = "Erfordia", default = "Erfurt" } },
-    { key = "bruges", x = 100, y = 212, capital = "Ghent", level = 3, population = 15000,  -- EU5 city; County of Flanders; rebels (HRE, 14 Oct)
+    { key = "bruges", x = 98, y = 212, capital = "Ghent", level = 3, population = 15000,  -- EU5 city; County of Flanders; rebels (HRE, 14 Oct); 2 west (user, 14 Oct)
       names = { hre = "Brügge", france = "Bruges", england = "Bruges", european = "Bruga", default = "Brugge" },
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "metz", x = 123, y = 197, capital = "Trier", level = 3, population = 15000,  -- EU5 city; Upper Lorraine; owner hre (HRE, 14 Oct)
@@ -1036,17 +1036,14 @@ local SETTS = {
     { key = "antwerp", x = 108, y = 213, capital = "Leuven", level = 2, population = 7500,  -- EU5 town; Brabant; rebels (HRE, 14 Oct)
       names = { hre = "Antwerpen", france = "Anvers", england = "Antwerp", european = "Antverpia", default = "Antwerpen" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "tournai", x = 101, y = 208, capital = "Ghent", level = 2, population = 7500,  -- EU5 town; rebels (HRE, 14 Oct)
-      names = { hre = "Doornik", france = "Tournai", european = "Tornacum", default = "Tournai" },
-      rebels = { "Spear Militia", "Spear Militia" } },
     { key = "namur", x = 112, y = 207, capital = "Leuven", level = 2, population = 7500,  -- EU5 town; County of Namur; rebels (HRE, 14 Oct)
       names = { hre = "Namen", france = "Namur", european = "Namurcum", default = "Namur" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "mons", x = 105, y = 208, capital = "Leuven", level = 2, population = 7500,  -- EU5 town; Hainaut; rebels (HRE, 14 Oct)
+    { key = "mons", x = 105, y = 207, capital = "Leuven", level = 2, population = 7500,  -- EU5 town; Hainaut; rebels (HRE, 14 Oct); 1 south (user, 14 Oct)
       names = { hre = "Bergen", france = "Mons", european = "Montes", default = "Mons" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "luxembourg", x = 122, y = 201, capital = "Trier", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
-      names = { hre = "Lützelburg", france = "Luxembourg", european = "Luciliburgum", default = "Luxembourg" } },
+    { key = "luxembourg", x = 120, y = 201, capital = "Trier", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct); 2 west, hre name Luxemburg (user, 14 Oct)
+      names = { hre = "Luxemburg", france = "Luxembourg", european = "Luciliburgum", default = "Luxembourg" } },
     { key = "groningen", x = 124, y = 228, capital = "Utrecht", level = 2, population = 7500,  -- EU5 town; rebels (HRE, 14 Oct)
       names = { hre = "Groningen", european = "Groninga", default = "Groningen" },
       rebels = { "Spear Militia", "Spear Militia" } },
@@ -1082,17 +1079,12 @@ local SETTS = {
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "melk", x = 190, y = 192, capital = "Vienna", level = 1, population = 1000,  -- EU5 town; abbey; owner hre (HRE, 14 Oct)
       names = { hre = "Melk", european = "Medelicum", default = "Melk" } },
-    { key = "kempten", x = 153, y = 192, capital = "Ulm", level = 1, population = 1000,  -- EU5 town; abbey town; owner hre (HRE, 14 Oct)
-      names = { hre = "Kempten", european = "Campodunum", default = "Kempten" } },
     { key = "oettingen", x = 155, y = 198, capital = "Frankfurt", level = 1, population = 1000,  -- EU5 town; small; owner hre (HRE, 14 Oct)
       names = { hre = "Oettingen", european = "Oetinga", default = "Oettingen" } },
     { key = "stuttgart", x = 143, y = 197, capital = "Speyer", level = 1, population = 1000,  -- EU5 town; stud farm; owner hre (HRE, 14 Oct)
       names = { hre = "Stuttgart", european = "Stutgardia", default = "Stuttgart" } },
     { key = "gottingen", x = 149, y = 217, capital = "Bremen", level = 1, population = 1000,  -- EU5 town; village; owner hre (HRE, 14 Oct)
       names = { hre = "Göttingen", european = "Gotinga", default = "Göttingen" } },
-    { key = "dordrecht", x = 113, y = 217, capital = "Utrecht", level = 1, population = 1000,  -- EU5 town; Holland; rebels (HRE, 14 Oct)
-      names = { hre = "Dordrecht", european = "Dordracum", default = "Dordrecht" },
-      rebels = { "Spear Militia", "Spear Militia" } },
     { key = "ravensburg", x = 148, y = 190, capital = "Ulm", level = 1, population = 1000,  -- EU5 town; Welf castle; owner hre (HRE, 14 Oct)
       names = { hre = "Ravensburg", european = "Ravensburgum", default = "Ravensburg" } },
     { key = "wismar", x = 161, y = 233, capital = "Lubeck", level = 1, population = 500,  -- EU5 town; founded 1229; rebels (HRE, 14 Oct)
@@ -1106,7 +1098,7 @@ local SETTS = {
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "innsbruck", x = 160, y = 187, capital = "Ratisbon", level = 1, population = 500,  -- EU5 town; founded 1180; owner hre (HRE, 14 Oct)
       names = { hre = "Innsbruck", european = "Oenipons", default = "Innsbruck" } },
-    { key = "bern", x = 131, y = 183, capital = "Lyon", level = 1, population = 500,  -- EU5 town; founded 1191; owner hre (HRE, 14 Oct)
+    { key = "bern", x = 131, y = 182, capital = "Lyon", level = 1, population = 500,  -- EU5 town; founded 1191; owner hre (HRE, 14 Oct); 1 south (user, 14 Oct)
       names = { hre = "Bern", france = "Berne", european = "Berna", default = "Bern" } },
     { key = "freiberg_sax", x = 175, y = 212, capital = "Brandeburg", ownerFrom = "Hamburg", level = 1, population = 500,  -- EU5 town; silver town from 1168; Meissen -> hre (HRE, 14 Oct)
       names = { hre = "Freiberg", european = "Friberga", default = "Freiberg" } },
@@ -1115,13 +1107,16 @@ local SETTS = {
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "klagenfurt", x = 184, y = 179, capital = "Freiberg", level = 1, population = 500,  -- EU5 town; founded about 1195; owner hre (HRE, 14 Oct)
       names = { hre = "Klagenfurt", european = "Claudiforum", default = "Klagenfurt" } },
-    { key = "landau", x = 134, y = 198, capital = "Speyer", level = 1, population = 500,  -- EU5 town; founded about 1260; owner hre (HRE, 14 Oct)
-      names = { hre = "Landau", european = "Landavia", default = "Landau" } },
     { key = "kutna_hora", x = 188, y = 205, capital = "Prague", level = 1, population = 500,  -- EU5 town; mining town from about 1260; rebels (HRE, 14 Oct)
       names = { hre = "Kuttenberg", european = "Mons Cuthna", default = "Kutna Hora" },
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "dusseldorf", x = 127, y = 215, capital = "Cologne", level = 1, population = 500,  -- EU5 town; charter 1288; owner hre (HRE, 14 Oct)
       names = { hre = "Düsseldorf", european = "Dusseldorpium", default = "Düsseldorf" } },
+    { key = "amsterdam", x = 112, y = 222, capital = "Utrecht", level = 1, population = 500,  -- user's wish (HRE fix 1); fishing village, charter 1275; GPS tile (wood in marsh, 2 from Utrecht); rebels
+      names = { hre = "Amsterdam", france = "Amsterdam", european = "Amstelodamum", default = "Amsterdam" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "maribor", x = 193, y = 181, capital = "Freiberg", level = 1, population = 1000,  -- user's wish (HRE fix 1); castle Marchburg (1164), north of the Drava crossing; owner hre
+      names = { hre = "Marburg", hungary = "Marburg", european = "Marburgum", default = "Marburg" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -1527,7 +1522,7 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Frankfurt-mainz", 141, 205, 137, 205 },
     { "Ratisbon-augsburg", 166, 197, 157, 193 },
     { "Frankfurt-erfurt", 141, 205, 158, 212 },
-    { "Ghent-bruges", 103, 211, 100, 212 },
+    { "Ghent-bruges", 103, 211, 98, 212 },
     { "Trier-metz", 126, 202, 123, 197 },
     { "Cologne-aachen", 127, 212, 121, 210 },
     { "Basel-strasbourg", 133, 186, 133, 194 },
@@ -1538,10 +1533,9 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Hamburg-halberstadt", 162, 221, 158, 219 },
     { "Bremen-munster", 140, 226, 133, 219 },
     { "Leuven-antwerp", 111, 211, 108, 213 },
-    { "Ghent-tournai", 103, 211, 101, 208 },
     { "Leuven-namur", 111, 211, 112, 207 },
-    { "Leuven-mons", 111, 211, 105, 208 },
-    { "Trier-luxembourg", 126, 202, 122, 201 },
+    { "Leuven-mons", 111, 211, 105, 207 },
+    { "Trier-luxembourg", 126, 202, 120, 201 },
     { "Utrecht-groningen", 114, 220, 124, 228 },
     { "Utrecht-deventer", 114, 220, 121, 221 },
     { "Bremen-paderborn", 140, 226, 141, 217 },
@@ -1557,23 +1551,22 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Wroclaw-gorlitz", 199, 214, 186, 215 },
     { "Prague-plzen", 181, 206, 175, 204 },
     { "Vienna-melk", 198, 193, 190, 192 },
-    { "Ulm-kempten", 150, 193, 153, 192 },
     { "Frankfurt-oettingen", 141, 205, 155, 198 },
     { "Speyer-stuttgart", 137, 199, 143, 197 },
     { "Bremen-gottingen", 140, 226, 149, 217 },
-    { "Utrecht-dordrecht", 114, 220, 113, 217 },
     { "Ulm-ravensburg", 150, 193, 148, 190 },
     { "Lubeck-wismar", 155, 233, 161, 233 },
     { "Brandeburg-berlin", 172, 224, 178, 222 },
     { "Lubeck-kiel", 155, 233, 151, 236 },
     { "Ratisbon-innsbruck", 166, 197, 160, 187 },
-    { "Lyon-bern", 113, 174, 131, 183 },
+    { "Lyon-bern", 113, 174, 131, 182 },
     { "Brandeburg-freiberg_sax", 172, 224, 175, 212 },
     { "Brandeburg-wittenberg", 172, 224, 173, 217 },
     { "Freiberg-klagenfurt", 180, 182, 184, 179 },
-    { "Speyer-landau", 137, 199, 134, 198 },
     { "Prague-kutna_hora", 181, 206, 188, 205 },
     { "Cologne-dusseldorf", 127, 212, 127, 215 },
+    { "Utrecht-amsterdam", 114, 220, 112, 222 },
+    { "Freiberg-maribor", 180, 182, 193, 181 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
