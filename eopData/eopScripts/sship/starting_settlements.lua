@@ -863,6 +863,9 @@ local SETTS = {
       names = { sicily = "Potenza", papal_states = "Potenza", venice = "Potenza", pisa = "Potenza", hre = "Potenza", european = "Potentia", greek = "Potentía", arabic = "Butinsa", middle_eastern = "Potensa", default = "Potenza" } },
     { key = "catanzaro", x = 200, y = 127, capital = "Reggio", level = 2, population = 7500,  -- EU5 town; owner sicily; moved 1 NE (user, 14 Oct, Italy fix 1)
       names = { sicily = "Catanzaro", papal_states = "Catanzaro", venice = "Catanzaro", pisa = "Catanzaro", hre = "Catanzaro", european = "Catacium", greek = "Katantzárion", arabic = "Qatansar", middle_eastern = "Katanzaro", default = "Catanzaro" } },
+    { key = "udine", x = 172, y = 176, capital = "Venice", ownerFrom = "Verona", level = 1, population = 1000,  -- castle in 1132; re-added as rebels, 2 south of its first tile (user, 14 Oct, Italy fix 2); Venice_Province like Trieste
+      names = { sicily = "Udine", papal_states = "Udine", venice = "Udine", pisa = "Udine", hre = "Weiden", european = "Utinum", greek = "Oúdine", arabic = "Udini", middle_eastern = "Udine", default = "Udine" },
+      rebels = { "Urban Spear Militia", "Urban Spear Militia" } },
     { key = "malta", x = 181, y = 104, capital = "Palermo", level = 1, population = 1000, castle = true,  -- Malta, castle (user, 14 Oct, Italy fix 1); Mdina; size doubtful; Malta tiles are woodland; owner sicily
       names = { default = "Malta", european = "Malta", greek = "Malta", arabic = "Malta", middle_eastern = "Malta" } },
     { key = "bonifacio", x = 144, y = 145, capital = "Cagliari", level = 1, population = 1000,  -- castle town, founded 828; owner slave
@@ -1162,6 +1165,7 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Murcia-denia", 69, 121, 77, 125 },
     { "Burgos-bilbao", 51, 150, 63, 157 },
     -- Italy + islands (14 Oct 2026)
+    { "Venice-udine", 168, 173, 172, 176 },
     { "Palermo-messina", 173, 119, 188, 120 },
     { "Naples-salerno", 182, 139, 186, 140 },
     { "Palermo-syracuse", 173, 119, 186, 111 },

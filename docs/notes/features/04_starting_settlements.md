@@ -526,3 +526,4 @@ other game regions later. The candidate list and every decision are in issue #4.
   - Garrisons: plain Spear Militia is NOT ownable by sicily / papal_states / venice / pisa (all three export_descr_unit.txt)
     -> GARRISON for those four and the Italian rebel lists = 2 Urban Spear Militia.
   - 47 Italian towns. map.rwm must be deleted (was older than the new map_regions.tga); NEW campaign.
+  - Fix 2 (user, 14 Oct): Udine re-added as rebels (ownerFrom Verona) on 172,176 (Venice_Province, 2 south of its first tile), 1/1000, Urban Spear Militia; installed, read back identical -> 48 towns.

@@ -90,7 +90,7 @@ IBERIA installed 14 Oct, read back identical (script only, NEW campaign, map.rwm
 ITALY + ISLANDS installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 55 towns incl.
   Mdina (Malta) and Bonifacio (Corsica) - see the feature note. Malta works. FIX 1 installed 14 Oct
   (read back identical): 8 removed, 10 moved, Malta a castle, Reggio moved (MAP ROUND 9), Italian garrisons = Urban Spear
-  Militia -> 47 towns. User: delete map.rwm, NEW campaign. Waiting for the user's test.
+  Militia -> 47 towns; fix 2: Udine back as rebels (48). User: delete map.rwm, NEW campaign. Waiting for the user's test.
   THEN: next region. Left: HRE (Germany, Bohemia, Low Countries), France, British Isles, Scandinavia.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
