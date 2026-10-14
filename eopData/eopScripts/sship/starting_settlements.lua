@@ -537,9 +537,9 @@ local SETTS = {
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "shumen", x = 271, y = 157, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
       names = { greek = "Soumen", european = "Sumen", middle_eastern = "Sumnu", serbia = "Šumen", hungary = "Sumen", default = "Šumen" } },
-    { key = "varna", x = 278, y = 156, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 277,157 -> 278,156 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
+    { key = "varna", x = 277, y = 156, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 277,157 -> 278,156 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct); 1 west again -> 277,156 (user, 14 Oct)
       names = { greek = "Barna", european = "Varna", middle_eastern = "Varna", serbia = "Varna", hungary = "Várna", default = "Varna" } },
-    { key = "sliven", x = 267, y = 154, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 267,153 -> 267,154 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
+    { key = "sliven", x = 267, y = 153, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 267,153 -> 267,154 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct); 1 south again -> 267,153 (user, 14 Oct)
       names = { greek = "Stilbnos", european = "Stilbnum", middle_eastern = "Islimye", serbia = "Sliven", hungary = "Szliven", default = "Sliven" } },
     { key = "anchialos", x = 276, y = 151, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 274,152 -> 276,151 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
       names = { greek = "Anchialos", european = "Anchialus", middle_eastern = "Ahyolu", serbia = "Anhialo", hungary = "Ankhialosz", default = "Anchialos" } },

@@ -468,3 +468,4 @@ other game regions later. The candidate list and every decision are in issue #4.
     Ragusa 208,153 -> 207,154, Arta 228,128 -> 229,128; characters Sevinch, Dobrica Perovic, Andronikos Imerios and the
     Iasi event position moved by hand in the current descr_strat/descr_events.
   - DUMP_PATHS coordinates updated; NEW campaign + delete map.rwm.
+  - Fix 2 (user, 14 Oct): Varna back 1 west (277,156), Sliven back 1 south (267,153); installed, read back identical.
