@@ -569,14 +569,14 @@ local SETTS = {
       names = { hre = "Oppeln", lithuania = "Opolė", european = "Oppolia", greek = "Opóle", middle_eastern = "Opole", default = "Opole" } },
     { key = "legnica", x = 194, y = 214, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
       names = { hre = "Liegnitz", lithuania = "Lignica", european = "Legnicia", greek = "Légnitsa", middle_eastern = "Legnica", default = "Legnica" } },
-    { key = "glogow", x = 193, y = 217, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
+    { key = "glogow", x = 192, y = 218, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132; moved 1 NW (user, 15 Oct)
       names = { hre = "Glogau", lithuania = "Glogovas", european = "Glogovia", greek = "Glogóv", middle_eastern = "Glogow", default = "Głogów" } },
-    { key = "raciborz", x = 210, y = 207, capital = "Olomoc", level = 2, population = 7500,  -- existed 1132; rebels (Olomouc region)
+    { key = "raciborz", x = 211, y = 206, capital = "Olomoc", level = 2, population = 7500,  -- existed 1132; rebels (Olomouc region); moved 1 SE (user, 15 Oct)
       names = { poland = "Racibórz", hre = "Ratibor", lithuania = "Račiburas", european = "Ratibora", greek = "Ratibór", middle_eastern = "Raciborz", default = "Racibórz" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "slupsk", x = 200, y = 237, capital = "Gdansk", level = 2, population = 7500,  -- existed 1132
       names = { hre = "Stolp", denmark = "Stolp", lithuania = "Slupskas", european = "Stolpa", greek = "Slúpsk", middle_eastern = "Slupsk", default = "Słupsk" } },
-    { key = "wolin", x = 183, y = 231, capital = "Szczecin", level = 2, population = 7500,  -- existed 1132; rebels
+    { key = "wolin", x = 184, y = 231, capital = "Szczecin", level = 2, population = 7500,  -- existed 1132; rebels; moved 1 east (user, 15 Oct)
       names = { poland = "Wolin", hre = "Wollin", denmark = "Wollin", lithuania = "Volinas", european = "Julinum", greek = "Voulin", middle_eastern = "Wolin", default = "Wolin" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "kolobrzeg", x = 188, y = 234, capital = "Szczecin", level = 2, population = 7500,  -- existed 1132; rebels
@@ -603,29 +603,31 @@ local SETTS = {
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
 
     -- Hungary + Croatia (15 Oct 2026): EU5 transdanubia/north+south_alfold/slovakia/croatia/slavonia/slovenia/bosnia areas
-    { key = "buda", x = 224, y = 190, capital = "Esztergom", level = 3, population = 15000,  -- EU5 city
+    { key = "buda", x = 216, y = 185, capital = "Szekesfehervar", level = 3, population = 15000,  -- EU5 city; moved 5 east of Szekesfehervar (user, 15 Oct)
       names = { hungary = "Buda", hre = "Ofen", european = "Buda", greek = "Voúda", middle_eastern = "Budin", default = "Buda" } },
+    { key = "pest", x = 218, y = 185, capital = "Szekesfehervar", level = 1, population = 500,  -- 2 east of Buda (user, 15 Oct)
+      names = { hungary = "Pest", hre = "Pesth", european = "Pest", greek = "Pésti", middle_eastern = "Peşt", default = "Pest" } },
     { key = "pecs", x = 211, y = 178, capital = "Szekesfehervar", level = 2, population = 7500,
       names = { hungary = "Pécs", hre = "Fünfkirchen", european = "Quinque Ecclesiae", greek = "Pétsvár", middle_eastern = "Peçuy", default = "Pécs" } },
     { key = "sopron", x = 202, y = 188, capital = "Szekesfehervar", level = 2, population = 7500,
       names = { hungary = "Sopron", hre = "Ödenburg", european = "Scarbantia", greek = "Sopróni", middle_eastern = "Şopron", default = "Sopron" } },
     { key = "szeged", x = 226, y = 179, capital = "Varad", level = 2, population = 7500,
       names = { hungary = "Szeged", hre = "Segedin", european = "Partiscum", greek = "Séged", middle_eastern = "Seged", default = "Szeged" } },
-    { key = "bratislava", x = 205, y = 193, capital = "Esztergom", level = 2, population = 7500,
+    { key = "bratislava", x = 203, y = 194, capital = "Esztergom", level = 2, population = 7500,  -- moved 2 west, 1 north (user, 15 Oct)
       names = { hungary = "Pozsony", hre = "Pressburg", european = "Posonium", greek = "Presburg", middle_eastern = "Pojon", default = "Pozsony" } },
-    { key = "kosice", x = 235, y = 196, capital = "Esztergom", level = 2, population = 7500,
+    { key = "kosice", x = 234, y = 197, capital = "Esztergom", level = 2, population = 7500,  -- moved 1 west, 1 north (user, 15 Oct)
       names = { hungary = "Kassa", hre = "Kaschau", european = "Cassovia", greek = "Kásia", middle_eastern = "Koşa", default = "Kassa" } },
-    { key = "krupina", x = 223, y = 195, capital = "Esztergom", level = 2, population = 7500,
+    { key = "krupina", x = 221, y = 194, capital = "Esztergom", level = 2, population = 7500,  -- user asked 221,195 (2 west); no open tile there, snapped to 221,194 (15 Oct)
       names = { hungary = "Korpona", hre = "Karpfen", european = "Korponia", greek = "Korpóna", middle_eastern = "Korpona", default = "Korpona" } },
     { key = "knin", x = 194, y = 163, capital = "Zagreb", ownerFrom = "Zara", level = 2, population = 7500,  -- Dalmatia; rebels (user, 15 Oct)
       names = { hungary = "Knin", hre = "Tenin", european = "Tininium", greek = "Knin", middle_eastern = "Knin", default = "Knin" },
-      rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "rijeka", x = 182, y = 174, capital = "Freiberg", ownerFrom = "Zara", level = 2, population = 7500,  -- Istria/Kvarner; rebels (user, 15 Oct)
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "rijeka", x = 181, y = 174, capital = "Freiberg", ownerFrom = "Zara", level = 2, population = 7500,  -- Istria/Kvarner; rebels. User asked 1 SW (181,173); relief 50 there, snapped to 181,174 (15 Oct)
       names = { hungary = "Fiume", hre = "Sankt Veit am Pflaum", european = "Tarsatica", greek = "Ríjeka", middle_eastern = "Riyeka", default = "Rijeka" },
-      rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "trieste", x = 178, y = 176, capital = "Freiberg", ownerFrom = "Verona", level = 2, population = 7500,  -- Istria/Friuli; rebels (user, 15 Oct)
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "trieste", x = 178, y = 175, capital = "Freiberg", ownerFrom = "Verona", level = 2, population = 7500,  -- Istria/Friuli; rebels. User asked 2W/1S (176,175); off-region there, snapped to 178,175 (15 Oct)
       names = { hungary = "Trieszt", hre = "Triest", european = "Tergeste", greek = "Triésti", middle_eastern = "Tirieste", default = "Trieste" },
-      rebels = { "Spear Militia", "Spear Militia" } },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -645,8 +647,8 @@ local GARRISON = {
     serbia    = { "Spear Militia", "Spear Militia" },          -- Balkans: cheapest militia (14 Oct)
     poland    = { "EE Spear Militia", "EE Spear Militia" },   -- Poland + Baltic: cheapest militia (14 Oct)
     lithuania = { "EE Spear Militia", "EE Spear Militia" },   -- Poland + Baltic: cheapest militia (14 Oct)
-    hungary   = { "Spear Militia", "Spear Militia" },         -- Hungary + Croatia: cheapest militia (user, 15 Oct)
-    hre       = { "Spear Militia", "Spear Militia" },         -- Hungary + Croatia: cheapest militia (user, 15 Oct)
+    hungary   = { "EE Spear Militia", "EE Spear Militia" },   -- hungary has no "Spear Militia" ownership in export_descr_unit.txt, only EE (user caught it, 15 Oct)
+    hre       = { "Spear Militia", "Spear Militia" },         -- Hungary + Croatia: cheapest militia (user, 15 Oct); hre IS in Spear Militia's ownership list, verified
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -861,15 +863,16 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Thessalonica-Ohrid", 243, 139, 230, 145 }, { "Arta-Ioannina", 228, 128, 225, 132 },
     { "Poznan-Gniezno", 198, 222, 204, 223 }, { "Poznan-Torun", 198, 222, 213, 226 }, { "Plock-Warsaw", 226, 224, 230, 222 },
     { "Krakow-Sandomierz", 218, 208, 236, 211 }, { "Krakow-Lublin", 218, 208, 241, 215 }, { "Wroclaw-Opole", 199, 214, 207, 210 }, { "Wroclaw-Legnica", 199, 214, 194, 214 },
-    { "Szczecin-Wolin", 180, 231, 183, 231 }, { "Szczecin-Wolgast", 180, 231, 176, 234 }, { "Gdansk-Slupsk", 212, 235, 200, 237 },
+    { "Szczecin-Wolin", 180, 231, 184, 231 }, { "Szczecin-Wolgast", 180, 231, 176, 234 }, { "Gdansk-Slupsk", 212, 235, 200, 237 },
     { "Kernave-Kaunas", 250, 242, 246, 238 }, { "Kolyvan-Tartu", 255, 273, 270, 265 }, { "Riga-Koknese", 253, 256, 260, 252 },
     { "Polotsk-Jersika", 282, 244, 265, 250 }, { "Lubeck-Stralsund", 155, 233, 171, 235 },
-    { "Esztergom-Buda", 226, 194, 224, 190 }, { "Esztergom-Bratislava", 226, 194, 205, 193 },
-    { "Esztergom-Kosice", 226, 194, 235, 196 }, { "Esztergom-Krupina", 226, 194, 223, 195 },
+    { "Szekesfehervar-Buda", 211, 185, 216, 185 }, { "Buda-Pest", 216, 185, 218, 185 },
+    { "Esztergom-Bratislava", 226, 194, 203, 194 },
+    { "Esztergom-Kosice", 226, 194, 234, 197 }, { "Esztergom-Krupina", 226, 194, 221, 194 },
     { "Szekesfehervar-Pecs", 211, 185, 211, 178 }, { "Szekesfehervar-Sopron", 211, 185, 202, 188 },
     { "Varad-Szeged", 236, 183, 226, 179 }, { "Zagreb-Knin", 193, 177, 194, 163 },
-    { "Freiberg-Rijeka", 180, 182, 182, 174 }, { "Freiberg-Trieste", 180, 182, 178, 176 },
-    { "Rijeka-Trieste", 182, 174, 178, 176 },
+    { "Freiberg-Rijeka", 180, 182, 181, 174 }, { "Freiberg-Trieste", 180, 182, 178, 175 },
+    { "Rijeka-Trieste", 181, 174, 178, 175 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
