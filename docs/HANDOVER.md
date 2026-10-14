@@ -42,6 +42,8 @@ calls are what burn it.
 ## Where things stand - START HERE
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
+- Campaign AI (15 Oct 2026): Gracul AI from SS 6.3 installed, EOP nonBorderFactor 0.5, label reset loop removed -
+  awaiting the user's play test. Details: `docs/notes/features/06_campaign_ai.md`.
 - #1 Recruitment costs population - CLOSED, works in game (user, 13 Oct).
 - #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
 - #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - CLOSED 13 Oct, works as intended

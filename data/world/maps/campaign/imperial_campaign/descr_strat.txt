@@ -1387,7 +1387,7 @@ resource	grain,		501,	158
 ; large number of merchants to balance the budget initially and to convey the Venice trade dominantion in Byzantium
 
 faction	venice, religious mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -1551,7 +1551,7 @@ relative	Domenico Morosini,	Sophia Polani, Iacobetta Morosini,	end
 ; the realm was conquered very recently and this should be reflected in high number of Muslims (adjust at some point in the descr_regions.txt)
 
 faction	sicily, craftsman trader bureaucrat sailor balanced religious fortified comfortable mao stalin genghis Caesar napoleon smith henry
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -1836,7 +1836,7 @@ relative 	Ruggero Guiskard, Elvira,	Ruggero, Tancredi Guiskard, Alfonso, Gugliel
 ;--- Abbasids ---
 
 faction	abbasid, sailor craftsman trader bureaucrat balanced fortified comfortable religious mao stalin genghis napoleon smith henry Caesar
-ai_label		default
+ai_label		islam
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -2162,7 +2162,7 @@ relative 	Ar-Rashid Billah,	Lubaba,	Ziyad Billah,	end
 ;--- Denmark -----
 
 faction	denmark, religious knud
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement castle
@@ -2332,7 +2332,7 @@ relative 	Niels Svendsen,	Margrethe,	Magnus,	Ingolf,	Ingrid,	end
 ;--- Egypt -----
 
 faction	egypt, tzar saladin
-ai_label		default
+ai_label		islam
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -2991,7 +2991,7 @@ relative 	al-Hafiz al-Fatimiyyun,	Safiya,	Al-Zafir al-Fatimiyyun, Jamila, end
 ;--- Scotland -----
 
 faction	scotland, religious genghis
-ai_label		default
+ai_label		scots
 denari 9300
 denari_kings_purse	2500
 settlement castle
@@ -3154,7 +3154,7 @@ relative 	Eanric Dun_Chailleann,	Ada,	end
 ;--- Cumans -----
 
 faction	cumans, bureaucrat mao
-ai_label		default
+ai_label		pagan
 denari 9300
 denari_kings_purse	2500
 
@@ -3511,7 +3511,7 @@ relative 	Otrok of_the_Kimak,	Aylin,	Eltut of_the_Kimak,	end
 ;--- Seljucs -----
 
 faction	turks, bureaucrat mao
-ai_label		default
+ai_label		islam
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -4279,7 +4279,7 @@ relative 	Qutb_ad-Din Atsiz,	Atiyye,	Ala_addin Atsiz,	end
 ;--- France -----
 
 faction	france, religious mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -4602,7 +4602,7 @@ relative	Raoul de_Vermandois, Eleonore de_Blois,	end
 ; There're 2 family trees and they do work - if one Kaiser dies, the other family takes over.
 
 faction	hre, religious mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -5536,7 +5536,7 @@ relative	Werner von_Habsburg,	Ida von_Hohenstaufen,	end
 ;--- England -----
 
 faction	england, religious mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -6059,7 +6059,7 @@ relative 	Robert of_Normandy,	Sybil,	William Clinton,	end
 ;--- Portugal -----
 
 faction	portugal, bureaucrat mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -6180,7 +6180,7 @@ relative 	Fernando de_Barros,	Sancha de_Bonaval,	Mafalda de_Bonaval,	end
 ;--- Poland -----
 
 faction	poland, religious mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -6505,7 +6505,7 @@ relative 	Wladyslaw Piast,	Agnieszka,	Boleslaw,	Mieszko,	end
 ;--- Byzantium -----
 
 faction	byzantium, craftsman mao
-ai_label		default
+ai_label		byzantium_faction
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -7464,7 +7464,7 @@ relative 	Andronikos Komnenos,	IreniB,	Maria,	IoannisA,	end
 ;--- Moors -----
 
 faction	moors, religious arslan
-ai_label		default
+ai_label		islam
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -8631,7 +8631,7 @@ relative 	Vselovod Kievskii,	Svyatoslava Chernigovskii,	Ivan,	Vysheslava Mstisla
 ;--- Castile & Leon ---
 
 faction	spain, bureaucrat mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 
@@ -9014,7 +9014,7 @@ relative	Gutierrez de_Castro,	Sancha Martinez,	end
 ;--- Hungary ---
 
 faction	hungary, sailor mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 
@@ -9343,7 +9343,7 @@ relative	Saul Arpadhazi,	Gizella,	end
 ;--- Aragon ---
 
 faction	aragon, bureaucrat mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -9585,7 +9585,7 @@ relative 	Ramon Berenguer, Petronilla Ramirez,	end
 ;--- Lithuania ---
 
 faction	lithuania, bureaucrat sailor fortified balanced trader religious craftsman mao stalin napoleon Caesar smith genghis henry 
-ai_label		default
+ai_label		pagan
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -10393,7 +10393,7 @@ relative 	Demetre Bagrationi,	Nestan,	Davit Bagrationi,	Rusudan Bagrationi,	Gior
 ;--- Norway ---
 
 faction	norway, religious genghis
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement castle
@@ -10545,7 +10545,7 @@ relative 	Sigurd,	Margret,	Harald,	Sigurd Slembe, Magnus, Kristin,	end
 
 
 faction	jerusalem, comfortable doge
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -11020,7 +11020,7 @@ relative 	Pons de_Toulouse,	Cecilia de_Boulogne,	Raymond de_Toulouse,	end
 ;--- Zengid -----
 
 faction	zengid, fortified mao
-ai_label		default
+ai_label		islam
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -11315,7 +11315,7 @@ relative 	Imad_ad-Din Zengi,	Melek,	Saif_ad-Din Zengi,	Nur_ad-Din Zengi,	Qutb_ad
 ;--- Rum -----
 
 faction	rum, bureaucrat arslan
-ai_label		default
+ai_label		islam
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -11532,7 +11532,7 @@ relative 	Mes_ud Arslan,	Eda,	Kilic Arslan,	Gulruh,	Mahmud Arslan,	end
 ;--- Pisa -----
 
 faction	pisa, religious mao
-ai_label		default
+ai_label		catholic
 denari 9300
 denari_kings_purse	2500
 settlement
@@ -15032,7 +15032,7 @@ unit		Hunters						exp 7 armour 0 weapon_lvl 0
 unit		Hunters						exp 0 armour 0 weapon_lvl 0
 
 ; KALMAR
-character	sub_faction denmark, Magnus Nilsson, named character, male, age 36, x 195, y 254 
+character	sub_faction denmark, Magnus Nilsson, named character, male, age 36, x 194, y 255 
 traits LoyaltyStarter 1 , GoodCommander 1 , ReligionStarter 1 , StrategyDread 2 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodBuilder 3
 army
 unit		Viking Raiders				exp 7 armour 0 weapon_lvl 0
