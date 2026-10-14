@@ -65,12 +65,16 @@ RUSSIA + MUSCAT installed 14 Oct, read back identical: 15 Rus' towns (Tver, Mosc
   Offered, not taken (yet): Pskov-region towns, Tartu / Otepaa, Koknese / Jersika, Sohar, Julfar, Qatar.
 BALKANS + GREECE DONE, WORKS (user, 14 Oct): 25 towns, Rhodes a castle, Lycian coast corridor.
 POLAND + BALTIC DONE, WORKS (user, 15 Oct): 22 towns (fix 1: Krakow and Szczecin moved, map round 6, new campaign).
-HUNGARY + CROATIA installed 15 Oct, fix 1 installed 15 Oct (read back identical): 11 towns (Buda 3/15000 + Pest
-  1/500 newly added; Pecs, Sopron, Szeged, Bratislava, Kosice, Krupina 2/7500, owner hungary; Knin, Rijeka, Trieste
-  2/7500, rebels via ownerFrom). GARRISON.hungary fixed to EE Spear Militia (plain Spear Militia isn't ownable by
-  hungary - user caught it in testing); hre/serbia confirmed fine as-is. Several towns moved per the user's in-game
-  check; Stralsund move not possible (no open tile) and Zagreb move (an existing SSHIP settlement, needs a map edit)
-  and a new town "Eger" are waiting on the user - see `docs/notes/features/04_starting_settlements.md`.
+HUNGARY + CROATIA installed 15 Oct, fix 1 + fix 2 installed 15 Oct (read back identical): 11 towns (Buda 3/15000 +
+  Pest 1/500; Pecs, Sopron, Szeged, Bratislava, Kosice, Krupina 2/7500, owner hungary; Knin, Rijeka, Trieste 2/7500,
+  rebels via ownerFrom - Trieste sits on real Venice_Province territory, no map edit needed there). GARRISON.hungary
+  fixed to EE Spear Militia (plain Spear Militia isn't ownable by hungary - user caught it in testing); hre/serbia
+  confirmed fine as-is. MAP ROUND 7 (edit_map.py CITY_MOVES): Zagreb's own settlement moved 193,177 -> 193,175 (user
+  tested first) - governor + plague event position moved with it by hand, NOT via edit_map.py's regenerated
+  descr_strat/descr_events output (CAUTION note added to the tool: it always rebuilds those two files from the pre-
+  map-edit backup, which would revert every other #4 round's direct descr_strat.txt edits since). map.rwm deleted
+  again; NEW campaign. Still open: "Eger" - not a vanilla SSHIP settlement and not an EU5 ranked town either; need
+  the user to say where to place it. See `docs/notes/features/04_starting_settlements.md` for full detail.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

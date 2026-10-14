@@ -407,4 +407,21 @@ other game regions later. The candidate list and every decision are in issue #4.
     one of our placed towns - looks like a new addition but no base position was given).
   - DUMP_PATHS coordinates updated to match (Szekesfehervar-Buda, Buda-Pest, Esztergom-Bratislava/Kosice/Krupina,
     Freiberg-Rijeka/Trieste, Rijeka-Trieste, Szczecin-Wolin).
+- HUNGARY + CROATIA fix 2 (user, 15 Oct), installed, read back identical:
+  - MAP ROUND 7 in edit_map.py (CITY_MOVES): Zagreb's city pixel 193,177 -> 193,175 (2 south, user tested unit
+    movement there first). Governor Saul Arpadhazi (descr_strat.txt) and the black_death_2 plague event position
+    (descr_events.txt) moved with it - applied as isolated text replaces on the CURRENT files, not edit_map.py's
+    regenerated output (which rebuilds descr_strat/descr_events from the 13 Oct pre-map backup and would silently
+    revert every other #4 round's direct descr_strat.txt edits since - Rostov->Novgorod, Saqsin->Cumans, etc).
+    edit_map.py now has a CAUTION comment about this; only the 4 TGA map files are safe to take from it wholesale.
+    map.rwm must be deleted again; NEW campaign.
+  - Trieste: the originally requested tile (176,175) checked out as real Venice_Province territory (color
+    13,198,117, confirmed in descr_regions.txt/descr_strat.txt), not unassigned space - place.py's region check
+    just didn't have Venice in its anchor list. No map edit needed; moved there, capital = Venice, still a rebel
+    (ownerFrom Verona unchanged).
+  - Stralsund moved to the originally requested 170,237 (1 west, 2 north) - user confirmed by moving a unit there
+    in-game; place.py's neighbour-count heuristic was too conservative for this tile.
+  - Still open: Eger - user thought it might already be a vanilla SSHIP settlement, but it isn't (no Eger_Province,
+    no Eger settlement) and it's not in the EU5 city/town rank list either (only a plain "location"). Need the
+    user to say where to place it if they still want it added.
 - THEN: the user picks the next region for #4 (same method).
