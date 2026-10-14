@@ -527,3 +527,17 @@ other game regions later. The candidate list and every decision are in issue #4.
     -> GARRISON for those four and the Italian rebel lists = 2 Urban Spear Militia.
   - 47 Italian towns. map.rwm must be deleted (was older than the new map_regions.tga); NEW campaign.
   - Fix 2 (user, 14 Oct): Udine re-added as rebels (ownerFrom Verona) on 172,176 (Venice_Province, 2 south of its first tile), 1/1000, Urban Spear Militia; installed, read back identical -> 48 towns.
+
+## FRANCE (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- Italy confirmed done (user, 14 Oct). Script only - no map edit, map.rwm stays; NEW campaign. Backup: `backups/2026-10-14_before_france/`.
+- EU5 `#France` block: 13 cities + 49 towns; 15 are SSHIP's own. Anchors `docs/tools/anchors_france.txt` (20, residuals <= 1.5).
+- 34 towns: france 7 (Amiens, Chartres, Sens, Chalons, Laon, Blois, Bourges), england 3 (Caen, Cherbourg, Tours),
+  hre 6 (Besancon "Bisanz" for hre, Valence, Avignon, Marseille, Sisteron, Le Puy - user: towns in hre territory owned by hre),
+  rebels 18 (Nantes; Angouleme, La Rochelle, Agen, Perigueux, Tarbes, Bayonne; Albi, Cahors, Carcassonne, Narbonne,
+  Montpellier [1 west of GPS for spacing], Nimes, Perpignan; Rodez; Autun; Arras, Saint-Omer).
+- Levels: EU5 city 3/15000 (Tours, Narbonne, Montpellier, Arras, Marseille); small in 1132 1/1000 (Cherbourg, La Rochelle,
+  Tarbes, Sisteron); rest 2/7500. Garrison 2 Spear Militia (GARRISON france / england added; rebels list per entry).
+- Names: French for france / england / hre / rebels, Latin for `european`. Only Latin-1 accents.
+- Not added (spacing <= 2 tiles to a bigger neighbour; taken as accepted, user only answered the ownership question):
+  Aix, Beauvais, Beziers, Montauban, Saint-Flour, Montbrison, Provins, Vienne. Left for the HRE round: Metz, Strasbourg,
+  Colmar, Mulhouse (Trier / Basel provinces). DUMP_PATHS +34 (France block). Check image `france_check.png`.

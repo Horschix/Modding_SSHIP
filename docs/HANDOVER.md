@@ -91,9 +91,10 @@ ITALY + ISLANDS installed 14 Oct, read back identical (script only, NEW campaign
   Mdina (Malta) and Bonifacio (Corsica) - see the feature note. Malta works. FIX 1 installed 14 Oct
   (read back identical): 8 removed, 10 moved, Malta a castle, Reggio moved (MAP ROUND 9), Italian garrisons = Urban Spear
   Militia -> 47 towns; fix 2: Udine back as rebels (48). User: delete map.rwm, NEW campaign. ITALY DONE (user, 14 Oct).
-FRANCE in planning (14 Oct): 34 towns proposed (france 7, england 3, rebels 19, hre 5), anchors
-  `docs/tools/anchors_france.txt`; open questions (drops, Alsace/Lorraine to HRE round, Le Puy owner, Occitan names,
-  Flanders) put to the user. Left after France: HRE (Germany, Bohemia, Low Countries), British Isles, Scandinavia.
+FRANCE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 34 towns (france 7,
+  england 3, hre 6 incl. Le Puy, rebels 18) - see the feature note. Waiting for the user's test.
+  THEN: next region. Left: HRE (Germany, Bohemia, Low Countries; Metz, Strasbourg, Colmar, Mulhouse go there),
+  British Isles, Scandinavia.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

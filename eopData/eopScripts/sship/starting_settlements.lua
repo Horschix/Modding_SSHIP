@@ -870,7 +870,93 @@ local SETTS = {
       names = { default = "Malta", european = "Malta", greek = "Malta", arabic = "Malta", middle_eastern = "Malta" } },
     { key = "bonifacio", x = 144, y = 145, capital = "Cagliari", level = 1, population = 1000,  -- castle town, founded 828; owner slave
       names = { sicily = "Bonifacio", papal_states = "Bonifacio", venice = "Bonifacio", pisa = "Bonifacio", hre = "Bonifacio", european = "Bonifacium", greek = "Bonifátsio", arabic = "Bunifasyu", middle_eastern = "Bonifacio", default = "Bonifacio" },
-      rebels = { "Urban Spear Militia", "Urban Spear Militia" } },
+      rebels = { "Urban Spear Militia", "Urban Spear Militia" } },    -- France (14 Oct 2026): EU5 #France block, user: hre-territory towns owned by hre; French names, Latin for european
+    { key = "amiens", x = 94, y = 203, capital = "Paris", level = 2, population = 7500,  -- EU5 town; owner france
+      names = { france = "Amiens", england = "Amiens", hre = "Amiens", european = "Ambianum", default = "Amiens" } },
+    { key = "chartres", x = 88, y = 194, capital = "Paris", level = 2, population = 7500,  -- EU5 town; Blois-Champagne, vassal; owner france
+      names = { france = "Chartres", england = "Chartres", hre = "Chartres", european = "Carnutum", default = "Chartres" } },
+    { key = "sens", x = 100, y = 193, capital = "Paris", level = 2, population = 7500,  -- EU5 town; royal; owner france
+      names = { france = "Sens", england = "Sens", hre = "Sens", european = "Senonae", default = "Sens" } },
+    { key = "chalons", x = 107, y = 198, capital = "Rheims", level = 2, population = 7500,  -- EU5 town; owner france
+      names = { france = "Châlons", england = "Châlons", hre = "Châlons", european = "Catalaunum", default = "Châlons" } },
+    { key = "laon", x = 102, y = 202, capital = "Rheims", level = 2, population = 7500,  -- EU5 town; royal; owner france
+      names = { france = "Laon", england = "Laon", hre = "Laon", european = "Laudunum", default = "Laon" } },
+    { key = "blois", x = 87, y = 188, capital = "Orleans", level = 2, population = 7500,  -- EU5 town; owner france
+      names = { france = "Blois", england = "Blois", hre = "Blois", european = "Blesae", default = "Blois" } },
+    { key = "bourges", x = 94, y = 184, capital = "Orleans", level = 2, population = 7500,  -- EU5 town; royal since 1101; owner france
+      names = { france = "Bourges", england = "Bourges", hre = "Bourges", european = "Bituricae", default = "Bourges" } },
+    { key = "caen", x = 74, y = 199, capital = "Rouen", level = 2, population = 7500,  -- EU5 town; Normandy; owner england
+      names = { france = "Caen", england = "Caen", hre = "Caen", european = "Cadomum", default = "Caen" } },
+    { key = "cherbourg", x = 66, y = 202, capital = "Rouen", level = 1, population = 1000,  -- EU5 town, small in 1132 -> 1/1000; owner england
+      names = { france = "Cherbourg", england = "Cherbourg", hre = "Cherbourg", european = "Caesaris Burgus", default = "Cherbourg" } },
+    { key = "tours", x = 82, y = 186, capital = "Angers", level = 3, population = 15000,  -- EU5 city; Touraine Angevin; owner england
+      names = { france = "Tours", england = "Tours", hre = "Tours", european = "Turones", default = "Tours" } },
+    { key = "nantes", x = 65, y = 185, capital = "Rennes", level = 2, population = 7500,  -- EU5 town; Brittany; owner slave
+      names = { france = "Nantes", england = "Nantes", hre = "Nantes", european = "Namnetes", default = "Nantes" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "angouleme", x = 78, y = 173, capital = "Poitiers", level = 2, population = 7500,  -- EU5 town; Aquitaine; owner slave
+      names = { france = "Angoulême", england = "Angoulême", hre = "Angoulême", european = "Engolisma", default = "Angoulême" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "la_rochelle", x = 71, y = 177, capital = "Poitiers", level = 1, population = 1000,  -- EU5 town; charter c. 1137 -> 1/1000; owner slave
+      names = { france = "La Rochelle", england = "La Rochelle", hre = "La Rochelle", european = "Rupella", default = "La Rochelle" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "agen", x = 82, y = 164, capital = "Bordeaux", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { france = "Agen", england = "Agen", hre = "Agen", european = "Aginnum", default = "Agen" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "perigueux", x = 82, y = 171, capital = "Bordeaux", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { france = "Périgueux", england = "Périgueux", hre = "Périgueux", european = "Petrocorii", default = "Périgueux" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "tarbes", x = 78, y = 158, capital = "Bordeaux", level = 1, population = 1000,  -- EU5 town, small in 1132 -> 1/1000; Bigorre; owner slave
+      names = { france = "Tarbes", england = "Tarbes", hre = "Tarbes", european = "Tarba", default = "Tarbes" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "bayonne", x = 68, y = 158, capital = "Pamplona", level = 2, population = 7500,  -- EU5 town; Labourd; Pamplona region; owner slave
+      names = { france = "Bayonne", england = "Bayonne", hre = "Bayonne", european = "Baiona", default = "Bayonne" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "albi", x = 93, y = 162, capital = "Toulouse", level = 2, population = 7500,  -- EU5 town; Trencavel; owner slave
+      names = { france = "Albi", england = "Albi", hre = "Albi", european = "Albiga", default = "Albi" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "cahors", x = 86, y = 164, capital = "Toulouse", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { france = "Cahors", england = "Cahors", hre = "Cahors", european = "Cadurcum", default = "Cahors" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "carcassonne", x = 94, y = 157, capital = "Toulouse", level = 2, population = 7500,  -- EU5 town; Trencavel; owner slave
+      names = { france = "Carcassonne", england = "Carcassonne", hre = "Carcassonne", european = "Carcaso", default = "Carcassonne" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "narbonne", x = 99, y = 157, capital = "Toulouse", level = 3, population = 15000,  -- EU5 city; viscounty; owner slave
+      names = { france = "Narbonne", england = "Narbonne", hre = "Narbonne", european = "Narbo", default = "Narbonne" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "montpellier", x = 103, y = 160, capital = "Toulouse", level = 3, population = 15000,  -- EU5 city; Guilhem lords; 1 west of GPS for spacing; owner slave
+      names = { france = "Montpellier", england = "Montpellier", hre = "Montpellier", european = "Mons Pessulanus", default = "Montpellier" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "nimes", x = 107, y = 161, capital = "Toulouse", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { france = "Nîmes", england = "Nîmes", hre = "Nîmes", european = "Nemausus", default = "Nîmes" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "perpignan", x = 97, y = 154, capital = "Toulouse", level = 2, population = 7500,  -- EU5 town; Roussillon; owner slave
+      names = { france = "Perpignan", england = "Perpignan", hre = "Perpignan", european = "Perpinianum", default = "Perpignan" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "rodez", x = 96, y = 166, capital = "Clermont", level = 2, population = 7500,  -- EU5 town; Rouergue; owner slave
+      names = { france = "Rodez", england = "Rodez", hre = "Rodez", european = "Ruteni", default = "Rodez" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "le_puy", x = 109, y = 172, capital = "Lyon", level = 2, population = 7500,  -- EU5 town; Lyon_Province -> hre (user, 14 Oct)
+      names = { france = "Le Puy", england = "Le Puy", hre = "Le Puy", european = "Anicium", default = "Le Puy" } },
+    { key = "autun", x = 108, y = 183, capital = "Dijon", level = 2, population = 7500,  -- EU5 town; Burgundy; owner slave
+      names = { france = "Autun", england = "Autun", hre = "Autun", european = "Augustodunum", default = "Autun" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "arras", x = 97, y = 207, capital = "Ghent", level = 3, population = 15000,  -- EU5 city; Flanders; owner slave
+      names = { france = "Arras", england = "Arras", hre = "Arras", european = "Atrebatum", default = "Arras" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "saint_omer", x = 93, y = 210, capital = "Ghent", level = 2, population = 7500,  -- EU5 town; Flanders; owner slave
+      names = { france = "Saint-Omer", england = "Saint-Omer", hre = "Saint-Omer", european = "Audomaropolis", default = "Saint-Omer" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "besancon", x = 121, y = 186, capital = "Lyon", level = 2, population = 7500,  -- EU5 town; County of Burgundy; owner hre
+      names = { france = "Besançon", england = "Besançon", hre = "Bisanz", european = "Vesontio", default = "Besançon" } },
+    { key = "valence", x = 112, y = 169, capital = "Lyon", level = 2, population = 7500,  -- EU5 town; Kingdom of Arles; owner hre
+      names = { france = "Valence", england = "Valence", hre = "Valence", european = "Valentia", default = "Valence" } },
+    { key = "avignon", x = 112, y = 163, capital = "Arles", level = 2, population = 7500,  -- EU5 town; Provence; owner hre
+      names = { france = "Avignon", england = "Avignon", hre = "Avignon", european = "Avenio", default = "Avignon" } },
+    { key = "marseille", x = 117, y = 159, capital = "Arles", level = 3, population = 15000,  -- EU5 city; Provence; owner hre
+      names = { france = "Marseille", england = "Marseille", hre = "Marseille", european = "Massilia", default = "Marseille" } },
+    { key = "sisteron", x = 119, y = 165, capital = "Arles", level = 1, population = 1000,  -- EU5 town, small in 1132 -> 1/1000; Provence; owner hre
+      names = { france = "Sisteron", england = "Sisteron", hre = "Sisteron", european = "Segustero", default = "Sisteron" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -898,6 +984,8 @@ local GARRISON = {
     sicily = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
     papal_states = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
     venice = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
+    france  = { "Spear Militia", "Spear Militia" },          -- France: cheapest spear militia (14 Oct)
+    england = { "Spear Militia", "Spear Militia" },          -- France (Normandy, Anjou) (14 Oct)
     pisa = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
 }
 
@@ -1213,6 +1301,41 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Reggio-catanzaro", 192, 120, 200, 127 },
     { "Palermo-malta", 173, 119, 181, 104 },
     { "Cagliari-bonifacio", 142, 129, 144, 145 },
+    -- France (14 Oct 2026)
+    { "Paris-amiens", 94, 198, 94, 203 },
+    { "Paris-chartres", 94, 198, 88, 194 },
+    { "Paris-sens", 94, 198, 100, 193 },
+    { "Rheims-chalons", 105, 201, 107, 198 },
+    { "Rheims-laon", 105, 201, 102, 202 },
+    { "Orleans-blois", 91, 190, 87, 188 },
+    { "Orleans-bourges", 91, 190, 94, 184 },
+    { "Rouen-caen", 85, 202, 74, 199 },
+    { "Rouen-cherbourg", 85, 202, 66, 202 },
+    { "Angers-tours", 73, 187, 82, 186 },
+    { "Rennes-nantes", 66, 192, 65, 185 },
+    { "Poitiers-angouleme", 80, 180, 78, 173 },
+    { "Poitiers-la_rochelle", 80, 180, 71, 177 },
+    { "Bordeaux-agen", 72, 169, 82, 164 },
+    { "Bordeaux-perigueux", 72, 169, 82, 171 },
+    { "Bordeaux-tarbes", 72, 169, 78, 158 },
+    { "Pamplona-bayonne", 66, 153, 68, 158 },
+    { "Toulouse-albi", 88, 159, 93, 162 },
+    { "Toulouse-cahors", 88, 159, 86, 164 },
+    { "Toulouse-carcassonne", 88, 159, 94, 157 },
+    { "Toulouse-narbonne", 88, 159, 99, 157 },
+    { "Toulouse-montpellier", 88, 159, 103, 160 },
+    { "Toulouse-nimes", 88, 159, 107, 161 },
+    { "Toulouse-perpignan", 88, 159, 97, 154 },
+    { "Clermont-rodez", 98, 176, 96, 166 },
+    { "Lyon-le_puy", 113, 174, 109, 172 },
+    { "Dijon-autun", 115, 186, 108, 183 },
+    { "Ghent-arras", 103, 211, 97, 207 },
+    { "Ghent-saint_omer", 103, 211, 93, 210 },
+    { "Lyon-besancon", 113, 174, 121, 186 },
+    { "Lyon-valence", 113, 174, 112, 169 },
+    { "Arles-avignon", 110, 160, 112, 163 },
+    { "Arles-marseille", 110, 160, 117, 159 },
+    { "Arles-sisteron", 110, 160, 119, 165 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
