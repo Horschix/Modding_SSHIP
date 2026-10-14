@@ -578,7 +578,7 @@ position	115, 186
 position	131, 189
 position	141, 186
 position	166, 197
-position	193, 177
+position	193, 175
 position	222, 157
 position	247, 152
 position	245, 168

@@ -585,7 +585,7 @@ local SETTS = {
     { key = "wolgast", x = 176, y = 234, capital = "Szczecin", level = 2, population = 7500,  -- EU5 town; rebels
       names = { poland = "Wołogoszcz", hre = "Wolgast", denmark = "Wolgast", lithuania = "Volgastas", european = "Wolgastum", greek = "Volgast", middle_eastern = "Wolgast", default = "Wolgast" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "stralsund", x = 171, y = 235, capital = "Lubeck", level = 1, population = 500,  -- EU5 town, founded 1234; rebels
+    { key = "stralsund", x = 170, y = 237, capital = "Lubeck", level = 1, population = 500,  -- EU5 town, founded 1234; rebels; moved 1 west, 2 north (user tested unit movement there, 15 Oct)
       names = { poland = "Stralsund", hre = "Stralsund", denmark = "Stralsund", lithuania = "Štralzundas", european = "Stralesundum", greek = "Stralzoúnd", middle_eastern = "Stralsund", default = "Stralsund" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "kaunas", x = 246, y = 238, capital = "Kernave", level = 1, population = 500,  -- EU5 town, first named 1361
@@ -625,7 +625,7 @@ local SETTS = {
     { key = "rijeka", x = 181, y = 174, capital = "Freiberg", ownerFrom = "Zara", level = 2, population = 7500,  -- Istria/Kvarner; rebels. User asked 1 SW (181,173); relief 50 there, snapped to 181,174 (15 Oct)
       names = { hungary = "Fiume", hre = "Sankt Veit am Pflaum", european = "Tarsatica", greek = "Ríjeka", middle_eastern = "Riyeka", default = "Rijeka" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "trieste", x = 178, y = 175, capital = "Freiberg", ownerFrom = "Verona", level = 2, population = 7500,  -- Istria/Friuli; rebels. User asked 2W/1S (176,175); off-region there, snapped to 178,175 (15 Oct)
+    { key = "trieste", x = 176, y = 175, capital = "Venice", ownerFrom = "Verona", level = 2, population = 7500,  -- Istria/Friuli; rebels. Requested tile is Venice_Province, not unassigned - moved there, no map edit needed (15 Oct)
       names = { hungary = "Trieszt", hre = "Triest", european = "Tergeste", greek = "Triésti", middle_eastern = "Tirieste", default = "Trieste" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
 }
@@ -865,14 +865,13 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Krakow-Sandomierz", 218, 208, 236, 211 }, { "Krakow-Lublin", 218, 208, 241, 215 }, { "Wroclaw-Opole", 199, 214, 207, 210 }, { "Wroclaw-Legnica", 199, 214, 194, 214 },
     { "Szczecin-Wolin", 180, 231, 184, 231 }, { "Szczecin-Wolgast", 180, 231, 176, 234 }, { "Gdansk-Slupsk", 212, 235, 200, 237 },
     { "Kernave-Kaunas", 250, 242, 246, 238 }, { "Kolyvan-Tartu", 255, 273, 270, 265 }, { "Riga-Koknese", 253, 256, 260, 252 },
-    { "Polotsk-Jersika", 282, 244, 265, 250 }, { "Lubeck-Stralsund", 155, 233, 171, 235 },
+    { "Polotsk-Jersika", 282, 244, 265, 250 }, { "Lubeck-Stralsund", 155, 233, 170, 237 },
     { "Szekesfehervar-Buda", 211, 185, 216, 185 }, { "Buda-Pest", 216, 185, 218, 185 },
     { "Esztergom-Bratislava", 226, 194, 203, 194 },
     { "Esztergom-Kosice", 226, 194, 234, 197 }, { "Esztergom-Krupina", 226, 194, 221, 194 },
     { "Szekesfehervar-Pecs", 211, 185, 211, 178 }, { "Szekesfehervar-Sopron", 211, 185, 202, 188 },
     { "Varad-Szeged", 236, 183, 226, 179 }, { "Zagreb-Knin", 193, 177, 194, 163 },
-    { "Freiberg-Rijeka", 180, 182, 181, 174 }, { "Freiberg-Trieste", 180, 182, 178, 175 },
-    { "Rijeka-Trieste", 181, 174, 178, 175 },
+    { "Freiberg-Rijeka", 180, 182, 181, 174 }, { "Rijeka-Trieste", 181, 174, 176, 175 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

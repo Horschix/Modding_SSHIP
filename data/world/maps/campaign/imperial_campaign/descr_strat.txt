@@ -9331,7 +9331,7 @@ unit		Transilvanian Peasants	exp 0 armour 0 weapon_lvl 0
 unit		Vlach Archers				exp 0 armour 0 weapon_lvl 0
 
 ; ZAGREB
-character	Saul Arpadhazi, named character, male, heir, battle_model heir_general,	age 48, x 193, y 177 
+character	Saul Arpadhazi, named character, male, heir, battle_model heir_general,	age 48, x 193, y 175
 traits LoyaltyStarter 1 , GovernorInclination 1 , GoodAdministrator 1 ,	Intelligent 7 , Royal_Blood_Hungarian 1 , WifeIsBarren 3 , Hypochondriac 3 , Military_Edu 1 , ReligionStarter 1 , Loyal 1
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0

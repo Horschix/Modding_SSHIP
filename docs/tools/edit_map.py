@@ -14,6 +14,15 @@ Reads <backup>/data/world/maps/... and writes the same paths under <OUT>:
   campaign/imperial_campaign/descr_events.txt  event position 291, 137 -> 290, 136
 Each TGA is written in its original form (RLE / uncompressed, bit depth, row order, footer) and read back.
 After installing, map.rwm must be deleted so the game rebuilds the map; a NEW campaign is needed.
+
+CAUTION (learned 15 Oct 2026): this script always rebuilds from the ORIGINAL pre-map-edit backup, so its
+descr_strat.txt / descr_events.txt output only reflects TEXT_REPLACES below - NOT the many unrelated edits those
+two files have had since (region ownership moves, etc. - #4 rounds touch descr_strat.txt directly, outside this
+tool). NEVER install this script's descr_strat.txt / descr_events.txt output wholesale. For a character/event
+position move, apply the single matching text replacement by hand to the CURRENT repo file instead (as done for
+Zagreb, round 7) and only take map_regions.tga / map_ground_types.tga / map_heights.tga / map_features.tga from
+this script's output - those files' only edit path has consistently been this script, so a full rebuild is safe
+for them.
 Tile x,y (y from the bottom) = pixel x,y of map_regions; = pixels 2x..2x+2, 2y..2y+2 of the ground/height maps.
 """
 import os
@@ -29,8 +38,10 @@ SEA = (41, 140, 233)
 SINOP_RGB = tuple(int(v) for v in '255 255 176'.split())
 NICAEA_RGB = (33, 59, 131)
 # round 6 (14 Oct, user): SSHIP's own cities moved - (old, new). New tile must be land of the SAME region (its colour is read there).
+# round 7 (15 Oct, user): Zagreb 2 tiles south (Hungary + Croatia round, #4)
 CITY_MOVES = [((224, 208), (218, 208)),   # Krakow 6 tiles west
-              ((180, 230), (180, 231))]   # Szczecin 1 tile north (new tile = swamp)
+              ((180, 230), (180, 231)),   # Szczecin 1 tile north (new tile = swamp)
+              ((193, 177), (193, 175))]   # Zagreb 2 tiles south
 HILLS = (128, 128, 64)
 # Kutahya 290,130 -> 291,130 -> 291,129 -> 292,129 -> hills 293,129 / 293,128 -> ... -> Afyon 296,125
 # Nicaea -> plains 293,133 / 293,132 -> 293,131 -> 293,130 -> hills 293,129
@@ -244,12 +255,23 @@ def main(src, out):
     write_tga(fm, fa, os.path.join(base_out, "map_features.tga"))
 
     # descr_strat / descr_events (latin-1, line endings kept)
-    for name, old, new in (("descr_strat.txt", b"x 291, y 137", b"x 290, y 136"),
-                           ("descr_events.txt", b"position\t291, 137", b"position\t290, 136")):
+    TEXT_REPLACES = [
+        ("descr_strat.txt", b"x 291, y 137", b"x 290, y 136"),           # Nicaea move
+        ("descr_events.txt", b"position\t291, 137", b"position\t290, 136"),
+        # round 7 (15 Oct, user): Zagreb move - governor Saul Arpadhazi + the black_death_2 plague position
+        ("descr_strat.txt", b"x 193, y 177", b"x 193, y 175"),
+        ("descr_events.txt", b"position\t193, 177", b"position\t193, 175"),
+    ]
+    by_file = {}
+    for name, old, new in TEXT_REPLACES:
+        by_file.setdefault(name, []).append((old, new))
+    for name, pairs in by_file.items():
         data = open(os.path.join(camp_in, name), "rb").read()
-        assert data.count(old) == 1, (name, data.count(old))
-        open(os.path.join(camp_out, name), "wb").write(data.replace(old, new))
-        print(name, old.decode(), "->", new.decode())
+        for old, new in pairs:
+            assert data.count(old) == 1, (name, old, data.count(old))
+            data = data.replace(old, new)
+            print(name, old.decode(), "->", new.decode())
+        open(os.path.join(camp_out, name), "wb").write(data)
 
 
 if __name__ == "__main__":
