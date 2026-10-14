@@ -65,9 +65,12 @@ RUSSIA + MUSCAT installed 14 Oct, read back identical: 15 Rus' towns (Tver, Mosc
   Offered, not taken (yet): Pskov-region towns, Tartu / Otepaa, Koknese / Jersika, Sohar, Julfar, Qatar.
 BALKANS + GREECE DONE, WORKS (user, 14 Oct): 25 towns, Rhodes a castle, Lycian coast corridor.
 POLAND + BALTIC DONE, WORKS (user, 15 Oct): 22 towns (fix 1: Krakow and Szczecin moved, map round 6, new campaign).
-HUNGARY + CROATIA installed 15 Oct, read back identical: 10 towns (Buda 3/15000; Pecs, Sopron, Szeged, Bratislava,
-  Kosice, Krupina 2/7500, owner hungary; Knin, Rijeka, Trieste 2/7500, rebels via ownerFrom). New GARRISON entries
-  hungary + hre (2 Spear Militia). Waiting for the user's test (script only, no map edit, map.rwm stays; NEW campaign).
+HUNGARY + CROATIA installed 15 Oct, fix 1 installed 15 Oct (read back identical): 11 towns (Buda 3/15000 + Pest
+  1/500 newly added; Pecs, Sopron, Szeged, Bratislava, Kosice, Krupina 2/7500, owner hungary; Knin, Rijeka, Trieste
+  2/7500, rebels via ownerFrom). GARRISON.hungary fixed to EE Spear Militia (plain Spear Militia isn't ownable by
+  hungary - user caught it in testing); hre/serbia confirmed fine as-is. Several towns moved per the user's in-game
+  check; Stralsund move not possible (no open tile) and Zagreb move (an existing SSHIP settlement, needs a map edit)
+  and a new town "Eger" are waiting on the user - see `docs/notes/features/04_starting_settlements.md`.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

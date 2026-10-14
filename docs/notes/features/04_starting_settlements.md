@@ -387,4 +387,24 @@ other game regions later. The candidate list and every decision are in issue #4.
   earlier rounds; e.g. Buda/hre "Ofen", Bratislava hungary "Pozsony"/hre "Pressburg", Kosice hungary "Kassa"/hre "Kaschau".
   New GARRISON entries: hungary, hre = 2 Spear Militia each (first time either faction owns a #4 settlement).
   DUMP_PATHS +11 routes (Esztergom/Szekesfehervar/Varad/Zagreb/Freiberg hubs to the new towns, plus Rijeka-Trieste).
+- HUNGARY + CROATIA fix 1 (user's in-game check, 15 Oct), installed, read back identical:
+  - GARRISON.hungary -> EE Spear Militia (export_descr_unit.txt: hungary has no ownership of plain "Spear Militia",
+    only EE Spear Militia; hre and serbia both verified as IS in Spear Militia's ownership list, left unchanged).
+    Knin/Rijeka/Trieste rebel garrison switched to EE Spear Militia too for consistency.
+  - Pest added: 218,185, level 1 / 500, 2 tiles east of the new Buda, capital Szekesfehervar.
+  - Buda moved 216,185 (5 east of Szekesfehervar) - now in the Szekesfehervar region, not Esztergom; capital field
+    updated to match.
+  - Bratislava 203,194 (2 west, 1 north); Kosice 234,197 (1 west, 1 north); Krupina: asked 221,195 (2 west), no open
+    tile there (3x3 neighbours only 4) - snapped to 221,194.
+  - Rijeka: asked 1 SW (181,173) - relief 50 there (cliff), snapped to 181,174 (net: 1 west of original). Trieste:
+    asked 2W/1S (176,175) - off the region map there, snapped to 178,175 (net: 1 south of original). Both still rebel,
+    ownerFrom unchanged.
+  - Stralsund: asked 1W/2N (170,237) - no open tile within 8 of that target (nearest valid snap lands back on its own
+    current tile, 171,235) - NOT moved; flagged to the user, no other input yet.
+  - Poland + Baltic (existing entries): Wolin 184,231 (1 east), Glogow 192,218 (1 NW), Raciborz 211,206 (1 SE).
+  - Not yet applied - need the user's input: Zagreb "2 down" (existing SSHIP settlement, not a script entry - would
+    need a map edit like the Krakow/Szczecin moves, not just a lua coordinate change) and Eger "2 east 1 north" (not
+    one of our placed towns - looks like a new addition but no base position was given).
+  - DUMP_PATHS coordinates updated to match (Szekesfehervar-Buda, Buda-Pest, Esztergom-Bratislava/Kosice/Krupina,
+    Freiberg-Rijeka/Trieste, Rijeka-Trieste, Szczecin-Wolin).
 - THEN: the user picks the next region for #4 (same method).
