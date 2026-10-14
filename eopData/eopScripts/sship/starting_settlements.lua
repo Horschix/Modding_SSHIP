@@ -1235,6 +1235,8 @@ local BARRACKS_CASTLE = { "castle_barracks", "mustering_hall" }
 -- rebel-held added settlements get about half a stack (user, 15 Oct 2026): the entry's rebel list repeated
 -- until REBEL_GARRISON_SIZE units
 local REBEL_GARRISON_SIZE = 10
+-- faction-held added settlements: the GARRISON list repeated until FACTION_GARRISON_SIZE units (user, 15 Oct 2026)
+local FACTION_GARRISON_SIZE = 4
 -- Hinterland chains (roads, farms, mines): the build menu of an EXTRA settlement hides chains with
 -- edbEntry.isHinterland = 1. Experiment A (flag 0 for the whole game) made them buildable but the map road
 -- Nicaea - Prousa - Smyrna disappeared (user, 13 Oct 2026). So the flag is now 0 ONLY while the player has an
@@ -1727,9 +1729,10 @@ end
 local function giveGarrison(entry, sett, owner)
     local list = (get(owner, "name") == "slave") and entry.rebels or GARRISON[get(owner, "name")]
     if list == nil then log("no garrison for owner " .. tostring(get(owner, "name"))); return end
-    if get(owner, "name") == "slave" and #list > 0 then   -- half a stack for rebels (user, 15 Oct 2026)
+    if #list > 0 then   -- rebels: half a stack; factions: 4 units (user, 15 Oct 2026)
+        local size = (get(owner, "name") == "slave") and REBEL_GARRISON_SIZE or FACTION_GARRISON_SIZE
         local big = {}
-        for i = 1, REBEL_GARRISON_SIZE do big[i] = list[(i - 1) % #list + 1] end
+        for i = 1, size do big[i] = list[(i - 1) % #list + 1] end
         list = big
     end
     local okA, army = pcall(function() return sett:createArmyInSettlement() end)

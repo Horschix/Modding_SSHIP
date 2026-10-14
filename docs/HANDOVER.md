@@ -114,7 +114,8 @@ BUILDINGS + GARRISONS installed 15 Oct, read back identical (script only, NEW ca
   builders2, temple tier 1 (owner's religion; rebels = biggest religion share of the region's main settlement; castles
   get the chapel / c_small_masjid) and barracks tier 1 (town_watch / mustering_hall) - extras ONLY at creation, never at
   map load (no free rebuild after demolition). Rebel-held added towns get REBEL_GARRISON_SIZE = 10 units (entry's
-  rebel list repeated). Backup in backups/2026-10-15_before_buildings_garrisons/. Waiting for the user's test.
+  rebel list repeated); faction-held added towns FACTION_GARRISON_SIZE = 4 (fix 1, 15 Oct). Ownership of every
+  garrison unit checked against all three export_descr_unit.txt and every town's start owner - all fine. Backup in backups/2026-10-15_before_buildings_garrisons/. Waiting for the user's test.
 DUMP stays on as the route checker (settler_check.lua deleted by the user, 14 Oct).
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a
