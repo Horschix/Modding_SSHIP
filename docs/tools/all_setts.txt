@@ -25,7 +25,7 @@
 70 235 York_Province York england
 212 235 Gdansk_Province Gdansk poland
 155 233 Lubeck_Province Lubeck slave
-180 230 Szczecin_Province Szczecin slave
+180 231 Szczecin_Province Szczecin slave
 32 229 Dublin_Province Dublin slave
 249 229 Hrodna_Province Goroden slave
 74 228 Lincoln_Province Lincoln england
@@ -47,7 +47,7 @@
 103 211 Ghent_Province Ghent slave
 111 211 Leuven_Province Leuven slave
 297 209 Kiev_Province Kiev kievan_rus
-224 208 Krakow_Province Krakow poland
+218 208 Krakow_Province Krakow poland
 181 206 Prague_Province Prague slave
 141 205 Frankfurt_Province Frankfurt hre
 305 205 Pereyaslav_Province Pereyaslav kievan_rus
@@ -74,14 +74,14 @@
 362 186 Azaq_Province Azaq cumans
 445 186 Aktobe_Province Aktobe cumans
 211 185 Szekesfehervar_Province Szekesfehervar hungary
-276 185 Iasi_Province Iasi cumans
+277 185 Iasi_Province Iasi cumans
 236 183 Varad_Province Varad hungary
 180 182 Freiberg_Province Freiberg hre
 80 180 Poitiers_Province Poitiers slave
 249 179 Gyulafehervar_Province Gyulafehervar hungary
 423 178 Saqsin_Province Saqsin cumans
-193 177 Zagreb_Province Zagreb hungary
 98 176 Clermont_Province Clermont slave
+193 175 Zagreb_Province Zagreb hungary
 113 174 Lyon_Province Lyon hre
 144 174 Milan_Province Milan slave
 168 173 Venice_Province Venice venice
@@ -101,10 +101,10 @@
 153 159 Pisa_Province Pisa pisa
 174 159 Ancona_Province Ancona slave
 160 158 Florence_Province Florence slave
-262 156 Tarnovo_Province Tarnovo byzantium
+262 156 Tarnovo_Province Tarnovo slave
 14 155 Santiago_Province Santiago spain
+207 154 Ragusa_Province Ragusa slave
 66 153 Pamplona_Province Pamplona slave
-208 153 Ragusa_Province Ragusa slave
 231 153 Ras_Province Ras serbia
 37 152 Leon_Province Leon spain
 247 152 Sredets_Province Sredets byzantium
@@ -137,7 +137,7 @@
 74 131 Valencia_Province Valencia moors
 98 130 Palma_Province Palma moors
 142 129 Cagliari_Province Cagliari slave
-228 128 Arta_Province Arta byzantium
+229 128 Arta_Province Arta byzantium
 28 126 Badajoz_Province Badajoz moors
 11 125 Lisbon_Province Lisbon moors
 333 124 Caesarea_Province Caesarea slave

@@ -86,7 +86,10 @@ ROMANIA installed 14 Oct, read back identical (script only, NEW campaign): 20 to
 IBERIA installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 44 towns (spain 11, aragon 8,
   portugal 4, moors 21; Lleida / Tortosa / Cuenca / Morella moors via ownerFrom Valencia)). FIX 1 installed 14 Oct (read
   back identical): 13 removed, Bilbao added, Algeciras 1 east, SSHIP's Salamanca renamed Valladolid (text file) and our
-  Salamanca on 31,138, Isaccea priest moved -> 32 towns. Waiting for the user's test.
+  Salamanca on 31,138, Isaccea priest moved -> 32 towns. IBERIA DONE (user, 14 Oct).
+ITALY + ISLANDS proposed 14 Oct (user picked it next): 34 core + 19 optional towns, anchors `docs/tools/anchors_italy.txt`,
+  4-tile spacing between new towns, coastal rule n>=4 open neighbours. Waiting for the user's answers (optional towns,
+  names, owners, Corsica/Bonifacio). Nothing installed yet.
   THEN: next region for #4. Not done yet: HRE (Germany, Bohemia, Low Countries), Italy (+ islands), France, British
   Isles, Scandinavia. Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
