@@ -84,7 +84,9 @@ ROMANIA installed 14 Oct, read back identical (script only, NEW campaign): 20 to
   FIX 2 installed 14 Oct (read back identical): Varna 1 west (277,156), Sliven 1 south (267,153). ROMANIA DONE
   (user moved on to the next region, 14 Oct).
 IBERIA installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 44 towns (spain 11, aragon 8,
-  portugal 4, moors 21; Lleida / Tortosa / Cuenca / Morella moors via ownerFrom Valencia) - waiting for the user's test.
+  portugal 4, moors 21; Lleida / Tortosa / Cuenca / Morella moors via ownerFrom Valencia)). FIX 1 installed 14 Oct (read
+  back identical): 13 removed, Bilbao added, Algeciras 1 east, SSHIP's Salamanca renamed Valladolid (text file) and our
+  Salamanca on 31,138, Isaccea priest moved -> 32 towns. Waiting for the user's test.
   THEN: next region for #4. Not done yet: HRE (Germany, Bohemia, Low Countries), Italy (+ islands), France, British
   Isles, Scandinavia. Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).

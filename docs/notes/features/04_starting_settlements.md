@@ -490,3 +490,15 @@ other game regions later. The candidate list and every decision are in issue #4.
   Huelva; also Teruel (1171), Coria, Ibiza / Menorca (no open land tile).
 - Names: keys spain (Castilian), portugal, aragon (Catalan / Aragonese), arabic (moors), european (Latin), default = local
   Romance name. Only Latin-1 letters (a-tilde, accents) - no glyphs outside SSHIP's font. DUMP_PATHS +44 (Iberia block).
+- IBERIA fix 1 (user, 14 Oct), installed, 3 files read back identical:
+  - Removed 13: Jerez, Ecija, Faro, Merida, Lorca, Jativa, Vic, Barbastro, Tudela, Alcala, Astorga, Medina del Campo,
+    Ciudad Rodrigo (+ their DUMP routes).
+  - SSHIP's own "Valladolid" settlement was displayed as "Salamanca" (text file) -> renamed: {Valladolid}Valladolid and
+    {Valladolid_Province}Valladolid in `data/text/imperial_campaign_regions_and_settlement_names.txt` (UTF-16; original in
+    `backups/2026-10-14_before_iberia/data/text/`; the game rebuilds .strings.bin since the .txt is newer). SSHIP's
+    settlementSituation.lua already names it Valladolid for every culture. Our Salamanca moved to 31,138 (old Ciudad Rodrigo tile).
+  - Algeciras ("Gibraltar" to the user) 38,107 -> 39,107.
+  - Bilbao added 56,156 (Pamplona region, ownerFrom Burgos = spain), 1/500 (founded 1300); default name Bilbo.
+  - Romania leftover: SSHIP's Byzantine priest Kosmas Attikos stood on Isaccea's tile 283,171 (rebel town) -> 282,164 next
+    to Constanta (descr_strat.txt).
+  - Iberia now 32 towns; 262 entries in SETTS. NEW campaign; map.rwm stays (no map edit).

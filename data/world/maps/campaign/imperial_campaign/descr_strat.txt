@@ -7419,7 +7419,7 @@ traits NaturalDiplomatSkill 1
 character	Maksimianos Malalas, diplomat, male, age 29, x 174, y 148 
 traits NaturalDiplomatSkill 1 , GoodDiplomat 1 
 
-character	Kosmas Attikos, priest, male, age 41, x 283, y 171				; next to the Cumans
+character	Kosmas Attikos, priest, male, age 41, x 282, y 164				; next to the Cumans
 traits NaturalPriestSkill 2 , GoodDenouncer 1 , PriestLevel 1 
 
 character	Ioannis Agapitos, priest, male, age 55, x 249, y 137			; near Atos holy mountain
