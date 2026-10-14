@@ -95,8 +95,10 @@ FRANCE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm
   england 3, hre 6 incl. Le Puy, rebels 18) - see the feature note. FIX 1 installed 14 Oct (read back identical):
   Sens, Nimes, Perpignan removed; Saint-Omer -> Calais; 4 moves; MAP ROUND 10 = Alpine pass Turin - Aosta - Great
   St Bernard - Valais (Lake Geneva) -> 31 towns. User: delete map.rwm, NEW campaign. Waiting for the user's test.
+BRITISH ISLES installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 17 EU5 towns
+  (england 7, scotland 3, Irish rebels 7 with Irish Kerns) - see the feature note. Waiting for the user's test (with France).
   THEN: next region. Left: HRE (Germany, Bohemia, Low Countries; Metz, Strasbourg, Colmar, Mulhouse go there),
-  British Isles, Scandinavia.
+  Scandinavia.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

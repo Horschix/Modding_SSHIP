@@ -550,3 +550,20 @@ other game regions later. The candidate list and every decision are in issue #4.
     128,178 at the east end of Lake Geneva; hills, heights ramped 31 -> 225 h10 (steps about 16). Diff against the
     installed maps: only those pixels. DUMP_PATHS: Turin-Valais pass, Turin-Lake Geneva (129,180), Turin-Lyon.
   - map.rwm must be deleted; NEW campaign.
+
+## BRITISH ISLES (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- France not yet confirmed by the user when this round started. Script only - no map edit, map.rwm stays; NEW campaign.
+  Backup: `backups/2026-10-14_before_british_isles/`.
+- EU5 `# britain` + `# ireland` blocks: 1 city + 25 towns; 8 are SSHIP's own (London, Edinburgh, York, Bristol, Lincoln,
+  Norwich, Aberdeen, Dublin). Anchors `docs/tools/anchors_british_isles.txt` (11 incl. Rouen, Ghent; residuals <= 2.1).
+- User: "just A" = only the EU5 towns (17); proposed extras (Winchester, Exeter, Canterbury, Chester, Gloucester, Durham,
+  Carlisle, Cardiff, Pembroke, Roxburgh, Stirling, Armagh + 15 optional Midland / Irish / Scottish places) NOT added.
+- england 7: Coventry 67,223 (Lincoln reg), Oxford 68,217 (London), Cambridge 79,221, Colchester 84,219 (Norwich) 2/7500;
+  Salisbury 64,213 (Bristol; tile = Old Sarum) 2/7500; Lynn 83,223 (3 E of GPS for spacing), Boston 77,228 1/1000.
+  scotland 3: Perth 55,251, Berwick 64,246 (Edinburgh) 2/7500; Inverness 48,259 (Aberdeen) 1/1000.
+  rebels 7 (Dublin reg): Cork 17,219, Waterford 26,221, Wexford 31,222, Limerick 16,224 2/7500; Galway 11,227 1/1000;
+  New Ross 27,225, Sligo 17,236 1/500 (late).
+- Garrison: GARRISON.scotland = 2 Spear Militia (new; scotland is in its ownership list); england as before;
+  Irish rebel towns 2 Irish Kerns (user; ownership all).
+- Names: English for england / scotland, Latin for european, default = English (Britain) / Irish Gaelic (Ireland:
+  Corcaigh, Port Láirge, Loch Garman, Luimneach, Gaillimh, Ros Mhic Thriúin, Sligeach). DUMP_PATHS +17.

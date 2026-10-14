@@ -949,6 +949,49 @@ local SETTS = {
       names = { france = "Marseille", england = "Marseille", hre = "Marseille", european = "Massilia", default = "Marseille" } },
     { key = "sisteron", x = 119, y = 165, capital = "Arles", level = 1, population = 1000,  -- EU5 town, small in 1132 -> 1/1000; Provence; owner hre
       names = { france = "Sisteron", england = "Sisteron", hre = "Sisteron", european = "Segustero", default = "Sisteron" } },
+    -- British Isles (14 Oct 2026): EU5 # britain / # ireland blocks only (user: 'just A'); English names for england /
+    -- scotland, Irish Gaelic default for the Irish rebel towns, Latin for european; Irish garrison 2 Irish Kerns (user)
+    { key = "coventry", x = 67, y = 223, capital = "Lincoln", level = 2, population = 7500,  -- EU5 town; owner england
+      names = { england = "Coventry", scotland = "Coventry", european = "Conventria", default = "Coventry" } },
+    { key = "oxford", x = 68, y = 217, capital = "London", level = 2, population = 7500,  -- EU5 town; owner england
+      names = { england = "Oxford", scotland = "Oxford", european = "Oxonia", default = "Oxford" } },
+    { key = "cambridge", x = 79, y = 221, capital = "Norwich", level = 2, population = 7500,  -- EU5 town; owner england
+      names = { england = "Cambridge", scotland = "Cambridge", european = "Cantabrigia", default = "Cambridge" } },
+    { key = "salisbury", x = 64, y = 213, capital = "Bristol", level = 2, population = 7500,  -- EU5 'salisbury'; tile of Old Sarum (New Sarum founded 1220); owner england
+      names = { england = "Salisbury", scotland = "Salisbury", european = "Sarisberia", default = "Salisbury" } },
+    { key = "colchester", x = 84, y = 219, capital = "Norwich", level = 2, population = 7500,  -- EU5 town; owner england
+      names = { england = "Colchester", scotland = "Colchester", european = "Colecestria", default = "Colchester" } },
+    { key = "lynn", x = 83, y = 223, capital = "Norwich", level = 1, population = 1000,  -- EU5 town; Bishop's Lynn founded c.1100, small -> 1/1000; 3 east of GPS for spacing; owner england
+      names = { england = "Lynn", scotland = "Lynn", european = "Lenna", default = "Lynn" } },
+    { key = "boston", x = 77, y = 228, capital = "Lincoln", level = 1, population = 1000,  -- EU5 town; small in 1132 -> 1/1000; owner england
+      names = { england = "Boston", scotland = "Boston", european = "Villa Sancti Botulfi", default = "Boston" } },
+    { key = "perth", x = 55, y = 251, capital = "Edinburgh", level = 2, population = 7500,  -- EU5 town; burgh by c.1127; owner scotland
+      names = { england = "Perth", scotland = "Perth", european = "Perthum", default = "Perth" } },
+    { key = "berwick", x = 64, y = 246, capital = "Edinburgh", level = 2, population = 7500,  -- EU5 town; burgh c.1120; owner scotland
+      names = { england = "Berwick", scotland = "Berwick", european = "Berwicum", default = "Berwick" } },
+    { key = "inverness", x = 48, y = 259, capital = "Aberdeen", level = 1, population = 1000,  -- EU5 town; castle, burgh later -> 1/1000; owner scotland
+      names = { england = "Inverness", scotland = "Inverness", european = "Invernessia", default = "Inverness" } },
+    { key = "cork", x = 17, y = 219, capital = "Dublin", level = 2, population = 7500,  -- EU5 town; Norse town; owner slave
+      names = { england = "Cork", scotland = "Cork", european = "Corcagia", default = "Corcaigh" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
+    { key = "waterford", x = 26, y = 221, capital = "Dublin", level = 2, population = 7500,  -- EU5 town; Norse town; owner slave
+      names = { england = "Waterford", scotland = "Waterford", european = "Waterfordia", default = "Port Láirge" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
+    { key = "wexford", x = 31, y = 222, capital = "Dublin", level = 2, population = 7500,  -- EU5 town; Norse town; owner slave
+      names = { england = "Wexford", scotland = "Wexford", european = "Wexfordia", default = "Loch Garman" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
+    { key = "limerick", x = 16, y = 224, capital = "Dublin", level = 2, population = 7500,  -- EU5 town; Norse town, O'Brien seat; owner slave
+      names = { england = "Limerick", scotland = "Limerick", european = "Limericum", default = "Luimneach" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
+    { key = "galway", x = 11, y = 227, capital = "Dublin", level = 1, population = 1000,  -- EU5 town; fort of 1124, small -> 1/1000; owner slave
+      names = { england = "Galway", scotland = "Galway", european = "Galvia", default = "Gaillimh" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
+    { key = "new_ross", x = 27, y = 225, capital = "Dublin", level = 1, population = 500,  -- EU5 town; founded c.1200 -> 1/500; owner slave
+      names = { england = "New Ross", scotland = "New Ross", european = "Rossa Nova", default = "Ros Mhic Thriúin" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
+    { key = "sligo", x = 17, y = 236, capital = "Dublin", level = 1, population = 500,  -- EU5 town; founded 1245 -> 1/500; owner slave
+      names = { england = "Sligo", scotland = "Sligo", european = "Sligonia", default = "Sligeach" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -978,6 +1021,7 @@ local GARRISON = {
     venice = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
     france  = { "Spear Militia", "Spear Militia" },          -- France: cheapest spear militia (14 Oct)
     england = { "Spear Militia", "Spear Militia" },          -- France (Normandy, Anjou) (14 Oct)
+    scotland = { "Spear Militia", "Spear Militia" },         -- British Isles: cheapest spear militia (14 Oct)
     pisa = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
 }
 
@@ -1326,6 +1370,24 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Arles-marseille", 110, 160, 117, 159 },
     { "Turin-Valais pass", 133, 170, 128, 178 }, { "Turin-Lake Geneva", 133, 170, 129, 180 }, { "Turin-Lyon", 133, 170, 113, 174 },
     { "Arles-sisteron", 110, 160, 119, 165 },
+    -- British Isles (14 Oct 2026)
+    { "Lincoln-coventry", 74, 228, 67, 223 },
+    { "London-oxford", 77, 216, 68, 217 },
+    { "Norwich-cambridge", 87, 224, 79, 221 },
+    { "Bristol-salisbury", 58, 215, 64, 213 },
+    { "Norwich-colchester", 87, 224, 84, 219 },
+    { "Norwich-lynn", 87, 224, 83, 223 },
+    { "Lincoln-boston", 74, 228, 77, 228 },
+    { "Edinburgh-perth", 57, 248, 55, 251 },
+    { "Edinburgh-berwick", 57, 248, 64, 246 },
+    { "Aberdeen-inverness", 61, 256, 48, 259 },
+    { "Dublin-cork", 32, 229, 17, 219 },
+    { "Dublin-waterford", 32, 229, 26, 221 },
+    { "Dublin-wexford", 32, 229, 31, 222 },
+    { "Dublin-limerick", 32, 229, 16, 224 },
+    { "Dublin-galway", 32, 229, 11, 227 },
+    { "Dublin-new_ross", 32, 229, 27, 225 },
+    { "Dublin-sligo", 32, 229, 17, 236 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
