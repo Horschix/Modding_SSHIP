@@ -3,7 +3,7 @@
 Last updated 14 Oct 2026, Romania done (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
-`04_starting_settlements.md` (#4). The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
+`04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5). The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
 section "How the tooling behaves" - look there only when a tool misbehaves.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
 
@@ -107,6 +107,9 @@ HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm st
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
+#5 Historic invasion armies - OPEN. Fourth Crusade TEST version installed 15 Oct (read back identical):
+  `historic_invasions.lua` + require line; Zara stage turn 2, Constantinople stage turn 5 while `TEST = true`
+  (final 140 / 145). Waiting for the user's test. Detail: `docs/notes/features/05_historic_invasions.md`.
 DUMP stays on as the route checker (settler_check.lua deleted by the user, 14 Oct).
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a
@@ -121,8 +124,8 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
-- `luaPluginScript.lua` ends with three require lines: population_recruitment, fort_settlement and
-  starting_settlements (#4). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+- `luaPluginScript.lua` ends with four require lines: population_recruitment, fort_settlement,
+  starting_settlements (#4) and historic_invasions (#5). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
   settler recruit lines need - removing it stops settler recruitment too.
 
 ## Tooling
