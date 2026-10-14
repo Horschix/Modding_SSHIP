@@ -312,7 +312,7 @@ other game regions later. The candidate list and every decision are in issue #4.
   the player's warning text. Original in `backups/2026-10-14_before_civilwar/`. Byzantium now ~ -33 instead of 79.
 - Starter pack (barracks town_watch + level-1 temple): user's idea, not built yet - waiting for his answer.
 
-## BALKANS + GREECE (started 14 Oct 2026) - PROPOSED, waiting for the user's answers
+## BALKANS + GREECE (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
 - Tools now in the repo: `docs/tools/setts.py` (SSHIP settlement tiles / regions / owners -> all_setts.txt; needs
   descr_regions.txt staged), `docs/tools/place.py <file "name lat lon">` (affine fit on 15 anchors + IDW, nearest
   open tile: fertile / hills / woodland / wilderness, no river, relief <= 30, >= 3 from SSHIP settlements, >= 7 open
@@ -326,3 +326,17 @@ other game regions later. The candidate list and every decision are in issue #4.
   Mosynopolis 260,142; Skadar reg (rebels): Kotor 213,152; Smyrna reg: Rhodes 278,106 (island of 11 tiles).
   Left out: Belgrade (= SSHIP's Nis tile), Ruse / Targovishte (not towns before the 14th c.), Chalkis / Nauplia /
   Kastoria / Prizren (spacing), Corfu (no island on SSHIP's map), Croatia / Dalmatia (later with Hungary).
+- User (14 Oct): "rename SSHIP Nis to Belgrade, add real Nis, add all others, Rhodes as a castle, open the coast
+  Milas - Antalya". SSHIP's Nis already shows "Belograd" (text file {Nis}Belograd, settlementSituation names
+  Belograd / Singidunum / Lándorfejérvár) - nothing changed there; internal name stays Nis (scripts use it).
+  "All others" read as the 26 proposed towns (not the left-out ones). Open questions took the proposed defaults:
+  Athens 3, Thebes 3, Branicevo 1 / 1000, rest 2 / 7500; Skopje stays Serbian (Ras region); names greek / european
+  / middle_eastern + serbia + hungary + default (Slavic in Bulgaria / Serbia, Greek elsewhere); GARRISON serbia =
+  2 Spear Militia, rebels (Branicevo, Kotor) 2 Spear Militia.
+- Script: entry field `castle = true` -> addSettlement(..., true), core from CORE_CASTLE (level 2 = wooden_castle),
+  starter roads = hinterland_castle_roads / c_roads (builders, farms, water have no city/castle limit);
+  hinterland_castle_roads added to UNHINTERLAND_CHAINS. DUMP_PATHS = 11 Balkans / Lycia routes.
+- MAP ROUND 5 (edit_map.py "Lycian coast"): 22 tiles 280,112 -> row 111 (281-287) -> row 110 (287-297) -> 297,111-113
+  set to hills, heights ramped 60 -> 79 h10. Only map_ground_types.tga and map_heights.tga installed (edit_map's
+  descr_strat output is OLD - never install it, the repo's descr_strat has later edits). BFS model: Milas - Attaleia
+  23 steps. map.rwm must be deleted by the user; NEW campaign.

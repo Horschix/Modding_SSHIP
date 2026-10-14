@@ -9,6 +9,7 @@ Reads <backup>/data/world/maps/... and writes the same paths under <OUT>:
                              impassable tiles of the Kastamonu belt -> dense forest
   base/map_heights.tga       heights along the passes smoothed (no cliffs)
   base/map_features.tga      river crossings beside Lahijan (Gilan coast, round 4)
+  round 5 (14 Oct): Lycian coast corridor Milas - Attaleia (ground + heights)
   campaign/imperial_campaign/descr_strat.txt   Ioannis Axouchos (Nicaea's governor) 291,137 -> 290,136
   campaign/imperial_campaign/descr_events.txt  event position 291, 137 -> 290, 136
 Each TGA is written in its original form (RLE / uncompressed, bit depth, row order, footer) and read back.
@@ -70,6 +71,11 @@ CORRIDORS = [
     ("Ardabil-Gilan coast", [(428, 122), (428, 121), (428, 120), (428, 119), (428, 118), (428, 117), (429, 116),
                              (430, 115)], 7, 14),
     ("Gilan coast-Alamut", [(436, 113), (437, 112), (437, 111), (437, 110), (436, 110)], 14, 203),
+    # round 5 (14 Oct, user): the Lycian coast Milas (276,116) - Attaleia (297,114) was low / high mountains.
+    # From 279,113 (h10 60) along the beach row 111 and the coast row 110 to 297,110, then north to Attaleia (79).
+    ("Lycian coast", [(280, 112), (281, 111), (282, 111), (283, 111), (284, 111), (285, 111), (286, 111),
+                      (287, 111)] + [(x, 110) for x in range(287, 298)] + [(297, 111), (297, 112), (297, 113)],
+     60, 79),
 ]
 # river crossings (map_features.tga, one pixel per tile, 0,0,255 river -> 0,255,255 crossing): the two rivers on
 # both sides of the Lahijan pocket

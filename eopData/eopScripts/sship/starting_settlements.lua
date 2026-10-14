@@ -495,6 +495,61 @@ local SETTS = {
     { key = "toropets", x = 305, y = 252, capital = "Smolensk", level = 1, population = 1000,  -- first mention disputed (doubtful)
       names = { russia = "Toropets", kievan_rus = "Toropets", poland = "Toropiec", lithuania = "Toropecas", european = "Toropecia", greek = "Torópets", middle_eastern = "Toropets", default = "Toropets" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    -- BALKANS + GREECE (user, 14 Oct 2026): EU5 1337 towns + extras that existed in 1132. Tiles by docs/tools/place.py.
+    -- SSHIP's own "Nis" stands on Belgrade's site (SSHIP already shows it as Belograd); the real Nis is hxstart_nis.
+    -- Rhodes is a castle (user). Levels: Athens / Thebes 3, Branicevo 1 (bishopric fortress), the rest 2.
+    { key = "athens", x = 248, y = 120, capital = "Corinth", level = 3, population = 15000,
+      names = { greek = "Athēnai", european = "Athenae", middle_eastern = "Atina", serbia = "Atina", hungary = "Athén", default = "Athēnai" } },
+    { key = "thebes", x = 245, y = 121, capital = "Corinth", level = 3, population = 15000,
+      names = { greek = "Thēbai", european = "Thebae", middle_eastern = "İstife", serbia = "Teba", hungary = "Théba", default = "Thēbai" } },
+    { key = "patras", x = 233, y = 120, capital = "Corinth", level = 2, population = 7500,
+      names = { greek = "Patrai", european = "Patrae", middle_eastern = "Ballibadra", serbia = "Patras", hungary = "Patrasz", default = "Patrai" } },
+    { key = "kalamata", x = 235, y = 113, capital = "Corinth", level = 2, population = 7500,
+      names = { greek = "Kalamai", european = "Calamata", middle_eastern = "Kalamata", serbia = "Kalamata", hungary = "Kalamata", default = "Kalamai" } },
+    { key = "monemvasia", x = 241, y = 112, capital = "Corinth", level = 2, population = 7500,
+      names = { greek = "Monembasia", european = "Malvasia", middle_eastern = "Menekşe", serbia = "Monemvasija", hungary = "Monemvaszia", default = "Monembasia" } },
+    { key = "larissa", x = 239, y = 132, capital = "Thessalonica", level = 2, population = 7500,
+      names = { greek = "Larissa", european = "Larissa", middle_eastern = "Yenişehir", serbia = "Larisa", hungary = "Larissza", default = "Larissa" } },
+    { key = "ohrid", x = 231, y = 144, capital = "Thessalonica", level = 2, population = 7500,
+      names = { greek = "Achris", european = "Ochrida", middle_eastern = "Ohri", serbia = "Ohrid", hungary = "Ohrid", default = "Ohrid" } },
+    { key = "berroia", x = 239, y = 139, capital = "Thessalonica", level = 2, population = 7500,
+      names = { greek = "Berroia", european = "Berrhoea", middle_eastern = "Karaferye", serbia = "Ber", hungary = "Beroia", default = "Berroia" } },
+    { key = "serres", x = 246, y = 141, capital = "Thessalonica", level = 2, population = 7500,
+      names = { greek = "Serrai", european = "Serrae", middle_eastern = "Siroz", serbia = "Ser", hungary = "Szérrész", default = "Serrai" } },
+    { key = "ioannina", x = 226, y = 131, capital = "Arta", level = 2, population = 7500,
+      names = { greek = "Iōannina", european = "Ioannina", middle_eastern = "Yanya", serbia = "Janjina", hungary = "Janina", default = "Iōannina" } },
+    { key = "valona", x = 219, y = 137, capital = "Durazzo", level = 2, population = 7500,
+      names = { greek = "Aulōn", european = "Avlona", middle_eastern = "Avlonya", serbia = "Valona", hungary = "Valona", default = "Aulōn" } },
+    { key = "skopje", x = 233, y = 148, capital = "Ras", level = 2, population = 7500,
+      names = { greek = "Skopia", european = "Scupi", middle_eastern = "Üsküp", serbia = "Skoplje", hungary = "Szkopje", default = "Skoplje" } },
+    { key = "nis", x = 237, y = 156, capital = "Sredets", level = 2, population = 7500,
+      names = { greek = "Naïssos", european = "Naissus", middle_eastern = "Niş", serbia = "Niš", hungary = "Nis", default = "Niš" } },
+    { key = "plovdiv", x = 257, y = 150, capital = "Sredets", level = 2, population = 7500,
+      names = { greek = "Philippoupolis", european = "Philippopolis", middle_eastern = "Filibe", serbia = "Plovdiv", hungary = "Filippopol", default = "Plovdiv" } },
+    { key = "branicevo", x = 235, y = 166, capital = "Nis", level = 1, population = 1000, rebels = { "Spear Militia", "Spear Militia" },
+      names = { greek = "Branitzova", european = "Branicevum", middle_eastern = "Braniçevo", serbia = "Braničevo", hungary = "Barancs", default = "Braničevo" } },
+    { key = "vidin", x = 244, y = 161, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Bidinē", european = "Bononia", middle_eastern = "Vidin", serbia = "Bdin", hungary = "Bodony", default = "Bdin" } },
+    { key = "cherven", x = 265, y = 160, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Tzerbenon", european = "Cerven", middle_eastern = "Çerven", serbia = "Červen", hungary = "Cserven", default = "Červen" } },
+    { key = "drastar", x = 274, y = 163, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Dristra", european = "Durostorum", middle_eastern = "Silistre", serbia = "Drastar", hungary = "Szilisztra", default = "Drastar" } },
+    { key = "shumen", x = 271, y = 157, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Soumen", european = "Sumen", middle_eastern = "Şumnu", serbia = "Šumen", hungary = "Sumen", default = "Šumen" } },
+    { key = "varna", x = 277, y = 157, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Barna", european = "Varna", middle_eastern = "Varna", serbia = "Varna", hungary = "Várna", default = "Varna" } },
+    { key = "sliven", x = 267, y = 153, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Stilbnos", european = "Stilbnum", middle_eastern = "İslimye", serbia = "Sliven", hungary = "Szliven", default = "Sliven" } },
+    { key = "anchialos", x = 274, y = 152, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Anchialos", european = "Anchialus", middle_eastern = "Ahyolu", serbia = "Anhialo", hungary = "Ankhialosz", default = "Anchialos" } },
+    { key = "gallipoli", x = 270, y = 135, capital = "Adrianople", level = 2, population = 7500,
+      names = { greek = "Kallipolis", european = "Callipolis", middle_eastern = "Gelibolu", serbia = "Galipolj", hungary = "Gallipoli", default = "Kallipolis" } },
+    { key = "mosynopolis", x = 260, y = 142, capital = "Adrianople", level = 2, population = 7500,
+      names = { greek = "Mosynopolis", european = "Mosynopolis", middle_eastern = "Gümülcine", serbia = "Mosinopolj", hungary = "Moszinopolisz", default = "Mosynopolis" } },
+    { key = "kotor", x = 213, y = 152, capital = "Skadar", level = 2, population = 7500, rebels = { "Spear Militia", "Spear Militia" },
+      names = { greek = "Dekatera", european = "Catarum", middle_eastern = "Kotor", serbia = "Kotor", hungary = "Kotor", default = "Kotor" } },
+    { key = "rhodes", x = 278, y = 106, capital = "Smyrna", level = 2, population = 7500, castle = true,
+      names = { greek = "Rhodos", european = "Rhodus", middle_eastern = "Rodos", serbia = "Rodos", hungary = "Rodosz", default = "Rhodos" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -511,10 +566,13 @@ local GARRISON = {
     cumans    = { "EE Spear Militia", "EE Spear Militia" },   -- steppe: cheapest militia (14 Oct)
     russia    = { "EE Spear Militia", "EE Spear Militia" },   -- Rus: cheapest militia (14 Oct)
     kievan_rus = { "EE Spear Militia", "EE Spear Militia" },  -- Rus: cheapest militia (14 Oct)
+    serbia    = { "Spear Militia", "Spear Militia" },          -- Balkans: cheapest militia (14 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
                      [4] = "large_stone_wall", [5] = "huge_stone_wall" }
+-- castles (entry field castle = true; Rhodes, user 14 Oct 2026)
+local CORE_CASTLE = { [1] = "motte_and_bailey", [2] = "wooden_castle", [3] = "castle", [4] = "fortress", [5] = "citadel" }
 
 -- Starter buildings per settlement level (user, 13 Oct 2026): SSHIP's chains hang on roads -> builders1 (temples,
 -- water, port, town hall, mines ...), farms2 needs builders1. A settlement added by script starts with walls only,
@@ -533,7 +591,7 @@ local STARTER = {
 -- extra settlement selected (its build menu is open) and back to its original value otherwise.
 -- AI-held extra settlements therefore cannot build these chains (they keep the starter buildings).
 local UNHINTERLAND = true
-local UNHINTERLAND_CHAINS = { "hinterland_roads", "hinterland_farms", "hinterland_mines" }
+local UNHINTERLAND_CHAINS = { "hinterland_roads", "hinterland_farms", "hinterland_mines", "hinterland_castle_roads" }
 -- TEMPORARY check (13 Oct 2026): what the game lets these settlements build next. Logged once per map load.
 local CHECK_SETTS  = {}   -- was { "hxstart_bursa", "Nicaea" }: check done (13 Oct 2026), switched off
 local CHECK_CHAINS = { "hinterland_roads", "hinterland_farms", "builders", "water_supply", "hinterland_mines",
@@ -601,6 +659,14 @@ end
 local function giveStarter(entry, sett, why)
     local list = STARTER[entry.level]
     if list == nil then return end
+    if entry.castle then   -- castles have their own roads chain (hinterland_castle_roads, first level c_roads)
+        local castleList = {}
+        for i = 1, #list do
+            if list[i][1] == "hinterland_roads" then castleList[i] = { "hinterland_castle_roads", "c_roads" }
+            else castleList[i] = list[i] end
+        end
+        list = castleList
+    end
     local done = {}
     for i = 1, #list do
         local chain, level = list[i][1], list[i][2]
@@ -708,10 +774,11 @@ end
 -------------------------------------------------------------------------
 local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
-local DUMP_PATHS = {    -- Russia (14 Oct 2026); Rostov moved to Novgorod (russia) in descr_strat
-    { "Novgorod-Tver", 304, 267, 335, 255 }, { "Rostov-Moscow", 355, 259, 347, 248 }, { "Rostov-Beloozero", 355, 259, 343, 278 },
-    { "Ryazan-Nizhny", 374, 239, 392, 253 }, { "Polotsk-Minsk", 282, 244, 275, 234 }, { "Halych-Przemysl", 262, 200, 245, 205 },
-    { "Mecca-Jeddah", 364, 1, 358, 5 }, { "AlAhsa-Muscat", 435, 29, 496, 13 }, { "Novgorod-Rostov", 304, 267, 355, 259 },
+local DUMP_PATHS = {    -- Balkans + Lycian coast (14 Oct 2026)
+    { "Milas-Attaleia coast", 276, 116, 297, 114 }, { "Corinth-Monemvasia", 242, 118, 241, 112 }, { "Corinth-Patras", 242, 118, 233, 120 },
+    { "Ras-Skopje", 231, 153, 233, 148 }, { "Sredets-Nis", 247, 152, 237, 156 }, { "Nis(Belgrade)-Branicevo", 228, 168, 235, 166 },
+    { "Tarnovo-Drastar", 262, 156, 274, 163 }, { "Skadar-Kotor", 218, 149, 213, 152 }, { "Durazzo-Valona", 218, 142, 219, 137 },
+    { "Thessalonica-Ohrid", 243, 139, 231, 144 }, { "Arta-Ioannina", 228, 128, 226, 131 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
@@ -804,7 +871,7 @@ local function createOne(entry)
     local owner = get(capital, "ownerFaction")
     if owner == nil then log(name .. ": no owner found (capital " .. entry.capital .. ") - skipped"); return end
     local okFree, free = pcall(function() return M2TWEOP.isTileFree(entry.x, entry.y) end)
-    local okAdd, sett = pcall(function() return owner:addSettlement(entry.x, entry.y, name, entry.level, false) end)
+    local okAdd, sett = pcall(function() return owner:addSettlement(entry.x, entry.y, name, entry.level, entry.castle == true) end)
     if not okAdd or sett == nil then
         log(name .. ": addSettlement failed at " .. entry.x .. "," .. entry.y .. " (" .. tostring(sett)
             .. "), tile free " .. tostring(okFree and free))
@@ -814,10 +881,10 @@ local function createOne(entry)
     pcall(function() sett.creatorFactionID = fid end)
     pcall(function() sett.subFactionID = fid end)
     -- the wall building that belongs to the level (none for a village)
-    local core = CORE_LEVEL[entry.level]
+    local core = (entry.castle and CORE_CASTLE or CORE_LEVEL)[entry.level]
     local coreNote = "none"
     if core ~= nil then
-        local okHas, has = pcall(function() return sett:buildingPresent("core_building") end)
+        local okHas, has = pcall(function() return sett:buildingPresent(entry.castle and "core_castle_building" or "core_building") end)
         if okHas and has then
             coreNote = "already there"
         else
