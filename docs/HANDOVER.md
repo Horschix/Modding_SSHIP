@@ -60,7 +60,8 @@ ARABIA + STEPPE + VOLGA DONE (user moved on, 14 Oct): 10 towns; Saqsin moved to 
 RUSSIA + MUSCAT installed 14 Oct, read back identical: 15 Rus' towns (Tver, Moscow [ownerFrom Suzdal = Kievan Rus],
   Vologda, Beloozero, Murom, Nizhny, Pronsk, Minsk, Vitebsk, Brest, Lutsk, Lviv, Przemysl, Starodub, Toropets) + Muscat (Oman);
   Rostov moved to Novgorod in descr_strat; Jeddah moved to 358,5; Khaybar removed. Pskov = SSHIP's "Pleskov" (name kept).
-  Waiting for the user's test in a new campaign (DUMP has the Russia / Muscat / Jeddah routes; read STARTSETT lines).
+  CAMPAIGN TEST 14 Oct (Rum, turn 17): towns work, AI takes rebel towns, BUT AI civil wars - cause = SSHIP's
+  internalAffairs.lua counts every settlement over 10 as +10 revolt points. Fix proposed, see feature note (end).
   Offered, not taken (yet): Pskov-region towns, Tartu / Otepaa, Koknese / Jersika, Sohar, Julfar, Qatar.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).

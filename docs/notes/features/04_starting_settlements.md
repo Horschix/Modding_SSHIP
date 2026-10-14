@@ -285,3 +285,21 @@ other game regions later. The candidate list and every decision are in issue #4.
 - MUSCAT added 14 Oct (user: anywhere in the area), read back identical: 496,13 (Al_Ahsa region, rebels, level 2 / 7500, 2 Ahdath Militia; coast is mountains, so 3-4 tiles inland). DUMP + AlAhsa-Muscat.
 - PSKOV REGION towns REVERTED 14 Oct (user meant Pskov itself; SSHIP names it "Pleskov" in imperial_campaign_regions_and_settlement_names.txt). Back to 14 Russia towns + Muscat.
 - COUNT correction: Russia has 15 towns (20 minus Vladimir, Bryansk, Torzhok, Poltava, Novgorod-Seversky), not 14.
+
+## Campaign test 14 Oct 2026 (user, Rum, to turn 17) - AI loses half its land in civil wars
+- Works: minor settlements, AI armies (Byzantium, Rum) march on REBEL minor settlements. Not seen: AI attacking
+  faction-held minor settlements. Campaign slower, user likes that. Rebel end turn much longer now.
+- Problem: civil wars for Moors, Byzantium, Rum (Byzantium lost about half).
+- CAUSE FOUND (SSHIP `eopScripts/sship/internalAffairs.lua`, not ours): `countRevoltPoints` adds
+  `settlNumberFactor * 10` with `settlNumberFactor = settlementsNum - 10` before turn 50 (-11 / -12 ... later).
+  Every extra settlement = +10 points; threshold 20, AI bonus -35. Byzantium with ~20 extra towns is ~+200 ->
+  from turn 6 the AI gets `civilWarRise` with 33 % per turn (no warning for the AI). In `civilWarRise` every
+  settlement without a governor counts governor loyalty 0 -> roll + distance > 50 = goes to the rebels. Our towns
+  never have governors, so they (and many big ones) flip. This also explains the slow rebel turn (far more rebel
+  settlements and armies).
+- Starter pack note: builders1 IS SSHIP's "Logging Camp" (section header in export_descr_buildings) and is already
+  in STARTER for every level. Proposed additions: barracks town_watch (+1 law), level-1 temple of the owner's religion
+  (small_church / small_church_o / small_masjid; pagan chains temple_dievas etc.).
+- Proposed fix (waiting for the user's choice): wrap `countRevoltPoints` from our script and subtract 10 per
+  hxstart_ settlement the faction owns (or count each as a fraction); optionally make hxstart_ towns harder to lose
+  in `civilWarRise`. Asked the user for a log cut: `InternalA: the total rebelion points|Civil war begins|STARTSETT|ERROR`.
