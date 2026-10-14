@@ -628,6 +628,55 @@ local SETTS = {
     { key = "trieste", x = 176, y = 175, capital = "Venice", ownerFrom = "Verona", level = 2, population = 7500,  -- Istria/Friuli; rebels. Requested tile is Venice_Province, not unassigned - moved there, no map edit needed (15 Oct)
       names = { hungary = "Trieszt", hre = "Triest", european = "Tergeste", greek = "Triésti", middle_eastern = "Tirieste", default = "Trieste" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    -- Romania: Transylvania, Partium, Banat, Wallachia, Moldavia, Danube mouth, Dobruja (user, 14 Oct 2026)
+    { key = "cluj", x = 249, y = 183, capital = "Gyulafehervar", level = 2, population = 7500,  -- EU5 town; Kolozs county castle, 11th c.
+      names = { hungary = "Kolozsvár", hre = "Klausenburg", european = "Claudiopolis", greek = "Klaudiópolis", middle_eastern = "Kaloşvar", default = "Cluj" } },
+    { key = "satu_mare", x = 245, y = 189, capital = "Gyulafehervar", level = 1, population = 1000,  -- county castle, size doubtful
+      names = { hungary = "Szatmár", hre = "Sathmar", european = "Zathmarium", greek = "Satmári", middle_eastern = "Satmar", default = "Sătmar" } },
+    { key = "arad", x = 233, y = 178, capital = "Varad", level = 2, population = 7500,  -- royal assembly 1131, chapter
+      names = { hungary = "Arad", hre = "Arad", european = "Aradinum", greek = "Arád", middle_eastern = "Arad", default = "Arad" } },
+    { key = "timisoara", x = 233, y = 175, capital = "Varad", level = 1, population = 1000,  -- Banat; castle first named 1212
+      names = { hungary = "Temesvár", hre = "Temeschburg", european = "Temesvarinum", greek = "Temesvári", middle_eastern = "Temeşvar", default = "Timișoara" } },
+    { key = "sibiu", x = 253, y = 177, capital = "Gyulafehervar", level = 1, population = 500,  -- late (Saxons after 1147)
+      names = { hungary = "Nagyszeben", hre = "Hermannstadt", european = "Cibinium", greek = "Kibínion", middle_eastern = "Sibin", default = "Sibiu" } },
+    { key = "brasov", x = 263, y = 177, capital = "Gyulafehervar", level = 1, population = 500,  -- EU5 town; late (1211)
+      names = { hungary = "Brassó", hre = "Kronstadt", european = "Corona", greek = "Stefanópolis", middle_eastern = "Braşov", default = "Brașov" } },
+    { key = "bistrita", x = 256, y = 186, capital = "Gyulafehervar", level = 1, population = 500,  -- late (Saxon)
+      names = { hungary = "Beszterce", hre = "Bistritz", european = "Bistricium", greek = "Bistrítsa", middle_eastern = "Bistriçe", default = "Bistrița" } },
+    { key = "sighisoara", x = 258, y = 179, capital = "Gyulafehervar", level = 1, population = 500,  -- late (1280)
+      names = { hungary = "Segesvár", hre = "Schäßburg", european = "Castrum Sex", greek = "Sigisoára", middle_eastern = "Şeşvar", default = "Sighișoara" } },
+    { key = "craiova", x = 251, y = 165, capital = "Severin", level = 1, population = 500,  -- Wallachia; late; rebels
+      names = { hungary = "Krajova", hre = "Krajowa", european = "Craiova", greek = "Kraïóva", middle_eastern = "Kırayova", default = "Craiova" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "arges", x = 254, y = 170, capital = "Severin", level = 1, population = 500,  -- Wallachia; late; rebels
+      names = { hungary = "Argyas", hre = "Argisch", european = "Argesium", greek = "Argési", middle_eastern = "Arcış", default = "Curtea de Argeș" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "targoviste", x = 261, y = 166, capital = "Severin", level = 1, population = 500,  -- EU5 town; late (1396); rebels
+      names = { hungary = "Tergovistye", hre = "Tergowisch", european = "Tergovistum", greek = "Tirgovísti", middle_eastern = "Tergovişte", default = "Târgoviște" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "bucharest", x = 266, y = 165, capital = "Severin", level = 1, population = 500,  -- EU5 town; late (1459); rebels
+      names = { hungary = "Bukarest", hre = "Bukarest", european = "Bucarestium", greek = "Voukourésti", middle_eastern = "Bükreş", default = "București" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "braila", x = 278, y = 172, capital = "Severin", level = 1, population = 500,  -- late (1368); rebels
+      names = { hungary = "Brajla", hre = "Brailen", european = "Braila", greek = "Proïlabon", middle_eastern = "İbrail", default = "Brăila" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "suceava", x = 268, y = 189, capital = "Halych", level = 1, population = 500,  -- EU5 town; late (1388); rebels
+      names = { hungary = "Szucsáva", hre = "Suczawa", poland = "Suczawa", kievan_rus = "Suchava", russia = "Suchava", european = "Sucevia", greek = "Soútsava", middle_eastern = "Suçava", default = "Suceava" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "hotin", x = 271, y = 196, capital = "Halych", level = 1, population = 1000,  -- Rus' fortress; rebels
+      names = { hungary = "Hotin", hre = "Chotin", poland = "Chocim", kievan_rus = "Khotin", russia = "Khotin", european = "Hotinum", greek = "Chotíni", middle_eastern = "Hotin", default = "Hotin" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "barlad", x = 277, y = 178, capital = "Iasi", level = 1, population = 1000,  -- Berladniks c. 1140; Cumans (user)
+      names = { cumans = "Berlad", kievan_rus = "Berlad'", russia = "Berlad'", hungary = "Barlád", hre = "Berlad", european = "Berladum", greek = "Berládi", middle_eastern = "Berlad", default = "Bârlad" } },
+    { key = "cetatea_alba", x = 293, y = 178, capital = "Iasi", ownerFrom = "Severin", level = 2, population = 7500,  -- Tyras/Belgorod; rebels (user)
+      names = { cumans = "Akkerman", kievan_rus = "Belgorod", russia = "Belgorod", hungary = "Dnyeszterfehérvár", hre = "Weißenburg", european = "Album Castrum", greek = "Asprókastron", middle_eastern = "Akkerman", default = "Cetatea Albă" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "chilia", x = 288, y = 175, capital = "Iasi", level = 1, population = 1000,  -- Byzantine site; Cumans (user)
+      names = { cumans = "Kili", kievan_rus = "Kiliya", russia = "Kiliya", hungary = "Kilia", hre = "Kilia", european = "Licostomum", greek = "Chilía", middle_eastern = "Kili", default = "Chilia" } },
+    { key = "isaccea", x = 282, y = 172, capital = "Tarnovo", level = 2, population = 7500,  -- Vicina, Byzantine Danube port; names by owner (user)
+      names = { cumans = "Vicina", kievan_rus = "Vichina", russia = "Vichina", hungary = "Vicina", hre = "Vicina", european = "Vicina", greek = "Bitzína", middle_eastern = "İsakça", default = "Isaccea" } },
+    { key = "constanta", x = 282, y = 164, capital = "Tarnovo", level = 2, population = 7500,  -- EU5 town; Byzantine
+      names = { hungary = "Konstanca", hre = "Konstanza", european = "Constantia", greek = "Konstantía", middle_eastern = "Köstence", default = "Constanța" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -872,6 +921,15 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Szekesfehervar-Pecs", 211, 185, 211, 178 }, { "Szekesfehervar-Sopron", 211, 185, 202, 188 },
     { "Varad-Szeged", 236, 183, 226, 179 }, { "Zagreb-Knin", 193, 177, 194, 163 },
     { "Freiberg-Rijeka", 180, 182, 181, 174 }, { "Rijeka-Trieste", 181, 174, 176, 175 },
+    -- Romania (14 Oct 2026)
+    { "Gyulafehervar-Cluj", 249, 179, 249, 183 }, { "Gyulafehervar-Sibiu", 249, 179, 253, 177 }, { "Gyulafehervar-Brasov", 249, 179, 263, 177 },
+    { "Gyulafehervar-Bistrita", 249, 179, 256, 186 }, { "Gyulafehervar-SatuMare", 249, 179, 245, 189 }, { "Sibiu-Sighisoara", 253, 177, 258, 179 },
+    { "Varad-Arad", 236, 183, 233, 178 }, { "Varad-Timisoara", 236, 183, 233, 175 },
+    { "Severin-Craiova", 264, 168, 251, 165 }, { "Severin-Arges", 264, 168, 254, 170 }, { "Severin-Targoviste", 264, 168, 261, 166 },
+    { "Severin-Bucharest", 264, 168, 266, 165 }, { "Severin-Braila", 264, 168, 278, 172 },
+    { "Halych-Suceava", 262, 200, 268, 189 }, { "Halych-Hotin", 262, 200, 271, 196 },
+    { "Iasi-Barlad", 276, 185, 277, 178 }, { "Iasi-CetateaAlba", 276, 185, 293, 178 }, { "Iasi-Chilia", 276, 185, 288, 175 },
+    { "Drastar-Isaccea", 274, 163, 282, 172 }, { "Drastar-Constanta", 274, 163, 282, 164 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

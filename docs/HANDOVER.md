@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 14 Oct 2026 (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
+Last updated 14 Oct 2026, Romania round (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4). The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
@@ -75,6 +75,9 @@ HUNGARY + CROATIA installed 15 Oct, fix 1 + fix 2 installed 15 Oct (read back id
   map-edit backup, which would revert every other #4 round's direct descr_strat.txt edits since). map.rwm deleted
   again; NEW campaign. Still open: "Eger" - not a vanilla SSHIP settlement and not an EU5 ranked town either; need
   the user to say where to place it. See `docs/notes/features/04_starting_settlements.md` for full detail.
+ROMANIA installed 14 Oct, read back identical (script only, NEW campaign): 20 towns in Transylvania, Partium, Banat,
+  Wallachia, Moldavia, Danube mouth, Dobruja - see the feature note. User tests it together with Hungary + Croatia
+  fix 2 and the Eger question.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

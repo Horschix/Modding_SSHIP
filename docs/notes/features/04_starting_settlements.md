@@ -425,3 +425,25 @@ other game regions later. The candidate list and every decision are in issue #4.
     no Eger settlement) and it's not in the EU5 city/town rank list either (only a plain "location"). Need the
     user to say where to place it if they still want it added.
 - THEN: the user picks the next region for #4 (same method).
+
+## ROMANIA (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- Hungary + Croatia fix 2 and Eger: user will check them in the same next test. Script only - no map edit, map.rwm
+  stays; NEW campaign.
+- EU5 (07_cities_and_buildings.txt, carpathian section; definitions.txt transylvania / wallachia / moldavia / south_alfold
+  areas + bulgaria_area north_dobruja): Cluj, Brasov, Iasi (already SSHIP), Suceava, Targoviste, Campulung, Bucharest,
+  Ismail, Constanta. Scope (user): Transylvania, Partium, Banat, Wallachia, Moldavia, Danube mouth / Black Sea coast.
+- `docs/tools/anchors_romania.txt`: 14 SSHIP settlements, residuals <= 3.2 except Esztergom (8.1, 3.4) and
+  Szekesfehervar (-4.4). SSHIP's "Severin" (264,168) sits in central Wallachia, not at real Turnu Severin - not an anchor.
+- User: add all as proposed; levels as proposed; late towns 1 / 500; Barlad + Chilia Cumans, Cetatea Alba rebels
+  (ownerFrom Severin); Vicina/Isaccea named by owner (greek Bitzina, european Vicina, turkish Isakca, default Isaccea).
+- 20 towns: hungary (EE Spear Militia): Cluj 249,183 (2/7500), Satu Mare 245,189 (1/1000), Arad 233,178 (2/7500),
+  Timisoara 233,175 (1/1000), Sibiu 253,177, Brasov 263,177, Bistrita 256,186, Sighisoara 258,179 (all 1/500);
+  rebels (EE Spear Militia): Severin region Craiova 251,165, Curtea de Arges 254,170, Targoviste 261,166, Bucharest 266,165,
+  Braila 278,172 (all 1/500); Halych region Suceava 268,189 (1/500), Hotin 271,196 (1/1000); Cetatea Alba 293,178 (2/7500,
+  Iasi region, ownerFrom Severin); cumans: Barlad 277,178, Chilia 288,175 (1/1000); byzantium (Contaratoi): Isaccea/Vicina
+  282,172, Constanta 282,164 (2/7500).
+- Dropped for spacing: Turda, Dabaca (Cluj), Cenad (Szeged), Galati (Braila), Siret, Baia (Suceava), Ismail, Tulcea
+  (Isaccea); Campulung (only open Severin-region tile lies south of Arges); Caransebes, Tighina (late, minor).
+- Names: hungary / hre / european (Latin) / greek / middle_eastern, plus poland, kievan_rus, russia, cumans where they fit;
+  default = Romanian (rebels). DUMP_PATHS +20 routes (Romania block).
+- THEN: user's test (Hungary + Croatia fix 2, Eger, Romania), then the next region.
