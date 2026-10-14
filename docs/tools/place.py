@@ -13,6 +13,11 @@ anchors={'Constantinople':(41.008,28.978),'Adrianople':(41.677,26.556),'Thessalo
 'Sredets':(42.698,23.322),'Tarnovo':(43.081,25.629),'Ras':(43.14,20.52),'Skadar':(42.068,19.512),
 'Durazzo':(41.323,19.441),'Arta':(39.160,20.985),'Corinth':(37.906,22.879),'Ragusa':(42.650,18.094),'Vrhbosna':(43.856,18.413),
 'Chandax':(35.339,25.144),'Nicaea':(40.429,29.721),'Smyrna':(38.42,27.14)}
+import sys
+if '-a' in sys.argv:  # optional anchor file: "settlement lat lon" per line (default: Balkan anchors above)
+    anchors={}
+    for l in open(sys.argv[sys.argv.index('-a')+1]):
+        if l.strip(): n,la,lo=l.split(); anchors[n]=(float(la),float(lo))
 A=[];X=[];Y=[]
 for s,(la,lo) in anchors.items():
     x,y,_,_=setts[s]; A.append([lo,la,1]); X.append(x); Y.append(y)
@@ -64,5 +69,5 @@ def place(name,la,lo):
     _,x,y=best; r=colreg[rp[x,H-1-y]]
     return f"{name:14s} GPS {x0},{y0} {ground(x0,y0):6s} -> {x},{y} {ground(x,y):5s} rel {relief(x,y):2d} region {r[1]} ({r[2]})"
 if __name__=='__main__':
-    for l in open(sys.argv[1]):
+    for l in open([a for i,a in enumerate(sys.argv[1:],1) if a not in ('-r','-a') and sys.argv[i-1]!='-a'][0]):
         n,la,lo=l.split(); print(place(n,float(la),float(lo)))
