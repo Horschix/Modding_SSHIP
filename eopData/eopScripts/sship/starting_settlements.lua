@@ -961,8 +961,6 @@ local SETTS = {
       names = { england = "Salisbury", scotland = "Salisbury", european = "Sarisberia", default = "Salisbury" } },
     { key = "colchester", x = 84, y = 219, capital = "Norwich", level = 2, population = 7500,  -- EU5 town; owner england
       names = { england = "Colchester", scotland = "Colchester", european = "Colecestria", default = "Colchester" } },
-    { key = "lynn", x = 83, y = 223, capital = "Norwich", level = 1, population = 1000,  -- EU5 town; Bishop's Lynn founded c.1100, small -> 1/1000; 3 east of GPS for spacing; owner england
-      names = { england = "Lynn", scotland = "Lynn", european = "Lenna", default = "Lynn" } },
     { key = "boston", x = 77, y = 228, capital = "Lincoln", level = 1, population = 1000,  -- EU5 town; small in 1132 -> 1/1000; owner england
       names = { england = "Boston", scotland = "Boston", european = "Villa Sancti Botulfi", default = "Boston" } },
     { key = "perth", x = 55, y = 251, capital = "Edinburgh", level = 2, population = 7500,  -- EU5 town; burgh by c.1127; owner scotland
@@ -991,6 +989,19 @@ local SETTS = {
       rebels = { "Irish Kerns", "Irish Kerns" } },
     { key = "sligo", x = 17, y = 236, capital = "Dublin", level = 1, population = 500,  -- EU5 town; founded 1245 -> 1/500; owner slave
       names = { england = "Sligo", scotland = "Sligo", european = "Sligonia", default = "Sligeach" },
+      rebels = { "Irish Kerns", "Irish Kerns" } },
+    -- British Isles fix 1 (user, 14 Oct): Lynn removed; Exeter, Cardiff, Lancaster, Glasgow, Downpatrick added
+    { key = "exeter", x = 52, y = 210, capital = "Bristol", level = 2, population = 7500,  -- shire town, Domesday borough; owner england
+      names = { england = "Exeter", scotland = "Exeter", european = "Exonia", default = "Exeter" } },
+    { key = "cardiff", x = 54, y = 216, capital = "Caernarvon", ownerFrom = "London", level = 1, population = 1000,  -- Norman castle town (Robert of Gloucester) -> england
+      names = { england = "Cardiff", scotland = "Cardiff", european = "Kerdifia", default = "Caerdydd" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "lancaster", x = 58, y = 235, capital = "York", level = 1, population = 1000,  -- castle town for the Liverpool / Manchester area (both later); owner england
+      names = { england = "Lancaster", scotland = "Lancaster", european = "Lancastria", default = "Lancaster" } },
+    { key = "glasgow", x = 48, y = 248, capital = "Edinburgh", level = 1, population = 1000,  -- bishopric 1114, small -> 1/1000; owner scotland
+      names = { england = "Glasgow", scotland = "Glasgow", european = "Glascua", default = "Glasgow" } },
+    { key = "downpatrick", x = 36, y = 237, capital = "Dublin", level = 1, population = 1000,  -- Ulaid (Ulster) royal / church seat; owner slave
+      names = { england = "Downpatrick", scotland = "Downpatrick", european = "Dunum", default = "Dún Pádraig" },
       rebels = { "Irish Kerns", "Irish Kerns" } },
 }
 
@@ -1376,7 +1387,6 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Norwich-cambridge", 87, 224, 79, 221 },
     { "Bristol-salisbury", 58, 215, 64, 213 },
     { "Norwich-colchester", 87, 224, 84, 219 },
-    { "Norwich-lynn", 87, 224, 83, 223 },
     { "Lincoln-boston", 74, 228, 77, 228 },
     { "Edinburgh-perth", 57, 248, 55, 251 },
     { "Edinburgh-berwick", 57, 248, 64, 246 },
@@ -1388,6 +1398,11 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Dublin-galway", 32, 229, 11, 227 },
     { "Dublin-new_ross", 32, 229, 27, 225 },
     { "Dublin-sligo", 32, 229, 17, 236 },
+    { "Bristol-exeter", 58, 215, 52, 210 },
+    { "Bristol-cardiff", 58, 215, 54, 216 },
+    { "York-lancaster", 70, 235, 58, 235 },
+    { "Edinburgh-glasgow", 57, 248, 48, 248 },
+    { "Dublin-downpatrick", 32, 229, 36, 237 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

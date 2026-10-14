@@ -567,3 +567,10 @@ other game regions later. The candidate list and every decision are in issue #4.
   Irish rebel towns 2 Irish Kerns (user; ownership all).
 - Names: English for england / scotland, Latin for european, default = English (Britain) / Irish Gaelic (Ireland:
   Corcaigh, Port Láirge, Loch Garman, Luimneach, Gaillimh, Ros Mhic Thriúin, Sligeach). DUMP_PATHS +17.
+- BRITISH ISLES fix 1 (user, 14 Oct), installed, read back identical:
+  - Lynn removed. Added: Exeter 52,210 (Bristol reg, england, 2/7500); Cardiff 54,216 (Caernarvon reg, ownerFrom London =
+    england, 1/1000, default name Caerdydd); Lancaster 58,235 (York reg, england, 1/1000 - user wanted a town in the
+    Liverpool / Manchester area, both founded later); Glasgow 48,248 (Edinburgh reg, scotland, 1/1000); Downpatrick 36,237
+    (Dublin reg, rebels, 1/1000, Dún Pádraig, Irish Kerns - Ulster town). -> 21 towns. DUMP_PATHS updated.
+  - CAUTION (tooling): device_commit_files re-sent an OLD cached upload when the staged output path was reused - the
+    first fix-1 write put the previous version back. Use a NEW output file name for every install, then read back.

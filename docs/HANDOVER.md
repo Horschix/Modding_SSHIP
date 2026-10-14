@@ -96,7 +96,9 @@ FRANCE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm
   Sens, Nimes, Perpignan removed; Saint-Omer -> Calais; 4 moves; MAP ROUND 10 = Alpine pass Turin - Aosta - Great
   St Bernard - Valais (Lake Geneva) -> 31 towns. User: delete map.rwm, NEW campaign. Waiting for the user's test.
 BRITISH ISLES installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 17 EU5 towns
-  (england 7, scotland 3, Irish rebels 7 with Irish Kerns) - see the feature note. Waiting for the user's test (with France).
+  (england 7, scotland 3, Irish rebels 7 with Irish Kerns) - see the feature note. FIX 1 installed 14 Oct (read back
+  identical): Lynn removed; Exeter, Cardiff, Lancaster, Glasgow, Downpatrick added -> 21 towns. Waiting for the user's test.
+  Install tip: use a NEW output file name per install (a reused one re-sent an old cached copy).
   THEN: next region. Left: HRE (Germany, Bohemia, Low Countries; Metz, Strasbourg, Colmar, Mulhouse go there),
   Scandinavia.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
