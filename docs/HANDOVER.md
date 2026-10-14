@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 14 Oct 2026, Romania round (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
+Last updated 14 Oct 2026, Romania done (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4). The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
@@ -81,7 +81,10 @@ ROMANIA installed 14 Oct, read back identical (script only, NEW campaign): 20 to
   map.rwm had not been rebuilt (older than map_regions.tga) - cause of "Zagreb not moved"; names transliterated to
   SSHIP's glyphs; our Targoviste removed (SSHIP's Severin is Targoviste); Tarnovo + Cherven/Drastar/Vidin/Isaccea to
   Bulgarian rebels; 14 script moves + MAP ROUND 8 (Iasi, Ragusa, Arta). User: delete map.rwm, NEW campaign.
-  THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
+  FIX 2 installed 14 Oct (read back identical): Varna 1 west (277,156), Sliven 1 south (267,153). ROMANIA DONE
+  (user moved on to the next region, 14 Oct).
+  NEXT: the user picks the next region for #4. Not done yet: Western/Central Europe - HRE (Germany, Bohemia, Low
+  Countries), Italy (+ Sicily, Sardinia, Corsica), France, Iberia, British Isles, Scandinavia. Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
