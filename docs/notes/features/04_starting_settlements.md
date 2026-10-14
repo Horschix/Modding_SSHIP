@@ -623,3 +623,14 @@ other game regions later. The candidate list and every decision are in issue #4.
   - MAP ROUND 11 (edit_map.py CITY_MOVES): SSHIP's Kalmar 195,254 -> 194,255 (1 NW; no port pixel there);
     governor Magnus Nilsson moved by hand in descr_strat. Only map_regions.tga taken from the tool (2 pixels changed).
   - -> 14 Scandinavian towns + Neva. User: delete map.rwm, NEW campaign.
+
+## SEAMS BATCH (15 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- Coverage check (all 425 towns vs map_regions.tga): 36 SSHIP regions had no extra town; most on purpose. User picked
+  from the real gaps: Pinsk, Giresun, Kath. Declined: Ostr (Pereyaslav), Mozyr (Kiev region), Khiva, Amul (east of
+  the map edge, col ~513 > 509). Not taken: inner Anatolia, Thrace, Cyprus/Crete, Galicia (Spain), Nisa/Abiward.
+- Pinsk 263,221 (Turov, kievan_rus, 1/1000); Giresun 353,141 (Trebizond, rebels, 2/7500, Greek default Kerasous);
+  Kath 508,140 (Urgench, turks, 2/7500). Garrisons: EE Spear Militia / Ahdath Militia. DUMP_PATHS +4.
+- MAP ROUND 12 (edit_map.py): Pinsk 3x3 (262-264, 220-222) swamp -> woodland; Giresun: 352-354,140 low mountain ->
+  hills (heights smoothed). Model: Turov-Pinsk 12, Trebizond-Giresun 9, Sives-Giresun 13, Urgench-Kath 7 steps.
+  Side finding, not changed: Nakhchivan, Nis, Rijeka stand in another region than their `capital` (owner lookup only).
+  User: delete map.rwm, NEW campaign.

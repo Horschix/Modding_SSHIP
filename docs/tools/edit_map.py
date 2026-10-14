@@ -73,6 +73,13 @@ _hills((304, 111), (305, 110), (306, 110), (307, 110), (308, 110))
 # (round 2 also had a row-109 coast corridor and the Konya tiles - replaced by the CORRIDORS of round 3)
 # every remaining IMPASSABLE tile of the Kastamonu belt (x 312-327, y 141-147) -> dense forest (not smoothed)
 FOREST_BOX = (312, 327, 141, 147)
+# round 12 (15 Oct, user, "seams" batch): Giresun 353,141 stood on a 1-tile coastal hill strip - the three
+# low-mountain tiles behind it -> hills; Pinsk 263,221 in the Pripet marsh - the swamp tiles of its 3x3 -> woodland
+# (swamp costs 20, woodland 13; river tiles are features and stay as they are)
+WOODLAND = (0, 128, 0)
+SWAMP = (0, 255, 128)
+_hills((352, 140), (353, 140), (354, 140))
+PINSK_BOX = [(x, y) for x in range(262, 265) for y in range(220, 223)]
 
 # Round 3 (13 Oct, after the engine dump): what really blocks the engine - dense forest costs 999 in SSHIP (as
 # impassable), rivers only open at crossings, no diagonal step between two blocked tiles, and big height steps
@@ -217,6 +224,10 @@ def main(src, out):
             if (x, y) not in PASS_TILES and tuple(int(v) for v in ga[tile_block(ga, x, y)][1, 1]) == IMPASSABLE:
                 ga[tile_block(ga, x, y)] = DENSE_FOREST
                 print("ground", (x, y), IMPASSABLE, "-> dense forest")
+    for t in PINSK_BOX:     # round 12: only swamp tiles change
+        if tuple(int(v) for v in ga[tile_block(ga, *t)][1, 1]) == SWAMP:
+            ga[tile_block(ga, *t)] = WOODLAND
+            print("ground", t, SWAMP, "-> woodland (Pinsk)")
     write_tga(g, ga, os.path.join(base_out, "map_ground_types.tga"))
 
     # heights: each pass tile gets the mean of a 5x5 neighbourhood (land only), repeated (up to 4 rounds) while the

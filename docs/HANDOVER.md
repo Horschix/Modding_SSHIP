@@ -108,6 +108,8 @@ SCANDINAVIA installed 15 Oct, read back identical: 21 towns; FIX 1 installed 15 
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
+SEAMS BATCH installed 15 Oct, read back identical: Pinsk, Giresun, Kath + MAP ROUND 12 (delete map.rwm, NEW campaign)
+  - see the feature note. Waiting for the user's test.
 DUMP stays on as the route checker (settler_check.lua deleted by the user, 14 Oct).
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a

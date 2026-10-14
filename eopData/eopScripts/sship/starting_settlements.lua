@@ -1152,6 +1152,17 @@ local SETTS = {
       names = { hre = "Kiel", european = "Kilia", default = "Kiel" } },
     { key = "neva", x = 298, y = 275, capital = "Novgorod", level = 1, population = 500,  -- user's wish (fix 1): village where St Petersburg will be; Neva mouth, Izhorian land of Novgorod (Landskrona 1300, St Petersburg 1703); owner russia
       names = { russia = "Ust-Neva", kievan_rus = "Ust-Neva", hre = "Newamünde", european = "Ostium Nevae", default = "Nevansuu" } },
+    -- Seams batch (user, 15 Oct 2026): regions the region-by-region rounds had left empty. Map round 12 (edit_map.py):
+    -- Pinsk's marsh tiles -> woodland, the low mountains behind Giresun -> hills. Amul is east of the map edge (left out).
+    { key = "pinsk", x = 263, y = 221, capital = "Turov", level = 1, population = 1000,  -- first mention 1097; Turov principality; GPS tile 265,222 is river; kievan_rus
+      names = { russia = "Pinesk", kievan_rus = "Pinesk", poland = "Pińsk", lithuania = "Pinskas", european = "Pinscum", greek = "Pínsk", middle_eastern = "Pinsk", default = "Pinesk" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "giresun", x = 353, y = 141, capital = "Trebizond", level = 2, population = 7500,  -- Kerasous, Byzantine town and bishopric; Gabras' Trebizond = rebels
+      names = { greek = "Kerasoús", middle_eastern = "Giresun", arabic = "Kirasun", european = "Cerasus", default = "Kerasoús" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "kath", x = 508, y = 140, capital = "Urgench", level = 2, population = 7500,  -- old capital of Khwarazm on the Amu Darya; Khwarazmshahs under the Seljuks = turks
+      names = { middle_eastern = "Kâs", arabic = "Kath", greek = "Káth", european = "Cathum", default = "Kath" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -1618,6 +1629,9 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Ribe-viborg", 141, 244, 147, 252 },
     { "Ribe-kiel", 141, 244, 148, 239 },
     { "Novgorod-neva", 304, 267, 298, 275 },
+    -- seams batch (15 Oct 2026)
+    { "Turov-Pinsk", 274, 222, 263, 221 }, { "Trebizond-Giresun", 362, 141, 353, 141 }, { "Sives-Giresun", 344, 132, 353, 141 },
+    { "Urgench-Kath", 505, 147, 508, 140 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
