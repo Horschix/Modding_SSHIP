@@ -574,3 +574,22 @@ other game regions later. The candidate list and every decision are in issue #4.
     (Dublin reg, rebels, 1/1000, Dún Pádraig, Irish Kerns - Ulster town). -> 21 towns. DUMP_PATHS updated.
   - CAUTION (tooling): device_commit_files re-sent an OLD cached upload when the staged output path was reused - the
     first fix-1 write put the previous version back. Use a NEW output file name for every install, then read back.
+
+## HOLY ROMAN EMPIRE (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- User: "build it" = all proposed defaults. Script only - no map edit, map.rwm stays; NEW campaign.
+  Backup: `backups/2026-10-14_before_hre/`. Anchors `docs/tools/anchors_hre.txt` (21; SSHIP's "Hamburg" settlement
+  is Magdeburg (Magideberc), its "Freiberg" is Carinthia; residuals <= 3.6, Brandenburg worst).
+- EU5 `#Germany` + `#Low Countries` + Metz / Strasbourg / Colmar / Mulhouse from `#France`: 95 towns, 20 already on the
+  map. 76 candidates -> greedy by importance, 4 tiles to new towns, 3 to existing -> 50 + Leipzig (1 E of GPS) = 51.
+- hre 36 (incl. Hamburg, Halle, Zerbst, Leipzig, Freiberg/Saxony via ownerFrom "Hamburg" = Magdeburg; Geneva, Bern in
+  Lyon region), rebels 15 (Bruges, Tournai, Antwerp, Namur, Mons, Groningen, Deventer, Dordrecht; Brno, Plzen, Kutna Hora,
+  Gorlitz [Wroclaw region, ownerFrom Prague]; Wismar, Kiel, Berlin, Wittenberg). Garrison 2 Spear Militia (hre + rebels;
+  ownership verified).
+- Levels: EU5 cities 3/15000 (Hamburg, Mainz, Augsburg, Erfurt, Bruges, Metz); towns 2/7500; small in 1132 1/1000 (Leipzig,
+  Graz, Freiburg, Zerbst, Gorlitz, Plzen, Melk, Kempten, Oettingen, Stuttgart, Gottingen, Dordrecht, Ravensburg); founded
+  later 1/500 (Wismar, Berlin, Kiel, Innsbruck, Bern, Freiberg, Wittenberg, Klagenfurt, Landau, Kutna Hora, Dusseldorf).
+- Names: hre German, european Latin, default local (Dutch / French / German, Czech without hacek), france / england /
+  poland where they differ. Latin-1 only.
+- Dropped for spacing: Worms, Liege, Ypres, Brussels, Maastricht, Middelburg, Dortmund, Soest, Osnabruck, Brunswick,
+  Luneburg, Konstanz, Colmar, Mulhouse, Wetzlar, Rothenburg, Zutphen, Memmingen, Munich, Rostock, Heidelberg,
+  's-Hertogenbosch, Zwolle, The Hague, Amsterdam, Beeskow, Sint-Niklaas. DUMP_PATHS +51 (HRE block).

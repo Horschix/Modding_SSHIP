@@ -1003,6 +1003,125 @@ local SETTS = {
     { key = "downpatrick", x = 36, y = 237, capital = "Dublin", level = 1, population = 1000,  -- Ulaid (Ulster) royal / church seat; owner slave
       names = { england = "Downpatrick", scotland = "Downpatrick", european = "Dunum", default = "Dún Pádraig" },
       rebels = { "Irish Kerns", "Irish Kerns" } },
+    -- HOLY ROMAN EMPIRE (Germany, Austria, Switzerland, Bohemia, Low Countries, Lorraine / Alsace), 14 Oct 2026
+    { key = "hamburg", x = 150, y = 231, capital = "Lubeck", ownerFrom = "Hamburg", level = 3, population = 15000,  -- EU5 city; archbishopric seat (Saxony) -> hre (HRE, 14 Oct)
+      names = { hre = "Hamburg", european = "Hammaburgum", default = "Hamburg" } },
+    { key = "mainz", x = 137, y = 205, capital = "Frankfurt", level = 3, population = 15000,  -- EU5 city; archbishopric; owner hre (HRE, 14 Oct)
+      names = { hre = "Mainz", france = "Mayence", european = "Moguntia", default = "Mainz" } },
+    { key = "augsburg", x = 157, y = 193, capital = "Ratisbon", level = 3, population = 15000,  -- EU5 city; owner hre (HRE, 14 Oct)
+      names = { hre = "Augsburg", european = "Augusta Vindelicorum", default = "Augsburg" } },
+    { key = "erfurt", x = 158, y = 212, capital = "Frankfurt", level = 3, population = 15000,  -- EU5 city; owner hre (HRE, 14 Oct)
+      names = { hre = "Erfurt", european = "Erfordia", default = "Erfurt" } },
+    { key = "bruges", x = 100, y = 212, capital = "Ghent", level = 3, population = 15000,  -- EU5 city; County of Flanders; rebels (HRE, 14 Oct)
+      names = { hre = "Brügge", france = "Bruges", england = "Bruges", european = "Bruga", default = "Brugge" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "metz", x = 123, y = 197, capital = "Trier", level = 3, population = 15000,  -- EU5 city; Upper Lorraine; owner hre (HRE, 14 Oct)
+      names = { hre = "Metz", france = "Metz", european = "Mettis", default = "Metz" } },
+    { key = "aachen", x = 121, y = 210, capital = "Cologne", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Aachen", france = "Aix-la-Chapelle", european = "Aquisgranum", default = "Aachen" } },
+    { key = "strasbourg", x = 133, y = 194, capital = "Basel", level = 2, population = 7500,  -- EU5 town (France block); owner hre (HRE, 14 Oct)
+      names = { hre = "Straßburg", france = "Strasbourg", european = "Argentoratum", default = "Straßburg" } },
+    { key = "wurzburg", x = 150, y = 202, capital = "Frankfurt", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Würzburg", european = "Herbipolis", default = "Würzburg" } },
+    { key = "bamberg", x = 159, y = 207, capital = "Nuremburg", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Bamberg", european = "Bamberga", default = "Bamberg" } },
+    { key = "salzburg", x = 175, y = 188, capital = "Ratisbon", level = 2, population = 7500,  -- EU5 town; archbishopric; owner hre (HRE, 14 Oct)
+      names = { hre = "Salzburg", european = "Iuvavum", default = "Salzburg" } },
+    { key = "goslar", x = 153, y = 219, capital = "Hamburg", level = 2, population = 7500,  -- EU5 town; imperial palace; owner hre (HRE, 14 Oct)
+      names = { hre = "Goslar", european = "Goslaria", default = "Goslar" } },
+    { key = "halberstadt", x = 158, y = 219, capital = "Hamburg", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Halberstadt", european = "Halberstadium", default = "Halberstadt" } },
+    { key = "munster", x = 133, y = 219, capital = "Bremen", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Münster", european = "Monasterium", default = "Münster" } },
+    { key = "antwerp", x = 108, y = 213, capital = "Leuven", level = 2, population = 7500,  -- EU5 town; Brabant; rebels (HRE, 14 Oct)
+      names = { hre = "Antwerpen", france = "Anvers", england = "Antwerp", european = "Antverpia", default = "Antwerpen" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "tournai", x = 101, y = 208, capital = "Ghent", level = 2, population = 7500,  -- EU5 town; rebels (HRE, 14 Oct)
+      names = { hre = "Doornik", france = "Tournai", european = "Tornacum", default = "Tournai" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "namur", x = 112, y = 207, capital = "Leuven", level = 2, population = 7500,  -- EU5 town; County of Namur; rebels (HRE, 14 Oct)
+      names = { hre = "Namen", france = "Namur", european = "Namurcum", default = "Namur" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "mons", x = 105, y = 208, capital = "Leuven", level = 2, population = 7500,  -- EU5 town; Hainaut; rebels (HRE, 14 Oct)
+      names = { hre = "Bergen", france = "Mons", european = "Montes", default = "Mons" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "luxembourg", x = 122, y = 201, capital = "Trier", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Lützelburg", france = "Luxembourg", european = "Luciliburgum", default = "Luxembourg" } },
+    { key = "groningen", x = 124, y = 228, capital = "Utrecht", level = 2, population = 7500,  -- EU5 town; rebels (HRE, 14 Oct)
+      names = { hre = "Groningen", european = "Groninga", default = "Groningen" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "deventer", x = 121, y = 221, capital = "Utrecht", level = 2, population = 7500,  -- EU5 town; rebels (HRE, 14 Oct)
+      names = { hre = "Deventer", european = "Daventria", default = "Deventer" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "paderborn", x = 141, y = 217, capital = "Bremen", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Paderborn", european = "Patherbrunna", default = "Paderborn" } },
+    { key = "halle", x = 165, y = 216, capital = "Brandeburg", ownerFrom = "Hamburg", level = 2, population = 7500,  -- EU5 town; archbishopric of Magdeburg -> hre (HRE, 14 Oct)
+      names = { hre = "Halle", european = "Hala", default = "Halle" } },
+    { key = "zurich", x = 140, y = 186, capital = "Basel", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Zürich", france = "Zurich", european = "Turicum", default = "Zürich" } },
+    { key = "geneve", x = 122, y = 176, capital = "Lyon", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Genf", france = "Genève", england = "Geneva", european = "Genava", default = "Genève" } },
+    { key = "linz", x = 181, y = 193, capital = "Ratisbon", level = 2, population = 7500,  -- EU5 town; owner hre (HRE, 14 Oct)
+      names = { hre = "Linz", european = "Lentia", default = "Linz" } },
+    { key = "brno", x = 197, y = 200, capital = "Olomoc", level = 2, population = 7500,  -- EU5 town; Moravia; rebels (HRE, 14 Oct)
+      names = { hre = "Brünn", poland = "Brno", european = "Bruna", default = "Brno" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "leipzig", x = 169, y = 216, capital = "Brandeburg", ownerFrom = "Hamburg", level = 1, population = 1000,  -- EU5 town; small before the 1165 charter; Meissen -> hre (HRE, 14 Oct)
+      names = { hre = "Leipzig", poland = "Lipsk", european = "Lipsia", default = "Leipzig" } },
+    { key = "graz", x = 192, y = 185, capital = "Freiberg", level = 1, population = 1000,  -- EU5 town; first named 1128; owner hre (HRE, 14 Oct)
+      names = { hre = "Graz", european = "Graecium", default = "Graz" } },
+    { key = "freiburg", x = 132, y = 190, capital = "Basel", level = 1, population = 1000,  -- EU5 town; founded 1120; owner hre (HRE, 14 Oct)
+      names = { hre = "Freiburg", european = "Friburgum", default = "Freiburg" } },
+    { key = "zerbst", x = 166, y = 220, capital = "Brandeburg", ownerFrom = "Hamburg", level = 1, population = 1000,  -- EU5 town; small; -> hre (HRE, 14 Oct)
+      names = { hre = "Zerbst", european = "Servestum", default = "Zerbst" } },
+    { key = "gorlitz", x = 186, y = 215, capital = "Wroclaw", ownerFrom = "Prague", level = 1, population = 1000,  -- EU5 town; Bohemian village; rebels (HRE, 14 Oct)
+      names = { hre = "Görlitz", poland = "Zgorzelec", european = "Gorlicium", default = "Görlitz" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "plzen", x = 175, y = 204, capital = "Prague", level = 1, population = 1000,  -- EU5 town; old Plzen castle; rebels (HRE, 14 Oct)
+      names = { hre = "Pilsen", poland = "Pilzno", european = "Pilsna", default = "Plzen" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "melk", x = 190, y = 192, capital = "Vienna", level = 1, population = 1000,  -- EU5 town; abbey; owner hre (HRE, 14 Oct)
+      names = { hre = "Melk", european = "Medelicum", default = "Melk" } },
+    { key = "kempten", x = 153, y = 192, capital = "Ulm", level = 1, population = 1000,  -- EU5 town; abbey town; owner hre (HRE, 14 Oct)
+      names = { hre = "Kempten", european = "Campodunum", default = "Kempten" } },
+    { key = "oettingen", x = 155, y = 198, capital = "Frankfurt", level = 1, population = 1000,  -- EU5 town; small; owner hre (HRE, 14 Oct)
+      names = { hre = "Oettingen", european = "Oetinga", default = "Oettingen" } },
+    { key = "stuttgart", x = 143, y = 197, capital = "Speyer", level = 1, population = 1000,  -- EU5 town; stud farm; owner hre (HRE, 14 Oct)
+      names = { hre = "Stuttgart", european = "Stutgardia", default = "Stuttgart" } },
+    { key = "gottingen", x = 149, y = 217, capital = "Bremen", level = 1, population = 1000,  -- EU5 town; village; owner hre (HRE, 14 Oct)
+      names = { hre = "Göttingen", european = "Gotinga", default = "Göttingen" } },
+    { key = "dordrecht", x = 113, y = 217, capital = "Utrecht", level = 1, population = 1000,  -- EU5 town; Holland; rebels (HRE, 14 Oct)
+      names = { hre = "Dordrecht", european = "Dordracum", default = "Dordrecht" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "ravensburg", x = 148, y = 190, capital = "Ulm", level = 1, population = 1000,  -- EU5 town; Welf castle; owner hre (HRE, 14 Oct)
+      names = { hre = "Ravensburg", european = "Ravensburgum", default = "Ravensburg" } },
+    { key = "wismar", x = 161, y = 233, capital = "Lubeck", level = 1, population = 500,  -- EU5 town; founded 1229; rebels (HRE, 14 Oct)
+      names = { hre = "Wismar", european = "Wismaria", default = "Wismar" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "berlin", x = 178, y = 222, capital = "Brandeburg", level = 1, population = 500,  -- EU5 town; first named 1237; rebels (HRE, 14 Oct)
+      names = { hre = "Berlin", european = "Berolinum", default = "Berlin" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "kiel", x = 151, y = 236, capital = "Lubeck", level = 1, population = 500,  -- EU5 town; founded 1242; rebels (HRE, 14 Oct)
+      names = { hre = "Kiel", european = "Kilia", default = "Kiel" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "innsbruck", x = 160, y = 187, capital = "Ratisbon", level = 1, population = 500,  -- EU5 town; founded 1180; owner hre (HRE, 14 Oct)
+      names = { hre = "Innsbruck", european = "Oenipons", default = "Innsbruck" } },
+    { key = "bern", x = 131, y = 183, capital = "Lyon", level = 1, population = 500,  -- EU5 town; founded 1191; owner hre (HRE, 14 Oct)
+      names = { hre = "Bern", france = "Berne", european = "Berna", default = "Bern" } },
+    { key = "freiberg_sax", x = 175, y = 212, capital = "Brandeburg", ownerFrom = "Hamburg", level = 1, population = 500,  -- EU5 town; silver town from 1168; Meissen -> hre (HRE, 14 Oct)
+      names = { hre = "Freiberg", european = "Friberga", default = "Freiberg" } },
+    { key = "wittenberg", x = 173, y = 217, capital = "Brandeburg", level = 1, population = 500,  -- EU5 town; first named 1180; rebels (HRE, 14 Oct)
+      names = { hre = "Wittenberg", european = "Vitemberga", default = "Wittenberg" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "klagenfurt", x = 184, y = 179, capital = "Freiberg", level = 1, population = 500,  -- EU5 town; founded about 1195; owner hre (HRE, 14 Oct)
+      names = { hre = "Klagenfurt", european = "Claudiforum", default = "Klagenfurt" } },
+    { key = "landau", x = 134, y = 198, capital = "Speyer", level = 1, population = 500,  -- EU5 town; founded about 1260; owner hre (HRE, 14 Oct)
+      names = { hre = "Landau", european = "Landavia", default = "Landau" } },
+    { key = "kutna_hora", x = 188, y = 205, capital = "Prague", level = 1, population = 500,  -- EU5 town; mining town from about 1260; rebels (HRE, 14 Oct)
+      names = { hre = "Kuttenberg", european = "Mons Cuthna", default = "Kutna Hora" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "dusseldorf", x = 127, y = 215, capital = "Cologne", level = 1, population = 500,  -- EU5 town; charter 1288; owner hre (HRE, 14 Oct)
+      names = { hre = "Düsseldorf", european = "Dusseldorpium", default = "Düsseldorf" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -1403,6 +1522,58 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "York-lancaster", 70, 235, 58, 235 },
     { "Edinburgh-glasgow", 57, 248, 48, 248 },
     { "Dublin-downpatrick", 32, 229, 36, 237 },
+    -- HRE (14 Oct 2026)
+    { "Lubeck-hamburg", 155, 233, 150, 231 },
+    { "Frankfurt-mainz", 141, 205, 137, 205 },
+    { "Ratisbon-augsburg", 166, 197, 157, 193 },
+    { "Frankfurt-erfurt", 141, 205, 158, 212 },
+    { "Ghent-bruges", 103, 211, 100, 212 },
+    { "Trier-metz", 126, 202, 123, 197 },
+    { "Cologne-aachen", 127, 212, 121, 210 },
+    { "Basel-strasbourg", 133, 186, 133, 194 },
+    { "Frankfurt-wurzburg", 141, 205, 150, 202 },
+    { "Nuremburg-bamberg", 160, 204, 159, 207 },
+    { "Ratisbon-salzburg", 166, 197, 175, 188 },
+    { "Hamburg-goslar", 162, 221, 153, 219 },
+    { "Hamburg-halberstadt", 162, 221, 158, 219 },
+    { "Bremen-munster", 140, 226, 133, 219 },
+    { "Leuven-antwerp", 111, 211, 108, 213 },
+    { "Ghent-tournai", 103, 211, 101, 208 },
+    { "Leuven-namur", 111, 211, 112, 207 },
+    { "Leuven-mons", 111, 211, 105, 208 },
+    { "Trier-luxembourg", 126, 202, 122, 201 },
+    { "Utrecht-groningen", 114, 220, 124, 228 },
+    { "Utrecht-deventer", 114, 220, 121, 221 },
+    { "Bremen-paderborn", 140, 226, 141, 217 },
+    { "Brandeburg-halle", 172, 224, 165, 216 },
+    { "Basel-zurich", 133, 186, 140, 186 },
+    { "Lyon-geneve", 113, 174, 122, 176 },
+    { "Ratisbon-linz", 166, 197, 181, 193 },
+    { "Olomoc-brno", 204, 203, 197, 200 },
+    { "Brandeburg-leipzig", 172, 224, 169, 216 },
+    { "Freiberg-graz", 180, 182, 192, 185 },
+    { "Basel-freiburg", 133, 186, 132, 190 },
+    { "Brandeburg-zerbst", 172, 224, 166, 220 },
+    { "Wroclaw-gorlitz", 199, 214, 186, 215 },
+    { "Prague-plzen", 181, 206, 175, 204 },
+    { "Vienna-melk", 198, 193, 190, 192 },
+    { "Ulm-kempten", 150, 193, 153, 192 },
+    { "Frankfurt-oettingen", 141, 205, 155, 198 },
+    { "Speyer-stuttgart", 137, 199, 143, 197 },
+    { "Bremen-gottingen", 140, 226, 149, 217 },
+    { "Utrecht-dordrecht", 114, 220, 113, 217 },
+    { "Ulm-ravensburg", 150, 193, 148, 190 },
+    { "Lubeck-wismar", 155, 233, 161, 233 },
+    { "Brandeburg-berlin", 172, 224, 178, 222 },
+    { "Lubeck-kiel", 155, 233, 151, 236 },
+    { "Ratisbon-innsbruck", 166, 197, 160, 187 },
+    { "Lyon-bern", 113, 174, 131, 183 },
+    { "Brandeburg-freiberg_sax", 172, 224, 175, 212 },
+    { "Brandeburg-wittenberg", 172, 224, 173, 217 },
+    { "Freiberg-klagenfurt", 180, 182, 184, 179 },
+    { "Speyer-landau", 137, 199, 134, 198 },
+    { "Prague-kutna_hora", 181, 206, 188, 205 },
+    { "Cologne-dusseldorf", 127, 212, 127, 215 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
