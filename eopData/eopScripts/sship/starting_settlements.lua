@@ -1117,6 +1117,57 @@ local SETTS = {
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "maribor", x = 193, y = 181, capital = "Freiberg", level = 1, population = 1000,  -- user's wish (HRE fix 1); castle Marchburg (1164), north of the Drava crossing; owner hre
       names = { hre = "Marburg", hungary = "Marburg", european = "Marburgum", default = "Marburg" } },
+    -- SCANDINAVIA (user, 15 Oct 2026: "build it" = all proposed defaults). Sweden + Finland rebels; Jutland/Schleswig denmark via ownerFrom Roskilde; Kungahalla norway via ownerFrom Oslo
+    { key = "stockholm", x = 210, y = 273, capital = "Sigtuna", level = 1, population = 500,  -- EU5 town; founded about 1252; rebels
+      names = { hre = "Stockholm", european = "Holmia", default = "Stockholm" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "linkoping", x = 190, y = 266, capital = "Skara", level = 2, population = 7500,  -- EU5 town; bishopric about 1120; rebels
+      names = { hre = "Linköping", european = "Lincopia", default = "Linköping" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "soderkoping", x = 196, y = 266, capital = "Sigtuna", level = 1, population = 1000,  -- EU5 town; 12th-century trading place; rebels
+      names = { hre = "Söderköping", european = "Sudercopia", default = "Söderköping" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "uppsala", x = 206, y = 278, capital = "Sigtuna", level = 2, population = 7500,  -- extra (not in EU5); old royal and cult centre, archbishopric 1164; rebels
+      names = { hre = "Uppsala", european = "Upsalia", default = "Uppsala" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "vasteras", x = 196, y = 276, capital = "Sigtuna", level = 1, population = 1000,  -- extra; bishopric about 1120; rebels
+      names = { hre = "Västerås", european = "Arosia", default = "Västerås" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "strangnas", x = 200, y = 272, capital = "Sigtuna", level = 1, population = 1000,  -- extra; old thing site, bishopric 12th c.; rebels
+      names = { hre = "Strängnäs", european = "Strengnesia", default = "Strängnäs" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "skanninge", x = 185, y = 264, capital = "Skara", level = 1, population = 1000,  -- extra; 12th-century market town; rebels
+      names = { hre = "Skänninge", european = "Skenningia", default = "Skänninge" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "vyborg", x = 288, y = 284, capital = "Turku", level = 1, population = 500,  -- EU5 town; Karelian trading place, castle 1293; rebels
+      names = { hre = "Wiborg", european = "Viburgum", russia = "Vyborg", kievan_rus = "Vyborg", default = "Viipuri" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "tonsberg", x = 152, y = 272, capital = "Oslo", level = 2, population = 7500,  -- EU5 town; Norway's oldest town; norway
+      names = { hre = "Tönsberg", european = "Tunsberga", default = "Tønsberg" } },
+    { key = "hamar", x = 156, y = 282, capital = "Oslo", level = 1, population = 1000,  -- EU5 town; small, bishopric 1152; norway
+      names = { hre = "Hamar", european = "Hamaria", default = "Hamar" } },
+    { key = "stavanger", x = 120, y = 270, capital = "Bergen", level = 1, population = 1000,  -- EU5 town; bishopric about 1125; norway
+      names = { hre = "Stavanger", european = "Stavangria", default = "Stavanger" } },
+    { key = "sarpsborg", x = 157, y = 272, capital = "Oslo", level = 1, population = 1000,  -- extra; Borg, founded 1016; norway
+      names = { hre = "Sarpsborg", european = "Burgum", default = "Borg" } },
+    { key = "kungahalla", x = 164, y = 261, capital = "Skara", ownerFrom = "Oslo", level = 2, population = 7500,  -- extra; Konghelle, Norwegian royal town (sacked 1135); norway via ownerFrom Oslo
+      names = { hre = "Konghelle", european = "Konungahella", default = "Konghelle" } },
+    { key = "kobenhavn", x = 167, y = 247, capital = "Roskilde", level = 1, population = 1000,  -- EU5 town; fishing village Havn, castle 1167; denmark
+      names = { hre = "Kopenhagen", european = "Hafnia", default = "Havn" } },
+    { key = "odense", x = 152, y = 244, capital = "Roskilde", level = 2, population = 7500,  -- EU5 town; St Canute's shrine; denmark
+      names = { hre = "Odense", european = "Othinia", default = "Odense" } },
+    { key = "ringsted", x = 161, y = 245, capital = "Roskilde", level = 1, population = 1000,  -- extra; Zealand thing site, royal abbey; denmark
+      names = { hre = "Ringsted", european = "Ringstadium", default = "Ringsted" } },
+    { key = "viborg", x = 147, y = 252, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- EU5 town; Jutland thing and bishopric; denmark via ownerFrom Roskilde
+      names = { hre = "Wiborg", european = "Viburgum", default = "Viborg" } },
+    { key = "aalborg", x = 148, y = 257, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- EU5 town; coins from about 1040; denmark
+      names = { hre = "Aalborg", european = "Alburgum", default = "Aalborg" } },
+    { key = "randers", x = 150, y = 253, capital = "Ribe", ownerFrom = "Roskilde", level = 1, population = 1000,  -- EU5 town; 1 north of GPS to make room for Aarhus; denmark
+      names = { hre = "Randers", european = "Randrusia", default = "Randers" } },
+    { key = "aarhus", x = 150, y = 250, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- extra; bishopric; denmark
+      names = { hre = "Aarhus", european = "Arhusium", default = "Aarhus" } },
+    { key = "schleswig", x = 147, y = 239, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- extra; Hedeby's successor, main trade town (Flensburg dropped for it); denmark
+      names = { hre = "Schleswig", european = "Slesvicum", default = "Slesvig" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -1148,6 +1199,8 @@ local GARRISON = {
     england = { "Spear Militia", "Spear Militia" },          -- France (Normandy, Anjou) (14 Oct)
     scotland = { "Spear Militia", "Spear Militia" },         -- British Isles: cheapest spear militia (14 Oct)
     pisa = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
+    denmark = { "Spear Militia", "Spear Militia" },          -- Scandinavia: Spear Militia, ownership verified (15 Oct)
+    norway = { "Spear Militia", "Spear Militia" },           -- Scandinavia (15 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -1567,6 +1620,27 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Cologne-dusseldorf", 127, 212, 127, 215 },
     { "Utrecht-amsterdam", 114, 220, 112, 222 },
     { "Freiberg-maribor", 180, 182, 193, 181 },
+    { "Sigtuna-stockholm", 206, 275, 210, 273 },
+    { "Skara-linkoping", 174, 265, 190, 266 },
+    { "Sigtuna-soderkoping", 206, 275, 196, 266 },
+    { "Sigtuna-uppsala", 206, 275, 206, 278 },
+    { "Sigtuna-vasteras", 206, 275, 196, 276 },
+    { "Sigtuna-strangnas", 206, 275, 200, 272 },
+    { "Skara-skanninge", 174, 265, 185, 264 },
+    { "Turku-vyborg", 240, 280, 288, 284 },
+    { "Oslo-tonsberg", 154, 276, 152, 272 },
+    { "Oslo-hamar", 154, 276, 156, 282 },
+    { "Bergen-stavanger", 116, 281, 120, 270 },
+    { "Oslo-sarpsborg", 154, 276, 157, 272 },
+    { "Skara-kungahalla", 174, 265, 164, 261 },
+    { "Roskilde-kobenhavn", 164, 246, 167, 247 },
+    { "Roskilde-odense", 164, 246, 152, 244 },
+    { "Roskilde-ringsted", 164, 246, 161, 245 },
+    { "Ribe-viborg", 141, 244, 147, 252 },
+    { "Ribe-aalborg", 141, 244, 148, 257 },
+    { "Ribe-randers", 141, 244, 150, 253 },
+    { "Ribe-aarhus", 141, 244, 150, 250 },
+    { "Ribe-schleswig", 141, 244, 147, 239 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

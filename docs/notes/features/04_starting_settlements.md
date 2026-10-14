@@ -599,3 +599,18 @@ other game regions later. The candidate list and every decision are in issue #4.
   - Added: Amsterdam 112,222 (GPS tile, wood in marsh, 2 tiles from SSHIP's Utrecht 114,220; rebels, 1/500) - no wider
     land tile there; Marburg (Maribor) 193,181 (Carinthia region, north of the Drava river, hre, 1/1000).
   - 49 HRE towns. NEW campaign; map.rwm stays.
+
+## SCANDINAVIA (15 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- User: "build it" = all proposed defaults. Script only - no map edit, map.rwm stays; NEW campaign.
+  Backup: `backups/2026-10-15_before_scandinavia/`. Anchors `docs/tools/anchors_scandinavia.txt` (13, residuals <= 1.6).
+- EU5 `#sweden` / `#Norway` / `#denmark` (lines 3-31): 23 towns; SSHIP's own: Kalmar, Skara, Lund, Visby, Turku, Bergen,
+  Oslo, Roskilde. Off the map: Nidaros (map ends north of Bergen), Skalholt (Iceland).
+- 21 towns: rebels 8 (Stockholm 1/500, Linkoping 2/7500, Soderkoping 1/1000, Uppsala 2/7500, Vasteras, Strangnas,
+  Skanninge 1/1000, Vyborg 1/500 [Turku region]); norway 5 (Tonsberg 2/7500, Hamar, Stavanger, Sarpsborg 1/1000,
+  Kungahalla 2/7500 in Skara region via ownerFrom Oslo); denmark 8 (Kobenhavn 1/1000 "Havn", Odense 2/7500, Ringsted
+  1/1000; Ribe region via ownerFrom Roskilde: Viborg, Aalborg, Aarhus, Schleswig 2/7500, Randers 1/1000 [1 N of GPS]).
+  Extras (not in EU5): Uppsala, Vasteras, Strangnas, Skanninge, Sarpsborg, Kungahalla, Ringsted, Aarhus, Schleswig.
+- Dropped for spacing: Flensburg (= Schleswig's tile, founded ~1200), Lodose (Kungahalla), Helsingborg (Kobenhavn).
+- Garrison 2 Spear Militia (GARRISON denmark / norway added; rebels per entry; ownership verified).
+- Names: local default (Swedish / Norwegian / Danish, Viipuri for Vyborg), German for hre, Latin for european,
+  Vyborg for russia / kievan_rus. DUMP_PATHS +21 (capital -> town).

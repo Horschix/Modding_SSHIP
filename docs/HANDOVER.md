@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 14 Oct 2026, Romania done (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
+Last updated 15 Oct 2026, Scandinavia installed (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4). The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
@@ -102,7 +102,8 @@ BRITISH ISLES installed 14 Oct, read back identical (script only, NEW campaign, 
 HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 51 towns (hre 36, rebels 15) -
   see the feature note. FIX 1 installed 14 Oct (read back identical): 4 removed, 4 moved, Amsterdam + Marburg added -> 49.
   Waiting for the user's test.
-  THEN: next region. Left: Scandinavia (last one).
+SCANDINAVIA installed 15 Oct, read back identical (script only, NEW campaign, map.rwm stays): 21 towns (rebels 8,
+  norway 5, denmark 8) - see the feature note. Last region of #4. Waiting for the user's test.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
