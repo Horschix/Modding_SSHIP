@@ -83,8 +83,10 @@ ROMANIA installed 14 Oct, read back identical (script only, NEW campaign): 20 to
   Bulgarian rebels; 14 script moves + MAP ROUND 8 (Iasi, Ragusa, Arta). User: delete map.rwm, NEW campaign.
   FIX 2 installed 14 Oct (read back identical): Varna 1 west (277,156), Sliven 1 south (267,153). ROMANIA DONE
   (user moved on to the next region, 14 Oct).
-  NEXT: the user picks the next region for #4. Not done yet: Western/Central Europe - HRE (Germany, Bohemia, Low
-  Countries), Italy (+ Sicily, Sardinia, Corsica), France, Iberia, British Isles, Scandinavia. Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
+IBERIA installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 44 towns (spain 11, aragon 8,
+  portugal 4, moors 21; Lleida / Tortosa / Cuenca / Morella moors via ownerFrom Valencia) - waiting for the user's test.
+  THEN: next region for #4. Not done yet: HRE (Germany, Bohemia, Low Countries), Italy (+ islands), France, British
+  Isles, Scandinavia. Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.

@@ -678,6 +678,95 @@ local SETTS = {
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "constanta", x = 283, y = 163, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- EU5 town; Byzantine; moved 282,164 -> 283,163 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
       names = { hungary = "Konstanca", hre = "Konstanza", european = "Constantia", greek = "Konstantía", middle_eastern = "Köstence", default = "Constanta" } },
+    -- Iberia (14 Oct 2026): Castile-Leon (spain), aragon, portugal, moors; owner = real 1132 owner
+    { key = "alcala", x = 54, y = 137, capital = "Toledo", level = 2, population = 7500,  -- EU5 town; Castilian since 1118
+      names = { spain = "Alcalá de Henares", portugal = "Alcalá de Henares", aragon = "Alcalà d'Henares", arabic = "Qalat Abd al-Salam", european = "Complutum", default = "Alcalá de Henares" } },
+    { key = "ciudad_rodrigo", x = 31, y = 138, capital = "Valladolid", level = 1, population = 1000,  -- EU5 town; resettled c. 1100, refounded 1161
+      names = { spain = "Ciudad Rodrigo", portugal = "Cidade Rodrigo", aragon = "Ciutat Rodrigo", arabic = "Madinat Rudriq", european = "Mirobriga", default = "Ciudad Rodrigo" } },
+    { key = "medina_campo", x = 42, y = 143, capital = "Valladolid", level = 1, population = 1000,  -- EU5 town; resettled c. 1077
+      names = { spain = "Medina del Campo", portugal = "Medina del Campo", aragon = "Medina del Camp", arabic = "Madinat al-Qanb", european = "Methymna Campestris", default = "Medina del Campo" } },
+    { key = "salamanca", x = 38, y = 142, capital = "Valladolid", level = 2, population = 7500,  -- EU5 town; resettled 1102
+      names = { spain = "Salamanca", portugal = "Salamanca", aragon = "Salamanca", arabic = "Shalamanka", european = "Salmantica", default = "Salamanca" } },
+    { key = "segovia", x = 46, y = 142, capital = "Burgos", level = 2, population = 7500,  -- EU5 town; resettled 1088
+      names = { spain = "Segovia", portugal = "Segóvia", aragon = "Segòvia", arabic = "Shaqubiya", european = "Segovia", default = "Segovia" } },
+    { key = "zamora", x = 37, y = 145, capital = "Leon", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Zamora", portugal = "Zamora", aragon = "Zamora", arabic = "Samura", european = "Ocellodurum", default = "Zamora" } },
+    { key = "santander", x = 51, y = 157, capital = "Burgos", level = 1, population = 1000,  -- EU5 town; small port (fuero 1187)
+      names = { spain = "Santander", portugal = "Santander", aragon = "Santander", arabic = "Shant Andar", european = "Portus Victoriae", default = "Santander" } },
+    { key = "oviedo", x = 31, y = 158, capital = "Leon", level = 2, population = 7500,  -- EU5 town; tight tile (5 open neighbours)
+      names = { spain = "Oviedo", portugal = "Oviedo", aragon = "Oviedo", arabic = "Ubiyadu", european = "Ovetum", default = "Oviedo" } },
+    { key = "lugo", x = 23, y = 155, capital = "Leon", level = 1, population = 1000,  -- extra; bishopric
+      names = { spain = "Lugo", portugal = "Lugo", aragon = "Lugo", arabic = "Luk", european = "Lucus Augusti", default = "Lugo" } },
+    { key = "astorga", x = 35, y = 149, capital = "Leon", level = 1, population = 1000,  -- extra; bishopric
+      names = { spain = "Astorga", portugal = "Astorga", aragon = "Astorga", arabic = "Asturqa", european = "Asturica Augusta", default = "Astorga" } },
+    { key = "talavera", x = 43, y = 134, capital = "Toledo", level = 2, population = 7500,  -- extra; Castilian since 1083
+      names = { spain = "Talavera", portugal = "Talavera", aragon = "Talavera", arabic = "Talabira", european = "Caesarobriga", default = "Talavera" } },
+    { key = "calatayud", x = 66, y = 143, capital = "Zaragoza", level = 2, population = 7500,  -- EU5 town; Aragonese since 1120
+      names = { spain = "Calatayud", portugal = "Calatayud", aragon = "Calataiud", arabic = "Qalat Ayyub", european = "Bilbilis", default = "Calatayud" } },
+    { key = "huesca", x = 74, y = 149, capital = "Zaragoza", level = 2, population = 7500,  -- EU5 town; Aragonese since 1096
+      names = { spain = "Huesca", portugal = "Huesca", aragon = "Osca", arabic = "Washqa", european = "Osca", default = "Huesca" } },
+    { key = "tudela", x = 66, y = 147, capital = "Zaragoza", level = 2, population = 7500,  -- EU5 town; Aragonese since 1119
+      names = { spain = "Tudela", portugal = "Tudela", aragon = "Tudela", arabic = "Tutila", european = "Tutela", default = "Tudela" } },
+    { key = "girona", x = 97, y = 148, capital = "Barcelona", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Gerona", portugal = "Girona", aragon = "Girona", arabic = "Jarunda", european = "Gerunda", default = "Girona" } },
+    { key = "tarragona", x = 86, y = 143, capital = "Zaragoza", level = 1, population = 1000,  -- EU5 town; resettled from 1129
+      names = { spain = "Tarragona", portugal = "Tarragona", aragon = "Tarragona", arabic = "Tarrakuna", european = "Tarraco", default = "Tarragona" } },
+    { key = "soria", x = 59, y = 145, capital = "Burgos", ownerFrom = "Zaragoza", level = 1, population = 1000,  -- extra; resettled 1119 by Aragon, Aragonese in 1132
+      names = { spain = "Soria", portugal = "Sória", aragon = "Sòria", arabic = "Suriya", european = "Soria", default = "Soria" } },
+    { key = "barbastro", x = 77, y = 148, capital = "Zaragoza", level = 1, population = 1000,  -- extra; Aragonese since 1100
+      names = { spain = "Barbastro", portugal = "Barbastro", aragon = "Barbastre", arabic = "Barbashtru", european = "Barbastrum", default = "Barbastro" } },
+    { key = "vic", x = 93, y = 147, capital = "Barcelona", level = 1, population = 1000,  -- extra; bishopric
+      names = { spain = "Vich", portugal = "Vic", aragon = "Vic", arabic = "Bik", european = "Ausona", default = "Vic" } },
+    { key = "viseu", x = 21, y = 138, capital = "Coimbra", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Viseo", portugal = "Viseu", aragon = "Viseu", arabic = "Bazu", european = "Viseum", default = "Viseu" } },
+    { key = "porto", x = 16, y = 143, capital = "Coimbra", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Oporto", portugal = "Porto", aragon = "Port", arabic = "Burtuqal", european = "Portus Cale", default = "Porto" } },
+    { key = "braga", x = 17, y = 146, capital = "Coimbra", level = 2, population = 7500,  -- extra; archbishopric
+      names = { spain = "Braga", portugal = "Braga", aragon = "Braga", arabic = "Braqara", european = "Bracara Augusta", default = "Braga" } },
+    { key = "guimaraes", x = 20, y = 144, capital = "Coimbra", level = 2, population = 7500,  -- extra; court of Afonso Henriques
+      names = { spain = "Guimarães", portugal = "Guimarães", aragon = "Guimarães", arabic = "Gimaranish", european = "Vimaranes", default = "Guimarães" } },
+    { key = "malaga", x = 45, y = 111, capital = "Granada", level = 3, population = 15000,  -- EU5 city
+      names = { spain = "Málaga", portugal = "Málaga", aragon = "Màlaga", arabic = "Malaqa", european = "Malaca", default = "Málaga" } },
+    { key = "almeria", x = 62, y = 113, capital = "Granada", level = 2, population = 7500,  -- EU5 town; port
+      names = { spain = "Almería", portugal = "Almeria", aragon = "Almeria", arabic = "al-Mariya", european = "Portus Magnus", default = "Almería" } },
+    { key = "ecija", x = 41, y = 116, capital = "Sevilla", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Écija", portugal = "Écija", aragon = "Écija", arabic = "Istija", european = "Astigi", default = "Écija" } },
+    { key = "jaen", x = 50, y = 120, capital = "Cordoba", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Jaén", portugal = "Jaén", aragon = "Jaén", arabic = "Jayyan", european = "Aurgi", default = "Jaén" } },
+    { key = "jerez", x = 35, y = 110, capital = "Sevilla", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Jerez", portugal = "Xerez", aragon = "Xerès", arabic = "Sharish", european = "Xeres", default = "Jerez" } },
+    { key = "jativa", x = 74, y = 128, capital = "Valencia", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Játiva", portugal = "Xátiva", aragon = "Xàtiva", arabic = "Shatiba", european = "Saetabis", default = "Játiva" } },
+    { key = "orihuela", x = 72, y = 122, capital = "Murcia", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Orihuela", portugal = "Orihuela", aragon = "Oriola", arabic = "Uryula", european = "Orcelis", default = "Orihuela" } },
+    { key = "caceres", x = 32, y = 130, capital = "Badajoz", level = 2, population = 7500,  -- EU5 town
+      names = { spain = "Cáceres", portugal = "Cáceres", aragon = "Càceres", arabic = "Qazris", european = "Castra Caecilia", default = "Cáceres" } },
+    { key = "evora", x = 20, y = 124, capital = "Lisbon", level = 2, population = 7500,  -- EU5 town; Muslim until 1165
+      names = { spain = "Évora", portugal = "Évora", aragon = "Èvora", arabic = "Yabura", european = "Ebora", default = "Évora" } },
+    { key = "santarem", x = 15, y = 129, capital = "Lisbon", level = 2, population = 7500,  -- EU5 town; Muslim until 1147
+      names = { spain = "Santarén", portugal = "Santarém", aragon = "Santarem", arabic = "Shantarin", european = "Scallabis", default = "Santarém" } },
+    { key = "faro", x = 22, y = 115, capital = "Silves", level = 2, population = 7500,  -- EU5 town; port
+      names = { spain = "Faro", portugal = "Faro", aragon = "Faro", arabic = "Shantamariya", european = "Ossonoba", default = "Faro" } },
+    { key = "lleida", x = 82, y = 145, capital = "Zaragoza", ownerFrom = "Valencia", level = 2, population = 7500,  -- EU5 town; Muslim until 1149
+      names = { spain = "Lérida", portugal = "Lérida", aragon = "Lleida", arabic = "Larida", european = "Ilerda", default = "Lleida" } },
+    { key = "tortosa", x = 81, y = 140, capital = "Zaragoza", ownerFrom = "Valencia", level = 2, population = 7500,  -- EU5 town; Muslim until 1148
+      names = { spain = "Tortosa", portugal = "Tortosa", aragon = "Tortosa", arabic = "Turtusha", european = "Dertosa", default = "Tortosa" } },
+    { key = "cuenca", x = 61, y = 134, capital = "Toledo", ownerFrom = "Valencia", level = 2, population = 7500,  -- EU5 town; Muslim until 1177
+      names = { spain = "Cuenca", portugal = "Cuenca", aragon = "Conca", arabic = "Qunka", european = "Conca", default = "Cuenca" } },
+    { key = "morella", x = 76, y = 141, capital = "Zaragoza", ownerFrom = "Valencia", level = 1, population = 1000,  -- EU5 town; Muslim until 1232
+      names = { spain = "Morella", portugal = "Morella", aragon = "Morella", arabic = "Muriala", european = "Morella", default = "Morella" } },
+    { key = "beja", x = 22, y = 120, capital = "Silves", level = 2, population = 7500,  -- extra
+      names = { spain = "Beja", portugal = "Beja", aragon = "Beja", arabic = "Baja", european = "Pax Julia", default = "Beja" } },
+    { key = "niebla", x = 31, y = 115, capital = "Sevilla", level = 2, population = 7500,  -- extra; former taifa seat
+      names = { spain = "Niebla", portugal = "Niebla", aragon = "Niebla", arabic = "Labla", european = "Ilipla", default = "Niebla" } },
+    { key = "algeciras", x = 38, y = 107, capital = "Sevilla", level = 2, population = 7500,  -- extra; port; 4 from Ceuta
+      names = { spain = "Algeciras", portugal = "Algeciras", aragon = "Algesires", arabic = "al-Jazira al-Khadra", european = "Iulia Traducta", default = "Algeciras" } },
+    { key = "denia", x = 77, y = 125, capital = "Murcia", level = 2, population = 7500,  -- extra; port, former taifa seat
+      names = { spain = "Denia", portugal = "Dénia", aragon = "Dénia", arabic = "Daniya", european = "Dianium", default = "Denia" } },
+    { key = "lorca", x = 65, y = 118, capital = "Granada", level = 2, population = 7500,  -- extra
+      names = { spain = "Lorca", portugal = "Lorca", aragon = "Llorca", arabic = "Lurqa", european = "Eliocroca", default = "Lorca" } },
+    { key = "merida", x = 32, y = 126, capital = "Badajoz", level = 1, population = 1000,  -- extra; declined
+      names = { spain = "Mérida", portugal = "Mérida", aragon = "Mèrida", arabic = "Marida", european = "Emerita Augusta", default = "Mérida" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -699,6 +788,9 @@ local GARRISON = {
     lithuania = { "EE Spear Militia", "EE Spear Militia" },   -- Poland + Baltic: cheapest militia (14 Oct)
     hungary   = { "EE Spear Militia", "EE Spear Militia" },   -- hungary has no "Spear Militia" ownership in export_descr_unit.txt, only EE (user caught it, 15 Oct)
     hre       = { "Spear Militia", "Spear Militia" },         -- Hungary + Croatia: cheapest militia (user, 15 Oct); hre IS in Spear Militia's ownership list, verified
+    spain     = { "Spear Militia", "Spear Militia" },         -- Iberia: cheapest spear militia (14 Oct)
+    portugal  = { "Spear Militia", "Spear Militia" },         -- Iberia (14 Oct)
+    aragon    = { "Spear Militia", "Spear Militia" },         -- Iberia (14 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -931,6 +1023,51 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Halych-Suceava", 262, 200, 268, 189 }, { "Halych-Hotin", 262, 200, 271, 196 },
     { "Iasi-Barlad", 277, 185, 277, 178 }, { "Iasi-CetateaAlba", 277, 185, 293, 178 }, { "Iasi-Chilia", 277, 185, 287, 173 },
     { "Drastar-Isaccea", 274, 163, 283, 171 }, { "Drastar-Constanta", 274, 163, 283, 163 },
+    -- Iberia (14 Oct 2026)
+    { "Toledo-alcala", 49, 134, 54, 137 },
+    { "Valladolid-ciudad_rodrigo", 35, 140, 31, 138 },
+    { "Valladolid-medina_campo", 35, 140, 42, 143 },
+    { "Valladolid-salamanca", 35, 140, 38, 142 },
+    { "Burgos-segovia", 51, 150, 46, 142 },
+    { "Leon-zamora", 37, 152, 37, 145 },
+    { "Burgos-santander", 51, 150, 51, 157 },
+    { "Leon-oviedo", 37, 152, 31, 158 },
+    { "Leon-lugo", 37, 152, 23, 155 },
+    { "Leon-astorga", 37, 152, 35, 149 },
+    { "Toledo-talavera", 49, 134, 43, 134 },
+    { "Zaragoza-calatayud", 71, 145, 66, 143 },
+    { "Zaragoza-huesca", 71, 145, 74, 149 },
+    { "Zaragoza-tudela", 71, 145, 66, 147 },
+    { "Barcelona-girona", 92, 144, 97, 148 },
+    { "Zaragoza-tarragona", 71, 145, 86, 143 },
+    { "Burgos-soria", 51, 150, 59, 145 },
+    { "Zaragoza-barbastro", 71, 145, 77, 148 },
+    { "Barcelona-vic", 92, 144, 93, 147 },
+    { "Coimbra-viseu", 18, 135, 21, 138 },
+    { "Coimbra-porto", 18, 135, 16, 143 },
+    { "Coimbra-braga", 18, 135, 17, 146 },
+    { "Coimbra-guimaraes", 18, 135, 20, 144 },
+    { "Granada-malaga", 51, 114, 45, 111 },
+    { "Granada-almeria", 51, 114, 62, 113 },
+    { "Sevilla-ecija", 36, 114, 41, 116 },
+    { "Cordoba-jaen", 43, 119, 50, 120 },
+    { "Sevilla-jerez", 36, 114, 35, 110 },
+    { "Valencia-jativa", 74, 131, 74, 128 },
+    { "Murcia-orihuela", 69, 121, 72, 122 },
+    { "Badajoz-caceres", 28, 126, 32, 130 },
+    { "Lisbon-evora", 11, 125, 20, 124 },
+    { "Lisbon-santarem", 11, 125, 15, 129 },
+    { "Silves-faro", 19, 114, 22, 115 },
+    { "Zaragoza-lleida", 71, 145, 82, 145 },
+    { "Zaragoza-tortosa", 71, 145, 81, 140 },
+    { "Toledo-cuenca", 49, 134, 61, 134 },
+    { "Zaragoza-morella", 71, 145, 76, 141 },
+    { "Silves-beja", 19, 114, 22, 120 },
+    { "Sevilla-niebla", 36, 114, 31, 115 },
+    { "Sevilla-algeciras", 36, 114, 38, 107 },
+    { "Murcia-denia", 69, 121, 77, 125 },
+    { "Granada-lorca", 51, 114, 65, 118 },
+    { "Badajoz-merida", 28, 126, 32, 126 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

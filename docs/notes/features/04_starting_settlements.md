@@ -469,3 +469,24 @@ other game regions later. The candidate list and every decision are in issue #4.
     Iasi event position moved by hand in the current descr_strat/descr_events.
   - DUMP_PATHS coordinates updated; NEW campaign + delete map.rwm.
   - Fix 2 (user, 14 Oct): Varna back 1 west (277,156), Sliven back 1 south (267,153); installed, read back identical.
+
+## IBERIA (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- Script only - no map edit, map.rwm stays; NEW campaign. Backup of the script before: `backups/2026-10-14_before_iberia/`.
+- EU5 `# Iberia` block: 9 cities + 45 towns; 17 are SSHIP's own settlements (Barcelona, Cordoba, Granada, Lisbon, Sevilla,
+  Toledo, Valencia, Valladolid, Badajoz, Burgos, Coimbra, Leon, Murcia, Palma, Pamplona, Zaragoza, Santiago).
+- `docs/tools/anchors_iberia.txt`: 18 SSHIP settlements (+ Bordeaux, Toulouse), residuals <= 1.8. SSHIP's Valladolid
+  (35,140) sits ~7 tiles west of the real town (between Zamora and Salamanca) - NOT an anchor; Salamanca / Medina lie east of it.
+- User: "yes lets start" = all proposed defaults. 44 towns, owner = real 1132 owner, levels EU5 city 3/15000, town
+  2/7500, small / resettled 1/1000; garrison spain / portugal / aragon = 2 Spear Militia (new GARRISON lines), moors Ahdath.
+  spain: Alcala 54,137, Ciudad Rodrigo 31,138 (1), Medina del Campo 42,143 (1), Salamanca 38,142, Segovia 46,142 (Burgos reg),
+  Zamora 37,145, Santander 51,157 (1), Oviedo 31,158 (tight tile, 5 open neighbours), Lugo 23,155 (1), Astorga 35,149 (1),
+  Talavera 43,134. aragon: Calatayud 66,143, Huesca 74,149, Tudela 66,147, Girona 97,148, Tarragona 86,143 (1),
+  Soria 59,145 (1, Burgos reg, ownerFrom Zaragoza), Barbastro 77,148 (1), Vic 93,147 (1). portugal: Viseu 21,138,
+  Porto 16,143, Braga 17,146, Guimaraes 20,144. moors: Malaga 45,111 (3), Almeria 62,113, Ecija 41,116, Jaen 50,120,
+  Jerez 35,110, Jativa 74,128, Orihuela 72,122, Caceres 32,130, Evora 20,124, Santarem 15,129, Faro 22,115, Beja 22,120,
+  Niebla 31,115, Algeciras 38,107 (4 from Ceuta), Denia 77,125, Lorca 65,118, Merida 32,126 (1); ownerFrom Valencia
+  (Muslim in 1132 inside Christian regions): Lleida 82,145, Tortosa 81,140, Cuenca 61,134 (Toledo reg), Morella 76,141 (1).
+- Dropped for spacing: Ronda, Guadalajara, Castellon (plain town 1251), Cervera, Mertola, Baeza, Cadiz, Avila, Tarazona,
+  Huelva; also Teruel (1171), Coria, Ibiza / Menorca (no open land tile).
+- Names: keys spain (Castilian), portugal, aragon (Catalan / Aragonese), arabic (moors), european (Latin), default = local
+  Romance name. Only Latin-1 letters (a-tilde, accents) - no glyphs outside SSHIP's font. DUMP_PATHS +44 (Iberia block).
