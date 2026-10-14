@@ -311,3 +311,18 @@ other game regions later. The candidate list and every decision are in issue #4.
   a quarter): `internalAffairs.lua` new `local SETTL_POINTS = 2.5` (was 10) used in the formula, the debug line and
   the player's warning text. Original in `backups/2026-10-14_before_civilwar/`. Byzantium now ~ -33 instead of 79.
 - Starter pack (barracks town_watch + level-1 temple): user's idea, not built yet - waiting for his answer.
+
+## BALKANS + GREECE (started 14 Oct 2026) - PROPOSED, waiting for the user's answers
+- Tools now in the repo: `docs/tools/setts.py` (SSHIP settlement tiles / regions / owners -> all_setts.txt; needs
+  descr_regions.txt staged), `docs/tools/place.py <file "name lat lon">` (affine fit on 15 anchors + IDW, nearest
+  open tile: fertile / hills / woodland / wilderness, no river, relief <= 30, >= 3 from SSHIP settlements, >= 7 open
+  neighbours). SSHIP's "Nis" (228,168) sits where Belgrade is (residual 10) and Severin (264,168) far east - both
+  left out of the fit.
+- Proposed (26): Corinth reg: Athens 248,120 (EU5 city), Thebes 245,121, Patras 233,120, Kalamata 235,113,
+  Monemvasia 241,112; Thessalonica reg: Larissa 239,132, Ohrid 231,144, Berroia 239,139, Serres 246,141; Arta reg:
+  Ioannina 226,131; Durazzo reg: Valona 219,137; Ras reg (serbia): Skopje 233,148; Sredets reg: Nis 237,156,
+  Plovdiv 257,150; Nis reg (rebels): Branicevo 235,166; Tarnovo reg: Vidin 244,161, Cherven 265,160, Drastar 274,163,
+  Shumen 271,157, Varna 277,157, Sliven 267,153, Anchialos 274,152; Adrianople reg: Gallipoli 270,135,
+  Mosynopolis 260,142; Skadar reg (rebels): Kotor 213,152; Smyrna reg: Rhodes 278,106 (island of 11 tiles).
+  Left out: Belgrade (= SSHIP's Nis tile), Ruse / Targovishte (not towns before the 14th c.), Chalkis / Nauplia /
+  Kastoria / Prizren (spacing), Corfu (no island on SSHIP's map), Croatia / Dalmatia (later with Hungary).
