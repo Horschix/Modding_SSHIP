@@ -44,3 +44,10 @@ Script: `eopData/eopScripts/sship/historic_invasions.lua`, loaded by the last li
 - Open: remove or narrow SSHIP's crusade cleanup (user wants e.g. an England that took Aleppo to keep its crusaders).
 - Later candidates: Third Crusade (Barbarossa vs Rum 1190, Richard at Acre), Second Crusade (Lisbon), Fifth Crusade
   (Damietta), Hattin (Saladin vs Jerusalem), Norman sack of Thessalonica (1185).
+
+## Test 1 (user, 15 Oct 2026, playing Rum, watching with toggle_fow)
+- Constantinople: siege at turn 5, forced assault turn 6, city taken - works.
+- Zara: Dandolo (age 90) died at the turn change (log: no character Enrico from turn 3, `HXINV ... (army false)`),
+  the leaderless army gave up the siege. FIX 1 installed 15 Oct (read back identical): Dandolo age 65; if the
+  labelled general is gone, the forced assault uses the biggest Venetian army within 3 tiles of the target.
+- Crusader cleanup: user keeps SSHIP's rule as it is (no change beyond our exemption).

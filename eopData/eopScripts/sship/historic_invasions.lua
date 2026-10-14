@@ -52,7 +52,7 @@ local LABEL_PREFIX = "hx4c_"
 local STACKS = {
     zara = {
         settlement = "Zara", label = LABEL_ZARA, counter = C_ZARA,
-        name = "Enrico", name2 = "Enrico Dandolo", age = 90, bodyguard = "SE Bodyguard", bodyguardExp = 4,
+        name = "Enrico", name2 = "Enrico Dandolo", age = 65, bodyguard = "SE Bodyguard", bodyguardExp = 4,
         traits = { { "Intelligent", 3 }, { "GoodCommander", 1 }, { "NaturalMilitarySkill", 2 }, { "Military_Edu", 2 } },
         units = {
             { "Venetian Heavy Infantry", 3 }, { "Venetian Heavy Infantry", 1 }, { "Venetian Heavy Infantry", 0 },
@@ -372,6 +372,23 @@ local function onCounter(eventData)
     end
 end
 
+-- fallback when the labelled general is gone (test 15 Oct 2026: Dandolo, then 90, died at the turn change and the
+-- leaderless army gave up the siege): the biggest Venetian army within 3 tiles of the target
+local function veniceArmyNear(venice, sett)
+    local best, bestUnits = nil, 0
+    for i = 0, (get(venice, "numOfCharacters") or 0) - 1 do
+        local okC, char = pcall(function() return venice:getCharacter(i) end)
+        local army = okC and get(char, "army") or nil
+        if army and get(army, "leader") == char then
+            local dx = math.abs((get(char, "xCoord") or -99) - sett.xCoord)
+            local dy = math.abs((get(char, "yCoord") or -99) - sett.yCoord)
+            local units = get(army, "numOfUnits") or 0
+            if math.max(dx, dy) <= 3 and units > bestUnits then best, bestUnits = army, units end
+        end
+    end
+    return best
+end
+
 -- AI Venice: force the assault from the turn after the spawn
 local function forceAssaults(eventData)
     local f = get(eventData, "faction")
@@ -385,6 +402,10 @@ local function forceAssaults(eventData)
             local okR, record = pcall(function() return M2TW.campaign:getCharacterByLabel(spec.label) end)
             local char = okR and get(record, "character") or nil
             local army = get(char, "army")
+            if army == nil and sett then
+                army = veniceArmyNear(f, sett)
+                if army then log("turn " .. turn .. ": " .. spec.label .. " general gone, using the Venetian army next to " .. spec.settlement) end
+            end
             local owner = get(get(sett, "ownerFaction"), "name")
             if sett and army and owner ~= "venice" then
                 local ok, err = pcall(function() army:siegeSettlement(sett, true) end)

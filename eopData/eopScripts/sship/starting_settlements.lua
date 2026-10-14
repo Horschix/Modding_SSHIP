@@ -1093,9 +1093,6 @@ local SETTS = {
     { key = "berlin", x = 178, y = 222, capital = "Brandeburg", level = 1, population = 500,  -- EU5 town; first named 1237; rebels (HRE, 14 Oct)
       names = { hre = "Berlin", european = "Berolinum", default = "Berlin" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "kiel", x = 151, y = 236, capital = "Lubeck", level = 1, population = 500,  -- EU5 town; founded 1242; rebels (HRE, 14 Oct)
-      names = { hre = "Kiel", european = "Kilia", default = "Kiel" },
-      rebels = { "Spear Militia", "Spear Militia" } },
     { key = "innsbruck", x = 160, y = 187, capital = "Ratisbon", level = 1, population = 500,  -- EU5 town; founded 1180; owner hre (HRE, 14 Oct)
       names = { hre = "Innsbruck", european = "Oenipons", default = "Innsbruck" } },
     { key = "bern", x = 131, y = 182, capital = "Lyon", level = 1, population = 500,  -- EU5 town; founded 1191; owner hre (HRE, 14 Oct); 1 south (user, 14 Oct)
@@ -1115,8 +1112,59 @@ local SETTS = {
     { key = "amsterdam", x = 112, y = 222, capital = "Utrecht", level = 1, population = 500,  -- user's wish (HRE fix 1); fishing village, charter 1275; GPS tile (wood in marsh, 2 from Utrecht); rebels
       names = { hre = "Amsterdam", france = "Amsterdam", european = "Amstelodamum", default = "Amsterdam" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "maribor", x = 193, y = 181, capital = "Freiberg", level = 1, population = 1000,  -- user's wish (HRE fix 1); castle Marchburg (1164), north of the Drava crossing; owner hre
+    { key = "maribor", x = 195, y = 180, capital = "Freiberg", level = 1, population = 1000,  -- user's wish (HRE fix 1); castle Marchburg (1164), north of the Drava crossing; owner hre; moved 193,181 -> 195,180 (user, 15 Oct: 2 east, 1 south; tile in the Hungarian region, owner still from Freiberg)
       names = { hre = "Marburg", hungary = "Marburg", european = "Marburgum", default = "Marburg" } },
+    { key = "ljubljana", x = 185, y = 176, capital = "Freiberg", level = 1, population = 1000,  -- user's wish (15 Oct): between Zagreb and Klagenfurt; Laibach, first named about 1112-1125, castle on the hill; GPS 184,177, 1 east for room to Klagenfurt; owner hre
+      names = { hre = "Laibach", hungary = "Laibach", european = "Labacum", default = "Ljubljana" } },
+    -- SCANDINAVIA (user, 15 Oct 2026: "build it" = all proposed defaults). Sweden + Finland rebels; Jutland/Schleswig denmark via ownerFrom Roskilde; Kungahalla norway via ownerFrom Oslo
+    { key = "stockholm", x = 210, y = 273, capital = "Sigtuna", level = 1, population = 500,  -- EU5 town; founded about 1252; rebels
+      names = { hre = "Stockholm", european = "Holmia", default = "Stockholm" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "linkoping", x = 190, y = 266, capital = "Skara", level = 2, population = 7500,  -- EU5 town; bishopric about 1120; rebels
+      names = { hre = "Linköping", european = "Lincopia", default = "Linköping" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "soderkoping", x = 196, y = 266, capital = "Sigtuna", level = 1, population = 1000,  -- EU5 town; 12th-century trading place; rebels
+      names = { hre = "Söderköping", european = "Sudercopia", default = "Söderköping" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "uppsala", x = 206, y = 278, capital = "Sigtuna", level = 2, population = 7500,  -- extra (not in EU5); old royal and cult centre, archbishopric 1164; rebels
+      names = { hre = "Uppsala", european = "Upsalia", default = "Uppsala" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "vasteras", x = 196, y = 276, capital = "Sigtuna", level = 1, population = 1000,  -- extra; bishopric about 1120; rebels
+      names = { hre = "Västerås", european = "Arosia", default = "Västerås" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "skanninge", x = 185, y = 264, capital = "Skara", level = 1, population = 1000,  -- extra; 12th-century market town; rebels
+      names = { hre = "Skänninge", european = "Skenningia", default = "Skänninge" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "vyborg", x = 288, y = 284, capital = "Turku", level = 1, population = 500,  -- EU5 town; Karelian trading place, castle 1293; rebels
+      names = { hre = "Wiborg", european = "Viburgum", russia = "Vyborg", kievan_rus = "Vyborg", default = "Viipuri" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "tonsberg", x = 152, y = 272, capital = "Oslo", level = 2, population = 7500,  -- EU5 town; Norway's oldest town; norway
+      names = { hre = "Tönsberg", european = "Tunsberga", default = "Tønsberg" } },
+    { key = "stavanger", x = 120, y = 270, capital = "Bergen", level = 1, population = 1000,  -- EU5 town; bishopric about 1125; norway
+      names = { hre = "Stavanger", european = "Stavangria", default = "Stavanger" } },
+    { key = "sarpsborg", x = 157, y = 272, capital = "Oslo", level = 1, population = 1000,  -- extra; Borg, founded 1016; norway
+      names = { hre = "Sarpsborg", european = "Burgum", default = "Borg" } },
+    { key = "kungahalla", x = 164, y = 261, capital = "Skara", ownerFrom = "Oslo", level = 2, population = 7500,  -- extra; Konghelle, Norwegian royal town (sacked 1135); norway via ownerFrom Oslo
+      names = { hre = "Konghelle", european = "Konungahella", default = "Konghelle" } },
+    { key = "odense", x = 152, y = 244, capital = "Roskilde", level = 2, population = 7500,  -- EU5 town; St Canute's shrine; denmark
+      names = { hre = "Odense", european = "Othinia", default = "Odense" } },
+    { key = "viborg", x = 147, y = 252, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- EU5 town; Jutland thing and bishopric; denmark via ownerFrom Roskilde
+      names = { hre = "Wiborg", european = "Viburgum", default = "Viborg" } },
+    { key = "kiel", x = 148, y = 239, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- was Schleswig 147,239; 1 east and renamed Kiel (user, Scandinavia fix 1, 15 Oct); old HRE Kiel 151,236 removed; denmark
+      names = { hre = "Kiel", european = "Kilia", default = "Kiel" } },
+    { key = "neva", x = 298, y = 275, capital = "Novgorod", level = 1, population = 500,  -- user's wish (fix 1): village where St Petersburg will be; Neva mouth, Izhorian land of Novgorod (Landskrona 1300, St Petersburg 1703); owner russia
+      names = { russia = "Ust-Neva", kievan_rus = "Ust-Neva", hre = "Newamünde", european = "Ostium Nevae", default = "Nevansuu" } },
+    -- Seams batch (user, 15 Oct 2026): regions the region-by-region rounds had left empty. Map round 12 (edit_map.py):
+    -- Pinsk's marsh tiles -> woodland, the low mountains behind Giresun -> hills. Amul is east of the map edge (left out).
+    { key = "pinsk", x = 263, y = 221, capital = "Turov", level = 1, population = 1000,  -- first mention 1097; Turov principality; GPS tile 265,222 is river; kievan_rus
+      names = { russia = "Pinesk", kievan_rus = "Pinesk", poland = "Pińsk", lithuania = "Pinskas", european = "Pinscum", greek = "Pínsk", middle_eastern = "Pinsk", default = "Pinesk" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "giresun", x = 353, y = 141, capital = "Trebizond", level = 2, population = 7500,  -- Kerasous, Byzantine town and bishopric; Gabras' Trebizond = rebels
+      names = { greek = "Kerasoús", middle_eastern = "Giresun", arabic = "Kirasun", european = "Cerasus", default = "Kerasoús" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
+    { key = "kath", x = 508, y = 140, capital = "Urgench", level = 2, population = 7500,  -- old capital of Khwarazm on the Amu Darya; Khwarazmshahs under the Seljuks = turks
+      names = { middle_eastern = "Kâs", arabic = "Kath", greek = "Káth", european = "Cathum", default = "Kath" },
+      rebels = { "Ahdath Militia", "Ahdath Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -1148,6 +1196,8 @@ local GARRISON = {
     england = { "Spear Militia", "Spear Militia" },          -- France (Normandy, Anjou) (14 Oct)
     scotland = { "Spear Militia", "Spear Militia" },         -- British Isles: cheapest spear militia (14 Oct)
     pisa = { "Urban Spear Militia", "Urban Spear Militia" },   -- Italy: no plain Spear Militia for Italian factions (user, 14 Oct)
+    denmark = { "Spear Militia", "Spear Militia" },          -- Scandinavia: Spear Militia, ownership verified (15 Oct)
+    norway = { "Spear Militia", "Spear Militia" },           -- Scandinavia (15 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -1161,11 +1211,34 @@ local CORE_CASTLE = { [1] = "motte_and_bailey", [2] = "wooden_castle", [3] = "ca
 -- minor_roads chains for that reason). { chain, level } - a chain that is already there is left alone.
 local STARTER = {
     [1] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders1" } },
-    [2] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders1" },
+    [2] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders2" },   -- builders2 (user, 15 Oct)
             { "water_supply", "water1_wells" } },
     [3] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms2" }, { "builders", "builders2" },
             { "water_supply", "water1_wells" } },
 }
+-- Bigger starter package for levels 2 and 3 (user, 15 Oct 2026): religious building tier 1 and barracks tier 1.
+-- Given ONLY when the settlement is created (new campaign), never again at map load - otherwise a temple or barracks
+-- that a later owner demolished would come back for free at every load. The temple follows the owner's religion
+-- (factionRecord.religionID: 0 catholic, 1 orthodox, 2 islam, 3 pagan); for rebels the religion with the biggest
+-- share in the region's main settlement. { city chain, level, castle chain, level }
+local EXTRA_LEVELS = { [2] = true, [3] = true }
+local TEMPLE_BY_RELIGION = {
+    [0] = { "temple_catholic", "small_church",   "temple_catholic_castle", "small_chapel" },
+    [1] = { "temple_orthodox", "small_church_o", "temple_orthodox_castle", "small_chapel_o" },
+    [2] = { "temple_muslim",   "small_masjid",   "temple_muslim_castle",   "c_small_masjid" },
+}
+local TEMPLE_PAGAN = {   -- pagan factions (cities only)
+    lithuania = { "temple_dievas", "dievas_altar" },
+    cumans    = { "temple_tengir", "tengir_altar" },
+    mongols   = { "temple_tengir", "tengir_altar" },
+}
+local BARRACKS_CITY   = { "barracks", "town_watch" }
+local BARRACKS_CASTLE = { "castle_barracks", "mustering_hall" }
+-- rebel-held added settlements get about half a stack (user, 15 Oct 2026): the entry's rebel list repeated
+-- until REBEL_GARRISON_SIZE units
+local REBEL_GARRISON_SIZE = 10
+-- faction-held added settlements: the GARRISON list repeated until FACTION_GARRISON_SIZE units (user, 15 Oct 2026)
+local FACTION_GARRISON_SIZE = 4
 -- Hinterland chains (roads, farms, mines): the build menu of an EXTRA settlement hides chains with
 -- edbEntry.isHinterland = 1. Experiment A (flag 0 for the whole game) made them buildable but the map road
 -- Nicaea - Prousa - Smyrna disappeared (user, 13 Oct 2026). So the flag is now 0 ONLY while the player has an
@@ -1557,7 +1630,6 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Ulm-ravensburg", 150, 193, 148, 190 },
     { "Lubeck-wismar", 155, 233, 161, 233 },
     { "Brandeburg-berlin", 172, 224, 178, 222 },
-    { "Lubeck-kiel", 155, 233, 151, 236 },
     { "Ratisbon-innsbruck", 166, 197, 160, 187 },
     { "Lyon-bern", 113, 174, 131, 182 },
     { "Brandeburg-freiberg_sax", 172, 224, 175, 212 },
@@ -1566,7 +1638,26 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Prague-kutna_hora", 181, 206, 188, 205 },
     { "Cologne-dusseldorf", 127, 212, 127, 215 },
     { "Utrecht-amsterdam", 114, 220, 112, 222 },
-    { "Freiberg-maribor", 180, 182, 193, 181 },
+    { "Freiberg-maribor", 180, 182, 195, 180 },
+    { "Freiberg-ljubljana", 180, 182, 185, 176 },
+    { "Sigtuna-stockholm", 206, 275, 210, 273 },
+    { "Skara-linkoping", 174, 265, 190, 266 },
+    { "Sigtuna-soderkoping", 206, 275, 196, 266 },
+    { "Sigtuna-uppsala", 206, 275, 206, 278 },
+    { "Sigtuna-vasteras", 206, 275, 196, 276 },
+    { "Skara-skanninge", 174, 265, 185, 264 },
+    { "Turku-vyborg", 240, 280, 288, 284 },
+    { "Oslo-tonsberg", 154, 276, 152, 272 },
+    { "Bergen-stavanger", 116, 281, 120, 270 },
+    { "Oslo-sarpsborg", 154, 276, 157, 272 },
+    { "Skara-kungahalla", 174, 265, 164, 261 },
+    { "Roskilde-odense", 164, 246, 152, 244 },
+    { "Ribe-viborg", 141, 244, 147, 252 },
+    { "Ribe-kiel", 141, 244, 148, 239 },
+    { "Novgorod-neva", 304, 267, 298, 275 },
+    -- seams batch (15 Oct 2026)
+    { "Turov-Pinsk", 274, 222, 263, 221 }, { "Trebizond-Giresun", 362, 141, 353, 141 }, { "Sives-Giresun", 344, 132, 353, 141 },
+    { "Urgench-Kath", 505, 147, 508, 140 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
@@ -1641,6 +1732,12 @@ end
 local function giveGarrison(entry, sett, owner)
     local list = (get(owner, "name") == "slave") and entry.rebels or GARRISON[get(owner, "name")]
     if list == nil then log("no garrison for owner " .. tostring(get(owner, "name"))); return end
+    if #list > 0 then   -- rebels: half a stack; factions: 4 units (user, 15 Oct 2026)
+        local size = (get(owner, "name") == "slave") and REBEL_GARRISON_SIZE or FACTION_GARRISON_SIZE
+        local big = {}
+        for i = 1, size do big[i] = list[(i - 1) % #list + 1] end
+        list = big
+    end
     local okA, army = pcall(function() return sett:createArmyInSettlement() end)
     if not okA or army == nil then log("garrison: createArmyInSettlement failed " .. tostring(army)); return end
     local res = {}
@@ -1649,6 +1746,53 @@ local function giveGarrison(entry, sett, owner)
         res[#res + 1] = list[i] .. " " .. ((okU and unit ~= nil) and "ok" or ("FAILED " .. tostring(unit)))
     end
     log("garrison " .. tostring(get(sett, "name")) .. ": " .. table.concat(res, ", "))
+end
+
+-- religion of the temple to give: the owner's, or for rebels the biggest share in the region's main settlement
+local function templeFor(entry, sett, owner)
+    local fname = get(owner, "name")
+    if fname ~= "slave" then
+        if TEMPLE_PAGAN[fname] then
+            if entry.castle then return nil, "pagan castle" end
+            return TEMPLE_PAGAN[fname], "pagan " .. fname
+        end
+        local rid = get(get(owner, "factionRecord"), "religionID")
+        if TEMPLE_BY_RELIGION[rid] then return TEMPLE_BY_RELIGION[rid], "religion " .. tostring(rid) end
+        return nil, "religion " .. tostring(rid)
+    end
+    local probe = settlementByName(entry.capital) or sett
+    local best, bestShare = nil, -1
+    for rid = 0, 4 do
+        local ok, share = pcall(function() return probe:getReligion(rid) end)
+        if ok and type(share) == "number" and share > bestShare then best, bestShare = rid, share end
+    end
+    if TEMPLE_BY_RELIGION[best] then return TEMPLE_BY_RELIGION[best], "rebels, region religion " .. tostring(best) end
+    return nil, "rebels, region religion " .. tostring(best)
+end
+
+local function addIfMissing(sett, chain, level, done)
+    local okHas, has = pcall(function() return sett:buildingPresent(chain) end)
+    if okHas and has then done[#done + 1] = chain .. " already there"; return end
+    local okB, errB = pcall(function() sett:createBuilding(level) end)
+    local okNow, now = pcall(function() return sett:buildingPresent(chain) end)
+    done[#done + 1] = level .. " " .. ((okB and okNow and now) and "ok" or ("FAILED " .. tostring(errB)))
+end
+
+-- temple tier 1 + barracks tier 1 for levels 2 and 3, at creation only (user, 15 Oct 2026)
+local function giveExtras(entry, sett, owner)
+    if not EXTRA_LEVELS[entry.level] then return end
+    local done = {}
+    local temple, why = templeFor(entry, sett, owner)
+    if temple == nil then
+        done[#done + 1] = "no temple (" .. tostring(why) .. ")"
+    elseif entry.castle then
+        addIfMissing(sett, temple[3], temple[4], done)
+    else
+        addIfMissing(sett, temple[1], temple[2], done)
+    end
+    local b = entry.castle and BARRACKS_CASTLE or BARRACKS_CITY
+    addIfMissing(sett, b[1], b[2], done)
+    log("extra buildings " .. tostring(get(sett, "name")) .. " (" .. tostring(why) .. "): " .. table.concat(done, ", "))
 end
 
 local function createOne(entry)
@@ -1684,6 +1828,8 @@ local function createOne(entry)
     if not okW then log("ERROR garrison " .. name .. ": " .. tostring(errW)) end
     local okG, errG = pcall(giveStarter, entry, sett, "created")
     if not okG then log("ERROR starter " .. name .. ": " .. tostring(errG)) end
+    local okX, errX = pcall(giveExtras, entry, sett, owner)
+    if not okX then log("ERROR extras " .. name .. ": " .. tostring(errX)) end
     local okP = pcall(function() sett.settlementStats.population = entry.population end)
     pcall(function() sett.populationSize = entry.population end)
     applyName(entry, sett, "created")

@@ -102,14 +102,17 @@ BRITISH ISLES installed 14 Oct, read back identical (script only, NEW campaign, 
 HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 51 towns (hre 36, rebels 15) -
   see the feature note. FIX 1 installed 14 Oct (read back identical): 4 removed, 4 moved, Amsterdam + Marburg added -> 49.
   Waiting for the user's test.
-  THEN: next region. Left: Scandinavia (last one).
+  SCANDINAVIA + GAP ROUND + bigger starter pack were installed by another session but NOT committed until 15 Oct
+  (taken from the PC). 15 Oct: Marburg 193,181 -> 195,180 (Hungarian region tile, owner from Freiberg = hre), Ljubljana
+  (Laibach) added 185,176 level 1 / 1000, owner hre - read back identical, NEW campaign.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
 #5 Historic invasion armies - OPEN. Fourth Crusade TEST version installed 15 Oct (read back identical):
   `historic_invasions.lua` + require line; Zara stage turn 2, Constantinople stage turn 5 while `TEST = true`
-  (final 140 / 145). Waiting for the user's test. Detail: `docs/notes/features/05_historic_invasions.md`.
+  (final 140 / 145). Test 1: Constantinople works; Zara failed (Dandolo 90 died) - FIX 1 installed 15 Oct
+  (age 65 + fallback army search). Waiting for test 2. Detail: `docs/notes/features/05_historic_invasions.md`.
 DUMP stays on as the route checker (settler_check.lua deleted by the user, 14 Oct).
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a

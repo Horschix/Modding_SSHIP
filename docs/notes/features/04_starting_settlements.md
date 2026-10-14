@@ -599,3 +599,14 @@ other game regions later. The candidate list and every decision are in issue #4.
   - Added: Amsterdam 112,222 (GPS tile, wood in marsh, 2 tiles from SSHIP's Utrecht 114,220; rebels, 1/500) - no wider
     land tile there; Marburg (Maribor) 193,181 (Carinthia region, north of the Drava river, hre, 1/1000).
   - 49 HRE towns. NEW campaign; map.rwm stays.
+
+## HRE fix 2 (user, 15 Oct 2026)
+- Marburg (maribor) 193,181 -> 195,180 (2 east, 1 south). The tile lies in the Hungarian (Szekesfehervar) region; the
+  owner still comes from Freiberg (hre).
+- Ljubljana (key ljubljana) added at 185,176, level 1, 1000 people, owner hre (capital Freiberg); GPS tile 184,177,
+  moved 1 east for room to Klagenfurt (3 tiles). Names: hre/hungary Laibach, european Labacum, default Ljubljana.
+- Installed 15 Oct together with #5 fix 1, read back identical. The installed file already held Scandinavia, the gap
+  round and the bigger starter pack (from another session, not committed before) - now committed.
+- Open bug reported in the same test: Karahisar's small_masjid damaged by a revolt on turn 2 could not be repaired
+  ("already in queue", repair timer 0). Cause not found in the log; workaround proposed (auto-repair), waiting for
+  the user's go-ahead and whether repair works in SSHIP's own settlements.
