@@ -1,0 +1,11 @@
+London 51.507 -0.128
+York 53.959 -1.082
+Lincoln 53.234 -0.539
+Norwich 52.630 1.297
+Bristol 51.454 -2.588
+Caernarvon 53.139 -4.276
+Edinburgh 55.953 -3.189
+Aberdeen 57.150 -2.094
+Dublin 53.349 -6.260
+Rouen 49.443 1.099
+Ghent 51.054 3.717
