@@ -1093,9 +1093,6 @@ local SETTS = {
     { key = "berlin", x = 178, y = 222, capital = "Brandeburg", level = 1, population = 500,  -- EU5 town; first named 1237; rebels (HRE, 14 Oct)
       names = { hre = "Berlin", european = "Berolinum", default = "Berlin" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "kiel", x = 151, y = 236, capital = "Lubeck", level = 1, population = 500,  -- EU5 town; founded 1242; rebels (HRE, 14 Oct)
-      names = { hre = "Kiel", european = "Kilia", default = "Kiel" },
-      rebels = { "Spear Militia", "Spear Militia" } },
     { key = "innsbruck", x = 160, y = 187, capital = "Ratisbon", level = 1, population = 500,  -- EU5 town; founded 1180; owner hre (HRE, 14 Oct)
       names = { hre = "Innsbruck", european = "Oenipons", default = "Innsbruck" } },
     { key = "bern", x = 131, y = 182, capital = "Lyon", level = 1, population = 500,  -- EU5 town; founded 1191; owner hre (HRE, 14 Oct); 1 south (user, 14 Oct)
@@ -1133,9 +1130,6 @@ local SETTS = {
     { key = "vasteras", x = 196, y = 276, capital = "Sigtuna", level = 1, population = 1000,  -- extra; bishopric about 1120; rebels
       names = { hre = "Västerås", european = "Arosia", default = "Västerås" },
       rebels = { "Spear Militia", "Spear Militia" } },
-    { key = "strangnas", x = 200, y = 272, capital = "Sigtuna", level = 1, population = 1000,  -- extra; old thing site, bishopric 12th c.; rebels
-      names = { hre = "Strängnäs", european = "Strengnesia", default = "Strängnäs" },
-      rebels = { "Spear Militia", "Spear Militia" } },
     { key = "skanninge", x = 185, y = 264, capital = "Skara", level = 1, population = 1000,  -- extra; 12th-century market town; rebels
       names = { hre = "Skänninge", european = "Skenningia", default = "Skänninge" },
       rebels = { "Spear Militia", "Spear Militia" } },
@@ -1144,30 +1138,20 @@ local SETTS = {
       rebels = { "Spear Militia", "Spear Militia" } },
     { key = "tonsberg", x = 152, y = 272, capital = "Oslo", level = 2, population = 7500,  -- EU5 town; Norway's oldest town; norway
       names = { hre = "Tönsberg", european = "Tunsberga", default = "Tønsberg" } },
-    { key = "hamar", x = 156, y = 282, capital = "Oslo", level = 1, population = 1000,  -- EU5 town; small, bishopric 1152; norway
-      names = { hre = "Hamar", european = "Hamaria", default = "Hamar" } },
     { key = "stavanger", x = 120, y = 270, capital = "Bergen", level = 1, population = 1000,  -- EU5 town; bishopric about 1125; norway
       names = { hre = "Stavanger", european = "Stavangria", default = "Stavanger" } },
     { key = "sarpsborg", x = 157, y = 272, capital = "Oslo", level = 1, population = 1000,  -- extra; Borg, founded 1016; norway
       names = { hre = "Sarpsborg", european = "Burgum", default = "Borg" } },
     { key = "kungahalla", x = 164, y = 261, capital = "Skara", ownerFrom = "Oslo", level = 2, population = 7500,  -- extra; Konghelle, Norwegian royal town (sacked 1135); norway via ownerFrom Oslo
       names = { hre = "Konghelle", european = "Konungahella", default = "Konghelle" } },
-    { key = "kobenhavn", x = 167, y = 247, capital = "Roskilde", level = 1, population = 1000,  -- EU5 town; fishing village Havn, castle 1167; denmark
-      names = { hre = "Kopenhagen", european = "Hafnia", default = "Havn" } },
     { key = "odense", x = 152, y = 244, capital = "Roskilde", level = 2, population = 7500,  -- EU5 town; St Canute's shrine; denmark
       names = { hre = "Odense", european = "Othinia", default = "Odense" } },
-    { key = "ringsted", x = 161, y = 245, capital = "Roskilde", level = 1, population = 1000,  -- extra; Zealand thing site, royal abbey; denmark
-      names = { hre = "Ringsted", european = "Ringstadium", default = "Ringsted" } },
     { key = "viborg", x = 147, y = 252, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- EU5 town; Jutland thing and bishopric; denmark via ownerFrom Roskilde
       names = { hre = "Wiborg", european = "Viburgum", default = "Viborg" } },
-    { key = "aalborg", x = 148, y = 257, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- EU5 town; coins from about 1040; denmark
-      names = { hre = "Aalborg", european = "Alburgum", default = "Aalborg" } },
-    { key = "randers", x = 150, y = 253, capital = "Ribe", ownerFrom = "Roskilde", level = 1, population = 1000,  -- EU5 town; 1 north of GPS to make room for Aarhus; denmark
-      names = { hre = "Randers", european = "Randrusia", default = "Randers" } },
-    { key = "aarhus", x = 150, y = 250, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- extra; bishopric; denmark
-      names = { hre = "Aarhus", european = "Arhusium", default = "Aarhus" } },
-    { key = "schleswig", x = 147, y = 239, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- extra; Hedeby's successor, main trade town (Flensburg dropped for it); denmark
-      names = { hre = "Schleswig", european = "Slesvicum", default = "Slesvig" } },
+    { key = "kiel", x = 148, y = 239, capital = "Ribe", ownerFrom = "Roskilde", level = 2, population = 7500,  -- was Schleswig 147,239; 1 east and renamed Kiel (user, Scandinavia fix 1, 15 Oct); old HRE Kiel 151,236 removed; denmark
+      names = { hre = "Kiel", european = "Kilia", default = "Kiel" } },
+    { key = "neva", x = 298, y = 275, capital = "Novgorod", level = 1, population = 500,  -- user's wish (fix 1): village where St Petersburg will be; Neva mouth, Izhorian land of Novgorod (Landskrona 1300, St Petersburg 1703); owner russia
+      names = { russia = "Ust-Neva", kievan_rus = "Ust-Neva", hre = "Newamünde", european = "Ostium Nevae", default = "Nevansuu" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -1610,7 +1594,6 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Ulm-ravensburg", 150, 193, 148, 190 },
     { "Lubeck-wismar", 155, 233, 161, 233 },
     { "Brandeburg-berlin", 172, 224, 178, 222 },
-    { "Lubeck-kiel", 155, 233, 151, 236 },
     { "Ratisbon-innsbruck", 166, 197, 160, 187 },
     { "Lyon-bern", 113, 174, 131, 182 },
     { "Brandeburg-freiberg_sax", 172, 224, 175, 212 },
@@ -1625,22 +1608,16 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Sigtuna-soderkoping", 206, 275, 196, 266 },
     { "Sigtuna-uppsala", 206, 275, 206, 278 },
     { "Sigtuna-vasteras", 206, 275, 196, 276 },
-    { "Sigtuna-strangnas", 206, 275, 200, 272 },
     { "Skara-skanninge", 174, 265, 185, 264 },
     { "Turku-vyborg", 240, 280, 288, 284 },
     { "Oslo-tonsberg", 154, 276, 152, 272 },
-    { "Oslo-hamar", 154, 276, 156, 282 },
     { "Bergen-stavanger", 116, 281, 120, 270 },
     { "Oslo-sarpsborg", 154, 276, 157, 272 },
     { "Skara-kungahalla", 174, 265, 164, 261 },
-    { "Roskilde-kobenhavn", 164, 246, 167, 247 },
     { "Roskilde-odense", 164, 246, 152, 244 },
-    { "Roskilde-ringsted", 164, 246, 161, 245 },
     { "Ribe-viborg", 141, 244, 147, 252 },
-    { "Ribe-aalborg", 141, 244, 148, 257 },
-    { "Ribe-randers", 141, 244, 150, 253 },
-    { "Ribe-aarhus", 141, 244, 150, 250 },
-    { "Ribe-schleswig", 141, 244, 147, 239 },
+    { "Ribe-kiel", 141, 244, 148, 239 },
+    { "Novgorod-neva", 304, 267, 298, 275 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

@@ -614,3 +614,12 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Garrison 2 Spear Militia (GARRISON denmark / norway added; rebels per entry; ownership verified).
 - Names: local default (Swedish / Norwegian / Danish, Viipuri for Vyborg), German for hre, Latin for european,
   Vyborg for russia / kievan_rus. DUMP_PATHS +21 (capital -> town).
+- SCANDINAVIA fix 1 (user, 15 Oct), installed, 3 files read back identical:
+  - Removed: Aalborg, Randers, Aarhus, Kobenhavn, Ringsted, Strangnas, Hamar, and the HRE round's Kiel (151,236).
+    ("Sigtunen" in the user's list = no town; user: keep Stockholm / Uppsala / Vasteras.)
+  - Schleswig 1 east (148,239) and renamed Kiel (key `kiel`, denmark via ownerFrom Roskilde, 2/7500).
+  - Added: Neva village (key `neva`) 298,275, Novgorod region, owner russia, 1/500, where St Petersburg will be:
+    russia/kievan_rus "Ust-Neva", hre "Newamünde", european "Ostium Nevae", default Finnish "Nevansuu".
+  - MAP ROUND 11 (edit_map.py CITY_MOVES): SSHIP's Kalmar 195,254 -> 194,255 (1 NW; no port pixel there);
+    governor Magnus Nilsson moved by hand in descr_strat. Only map_regions.tga taken from the tool (2 pixels changed).
+  - -> 14 Scandinavian towns + Neva. User: delete map.rwm, NEW campaign.

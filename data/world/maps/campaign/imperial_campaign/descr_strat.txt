@@ -15032,7 +15032,7 @@ unit		Hunters						exp 7 armour 0 weapon_lvl 0
 unit		Hunters						exp 0 armour 0 weapon_lvl 0
 
 ; KALMAR
-character	sub_faction denmark, Magnus Nilsson, named character, male, age 36, x 195, y 254 
+character	sub_faction denmark, Magnus Nilsson, named character, male, age 36, x 194, y 255 
 traits LoyaltyStarter 1 , GoodCommander 1 , ReligionStarter 1 , StrategyDread 2 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodBuilder 3
 army
 unit		Viking Raiders				exp 7 armour 0 weapon_lvl 0
