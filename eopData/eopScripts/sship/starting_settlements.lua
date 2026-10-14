@@ -1209,11 +1209,32 @@ local CORE_CASTLE = { [1] = "motte_and_bailey", [2] = "wooden_castle", [3] = "ca
 -- minor_roads chains for that reason). { chain, level } - a chain that is already there is left alone.
 local STARTER = {
     [1] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders1" } },
-    [2] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders1" },
+    [2] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms1" }, { "builders", "builders2" },   -- builders2 (user, 15 Oct)
             { "water_supply", "water1_wells" } },
     [3] = { { "hinterland_roads", "roads" }, { "hinterland_farms", "farms2" }, { "builders", "builders2" },
             { "water_supply", "water1_wells" } },
 }
+-- Bigger starter package for levels 2 and 3 (user, 15 Oct 2026): religious building tier 1 and barracks tier 1.
+-- Given ONLY when the settlement is created (new campaign), never again at map load - otherwise a temple or barracks
+-- that a later owner demolished would come back for free at every load. The temple follows the owner's religion
+-- (factionRecord.religionID: 0 catholic, 1 orthodox, 2 islam, 3 pagan); for rebels the religion with the biggest
+-- share in the region's main settlement. { city chain, level, castle chain, level }
+local EXTRA_LEVELS = { [2] = true, [3] = true }
+local TEMPLE_BY_RELIGION = {
+    [0] = { "temple_catholic", "small_church",   "temple_catholic_castle", "small_chapel" },
+    [1] = { "temple_orthodox", "small_church_o", "temple_orthodox_castle", "small_chapel_o" },
+    [2] = { "temple_muslim",   "small_masjid",   "temple_muslim_castle",   "c_small_masjid" },
+}
+local TEMPLE_PAGAN = {   -- pagan factions (cities only)
+    lithuania = { "temple_dievas", "dievas_altar" },
+    cumans    = { "temple_tengir", "tengir_altar" },
+    mongols   = { "temple_tengir", "tengir_altar" },
+}
+local BARRACKS_CITY   = { "barracks", "town_watch" }
+local BARRACKS_CASTLE = { "castle_barracks", "mustering_hall" }
+-- rebel-held added settlements get about half a stack (user, 15 Oct 2026): the entry's rebel list repeated
+-- until REBEL_GARRISON_SIZE units
+local REBEL_GARRISON_SIZE = 10
 -- Hinterland chains (roads, farms, mines): the build menu of an EXTRA settlement hides chains with
 -- edbEntry.isHinterland = 1. Experiment A (flag 0 for the whole game) made them buildable but the map road
 -- Nicaea - Prousa - Smyrna disappeared (user, 13 Oct 2026). So the flag is now 0 ONLY while the player has an
@@ -1706,6 +1727,11 @@ end
 local function giveGarrison(entry, sett, owner)
     local list = (get(owner, "name") == "slave") and entry.rebels or GARRISON[get(owner, "name")]
     if list == nil then log("no garrison for owner " .. tostring(get(owner, "name"))); return end
+    if get(owner, "name") == "slave" and #list > 0 then   -- half a stack for rebels (user, 15 Oct 2026)
+        local big = {}
+        for i = 1, REBEL_GARRISON_SIZE do big[i] = list[(i - 1) % #list + 1] end
+        list = big
+    end
     local okA, army = pcall(function() return sett:createArmyInSettlement() end)
     if not okA or army == nil then log("garrison: createArmyInSettlement failed " .. tostring(army)); return end
     local res = {}
@@ -1714,6 +1740,53 @@ local function giveGarrison(entry, sett, owner)
         res[#res + 1] = list[i] .. " " .. ((okU and unit ~= nil) and "ok" or ("FAILED " .. tostring(unit)))
     end
     log("garrison " .. tostring(get(sett, "name")) .. ": " .. table.concat(res, ", "))
+end
+
+-- religion of the temple to give: the owner's, or for rebels the biggest share in the region's main settlement
+local function templeFor(entry, sett, owner)
+    local fname = get(owner, "name")
+    if fname ~= "slave" then
+        if TEMPLE_PAGAN[fname] then
+            if entry.castle then return nil, "pagan castle" end
+            return TEMPLE_PAGAN[fname], "pagan " .. fname
+        end
+        local rid = get(get(owner, "factionRecord"), "religionID")
+        if TEMPLE_BY_RELIGION[rid] then return TEMPLE_BY_RELIGION[rid], "religion " .. tostring(rid) end
+        return nil, "religion " .. tostring(rid)
+    end
+    local probe = settlementByName(entry.capital) or sett
+    local best, bestShare = nil, -1
+    for rid = 0, 4 do
+        local ok, share = pcall(function() return probe:getReligion(rid) end)
+        if ok and type(share) == "number" and share > bestShare then best, bestShare = rid, share end
+    end
+    if TEMPLE_BY_RELIGION[best] then return TEMPLE_BY_RELIGION[best], "rebels, region religion " .. tostring(best) end
+    return nil, "rebels, region religion " .. tostring(best)
+end
+
+local function addIfMissing(sett, chain, level, done)
+    local okHas, has = pcall(function() return sett:buildingPresent(chain) end)
+    if okHas and has then done[#done + 1] = chain .. " already there"; return end
+    local okB, errB = pcall(function() sett:createBuilding(level) end)
+    local okNow, now = pcall(function() return sett:buildingPresent(chain) end)
+    done[#done + 1] = level .. " " .. ((okB and okNow and now) and "ok" or ("FAILED " .. tostring(errB)))
+end
+
+-- temple tier 1 + barracks tier 1 for levels 2 and 3, at creation only (user, 15 Oct 2026)
+local function giveExtras(entry, sett, owner)
+    if not EXTRA_LEVELS[entry.level] then return end
+    local done = {}
+    local temple, why = templeFor(entry, sett, owner)
+    if temple == nil then
+        done[#done + 1] = "no temple (" .. tostring(why) .. ")"
+    elseif entry.castle then
+        addIfMissing(sett, temple[3], temple[4], done)
+    else
+        addIfMissing(sett, temple[1], temple[2], done)
+    end
+    local b = entry.castle and BARRACKS_CASTLE or BARRACKS_CITY
+    addIfMissing(sett, b[1], b[2], done)
+    log("extra buildings " .. tostring(get(sett, "name")) .. " (" .. tostring(why) .. "): " .. table.concat(done, ", "))
 end
 
 local function createOne(entry)
@@ -1749,6 +1822,8 @@ local function createOne(entry)
     if not okW then log("ERROR garrison " .. name .. ": " .. tostring(errW)) end
     local okG, errG = pcall(giveStarter, entry, sett, "created")
     if not okG then log("ERROR starter " .. name .. ": " .. tostring(errG)) end
+    local okX, errX = pcall(giveExtras, entry, sett, owner)
+    if not okX then log("ERROR extras " .. name .. ": " .. tostring(errX)) end
     local okP = pcall(function() sett.settlementStats.population = entry.population end)
     pcall(function() sett.populationSize = entry.population end)
     applyName(entry, sett, "created")

@@ -110,6 +110,11 @@ SCANDINAVIA installed 15 Oct, read back identical: 21 towns; FIX 1 installed 15 
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
 SEAMS BATCH installed 15 Oct, read back identical: Pinsk, Giresun, Kath + MAP ROUND 12 (delete map.rwm, NEW campaign)
   - see the feature note. Waiting for the user's test.
+BUILDINGS + GARRISONS installed 15 Oct, read back identical (script only, NEW campaign): levels 2 and 3 start with
+  builders2, temple tier 1 (owner's religion; rebels = biggest religion share of the region's main settlement; castles
+  get the chapel / c_small_masjid) and barracks tier 1 (town_watch / mustering_hall) - extras ONLY at creation, never at
+  map load (no free rebuild after demolition). Rebel-held added towns get REBEL_GARRISON_SIZE = 10 units (entry's
+  rebel list repeated). Backup in backups/2026-10-15_before_buildings_garrisons/. Waiting for the user's test.
 DUMP stays on as the route checker (settler_check.lua deleted by the user, 14 Oct).
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a
