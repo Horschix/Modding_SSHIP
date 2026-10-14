@@ -366,3 +366,25 @@ other game regions later. The candidate list and every decision are in issue #4.
   (1 north; tile is SWAMP, relief 0 - watch it; Warcislaw + event position moved) = MAP ROUND 6 in edit_map.py (CITY_MOVES,
   only these 4 pixels differ). WARSAW added 230,222 (Plock region, Poland), level 1 / 500; GPS tile 231,222 is 2 from Czersk, so 1 west.
   DUMP routes: Plock-Warsaw, Wroclaw-Legnica, Krakow / Szczecin starts updated. map.rwm MUST be deleted again; NEW campaign.
+- POLAND + BALTIC confirmed tested, all fine (user, 15 Oct).
+
+## HUNGARY + CROATIA (15 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- Script only - no map edit, map.rwm stays; NEW campaign.
+- EU5 (07_cities_and_buildings.txt + definitions.txt) has only 15 towns in transdanubia / north_alfold / south_alfold /
+  slovakia / croatia / slavonia / slovenia / bosnia areas; 4 already SSHIP settlements (Zagreb, Esztergom, Dubrovnik,
+  Szekesfehervar) and Buda/Pest share one tile at this resolution - Pest dropped.
+- `docs/tools/anchors_hungary_croatia.txt`: 10 anchors (Esztergom, Vienna, Szekesfehervar, Varad, Gyulafehervar, Zagreb,
+  Zara, Vrhbosna, Ragusa, Ras), residuals <= 4.7 except Esztergom (9.5, 3.0). Transylvania/Wallachia/Moldavia (Romania)
+  left for a later region, same as Croatia/Dalmatia was held back from the Balkans round.
+- User (15 Oct): garrison hungary + hre = 2 Spear Militia (new owner factions for #4); Knin/Rijeka/Trieste start as
+  rebels; levels/population standard (EU5 city -> 3/15000, town -> 2/7500).
+- 10 towns added: Buda 224,190 (3/15000, Esztergom region); Pecs 211,178, Sopron 202,188 (Szekesfehervar region);
+  Szeged 226,179 (Varad region); Bratislava 205,193, Kosice 235,196, Krupina 223,195 (Esztergom region) - all hungary,
+  2/7500. Rebels (`ownerFrom`, since their region's own owner isn't rebel): Knin 194,163 (Zagreb region, ownerFrom
+  Zara), Rijeka 182,174 and Trieste 178,176 (Freiberg/hre region, ownerFrom Zara / Verona) - all 2/7500, garrison
+  2 Spear Militia (entry's own `rebels` list, not GARRISON.hungary/hre).
+  Names: hungary (Magyar) + hre (German) + european (Latin) + greek + middle_eastern + default, same table style as
+  earlier rounds; e.g. Buda/hre "Ofen", Bratislava hungary "Pozsony"/hre "Pressburg", Kosice hungary "Kassa"/hre "Kaschau".
+  New GARRISON entries: hungary, hre = 2 Spear Militia each (first time either faction owns a #4 settlement).
+  DUMP_PATHS +11 routes (Esztergom/Szekesfehervar/Varad/Zagreb/Freiberg hubs to the new towns, plus Rijeka-Trieste).
+- THEN: the user picks the next region for #4 (same method).
