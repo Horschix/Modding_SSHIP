@@ -64,7 +64,7 @@ RUSSIA + MUSCAT installed 14 Oct, read back identical: 15 Rus' towns (Tver, Mosc
   internalAffairs.lua counted every settlement over 10 as +10 revolt points; now 2.5 (installed 14 Oct, see note end).
   Offered, not taken (yet): Pskov-region towns, Tartu / Otepaa, Koknese / Jersika, Sohar, Julfar, Qatar.
 BALKANS + GREECE DONE, WORKS (user, 14 Oct): 25 towns, Rhodes a castle, Lycian coast corridor.
-POLAND + BALTIC installed 14 Oct, read back identical: 22 towns (script only, map.rwm stays, new campaign). Waiting for the user's test.
+POLAND + BALTIC installed 14 Oct, read back identical: 22 towns (+ fix 1: Krakow and Szczecin moved, map round 6 -> delete map.rwm, new campaign). Waiting for the user's test.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

@@ -557,17 +557,17 @@ local SETTS = {
       names = { hre = "Leslau", lithuania = "Vloclavekas", european = "Wladislavia", greek = "Vlotslávek", middle_eastern = "Wloclawek", default = "Włocławek" } },
     { key = "torun", x = 213, y = 226, capital = "Poznan", level = 1, population = 500,  -- founded 1233
       names = { hre = "Thorn", lithuania = "Torunė", european = "Thorunium", greek = "Toroún", middle_eastern = "Torun", default = "Toruń" } },
-    { key = "leczyca", x = 220, y = 221, capital = "Plock", level = 2, population = 7500,  -- castellany seat
-      names = { hre = "Lentschütz", lithuania = "Lenčica", european = "Lancicia", greek = "Lentsýtsa", middle_eastern = "Leczyca", default = "Łęczyca" } },
     { key = "czersk", x = 233, y = 220, capital = "Plock", level = 1, population = 1000,  -- doubtful
       names = { hre = "Tschersk", lithuania = "Čerskas", european = "Czersca", greek = "Tsersk", middle_eastern = "Czersk", default = "Czersk" } },
+    { key = "warsaw", x = 230, y = 222, capital = "Plock", level = 1, population = 500,  -- user 14 Oct (Jazdow / Warsaw, tile 1 west of GPS: spacing to Czersk)
+      names = { hre = "Warschau", lithuania = "Varšuva", russia = "Varshava", kievan_rus = "Varshava", european = "Varsovia", greek = "Varsovía", middle_eastern = "Varşova", poland = "Warszawa", denmark = "Warschau", default = "Warszawa" } },
     { key = "sandomierz", x = 236, y = 211, capital = "Krakow", level = 2, population = 7500,  -- existed 1132
       names = { hre = "Sandomir", lithuania = "Sandomiras", russia = "Sudomir", kievan_rus = "Sudomir", european = "Sandomiria", greek = "Sandomír", middle_eastern = "Sandomierz", default = "Sandomierz" } },
     { key = "lublin", x = 241, y = 215, capital = "Krakow", level = 1, population = 1000,  -- first named 1198
       names = { hre = "Lublin", lithuania = "Liublinas", russia = "Lyublin", kievan_rus = "Lyublin", european = "Lublinum", greek = "Lúblin", middle_eastern = "Lublin", default = "Lublin" } },
     { key = "opole", x = 207, y = 210, capital = "Wroclaw", level = 2, population = 7500,  -- EU5 town
       names = { hre = "Oppeln", lithuania = "Opolė", european = "Oppolia", greek = "Opóle", middle_eastern = "Opole", default = "Opole" } },
-    { key = "legnica", x = 193, y = 214, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
+    { key = "legnica", x = 194, y = 214, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
       names = { hre = "Liegnitz", lithuania = "Lignica", european = "Legnicia", greek = "Légnitsa", middle_eastern = "Legnica", default = "Legnica" } },
     { key = "glogow", x = 193, y = 217, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
       names = { hre = "Glogau", lithuania = "Glogovas", european = "Glogovia", greek = "Glogóv", middle_eastern = "Glogow", default = "Głogów" } },
@@ -832,9 +832,9 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Ras-Skopje", 231, 153, 233, 148 }, { "Sredets-Nis", 247, 152, 237, 156 }, { "Nis(Belgrade)-Branicevo", 228, 168, 235, 166 },
     { "Tarnovo-Drastar", 262, 156, 274, 163 }, { "Skadar-Kotor", 218, 149, 213, 152 }, { "Durazzo-Valona", 218, 142, 219, 137 },
     { "Thessalonica-Ohrid", 243, 139, 230, 145 }, { "Arta-Ioannina", 228, 128, 225, 132 },
-    { "Poznan-Gniezno", 198, 222, 204, 223 }, { "Poznan-Torun", 198, 222, 213, 226 }, { "Plock-Leczyca", 226, 224, 220, 221 },
-    { "Krakow-Sandomierz", 224, 208, 236, 211 }, { "Krakow-Lublin", 224, 208, 241, 215 }, { "Wroclaw-Opole", 199, 214, 207, 210 },
-    { "Szczecin-Wolin", 180, 230, 183, 231 }, { "Szczecin-Wolgast", 180, 230, 176, 234 }, { "Gdansk-Slupsk", 212, 235, 200, 237 },
+    { "Poznan-Gniezno", 198, 222, 204, 223 }, { "Poznan-Torun", 198, 222, 213, 226 }, { "Plock-Warsaw", 226, 224, 230, 222 },
+    { "Krakow-Sandomierz", 218, 208, 236, 211 }, { "Krakow-Lublin", 218, 208, 241, 215 }, { "Wroclaw-Opole", 199, 214, 207, 210 }, { "Wroclaw-Legnica", 199, 214, 194, 214 },
+    { "Szczecin-Wolin", 180, 231, 183, 231 }, { "Szczecin-Wolgast", 180, 231, 176, 234 }, { "Gdansk-Slupsk", 212, 235, 200, 237 },
     { "Kernave-Kaunas", 250, 242, 246, 238 }, { "Kolyvan-Tartu", 255, 273, 270, 265 }, { "Riga-Koknese", 253, 256, 260, 252 },
     { "Polotsk-Jersika", 282, 244, 265, 250 }, { "Lubeck-Stralsund", 155, 233, 171, 235 },
 }

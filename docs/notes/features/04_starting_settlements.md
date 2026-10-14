@@ -360,3 +360,9 @@ other game regions later. The candidate list and every decision are in issue #4.
   Names: Polish / Lithuanian / Russian for those factions, German for hre + denmark (Thorn, Wollin, Kolberg, Dorpat ...), Latin,
   Greek, Turkish; `default` (rebels) = local name. GARRISON poland + lithuania = 2 EE Spear Militia (rebels: own list).
   DUMP_PATHS +14 routes (Poland / Baltic). 200 entries in SETTS, no duplicate tiles.
+- POLAND + BALTIC fix 1 (user, 14 Oct), installed, 4 files read back identical (map_regions.tga, starting_settlements.lua,
+  descr_strat.txt, descr_events.txt): Lancicia = Leczyca removed (21 towns left + Warsaw = 22); Legnica 193,214 -> 194,214;
+  SSHIP's own Krakow city pixel 224,208 -> 218,208 (6 west; governor Boleslaw Piast moved too) and Szczecin 180,230 -> 180,231
+  (1 north; tile is SWAMP, relief 0 - watch it; Warcislaw + event position moved) = MAP ROUND 6 in edit_map.py (CITY_MOVES,
+  only these 4 pixels differ). WARSAW added 230,222 (Plock region, Poland), level 1 / 500; GPS tile 231,222 is 2 from Czersk, so 1 west.
+  DUMP routes: Plock-Warsaw, Wroclaw-Legnica, Krakow / Szczecin starts updated. map.rwm MUST be deleted again; NEW campaign.

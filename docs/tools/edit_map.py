@@ -28,6 +28,9 @@ PORT_OLD, PORT_NEW = (335, 146), (331, 146)   # a port pixel must be a COASTAL L
 SEA = (41, 140, 233)
 SINOP_RGB = tuple(int(v) for v in '255 255 176'.split())
 NICAEA_RGB = (33, 59, 131)
+# round 6 (14 Oct, user): SSHIP's own cities moved - (old, new). New tile must be land of the SAME region (its colour is read there).
+CITY_MOVES = [((224, 208), (218, 208)),   # Krakow 6 tiles west
+              ((180, 230), (180, 231))]   # Szczecin 1 tile north (new tile = swamp)
 HILLS = (128, 128, 64)
 # Kutahya 290,130 -> 291,130 -> 291,129 -> 292,129 -> hills 293,129 / 293,128 -> ... -> Afyon 296,125
 # Nicaea -> plains 293,133 / 293,132 -> 293,131 -> 293,130 -> hills 293,129
@@ -165,6 +168,11 @@ def main(src, out):
     a[px(NICAEA_NEW)][:3] = (0, 0, 0)
     a[px(PORT_OLD)][:3] = SINOP_RGB      # the old port tile is land: it becomes part of the Sinop region
     a[px(PORT_NEW)][:3] = (255, 255, 255)
+    for o, n in CITY_MOVES:
+        assert tuple(a[px(o)][:3]) == (0, 0, 0) and tuple(a[px(n)][:3]) not in ((0, 0, 0), (255, 255, 255), SEA)
+        a[px(o)][:3] = a[px(n)][:3]
+        a[px(n)][:3] = (0, 0, 0)
+        print("regions: city", o, "->", n)
     write_tga(m, a, os.path.join(base_out, "map_regions.tga"))
     print("regions: Nicaea", NICAEA_OLD, "->", NICAEA_NEW, ", Sinop port", PORT_OLD, "->", PORT_NEW)
 

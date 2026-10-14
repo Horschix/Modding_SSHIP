@@ -6432,7 +6432,7 @@ unit		EE Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
 
 ;KRAKOW
-character	Boleslaw Piast, named character, male, leader, battle_model king_general, age 47, x 224, y 208, portrait Cath_noble_mustache
+character	Boleslaw Piast, named character, male, leader, battle_model king_general, age 47, x 218, y 208, portrait Cath_noble_mustache
 traits Factionleader 3 , LogisticalSkill 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Military_Edu 2 , Intelligent 7 , GoodCommander 1, Royal_Blood_Polish 1 , Royal_Relation_HRE 1 , WifeIsHRE 1 , PublicAtheism 1 , Anger 1 , Offensive_To_Nobles 1 , HaveChilds 1 , ReligionStarter 1 , KingsAuthority 3 , Protector 1
 army
 unit		NE Bodyguard				exp 3 armour 0 weapon_lvl 0
@@ -15206,7 +15206,7 @@ unit		Hunters						exp 7 armour 0 weapon_lvl 0
 unit		Hunters						exp 0 armour 0 weapon_lvl 0
 
 ; SZCZECIN
-character	sub_faction poland, Warcislaw, named character, male, age 41, x 180, y 230 
+character	sub_faction poland, Warcislaw, named character, male, age 41, x 180, y 231 
 traits LoyaltyStarter 1 , Intelligent 6 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Ai_MoveFix 1 
 army
 unit		Dismounted Polish Nobles	exp 4 armour 0 weapon_lvl 0
