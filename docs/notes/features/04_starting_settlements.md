@@ -502,3 +502,17 @@ other game regions later. The candidate list and every decision are in issue #4.
   - Romania leftover: SSHIP's Byzantine priest Kosmas Attikos stood on Isaccea's tile 283,171 (rebel town) -> 282,164 next
     to Constanta (descr_strat.txt).
   - Iberia now 32 towns; 262 entries in SETTS. NEW campaign; map.rwm stays (no map edit).
+
+## ITALY + ISLANDS (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- Script only - no map edit, map.rwm stays; NEW campaign. Backup: `backups/2026-10-14_before_italy/`.
+- EU5 `#Italy` block: 24 cities + 61 towns; 13 are SSHIP's own. Anchors `docs/tools/anchors_italy.txt` (17, residuals <= 2.4).
+  Placement: ok() of place.py with >= 4 open neighbours (coastal towns), 4-tile spacing between new towns, 3 to others.
+- User: "add all" = 34 core + 19 optional + Bonifacio (Corsica, 144,145, part of Cagliari_Province) + Malta (Mdina 181,104;
+  Malta = 3 woodland tiles of Palermo_Province, relief 28 - should be passable; user: if not, make it passable). 55 towns:
+  sicily 18, papal_states 4, hre 1 (Udine), rebels 32 (north Italy communes, Sardinia, Corsica, Capua, Gaeta ownerFrom Naples,
+  Volterra ownerFrom Florence); Salerno ownerFrom Palermo (sicily). Levels: EU5 city 3/15000, town 2/7500 (+ Capua, Trani);
+  L'Aquila, Villa di Chiesa (Iglesias) 1/500 (late); Udine, Mdina, Bonifacio 1/1000. Garrison 2 Spear Militia (sicily,
+  papal_states, venice, pisa, rebels).
+- Names: Italian for sicily / papal_states / venice / pisa / rebels, German hre, Latin european, Greek, Arabic, Turkish.
+- Not placeable: Amalfi, Chioggia, Piacenza, Bergamo, Lodi, Monza, Pistoia, Rimini, Imola, Cesena, Reggio Emilia, Macerata,
+  Benevento, Mazara, Crotone, Trento, Alessandria, Manfredonia. DUMP_PATHS +55 (Italy block). Check image `italy_check.png`.

@@ -87,11 +87,10 @@ IBERIA installed 14 Oct, read back identical (script only, NEW campaign, map.rwm
   portugal 4, moors 21; Lleida / Tortosa / Cuenca / Morella moors via ownerFrom Valencia)). FIX 1 installed 14 Oct (read
   back identical): 13 removed, Bilbao added, Algeciras 1 east, SSHIP's Salamanca renamed Valladolid (text file) and our
   Salamanca on 31,138, Isaccea priest moved -> 32 towns. IBERIA DONE (user, 14 Oct).
-ITALY + ISLANDS proposed 14 Oct (user picked it next): 34 core + 19 optional towns, anchors `docs/tools/anchors_italy.txt`,
-  4-tile spacing between new towns, coastal rule n>=4 open neighbours. Waiting for the user's answers (optional towns,
-  names, owners, Corsica/Bonifacio). Nothing installed yet.
-  THEN: next region for #4. Not done yet: HRE (Germany, Bohemia, Low Countries), Italy (+ islands), France, British
-  Isles, Scandinavia. Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
+ITALY + ISLANDS installed 14 Oct, read back identical (script only, NEW campaign, map.rwm stays): 55 towns incl.
+  Mdina (Malta) and Bonifacio (Corsica) - see the feature note. Waiting for the user's test (Malta passable?).
+  THEN: next region. Left: HRE (Germany, Bohemia, Low Countries), France, British Isles, Scandinavia.
+  Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.

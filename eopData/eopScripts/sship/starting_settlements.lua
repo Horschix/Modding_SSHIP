@@ -743,6 +743,149 @@ local SETTS = {
       names = { spain = "Denia", portugal = "Dénia", aragon = "Dénia", arabic = "Daniya", european = "Dianium", default = "Denia" } },
     { key = "bilbao", x = 56, y = 156, capital = "Pamplona", ownerFrom = "Burgos", level = 1, population = 500,  -- added (user, 14 Oct, Iberia fix 1); founded 1300 -> 1/500; Biscay under Castile
       names = { spain = "Bilbao", portugal = "Bilbau", aragon = "Bilbao", arabic = "Bilbaw", european = "Bilbaum", default = "Bilbo" } },
+    -- ITALY + ISLANDS (user, 14 Oct 2026): all proposed + optional towns, Malta (Mdina), Bonifacio (Corsica)
+    { key = "messina", x = 188, y = 121, capital = "Palermo", level = 3, population = 15000,  -- EU5 city; owner sicily
+      names = { sicily = "Messina", papal_states = "Messina", venice = "Messina", pisa = "Messina", hre = "Messina", european = "Messana", greek = "Messíni", arabic = "Massina", middle_eastern = "Mesina", default = "Messina" } },
+    { key = "salerno", x = 186, y = 140, capital = "Naples", ownerFrom = "Palermo", level = 2, population = 7500,  -- EU5 town; Roger II's since 1127; owner sicily
+      names = { sicily = "Salerno", papal_states = "Salerno", venice = "Salerno", pisa = "Salerno", hre = "Salern", european = "Salernum", greek = "Salérno", arabic = "Salirnu", middle_eastern = "Salerno", default = "Salerno" } },
+    { key = "syracuse", x = 187, y = 112, capital = "Palermo", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Siracusa", papal_states = "Siracusa", venice = "Siracusa", pisa = "Siracusa", hre = "Syrakus", european = "Syracusae", greek = "Syrakoúsai", arabic = "Saraqusa", middle_eastern = "Sirakuza", default = "Siracusa" } },
+    { key = "taranto", x = 202, y = 138, capital = "Bari", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Taranto", papal_states = "Taranto", venice = "Taranto", pisa = "Taranto", hre = "Tarent", european = "Tarentum", greek = "Táras", arabic = "Tarant", middle_eastern = "Taranto", default = "Taranto" } },
+    { key = "padova", x = 164, y = 172, capital = "Verona", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Padova", papal_states = "Padova", venice = "Padova", pisa = "Padova", hre = "Padua", european = "Patavium", greek = "Patávion", arabic = "Badwa", middle_eastern = "Padova", default = "Padova" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "pavia", x = 144, y = 171, capital = "Milan", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Pavia", papal_states = "Pavia", venice = "Pavia", pisa = "Pavia", hre = "Pavia", european = "Papia", greek = "Papía", arabic = "Babiya", middle_eastern = "Pavya", default = "Pavia" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "cremona", x = 150, y = 171, capital = "Milan", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Cremona", papal_states = "Cremona", venice = "Cremona", pisa = "Cremona", hre = "Cremona", european = "Cremona", greek = "Kremóna", arabic = "Krimuna", middle_eastern = "Kremona", default = "Cremona" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "lucca", x = 156, y = 160, capital = "Florence", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Lucca", papal_states = "Lucca", venice = "Lucca", pisa = "Lucca", hre = "Lucca", european = "Luca", greek = "Loúka", arabic = "Lukka", middle_eastern = "Lukka", default = "Lucca" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "siena", x = 159, y = 155, capital = "Florence", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Siena", papal_states = "Siena", venice = "Siena", pisa = "Siena", hre = "Siena", european = "Sena", greek = "Siéna", arabic = "Siyena", middle_eastern = "Siyena", default = "Siena" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "brescia", x = 154, y = 173, capital = "Verona", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Brescia", papal_states = "Brescia", venice = "Brescia", pisa = "Brescia", hre = "Brescia", european = "Brixia", greek = "Bríxia", arabic = "Brisha", middle_eastern = "Breşa", default = "Brescia" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "parma", x = 153, y = 167, capital = "Genoa", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Parma", papal_states = "Parma", venice = "Parma", pisa = "Parma", hre = "Parma", european = "Parma", greek = "Párma", arabic = "Barma", middle_eastern = "Parma", default = "Parma" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "ferrara", x = 164, y = 167, capital = "Bologna", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Ferrara", papal_states = "Ferrara", venice = "Ferrara", pisa = "Ferrara", hre = "Ferrara", european = "Ferraria", greek = "Ferrára", arabic = "Farrara", middle_eastern = "Ferrara", default = "Ferrara" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "mantova", x = 157, y = 169, capital = "Verona", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Mantova", papal_states = "Mantova", venice = "Mantova", pisa = "Mantova", hre = "Mantua", european = "Mantua", greek = "Mantoúa", arabic = "Mantuwa", middle_eastern = "Mantova", default = "Mantova" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "perugia", x = 167, y = 155, capital = "Rome", level = 3, population = 15000,  -- EU5 city; owner papal_states
+      names = { sicily = "Perugia", papal_states = "Perugia", venice = "Perugia", pisa = "Perugia", hre = "Perugia", european = "Perusia", greek = "Peroúsia", arabic = "Biruja", middle_eastern = "Peruja", default = "Perugia" } },
+    { key = "ascoli", x = 176, y = 154, capital = "Ancona", level = 3, population = 15000,  -- EU5 city; owner slave
+      names = { sicily = "Ascoli", papal_states = "Ascoli", venice = "Ascoli", pisa = "Ascoli", hre = "Ascoli", european = "Asculum", greek = "Áskoulon", arabic = "Askuli", middle_eastern = "Askoli", default = "Ascoli" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "capua", x = 181, y = 142, capital = "Naples", level = 2, population = 7500,  -- extra; principality capital; owner slave
+      names = { sicily = "Capua", papal_states = "Capua", venice = "Capua", pisa = "Capua", hre = "Capua", european = "Capua", greek = "Kapýi", arabic = "Qabuwa", middle_eastern = "Kapua", default = "Capua" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "catania", x = 186, y = 116, capital = "Palermo", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Catania", papal_states = "Catania", venice = "Catania", pisa = "Catania", hre = "Catania", european = "Catina", greek = "Katáni", arabic = "Qataniya", middle_eastern = "Katanya", default = "Catania" } },
+    { key = "turin", x = 133, y = 170, capital = "Milan", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Torino", papal_states = "Torino", venice = "Torino", pisa = "Torino", hre = "Turin", european = "Taurinum", greek = "Tavrínon", arabic = "Turinu", middle_eastern = "Torino", default = "Torino" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "modena", x = 157, y = 165, capital = "Florence", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Modena", papal_states = "Modena", venice = "Modena", pisa = "Modena", hre = "Modena", european = "Mutina", greek = "Moutína", arabic = "Mudina", middle_eastern = "Modena", default = "Modena" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "ravenna", x = 167, y = 163, capital = "Bologna", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Ravenna", papal_states = "Ravenna", venice = "Ravenna", pisa = "Ravenna", hre = "Raben", european = "Ravenna", greek = "Rabénna", arabic = "Rafinna", middle_eastern = "Ravenna", default = "Ravenna" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "vicenza", x = 160, y = 173, capital = "Verona", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Vicenza", papal_states = "Vicenza", venice = "Vicenza", pisa = "Vicenza", hre = "Vicenza", european = "Vicetia", greek = "Bikétia", arabic = "Fichensa", middle_eastern = "Viçenza", default = "Vicenza" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "treviso", x = 166, y = 176, capital = "Verona", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Treviso", papal_states = "Treviso", venice = "Treviso", pisa = "Treviso", hre = "Tarvis", european = "Tarvisium", greek = "Tarbísion", arabic = "Tarfiz", middle_eastern = "Treviso", default = "Treviso" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "trani", x = 196, y = 142, capital = "Bari", level = 2, population = 7500,  -- extra; major Apulian port; owner sicily
+      names = { sicily = "Trani", papal_states = "Trani", venice = "Trani", pisa = "Trani", hre = "Trani", european = "Turenum", greek = "Tránion", arabic = "Tarani", middle_eastern = "Trani", default = "Trani" } },
+    { key = "brindisi", x = 207, y = 138, capital = "Bari", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Brindisi", papal_states = "Brindisi", venice = "Brindisi", pisa = "Brindisi", hre = "Brindisi", european = "Brundisium", greek = "Brentísion", arabic = "Brindizi", middle_eastern = "Brindizi", default = "Brindisi" } },
+    { key = "gaeta", x = 176, y = 143, capital = "Rome", ownerFrom = "Naples", level = 2, population = 7500,  -- EU5 town; independent duchy until 1135; owner slave
+      names = { sicily = "Gaeta", papal_states = "Gaeta", venice = "Gaeta", pisa = "Gaeta", hre = "Gaeta", european = "Caieta", greek = "Kaiéti", arabic = "Ghayta", middle_eastern = "Gaeta", default = "Gaeta" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "trapani", x = 168, y = 118, capital = "Palermo", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Trapani", papal_states = "Trapani", venice = "Trapani", pisa = "Trapani", hre = "Trapani", european = "Drepanum", greek = "Drépanon", arabic = "Itrabinish", middle_eastern = "Trapani", default = "Trapani" } },
+    { key = "girgenti", x = 175, y = 115, capital = "Palermo", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Girgenti", papal_states = "Girgenti", venice = "Girgenti", pisa = "Girgenti", hre = "Girgenti", european = "Agrigentum", greek = "Akrágas", arabic = "Kirkint", middle_eastern = "Kirkint", default = "Girgenti" } },
+    { key = "viterbo", x = 166, y = 150, capital = "Rome", level = 2, population = 7500,  -- EU5 town; owner papal_states
+      names = { sicily = "Viterbo", papal_states = "Viterbo", venice = "Viterbo", pisa = "Viterbo", hre = "Viterbo", european = "Viterbium", greek = "Biterbo", arabic = "Fitirbu", middle_eastern = "Viterbo", default = "Viterbo" } },
+    { key = "arezzo", x = 163, y = 157, capital = "Florence", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Arezzo", papal_states = "Arezzo", venice = "Arezzo", pisa = "Arezzo", hre = "Arezzo", european = "Arretium", greek = "Arrétion", arabic = "Arizzu", middle_eastern = "Arezzo", default = "Arezzo" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "spoleto", x = 171, y = 152, capital = "Rome", level = 2, population = 7500,  -- EU5 town; owner papal_states
+      names = { sicily = "Spoleto", papal_states = "Spoleto", venice = "Spoleto", pisa = "Spoleto", hre = "Spoleto", european = "Spoletium", greek = "Spolítion", arabic = "Isbuliti", middle_eastern = "Spoleto", default = "Spoleto" } },
+    { key = "como", x = 142, y = 177, capital = "Milan", level = 2, population = 7500,  -- extra; destroyed by Milan 1127, rebuilt; owner slave
+      names = { sicily = "Como", papal_states = "Como", venice = "Como", pisa = "Como", hre = "Como", european = "Comum", greek = "Kómon", arabic = "Kumu", middle_eastern = "Komo", default = "Como" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "melfi", x = 191, y = 140, capital = "Bari", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Melfi", papal_states = "Melfi", venice = "Melfi", pisa = "Melfi", hre = "Melfi", european = "Melphia", greek = "Mélfion", arabic = "Malfi", middle_eastern = "Melfi", default = "Melfi" } },
+    { key = "sassari", x = 139, y = 139, capital = "Cagliari", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Sassari", papal_states = "Sassari", venice = "Sassari", pisa = "Sassari", hre = "Sassari", european = "Sassaris", greek = "Sássari", arabic = "Sasari", middle_eastern = "Sassari", default = "Sassari" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "oristano", x = 139, y = 133, capital = "Cagliari", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Oristano", papal_states = "Oristano", venice = "Oristano", pisa = "Oristano", hre = "Oristano", european = "Aristianis", greek = "Aristiáni", arabic = "Uristanu", middle_eastern = "Oristano", default = "Oristano" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "lecce", x = 208, y = 134, capital = "Bari", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Lecce", papal_states = "Lecce", venice = "Lecce", pisa = "Lecce", hre = "Lecce", european = "Lupiae", greek = "Loupíai", arabic = "Litshi", middle_eastern = "Leçe", default = "Lecce" } },
+    { key = "foggia", x = 190, y = 144, capital = "Bari", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Foggia", papal_states = "Foggia", venice = "Foggia", pisa = "Foggia", hre = "Foggia", european = "Fovea", greek = "Fógia", arabic = "Fujja", middle_eastern = "Foca", default = "Foggia" } },
+    { key = "lanciano", x = 182, y = 149, capital = "Ancona", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Lanciano", papal_states = "Lanciano", venice = "Lanciano", pisa = "Lanciano", hre = "Lanciano", european = "Anxanum", greek = "Ánxanon", arabic = "Lanshanu", middle_eastern = "Lançano", default = "Lanciano" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "asti", x = 137, y = 169, capital = "Genoa", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Asti", papal_states = "Asti", venice = "Asti", pisa = "Asti", hre = "Asti", european = "Hasta", greek = "Ásti", arabic = "Asti", middle_eastern = "Asti", default = "Asti" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "savona", x = 139, y = 165, capital = "Genoa", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Savona", papal_states = "Savona", venice = "Savona", pisa = "Savona", hre = "Savona", european = "Savo", greek = "Saóna", arabic = "Safuna", middle_eastern = "Savona", default = "Savona" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "novara", x = 140, y = 173, capital = "Milan", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Novara", papal_states = "Novara", venice = "Novara", pisa = "Novara", hre = "Novara", european = "Novaria", greek = "Nobária", arabic = "Nufara", middle_eastern = "Novara", default = "Novara" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "volterra", x = 155, y = 156, capital = "Pisa", ownerFrom = "Florence", level = 2, population = 7500,  -- EU5 town; bishop city, not Pisan; owner slave
+      names = { sicily = "Volterra", papal_states = "Volterra", venice = "Volterra", pisa = "Volterra", hre = "Volterra", european = "Volaterrae", greek = "Ouolatérrai", arabic = "Fultirra", middle_eastern = "Volterra", default = "Volterra" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "pesaro", x = 171, y = 160, capital = "Ancona", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Pesaro", papal_states = "Pesaro", venice = "Pesaro", pisa = "Pesaro", hre = "Pesaro", european = "Pisaurum", greek = "Písauron", arabic = "Bizaru", middle_eastern = "Pezaro", default = "Pesaro" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "urbino", x = 167, y = 159, capital = "Bologna", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Urbino", papal_states = "Urbino", venice = "Urbino", pisa = "Urbino", hre = "Urbino", european = "Urbinum", greek = "Ourbínon", arabic = "Urbinu", middle_eastern = "Urbino", default = "Urbino" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "prato", x = 160, y = 161, capital = "Florence", level = 2, population = 7500,  -- EU5 town; owner slave
+      names = { sicily = "Prato", papal_states = "Prato", venice = "Prato", pisa = "Prato", hre = "Prato", european = "Pratum", greek = "Práto", arabic = "Bratu", middle_eastern = "Prato", default = "Prato" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "tivoli", x = 172, y = 147, capital = "Rome", level = 2, population = 7500,  -- EU5 town; owner papal_states
+      names = { sicily = "Tivoli", papal_states = "Tivoli", venice = "Tivoli", pisa = "Tivoli", hre = "Tivoli", european = "Tibur", greek = "Tíbour", arabic = "Tibuli", middle_eastern = "Tivoli", default = "Tivoli" } },
+    { key = "aquila", x = 176, y = 150, capital = "Ancona", level = 1, population = 500,  -- founded 1254; owner slave
+      names = { sicily = "L'Aquila", papal_states = "L'Aquila", venice = "L'Aquila", pisa = "L'Aquila", hre = "Aquila", european = "Aquila", greek = "Ákyla", arabic = "Akila", middle_eastern = "Akila", default = "L'Aquila" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "matera", x = 197, y = 138, capital = "Bari", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Matera", papal_states = "Matera", venice = "Matera", pisa = "Matera", hre = "Matera", european = "Matheola", greek = "Matéra", arabic = "Matira", middle_eastern = "Matera", default = "Matera" } },
+    { key = "potenza", x = 191, y = 136, capital = "Bari", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Potenza", papal_states = "Potenza", venice = "Potenza", pisa = "Potenza", hre = "Potenza", european = "Potentia", greek = "Potentía", arabic = "Butinsa", middle_eastern = "Potensa", default = "Potenza" } },
+    { key = "catanzaro", x = 199, y = 126, capital = "Reggio", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Catanzaro", papal_states = "Catanzaro", venice = "Catanzaro", pisa = "Catanzaro", hre = "Catanzaro", european = "Catacium", greek = "Katantzárion", arabic = "Qatansar", middle_eastern = "Katanzaro", default = "Catanzaro" } },
+    { key = "cefalu", x = 179, y = 117, capital = "Palermo", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Cefalù", papal_states = "Cefalù", venice = "Cefalù", pisa = "Cefalù", hre = "Cefalù", european = "Cephaloedium", greek = "Kefaloídion", arabic = "Jafludi", middle_eastern = "Kefalu", default = "Cefalù" } },
+    { key = "modica", x = 183, y = 111, capital = "Palermo", level = 2, population = 7500,  -- EU5 town; owner sicily
+      names = { sicily = "Modica", papal_states = "Modica", venice = "Modica", pisa = "Modica", hre = "Modica", european = "Motyca", greek = "Mótyka", arabic = "Mudiqa", middle_eastern = "Modika", default = "Modica" } },
+    { key = "udine", x = 172, y = 178, capital = "Freiberg", level = 1, population = 1000,  -- castle in 1132; owner hre
+      names = { sicily = "Udine", papal_states = "Udine", venice = "Udine", pisa = "Udine", hre = "Weiden", european = "Utinum", greek = "Oúdine", arabic = "Udini", middle_eastern = "Udine", default = "Udine" } },
+    { key = "iglesias", x = 139, y = 129, capital = "Cagliari", level = 1, population = 500,  -- Villa di Chiesa, founded 13th c.; owner slave
+      names = { sicily = "Villa di Chiesa", papal_states = "Villa di Chiesa", venice = "Villa di Chiesa", pisa = "Villa di Chiesa", hre = "Villa di Chiesa", european = "Villa Ecclesiae", greek = "Ekklisía", arabic = "Iglisiyas", middle_eastern = "Kilise", default = "Villa di Chiesa" },
+      rebels = { "Spear Militia", "Spear Militia" } },
+    { key = "malta", x = 181, y = 104, capital = "Palermo", level = 1, population = 1000,  -- Mdina; size doubtful; Malta tiles are woodland; owner sicily
+      names = { sicily = "Mdina", papal_states = "Mdina", venice = "Mdina", pisa = "Mdina", hre = "Mdina", european = "Melita", greek = "Melíti", arabic = "Madina", middle_eastern = "Medine", default = "Mdina" } },
+    { key = "bonifacio", x = 144, y = 145, capital = "Cagliari", level = 1, population = 1000,  -- castle town, founded 828; owner slave
+      names = { sicily = "Bonifacio", papal_states = "Bonifacio", venice = "Bonifacio", pisa = "Bonifacio", hre = "Bonifacio", european = "Bonifacium", greek = "Bonifátsio", arabic = "Bunifasyu", middle_eastern = "Bonifacio", default = "Bonifacio" },
+      rebels = { "Spear Militia", "Spear Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -767,6 +910,10 @@ local GARRISON = {
     spain     = { "Spear Militia", "Spear Militia" },         -- Iberia: cheapest spear militia (14 Oct)
     portugal  = { "Spear Militia", "Spear Militia" },         -- Iberia (14 Oct)
     aragon    = { "Spear Militia", "Spear Militia" },         -- Iberia (14 Oct)
+    sicily    = { "Spear Militia", "Spear Militia" },         -- Italy (14 Oct)
+    papal_states = { "Spear Militia", "Spear Militia" },      -- Italy (14 Oct)
+    venice    = { "Spear Militia", "Spear Militia" },         -- Italy (14 Oct)
+    pisa      = { "Spear Militia", "Spear Militia" },         -- Italy (14 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -1032,6 +1179,62 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Sevilla-algeciras", 36, 114, 39, 107 },
     { "Murcia-denia", 69, 121, 77, 125 },
     { "Burgos-bilbao", 51, 150, 56, 156 },
+    -- Italy + islands (14 Oct 2026)
+    { "Palermo-messina", 173, 119, 188, 121 },
+    { "Naples-salerno", 182, 139, 186, 140 },
+    { "Palermo-syracuse", 173, 119, 187, 112 },
+    { "Bari-taranto", 199, 141, 202, 138 },
+    { "Verona-padova", 157, 172, 164, 172 },
+    { "Milan-pavia", 144, 174, 144, 171 },
+    { "Milan-cremona", 144, 174, 150, 171 },
+    { "Florence-lucca", 160, 158, 156, 160 },
+    { "Florence-siena", 160, 158, 159, 155 },
+    { "Verona-brescia", 157, 172, 154, 173 },
+    { "Genoa-parma", 142, 166, 153, 167 },
+    { "Bologna-ferrara", 161, 166, 164, 167 },
+    { "Verona-mantova", 157, 172, 157, 169 },
+    { "Rome-perugia", 169, 146, 167, 155 },
+    { "Ancona-ascoli", 174, 159, 176, 154 },
+    { "Naples-capua", 182, 139, 181, 142 },
+    { "Palermo-catania", 173, 119, 186, 116 },
+    { "Milan-turin", 144, 174, 133, 170 },
+    { "Florence-modena", 160, 158, 157, 165 },
+    { "Bologna-ravenna", 161, 166, 167, 163 },
+    { "Verona-vicenza", 157, 172, 160, 173 },
+    { "Verona-treviso", 157, 172, 166, 176 },
+    { "Bari-trani", 199, 141, 196, 142 },
+    { "Bari-brindisi", 199, 141, 207, 138 },
+    { "Rome-gaeta", 169, 146, 176, 143 },
+    { "Palermo-trapani", 173, 119, 168, 118 },
+    { "Palermo-girgenti", 173, 119, 175, 115 },
+    { "Rome-viterbo", 169, 146, 166, 150 },
+    { "Florence-arezzo", 160, 158, 163, 157 },
+    { "Rome-spoleto", 169, 146, 171, 152 },
+    { "Milan-como", 144, 174, 142, 177 },
+    { "Bari-melfi", 199, 141, 191, 140 },
+    { "Cagliari-sassari", 142, 129, 139, 139 },
+    { "Cagliari-oristano", 142, 129, 139, 133 },
+    { "Bari-lecce", 199, 141, 208, 134 },
+    { "Bari-foggia", 199, 141, 190, 144 },
+    { "Ancona-lanciano", 174, 159, 182, 149 },
+    { "Genoa-asti", 142, 166, 137, 169 },
+    { "Genoa-savona", 142, 166, 139, 165 },
+    { "Milan-novara", 144, 174, 140, 173 },
+    { "Pisa-volterra", 153, 159, 155, 156 },
+    { "Ancona-pesaro", 174, 159, 171, 160 },
+    { "Bologna-urbino", 161, 166, 167, 159 },
+    { "Florence-prato", 160, 158, 160, 161 },
+    { "Rome-tivoli", 169, 146, 172, 147 },
+    { "Ancona-aquila", 174, 159, 176, 150 },
+    { "Bari-matera", 199, 141, 197, 138 },
+    { "Bari-potenza", 199, 141, 191, 136 },
+    { "Reggio-catanzaro", 191, 120, 199, 126 },
+    { "Palermo-cefalu", 173, 119, 179, 117 },
+    { "Palermo-modica", 173, 119, 183, 111 },
+    { "Freiberg-udine", 180, 182, 172, 178 },
+    { "Cagliari-iglesias", 142, 129, 139, 129 },
+    { "Palermo-malta", 173, 119, 181, 104 },
+    { "Cagliari-bonifacio", 142, 129, 144, 145 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false
