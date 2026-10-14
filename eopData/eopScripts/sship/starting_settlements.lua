@@ -548,6 +548,59 @@ local SETTS = {
       names = { greek = "Dekatera", european = "Catarum", middle_eastern = "Kotor", serbia = "Kotor", hungary = "Kotor", default = "Kotor" } },
     { key = "rhodes", x = 278, y = 106, capital = "Smyrna", level = 2, population = 7500, castle = true,
       names = { greek = "Rhodos", european = "Rhodus", middle_eastern = "Rodos", serbia = "Rodos", hungary = "Rodosz", default = "Rhodos" } },
+    -- POLAND + BALTIC (14 Oct 2026)
+    { key = "gniezno", x = 204, y = 223, capital = "Poznan", level = 3, population = 15000,  -- archbishopric seat
+      names = { hre = "Gnesen", lithuania = "Gniezna", russia = "Gnezdno", kievan_rus = "Gnezdno", european = "Gnesna", greek = "Gnézno", middle_eastern = "Gniezno", default = "Gniezno" } },
+    { key = "kalisz", x = 208, y = 218, capital = "Poznan", level = 2, population = 7500,  -- existed 1132 (Calisia)
+      names = { hre = "Kalisch", lithuania = "Kališas", european = "Calisia", greek = "Kálisz", middle_eastern = "Kalisz", default = "Kalisz" } },
+    { key = "wloclawek", x = 219, y = 224, capital = "Poznan", level = 2, population = 7500,  -- castellany seat
+      names = { hre = "Leslau", lithuania = "Vloclavekas", european = "Wladislavia", greek = "Vlotslávek", middle_eastern = "Wloclawek", default = "Włocławek" } },
+    { key = "torun", x = 213, y = 226, capital = "Poznan", level = 1, population = 500,  -- founded 1233
+      names = { hre = "Thorn", lithuania = "Torunė", european = "Thorunium", greek = "Toroún", middle_eastern = "Torun", default = "Toruń" } },
+    { key = "leczyca", x = 220, y = 221, capital = "Plock", level = 2, population = 7500,  -- castellany seat
+      names = { hre = "Lentschütz", lithuania = "Lenčica", european = "Lancicia", greek = "Lentsýtsa", middle_eastern = "Leczyca", default = "Łęczyca" } },
+    { key = "czersk", x = 233, y = 220, capital = "Plock", level = 1, population = 1000,  -- doubtful
+      names = { hre = "Tschersk", lithuania = "Čerskas", european = "Czersca", greek = "Tsersk", middle_eastern = "Czersk", default = "Czersk" } },
+    { key = "sandomierz", x = 236, y = 211, capital = "Krakow", level = 2, population = 7500,  -- existed 1132
+      names = { hre = "Sandomir", lithuania = "Sandomiras", russia = "Sudomir", kievan_rus = "Sudomir", european = "Sandomiria", greek = "Sandomír", middle_eastern = "Sandomierz", default = "Sandomierz" } },
+    { key = "lublin", x = 241, y = 215, capital = "Krakow", level = 1, population = 1000,  -- first named 1198
+      names = { hre = "Lublin", lithuania = "Liublinas", russia = "Lyublin", kievan_rus = "Lyublin", european = "Lublinum", greek = "Lúblin", middle_eastern = "Lublin", default = "Lublin" } },
+    { key = "opole", x = 207, y = 210, capital = "Wroclaw", level = 2, population = 7500,  -- EU5 town
+      names = { hre = "Oppeln", lithuania = "Opolė", european = "Oppolia", greek = "Opóle", middle_eastern = "Opole", default = "Opole" } },
+    { key = "legnica", x = 193, y = 214, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
+      names = { hre = "Liegnitz", lithuania = "Lignica", european = "Legnicia", greek = "Légnitsa", middle_eastern = "Legnica", default = "Legnica" } },
+    { key = "glogow", x = 193, y = 217, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
+      names = { hre = "Glogau", lithuania = "Glogovas", european = "Glogovia", greek = "Glogóv", middle_eastern = "Glogow", default = "Głogów" } },
+    { key = "raciborz", x = 210, y = 207, capital = "Olomoc", level = 2, population = 7500,  -- existed 1132; rebels (Olomouc region)
+      names = { poland = "Racibórz", hre = "Ratibor", lithuania = "Račiburas", european = "Ratibora", greek = "Ratibór", middle_eastern = "Raciborz", default = "Racibórz" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "slupsk", x = 200, y = 237, capital = "Gdansk", level = 2, population = 7500,  -- existed 1132
+      names = { hre = "Stolp", denmark = "Stolp", lithuania = "Slupskas", european = "Stolpa", greek = "Slúpsk", middle_eastern = "Slupsk", default = "Słupsk" } },
+    { key = "wolin", x = 183, y = 231, capital = "Szczecin", level = 2, population = 7500,  -- existed 1132; rebels
+      names = { poland = "Wolin", hre = "Wollin", denmark = "Wollin", lithuania = "Volinas", european = "Julinum", greek = "Voulin", middle_eastern = "Wolin", default = "Wolin" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "kolobrzeg", x = 188, y = 234, capital = "Szczecin", level = 2, population = 7500,  -- existed 1132; rebels
+      names = { poland = "Kołobrzeg", hre = "Kolberg", denmark = "Kolberg", lithuania = "Kolobžegas", european = "Colberga", greek = "Kolóbzeg", middle_eastern = "Kolobrzeg", default = "Kołobrzeg" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "wolgast", x = 176, y = 234, capital = "Szczecin", level = 2, population = 7500,  -- EU5 town; rebels
+      names = { poland = "Wołogoszcz", hre = "Wolgast", denmark = "Wolgast", lithuania = "Volgastas", european = "Wolgastum", greek = "Volgast", middle_eastern = "Wolgast", default = "Wolgast" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "stralsund", x = 171, y = 235, capital = "Lubeck", level = 1, population = 500,  -- EU5 town, founded 1234; rebels
+      names = { poland = "Stralsund", hre = "Stralsund", denmark = "Stralsund", lithuania = "Štralzundas", european = "Stralesundum", greek = "Stralzoúnd", middle_eastern = "Stralsund", default = "Stralsund" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "kaunas", x = 246, y = 238, capital = "Kernave", level = 1, population = 500,  -- EU5 town, first named 1361
+      names = { poland = "Kowno", russia = "Kovno", kievan_rus = "Kovno", hre = "Kauen", lithuania = "Kaunas", european = "Cauna", greek = "Kaoúnas", middle_eastern = "Kaunas", default = "Kaunas" } },
+    { key = "vilnius", x = 253, y = 240, capital = "Kernave", level = 1, population = 500,  -- EU5 town, first named 1323
+      names = { poland = "Wilno", russia = "Vilno", kievan_rus = "Vilno", hre = "Wilna", lithuania = "Vilnius", european = "Vilna", greek = "Vílnios", middle_eastern = "Vilnius", default = "Vilnius" } },
+    { key = "tartu", x = 270, y = 265, capital = "Kolyvan", level = 2, population = 7500,  -- EU5 town; rebels
+      names = { russia = "Yuryev", kievan_rus = "Yuryev", hre = "Dorpat", denmark = "Dorpat", poland = "Dorpat", lithuania = "Tartu", european = "Tarbatum", greek = "Tártou", middle_eastern = "Tartu", default = "Tartu" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "koknese", x = 260, y = 252, capital = "Riga", level = 1, population = 1000,  -- hillfort; rebels
+      names = { russia = "Kukonos", kievan_rus = "Kukonos", hre = "Kokenhusen", poland = "Koknese", lithuania = "Koknesė", european = "Kokenhusa", greek = "Koknese", middle_eastern = "Koknese", default = "Koknese" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "jersika", x = 265, y = 250, capital = "Polotsk", level = 1, population = 1000,  -- hillfort; rebels
+      names = { russia = "Gertsike", kievan_rus = "Gertsike", hre = "Gerzike", poland = "Jersika", lithuania = "Jersikė", european = "Gercica", greek = "Jersika", middle_eastern = "Jersika", default = "Jersika" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -565,6 +618,8 @@ local GARRISON = {
     russia    = { "EE Spear Militia", "EE Spear Militia" },   -- Rus: cheapest militia (14 Oct)
     kievan_rus = { "EE Spear Militia", "EE Spear Militia" },  -- Rus: cheapest militia (14 Oct)
     serbia    = { "Spear Militia", "Spear Militia" },          -- Balkans: cheapest militia (14 Oct)
+    poland    = { "EE Spear Militia", "EE Spear Militia" },   -- Poland + Baltic: cheapest militia (14 Oct)
+    lithuania = { "EE Spear Militia", "EE Spear Militia" },   -- Poland + Baltic: cheapest militia (14 Oct)
 }
 
 local CORE_LEVEL = { [1] = "wooden_pallisade", [2] = "wooden_wall", [3] = "stone_wall",
@@ -772,11 +827,16 @@ end
 -------------------------------------------------------------------------
 local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
-local DUMP_PATHS = {    -- Balkans + Lycian coast (14 Oct 2026)
+local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Milas-Attaleia coast", 276, 116, 297, 114 }, { "Corinth-Monemvasia", 242, 118, 241, 112 }, { "Corinth-Patras", 242, 118, 233, 120 },
     { "Ras-Skopje", 231, 153, 233, 148 }, { "Sredets-Nis", 247, 152, 237, 156 }, { "Nis(Belgrade)-Branicevo", 228, 168, 235, 166 },
     { "Tarnovo-Drastar", 262, 156, 274, 163 }, { "Skadar-Kotor", 218, 149, 213, 152 }, { "Durazzo-Valona", 218, 142, 219, 137 },
     { "Thessalonica-Ohrid", 243, 139, 230, 145 }, { "Arta-Ioannina", 228, 128, 225, 132 },
+    { "Poznan-Gniezno", 198, 222, 204, 223 }, { "Poznan-Torun", 198, 222, 213, 226 }, { "Plock-Leczyca", 226, 224, 220, 221 },
+    { "Krakow-Sandomierz", 224, 208, 236, 211 }, { "Krakow-Lublin", 224, 208, 241, 215 }, { "Wroclaw-Opole", 199, 214, 207, 210 },
+    { "Szczecin-Wolin", 180, 230, 183, 231 }, { "Szczecin-Wolgast", 180, 230, 176, 234 }, { "Gdansk-Slupsk", 212, 235, 200, 237 },
+    { "Kernave-Kaunas", 250, 242, 246, 238 }, { "Kolyvan-Tartu", 255, 273, 270, 265 }, { "Riga-Koknese", 253, 256, 260, 252 },
+    { "Polotsk-Jersika", 282, 244, 265, 250 }, { "Lubeck-Stralsund", 155, 233, 171, 235 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

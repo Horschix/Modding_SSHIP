@@ -343,3 +343,20 @@ other game regions later. The candidate list and every decision are in issue #4.
 - BALKANS fix 1 (user, 14 Oct), installed, read back identical: Berroia removed; Ohrid 230,145, Serres 248,141,
   Ioannina 225,132, Plovdiv 256,150 (all open tiles). 25 towns. Script only - map.rwm and the new campaign as before.
   Note: the first commit wrote a stale copy (same output name re-used); a new file name fixed it - always cmp.
+
+## POLAND + BALTIC (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
+- Balkans + Greece confirmed tested, all fine (user, 14 Oct). Script only - no map edit, map.rwm stays; NEW campaign.
+- EU5 (07_cities_and_buildings.txt + definitions.txt, read from `D:\Steam\steamapps\common\Europa Universalis V\game`) has only 16
+  towns in central_poland / greater_poland / lesser_poland / mazovia / silesia / pomerania / prussia / lithuania / samogitia /
+  baltic areas; 9 are already SSHIP settlements (Krakow, Poznan, Plock, Wroclaw, Gdansk, Szczecin, Kolyvan, Riga, Kernave...).
+- Tool: `docs/tools/place.py` now takes `-a <anchor file>` (default = Balkan anchors); `docs/tools/anchors_poland_baltic.txt`
+  (21 SSHIP settlements with GPS, residuals <= 3 except Plock 6.4 and Kernave -6.0). Same open-tile rules as before.
+- User: "add all", Gniezno level 3, late-founded towns 1 / 500, Racibórz rebels, names as proposed, garrison EE Spear Militia.
+  22 towns added (the 4 spacing drops Trakai, Kruszwica, Stargard, Otepaa stay out): Gniezno 204,223 (3); Kalisz 208,218;
+  Wloclawek 219,224; Torun 213,226 (1/500); Leczyca 220,221; Czersk 233,220 (1/1000); Sandomierz 236,211; Lublin 241,215 (1/1000);
+  Opole 207,210; Legnica 193,214; Glogow 193,217; Slupsk 200,237; Kaunas 246,238 (1/500); Vilnius 253,240 (1/500);
+  rebels: Raciborz 210,207 (Olomoc region); Wolin 183,231, Kolobrzeg 188,234, Wolgast 176,234 (Szczecin region);
+  Stralsund 171,235 (Lubeck region, 1/500); Tartu 270,265 (Kolyvan); Koknese 260,252 (Riga, 1/1000); Jersika 265,250 (Polotsk, 1/1000).
+  Names: Polish / Lithuanian / Russian for those factions, German for hre + denmark (Thorn, Wollin, Kolberg, Dorpat ...), Latin,
+  Greek, Turkish; `default` (rebels) = local name. GARRISON poland + lithuania = 2 EE Spear Militia (rebels: own list).
+  DUMP_PATHS +14 routes (Poland / Baltic). 200 entries in SETTS, no duplicate tiles.
