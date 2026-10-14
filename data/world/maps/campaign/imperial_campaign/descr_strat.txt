@@ -3437,7 +3437,7 @@ unit		Kasogi						exp 0 armour 0 weapon_lvl 0
 unit		Dismounted Cuman Militia	exp 0 armour 0 weapon_lvl 0
 
 ; IASI
-character	Sevinch of_the_Oghuz, named character,	male, age 38, x 276, y 185
+character	Sevinch of_the_Oghuz, named character,	male, age 38, x 277, y 185
 traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , Scout 2 , Royal_Blood_Cumans 1 , ReligionStarter 1
 ancillaries trusty_steed
 army
@@ -6995,44 +6995,6 @@ settlement castle
 }
 
 
-settlement castle
-{
-	level town
-	region Tarnovo_Province
-	year_founded 0
-	population 4300
-	plan_set default_set
-	faction_creator byzantium
-	building
-	{
-		type core_castle_building wooden_castle
-	}
-	building
-	{
-		type hinterland_farms farms1
-	}
-	building
-	{
-		type builders builders1
-	}
-	building
-	{
-		type water_supply water1_wells
-	}
-	building
-	{
-		type grasslands grasslands
-	}
-	building
-	{
-		type equestrian stables
-	}
-	building
-	{
-		type temple_orthodox_castle small_chapel_o
-	}	
-}
-
 settlement
 {
 	level city
@@ -7333,8 +7295,8 @@ unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
-; TARNOVGRAD
-character	Konstantinos Angelos, named character, male, age 39, x 262, y 156 
+; TARNOVGRAD -> moved to Triadica, Tarnovo starts with Bulgarian rebels (user, 14 Oct 2026)
+character	Konstantinos Angelos, named character, male, age 39, x 247, y 152 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , WifeIsGreek 1 , Greek_Edu 1 , GoodCommander 1 , Handsome 6 , HaveChilds 1 , ReligionStarter 1 , Military_Career_In_Byzantium 3 , WifeIsFactionHeir 2 
 army
 unit		Greek Bodyguard			exp 1 armour 0 weapon_lvl 0
@@ -7385,7 +7347,7 @@ unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
 ; ARTA
-character	Andronikos Imerios, named character, male, age 14, x 228, y 128, label andronikos1 
+character	Andronikos Imerios, named character, male, age 14, x 229, y 128, label andronikos1 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , DeceiverVirtue 1 , Handsome 6 , Brave 1 , Energetic 1 , ReligionStarter 1 , Royal_Blood_Greek 1 , Factionleader 1 
 army
 unit		Greek Bodyguard			exp 1 armour 0 weapon_lvl 0
@@ -11864,6 +11826,45 @@ ai_label		slave_faction
 denari	175000
 denari_kings_purse	180000
 
+; TARNOVGRAD - Bulgarian rebels from the start (user, 14 Oct 2026)
+settlement castle
+{
+	level town
+	region Tarnovo_Province
+	year_founded 0
+	population 4300
+	plan_set default_set
+	faction_creator byzantium
+	building
+	{
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type hinterland_farms farms1
+	}
+	building
+	{
+		type builders builders1
+	}
+	building
+	{
+		type water_supply water1_wells
+	}
+	building
+	{
+		type grasslands grasslands
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type temple_orthodox_castle small_chapel_o
+	}	
+}
+
 ; BULGHAR - has HR cumans so hinterland_farms will never go up more than lvl4.
 settlement
 {
@@ -14989,6 +14990,18 @@ settlement
 
 ;--- SCANDINAVIA ----------------------------------------------------------------------------------------
 
+; TARNOVGRAD - Bulgarian rebels (user, 14 Oct 2026)
+character	sub_faction serbia, Boris, named character, male, age 34, x 262, y 156
+traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , ReligionStarter 1
+army
+unit		Bulgarian Brigands		exp 3 armour 0 weapon_lvl 0
+unit		Bulgarian Brigands		exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies					exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies					exp 0 armour 0 weapon_lvl 0
+unit		Vlach Axemen				exp 0 armour 0 weapon_lvl 0
+unit		Vlach Archers				exp 0 armour 0 weapon_lvl 0
+unit		Vlach Archers				exp 0 armour 0 weapon_lvl 0
+
 ; SKARA
 character	sub_faction norway, Skapti, named character, male, age 35, x 174, y 265 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , GoodCommander 2 , BattleDread 2 , ReligionStarter 1  , Energetic 1 , MilitaryInclination 1 , GoodBuilder 2 
@@ -15851,7 +15864,7 @@ unit		Slav Levies					exp 0 armour 0 weapon_lvl 0
 unit		Balkan Archers				exp 0 armour 0 weapon_lvl 0
 
 ; RAGUSA
-character	sub_faction serbia, Dobrica Perovic, named character, male, age 28, x 208, y 153 
+character	sub_faction serbia, Dobrica Perovic, named character, male, age 28, x 207, y 154 
 traits Military_Edu 1 , NaturalMilitarySkill 1 , ReligionStarter 1 , GoodAdministrator 1 , Just 1 , MilitaryInclination 1 , LoyaltyStarter 1 
 army
 unit		Dismounted Vlastelcici		exp 1 armour 0 weapon_lvl 0

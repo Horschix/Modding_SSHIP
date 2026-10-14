@@ -447,3 +447,24 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Names: hungary / hre / european (Latin) / greek / middle_eastern, plus poland, kievan_rus, russia, cumans where they fit;
   default = Romanian (rebels). DUMP_PATHS +20 routes (Romania block).
 - THEN: user's test (Hungary + Croatia fix 2, Eger, Romania), then the next region.
+- ROMANIA fix 1 (user's test, 14 Oct), installed, read back identical (4 files):
+  - Eger: dropped - it is SSHIP's own Esztergom (shown as "Eger" in imperial_campaign_regions_and_settlement_names.txt).
+  - Zagreb / Rijeka "not moved": PC files were all identical to the repo, but map.rwm (mtime 1792000195230) was OLDER
+    than map_regions.tga (1792001786583) - the game kept the stale map. Rijeka now on the asked tile 181,173 (relief 50,
+    Zara region). User must delete map.rwm again.
+  - Blank names: the font lacks Romanian comma letters (s/t with comma) and a-breve. All names in SETTS transliterated to
+    SSHIP's own glyph set (s-comma -> s-cedilla as SSHIP's "Targovishte" uses; t-comma, a-breve, c-caron, Turkish dotless/
+    dotted i, g-breve, Polish/Lithuanian letters -> plain letters): 49 names changed.
+  - Our Targoviste removed: SSHIP's own "Severin" settlement (264,168) IS Targoviste (localised name) - duplicate.
+  - Tarnovo -> rebels (region rebel type already Bulgarian_Rebels): settlement block moved to the slave section of
+    descr_strat; garrison general "Boris" (sub_faction serbia, name from serbia's list) with 2 Bulgarian Brigands, 2 Slav
+    Levies, Vlach Axemen, 2 Vlach Archers; Konstantinos Angelos (family tree) moved to Triadica (247,152).
+    Rebels with it: Cherven (Tzerbenon), Drastar ("Prista" = Dristra, assumed), Vidin ("Bidize" = Bidine), Isaccea
+    ("Bitina" = Bitzina) - EE Spear Militia. Shumen, Varna, Sliven, Anchialos, Constanta stay Byzantine (ownerFrom Adrianople).
+  - Moves (script): Gallipoli 270,138; Poimanenon 278,130; Birgi (Pyrgion) 276,122; Mardin 369,115; Khoy 403,123;
+    Isaccea 283,171; Chilia 287,173 (swamp); Constanta 283,163; Varna 278,156; Anchialos 276,151 (beach tile); Sliven 267,154;
+    Vidin 245,164; Nis 237,155 (now Ras region tile, owner still from Sredets); Knin 192,164.
+  - MAP ROUND 8 (edit_map.py CITY_MOVES, only map_regions.tga changed - 6 pixels): SSHIP's Iasi ("Siret") 276,185 -> 277,185,
+    Ragusa 208,153 -> 207,154, Arta 228,128 -> 229,128; characters Sevinch, Dobrica Perovic, Andronikos Imerios and the
+    Iasi event position moved by hand in the current descr_strat/descr_events.
+  - DUMP_PATHS coordinates updated; NEW campaign + delete map.rwm.

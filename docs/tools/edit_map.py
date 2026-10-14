@@ -41,7 +41,11 @@ NICAEA_RGB = (33, 59, 131)
 # round 7 (15 Oct, user): Zagreb 2 tiles south (Hungary + Croatia round, #4)
 CITY_MOVES = [((224, 208), (218, 208)),   # Krakow 6 tiles west
               ((180, 230), (180, 231)),   # Szczecin 1 tile north (new tile = swamp)
-              ((193, 177), (193, 175))]   # Zagreb 2 tiles south
+              ((193, 177), (193, 175)),   # Zagreb 2 tiles south
+              # round 8 (14 Oct, user, Romania fix 1): SSHIP's Iasi ("Siret") 1 east, Ragusa 1 NW, Arta 1 east
+              ((276, 185), (277, 185)),
+              ((208, 153), (207, 154)),
+              ((228, 128), (229, 128))]
 HILLS = (128, 128, 64)
 # Kutahya 290,130 -> 291,130 -> 291,129 -> 292,129 -> hills 293,129 / 293,128 -> ... -> Afyon 296,125
 # Nicaea -> plains 293,133 / 293,132 -> 293,131 -> 293,130 -> hills 293,129
@@ -261,6 +265,12 @@ def main(src, out):
         # round 7 (15 Oct, user): Zagreb move - governor Saul Arpadhazi + the black_death_2 plague position
         ("descr_strat.txt", b"x 193, y 177", b"x 193, y 175"),
         ("descr_events.txt", b"position\t193, 177", b"position\t193, 175"),
+        # round 8 (14 Oct): Iasi (Sevinch + event), Arta (Andronikos Imerios), Ragusa (Dobrica Perovic) -
+        # applied by hand to the current files as well (see CAUTION)
+        ("descr_strat.txt", b"x 276, y 185", b"x 277, y 185"),
+        ("descr_events.txt", b"position\t276, 185", b"position\t277, 185"),
+        ("descr_strat.txt", b"x 228, y 128", b"x 229, y 128"),
+        ("descr_strat.txt", b"x 208, y 153", b"x 207, y 154"),
     ]
     by_file = {}
     for name, old, new in TEXT_REPLACES:

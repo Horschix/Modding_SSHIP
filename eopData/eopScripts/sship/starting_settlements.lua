@@ -39,17 +39,17 @@ local SETTS = {
     { key = "bursa", x = 285, y = 136, capital = "Nicaea", level = 3, population = 15000,
       names = { greek = "Proúsa", middle_eastern = "Bursa", european = "Prusa" } },
     { key = "izmit", x = 290, y = 139, capital = "Nicaea", level = 3, population = 15000,
-      names = { greek = "Nikomīdeia", middle_eastern = "İznikomid", european = "Nicomedia" } },
+      names = { greek = "Nikomīdeia", middle_eastern = "Iznikomid", european = "Nicomedia" } },
     { key = "kutahya", x = 290, y = 130, capital = "Nicaea", level = 2, population = 7500,       -- GPS tile is mountain
       names = { greek = "Kotýaion", middle_eastern = "Kütahya", european = "Cotyaeum" } },
-    { key = "poimanenon", x = 277, y = 131, capital = "Nicaea", level = 1, population = 1000,   -- on Balıkesir's tile
+    { key = "poimanenon", x = 278, y = 130, capital = "Nicaea", level = 1, population = 1000,   -- on Balıkesir's tile; moved 277,131 -> 278,130 (user, 14 Oct, Romania fix 1)
       names = { greek = "Poimanīnon", middle_eastern = "Manyas", european = "Poemanenum" } },
     -- region Smyrna (Byzantium)
     { key = "bergama", x = 272, y = 127, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Pérgamon", middle_eastern = "Bergama", european = "Pergamum" } },
     { key = "manisa", x = 273, y = 124, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Magnīsía", middle_eastern = "Manisa", european = "Magnesia" } },
-    { key = "birgi", x = 278, y = 121, capital = "Smyrna", level = 2, population = 7500,
+    { key = "birgi", x = 276, y = 122, capital = "Smyrna", level = 2, population = 7500,  -- moved 278,121 -> 276,122 (user, 14 Oct, Romania fix 1)
       names = { greek = "Pyrgíon", middle_eastern = "Birgi", european = "Pyrgion" } },
     { key = "alasehir", x = 281, y = 122, capital = "Smyrna", level = 2, population = 7500,
       names = { greek = "Philadélpheia", middle_eastern = "Âlâşehir", european = "Philadelphia" } },
@@ -59,7 +59,7 @@ local SETTS = {
       names = { greek = "Mýlasa", middle_eastern = "Milas", european = "Mylasa" } },
     -- region Angora (Rum)
     { key = "afyon", x = 296, y = 125, capital = "Angora", level = 2, population = 7500,
-      names = { greek = "Akroinón", middle_eastern = "Karahisar-ı Sâhib", european = "Acroinum" } },
+      names = { greek = "Akroinón", middle_eastern = "Karahisar-i Sâhib", european = "Acroinum" } },
     { key = "uluborlu", x = 294, y = 121, capital = "Angora", level = 2, population = 7500,     -- GPS tile is mountain
       names = { greek = "Sōzópolis", middle_eastern = "Uluborlu", european = "Sozopolis" } },
     -- region Attaleia (Byzantium)
@@ -148,7 +148,7 @@ local SETTS = {
     { key = "amid", x = 366, y = 119, capital = "Hasankeyf", level = 3, population = 15000,  -- EU5 city; Inalids
       names = { greek = "Ámida", middle_eastern = "Amid", european = "Amida", default = "Amid" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "mardin", x = 370, y = 115, capital = "Hasankeyf", level = 2, population = 7500,  -- EU5 town; Artuqid seat
+    { key = "mardin", x = 369, y = 115, capital = "Hasankeyf", level = 2, population = 7500,  -- EU5 town; Artuqid seat; moved 370,115 -> 369,115 (user, 14 Oct, Romania fix 1)
       names = { greek = "Mardē", middle_eastern = "Mardin", european = "Mardin", default = "Mardin" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "mayyafariqin", x = 372, y = 121, capital = "Hasankeyf", level = 2, population = 7500,  -- Marwanid capital, Artuqid from 1118
@@ -205,7 +205,7 @@ local SETTS = {
       names = { greek = "Germaníkeia", middle_eastern = "Maraş", arabic = "Mar'ash", european = "Marasch", default = "Mar'ash" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "ayntab", x = 347, y = 113, capital = "Edessa", level = 2, population = 7500,  -- County of Edessa
-      names = { greek = "Doulíchē", middle_eastern = "Ayıntap", arabic = "'Ayntab", european = "Hatab", default = "'Ayntab" },
+      names = { greek = "Doulíchē", middle_eastern = "Ayintap", arabic = "'Ayntab", european = "Hatab", default = "'Ayntab" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "manbij", x = 351, y = 109, capital = "Aleppo", level = 2, population = 7500,  -- Zengids
       names = { greek = "Hierápolis", middle_eastern = "Menbiç", arabic = "Manbij", european = "Hierapolis", default = "Manbij" },
@@ -233,7 +233,7 @@ local SETTS = {
       names = { greek = "Lykópolis", middle_eastern = "Asyut", arabic = "Asyut", european = "Lycopolis", default = "Asyut" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "aswan", x = 313, y = 18, capital = "Qus", level = 2, population = 7500,  -- Fatimid Egypt
-      names = { greek = "Syḗnē", middle_eastern = "Asvan", arabic = "Aswan", european = "Syene", default = "Aswan" },
+      names = { greek = "Syēnē", middle_eastern = "Asvan", arabic = "Aswan", european = "Syene", default = "Aswan" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "barqa", x = 226, y = 79, capital = "Alexandria", ownerFrom = "Tarabulus", level = 2, population = 7500,  -- Alexandria region; Arab tribes in 1132 -> rebels (user)
       names = { greek = "Bárkē", middle_eastern = "Berka", arabic = "Barqa", european = "Barca", default = "Barqa" },
@@ -263,7 +263,7 @@ local SETTS = {
       names = { greek = "Kōnstantínē", middle_eastern = "Kostantine", arabic = "Qusantina", european = "Constantina", default = "Qusantina" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "annaba", x = 133, y = 111, capital = "Algiers", level = 3, population = 15000,  -- EU5 city; Hammadids -> rebels
-      names = { greek = "Hippṓn", middle_eastern = "Annabe", arabic = "Buna", european = "Bona", default = "Buna" },
+      names = { greek = "Hippōn", middle_eastern = "Annabe", arabic = "Buna", european = "Bona", default = "Buna" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "qala", x = 112, y = 102, capital = "Algiers", level = 2, population = 7500,  -- old Hammadid capital -> rebels
       names = { greek = "Qal'a", middle_eastern = "Kale-i Beni Hammad", arabic = "Qal'at Bani Hammad", european = "Kalaa", default = "Qal'at Bani Hammad" },
@@ -278,7 +278,7 @@ local SETTS = {
       names = { greek = "Kartennas", middle_eastern = "Tenes", arabic = "Tanas", european = "Tenez", default = "Tanas" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "cherchell", x = 93, y = 109, capital = "Tlemcen", level = 2, population = 7500,  -- EU5 town; Almoravids
-      names = { greek = "Kaisáreia", middle_eastern = "Şerşel", arabic = "Sharshal", european = "Cesarea", default = "Sharshal" },
+      names = { greek = "Kaisáreia", middle_eastern = "Serşel", arabic = "Sharshal", european = "Cesarea", default = "Sharshal" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "tahert", x = 86, y = 100, capital = "Tlemcen", level = 2, population = 7500,  -- EU5 town; Almoravids
       names = { greek = "Tahert", middle_eastern = "Tihert", arabic = "Tahart", european = "Tiaret", default = "Tahart" },
@@ -334,7 +334,7 @@ local SETTS = {
       names = { greek = "Arragán", middle_eastern = "Ercan", arabic = "Arrajan", european = "Argan", default = "Arrajan" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "shushtar", x = 429, y = 77, capital = "Al_Wasit", level = 2, population = 7500,
-      names = { greek = "Soústar", middle_eastern = "Şuşter", arabic = "Tustar", european = "Tostar", default = "Shushtar" },
+      names = { greek = "Soústar", middle_eastern = "Suşter", arabic = "Tustar", european = "Tostar", default = "Shushtar" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "kermanshah", x = 415, y = 92, capital = "Hamadan", ownerFrom = "Isfahan", level = 3, population = 15000,  -- EU5 city; Seljuk (user)
       names = { greek = "Kirmasín", middle_eastern = "Kirmanşah", arabic = "Qirmisin", european = "Chermesin", default = "Kermanshah" },
@@ -372,8 +372,8 @@ local SETTS = {
     { key = "maragheh", x = 410, y = 111, capital = "Tabriz", level = 3, population = 15000,  -- Ahmadilis, rebels; level 3 (user)
       names = { greek = "Marágha", middle_eastern = "Merâga", arabic = "al-Maragha", european = "Maraga", default = "Maragheh" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "khoy", x = 403, y = 124, capital = "Tabriz", level = 2, population = 7500,  -- rebels
-      names = { greek = "Choḯ", middle_eastern = "Hoy", arabic = "Khuway", european = "Coy", default = "Khoy" },
+    { key = "khoy", x = 403, y = 123, capital = "Tabriz", level = 2, population = 7500,  -- rebels; moved 403,124 -> 403,123 (user, 14 Oct, Romania fix 1)
+      names = { greek = "Choï", middle_eastern = "Hoy", arabic = "Khuway", european = "Coy", default = "Khoy" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "miyaneh", x = 416, y = 115, capital = "Tabriz", level = 2, population = 7500,  -- rebels
       names = { greek = "Miáne", middle_eastern = "Miyane", arabic = "Mayanij", european = "Miana", default = "Miyaneh" },
@@ -431,7 +431,7 @@ local SETTS = {
       names = { greek = "Katif", middle_eastern = "Katif", arabic = "al-Qatif", european = "Catif", default = "al-Qatif" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "sudak", x = 329, y = 170, capital = "Chersonesos", level = 2, population = 7500,  -- EU5 town; Byzantium
-      names = { greek = "Sougdaía", middle_eastern = "Suğdak", arabic = "Sudaq", european = "Soldaia", default = "Sougdaía" },
+      names = { greek = "Sougdaía", middle_eastern = "Sugdak", arabic = "Sudaq", european = "Soldaia", default = "Sougdaía" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "kerch", x = 336, y = 171, capital = "Chersonesos", level = 2, population = 7500,  -- EU5 town; 3 tiles from the strait (Ceuta lesson)
       names = { greek = "Bósporos", middle_eastern = "Kerç", arabic = "Karsh", european = "Vosporo", default = "Bósporos" },
@@ -446,12 +446,12 @@ local SETTS = {
       names = { greek = "Kazán", middle_eastern = "Kazan", arabic = "Qazan", european = "Casan", default = "Qazan" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "sarai", x = 407, y = 195, capital = "Saqsin", ownerFrom = "Aktobe", level = 1, population = 500,  -- 1330s - founded later; Cumans (user, 14 Oct; Saqsin itself moved to the Cumans in descr_strat)
-      names = { greek = "Sarái", middle_eastern = "Saray-ı Cedid", arabic = "Saray al-Jadid", european = "Sarai", default = "Saray al-Jadid" },
+      names = { greek = "Sarái", middle_eastern = "Saray-i Cedid", arabic = "Saray al-Jadid", european = "Sarai", default = "Saray al-Jadid" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     -- Russia / Rus' (user, 14 Oct 2026): Russian names for Novgorod, Kievan Rus and rebels, Polish for Poland,
     -- Lithuanian for Lithuania, Latin for other Europeans, Greek, Turkish. Garrison EE Spear Militia.
     { key = "tver", x = 335, y = 255, capital = "Novgorod", level = 1, population = 500,  -- EU5 city, founded c. 1135
-      names = { russia = "Tver'", kievan_rus = "Tver'", poland = "Twer", lithuania = "Tverė", european = "Tveria", greek = "Tvéri", middle_eastern = "Tver", default = "Tver'" },
+      names = { russia = "Tver'", kievan_rus = "Tver'", poland = "Twer", lithuania = "Tvere", european = "Tveria", greek = "Tvéri", middle_eastern = "Tver", default = "Tver'" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "moscow", x = 347, y = 248, capital = "Rustov", ownerFrom = "Suzdal", level = 1, population = 500,  -- EU5 city, first mentioned 1147; stays Kievan Rus (user, 14 Oct)
       names = { russia = "Moskva", kievan_rus = "Moskva", poland = "Moskwa", lithuania = "Maskva", european = "Moscovia", greek = "Moschóbion", middle_eastern = "Moskova", default = "Moskva" },
@@ -460,13 +460,13 @@ local SETTS = {
       names = { russia = "Vologda", kievan_rus = "Vologda", poland = "Wołogda", lithuania = "Vologda", european = "Vologda", greek = "Vológda", middle_eastern = "Vologda", default = "Vologda" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "beloozero", x = 343, y = 278, capital = "Rustov", level = 2, population = 7500,  -- existed 1132
-      names = { russia = "Beloozero", kievan_rus = "Beloozero", poland = "Białe Jezioro", lithuania = "Baltežeris", european = "Bieloosero", greek = "Belóozero", middle_eastern = "Akgöl", default = "Beloozero" },
+      names = { russia = "Beloozero", kievan_rus = "Beloozero", poland = "Białe Jezioro", lithuania = "Baltezeris", european = "Bieloosero", greek = "Belóozero", middle_eastern = "Akgöl", default = "Beloozero" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "murom", x = 379, y = 247, capital = "Suzdal", level = 2, population = 7500,  -- existed 1132
       names = { russia = "Murom", kievan_rus = "Murom", poland = "Murom", lithuania = "Muromas", european = "Muroma", greek = "Moúrom", middle_eastern = "Murom", default = "Murom" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "nizhny", x = 392, y = 253, capital = "Ryazan", level = 1, population = 500,  -- EU5 town, founded 1221; rebels
-      names = { russia = "Nizhnii Novgorod", kievan_rus = "Nizhnii Novgorod", poland = "Niżny Nowogród", lithuania = "Žemutinis Naugardas", european = "Novogardia Inferior", greek = "Kato Nóvgorod", middle_eastern = "Aşağı Novgorod", default = "Nizhnii Novgorod" },
+      names = { russia = "Nizhnii Novgorod", kievan_rus = "Nizhnii Novgorod", poland = "Nizny Nowogród", lithuania = "Zemutinis Naugardas", european = "Novogardia Inferior", greek = "Kato Nóvgorod", middle_eastern = "Aşagi Novgorod", default = "Nizhnii Novgorod" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "pronsk", x = 367, y = 237, capital = "Ryazan", level = 1, population = 1000,  -- first mentioned 1131; rebels
       names = { russia = "Pronsk", kievan_rus = "Pronsk", poland = "Prońsk", lithuania = "Pronskas", european = "Pronscum", greek = "Prónsk", middle_eastern = "Pronsk", default = "Pronsk" },
@@ -478,16 +478,16 @@ local SETTS = {
       names = { russia = "Vitebsk", kievan_rus = "Vitebsk", poland = "Witebsk", lithuania = "Vitebskas", european = "Vitebscum", greek = "Vítebsk", middle_eastern = "Vitebsk", default = "Vitebsk" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "brest", x = 250, y = 221, capital = "Goroden", level = 2, population = 7500,  -- Berestye, existed 1132; rebels
-      names = { russia = "Berest'e", kievan_rus = "Berest'e", poland = "Brześć", lithuania = "Brastas", european = "Bresta", greek = "Berestíe", middle_eastern = "Brest", default = "Berest'e" },
+      names = { russia = "Berest'e", kievan_rus = "Berest'e", poland = "Brzesc", lithuania = "Brastas", european = "Bresta", greek = "Berestíe", middle_eastern = "Brest", default = "Berest'e" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "lutsk", x = 262, y = 212, capital = "Volodymyr", level = 2, population = 7500,  -- existed 1132
-      names = { russia = "Luchesk", kievan_rus = "Luchesk", poland = "Łuck", lithuania = "Luckas", european = "Luceoria", greek = "Loútsk", middle_eastern = "Lutsk", default = "Luchesk" },
+      names = { russia = "Luchesk", kievan_rus = "Luchesk", poland = "Luck", lithuania = "Luckas", european = "Luceoria", greek = "Loútsk", middle_eastern = "Lutsk", default = "Luchesk" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "lviv", x = 255, y = 206, capital = "Volodymyr", level = 1, population = 500,  -- EU5 town, founded c. 1250
-      names = { russia = "L'vov", kievan_rus = "L'vov", poland = "Lwów", lithuania = "Lvovas", european = "Leopolis", greek = "Leontópolis", middle_eastern = "İlbav", default = "L'vov" },
+      names = { russia = "L'vov", kievan_rus = "L'vov", poland = "Lwów", lithuania = "Lvovas", european = "Leopolis", greek = "Leontópolis", middle_eastern = "Ilbav", default = "L'vov" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "przemysl", x = 245, y = 205, capital = "Halych", level = 2, population = 7500,  -- existed 1132; rebels
-      names = { russia = "Peremyshl'", kievan_rus = "Peremyshl'", poland = "Przemyśl", lithuania = "Pšemislis", european = "Premislia", greek = "Peremýsl", middle_eastern = "Peremişl", default = "Peremyshl'" },
+      names = { russia = "Peremyshl'", kievan_rus = "Peremyshl'", poland = "Przemysl", lithuania = "Pšemislis", european = "Premislia", greek = "Peremýsl", middle_eastern = "Peremişl", default = "Peremyshl'" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "starodub", x = 317, y = 225, capital = "Chernigov", level = 2, population = 7500,  -- existed 1132; rebels
       names = { russia = "Starodub", kievan_rus = "Starodub", poland = "Starodub", lithuania = "Starodubas", european = "Starodubum", greek = "Starodoúb", middle_eastern = "Starodub", default = "Starodub" },
@@ -501,7 +501,7 @@ local SETTS = {
     { key = "athens", x = 248, y = 120, capital = "Corinth", level = 3, population = 15000,
       names = { greek = "Athēnai", european = "Athenae", middle_eastern = "Atina", serbia = "Atina", hungary = "Athén", default = "Athēnai" } },
     { key = "thebes", x = 245, y = 121, capital = "Corinth", level = 3, population = 15000,
-      names = { greek = "Thēbai", european = "Thebae", middle_eastern = "İstife", serbia = "Teba", hungary = "Théba", default = "Thēbai" } },
+      names = { greek = "Thēbai", european = "Thebae", middle_eastern = "Istife", serbia = "Teba", hungary = "Théba", default = "Thēbai" } },
     { key = "patras", x = 233, y = 120, capital = "Corinth", level = 2, population = 7500,
       names = { greek = "Patrai", european = "Patrae", middle_eastern = "Ballibadra", serbia = "Patras", hungary = "Patrasz", default = "Patrai" } },
     { key = "kalamata", x = 235, y = 113, capital = "Corinth", level = 2, population = 7500,
@@ -520,27 +520,30 @@ local SETTS = {
       names = { greek = "Aulōn", european = "Avlona", middle_eastern = "Avlonya", serbia = "Valona", hungary = "Valona", default = "Aulōn" } },
     { key = "skopje", x = 233, y = 148, capital = "Ras", level = 2, population = 7500,
       names = { greek = "Skopia", european = "Scupi", middle_eastern = "Üsküp", serbia = "Skoplje", hungary = "Szkopje", default = "Skoplje" } },
-    { key = "nis", x = 237, y = 156, capital = "Sredets", level = 2, population = 7500,
+    { key = "nis", x = 237, y = 155, capital = "Sredets", level = 2, population = 7500,  -- moved 237,156 -> 237,155 (user, 14 Oct, Romania fix 1)
       names = { greek = "Naïssos", european = "Naissus", middle_eastern = "Niş", serbia = "Niš", hungary = "Nis", default = "Niš" } },
     { key = "plovdiv", x = 256, y = 150, capital = "Sredets", level = 2, population = 7500,
       names = { greek = "Philippoupolis", european = "Philippopolis", middle_eastern = "Filibe", serbia = "Plovdiv", hungary = "Filippopol", default = "Plovdiv" } },
     { key = "branicevo", x = 235, y = 166, capital = "Nis", level = 1, population = 1000, rebels = { "Spear Militia", "Spear Militia" },
-      names = { greek = "Branitzova", european = "Branicevum", middle_eastern = "Braniçevo", serbia = "Braničevo", hungary = "Barancs", default = "Braničevo" } },
-    { key = "vidin", x = 244, y = 161, capital = "Tarnovo", level = 2, population = 7500,
-      names = { greek = "Bidinē", european = "Bononia", middle_eastern = "Vidin", serbia = "Bdin", hungary = "Bodony", default = "Bdin" } },
-    { key = "cherven", x = 265, y = 160, capital = "Tarnovo", level = 2, population = 7500,
-      names = { greek = "Tzerbenon", european = "Cerven", middle_eastern = "Çerven", serbia = "Červen", hungary = "Cserven", default = "Červen" } },
-    { key = "drastar", x = 274, y = 163, capital = "Tarnovo", level = 2, population = 7500,
-      names = { greek = "Dristra", european = "Durostorum", middle_eastern = "Silistre", serbia = "Drastar", hungary = "Szilisztra", default = "Drastar" } },
-    { key = "shumen", x = 271, y = 157, capital = "Tarnovo", level = 2, population = 7500,
-      names = { greek = "Soumen", european = "Sumen", middle_eastern = "Şumnu", serbia = "Šumen", hungary = "Sumen", default = "Šumen" } },
-    { key = "varna", x = 277, y = 157, capital = "Tarnovo", level = 2, population = 7500,
+      names = { greek = "Branitzova", european = "Branicevum", middle_eastern = "Braniçevo", serbia = "Branicevo", hungary = "Barancs", default = "Branicevo" } },
+    { key = "vidin", x = 245, y = 164, capital = "Tarnovo", level = 2, population = 7500,  -- moved 244,161 -> 245,164 (user, 14 Oct, Romania fix 1); Bulgarian rebels: Tarnovo itself is rebel now (user, 14 Oct)
+      names = { greek = "Bidinē", european = "Bononia", middle_eastern = "Vidin", serbia = "Bdin", hungary = "Bodony", default = "Bdin" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "cherven", x = 265, y = 160, capital = "Tarnovo", level = 2, population = 7500,  -- Bulgarian rebels: Tarnovo itself is rebel now (user, 14 Oct)
+      names = { greek = "Tzerbenon", european = "Cerven", middle_eastern = "Çerven", serbia = "Cerven", hungary = "Cserven", default = "Cerven" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "drastar", x = 274, y = 163, capital = "Tarnovo", level = 2, population = 7500,  -- Bulgarian rebels: Tarnovo itself is rebel now (user, 14 Oct)
+      names = { greek = "Dristra", european = "Durostorum", middle_eastern = "Silistre", serbia = "Drastar", hungary = "Szilisztra", default = "Drastar" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "shumen", x = 271, y = 157, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
+      names = { greek = "Soumen", european = "Sumen", middle_eastern = "Sumnu", serbia = "Šumen", hungary = "Sumen", default = "Šumen" } },
+    { key = "varna", x = 278, y = 156, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 277,157 -> 278,156 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
       names = { greek = "Barna", european = "Varna", middle_eastern = "Varna", serbia = "Varna", hungary = "Várna", default = "Varna" } },
-    { key = "sliven", x = 267, y = 153, capital = "Tarnovo", level = 2, population = 7500,
-      names = { greek = "Stilbnos", european = "Stilbnum", middle_eastern = "İslimye", serbia = "Sliven", hungary = "Szliven", default = "Sliven" } },
-    { key = "anchialos", x = 274, y = 152, capital = "Tarnovo", level = 2, population = 7500,
+    { key = "sliven", x = 267, y = 154, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 267,153 -> 267,154 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
+      names = { greek = "Stilbnos", european = "Stilbnum", middle_eastern = "Islimye", serbia = "Sliven", hungary = "Szliven", default = "Sliven" } },
+    { key = "anchialos", x = 276, y = 151, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- moved 274,152 -> 276,151 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
       names = { greek = "Anchialos", european = "Anchialus", middle_eastern = "Ahyolu", serbia = "Anhialo", hungary = "Ankhialosz", default = "Anchialos" } },
-    { key = "gallipoli", x = 270, y = 135, capital = "Adrianople", level = 2, population = 7500,
+    { key = "gallipoli", x = 270, y = 138, capital = "Adrianople", level = 2, population = 7500,  -- moved 270,135 -> 270,138 (user, 14 Oct, Romania fix 1)
       names = { greek = "Kallipolis", european = "Callipolis", middle_eastern = "Gelibolu", serbia = "Galipolj", hungary = "Gallipoli", default = "Kallipolis" } },
     { key = "mosynopolis", x = 260, y = 142, capital = "Adrianople", level = 2, population = 7500,
       names = { greek = "Mosynopolis", european = "Mosynopolis", middle_eastern = "Gümülcine", serbia = "Mosinopolj", hungary = "Moszinopolisz", default = "Mosynopolis" } },
@@ -556,9 +559,9 @@ local SETTS = {
     { key = "wloclawek", x = 219, y = 224, capital = "Poznan", level = 2, population = 7500,  -- castellany seat
       names = { hre = "Leslau", lithuania = "Vloclavekas", european = "Wladislavia", greek = "Vlotslávek", middle_eastern = "Wloclawek", default = "Włocławek" } },
     { key = "torun", x = 213, y = 226, capital = "Poznan", level = 1, population = 500,  -- founded 1233
-      names = { hre = "Thorn", lithuania = "Torunė", european = "Thorunium", greek = "Toroún", middle_eastern = "Torun", default = "Toruń" } },
+      names = { hre = "Thorn", lithuania = "Torune", european = "Thorunium", greek = "Toroún", middle_eastern = "Torun", default = "Toruń" } },
     { key = "czersk", x = 233, y = 220, capital = "Plock", level = 1, population = 1000,  -- doubtful
-      names = { hre = "Tschersk", lithuania = "Čerskas", european = "Czersca", greek = "Tsersk", middle_eastern = "Czersk", default = "Czersk" } },
+      names = { hre = "Tschersk", lithuania = "Cerskas", european = "Czersca", greek = "Tsersk", middle_eastern = "Czersk", default = "Czersk" } },
     { key = "warsaw", x = 230, y = 222, capital = "Plock", level = 1, population = 500,  -- user 14 Oct (Jazdow / Warsaw, tile 1 west of GPS: spacing to Czersk)
       names = { hre = "Warschau", lithuania = "Varšuva", russia = "Varshava", kievan_rus = "Varshava", european = "Varsovia", greek = "Varsovía", middle_eastern = "Varşova", poland = "Warszawa", denmark = "Warschau", default = "Warszawa" } },
     { key = "sandomierz", x = 236, y = 211, capital = "Krakow", level = 2, population = 7500,  -- existed 1132
@@ -566,13 +569,13 @@ local SETTS = {
     { key = "lublin", x = 241, y = 215, capital = "Krakow", level = 1, population = 1000,  -- first named 1198
       names = { hre = "Lublin", lithuania = "Liublinas", russia = "Lyublin", kievan_rus = "Lyublin", european = "Lublinum", greek = "Lúblin", middle_eastern = "Lublin", default = "Lublin" } },
     { key = "opole", x = 207, y = 210, capital = "Wroclaw", level = 2, population = 7500,  -- EU5 town
-      names = { hre = "Oppeln", lithuania = "Opolė", european = "Oppolia", greek = "Opóle", middle_eastern = "Opole", default = "Opole" } },
+      names = { hre = "Oppeln", lithuania = "Opole", european = "Oppolia", greek = "Opóle", middle_eastern = "Opole", default = "Opole" } },
     { key = "legnica", x = 194, y = 214, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132
       names = { hre = "Liegnitz", lithuania = "Lignica", european = "Legnicia", greek = "Légnitsa", middle_eastern = "Legnica", default = "Legnica" } },
     { key = "glogow", x = 192, y = 218, capital = "Wroclaw", level = 2, population = 7500,  -- existed 1132; moved 1 NW (user, 15 Oct)
       names = { hre = "Glogau", lithuania = "Glogovas", european = "Glogovia", greek = "Glogóv", middle_eastern = "Glogow", default = "Głogów" } },
     { key = "raciborz", x = 211, y = 206, capital = "Olomoc", level = 2, population = 7500,  -- existed 1132; rebels (Olomouc region); moved 1 SE (user, 15 Oct)
-      names = { poland = "Racibórz", hre = "Ratibor", lithuania = "Račiburas", european = "Ratibora", greek = "Ratibór", middle_eastern = "Raciborz", default = "Racibórz" },
+      names = { poland = "Racibórz", hre = "Ratibor", lithuania = "Raciburas", european = "Ratibora", greek = "Ratibór", middle_eastern = "Raciborz", default = "Racibórz" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "slupsk", x = 200, y = 237, capital = "Gdansk", level = 2, population = 7500,  -- existed 1132
       names = { hre = "Stolp", denmark = "Stolp", lithuania = "Slupskas", european = "Stolpa", greek = "Slúpsk", middle_eastern = "Slupsk", default = "Słupsk" } },
@@ -580,7 +583,7 @@ local SETTS = {
       names = { poland = "Wolin", hre = "Wollin", denmark = "Wollin", lithuania = "Volinas", european = "Julinum", greek = "Voulin", middle_eastern = "Wolin", default = "Wolin" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "kolobrzeg", x = 188, y = 234, capital = "Szczecin", level = 2, population = 7500,  -- existed 1132; rebels
-      names = { poland = "Kołobrzeg", hre = "Kolberg", denmark = "Kolberg", lithuania = "Kolobžegas", european = "Colberga", greek = "Kolóbzeg", middle_eastern = "Kolobrzeg", default = "Kołobrzeg" },
+      names = { poland = "Kołobrzeg", hre = "Kolberg", denmark = "Kolberg", lithuania = "Kolobzegas", european = "Colberga", greek = "Kolóbzeg", middle_eastern = "Kolobrzeg", default = "Kołobrzeg" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "wolgast", x = 176, y = 234, capital = "Szczecin", level = 2, population = 7500,  -- EU5 town; rebels
       names = { poland = "Wołogoszcz", hre = "Wolgast", denmark = "Wolgast", lithuania = "Volgastas", european = "Wolgastum", greek = "Volgast", middle_eastern = "Wolgast", default = "Wolgast" },
@@ -596,10 +599,10 @@ local SETTS = {
       names = { russia = "Yuryev", kievan_rus = "Yuryev", hre = "Dorpat", denmark = "Dorpat", poland = "Dorpat", lithuania = "Tartu", european = "Tarbatum", greek = "Tártou", middle_eastern = "Tartu", default = "Tartu" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "koknese", x = 260, y = 252, capital = "Riga", level = 1, population = 1000,  -- hillfort; rebels
-      names = { russia = "Kukonos", kievan_rus = "Kukonos", hre = "Kokenhusen", poland = "Koknese", lithuania = "Koknesė", european = "Kokenhusa", greek = "Koknese", middle_eastern = "Koknese", default = "Koknese" },
+      names = { russia = "Kukonos", kievan_rus = "Kukonos", hre = "Kokenhusen", poland = "Koknese", lithuania = "Koknese", european = "Kokenhusa", greek = "Koknese", middle_eastern = "Koknese", default = "Koknese" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "jersika", x = 265, y = 250, capital = "Polotsk", level = 1, population = 1000,  -- hillfort; rebels
-      names = { russia = "Gertsike", kievan_rus = "Gertsike", hre = "Gerzike", poland = "Jersika", lithuania = "Jersikė", european = "Gercica", greek = "Jersika", middle_eastern = "Jersika", default = "Jersika" },
+      names = { russia = "Gertsike", kievan_rus = "Gertsike", hre = "Gerzike", poland = "Jersika", lithuania = "Jersike", european = "Gercica", greek = "Jersika", middle_eastern = "Jersika", default = "Jersika" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
 
     -- Hungary + Croatia (15 Oct 2026): EU5 transdanubia/north+south_alfold/slovakia/croatia/slavonia/slovenia/bosnia areas
@@ -610,7 +613,7 @@ local SETTS = {
     { key = "pecs", x = 211, y = 178, capital = "Szekesfehervar", level = 2, population = 7500,
       names = { hungary = "Pécs", hre = "Fünfkirchen", european = "Quinque Ecclesiae", greek = "Pétsvár", middle_eastern = "Peçuy", default = "Pécs" } },
     { key = "sopron", x = 202, y = 188, capital = "Szekesfehervar", level = 2, population = 7500,
-      names = { hungary = "Sopron", hre = "Ödenburg", european = "Scarbantia", greek = "Sopróni", middle_eastern = "Şopron", default = "Sopron" } },
+      names = { hungary = "Sopron", hre = "Ödenburg", european = "Scarbantia", greek = "Sopróni", middle_eastern = "Sopron", default = "Sopron" } },
     { key = "szeged", x = 226, y = 179, capital = "Varad", level = 2, population = 7500,
       names = { hungary = "Szeged", hre = "Segedin", european = "Partiscum", greek = "Séged", middle_eastern = "Seged", default = "Szeged" } },
     { key = "bratislava", x = 203, y = 194, capital = "Esztergom", level = 2, population = 7500,  -- moved 2 west, 1 north (user, 15 Oct)
@@ -619,10 +622,10 @@ local SETTS = {
       names = { hungary = "Kassa", hre = "Kaschau", european = "Cassovia", greek = "Kásia", middle_eastern = "Koşa", default = "Kassa" } },
     { key = "krupina", x = 221, y = 194, capital = "Esztergom", level = 2, population = 7500,  -- user asked 221,195 (2 west); no open tile there, snapped to 221,194 (15 Oct)
       names = { hungary = "Korpona", hre = "Karpfen", european = "Korponia", greek = "Korpóna", middle_eastern = "Korpona", default = "Korpona" } },
-    { key = "knin", x = 194, y = 163, capital = "Zagreb", ownerFrom = "Zara", level = 2, population = 7500,  -- Dalmatia; rebels (user, 15 Oct)
+    { key = "knin", x = 192, y = 164, capital = "Zagreb", ownerFrom = "Zara", level = 2, population = 7500,  -- Dalmatia; rebels (user, 15 Oct); moved 194,163 -> 192,164 (user, 14 Oct, Romania fix 1)
       names = { hungary = "Knin", hre = "Tenin", european = "Tininium", greek = "Knin", middle_eastern = "Knin", default = "Knin" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "rijeka", x = 181, y = 174, capital = "Freiberg", ownerFrom = "Zara", level = 2, population = 7500,  -- Istria/Kvarner; rebels. User asked 1 SW (181,173); relief 50 there, snapped to 181,174 (15 Oct)
+    { key = "rijeka", x = 181, y = 173, capital = "Freiberg", ownerFrom = "Zara", level = 2, population = 7500,  -- Istria/Kvarner; rebels. User asked 1 SW (181,173); relief 50 there, snapped to 181,174 (15 Oct); moved 181,174 -> 181,173 (user, 14 Oct, Romania fix 1)
       names = { hungary = "Fiume", hre = "Sankt Veit am Pflaum", european = "Tarsatica", greek = "Ríjeka", middle_eastern = "Riyeka", default = "Rijeka" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "trieste", x = 176, y = 175, capital = "Venice", ownerFrom = "Verona", level = 2, population = 7500,  -- Istria/Friuli; rebels. Requested tile is Venice_Province, not unassigned - moved there, no map edit needed (15 Oct)
@@ -632,33 +635,30 @@ local SETTS = {
     { key = "cluj", x = 249, y = 183, capital = "Gyulafehervar", level = 2, population = 7500,  -- EU5 town; Kolozs county castle, 11th c.
       names = { hungary = "Kolozsvár", hre = "Klausenburg", european = "Claudiopolis", greek = "Klaudiópolis", middle_eastern = "Kaloşvar", default = "Cluj" } },
     { key = "satu_mare", x = 245, y = 189, capital = "Gyulafehervar", level = 1, population = 1000,  -- county castle, size doubtful
-      names = { hungary = "Szatmár", hre = "Sathmar", european = "Zathmarium", greek = "Satmári", middle_eastern = "Satmar", default = "Sătmar" } },
+      names = { hungary = "Szatmár", hre = "Sathmar", european = "Zathmarium", greek = "Satmári", middle_eastern = "Satmar", default = "Satmar" } },
     { key = "arad", x = 233, y = 178, capital = "Varad", level = 2, population = 7500,  -- royal assembly 1131, chapter
       names = { hungary = "Arad", hre = "Arad", european = "Aradinum", greek = "Arád", middle_eastern = "Arad", default = "Arad" } },
     { key = "timisoara", x = 233, y = 175, capital = "Varad", level = 1, population = 1000,  -- Banat; castle first named 1212
-      names = { hungary = "Temesvár", hre = "Temeschburg", european = "Temesvarinum", greek = "Temesvári", middle_eastern = "Temeşvar", default = "Timișoara" } },
+      names = { hungary = "Temesvár", hre = "Temeschburg", european = "Temesvarinum", greek = "Temesvári", middle_eastern = "Temeşvar", default = "Timişoara" } },
     { key = "sibiu", x = 253, y = 177, capital = "Gyulafehervar", level = 1, population = 500,  -- late (Saxons after 1147)
       names = { hungary = "Nagyszeben", hre = "Hermannstadt", european = "Cibinium", greek = "Kibínion", middle_eastern = "Sibin", default = "Sibiu" } },
     { key = "brasov", x = 263, y = 177, capital = "Gyulafehervar", level = 1, population = 500,  -- EU5 town; late (1211)
-      names = { hungary = "Brassó", hre = "Kronstadt", european = "Corona", greek = "Stefanópolis", middle_eastern = "Braşov", default = "Brașov" } },
+      names = { hungary = "Brassó", hre = "Kronstadt", european = "Corona", greek = "Stefanópolis", middle_eastern = "Braşov", default = "Braşov" } },
     { key = "bistrita", x = 256, y = 186, capital = "Gyulafehervar", level = 1, population = 500,  -- late (Saxon)
-      names = { hungary = "Beszterce", hre = "Bistritz", european = "Bistricium", greek = "Bistrítsa", middle_eastern = "Bistriçe", default = "Bistrița" } },
+      names = { hungary = "Beszterce", hre = "Bistritz", european = "Bistricium", greek = "Bistrítsa", middle_eastern = "Bistriçe", default = "Bistrita" } },
     { key = "sighisoara", x = 258, y = 179, capital = "Gyulafehervar", level = 1, population = 500,  -- late (1280)
-      names = { hungary = "Segesvár", hre = "Schäßburg", european = "Castrum Sex", greek = "Sigisoára", middle_eastern = "Şeşvar", default = "Sighișoara" } },
+      names = { hungary = "Segesvár", hre = "Schäßburg", european = "Castrum Sex", greek = "Sigisoára", middle_eastern = "Seşvar", default = "Sighişoara" } },
     { key = "craiova", x = 251, y = 165, capital = "Severin", level = 1, population = 500,  -- Wallachia; late; rebels
-      names = { hungary = "Krajova", hre = "Krajowa", european = "Craiova", greek = "Kraïóva", middle_eastern = "Kırayova", default = "Craiova" },
+      names = { hungary = "Krajova", hre = "Krajowa", european = "Craiova", greek = "Kraïóva", middle_eastern = "Kirayova", default = "Craiova" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "arges", x = 254, y = 170, capital = "Severin", level = 1, population = 500,  -- Wallachia; late; rebels
-      names = { hungary = "Argyas", hre = "Argisch", european = "Argesium", greek = "Argési", middle_eastern = "Arcış", default = "Curtea de Argeș" },
-      rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "targoviste", x = 261, y = 166, capital = "Severin", level = 1, population = 500,  -- EU5 town; late (1396); rebels
-      names = { hungary = "Tergovistye", hre = "Tergowisch", european = "Tergovistum", greek = "Tirgovísti", middle_eastern = "Tergovişte", default = "Târgoviște" },
+      names = { hungary = "Argyas", hre = "Argisch", european = "Argesium", greek = "Argési", middle_eastern = "Arciş", default = "Curtea de Argeş" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "bucharest", x = 266, y = 165, capital = "Severin", level = 1, population = 500,  -- EU5 town; late (1459); rebels
-      names = { hungary = "Bukarest", hre = "Bukarest", european = "Bucarestium", greek = "Voukourésti", middle_eastern = "Bükreş", default = "București" },
+      names = { hungary = "Bukarest", hre = "Bukarest", european = "Bucarestium", greek = "Voukourésti", middle_eastern = "Bükreş", default = "Bucureşti" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "braila", x = 278, y = 172, capital = "Severin", level = 1, population = 500,  -- late (1368); rebels
-      names = { hungary = "Brajla", hre = "Brailen", european = "Braila", greek = "Proïlabon", middle_eastern = "İbrail", default = "Brăila" },
+      names = { hungary = "Brajla", hre = "Brailen", european = "Braila", greek = "Proïlabon", middle_eastern = "Ibrail", default = "Braila" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     { key = "suceava", x = 268, y = 189, capital = "Halych", level = 1, population = 500,  -- EU5 town; late (1388); rebels
       names = { hungary = "Szucsáva", hre = "Suczawa", poland = "Suczawa", kievan_rus = "Suchava", russia = "Suchava", european = "Sucevia", greek = "Soútsava", middle_eastern = "Suçava", default = "Suceava" },
@@ -669,14 +669,15 @@ local SETTS = {
     { key = "barlad", x = 277, y = 178, capital = "Iasi", level = 1, population = 1000,  -- Berladniks c. 1140; Cumans (user)
       names = { cumans = "Berlad", kievan_rus = "Berlad'", russia = "Berlad'", hungary = "Barlád", hre = "Berlad", european = "Berladum", greek = "Berládi", middle_eastern = "Berlad", default = "Bârlad" } },
     { key = "cetatea_alba", x = 293, y = 178, capital = "Iasi", ownerFrom = "Severin", level = 2, population = 7500,  -- Tyras/Belgorod; rebels (user)
-      names = { cumans = "Akkerman", kievan_rus = "Belgorod", russia = "Belgorod", hungary = "Dnyeszterfehérvár", hre = "Weißenburg", european = "Album Castrum", greek = "Asprókastron", middle_eastern = "Akkerman", default = "Cetatea Albă" },
+      names = { cumans = "Akkerman", kievan_rus = "Belgorod", russia = "Belgorod", hungary = "Dnyeszterfehérvár", hre = "Weißenburg", european = "Album Castrum", greek = "Asprókastron", middle_eastern = "Akkerman", default = "Cetatea Alba" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "chilia", x = 288, y = 175, capital = "Iasi", level = 1, population = 1000,  -- Byzantine site; Cumans (user)
+    { key = "chilia", x = 287, y = 173, capital = "Iasi", level = 1, population = 1000,  -- Byzantine site; Cumans (user); moved 288,175 -> 287,173 (user, 14 Oct, Romania fix 1)
       names = { cumans = "Kili", kievan_rus = "Kiliya", russia = "Kiliya", hungary = "Kilia", hre = "Kilia", european = "Licostomum", greek = "Chilía", middle_eastern = "Kili", default = "Chilia" } },
-    { key = "isaccea", x = 282, y = 172, capital = "Tarnovo", level = 2, population = 7500,  -- Vicina, Byzantine Danube port; names by owner (user)
-      names = { cumans = "Vicina", kievan_rus = "Vichina", russia = "Vichina", hungary = "Vicina", hre = "Vicina", european = "Vicina", greek = "Bitzína", middle_eastern = "İsakça", default = "Isaccea" } },
-    { key = "constanta", x = 282, y = 164, capital = "Tarnovo", level = 2, population = 7500,  -- EU5 town; Byzantine
-      names = { hungary = "Konstanca", hre = "Konstanza", european = "Constantia", greek = "Konstantía", middle_eastern = "Köstence", default = "Constanța" } },
+    { key = "isaccea", x = 283, y = 171, capital = "Tarnovo", level = 2, population = 7500,  -- Vicina, Byzantine Danube port; names by owner (user); moved 282,172 -> 283,171 (user, 14 Oct, Romania fix 1); Bulgarian rebels: Tarnovo itself is rebel now (user, 14 Oct)
+      names = { cumans = "Vicina", kievan_rus = "Vichina", russia = "Vichina", hungary = "Vicina", hre = "Vicina", european = "Vicina", greek = "Bitzína", middle_eastern = "Isakça", default = "Isaccea" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "constanta", x = 283, y = 163, capital = "Tarnovo", ownerFrom = "Adrianople", level = 2, population = 7500,  -- EU5 town; Byzantine; moved 282,164 -> 283,163 (user, 14 Oct, Romania fix 1); stays Byzantine via ownerFrom (Tarnovo rebel, 14 Oct)
+      names = { hungary = "Konstanca", hre = "Konstanza", european = "Constantia", greek = "Konstantía", middle_eastern = "Köstence", default = "Constanta" } },
 }
 
 -- starting garrison by owner faction (user, 13 Oct 2026); rebels use the entry's own list
@@ -907,9 +908,9 @@ local DUMP = true
 local DUMP_BOXES = {}   -- Anatolia boxes done; Caucasus and Upper Mesopotamia needed no map edit
 local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Milas-Attaleia coast", 276, 116, 297, 114 }, { "Corinth-Monemvasia", 242, 118, 241, 112 }, { "Corinth-Patras", 242, 118, 233, 120 },
-    { "Ras-Skopje", 231, 153, 233, 148 }, { "Sredets-Nis", 247, 152, 237, 156 }, { "Nis(Belgrade)-Branicevo", 228, 168, 235, 166 },
+    { "Ras-Skopje", 231, 153, 233, 148 }, { "Sredets-Nis", 247, 152, 237, 155 }, { "Nis(Belgrade)-Branicevo", 228, 168, 235, 166 },
     { "Tarnovo-Drastar", 262, 156, 274, 163 }, { "Skadar-Kotor", 218, 149, 213, 152 }, { "Durazzo-Valona", 218, 142, 219, 137 },
-    { "Thessalonica-Ohrid", 243, 139, 230, 145 }, { "Arta-Ioannina", 228, 128, 225, 132 },
+    { "Thessalonica-Ohrid", 243, 139, 230, 145 }, { "Arta-Ioannina", 229, 128, 225, 132 },
     { "Poznan-Gniezno", 198, 222, 204, 223 }, { "Poznan-Torun", 198, 222, 213, 226 }, { "Plock-Warsaw", 226, 224, 230, 222 },
     { "Krakow-Sandomierz", 218, 208, 236, 211 }, { "Krakow-Lublin", 218, 208, 241, 215 }, { "Wroclaw-Opole", 199, 214, 207, 210 }, { "Wroclaw-Legnica", 199, 214, 194, 214 },
     { "Szczecin-Wolin", 180, 231, 184, 231 }, { "Szczecin-Wolgast", 180, 231, 176, 234 }, { "Gdansk-Slupsk", 212, 235, 200, 237 },
@@ -919,17 +920,17 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Esztergom-Bratislava", 226, 194, 203, 194 },
     { "Esztergom-Kosice", 226, 194, 234, 197 }, { "Esztergom-Krupina", 226, 194, 221, 194 },
     { "Szekesfehervar-Pecs", 211, 185, 211, 178 }, { "Szekesfehervar-Sopron", 211, 185, 202, 188 },
-    { "Varad-Szeged", 236, 183, 226, 179 }, { "Zagreb-Knin", 193, 177, 194, 163 },
-    { "Freiberg-Rijeka", 180, 182, 181, 174 }, { "Rijeka-Trieste", 181, 174, 176, 175 },
+    { "Varad-Szeged", 236, 183, 226, 179 }, { "Zagreb-Knin", 193, 175, 192, 164 },
+    { "Freiberg-Rijeka", 180, 182, 181, 173 }, { "Rijeka-Trieste", 181, 173, 176, 175 },
     -- Romania (14 Oct 2026)
     { "Gyulafehervar-Cluj", 249, 179, 249, 183 }, { "Gyulafehervar-Sibiu", 249, 179, 253, 177 }, { "Gyulafehervar-Brasov", 249, 179, 263, 177 },
     { "Gyulafehervar-Bistrita", 249, 179, 256, 186 }, { "Gyulafehervar-SatuMare", 249, 179, 245, 189 }, { "Sibiu-Sighisoara", 253, 177, 258, 179 },
     { "Varad-Arad", 236, 183, 233, 178 }, { "Varad-Timisoara", 236, 183, 233, 175 },
-    { "Severin-Craiova", 264, 168, 251, 165 }, { "Severin-Arges", 264, 168, 254, 170 }, { "Severin-Targoviste", 264, 168, 261, 166 },
+    { "Severin-Craiova", 264, 168, 251, 165 }, { "Severin-Arges", 264, 168, 254, 170 },
     { "Severin-Bucharest", 264, 168, 266, 165 }, { "Severin-Braila", 264, 168, 278, 172 },
     { "Halych-Suceava", 262, 200, 268, 189 }, { "Halych-Hotin", 262, 200, 271, 196 },
-    { "Iasi-Barlad", 276, 185, 277, 178 }, { "Iasi-CetateaAlba", 276, 185, 293, 178 }, { "Iasi-Chilia", 276, 185, 288, 175 },
-    { "Drastar-Isaccea", 274, 163, 282, 172 }, { "Drastar-Constanta", 274, 163, 282, 164 },
+    { "Iasi-Barlad", 277, 185, 277, 178 }, { "Iasi-CetateaAlba", 277, 185, 293, 178 }, { "Iasi-Chilia", 277, 185, 287, 173 },
+    { "Drastar-Isaccea", 274, 163, 283, 171 }, { "Drastar-Constanta", 274, 163, 283, 163 },
 }
 local GROUND_LETTER = { [0]="0", "1", "2", "w", "M", "L", "h", "D", "s", "S", "~", "~", "~", "c", "#", "~" }
 local dumped = false

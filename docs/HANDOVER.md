@@ -77,7 +77,10 @@ HUNGARY + CROATIA installed 15 Oct, fix 1 + fix 2 installed 15 Oct (read back id
   the user to say where to place it. See `docs/notes/features/04_starting_settlements.md` for full detail.
 ROMANIA installed 14 Oct, read back identical (script only, NEW campaign): 20 towns in Transylvania, Partium, Banat,
   Wallachia, Moldavia, Danube mouth, Dobruja - see the feature note. User tests it together with Hungary + Croatia
-  fix 2 and the Eger question.
+  fix 2 and the Eger question. FIX 1 installed 14 Oct (read back identical): Eger dropped (= SSHIP's Esztergom);
+  map.rwm had not been rebuilt (older than map_regions.tga) - cause of "Zagreb not moved"; names transliterated to
+  SSHIP's glyphs; our Targoviste removed (SSHIP's Severin is Targoviste); Tarnovo + Cherven/Drastar/Vidin/Isaccea to
+  Bulgarian rebels; 14 script moves + MAP ROUND 8 (Iasi, Ragusa, Arta). User: delete map.rwm, NEW campaign.
   THEN: the user picks the next region for #4 (same method: EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
