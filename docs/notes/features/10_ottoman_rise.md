@@ -52,3 +52,5 @@ after Osman left to the game; faction renamed "Ottoman Domain"; no Sogut village
   during the pre-battle scroll crashed the game. Fix: founding refused while agents are in the fort ("Move these
   agents out of the fort first"), and onPreBattlePanelOpen stops a running founding.
 - golden_horde.lua TEST = false (turns 221 / 361) on the user's word.
+
+## Test 2 (15 Oct 2026): works (user). FINAL installed 15 Oct, read back identical: TEST = false (turns 198 / 252 / 284 / 296).

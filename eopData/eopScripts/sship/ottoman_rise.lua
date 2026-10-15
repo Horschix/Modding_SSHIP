@@ -25,7 +25,7 @@
 -- (falls back to the oldest man of the House, i.e. Ertugrul, while Osman is a child).
 -- Log prefix OTTOMAN.
 ---------------------------------------------------------------------------------------------------------------------
-local TEST = true
+local TEST = false
 local ERT_TURN    = TEST and 2 or 198
 local BIRTH_TURN  = TEST and 3 or 252
 local BIRTH_AGE   = 0      -- EOP refuses older children ("child is too old", test of 15 Oct 2026)
