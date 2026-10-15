@@ -14,7 +14,7 @@
 ---------------------------------------------------------------------------------------------------------------------
 local SD = SackDowngrade or {}
 
-local TEST = true
+local TEST = false
 local SACK_CHANCE = TEST and 1.0 or 0.25
 local EXTERMINATE_CHANCE = 1.0
 

@@ -24,6 +24,13 @@ Script `eopData/eopScripts/sship/sack_downgrade.lua`, require line at the end of
 - Risk to watch: writing `level` directly may not refresh everything the engine caches (e.g. the strat-map model,
   the settlement name card, or the max-population threshold). If that shows, the log line is the first thing to read.
 
+## Test 1 (15 Oct 2026) - WORKS
+User: "seems to work". Log: 3 AI/player sacks (Clermont 2->1, Florence 3->2, Alanya 2->1), walls and buildings
+lowered (farms, builders, watch, temples, water), Alanya wall kept its damage (hp 88). No Lua errors.
+FINAL installed 15 Oct (TEST = false: sack 25%, exterminate 100%), read back identical.
+The "gap in building" EDB errors (wonder_cordoba / krakow, alcazar, south_italy, education) and ArmyIsCamping
+trigger warnings in full.log are SSHIP's own - those chains are unchanged from the original.
+
 ## Dropped (user, 15 Oct 2026)
 - Deleting minor settlements on sack / exterminate (chance by tier). EOP has no way to remove a settlement (only
   addSettlement; deleteFort exists because the engine itself removes forts). A "ruins" substitute was offered and

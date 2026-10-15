@@ -42,8 +42,8 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
-- Sack downgrade (note 12, no board issue): sack 25% / exterminate 100% drops a level + buildings. TEST version
-  (sack always drops) installed 15 Oct, `sack_downgrade.lua`, log SACKDOWN. After the test: TEST = false.
+- Sack downgrade (note 12, no board issue): sack 25% / exterminate 100% drops a level + buildings. Test worked;
+  FINAL (TEST = false) installed 15 Oct, `sack_downgrade.lua`, log SACKDOWN. Deletion of settlements dropped.
 - #11 Turkmen Camp - FIX 1 15 Oct: EDB block was above hidden_resources (CTD at start), moved; see note 11.
   (rum/turks/zengid, only source of Oghuz HA, Turcoman Javelinmen, Turkmen Cavalry, new Turkmen
   Alps) + Kurdish Javelinmen for Rum only in zengid/abbasid regions. NEW campaign. Tool `docs/tools/turkmen_camp.py`, note 11.
