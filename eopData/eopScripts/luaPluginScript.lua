@@ -31,5 +31,9 @@ require('sship.mongol_islam')
 -- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
 require('sship.golden_horde')
 
+-- Supply costs of the player's armies with a turn report; switches off SSHIP's extra rebellion roll (#7, 15 Oct 2026).
+-- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
+require('sship.army_costs')
+
 -- TEMPORARY: logs damaged buildings + build queue of player settlements (Karahisar repair bug). Delete when done.
 require('sship.building_diag')
