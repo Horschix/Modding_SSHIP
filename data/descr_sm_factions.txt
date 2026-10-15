@@ -49,8 +49,8 @@ culture						middle_eastern
 religion					islam
 symbol						models_strat/symbol_abbasid.CAS
 rebel_symbol					models_strat/symbol_rebels.CAS
-primary_colour					red 115, green 52, blue 23
-secondary_colour				red 77, green 29, blue 8
+primary_colour					red 22, green 149, blue 63
+secondary_colour				red 0, green 122, blue 40
 loading_logo					loading_screen/symbols/symbol128_abbasid.tga
 standard_index					2
 logo_index					FACTION_LOGO_ABBASID
@@ -89,8 +89,8 @@ culture						middle_eastern
 religion					islam
 symbol						models_strat/symbol_egypt.CAS
 rebel_symbol					models_strat/symbol_rebels.CAS
-primary_colour					red 22, green 149, blue 63
-secondary_colour				red 0, green 122, blue 40
+primary_colour					red 115, green 52, blue 23
+secondary_colour				red 77, green 29, blue 8
 loading_logo					loading_screen/symbols/symbol128_egypt.tga
 standard_index					5
 logo_index					FACTION_LOGO_EGYPT

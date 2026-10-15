@@ -47,3 +47,7 @@ require('sship.ottoman_rise')
 -- Sacked settlements may drop a level (25%), exterminated ones always; buildings drop with them (15 Oct 2026).
 -- Delete the next line to switch it off.
 require('sship.sack_downgrade')
+
+-- Dynasties: Ayyubids / Mamluks for Egypt, Eretnids for the Zengids, and the Zengid / Abbasid / Egyptian army reforms
+-- that SSHIP 0.98 lost (16 Oct 2026). Delete the next line to switch it off.
+require('sship.dynasties')
