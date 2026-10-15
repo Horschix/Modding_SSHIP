@@ -1,9 +1,10 @@
 # Handover - SSHIP submod
 
-Last updated 14 Oct 2026, Romania done (handover slimmed to save usage; first session 10-13 Oct). Read this file first in a new
+Last updated 15 Oct 2026 (Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
-`04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5), `07_mongol_islam.md` (#7). The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
+`04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5), `06_campaign_ai.md`, `07_mongol_islam.md`, `08_golden_horde.md` (#6),
+`09_army_costs.md` (#7). Note numbers are NOT board issue numbers. The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
 section "How the tooling behaves" - look there only when a tool misbehaves.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
 
@@ -40,6 +41,12 @@ calls are what burn it.
    `cmp` loop. Not after every single write.
 
 ## Where things stand - START HERE
+WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
+- #6 Golden Horde fix 1 (mosque texts, imams, Kasogi) + #4 Cuman villages moved / map round 11 / Volterra Pisan
+  (user must delete map.rwm, NEW campaign). After the test: read GHORDE lines, then `TEST = false` in golden_horde.lua.
+- #7 army_costs.lua (ARMYCOST lines, "The Cost of War" report each turn).
+- Campaign AI test 2 and the Karahisar repair bug (BDIAG, not reproduced) - see note 06 / 04.
+Open issues on the board: #4, #5, #6, #7.
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
 - Campaign AI (15 Oct 2026): Gracul AI installed; test 1 passive -> FIX installed 15 Oct: VH label switch OFF,
@@ -119,9 +126,9 @@ HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm st
   model fixed. Detail: `docs/notes/features/08_golden_horde.md`.
   15 Oct fix 1 (read back identical): mosque texts for eastern_european, imams from tier 1, Cuman garrison Kasogi;
   Kherson / Zaporizhzhia / Donetsk moved, map round 11 (Dnieper crossing, forest), Volterra Pisan. Delete map.rwm.
-#7 (board) Army supply costs + turn report - installed 15 Oct (read back identical), `army_costs.lua`; SSHIP's
+#7 Army supply costs + turn report - installed 15 Oct (read back identical), `army_costs.lua`; SSHIP's
   extra rebellion roll off. Detail: `docs/notes/features/09_army_costs.md`.
-#7 Mongols convert to Islam (turn 340 -> now 327, see #6) - test worked, FINAL installed 15 Oct (read back identical); Mongols start pagan. Detail: `docs/notes/features/07_mongol_islam.md`.
+Mongols convert to Islam (note 07, no board issue; turn 340 -> now 327, see #6) - test worked, FINAL installed 15 Oct (read back identical); Mongols start pagan. Detail: `docs/notes/features/07_mongol_islam.md`.
 #5 Historic invasion armies - OPEN. Fourth Crusade TEST version installed 15 Oct (read back identical):
   `historic_invasions.lua` + require line; Zara stage turn 2, Constantinople stage turn 5 while `TEST = true`
   (final 140 / 145). Test 1: Constantinople works; Zara failed (Dandolo 90 died) - FIX 1 installed 15 Oct
