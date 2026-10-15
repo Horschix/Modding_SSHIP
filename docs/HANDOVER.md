@@ -45,7 +45,9 @@ WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
 - Dynasties (note 13, 16 Oct, TEST = true, read back identical, NEW campaign): Egypt/Abbasid colours swapped;
   Egypt -> Ayyubid Sultanate (79) -> Mamluk Sultanate (237), Zengids -> Eretnids (409, Sivas, rest rebels);
   restores SSHIP's lost Zengid/Abbasid/Egypt reform counters (factionsEvolutions.lua is all a comment). Log DYNAST.
-  Other dead SSHIP counters listed in note 13 - waiting for the user's choice which to fix.
+  + lost_events.lua (16 Oct, TEST = true, read back identical): Templars, Teutonic hospital, Amalfi, coat of arms,
+  tourney, Ostsiedlung/Saint Sava/Rustaveli player counters, Tatar Lancers, faction killer. Log LOSTEV. Note 13 has
+  the second list of dead events (Georgia 2-7, England 2/3/5, ...) - asked the user.
 - Sack downgrade (note 12, no board issue): sack 25% / exterminate 100% drops a level + buildings. Test worked;
   FINAL (TEST = false) installed 15 Oct, `sack_downgrade.lua`, log SACKDOWN. Deletion of settlements dropped.
 - #11 Turkmen Camp - FIX 1 15 Oct: EDB block was above hidden_resources (CTD at start), moved; see note 11.
@@ -160,7 +162,7 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga`; #6: Mongol / Muslim unit cards copied into ui/units|unit_info/cumans|mongols, `data/unit_models/battle_models.modeldb`, `data/descr_character.txt` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
 - `luaPluginScript.lua` ends with six require lines: population_recruitment, fort_settlement,
-  starting_settlements (#4), historic_invasions (#5), mongol_islam, golden_horde (#6) and army_costs (#7), then fort_rules and ottoman_rise (#10), sack_downgrade (note 12), dynasties (note 13) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+  starting_settlements (#4), historic_invasions (#5), mongol_islam, golden_horde (#6) and army_costs (#7), then fort_rules and ottoman_rise (#10), sack_downgrade (note 12), dynasties + lost_events (note 13) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
   settler recruit lines need - removing it stops settler recruitment too.
 
 ## Tooling

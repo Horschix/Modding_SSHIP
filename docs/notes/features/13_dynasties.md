@@ -10,7 +10,11 @@ Dead counters that still gate content (scan of every commented block in every SS
   first_mamluks_zengid, mamluks_established_zengid, zengid_evolution; abbasids_rise, first_mamluks_abbasid,
   mamluks_established_abbasid (Abtal, Caliph's Guard, Jaridah, Ghulams, Mamluk units); fatimid_evolution
   (SSHIP's Royal_Blood_Mamluk adoption trait).
-- STILL DEAD (reported to the user 16 Oct, not fixed): GEORGIAN8_TATAR_LANCERS_REFORM (Naqivchaqari Cavalry);
+- FIXED 16 Oct by `lost_events.lua` (log LOSTEV, TEST = true: coat of arms turn 2, Tatar Lancers turn 3; final
+  61-80 / 161-180 random, kept in counters hx_turn_<event>): everything below EXCEPT trusted_ally / right_hand,
+  Antipope, AppointBishop, StripBishop (user: leave those). Ceased_<f> rebuilt as: conqueror of a faction's last
+  settlement -> his faction leader +10 FactionKiller when onFactionDied fires.
+- WAS DEAD: GEORGIAN8_TATAR_LANCERS_REFORM (Naqivchaqari Cavalry);
   templars_recruitment_enabled (Jerusalem's Templar Sergeant); teutonic_hospital_founded (HRE income bonus);
   pisa_sacked_amalfi (Pisa's cathedral wonder levels 6-8); <faction>_first_coat_of_arms_player (jousting lists,
   13 factions); poland3_first_tourney_player (tourney fields); hre/hungary/poland_ostsiedlung_player,
@@ -43,3 +47,12 @@ Dead counters that still gate content (scan of every commented block in every SS
 - DYNAST lines in full.log; names in the faction list / diplomacy; recruitment of Ghulams, Mamluk units, Abtal.
 - Eretnids at turn 6: Sivas changes owner, Eretna in Sivas as leader, Mosul / Aleppo / Raqqah rebel with
   garrisons, Zengid generals there turn rebel; save/load keeps the names.
+
+## Second scan (16 Oct, descr_events comment lines stripped - the first scan counted ';;;;;;' lines as live)
+Also dead, NOT fixed yet, asked the user: GEORGIAN2_GOLDEN_AGE, GEORGIAN3_SHOTA_RUSTAVELI, GEORGIAN4_CROSSBOW_IN_CAUCASUS,
+GEORGIAN6_REVIVAL, GEORGIAN7_LAST_UNITED_KINGDOM (Georgia's whole roster progression); ENGLAND2_THOMAS_BECKET,
+ENGLAND3_MAGNA_CARTA, ENGLAND5_ENGLISH_ARCHERS (unit swaps); BYZANTIUM7_METEORA (agent limit), BYZANTINE_PANTOKRATOR
+(huge cathedral), LIBER_SECRETORUM_TRANSLATED (alchemists' lab), SCOTLAND_FIRST_UPRISING (mangonel, trebuchet),
+hildegard_of_bingen / omar_khayyam (health / happiness), grote_mandrenke_coming / netherlands_flood_coming,
+mongols_blue_horde_caucasus, mongols_reach_caucasus, the_mongols_emerge (to be double-checked against mongols.lua).
+SSHIP's live event table: `historicEvents` in globalEvents.lua (no Georgian or English entries at all).
