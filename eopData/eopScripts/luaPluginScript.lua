@@ -43,3 +43,7 @@ require('sship.fort_rules')
 
 -- Ertugrul and Osman Gazi for Rum, House of Osman trait, Ottoman Domain (#10, 15 Oct 2026). Delete to switch off.
 require('sship.ottoman_rise')
+
+-- Sacked settlements may drop a level (25%), exterminated ones always; buildings drop with them (15 Oct 2026).
+-- Delete the next line to switch it off.
+require('sship.sack_downgrade')
