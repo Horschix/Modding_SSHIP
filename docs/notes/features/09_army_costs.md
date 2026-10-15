@@ -19,3 +19,9 @@ as in vanilla M2TW (SSHIP's extra roll off).
 - Not taken over: SSHIP's old -1000 for a new noble (NewNoble trait) and the crusade joining fee.
 
 Status: installed 15 Oct, read back identical. Works in a running campaign (no new campaign needed). Waiting for test.
+
+## Fix (15 Oct 2026) - generals inside a settlement
+User: a general stationed in a minor settlement in foreign territory was still charged for campaigning abroad.
+SSHIP's ArmyCost trait uses InEnemyLands (region owner), which a minor settlement in a foreign capital's region does
+not change. Now a general inside any settlement (character.settlement or army:findInSettlement) is not charged the
+ArmyCost amount; the trait itself is untouched. Log line "... not charged (inside a settlement)". Installed, read back identical.

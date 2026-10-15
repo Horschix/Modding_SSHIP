@@ -72,6 +72,13 @@ local function generalCosts(f, bill)
         if record ~= nil then
             local army = get(char, "army")
             local cost = ARMY_COST[traitLevel(record, "ArmyCost")]
+            -- inside a settlement (e.g. a minor settlement in a region whose capital is foreign): SSHIP's trait still
+            -- counts that as enemy lands, but no supply cost is charged (user, 15 Oct 2026)
+            if cost and (get(char, "settlement") ~= nil or (army ~= nil and call(army, "findInSettlement"))) then
+                log(tostring(get(record, "fullName") or get(record, "shortName")) .. ": ArmyCost "
+                    .. traitLevel(record, "ArmyCost") .. " not charged (inside a settlement)")
+                cost = nil
+            end
             if cost then
                 if army ~= nil and get(army, "siege") ~= nil then
                     bill.siegeGen = bill.siegeGen + cost; bill.nSiegeGen = bill.nSiegeGen + 1
