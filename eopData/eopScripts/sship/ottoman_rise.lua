@@ -16,6 +16,9 @@
 --   * Rum dead (no settlement) at a step -> that step and the rest are skipped.
 -- New trait House_of_Osman (+1 Command, +1 cavalry command, +1 Authority) in export_descr_character_traits.txt,
 -- texts in text/export_vnvs.txt.
+-- Custom portraits (user, 15 Oct): data/ui/custom_portraits/ertugrul_gazi and osman_gazi (portrait_young / _old /
+-- _dead, 69x96 32-bit TGA like SSHIP's own). Given at spawn (spawnArmy portrait folder) and with setPortrait (stored
+-- in the save); Osman born as a child gets his when he comes of age; checked again at every Rum turn start.
 -- TEST = true: Ertugrul turn 2, Osman born turn 3 at age 14 (comes of age a few turns later), leader turn 8.
 -- Log prefix OTTOMAN.
 ---------------------------------------------------------------------------------------------------------------------
@@ -32,6 +35,8 @@ local C_ERT    = "hx_ott_ertugrul"   -- 1 spawned, 9 skipped
 local C_OSMAN  = "hx_ott_osman"      -- 1 born as a child, 2 adult spawned, 3 waiting for the adult spawn, 9 skipped
 local C_LEADER = "hx_ott_leader"     -- 1 done, 9 skipped
 local C_DOMAIN = "ottoman_domain"    -- 1 = Rum is the Ottoman Domain
+
+local PORTRAIT = { Ertugrul = "ertugrul_gazi", Osman = "osman_gazi" }
 
 local OR = OttomanRise or {}
 
@@ -180,6 +185,15 @@ local function oldestOfHouse(f)
 end
 
 -- spawns a Rum family general with his army; returns the army or nil
+-- custom portrait for Ertugrul / Osman (persistent); quiet if already set
+local function givePortrait(rec)
+    local folder = PORTRAIT[get(rec, "shortName") or ""]
+    if folder == nil or get(rec, "isChild") == true or get(rec, "portrait_custom") == folder then return end
+    local ok, err = pcall(function() rec:setPortrait("/data/ui/custom_portraits/" .. folder .. "/portrait_young.tga") end)
+    log("portrait " .. folder .. " for " .. tostring(get(rec, "shortName")) .. ": "
+        .. (ok and ("custom now " .. tostring(get(rec, "portrait_custom"))) or ("ERROR " .. tostring(err))))
+end
+
 local function spawnGeneral(f, name, name2, label, age, extraUnits, traits)
     local sett = homeSettlement(f)
     if sett == nil then log("ERROR no Rum settlement to spawn " .. name); return nil end
@@ -188,7 +202,7 @@ local function spawnGeneral(f, name, name2, label, age, extraUnits, traits)
     local bg = eduIndex(bgType)
     if bg == nil then log("ERROR unit type not found: " .. bgType); return nil end
     local ok, army = pcall(function()
-        return f:spawnArmy(name, name2, characterType.named_character, label, "", x, y, age, true, 31, bg, 2, 0, 0)
+        return f:spawnArmy(name, name2, characterType.named_character, label, PORTRAIT[name] or "", x, y, age, true, 31, bg, 2, 0, 0)
     end)
     if not ok or army == nil then log("ERROR spawnArmy " .. name .. ": " .. tostring(army)); return nil end
     local made = 0
@@ -201,6 +215,7 @@ local function spawnGeneral(f, name, name2, label, age, extraUnits, traits)
         local okT, err = pcall(function() rec:addTrait(t[1], t[2]) end)
         if not okT then log("ERROR addTrait " .. t[1] .. ": " .. tostring(err)) end
     end
+    givePortrait(rec)
     log("spawned " .. name .. " (" .. bgType .. " + " .. made .. " units) at " .. x .. "," .. y .. " next to "
         .. tostring(get(sett, "name")) .. ", family = " .. tostring(get(rec, "isFamily")) .. ", "
         .. TRAIT .. " = " .. traitLevel(rec, TRAIT))
@@ -268,6 +283,7 @@ local function stepLeader(f)
         setCounter(C_LEADER, 9)
         return
     end
+    givePortrait(rec)
     local ok, err = pcall(function() f:setLeader(rec, true) end)
     log("setLeader " .. tostring(get(rec, "shortName")) .. " (" .. who .. "): "
         .. (ok and ("ok, isLeader = " .. tostring(rec:isLeader())) or ("ERROR " .. tostring(err))))
@@ -288,6 +304,13 @@ local function onTurnStart(eventData)
     local f = get(eventData, "faction")
     if get(f, "name") ~= "rum" then return end
     applyName(f)
+    if counter(C_ERT) == 1 then
+        for _, rec in ipairs(records(f)) do
+            if (isOsman(rec) or (get(rec, "shortName") == "Ertugrul" and traitLevel(rec, TRAIT) > 0)) and isLivingMan(rec) then
+                givePortrait(rec)
+            end
+        end
+    end
     local turn = turnNow()
     local function skipAll(why)
         log("Rum is dead at turn " .. turn .. " - " .. why .. " skipped")
@@ -315,6 +338,7 @@ local function onComesOfAge(eventData)
     if traitLevel(rec, TRAIT) == 0 and (traitLevel(father, TRAIT) > 0 or isOsman(rec)) then
         pcall(function() rec:addTrait(TRAIT, 1) end)
     end
+    if isOsman(rec) then givePortrait(rec) end
     if isOsman(rec) then log("Osman came of age at turn " .. turnNow() .. ", " .. TRAIT .. " = " .. traitLevel(rec, TRAIT)) end
 end
 

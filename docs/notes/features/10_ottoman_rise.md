@@ -32,6 +32,10 @@ after Osman left to the game; faction renamed "Ottoman Domain"; no Sogut village
   `data/export_descr_character_traits.txt`, trigger before Royal_Relation_Turkish_CharacterComesOfAge_Father;
   texts after {Royal_Blood_Rum_Turkish} in `data/text/export_vnvs.txt` (UTF-16 LE). Originals in
   `backups/2026-10-15_before_ottomans/`.
+- Custom portraits (user, 15 Oct, installed, read back identical): `data/ui/custom_portraits/ertugrul_gazi` (red
+  turban) and `osman_gazi` (blue turban), portrait_young / _old / _dead, 69x96 32-bit TGA (same header as SSHIP's).
+  spawnArmy portrait folder + `setPortrait("/data/ui/custom_portraits/<f>/portrait_young.tga")`; child Osman gets his
+  at coming of age; re-checked every Rum turn start (log line "portrait ...").
 - Open risks to check in the test: does birthChild work without a portrait / does the child show in the family tree;
   does the TEST child (age 14) come of age on schedule; does setLeader update the UI; does the name stick after load.
 - After a good test: `TEST = false`.
