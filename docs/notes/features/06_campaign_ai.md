@@ -35,3 +35,9 @@ SSHIP's own scripts (no change made yet, waiting for the user's eop.log cut and 
    vanilla's few rebel cities; with #4 hundreds of rebel towns make the AI chase rebels instead of the player.
 3. EOP AI layer off for turns 1-3 (normal).
 Not a cause: `aggressivity.lua` only punishes the conquering faction (warmonger unrest / relations).
+
+## Fix after test 1 (user, 15 Oct 2026) - installed, read back identical
+User plays Very Hard (always). Decisions: changeAILabel switched OFF (`do return end` at its top, after the comment);
+rebel target factor 6.0 until turn 15, 3.0 until turn 50, then 1.0 (as before). Needs a new campaign? No - both are
+read every turn, a running save picks them up; a new campaign is still cleaner for the label (the old save may hold
+'difficult' labels: they stay until the next new campaign).

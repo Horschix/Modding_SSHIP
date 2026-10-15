@@ -107,6 +107,9 @@ function module.changeAILabel(faction)
 	--- guard clauses
 	-- (Oct 2026) removed the WIP loop that reset every AI faction to 'default' every turn,
 	-- so the Gracul labels from descr_strat (catholic, islam, pagan, scots, byzantium_faction) stay in force
+	-- (15 Oct 2026, user) switched OFF: with the extra 1132 towns every faction is over its threshold from turn 1,
+	-- so this replaced every Gracul label with 'difficult'. Delete the next line to switch it back on.
+	do return end
 	if M2TWEOP:getOptions2().campaignDifficulty ~= 3 then
 		log.debug('exit changeAILabel : the game is not played on Very Hard difficulty')
 		return
@@ -368,8 +371,12 @@ function module.setFactors(faction)
 	-- to be set for each faction separately:
 		local facData = aiCfg.getFactionData(faction)
 		local slaveFac = M2TW.campaign:getFaction("slave")
-		if M2TW.campaign.turnNumber < 50 then
+		-- (15 Oct 2026, user) 6.0 until turn 15, then 3.0 until turn 50 (was 6.0 until 50 - with the extra rebel towns
+		-- of the 1132 settlements the AI chased rebels instead of other factions)
+		if M2TW.campaign.turnNumber < 15 then
 				facData:setTargetFactionFactor(slaveFac, 6.0)	-- this makes AI more decisive vs slave in the begining of the game
+		elseif M2TW.campaign.turnNumber < 50 then
+				facData:setTargetFactionFactor(slaveFac, 3.0)
 		elseif M2TW.campaign.turnNumber >= 50 then
 				facData:setTargetFactionFactor(slaveFac, 1.0)	-- later in the game, don't focus on slaves too much
 				--aiCfg.aggressionFactor = 5.0

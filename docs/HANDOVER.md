@@ -42,8 +42,8 @@ calls are what burn it.
 ## Where things stand - START HERE
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
-- Campaign AI (15 Oct 2026): Gracul AI installed; test 1 still passive - causes found in aiSupport.lua (VH label
-  switch by settlement count, slave target factor 6 until turn 50), see note 06. Karahisar repair bug: TEMPORARY
+- Campaign AI (15 Oct 2026): Gracul AI installed; test 1 passive -> FIX installed 15 Oct: VH label switch OFF,
+  slave target factor 6 (<15) / 3 (<50) / 1; awaiting test 2. See note 06. Karahisar repair bug: TEMPORARY
   `building_diag.lua` (log prefix BDIAG, require line at the end of luaPluginScript) installed 15 Oct. Details: `docs/notes/features/06_campaign_ai.md`.
 - #1 Recruitment costs population - CLOSED, works in game (user, 13 Oct).
 - #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
