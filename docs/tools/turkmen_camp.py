@@ -151,7 +151,7 @@ def buildings():
                 continue
         out.append(ln)
     # insert the new chain before the Builders section header
-    idx = next(i for i, l in enumerate(out) if l.startswith(";---- Builders"))
+    idx = next(i for i, l in enumerate(out) if l.startswith(";---- Builders ---"))   # the section header, NOT the table-of-contents line (fix 15 Oct)
     while idx > 0 and out[idx - 1].startswith(";="):
         idx -= 1
     out[idx:idx] = camp_chain()

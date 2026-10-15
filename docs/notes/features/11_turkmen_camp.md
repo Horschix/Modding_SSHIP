@@ -59,3 +59,9 @@ Originals: `backups/2026-10-15_before_turkmen_camp/`.
 - Turkmen Alps: card, model (round shield, sword, no bow), stats; custom battle.
 - Stables / castle barracks of Rum no longer offer the three units; Kurdish javelins only in the east.
 - Whether AI Rum / Seljuqs / Zengids build camps (otherwise their horse archers dry up).
+
+
+## Fix 1 (15 Oct 2026) - crash to desktop at start
+The tool inserted the chain before the table-of-contents line ";---- Builders" (line 35), i.e. ABOVE
+`hidden_resources` -> "Expected 'building', found 'hidden_resources'" at line 641, CTD on start. Block moved
+unchanged to just before the real ";---- Builders ---" section header; tool anchor fixed. Installed, read back identical.

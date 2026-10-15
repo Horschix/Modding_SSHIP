@@ -44,7 +44,8 @@ calls are what burn it.
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
 - Sack downgrade (note 12, no board issue): sack 25% / exterminate 100% drops a level + buildings. TEST version
   (sack always drops) installed 15 Oct, `sack_downgrade.lua`, log SACKDOWN. After the test: TEST = false.
-- #11 Turkmen Camp (rum/turks/zengid, only source of Oghuz HA, Turcoman Javelinmen, Turkmen Cavalry, new Turkmen
+- #11 Turkmen Camp - FIX 1 15 Oct: EDB block was above hidden_resources (CTD at start), moved; see note 11.
+  (rum/turks/zengid, only source of Oghuz HA, Turcoman Javelinmen, Turkmen Cavalry, new Turkmen
   Alps) + Kurdish Javelinmen for Rum only in zengid/abbasid regions. NEW campaign. Tool `docs/tools/turkmen_camp.py`, note 11.
 - #10 Ertugrul / Osman / Ottoman Domain: test 2 worked (user, 15 Oct); FINAL installed (TEST = false, turns 198 / 252 /
   296). Fort rules + outpost-founding fix (agents, ambush crash) installed; watch FORTRULE / FORTSETT in play. Note 10. golden_horde.lua is FINAL now (TEST = false, 15 Oct).

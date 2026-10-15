@@ -25,109 +25,6 @@
 ;---- Roads
 ;---- Agriculture (farms)
 ;---- Nomads (ex-grassland)
-
-;==================================================================================================================
-;---- Turkmen Camp (Modding_SSHIP #11 Turkmen Camp, user 15 Oct 2026) -------------------------------------------
-; Rum, Seljuqs (turks) and Zengids: buildable everywhere. The ONLY source of Oghuz Horse Archers, Turcoman
-; Javelinmen, Turkmen Cavalry and Turkmen Alps for these three factions. Trade income and growth, but unrest.
-; No link to farms / builders / town halls (unlike the Cuman grasslands chain).
-;==================================================================================================================
-building turkmen_camp
-{
-  convert_to turkmen_camp
-  levels turkmen_oba turkmen_encampment turkmen_beylik
-  {
-    turkmen_oba requires factions { rum, turks, zengid, }
-    {
-      convert_to 0
-      capability
-      {
-		trade_base_income_bonus bonus 1
-		population_growth_bonus bonus 1
-		law_bonus bonus -1
-		cavalry_bonus 1
-
-		recruit_pool	"Turkish Horse Archers"		1	0.1	2  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"		1	0.08	2  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"		1	0.06	2  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Javelinmen"		1	0.15	2  0  requires factions { rum, turks, zengid, }
-      }
-      material wooden
-      construction  6
-      cost  1000
-      settlement_min village
-      upgrades
-      {
-        turkmen_encampment
-      }
-    }
-    turkmen_encampment requires factions { rum, turks, zengid, }
-    {
-      convert_to 1
-      capability
-      {
-		trade_base_income_bonus bonus 2
-		population_growth_bonus bonus 2
-		law_bonus bonus -2
-		cavalry_bonus 2
-
-		recruit_pool	"Turkish Horse Archers"		1	0.14	2  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"		1	0.12	2  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"		1	0.1	2  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Javelinmen"		1	0.2	3  0  requires factions { rum, turks, zengid, }
-		recruit_pool	"Turkmen Alps"		1	0.1	2  0  requires factions { rum, turks, zengid, }
-		recruit_pool	"Turkomans"		1	0.06	2  0  requires factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1
-		recruit_pool	"Turkomans"		1	0.03	2  0  requires factions { rum, turks, zengid, } and event_counter the_mongols_emerge 1
-
-		; AI support (every 4 turns)
-		recruit_pool	"Turkish Horse Archers"		0	0.2	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
-		recruit_pool	"Turkmen Alps"		0	0.15	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
-      }
-      material wooden
-      construction  10
-      cost  3000
-      settlement_min town
-      upgrades
-      {
-        turkmen_beylik
-      }
-    }
-    turkmen_beylik requires factions { rum, turks, zengid, }
-    {
-      convert_to 2
-      capability
-      {
-		trade_base_income_bonus bonus 3
-		population_growth_bonus bonus 3
-		law_bonus bonus -3
-		cavalry_bonus 3
-
-		recruit_pool	"Turkish Horse Archers"		1	0.18	3  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"		1	0.16	3  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"		1	0.14	3  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Javelinmen"		1	0.25	3  0  requires factions { rum, turks, zengid, }
-		recruit_pool	"Turkmen Alps"		1	0.14	3  0  requires factions { rum, turks, zengid, }
-		recruit_pool	"Turkomans"		1	0.09	2  0  requires factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1
-		recruit_pool	"Turkomans"		1	0.045	2  0  requires factions { rum, turks, zengid, } and event_counter the_mongols_emerge 1
-
-		; AI support (every 4 turns)
-		recruit_pool	"Turkish Horse Archers"		0	0.3	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
-		recruit_pool	"Turkmen Alps"		0	0.2	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
-      }
-      material wooden
-      construction  12
-      cost  6000
-      settlement_min large_town
-      upgrades
-      {
-      }
-    }
-  }
-  plugins
-  {
-  }
-}
-
 ;---- Builders
 
 ; 4     POLICIES
@@ -3415,6 +3312,109 @@ building grasslands
   }
 }
 
+
+
+;==================================================================================================================
+;---- Turkmen Camp (Modding_SSHIP #11 Turkmen Camp, user 15 Oct 2026) -------------------------------------------
+; Rum, Seljuqs (turks) and Zengids: buildable everywhere. The ONLY source of Oghuz Horse Archers, Turcoman
+; Javelinmen, Turkmen Cavalry and Turkmen Alps for these three factions. Trade income and growth, but unrest.
+; No link to farms / builders / town halls (unlike the Cuman grasslands chain).
+;==================================================================================================================
+building turkmen_camp
+{
+  convert_to turkmen_camp
+  levels turkmen_oba turkmen_encampment turkmen_beylik
+  {
+    turkmen_oba requires factions { rum, turks, zengid, }
+    {
+      convert_to 0
+      capability
+      {
+		trade_base_income_bonus bonus 1
+		population_growth_bonus bonus 1
+		law_bonus bonus -1
+		cavalry_bonus 1
+
+		recruit_pool	"Turkish Horse Archers"		1	0.1	2  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
+		recruit_pool	"Turkish Horse Archers"		1	0.08	2  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Horse Archers"		1	0.06	2  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Javelinmen"		1	0.15	2  0  requires factions { rum, turks, zengid, }
+      }
+      material wooden
+      construction  6
+      cost  1000
+      settlement_min village
+      upgrades
+      {
+        turkmen_encampment
+      }
+    }
+    turkmen_encampment requires factions { rum, turks, zengid, }
+    {
+      convert_to 1
+      capability
+      {
+		trade_base_income_bonus bonus 2
+		population_growth_bonus bonus 2
+		law_bonus bonus -2
+		cavalry_bonus 2
+
+		recruit_pool	"Turkish Horse Archers"		1	0.14	2  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
+		recruit_pool	"Turkish Horse Archers"		1	0.12	2  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Horse Archers"		1	0.1	2  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Javelinmen"		1	0.2	3  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkmen Alps"		1	0.1	2  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkomans"		1	0.06	2  0  requires factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1
+		recruit_pool	"Turkomans"		1	0.03	2  0  requires factions { rum, turks, zengid, } and event_counter the_mongols_emerge 1
+
+		; AI support (every 4 turns)
+		recruit_pool	"Turkish Horse Archers"		0	0.2	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+		recruit_pool	"Turkmen Alps"		0	0.15	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+      }
+      material wooden
+      construction  10
+      cost  3000
+      settlement_min town
+      upgrades
+      {
+        turkmen_beylik
+      }
+    }
+    turkmen_beylik requires factions { rum, turks, zengid, }
+    {
+      convert_to 2
+      capability
+      {
+		trade_base_income_bonus bonus 3
+		population_growth_bonus bonus 3
+		law_bonus bonus -3
+		cavalry_bonus 3
+
+		recruit_pool	"Turkish Horse Archers"		1	0.18	3  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
+		recruit_pool	"Turkish Horse Archers"		1	0.16	3  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Horse Archers"		1	0.14	3  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Javelinmen"		1	0.25	3  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkmen Alps"		1	0.14	3  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkomans"		1	0.09	2  0  requires factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1
+		recruit_pool	"Turkomans"		1	0.045	2  0  requires factions { rum, turks, zengid, } and event_counter the_mongols_emerge 1
+
+		; AI support (every 4 turns)
+		recruit_pool	"Turkish Horse Archers"		0	0.3	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+		recruit_pool	"Turkmen Alps"		0	0.2	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+      }
+      material wooden
+      construction  12
+      cost  6000
+      settlement_min large_town
+      upgrades
+      {
+      }
+    }
+  }
+  plugins
+  {
+  }
+}
 
 ;==================================================================================================================================
 ;==================================================================================================================================
