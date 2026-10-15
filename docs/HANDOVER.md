@@ -50,7 +50,8 @@ WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
   (user must delete map.rwm, NEW campaign). TEST = false set 15 Oct (final turns 221 / 361).
 - #7 army_costs.lua (ARMYCOST lines, "The Cost of War" report each turn).
 - Campaign AI test 2 and the Karahisar repair bug (BDIAG, not reproduced) - see note 06 / 04.
-Open issues on the board: #4, #5, #6, #7, #8 (Lithuania Orthodox, not started), #9 (Thessalonica / Lisbon attacks, not started), #10, #11.
+Open issues on the board: #4, #5, #6, #7, #9 (Thessalonica / Lisbon attacks, not started), #10, #11.
+Dropped by the user 15 Oct: #8 Lithuania Orthodox (closed, not planned); porting EUR's mason line (no issue).
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
 - Campaign AI (15 Oct 2026): Gracul AI installed; test 1 passive -> FIX installed 15 Oct: VH label switch OFF,
