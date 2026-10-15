@@ -66,7 +66,8 @@ SSHIP's live event table: `historicEvents` in globalEvents.lua (no Georgian or E
 - Mirrors: hildegard_of_bingen = SSHIP's great-people counter hildegard_von_bingen_in; the_mongols_emerge once any
   mongols_invasion_stage_N is set; mongols_blue_horde_caucasus + mongols_reach_caucasus once a Mongol army is near
   tile 440,194 (mongols.lua only shows the message there).
-- Floods: own step counters hx_flood_nl / hx_flood_gm (10% a player turn with a riverport5; floods at 8 / 12 steps),
+- Floods: REMOVED by the user 16 Oct (code taken out; netherlands_flood_coming / grote_mandrenke_coming stay 0, so
+  riverport5 keeps its bonus as before). Was: own step counters hx_flood_nl / hx_flood_gm (10% a player turn with a riverport5; floods at 8 / 12 steps),
   damage as SSHIP (player-owned Ghent, Utrecht / + London, Norwich, Bremen, Ribe); the EDB counters
   netherlands_flood_coming / grote_mandrenke_coming are 1 only for 10 turns after the flood (riverport5 bonus off) -
   SSHIP kept them at 1+ all game, which may have meant no bonus ever (if EDB reads "X 1" as ">= 1").

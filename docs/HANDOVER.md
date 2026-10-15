@@ -47,7 +47,7 @@ WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
   restores SSHIP's lost Zengid/Abbasid/Egypt reform counters (factionsEvolutions.lua is all a comment). Log DYNAST.
   + lost_events.lua (16 Oct, TEST = true, read back identical): Templars, Teutonic hospital, Amalfi, coat of arms,
   tourney, Ostsiedlung/Saint Sava/Rustaveli player counters, Tatar Lancers, faction killer. Log LOSTEV. Round 2 (16 Oct,
-  read back identical): Georgia 2-7, England 2/3/5, Pantokrator, Omar, Meteora, Liber, Scotland, Hildegard, Mongols, floods.
+  read back identical): Georgia 2-7, England 2/3/5, Pantokrator, Omar, Meteora, Liber, Scotland, Hildegard, Mongols (floods removed by the user).
 - Sack downgrade (note 12, no board issue): sack 25% / exterminate 100% drops a level + buildings. Test worked;
   FINAL (TEST = false) installed 15 Oct, `sack_downgrade.lua`, log SACKDOWN. Deletion of settlements dropped.
 - #11 Turkmen Camp - FIX 1 15 Oct: EDB block was above hidden_resources (CTD at start), moved; see note 11.

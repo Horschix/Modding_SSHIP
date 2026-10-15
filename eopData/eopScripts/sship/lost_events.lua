@@ -25,8 +25,8 @@
 --   10 points of FactionKiller (= the trait's first level "Conqueror", as the old triggers gave).
 -- ROUND 2 (user, 16 Oct: "all of them"): Georgia 2/3/4/6/7, England 2/3/5, Pantokrator, Omar Khayyam, Meteora,
 --   Liber Secretorum, Scotland's first uprising (timed, see TIMED); Hildegard, the Mongol invasion and the Mongols in
---   the Caucasus (mirrors of live counters, see runMirrors); floods (runFloods). Details in note 13.
--- TEST = true: timed events at turns 2-6, floods every turn at 100% (Netherlands after 3 steps, Mandrenke after 4).
+--   the Caucasus (mirrors of live counters, see runMirrors). Floods removed by the user (16 Oct). Details in note 13.
+-- TEST = true: timed events at turns 2-6.
 -- Log prefix: LOSTEV (in full.log).
 ---------------------------------------------------------------------------------------------------------------------
 local TEST = true
@@ -215,64 +215,6 @@ local function runMirrors()
 end
 
 ---------------------------------------------------------------------------------------------------------------------
--- floods (SSHIP's disasters.lua, commented out in 0.98): for a player faction with a riverport5, each turn 10% each
--- step counter goes up; Netherlands flood after 8 steps, Grote Mandrenke after 12. Players' Ghent / Utrecht (and
--- London, Norwich, Bremen, Ribe for the Mandrenke) lose 2000 people, farms / hansa buildings drop to 10% health.
--- SSHIP kept the EDB counters netherlands_flood_coming / grote_mandrenke_coming at 1+ all game, which (if the EDB
--- reads "event_counter X 1" as "at least 1") would switch the riverport5 growth / trade bonus off for good. Here the
--- steps count in our own counters, and the EDB counter is 1 only for RECOVERY turns after its flood: the riverport5
--- bonus is lost while the land recovers.
----------------------------------------------------------------------------------------------------------------------
-local FLOODS = {
-    { edb = "netherlands_flood_coming", steps = "hx_flood_nl", until_ = "hx_flood_nl_until", need = TEST and 3 or 8,
-      event = "NETHERLANDS_FLOOD", places = { "Ghent", "Utrecht" } },
-    { edb = "grote_mandrenke_coming", steps = "hx_flood_gm", until_ = "hx_flood_gm_until", need = TEST and 4 or 12,
-      event = "GROTE_MANDENKE", places = { "London", "Norwich", "Ghent", "Utrecht", "Bremen", "Ribe" } },
-}
-local FLOOD_CHANCE = TEST and 100 or 10
-local RECOVERY = TEST and 3 or 10
-
-local function flood(fl, turn)
-    pcall(function() M2TW.campaign.execScriptEvent(fl.event, "historic", 214, 122, 1, "") end)
-    local hit = {}
-    for _, name in ipairs(fl.places) do
-        local ok, s = pcall(function() return M2TW.stratMap:getSettlement(name) end)
-        if ok and s and get(get(s, "faction"), "isPlayerControlled") == 1 then
-            pcall(function() M2TWEOP.callConsole("set_building_health", name .. " hinterland_farms 10") end)
-            pcall(function() M2TWEOP.callConsole("set_building_health", name .. " hansa_building 10") end)
-            pcall(function() M2TWEOP.callConsole("add_population", name .. " -2000") end)
-            hit[#hit + 1] = name
-        end
-    end
-    setCounter(fl.steps, 0)
-    setCounter(fl.edb, 1)
-    setCounter(fl.until_, turn + RECOVERY)
-    log(fl.event .. " at turn " .. turn .. ", player settlements hit: " .. (#hit > 0 and table.concat(hit, ", ") or "none")
-        .. "; riverport5 bonus off until turn " .. (turn + RECOVERY))
-end
-
-local function runFloods(eventData, f, newTurn)
-    local turn = turnNow()
-    for _, fl in ipairs(FLOODS) do
-        if counter(fl.edb) == 1 and turn >= counter(fl.until_) then setCounter(fl.edb, 0); log(fl.edb .. " = 0 (recovered)") end
-    end
-    if get(f, "isPlayerControlled") ~= 1 then return end
-    local ok, has = pcall(function() return M2TWEOP.condition("FactionBuildingExists = riverport5", eventData) end)
-    if not (ok and has == true) then return end
-    for i, fl in ipairs(FLOODS) do
-        if math.random(1, 100) <= FLOOD_CHANCE then
-            local v = counter(fl.steps) + 1
-            setCounter(fl.steps, v)
-            if v >= fl.need then
-                flood(fl, turn)
-                if i == 2 then setCounter(FLOODS[1].steps, 0) end   -- no Netherlands flood right after the Mandrenke
-                return
-            end
-        end
-    end
-end
-
----------------------------------------------------------------------------------------------------------------------
 -- faction killer
 ---------------------------------------------------------------------------------------------------------------------
 local function onOccupy(eventData)
@@ -298,7 +240,6 @@ end
 local lastTurn = -1
 local function onTurnStart(eventData)
     local turn = turnNow()
-    runFloods(eventData, get(eventData, "faction"))
     if turn == lastTurn then runMirrors(); runDerived(); return end   -- SSHIP's own turn code may set sources later
     lastTurn = turn
     runTimed(turn)
