@@ -49,10 +49,26 @@ Dead counters that still gate content (scan of every commented block in every SS
   garrisons, Zengid generals there turn rebel; save/load keeps the names.
 
 ## Second scan (16 Oct, descr_events comment lines stripped - the first scan counted ';;;;;;' lines as live)
-Also dead, NOT fixed yet, asked the user: GEORGIAN2_GOLDEN_AGE, GEORGIAN3_SHOTA_RUSTAVELI, GEORGIAN4_CROSSBOW_IN_CAUCASUS,
+FIXED 16 Oct (user: "all of them"), lost_events.lua round 2 - was dead: GEORGIAN2_GOLDEN_AGE, GEORGIAN3_SHOTA_RUSTAVELI, GEORGIAN4_CROSSBOW_IN_CAUCASUS,
 GEORGIAN6_REVIVAL, GEORGIAN7_LAST_UNITED_KINGDOM (Georgia's whole roster progression); ENGLAND2_THOMAS_BECKET,
 ENGLAND3_MAGNA_CARTA, ENGLAND5_ENGLISH_ARCHERS (unit swaps); BYZANTIUM7_METEORA (agent limit), BYZANTINE_PANTOKRATOR
 (huge cathedral), LIBER_SECRETORUM_TRANSLATED (alchemists' lab), SCOTLAND_FIRST_UPRISING (mangonel, trebuchet),
 hildegard_of_bingen / omar_khayyam (health / happiness), grote_mandrenke_coming / netherlands_flood_coming,
 mongols_blue_horde_caucasus, mongols_reach_caucasus, the_mongols_emerge (to be double-checked against mongols.lua).
 SSHIP's live event table: `historicEvents` in globalEvents.lua (no Georgian or English entries at all).
+
+## Round 2 rules (lost_events.lua, TEST = true installed 16 Oct, read back identical)
+- Georgia at SSHIP's fall-back turns (its early routes needed buildings / marriages / crowned FL - not rebuilt):
+  GEORGIAN2 130, GEORGIAN3 210, GEORGIAN4 290, GEORGIAN6 350, GEORGIAN7 600 (GEORGIAN5_REVIVAL_ALLOWED skipped,
+  it only gated GEORGIAN6). England ("after X, 40% a turn"): Becket 71-77, Magna Carta 161-167, Archers 301-307.
+- BYZANTINE_PANTOKRATOR and omar_khayyam turn 3 for everyone (SSHIP only set them for an Orthodox / Muslim player);
+  BYZANTIUM7_METEORA 85; LIBER_SECRETORUM_TRANSLATED 60-90 (own text); SCOTLAND_FIRST_UPRISING 51-70 (our choice).
+- Mirrors: hildegard_of_bingen = SSHIP's great-people counter hildegard_von_bingen_in; the_mongols_emerge once any
+  mongols_invasion_stage_N is set; mongols_blue_horde_caucasus + mongols_reach_caucasus once a Mongol army is near
+  tile 440,194 (mongols.lua only shows the message there).
+- Floods: own step counters hx_flood_nl / hx_flood_gm (10% a player turn with a riverport5; floods at 8 / 12 steps),
+  damage as SSHIP (player-owned Ghent, Utrecht / + London, Norwich, Bremen, Ribe); the EDB counters
+  netherlands_flood_coming / grote_mandrenke_coming are 1 only for 10 turns after the flood (riverport5 bonus off) -
+  SSHIP kept them at 1+ all game, which may have meant no bonus ever (if EDB reads "X 1" as ">= 1").
+- TEST turns: Becket / Golden Age 2, Magna Carta / Rustaveli / Pantokrator / Omar 3, Archers / Crossbow / Meteora 4,
+  Revival / Liber / Scotland 5, Last United Kingdom 6; floods 100% (NL after 3, Mandrenke after 4, recovery 3).

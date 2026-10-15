@@ -23,13 +23,47 @@
 --   way was crude: any leader ending his turn after any leader's death got it). Rebuilt with EOP: the faction that
 --   took a faction's last settlement is remembered; when that faction dies, its conqueror's faction leader gets
 --   10 points of FactionKiller (= the trait's first level "Conqueror", as the old triggers gave).
--- TEST = true: FIRST_COAT_OF_ARMS turn 2, GEORGIAN8 turn 3. Log prefix: LOSTEV (in full.log).
+-- ROUND 2 (user, 16 Oct: "all of them"): Georgia 2/3/4/6/7, England 2/3/5, Pantokrator, Omar Khayyam, Meteora,
+--   Liber Secretorum, Scotland's first uprising (timed, see TIMED); Hildegard, the Mongol invasion and the Mongols in
+--   the Caucasus (mirrors of live counters, see runMirrors); floods (runFloods). Details in note 13.
+-- TEST = true: timed events at turns 2-6, floods every turn at 100% (Netherlands after 3 steps, Mandrenke after 4).
+-- Log prefix: LOSTEV (in full.log).
 ---------------------------------------------------------------------------------------------------------------------
 local TEST = true
 
+local CATHOLIC = { "france", "jerusalem", "hre", "england", "scotland", "denmark", "norway", "poland", "hungary", "sicily",
+                   "venice", "pisa", "spain", "portugal", "aragon", "papal_states" }
+local ORTHODOX = { "byzantium", "russia", "kievan_rus", "georgia", "serbia" }
+local MUSLIM = { "egypt", "abbasid", "zengid", "turks", "rum", "moors" }
+local CAUCASUS = { "georgia", "jerusalem", "byzantium", "turks", "cumans", "abbasid", "rum", "zengid", "kievan_rus" }
+
+-- name = counter (and SSHIP historic_events.txt entry unless title/body are given); show = who sees the message
+-- (players only; "all" = every player); turn = random turn in min..max, chosen once and kept in hx_turn_<name>.
+local function W(name, minT, maxT, testT, show, title, body)
+    return { name = name, min = TEST and testT or minT, max = TEST and testT or maxT, show = show, title = title, body = body }
+end
 local TIMED = {
-    { name = "FIRST_COAT_OF_ARMS", min = TEST and 2 or 61, max = TEST and 2 or 80, faction = "all" },
-    { name = "GEORGIAN8_TATAR_LANCERS_REFORM", min = TEST and 3 or 161, max = TEST and 3 or 180, faction = "georgia" },
+    W("FIRST_COAT_OF_ARMS", 61, 80, 2, "all"),                  -- SSHIP: after 60, 10% a turn
+    W("GEORGIAN8_TATAR_LANCERS_REFORM", 161, 180, 3, { "georgia" }),   -- SSHIP fall-back after 160
+    -- Georgia: SSHIP's fall-back turns (its earlier routes needed buildings / marriages / crowned ruler)
+    W("GEORGIAN2_GOLDEN_AGE", 130, 130, 2, CAUCASUS),
+    W("GEORGIAN3_SHOTA_RUSTAVELI", 210, 210, 3, CAUCASUS),
+    W("GEORGIAN4_CROSSBOW_IN_CAUCASUS", 290, 290, 4, CAUCASUS),
+    W("GEORGIAN6_REVIVAL", 350, 350, 5, CAUCASUS),
+    W("GEORGIAN7_LAST_UNITED_KINGDOM", 600, 600, 6, CAUCASUS),
+    -- England: SSHIP "after turn X, 40% a turn" -> X+1 .. X+7 (Becket 1170 = turn 77, Magna Carta 1215 = 167)
+    W("ENGLAND2_THOMAS_BECKET", 71, 77, 2, CATHOLIC),
+    W("ENGLAND3_MAGNA_CARTA", 161, 167, 3, CATHOLIC),
+    W("ENGLAND5_ENGLISH_ARCHERS", 301, 307, 4, CATHOLIC),
+    -- turn-3 info events of SSHIP (were shown only to an Orthodox / Muslim player - now set for everyone)
+    W("BYZANTINE_PANTOKRATOR", 3, 3, 3, ORTHODOX),
+    W("omar_khayyam", 3, 3, 3, MUSLIM),
+    W("BYZANTIUM7_METEORA", 85, 85, 4, ORTHODOX),               -- descr_events note: turn 85
+    W("LIBER_SECRETORUM_TRANSLATED", 60, 90, 5, CATHOLIC,       -- EDB note: 60-90, no SSHIP text
+      "The Secrets of Alchemy",
+      "\nIn Spain and Italy the Latins translate the alchemical works of the Arabs - the Liber Secretorum of al-Razi "
+      .. "among them.\n\nGAME: Catholic factions can build the alchemists' laboratory."),
+    W("SCOTLAND_FIRST_UPRISING", 51, 70, 5, { "scotland" }),    -- no SSHIP timing known; our choice
 }
 
 -- { source counter, target counter, player faction or nil (= any / global) }
@@ -99,6 +133,20 @@ local function anyPlayer(names)
 end
 
 ---------------------------------------------------------------------------------------------------------------------
+local function playersIn(show)
+    local list = {}
+    local n = get(M2TW.campaign, "numberOfFactions") or 0
+    for i = 0, n - 1 do
+        local ok, f = pcall(function() return M2TW.campaign:getFactionByID(i) end)
+        if ok and f and get(f, "isPlayerControlled") == 1 then
+            local wanted = show == "all"
+            if type(show) == "table" then for _, s in ipairs(show) do if s == f.name then wanted = true end end end
+            if wanted then list[#list + 1] = f.name end
+        end
+    end
+    return list
+end
+
 local function runTimed(turn)
     for _, e in ipairs(TIMED) do
         if counter(e.name) == 0 then
@@ -110,12 +158,18 @@ local function runTimed(turn)
                 log(e.name .. " will come at turn " .. at)
             end
             if turn >= at then
-                if anyPlayer(e.faction) then
-                    local ok, err = pcall(function() M2TW.campaign.execScriptEvent(e.name, "historic", 214, 122, 1, "") end)
-                    if not ok then log("ERROR execScriptEvent " .. e.name .. ": " .. tostring(err)) end
+                local who = playersIn(e.show)
+                if #who > 0 then
+                    local ok, err
+                    if e.title then
+                        ok, err = pcall(function() M2TW.campaign.historicEvent(e.name, e.title, e.body, false, -1, -1, who) end)
+                    else
+                        ok, err = pcall(function() M2TW.campaign.execScriptEvent(e.name, "historic", 214, 122, 1, "") end)
+                    end
+                    if not ok then log("ERROR message " .. e.name .. ": " .. tostring(err)) end
                 end
                 setCounter(e.name, 1)
-                log(e.name .. " at turn " .. turn)
+                log(e.name .. " at turn " .. turn .. " (shown to " .. (#who > 0 and table.concat(who, ",") or "nobody") .. ")")
             end
         end
     end
@@ -127,6 +181,93 @@ local function runDerived()
         if counter(src) > 0 and counter(dst) == 0 and (fac == nil or isPlayerFaction(fac)) then
             setCounter(dst, 1)
             log(dst .. " = 1 (" .. src .. " happened" .. (fac and (", player " .. fac) or "") .. ")")
+        end
+    end
+end
+
+---------------------------------------------------------------------------------------------------------------------
+-- mirrors of live SSHIP counters under the names the EDB uses
+---------------------------------------------------------------------------------------------------------------------
+local MONGOL_CAUCASUS_TILE = { 440, 194 }   -- the tile SSHIP's mongols.lua watches for the Blue Horde message
+
+local function runMirrors()
+    -- Hildegard: SSHIP's great-people counter (1 while she lives, turns 0-93)
+    local h = counter("hildegard_von_bingen_in")
+    if counter("hildegard_of_bingen") ~= h then setCounter("hildegard_of_bingen", h); log("hildegard_of_bingen = " .. h) end
+    -- the Mongol invasion has begun (mongols.lua sets stage 1, later 2, 3)
+    if counter("the_mongols_emerge") == 0 and (counter("mongols_invasion_stage_1") + counter("mongols_invasion_stage_2")
+            + counter("mongols_invasion_stage_3")) > 0 then
+        setCounter("the_mongols_emerge", 1); log("the_mongols_emerge = 1")
+    end
+    -- a Mongol army in the Caucasus (mongols.lua only shows the message, it sets no counter)
+    if counter("mongols_blue_horde_caucasus") == 0 then
+        local okF, m = pcall(function() return M2TW.campaign:getFaction("mongols") end)
+        local okT, tile = pcall(function() return M2TW.stratMap.getTile(MONGOL_CAUCASUS_TILE[1], MONGOL_CAUCASUS_TILE[2]) end)
+        if okF and m and okT and tile then
+            local okN, near = pcall(function() return tile:factionHasArmyNearTile(m.factionID) end)
+            if okN and near == true then
+                setCounter("mongols_blue_horde_caucasus", 1)
+                setCounter("mongols_reach_caucasus", 1)
+                log("Mongols in the Caucasus: mongols_blue_horde_caucasus, mongols_reach_caucasus = 1")
+            end
+        end
+    end
+end
+
+---------------------------------------------------------------------------------------------------------------------
+-- floods (SSHIP's disasters.lua, commented out in 0.98): for a player faction with a riverport5, each turn 10% each
+-- step counter goes up; Netherlands flood after 8 steps, Grote Mandrenke after 12. Players' Ghent / Utrecht (and
+-- London, Norwich, Bremen, Ribe for the Mandrenke) lose 2000 people, farms / hansa buildings drop to 10% health.
+-- SSHIP kept the EDB counters netherlands_flood_coming / grote_mandrenke_coming at 1+ all game, which (if the EDB
+-- reads "event_counter X 1" as "at least 1") would switch the riverport5 growth / trade bonus off for good. Here the
+-- steps count in our own counters, and the EDB counter is 1 only for RECOVERY turns after its flood: the riverport5
+-- bonus is lost while the land recovers.
+---------------------------------------------------------------------------------------------------------------------
+local FLOODS = {
+    { edb = "netherlands_flood_coming", steps = "hx_flood_nl", until_ = "hx_flood_nl_until", need = TEST and 3 or 8,
+      event = "NETHERLANDS_FLOOD", places = { "Ghent", "Utrecht" } },
+    { edb = "grote_mandrenke_coming", steps = "hx_flood_gm", until_ = "hx_flood_gm_until", need = TEST and 4 or 12,
+      event = "GROTE_MANDENKE", places = { "London", "Norwich", "Ghent", "Utrecht", "Bremen", "Ribe" } },
+}
+local FLOOD_CHANCE = TEST and 100 or 10
+local RECOVERY = TEST and 3 or 10
+
+local function flood(fl, turn)
+    pcall(function() M2TW.campaign.execScriptEvent(fl.event, "historic", 214, 122, 1, "") end)
+    local hit = {}
+    for _, name in ipairs(fl.places) do
+        local ok, s = pcall(function() return M2TW.stratMap:getSettlement(name) end)
+        if ok and s and get(get(s, "faction"), "isPlayerControlled") == 1 then
+            pcall(function() M2TWEOP.callConsole("set_building_health", name .. " hinterland_farms 10") end)
+            pcall(function() M2TWEOP.callConsole("set_building_health", name .. " hansa_building 10") end)
+            pcall(function() M2TWEOP.callConsole("add_population", name .. " -2000") end)
+            hit[#hit + 1] = name
+        end
+    end
+    setCounter(fl.steps, 0)
+    setCounter(fl.edb, 1)
+    setCounter(fl.until_, turn + RECOVERY)
+    log(fl.event .. " at turn " .. turn .. ", player settlements hit: " .. (#hit > 0 and table.concat(hit, ", ") or "none")
+        .. "; riverport5 bonus off until turn " .. (turn + RECOVERY))
+end
+
+local function runFloods(eventData, f, newTurn)
+    local turn = turnNow()
+    for _, fl in ipairs(FLOODS) do
+        if counter(fl.edb) == 1 and turn >= counter(fl.until_) then setCounter(fl.edb, 0); log(fl.edb .. " = 0 (recovered)") end
+    end
+    if get(f, "isPlayerControlled") ~= 1 then return end
+    local ok, has = pcall(function() return M2TWEOP.condition("FactionBuildingExists = riverport5", eventData) end)
+    if not (ok and has == true) then return end
+    for i, fl in ipairs(FLOODS) do
+        if math.random(1, 100) <= FLOOD_CHANCE then
+            local v = counter(fl.steps) + 1
+            setCounter(fl.steps, v)
+            if v >= fl.need then
+                flood(fl, turn)
+                if i == 2 then setCounter(FLOODS[1].steps, 0) end   -- no Netherlands flood right after the Mandrenke
+                return
+            end
         end
     end
 end
@@ -155,11 +296,13 @@ end
 
 ---------------------------------------------------------------------------------------------------------------------
 local lastTurn = -1
-local function onTurnStart()
+local function onTurnStart(eventData)
     local turn = turnNow()
-    if turn == lastTurn then runDerived(); return end   -- derived ones may come from SSHIP's own turn code
+    runFloods(eventData, get(eventData, "faction"))
+    if turn == lastTurn then runMirrors(); runDerived(); return end   -- SSHIP's own turn code may set sources later
     lastTurn = turn
     runTimed(turn)
+    runMirrors()
     runDerived()
 end
 
