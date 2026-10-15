@@ -4,7 +4,7 @@ Last updated 15 Oct 2026 (Turkmen Camp #11; forts, Ottoman rise #10; Golden Hord
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5), `06_campaign_ai.md`, `07_mongol_islam.md`, `08_golden_horde.md` (#6),
-`09_army_costs.md` (#7), `10_ottoman_rise.md` (#10 + fort rules), `11_turkmen_camp.md` (#11). Note numbers are NOT board issue numbers. The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
+`09_army_costs.md` (#7), `10_ottoman_rise.md` (#10 + fort rules), `11_turkmen_camp.md` (#11), `12_sack_downgrade.md`. Note numbers are NOT board issue numbers. The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
 section "How the tooling behaves" - look there only when a tool misbehaves.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
 
@@ -42,6 +42,8 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
+- Sack downgrade (note 12, no board issue): sack 25% / exterminate 100% drops a level + buildings. TEST version
+  (sack always drops) installed 15 Oct, `sack_downgrade.lua`, log SACKDOWN. After the test: TEST = false.
 - #11 Turkmen Camp (rum/turks/zengid, only source of Oghuz HA, Turcoman Javelinmen, Turkmen Cavalry, new Turkmen
   Alps) + Kurdish Javelinmen for Rum only in zengid/abbasid regions. NEW campaign. Tool `docs/tools/turkmen_camp.py`, note 11.
 - #10 Ertugrul / Osman / Ottoman Domain: test 2 worked (user, 15 Oct); FINAL installed (TEST = false, turns 198 / 252 /
@@ -153,7 +155,7 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga`; #6: Mongol / Muslim unit cards copied into ui/units|unit_info/cumans|mongols, `data/unit_models/battle_models.modeldb`, `data/descr_character.txt` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
 - `luaPluginScript.lua` ends with six require lines: population_recruitment, fort_settlement,
-  starting_settlements (#4), historic_invasions (#5), mongol_islam, golden_horde (#6) and army_costs (#7), then fort_rules and ottoman_rise (#10) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+  starting_settlements (#4), historic_invasions (#5), mongol_islam, golden_horde (#6) and army_costs (#7), then fort_rules and ottoman_rise (#10), sack_downgrade (note 12) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
   settler recruit lines need - removing it stops settler recruitment too.
 
 ## Tooling
