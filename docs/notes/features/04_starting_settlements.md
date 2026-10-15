@@ -610,3 +610,14 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Open bug reported in the same test: Karahisar's small_masjid damaged by a revolt on turn 2 could not be repaired
   ("already in queue", repair timer 0). Cause not found in the log; workaround proposed (auto-repair), waiting for
   the user's go-ahead and whether repair works in SSHIP's own settlements.
+
+## Venice + Cuman villages (user, 15 Oct 2026)
+- Udine and Trieste now start as venice (ownerFrom Verona removed; owner = Venice). Trieste got a venice name "Trieste".
+  Garrison = GARRISON.venice (Urban Spear Militia x4).
+- Three Cuman villages, level 1 / 500, capital (= owner) Azaq, where Kherson, Zaporizhzhia and Donetsk are today:
+  kherson 313,181 (GPS tile), zaporizhzhia 334,191 (GPS 331,189 is dense forest -> nearest open tile), donetsk 351,191
+  (GPS tile). Anchors: docs/tools/anchors_ukraine.txt. Route checks Azaq -> each added. Modern names (none existed in 1132).
+- Installed 15 Oct, read back identical. Script only: NEW campaign, map.rwm stays.
+- Karahisar mosque: in the new test the mosque was not damaged (BDIAG turns 1-2: small_masjid hp 100, builders2
+  present; wells 66 and town_watch 53 damaged and repairable). small_masjid needs builders1 min level, a town and a
+  Muslim faction - all met, so the requirements are not the cause. Not reproduced; BDIAG stays on for the next test.

@@ -108,6 +108,8 @@ HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm st
   SCANDINAVIA + GAP ROUND + bigger starter pack were installed by another session but NOT committed until 15 Oct
   (taken from the PC). 15 Oct: Marburg 193,181 -> 195,180 (Hungarian region tile, owner from Freiberg = hre), Ljubljana
   (Laibach) added 185,176 level 1 / 1000, owner hre - read back identical, NEW campaign.
+  15 Oct: Udine + Trieste start Venetian; Cuman villages Kherson / Zaporizhzhia / Donetsk (1/500, Azaq) added -
+  read back identical, NEW campaign. Karahisar mosque bug not reproduced (requirements met); BDIAG stays on.
   Same method (EU5 07_cities_and_buildings.txt + Wikipedia check,
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open

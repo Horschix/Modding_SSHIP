@@ -448,6 +448,17 @@ local SETTS = {
     { key = "sarai", x = 407, y = 195, capital = "Saqsin", ownerFrom = "Aktobe", level = 1, population = 500,  -- 1330s - founded later; Cumans (user, 14 Oct; Saqsin itself moved to the Cumans in descr_strat)
       names = { greek = "Sarái", middle_eastern = "Saray-i Cedid", arabic = "Saray al-Jadid", european = "Sarai", default = "Saray al-Jadid" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    -- Pontic steppe villages for the Cumans (user, 15 Oct 2026): level 1, 500 people, where Kherson, Zaporizhzhia and
+    -- Donetsk lie today (all founded much later); tiles by GPS (anchors_ukraine.txt), all in the Azaq region (cumans)
+    { key = "kherson", x = 313, y = 181, capital = "Azaq", level = 1, population = 500,  -- GPS tile, wood
+      names = { kievan_rus = "Kherson", russia = "Kherson", greek = "Cherson", european = "Chersonum", middle_eastern = "Herson", default = "Kherson" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "zaporizhzhia", x = 334, y = 191, capital = "Azaq", level = 1, population = 500,  -- GPS tile 331,189 dense forest -> nearest open tile
+      names = { kievan_rus = "Zaporozhye", russia = "Zaporozhye", greek = "Zaporozie", european = "Zaporoga", middle_eastern = "Zaporijya", default = "Zaporizhzhia" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
+    { key = "donetsk", x = 351, y = 191, capital = "Azaq", level = 1, population = 500,  -- GPS tile
+      names = { kievan_rus = "Donetsk", russia = "Donetsk", greek = "Donetsk", european = "Donetium", middle_eastern = "Donetsk", default = "Donetsk" },
+      rebels = { "EE Spear Militia", "EE Spear Militia" } },
     -- Russia / Rus' (user, 14 Oct 2026): Russian names for Novgorod, Kievan Rus and rebels, Polish for Poland,
     -- Lithuanian for Lithuania, Latin for other Europeans, Greek, Turkish. Garrison EE Spear Militia.
     { key = "tver", x = 335, y = 255, capital = "Novgorod", level = 1, population = 500,  -- EU5 city, founded c. 1135
@@ -628,8 +639,8 @@ local SETTS = {
     { key = "rijeka", x = 181, y = 173, capital = "Freiberg", ownerFrom = "Zara", level = 2, population = 7500,  -- Istria/Kvarner; rebels. User asked 1 SW (181,173); relief 50 there, snapped to 181,174 (15 Oct); moved 181,174 -> 181,173 (user, 14 Oct, Romania fix 1)
       names = { hungary = "Fiume", hre = "Sankt Veit am Pflaum", european = "Tarsatica", greek = "Ríjeka", middle_eastern = "Riyeka", default = "Rijeka" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "trieste", x = 176, y = 175, capital = "Venice", ownerFrom = "Verona", level = 2, population = 7500,  -- Istria/Friuli; rebels. Requested tile is Venice_Province, not unassigned - moved there, no map edit needed (15 Oct)
-      names = { hungary = "Trieszt", hre = "Triest", european = "Tergeste", greek = "Triésti", middle_eastern = "Tirieste", default = "Trieste" },
+    { key = "trieste", x = 176, y = 175, capital = "Venice", level = 2, population = 7500,  -- Istria/Friuli; Venice from the start (user, 15 Oct; was rebels via ownerFrom Verona). Requested tile is Venice_Province, not unassigned - moved there, no map edit needed (15 Oct)
+      names = { venice = "Trieste", hungary = "Trieszt", hre = "Triest", european = "Tergeste", greek = "Triésti", middle_eastern = "Tirieste", default = "Trieste" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     -- Romania: Transylvania, Partium, Banat, Wallachia, Moldavia, Danube mouth, Dobruja (user, 14 Oct 2026)
     { key = "cluj", x = 249, y = 183, capital = "Gyulafehervar", level = 2, population = 7500,  -- EU5 town; Kolozs county castle, 11th c.
@@ -863,7 +874,7 @@ local SETTS = {
       names = { sicily = "Potenza", papal_states = "Potenza", venice = "Potenza", pisa = "Potenza", hre = "Potenza", european = "Potentia", greek = "Potentía", arabic = "Butinsa", middle_eastern = "Potensa", default = "Potenza" } },
     { key = "catanzaro", x = 200, y = 127, capital = "Reggio", level = 2, population = 7500,  -- EU5 town; owner sicily; moved 1 NE (user, 14 Oct, Italy fix 1)
       names = { sicily = "Catanzaro", papal_states = "Catanzaro", venice = "Catanzaro", pisa = "Catanzaro", hre = "Catanzaro", european = "Catacium", greek = "Katantzárion", arabic = "Qatansar", middle_eastern = "Katanzaro", default = "Catanzaro" } },
-    { key = "udine", x = 172, y = 176, capital = "Venice", ownerFrom = "Verona", level = 1, population = 1000,  -- castle in 1132; re-added as rebels, 2 south of its first tile (user, 14 Oct, Italy fix 2); Venice_Province like Trieste
+    { key = "udine", x = 172, y = 176, capital = "Venice", level = 1, population = 1000,  -- castle in 1132; Venice from the start (user, 15 Oct; was rebels via ownerFrom Verona); re-added 2 south of its first tile (user, 14 Oct, Italy fix 2); Venice_Province like Trieste
       names = { sicily = "Udine", papal_states = "Udine", venice = "Udine", pisa = "Udine", hre = "Weiden", european = "Utinum", greek = "Oúdine", arabic = "Udini", middle_eastern = "Udine", default = "Udine" },
       rebels = { "Urban Spear Militia", "Urban Spear Militia" } },
     { key = "malta", x = 181, y = 104, capital = "Palermo", level = 1, population = 1000, castle = true,  -- Malta, castle (user, 14 Oct, Italy fix 1); Mdina; size doubtful; Malta tiles are woodland; owner sicily
@@ -1488,6 +1499,9 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Burgos-bilbao", 51, 150, 63, 157 },
     -- Italy + islands (14 Oct 2026)
     { "Venice-udine", 168, 173, 172, 176 },
+    { "Azaq-kherson", 362, 186, 313, 181 },
+    { "Azaq-zaporizhzhia", 362, 186, 334, 191 },
+    { "Azaq-donetsk", 362, 186, 351, 191 },
     { "Palermo-messina", 173, 119, 188, 120 },
     { "Naples-salerno", 182, 139, 186, 140 },
     { "Palermo-syracuse", 173, 119, 186, 111 },
