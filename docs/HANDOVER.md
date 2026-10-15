@@ -1,10 +1,10 @@
 # Handover - SSHIP submod
 
-Last updated 15 Oct 2026 (Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
+Last updated 15 Oct 2026 (forts, Ottoman rise #10; Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5), `06_campaign_ai.md`, `07_mongol_islam.md`, `08_golden_horde.md` (#6),
-`09_army_costs.md` (#7). Note numbers are NOT board issue numbers. The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
+`09_army_costs.md` (#7), `10_ottoman_rise.md` (#10 + fort rules). Note numbers are NOT board issue numbers. The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
 section "How the tooling behaves" - look there only when a tool misbehaves.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
 
@@ -42,11 +42,13 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
+- #10 Ertugrul / Osman / Ottoman Domain TEST (turns 2 / 3 / 8, NEW campaign) + fort rules (fort 5000, AI refund,
+  4 free-upkeep units): read OTTOMAN and FORTRULE lines, then `TEST = false` in ottoman_rise.lua. Note 10.
 - #6 Golden Horde fix 1 (mosque texts, imams, Kasogi) + #4 Cuman villages moved / map round 11 / Volterra Pisan
   (user must delete map.rwm, NEW campaign). After the test: read GHORDE lines, then `TEST = false` in golden_horde.lua.
 - #7 army_costs.lua (ARMYCOST lines, "The Cost of War" report each turn).
 - Campaign AI test 2 and the Karahisar repair bug (BDIAG, not reproduced) - see note 06 / 04.
-Open issues on the board: #4, #5, #6, #7.
+Open issues on the board: #4, #5, #6, #7, #8 (Lithuania Orthodox, not started), #9 (Thessalonica / Lisbon attacks, not started), #10.
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
 - Campaign AI (15 Oct 2026): Gracul AI installed; test 1 passive -> FIX installed 15 Oct: VH label switch OFF,
@@ -143,12 +145,12 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
 - Map files changed for #4 (originals in `backups/2026-10-13_before_map/`, rebuilt by `docs/tools/edit_map.py`):
   `data/world/maps/base/map_regions.tga`, `map_ground_types.tga`, `map_heights.tga`, `map_features.tga`, `campaign/imperial_campaign/
   descr_strat.txt`, `descr_events.txt`. After any map change the user must delete `map.rwm` (session cannot delete).
-- Changed SSHIP game files (originals in `backups/`): `eopData/eopScripts/sship/internalAffairs.lua` (civil war), `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts),
+- Changed SSHIP game files (originals in `backups/`): `eopData/eopScripts/sship/internalAffairs.lua` (civil war), `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts, fort_cost 5000), `data/export_descr_character_traits.txt` + `data/text/export_vnvs.txt` (House_of_Osman, #10),
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga`; #6: Mongol / Muslim unit cards copied into ui/units|unit_info/cumans|mongols, `data/unit_models/battle_models.modeldb`, `data/descr_character.txt` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
 - `luaPluginScript.lua` ends with six require lines: population_recruitment, fort_settlement,
-  starting_settlements (#4), historic_invasions (#5), mongol_islam, golden_horde (#6) and army_costs (#7) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+  starting_settlements (#4), historic_invasions (#5), mongol_islam, golden_horde (#6) and army_costs (#7), then fort_rules and ottoman_rise (#10) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
   settler recruit lines need - removing it stops settler recruitment too.
 
 ## Tooling

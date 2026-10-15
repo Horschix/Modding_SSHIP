@@ -37,3 +37,9 @@ require('sship.army_costs')
 
 -- TEMPORARY: logs damaged buildings + build queue of player settlements (Karahisar repair bug). Delete when done.
 require('sship.building_diag')
+
+-- Forts: 4 units free upkeep (engine setting), AI gets the 5000 fort price back (15 Oct 2026). Delete to switch off.
+require('sship.fort_rules')
+
+-- Ertugrul and Osman Gazi for Rum, House of Osman trait, Ottoman Domain (#10, 15 Oct 2026). Delete to switch off.
+require('sship.ottoman_rise')
