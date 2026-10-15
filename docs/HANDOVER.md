@@ -145,7 +145,7 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
 - Map files changed for #4 (originals in `backups/2026-10-13_before_map/`, rebuilt by `docs/tools/edit_map.py`):
   `data/world/maps/base/map_regions.tga`, `map_ground_types.tga`, `map_heights.tga`, `map_features.tga`, `campaign/imperial_campaign/
   descr_strat.txt`, `descr_events.txt`. After any map change the user must delete `map.rwm` (session cannot delete).
-- Changed SSHIP game files (originals in `backups/`): `eopData/eopScripts/sship/internalAffairs.lua` (civil war), `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts, fort_cost 5000), `data/export_descr_character_traits.txt` + `data/text/export_vnvs.txt` (House_of_Osman, #10),
+- Changed SSHIP game files (originals in `backups/`): `eopData/eopScripts/sship/internalAffairs.lua` (civil war), `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts, fort_cost 5000), `data/export_descr_character_traits.txt` + `data/text/export_vnvs.txt` (House_of_Osman, #10), `data/text/expanded.txt` (Rum heir Shehzade),
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
   `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga`; #6: Mongol / Muslim unit cards copied into ui/units|unit_info/cumans|mongols, `data/unit_models/battle_models.modeldb`, `data/descr_character.txt` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).

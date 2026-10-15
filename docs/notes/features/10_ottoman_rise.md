@@ -55,3 +55,4 @@ after Osman left to the game; faction renamed "Ottoman Domain"; no Sogut village
 
 ## Test 2 (15 Oct 2026): works (user). FINAL installed 15 Oct, read back identical: TEST = false (turns 198 / 252 / 284 / 296).
 - 15 Oct: once renamed, the hover texts no longer say Rum: leader "Ottoman Sultan", heir "The Ottoman Prince", settlements "Town - Ottoman Domain" etc., agents "Ottoman ..." (M2TWEOP.setExpandedString for every EMT_RUM_* key of data/text/expanded.txt and {RUM}; set at map load and Rum turn start; log "expanded strings set"). Installed, read back identical.
+- 15 Oct: Rum heir name "Valī 'Ahd %S" -> "Shehzade %S" (EMT_RUM_FACTION_HEIR_NAME in data/text/expanded.txt, original in backups/2026-10-15_before_ottomans/data/text/; Seljuk and Ottoman alike). Installed, read back identical. Text files may need the strings.bin cache to be rebuilt if the old text still shows.
