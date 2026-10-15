@@ -450,13 +450,13 @@ local SETTS = {
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     -- Pontic steppe villages for the Cumans (user, 15 Oct 2026): level 1, 500 people, where Kherson, Zaporizhzhia and
     -- Donetsk lie today (all founded much later); tiles by GPS (anchors_ukraine.txt), all in the Azaq region (cumans)
-    { key = "kherson", x = 313, y = 181, capital = "Azaq", level = 1, population = 500,  -- GPS tile, wood
+    { key = "kherson", x = 309, y = 182, capital = "Azaq", level = 1, population = 500,  -- GPS tile 313,181; 4 west, 1 north (user, 15 Oct)
       names = { kievan_rus = "Kherson", russia = "Kherson", greek = "Cherson", european = "Chersonum", middle_eastern = "Herson", default = "Kherson" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "zaporizhzhia", x = 334, y = 191, capital = "Azaq", level = 1, population = 500,  -- GPS tile 331,189 dense forest -> nearest open tile
+    { key = "zaporizhzhia", x = 324, y = 188, capital = "Azaq", level = 1, population = 500,  -- moved 334,191 -> 324,188, Dnieper crossing 325,189, dense forest east of it cleared (user, 15 Oct, map round 11)
       names = { kievan_rus = "Zaporozhye", russia = "Zaporozhye", greek = "Zaporozie", european = "Zaporoga", middle_eastern = "Zaporijya", default = "Zaporizhzhia" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
-    { key = "donetsk", x = 351, y = 191, capital = "Azaq", level = 1, population = 500,  -- GPS tile
+    { key = "donetsk", x = 351, y = 193, capital = "Azaq", level = 1, population = 500,  -- GPS tile 351,191; 2 north (user, 15 Oct)
       names = { kievan_rus = "Donetsk", russia = "Donetsk", greek = "Donetsk", european = "Donetium", middle_eastern = "Donetsk", default = "Donetsk" },
       rebels = { "EE Spear Militia", "EE Spear Militia" } },
     -- Russia / Rus' (user, 14 Oct 2026): Russian names for Novgorod, Kievan Rus and rebels, Polish for Poland,
@@ -854,7 +854,7 @@ local SETTS = {
     { key = "novara", x = 140, y = 173, capital = "Milan", level = 2, population = 7500,  -- EU5 town; owner slave
       names = { sicily = "Novara", papal_states = "Novara", venice = "Novara", pisa = "Novara", hre = "Novara", european = "Novaria", greek = "Nobária", arabic = "Nufara", middle_eastern = "Novara", default = "Novara" },
       rebels = { "Urban Spear Militia", "Urban Spear Militia" } },
-    { key = "volterra", x = 155, y = 156, capital = "Pisa", ownerFrom = "Florence", level = 2, population = 7500,  -- EU5 town; bishop city, not Pisan; owner slave
+    { key = "volterra", x = 155, y = 156, capital = "Pisa", level = 2, population = 7500,  -- EU5 town; Pisa from the start (user, 15 Oct; was rebels via ownerFrom Florence)
       names = { sicily = "Volterra", papal_states = "Volterra", venice = "Volterra", pisa = "Volterra", hre = "Volterra", european = "Volaterrae", greek = "Ouolatérrai", arabic = "Fultirra", middle_eastern = "Volterra", default = "Volterra" },
       rebels = { "Urban Spear Militia", "Urban Spear Militia" } },
     { key = "urbino", x = 167, y = 159, capital = "Bologna", level = 2, population = 7500,  -- EU5 town; owner slave
@@ -1189,7 +1189,7 @@ local GARRISON = {
     moors     = { "Ahdath Militia", "Ahdath Militia" },       -- North Africa (user, 13 Oct)
     turks     = { "Ahdath Militia", "Ahdath Militia" },       -- Persia: cheapest militia (13 Oct)
     abbasid   = { "Shurtah Militia", "Shurtah Militia" },     -- Iraq: cheapest militia (13 Oct)
-    cumans    = { "EE Spear Militia", "EE Spear Militia" },   -- steppe: cheapest militia (14 Oct)
+    cumans    = { "Kasogi", "Kasogi" },   -- steppe: Kasogi, free upkeep (user, 15 Oct; was EE Spear Militia)
     russia    = { "EE Spear Militia", "EE Spear Militia" },   -- Rus: cheapest militia (14 Oct)
     kievan_rus = { "EE Spear Militia", "EE Spear Militia" },  -- Rus: cheapest militia (14 Oct)
     serbia    = { "Spear Militia", "Spear Militia" },          -- Balkans: cheapest militia (14 Oct)
@@ -1499,9 +1499,9 @@ local DUMP_PATHS = {    -- Balkans + Lycian coast, Poland + Baltic (14 Oct 2026)
     { "Burgos-bilbao", 51, 150, 63, 157 },
     -- Italy + islands (14 Oct 2026)
     { "Venice-udine", 168, 173, 172, 176 },
-    { "Azaq-kherson", 362, 186, 313, 181 },
-    { "Azaq-zaporizhzhia", 362, 186, 334, 191 },
-    { "Azaq-donetsk", 362, 186, 351, 191 },
+    { "Azaq-kherson", 362, 186, 309, 182 },
+    { "Azaq-zaporizhzhia", 362, 186, 324, 188 },
+    { "Azaq-donetsk", 362, 186, 351, 193 },
     { "Palermo-messina", 173, 119, 188, 120 },
     { "Naples-salerno", 182, 139, 186, 140 },
     { "Palermo-syracuse", 173, 119, 186, 111 },

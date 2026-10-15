@@ -117,6 +117,8 @@ HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm st
 #6 Golden Horde / Ilkhanate - TEST installed 15 Oct (read back identical): Cumans -> Golden Horde turn 2 (final 221,
   player yes/no), Cumans Islam turn 4 (final 361), Mongols Islam now 327, colours swapped, Georgian family member
   model fixed. Detail: `docs/notes/features/08_golden_horde.md`.
+  15 Oct fix 1 (read back identical): mosque texts for eastern_european, imams from tier 1, Cuman garrison Kasogi;
+  Kherson / Zaporizhzhia / Donetsk moved, map round 11 (Dnieper crossing, forest), Volterra Pisan. Delete map.rwm.
 #7 Mongols convert to Islam (turn 340 -> now 327, see #6) - test worked, FINAL installed 15 Oct (read back identical); Mongols start pagan. Detail: `docs/notes/features/07_mongol_islam.md`.
 #5 Historic invasion armies - OPEN. Fourth Crusade TEST version installed 15 Oct (read back identical):
   `historic_invasions.lua` + require line; Zara stage turn 2, Constantinople stage turn 5 while `TEST = true`

@@ -621,3 +621,10 @@ other game regions later. The candidate list and every decision are in issue #4.
 - Karahisar mosque: in the new test the mosque was not damaged (BDIAG turns 1-2: small_masjid hp 100, builders2
   present; wells 66 and town_watch 53 damaged and repairable). small_masjid needs builders1 min level, a town and a
   Muslim faction - all met, so the requirements are not the cause. Not reproduced; BDIAG stays on for the next test.
+
+## Cuman villages fix + Volterra (user, 15 Oct 2026)
+- kherson 313,181 -> 309,182; zaporizhzhia 334,191 -> 324,188; donetsk 351,191 -> 351,193. MAP ROUND 11 (applied to the
+  INSTALLED TGAs, see CAUTION 2 in edit_map.py - the PC had uncommitted gap-round map edits, now committed): Dnieper
+  crossing 325,189 (map_features), 84 dense forest tiles in x 318-341 / y 181-194 -> forest (map_ground_types).
+- Volterra starts Pisan (ownerFrom Florence removed). Cuman faction garrison Kasogi instead of EE Spear Militia.
+- Installed 15 Oct, read back identical. map.rwm must be deleted; NEW campaign.

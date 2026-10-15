@@ -24,6 +24,9 @@ position move, apply the single matching text replacement by hand to the CURRENT
 Zagreb, round 7) and only take map_regions.tga / map_ground_types.tga / map_heights.tga / map_features.tga from
 this script's output - those files' only edit path has consistently been this script, so a full rebuild is safe
 for them.
+CAUTION 2 (15 Oct 2026): the gap round (Pinsk, Giresun) changed map_regions / map_heights / map_ground_types on
+the PC outside this tool - so this tool's TGA output would now ALSO lose edits. Round 11 (Zaporizhzhia) was applied
+directly to the installed files (DEFOREST_BOXES and the last CROSSINGS entry). Apply future map edits the same way.
 Tile x,y (y from the bottom) = pixel x,y of map_regions; = pixels 2x..2x+2, 2y..2y+2 of the ground/height maps.
 """
 import os
@@ -104,7 +107,11 @@ CORRIDORS = [
 ]
 # river crossings (map_features.tga, one pixel per tile, 0,0,255 river -> 0,255,255 crossing): the two rivers on
 # both sides of the Lahijan pocket
-CROSSINGS = [(432, 115), (435, 115)]
+CROSSINGS = [(432, 115), (435, 115),
+             (325, 189)]   # round 11 (15 Oct, user): Dnieper crossing next to Zaporizhzhia (324,188)
+# round 11 (15 Oct, user): dense forest around Zaporizhzhia -> forest (x0, x1, y0, y1)
+WOOD = (0, 128, 0)
+DEFOREST_BOXES = [(318, 341, 181, 194)]
 RIVER, CROSSING = (0, 0, 255), (0, 255, 255)
 MAX_STEP = 12
 
@@ -215,6 +222,14 @@ def main(src, out):
             if (x, y) not in PASS_TILES and tuple(int(v) for v in ga[tile_block(ga, x, y)][1, 1]) == IMPASSABLE:
                 ga[tile_block(ga, x, y)] = DENSE_FOREST
                 print("ground", (x, y), IMPASSABLE, "-> dense forest")
+    for x0, x1, y0, y1 in DEFOREST_BOXES:
+        n = 0
+        for x in range(x0, x1 + 1):
+            for y in range(y0, y1 + 1):
+                if tuple(int(v) for v in ga[tile_block(ga, x, y)][1, 1]) == DENSE_FOREST:
+                    ga[tile_block(ga, x, y)] = WOOD
+                    n += 1
+        print("ground", (x0, x1, y0, y1), n, "dense forest tiles -> forest")
     write_tga(g, ga, os.path.join(base_out, "map_ground_types.tga"))
 
     # heights: each pass tile gets the mean of a 5x5 neighbourhood (land only), repeated (up to 4 rounds) while the

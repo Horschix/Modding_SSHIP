@@ -30522,11 +30522,11 @@ building temple_muslim
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 
-        agent priest  0  requires factions { middle_eastern, } and hidden_resource capital
+        agent priest  0  requires factions { middle_eastern, cumans, } and hidden_resource capital
         agent_limit priest 0
-		agent_limit priest 1 requires factions { middle_eastern, } and hidden_resource capital
-        agent_limit priest 1 requires factions { middle_eastern, } and event_counter FL_policy_strictly_religious 1
-        agent_limit priest 1 requires factions { middle_eastern, } and not event_counter is_the_player 1
+		agent_limit priest 1 requires factions { middle_eastern, cumans, } and hidden_resource capital
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and event_counter FL_policy_strictly_religious 1
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and not event_counter is_the_player 1
 
         religion_level bonus 1
 
@@ -30558,11 +30558,11 @@ building temple_muslim
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 
-        agent priest  0  requires factions { middle_eastern, } and hidden_resource capital
+        agent priest  0  requires factions { middle_eastern, cumans, } and hidden_resource capital
         agent_limit priest 0
-		agent_limit priest 1 requires factions { middle_eastern, } and hidden_resource capital
-        agent_limit priest 1 requires factions { middle_eastern, } and event_counter FL_policy_strictly_religious 1
-        agent_limit priest 1 requires factions { middle_eastern, } and not event_counter is_the_player 1
+		agent_limit priest 1 requires factions { middle_eastern, cumans, } and hidden_resource capital
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and event_counter FL_policy_strictly_religious 1
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and not event_counter is_the_player 1
 
         religion_level bonus 2
 
@@ -30593,11 +30593,11 @@ building temple_muslim
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 
-        agent priest  0  requires factions { middle_eastern, }
+        agent priest  0  requires factions { middle_eastern, cumans, }
         agent_limit priest 0
-		agent_limit priest 1 requires factions { middle_eastern, }
-        agent_limit priest 2 requires factions { middle_eastern, } and event_counter FL_policy_strictly_religious 1
-        agent_limit priest 1 requires factions { middle_eastern, } and not event_counter is_the_player 1
+		agent_limit priest 1 requires factions { middle_eastern, cumans, }
+        agent_limit priest 2 requires factions { middle_eastern, cumans, } and event_counter FL_policy_strictly_religious 1
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and not event_counter is_the_player 1
 
         religion_level bonus 3
 
@@ -30627,11 +30627,11 @@ building temple_muslim
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
-        agent priest  0  requires factions { middle_eastern, }
+        agent priest  0  requires factions { middle_eastern, cumans, }
         agent_limit priest 0
-		agent_limit priest 1 requires factions { middle_eastern, }
-        agent_limit priest 2 requires factions { middle_eastern, } and event_counter FL_policy_strictly_religious 1
-        agent_limit priest 2 requires factions { middle_eastern, } and not event_counter is_the_player 1
+		agent_limit priest 1 requires factions { middle_eastern, cumans, }
+        agent_limit priest 2 requires factions { middle_eastern, cumans, } and event_counter FL_policy_strictly_religious 1
+        agent_limit priest 2 requires factions { middle_eastern, cumans, } and not event_counter is_the_player 1
 
         religion_level bonus 5
 
@@ -30663,9 +30663,9 @@ building temple_muslim
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
         agent priest  0
         agent_limit priest 0
-		agent_limit priest 2 requires factions { middle_eastern, }
-        agent_limit priest 3 requires factions { middle_eastern, } and event_counter FL_policy_strictly_religious 1
-		agent_limit priest 3 requires factions { middle_eastern, } and not event_counter is_the_player 1
+		agent_limit priest 2 requires factions { middle_eastern, cumans, }
+        agent_limit priest 3 requires factions { middle_eastern, cumans, } and event_counter FL_policy_strictly_religious 1
+		agent_limit priest 3 requires factions { middle_eastern, cumans, } and not event_counter is_the_player 1
 
         religion_level bonus 7
 
@@ -30705,9 +30705,9 @@ building temple_muslim_castle
         population_health_bonus bonus 1
         religion_level bonus 1
         agent_limit priest 0
-		agent_limit priest 1 requires factions { middle_eastern, } and hidden_resource capital
-        agent_limit priest 1 requires factions { middle_eastern, } and event_counter FL_policy_strictly_religious 1
-        agent_limit priest 1 requires factions { middle_eastern, } and not event_counter is_the_player 1
+		agent_limit priest 1 requires factions { middle_eastern, cumans, } and hidden_resource capital
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and event_counter FL_policy_strictly_religious 1
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and not event_counter is_the_player 1
 
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; UPKEEP/INCOME
@@ -30731,9 +30731,9 @@ building temple_muslim_castle
         population_health_bonus bonus 2
         religion_level bonus 2
         agent_limit priest 0
-		agent_limit priest 1 requires factions { middle_eastern, } and hidden_resource capital
-        agent_limit priest 1 requires factions { middle_eastern, } and event_counter FL_policy_strictly_religious 1
-        agent_limit priest 1 requires factions { middle_eastern, } and event_counter ai_level_hard 1 or event_counter ai_level_veryhard 1
+		agent_limit priest 1 requires factions { middle_eastern, cumans, } and hidden_resource capital
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and event_counter FL_policy_strictly_religious 1
+        agent_limit priest 1 requires factions { middle_eastern, cumans, } and event_counter ai_level_hard 1 or event_counter ai_level_veryhard 1
 
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; UPKEEP/INCOME

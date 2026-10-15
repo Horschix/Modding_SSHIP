@@ -39,3 +39,9 @@ Dismounted Ghulams; the Cumans also Muslim Settlers instead of Pagan Settlers. T
 ## Status
 - 15 Oct: TEST version installed (GH turn 2, Islam turn 4), all files read back identical. NEW campaign needed
   (colours, descr_character). Final: `TEST = false` in golden_horde.lua -> 221 / 361.
+- 15 Oct, TEST 1 (user): colours, script and Mongol units work. FIX installed 15 Oct (read back identical):
+  mosque descriptions for eastern_european culture were "NOT MEANT FOR THIS CULTURE" (data/text/export_buildings.txt,
+  14 keys replaced + 7 name keys added from the middle_eastern texts; original in backups/2026-10-15_before_golden_horde);
+  imam (priest) only at tier 5 because agent lines need culture middle_eastern - 25 agent / agent_limit priest lines of
+  temple_muslim(_castle) now "factions { middle_eastern, cumans, }". Cuman garrison = Kasogi (free upkeep), also the
+  one EE Spear Militia in the Cumans' descr_strat army.

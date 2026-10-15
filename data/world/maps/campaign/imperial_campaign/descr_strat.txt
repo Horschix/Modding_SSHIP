@@ -3443,7 +3443,7 @@ ancillaries trusty_steed
 army
 unit		Cuman Bodyguard				exp 3 armour 0 weapon_lvl 0
 unit		Pechenegs					exp 1 armour 0 weapon_lvl 0
-unit		EE Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Kasogi					exp 0 armour 0 weapon_lvl 0
 
 ; North of IASI
 character	Aepak of_the_Oghuz, named character,	male, age 30, x 289, y 188
