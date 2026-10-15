@@ -114,10 +114,10 @@ HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm st
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
-#8 Golden Horde / Ilkhanate - TEST installed 15 Oct (read back identical): Cumans -> Golden Horde turn 2 (final 221,
+#6 Golden Horde / Ilkhanate - TEST installed 15 Oct (read back identical): Cumans -> Golden Horde turn 2 (final 221,
   player yes/no), Cumans Islam turn 4 (final 361), Mongols Islam now 327, colours swapped, Georgian family member
   model fixed. Detail: `docs/notes/features/08_golden_horde.md`.
-#7 Mongols convert to Islam (turn 340 -> now 327, see #8) - test worked, FINAL installed 15 Oct (read back identical); Mongols start pagan. Detail: `docs/notes/features/07_mongol_islam.md`.
+#7 Mongols convert to Islam (turn 340 -> now 327, see #6) - test worked, FINAL installed 15 Oct (read back identical); Mongols start pagan. Detail: `docs/notes/features/07_mongol_islam.md`.
 #5 Historic invasion armies - OPEN. Fourth Crusade TEST version installed 15 Oct (read back identical):
   `historic_invasions.lua` + require line; Zara stage turn 2, Constantinople stage turn 5 while `TEST = true`
   (final 140 / 145). Test 1: Constantinople works; Zara failed (Dandolo 90 died) - FIX 1 installed 15 Oct
@@ -134,10 +134,10 @@ farm / road queued in an extra settlement finishes after the hinterland flag is 
   descr_strat.txt`, `descr_events.txt`. After any map change the user must delete `map.rwm` (session cannot delete).
 - Changed SSHIP game files (originals in `backups/`): `eopData/eopScripts/sship/internalAffairs.lua` (civil war), `data/descr_campaign_db.xml`, `data/descr_cultures.txt` (forts),
   `export_descr_unit.txt` in `data`, `data XII\data`, `data XIII\data`, `data/export_descr_buildings.txt`,
-  `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga`; #8: Mongol / Muslim unit cards copied into ui/units|unit_info/cumans|mongols, `data/unit_models/battle_models.modeldb`, `data/descr_character.txt` / `<x>_settlers_info.tga` in
+  `data/text/export_units.txt` (settlers); new pictures `#<x>_settlers.tga`; #6: Mongol / Muslim unit cards copied into ui/units|unit_info/cumans|mongols, `data/unit_models/battle_models.modeldb`, `data/descr_character.txt` / `<x>_settlers_info.tga` in
   `ui/units/mercs` / `ui/unit_info/merc` (not in the repo - rebuilt from `cards.txt` of the tool).
 - `luaPluginScript.lua` ends with six require lines: population_recruitment, fort_settlement,
-  starting_settlements (#4), historic_invasions (#5), mongol_islam (#7) and golden_horde (#8) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
+  starting_settlements (#4), historic_invasions (#5), mongol_islam (#7) and golden_horde (#6) (+ temporary building_diag). Revert = delete the line. `fort_settlement.lua` also sets the counters `hx_player_<faction>` that the
   settler recruit lines need - removing it stops settler recruitment too.
 
 ## Tooling

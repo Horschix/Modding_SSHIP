@@ -1,4 +1,4 @@
-# 08 - Cumans become the Golden Horde, Mongols = Ilkhanate (15 Oct 2026)
+# 08 (issue #6) - Cumans become the Golden Horde, Mongols = Ilkhanate (15 Oct 2026)
 
 User's decisions (15 Oct): colours swapped (Cumans <- Mongol gold, Mongols <- Abbasid black, Abbasids <- Cuman
 brown); Cumans become the Golden Horde at turn 221 (1242) - AI at once, player by yes/no choice; full Mongol roster
