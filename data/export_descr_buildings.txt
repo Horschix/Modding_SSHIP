@@ -30313,7 +30313,7 @@ building temple_muslim
   religion islam
   levels small_masjid masjid minareted_masjid jama great_jama
   {
-    small_masjid city requires factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
+    small_masjid city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
     {
       convert_to 0
       capability
@@ -30345,7 +30345,7 @@ building temple_muslim
         masjid
       }
     }
-    masjid city requires factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
+    masjid city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
     {
       convert_to 1
       capability
@@ -30377,7 +30377,7 @@ building temple_muslim
         minareted_masjid
       }
     }
-    minareted_masjid city requires factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders3
+    minareted_masjid city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders3
     {
       capability
       {
@@ -30408,7 +30408,7 @@ building temple_muslim
         jama
       }
     }
-    jama city requires factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
+    jama city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
     {
       capability
       {
@@ -30438,7 +30438,7 @@ building temple_muslim
         great_jama
       }
     }
-    great_jama city requires factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
+    great_jama city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
     {
       capability
       {
@@ -30479,7 +30479,7 @@ building temple_muslim_castle
   religion islam
   levels c_small_masjid c_masjid
   {
-    c_small_masjid castle requires factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
+    c_small_masjid castle requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
     {
       convert_to 0
       capability
@@ -30505,7 +30505,7 @@ building temple_muslim_castle
         c_masjid
       }
     }
-    c_masjid castle requires factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
+    c_masjid castle requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
     {
       convert_to 1
       capability
@@ -30962,7 +30962,7 @@ building temple_tengir
   religion pagan
   levels tengir_altar tengir_sanctuary tengir_temple
   {
-    tengir_altar city requires factions { cumans, mongols, } and hidden_resource tartars
+    tengir_altar city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
     {
       convert_to 0
       capability
@@ -30986,7 +30986,7 @@ building temple_tengir
         tengir_sanctuary
       }
     }
-    tengir_sanctuary city requires factions { cumans, mongols, } and hidden_resource tartars
+    tengir_sanctuary city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
     {
       capability
       {
@@ -31017,7 +31017,7 @@ building temple_tengir
         tengir_temple
       }
     }
-    tengir_temple city requires factions { cumans, mongols, } and hidden_resource tartars
+    tengir_temple city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
     {
       capability
       {
@@ -31060,7 +31060,7 @@ building temple_tengir_castle
   religion pagan
   levels c_tengir_altar
   {
-    c_tengir_altar castle requires factions { cumans, mongols, } and hidden_resource tartars
+    c_tengir_altar castle requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
     {
       convert_to 0
       capability

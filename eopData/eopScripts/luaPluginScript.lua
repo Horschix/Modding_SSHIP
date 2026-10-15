@@ -22,3 +22,7 @@ require('sship.starting_settlements')
 -- Historic invasion armies for SSHIP events, first: Fourth Crusade at Zara and Constantinople (Modding_SSHIP, 15 Oct 2026).
 -- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
 require('sship.historic_invasions')
+
+-- Mongols convert to Islam at turn 340 (Modding_SSHIP, 15 Oct 2026).
+-- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
+require('sship.mongol_islam')
