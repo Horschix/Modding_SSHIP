@@ -34,7 +34,7 @@ local HI = {}
 ---------------------------------------------------------------------------------------------------------------------
 -- TEST = true: stage 1 at turn 2, stage 2 at turn 5, no crusade call and no war with Hungary at the test turn.
 -- Final version: TEST = false (turns 140 and 145).
-local TEST = true
+local TEST = false
 local ZARA_TURN = TEST and 2 or 140
 local CONST_TURN = TEST and 5 or 145
 local ASSAULT_WINDOW = 6 -- forced assault tried at Venice's turn start from spawn turn + 1 up to spawn turn + 6

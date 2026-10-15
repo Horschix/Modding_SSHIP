@@ -42,8 +42,9 @@ calls are what burn it.
 ## Where things stand - START HERE
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
-- Campaign AI (15 Oct 2026): Gracul AI from SS 6.3 installed, EOP nonBorderFactor 0.5, label reset loop removed -
-  awaiting the user's play test. Details: `docs/notes/features/06_campaign_ai.md`.
+- Campaign AI (15 Oct 2026): Gracul AI installed; test 1 still passive - causes found in aiSupport.lua (VH label
+  switch by settlement count, slave target factor 6 until turn 50), see note 06. Karahisar repair bug: TEMPORARY
+  `building_diag.lua` (log prefix BDIAG, require line at the end of luaPluginScript) installed 15 Oct. Details: `docs/notes/features/06_campaign_ai.md`.
 - #1 Recruitment costs population - CLOSED, works in game (user, 13 Oct).
 - #2 Forts -> outposts, step 1 (test version: free, general only) - CLOSED, works in game after the fix of 13 Oct (user).
 - #3 Outposts step 2 (four settler units, 500 settlers, 5000 gold, `TEST = false`) - CLOSED 13 Oct, works as intended
@@ -111,12 +112,11 @@ HRE installed 14 Oct, read back identical (script only, NEW campaign, map.rwm st
   GPS projection, map_regions / ground / heights check, corridors with ramped heights where terrain blocks).
   LESSON from the Caucasus: avoid low-mountain tiles for towns (non-mountain ground, 3x3 relief <= 60, >= 3 open
   neighbours) - the BFS model is too lenient there and getMovePath is unreliable on long routes.
-#7 Mongols convert to Islam (turn 340) - TEST version installed 15 Oct (read back identical), Mongols start pagan
-  again; waiting for the test (NEW campaign). Detail: `docs/notes/features/07_mongol_islam.md`.
+#7 Mongols convert to Islam (turn 340) - test worked, FINAL installed 15 Oct (read back identical); Mongols start pagan. Detail: `docs/notes/features/07_mongol_islam.md`.
 #5 Historic invasion armies - OPEN. Fourth Crusade TEST version installed 15 Oct (read back identical):
   `historic_invasions.lua` + require line; Zara stage turn 2, Constantinople stage turn 5 while `TEST = true`
   (final 140 / 145). Test 1: Constantinople works; Zara failed (Dandolo 90 died) - FIX 1 installed 15 Oct
-  (age 65 + fallback army search). Waiting for test 2. Detail: `docs/notes/features/05_historic_invasions.md`.
+  (age 65 + fallback army search). FINAL turns (140/145, TEST = false) installed 15 Oct on the user's word. Detail: `docs/notes/features/05_historic_invasions.md`.
 DUMP stays on as the route checker (settler_check.lua deleted by the user, 14 Oct).
 Still to watch in play: SSHIP's own scripts with extra settlements in a region over many turns (Nicaea region has
 five); the outpost's map model, battle map and buildings; disband refund, save/load and AI blocking of #1; whether a

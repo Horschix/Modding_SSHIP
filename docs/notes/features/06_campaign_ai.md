@@ -23,3 +23,15 @@ Installed 15 Oct 2026 (user decisions: Gracul; keep EOP AI with nonBorderFactor 
 Not changed: forced peace on ruler death of small factions (internationalAffairs.lua), pacifying dead factions
 (diplomacy.lua), Byzantium-Rum peace on turn 2.
 Status: installed, read back identical. Needs a new campaign and 20-30 turns of play by the user.
+
+## Test 1 (user, 15 Oct): still passive
+Rum played passively 12 turns; Byzantium's big army at Kutahya never attacked (they start at war). Findings in
+SSHIP's own scripts (no change made yet, waiting for the user's eop.log cut and decisions):
+1. `aiSupport.changeAILabel` (called at the player's turn end, only on Very Hard): any neighbour of the player with
+   more settlements than `settlementsThreshold` (byzantium 5, rum 6, turks 5, egypt 6, ...) is switched to label
+   `difficult` (= Gracul default). With #4's ~600 extra towns every listed faction is far over its threshold from
+   turn 1, so on VH they all leave their Gracul label at once.
+2. `aiSupport.setFactors`: `setTargetFactionFactor(slave, 6.0)` for every AI faction until turn 50 - built for
+   vanilla's few rebel cities; with #4 hundreds of rebel towns make the AI chase rebels instead of the player.
+3. EOP AI layer off for turns 1-3 (normal).
+Not a cause: `aggressivity.lua` only punishes the conquering faction (warmonger unrest / relations).

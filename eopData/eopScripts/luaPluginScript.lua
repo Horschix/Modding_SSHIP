@@ -26,3 +26,6 @@ require('sship.historic_invasions')
 -- Mongols convert to Islam at turn 340 (Modding_SSHIP, 15 Oct 2026).
 -- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
 require('sship.mongol_islam')
+
+-- TEMPORARY: logs damaged buildings + build queue of player settlements (Karahisar repair bug). Delete when done.
+require('sship.building_diag')

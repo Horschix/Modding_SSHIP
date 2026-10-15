@@ -51,3 +51,7 @@ Script: `eopData/eopScripts/sship/historic_invasions.lua`, loaded by the last li
   the leaderless army gave up the siege. FIX 1 installed 15 Oct (read back identical): Dandolo age 65; if the
   labelled general is gone, the forced assault uses the biggest Venetian army within 3 tiles of the target.
 - Crusader cleanup: user keeps SSHIP's rule as it is (no change beyond our exemption).
+
+## 15 Oct 2026 - final turns
+User asked to move the Fourth Crusade to its real turns: `TEST = false` (Zara 140, Constantinople 145), installed
+15 Oct, read back identical. Zara (fix 1) was not re-tested before going final.

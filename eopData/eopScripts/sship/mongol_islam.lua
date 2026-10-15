@@ -11,7 +11,7 @@
 -- settlement (CONVERT_TURN = 2). Final version: TEST = false.
 -- Log prefix: MONGISL (in full.log).
 ---------------------------------------------------------------------------------------------------------------------
-local TEST = true
+local TEST = false
 local CONVERT_TURN = TEST and 2 or 340
 local TEST_SPAWN_TURN = 2
 local C_DONE = "mongols_islam"          -- 1 = converted (also used in export_descr_buildings)
