@@ -23,3 +23,8 @@ Script `eopData/eopScripts/sship/sack_downgrade.lua`, require line at the end of
   panel / level name, walls, building browser, save + load, and the SACKDOWN log lines. Then TEST = false (25%).
 - Risk to watch: writing `level` directly may not refresh everything the engine caches (e.g. the strat-map model,
   the settlement name card, or the max-population threshold). If that shows, the log line is the first thing to read.
+
+## Dropped (user, 15 Oct 2026)
+- Deleting minor settlements on sack / exterminate (chance by tier). EOP has no way to remove a settlement (only
+  addSettlement; deleteFort exists because the engine itself removes forts). A "ruins" substitute was offered and
+  declined - the user scratched the deletion part.
