@@ -6,7 +6,7 @@
 --   * a fort costs 5000 (fort_cost in data/descr_cultures.txt, all five cultures). The AI gets the whole 5000 back
 --     for every fort it builds (user: it should still build them): at the end of an AI faction's turn, every fort of
 --     that faction on a tile that had no fort at the start of the turn counts as built (a captured fort stood there
---     before, so it is not refunded).
+--     before, so it is not refunded). Rebels (slave) get nothing (their forts are game-made, test of 15 Oct).
 -- Log prefix FORTRULE. Remove the require line in luaPluginScript.lua to switch the script part off.
 ---------------------------------------------------------------------------------------------------------------------
 local FREE_UPKEEP = 4
@@ -61,7 +61,7 @@ end
 
 local function onTurnEnd(eventData)
     local f = get(eventData, "faction")
-    if f == nil or get(f, "isPlayerControlled") == 1 or FR.known == nil then return end
+    if f == nil or get(f, "isPlayerControlled") == 1 or get(f, "name") == "slave" or FR.known == nil then return end
     local fid = get(f, "factionID")
     local now = allForts()
     for key, fort in pairs(now) do

@@ -19,7 +19,7 @@
 -- Unit ownership set by script is not stored in the save -> applied again at every Cuman turn start and map load.
 -- TEST = true: GH_TURN 2, ISLAM_TURN 4. Log prefix: GHORDE (in full.log).
 ---------------------------------------------------------------------------------------------------------------------
-local TEST = true
+local TEST = false
 local GH_TURN = TEST and 2 or 221
 local ISLAM_TURN = TEST and 4 or 361
 

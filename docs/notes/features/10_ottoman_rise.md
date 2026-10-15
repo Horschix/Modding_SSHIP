@@ -39,3 +39,16 @@ after Osman left to the game; faction renamed "Ottoman Domain"; no Sogut village
 - Open risks to check in the test: does birthChild work without a portrait / does the child show in the family tree;
   does the TEST child (age 14) come of age on schedule; does setLeader update the UI; does the name stick after load.
 - After a good test: `TEST = false`.
+
+## Test 1 (15 Oct 2026) and fix 1 (installed, read back identical)
+- Ertugrul spawned fine, but was adopted -> user: he must start a new family tree. Now spawnArmy family = false, then
+  `rec.isFamily = true` (log line "made a family member (not adopted)" shows isFamily / isFamilyHead / parent).
+- Osman not born: EOP log "characterRecord::birthChild: child is too old, create a general and adopt him" (age 14).
+  BIRTH_AGE is now always 0; the script checks numberOfChildren and falls back to the adult spawn if no child came.
+  TEST cannot show Osman's coming of age (32 turns); the leader step at turn 8 takes Ertugrul then.
+- Fort refunds went to slave (rebel forts made by the game) -> rebels excluded.
+- Outpost founding bug (fort_settlement.lua): a spy (Abdulkadir Kurdoglu) in the fort never left, the script
+  re-ordered him 8 times; next turn the army stepped onto a tile with a hidden enemy, ambush, and the retry orders
+  during the pre-battle scroll crashed the game. Fix: founding refused while agents are in the fort ("Move these
+  agents out of the fort first"), and onPreBattlePanelOpen stops a running founding.
+- golden_horde.lua TEST = false (turns 221 / 361) on the user's word.

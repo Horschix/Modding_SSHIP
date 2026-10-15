@@ -19,13 +19,16 @@
 -- Custom portraits (user, 15 Oct): data/ui/custom_portraits/ertugrul_gazi and osman_gazi (portrait_young / _old /
 -- _dead, 69x96 32-bit TGA like SSHIP's own). Given at spawn (spawnArmy portrait folder) and with setPortrait (stored
 -- in the save); Osman born as a child gets his when he comes of age; checked again at every Rum turn start.
--- TEST = true: Ertugrul turn 2, Osman born turn 3 at age 14 (comes of age a few turns later), leader turn 8.
+-- Ertugrul is NOT adopted (user, 15 Oct): spawned with family = false, then made a family member himself, so he
+-- heads a new line of his own.
+-- TEST = true: Ertugrul turn 2, Osman born turn 3 (age 0 - he cannot come of age in a short test), leader turn 8
+-- (falls back to the oldest man of the House, i.e. Ertugrul, while Osman is a child).
 -- Log prefix OTTOMAN.
 ---------------------------------------------------------------------------------------------------------------------
 local TEST = true
 local ERT_TURN    = TEST and 2 or 198
 local BIRTH_TURN  = TEST and 3 or 252
-local BIRTH_AGE   = TEST and 14 or 0
+local BIRTH_AGE   = 0      -- EOP refuses older children ("child is too old", test of 15 Oct 2026)
 local ADULT_TURN  = TEST and 6 or 284
 local LEADER_TURN = TEST and 8 or 296
 
@@ -194,7 +197,7 @@ local function givePortrait(rec)
         .. (ok and ("custom now " .. tostring(get(rec, "portrait_custom"))) or ("ERROR " .. tostring(err))))
 end
 
-local function spawnGeneral(f, name, name2, label, age, extraUnits, traits)
+local function spawnGeneral(f, name, name2, label, age, extraUnits, traits, adopt)
     local sett = homeSettlement(f)
     if sett == nil then log("ERROR no Rum settlement to spawn " .. name); return nil end
     local x, y = spawnTile(sett)
@@ -202,7 +205,7 @@ local function spawnGeneral(f, name, name2, label, age, extraUnits, traits)
     local bg = eduIndex(bgType)
     if bg == nil then log("ERROR unit type not found: " .. bgType); return nil end
     local ok, army = pcall(function()
-        return f:spawnArmy(name, name2, characterType.named_character, label, PORTRAIT[name] or "", x, y, age, true, 31, bg, 2, 0, 0)
+        return f:spawnArmy(name, name2, characterType.named_character, label, PORTRAIT[name] or "", x, y, age, adopt == true, 31, bg, 2, 0, 0)
     end)
     if not ok or army == nil then log("ERROR spawnArmy " .. name .. ": " .. tostring(army)); return nil end
     local made = 0
@@ -214,6 +217,12 @@ local function spawnGeneral(f, name, name2, label, age, extraUnits, traits)
     for _, t in ipairs(traits) do
         local okT, err = pcall(function() rec:addTrait(t[1], t[2]) end)
         if not okT then log("ERROR addTrait " .. t[1] .. ": " .. tostring(err)) end
+    end
+    if adopt ~= true then
+        local okF, errF = pcall(function() rec.isFamily = true end)
+        log(name .. " made a family member (not adopted): " .. (okF and "ok" or ("ERROR " .. tostring(errF)))
+            .. ", isFamily " .. tostring(get(rec, "isFamily")) .. ", isFamilyHead " .. tostring(get(rec, "isFamilyHead"))
+            .. ", parent " .. tostring(get(get(rec, "parent"), "shortName")))
     end
     givePortrait(rec)
     log("spawned " .. name .. " (" .. bgType .. " + " .. made .. " units) at " .. x .. "," .. y .. " next to "
@@ -235,7 +244,7 @@ local function stepErtugrul(f)
     local army, rec, x, y = spawnGeneral(f, "Ertugrul", "Ertugrul Gazi", "hx_ertugrul", 40,
         { { "Turkish Horse Archers", 1 }, { "Turkish Horse Archers", 1 } },
         { { TRAIT, 1 }, { "GoodCommander", 1 }, { "GoodCavalryGeneral", 1 }, { "MilitaryInclination", 1 },
-          { "LoyaltyStarter", 1 }, { "ReligionStarter", 1 } })
+          { "LoyaltyStarter", 1 }, { "ReligionStarter", 1 } }, false)
     if army == nil then setCounter(C_ERT, 9); return end
     local okW, err = pcall(function() rec:marryWife("Halime", 30) end)
     log("wife Halime: " .. (okW and "ok" or ("ERROR " .. tostring(err))))
@@ -254,7 +263,9 @@ local function stepBirth(f)
         setCounter(C_OSMAN, 3)
         return
     end
+    local before = get(ert, "numberOfChildren") or 0
     local ok, err = pcall(function() ert:birthChild("Osman", "", BIRTH_AGE, true, true) end)
+    if ok and (get(ert, "numberOfChildren") or 0) <= before then ok, err = false, "no child was created" end
     if not ok then
         log("ERROR birthChild: " .. tostring(err) .. " - Osman will appear as an adult at turn " .. ADULT_TURN)
         setCounter(C_OSMAN, 3)
@@ -270,7 +281,7 @@ end
 
 local function stepAdult(f)
     local army, rec, x, y = spawnGeneral(f, "Osman", "Osman Gazi", "hx_osman", 16, {},
-        { { TRAIT, 1 }, { "MilitaryInclination", 1 }, { "LoyaltyStarter", 1 }, { "ReligionStarter", 1 } })
+        { { TRAIT, 1 }, { "MilitaryInclination", 1 }, { "LoyaltyStarter", 1 }, { "ReligionStarter", 1 } }, false)
     setCounter(C_OSMAN, army and 2 or 9)
 end
 

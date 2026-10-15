@@ -42,10 +42,11 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
-- #10 Ertugrul / Osman / Ottoman Domain TEST (turns 2 / 3 / 8, NEW campaign) + fort rules (fort 5000, AI refund,
-  4 free-upkeep units): read OTTOMAN and FORTRULE lines, then `TEST = false` in ottoman_rise.lua. Note 10.
+- #10 Ertugrul / Osman / Ottoman Domain TEST fix 1 (turns 2 / 3 / 8, NEW campaign; Ertugrul not adopted, Osman born
+  at age 0) + fort rules + outpost-founding fix (agents, ambush crash): read OTTOMAN / FORTRULE / FORTSETT lines,
+  then `TEST = false` in ottoman_rise.lua. Note 10. golden_horde.lua is FINAL now (TEST = false, 15 Oct).
 - #6 Golden Horde fix 1 (mosque texts, imams, Kasogi) + #4 Cuman villages moved / map round 11 / Volterra Pisan
-  (user must delete map.rwm, NEW campaign). After the test: read GHORDE lines, then `TEST = false` in golden_horde.lua.
+  (user must delete map.rwm, NEW campaign). TEST = false set 15 Oct (final turns 221 / 361).
 - #7 army_costs.lua (ARMYCOST lines, "The Cost of War" report each turn).
 - Campaign AI test 2 and the Karahisar repair bug (BDIAG, not reproduced) - see note 06 / 04.
 Open issues on the board: #4, #5, #6, #7, #8 (Lithuania Orthodox, not started), #9 (Thessalonica / Lisbon attacks, not started), #10.

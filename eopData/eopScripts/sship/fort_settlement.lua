@@ -325,6 +325,20 @@ function FS.found(x, y, state)
     local inside, scanned = charactersAt(x, y)
     if not scanned then say("Failed at step 1: could not check who is in the fort."); return end
 
+    -- agents (spies, diplomats, ...) in the fort cannot be ordered out (test of 15 Oct 2026: a spy stayed in, the
+    -- script kept re-ordering him) -> the player moves them out first
+    local agents = {}
+    for i = 1, #inside do
+        local ct = get(inside[i], "characterType")
+        if ct ~= get(characterType, "named_character") and ct ~= get(characterType, "general") then
+            agents[#agents + 1] = tostring(get(get(inside[i], "characterRecord"), "fullName"))
+        end
+    end
+    if #agents > 0 then
+        log("refused: agents in the fort: " .. table.concat(agents, ", "))
+        say("Move these agents out of the fort first: " .. table.concat(agents, ", ") .. ".")
+        return
+    end
     if state ~= "inside" or #inside == 0 then say(TEST and "A general must stand in the fort." or "A general must lead the settlers into the fort."); return end
     fortInfo.key = nil
     local men, units = fortState(x, y)
@@ -533,6 +547,23 @@ if not FS.installed then
             FS.errorLogged = true
             log("ERROR in draw: " .. tostring(err))
         end
+    end
+end
+
+-- a battle (e.g. the army stepped into a hidden enemy's ambush) stops a running founding at once - the retries
+-- kept giving move orders while the pre-battle scroll was open and the game crashed (test of 15 Oct 2026)
+if not FS.battleHookInstalled then
+    FS.battleHookInstalled = true
+    local previous = _G["onPreBattlePanelOpen"]
+    _G["onPreBattlePanelOpen"] = function(arg)
+        local result = nil
+        if previous then result = previous(arg) end
+        if job ~= nil then
+            log("battle during the founding (phase " .. tostring(job.phase) .. ") - stopped")
+            job = nil
+            say("Founding stopped: your army is in a battle. Nothing was changed.")
+        end
+        return result
     end
 end
 
