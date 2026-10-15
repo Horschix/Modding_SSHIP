@@ -41,6 +41,29 @@ local C_DOMAIN = "ottoman_domain"    -- 1 = Rum is the Ottoman Domain
 
 local PORTRAIT = { Ertugrul = "ertugrul_gazi", Osman = "osman_gazi" }
 
+-- expanded.txt strings shown on the map (leader / heir titles, settlement and agent hover texts), changed with
+-- M2TWEOP.setExpandedString once Rum is the Ottoman Domain (user, 15 Oct: "Ottoman Sultan", no more "Rum").
+-- Not stored in the save -> set again at every map load and Rum turn start.
+local DOMAIN = "Ottoman Domain"
+local EXPANDED = {
+    EMT_RUM_FACTION_LEADER = "The Ottoman Sultan", EMT_RUM_FACTION_LEADER_TITLE = "Ottoman Sultan",
+    EMT_RUM_FACTION_HEIR = "The Ottoman Prince",
+    EMT_RUM_CAPITAL = DOMAIN .. " Capital", EMT_RUM_CASTLE = "Castle - " .. DOMAIN, EMT_RUM_CITY = "City - " .. DOMAIN,
+    EMT_RUM_DOCK = "Docks - " .. DOMAIN, EMT_RUM_FISHING_VILLAGE = "Fishing Village - " .. DOMAIN,
+    EMT_RUM_FORT = "Fort - " .. DOMAIN, EMT_RUM_FORTRESS = "Citadel - " .. DOMAIN,
+    EMT_RUM_HUGE_CITY = "Metropolis - " .. DOMAIN, EMT_RUM_LARGE_CASTLE = "Fortress - " .. DOMAIN,
+    EMT_RUM_LARGE_CITY = "Large City - " .. DOMAIN, EMT_RUM_LARGE_TOWN = "Large Town - " .. DOMAIN,
+    EMT_RUM_PORT = "Port - " .. DOMAIN, EMT_RUM_STAR_FORT = "Star Fort - " .. DOMAIN,
+    EMT_RUM_STONE_KEEP = "Wooden Castle - " .. DOMAIN, EMT_RUM_TOWN = "Town - " .. DOMAIN,
+    EMT_RUM_VILLAGE = "Village - " .. DOMAIN, EMT_RUM_WATCHTOWER = "Watchtower - " .. DOMAIN,
+    EMT_RUM_WOODEN_CASTLE = "Motte and Bailey - " .. DOMAIN,
+    EMT_RUM_ADMIRAL = "Ottoman Navy", EMT_RUM_ASSASSIN = "Ottoman Assassin", EMT_RUM_DIPLOMAT = "Ottoman Minister",
+    EMT_RUM_GENERAL = "Ottoman Army", EMT_RUM_MERCHANT = "Ottoman Merchant", EMT_RUM_NAMED_CHARACTER = "Ottoman Lord",
+    EMT_RUM_NAMED_GENERAL = "Ottoman Noble", EMT_RUM_PRIEST = "Ottoman Imam", EMT_RUM_PRIEST_1 = "Ottoman Great Imam",
+    EMT_RUM_PRIEST_2 = "Ottoman Grand Imam", EMT_RUM_PRINCESS = "Ottoman Princess", EMT_RUM_SPY = "Ottoman Spy",
+    RUM = DOMAIN,
+}
+
 local OR = OttomanRise or {}
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -234,8 +257,26 @@ end
 ---------------------------------------------------------------------------------------------------------------------
 -- the steps
 ---------------------------------------------------------------------------------------------------------------------
+local function applyStrings()
+    local n, bad = 0, {}
+    for key, value in pairs(EXPANDED) do
+        local okG, now = pcall(function() return M2TWEOP.getExpandedString(key) end)
+        if not (okG and now == value) then
+            local ok = pcall(function() M2TWEOP.setExpandedString(key, value) end)
+            if ok then n = n + 1 else bad[#bad + 1] = key end
+        end
+    end
+    if n > 0 or #bad > 0 then
+        local okR, leader = pcall(function() return M2TWEOP.getExpandedString("EMT_RUM_FACTION_LEADER_TITLE") end)
+        log("expanded strings set: " .. n .. (#bad > 0 and (", FAILED " .. table.concat(bad, ", ")) or "")
+            .. "; leader title reads back " .. tostring(okR and leader))
+    end
+end
+
 local function applyName(f)
-    if counter(C_DOMAIN) ~= 1 or f == nil or get(f, "localizedName") == NAME then return end
+    if counter(C_DOMAIN) ~= 1 or f == nil then return end
+    applyStrings()
+    if get(f, "localizedName") == NAME then return end
     local ok, err = pcall(function() f.localizedName = NAME end)
     log("name -> " .. NAME .. ": " .. (ok and ("reads back " .. tostring(get(f, "localizedName"))) or ("ERROR " .. tostring(err))))
 end
