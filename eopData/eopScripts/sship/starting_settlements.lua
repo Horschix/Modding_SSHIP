@@ -1844,6 +1844,13 @@ local function createOne(entry)
     if not okG then log("ERROR starter " .. name .. ": " .. tostring(errG)) end
     local okX, errX = pcall(giveExtras, entry, sett, owner)
     if not okX then log("ERROR extras " .. name .. ": " .. tostring(errX)) end
+    -- Turkmen Camp level 1 for Rum and the Seljuqs, every level, at creation only (Modding_SSHIP #11, user 15 Oct 2026)
+    local oname = get(owner, "name")
+    if oname == "rum" or oname == "turks" then
+        local doneC = {}
+        local okC, errC = pcall(addIfMissing, sett, "turkmen_camp", "turkmen_oba", doneC)
+        log("turkmen camp " .. name .. ": " .. (okC and table.concat(doneC, ", ") or ("ERROR " .. tostring(errC))))
+    end
     local okP = pcall(function() sett.settlementStats.population = entry.population end)
     pcall(function() sett.populationSize = entry.population end)
     applyName(entry, sett, "created")

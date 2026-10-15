@@ -1,4 +1,4 @@
-22 serialization::archive 3 0 0 0 0 972 0 0 
+22 serialization::archive 3 0 0 0 0 974 0 0 
 10 mount_pony 
 1.12 0 0 3 0 0 
 52 unit_models/Mounts/Medium_Horse/mount_pony_lod0.mesh 121 
@@ -31641,6 +31641,48 @@
 14 fs_test_shield 2 
 18 MTW2_Sword_Primary 
 14 fs_test_shield 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+12 turkmen_alps 
+1 3 
+68 unit_models/_Units/turkoman/turkomans_eastern_light_shield_lod0.mesh 121 
+68 unit_models/_Units/turkoman/turkomans_eastern_light_shield_lod1.mesh 1225 
+68 unit_models/_Units/turkoman/turkomans_eastern_light_shield_lod2.mesh 12000 
+1 
+4 merc 
+69 unit_models/_Units/turkoman/textures/turkoman_eastern_light_1.texture 
+76 unit_models/_Units/turkoman/textures/turkoman_eastern_light_normal_1.texture 
+45 unit_sprites/turks_Turkish_Archers_sprite.spr 
+1 
+4 merc 
+75 unit_models/_Units/turkoman/textures/turkoman_big_round_shield_diff.texture 
+75 unit_models/_Units/turkoman/textures/turkoman_big_round_shield_norm.texture 0 
+1 
+4 None 
+14 MTW2_Swordsman 0 
+2 
+18 MTW2_Sword_Primary 
+14 fs_test_shield 0 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+16 turkmen_alps_ug1 
+1 3 
+69 unit_models/_Units/turkoman/turkomans_eastern_medium_shield_lod0.mesh 121 
+69 unit_models/_Units/turkoman/turkomans_eastern_medium_shield_lod1.mesh 1225 
+69 unit_models/_Units/turkoman/turkomans_eastern_medium_shield_lod2.mesh 12000 
+1 
+4 merc 
+70 unit_models/_Units/turkoman/textures/turkoman_eastern_medium_1.texture 
+77 unit_models/_Units/turkoman/textures/turkoman_eastern_medium_normal_1.texture 
+49 unit_sprites/turks_Turkish_Archers_ug1_sprite.spr 
+1 
+4 merc 
+75 unit_models/_Units/turkoman/textures/turkoman_big_round_shield_diff.texture 
+75 unit_models/_Units/turkoman/textures/turkoman_big_round_shield_norm.texture 0 
+1 
+4 None 
+14 MTW2_Swordsman 0 
+2 
+18 MTW2_Sword_Primary 
+14 fs_test_shield 0 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 16 ottoman_infantry 
 1 3 

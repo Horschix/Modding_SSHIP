@@ -18114,3 +18114,37 @@ ownership        cumans, lithuania
 info_pic_dir     merc
 card_pic_dir     mercs
 recruit_priority_offset    -100
+
+type             Turkmen Alps
+dictionary       Turkmen_Alps      ; Turkmen Alps : tribal sword and shield warriors (Modding_SSHIP #11 Turkmen Camp)
+category         infantry
+class            light
+voice_type       Light
+accent         Arabic
+banner faction   main_infantry
+banner holy      crusade
+soldier          Turkmen_Alps, 48, 0, 1
+officer          Seljuks_Captain
+attributes       sea_faring, hide_forest, hardy, can_withdraw
+move_speed_mod	 1.02
+formation        1.2, 1.2, 2.4, 2.4, 3, square
+stat_health      1, 2
+stat_pri         7, 4, no, 0, 0, melee, melee_blade, piercing, sword, 25, 1
+stat_pri_attr    no
+stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
+stat_sec_attr    no
+stat_pri_armour  5, 5, 4, flesh
+stat_sec_armour  0, 0, flesh
+stat_heat        3
+stat_ground      1, 1, 0, -1
+stat_mental      9, normal, trained
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        2, 1900, 700, 65, 700, 700, 2, 200
+armour_ug_levels 1, 2
+armour_ug_models Turkmen_Alps, Turkmen_Alps_ug1
+ownership        rum, turks, zengid, slave
+era 0            rum, turks, zengid
+era 1            rum, turks, zengid
+recruit_priority_offset    0

@@ -1,10 +1,10 @@
 # Handover - SSHIP submod
 
-Last updated 15 Oct 2026 (forts, Ottoman rise #10; Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
+Last updated 15 Oct 2026 (Turkmen Camp #11; forts, Ottoman rise #10; Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5), `06_campaign_ai.md`, `07_mongol_islam.md`, `08_golden_horde.md` (#6),
-`09_army_costs.md` (#7), `10_ottoman_rise.md` (#10 + fort rules). Note numbers are NOT board issue numbers. The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
+`09_army_costs.md` (#7), `10_ottoman_rise.md` (#10 + fort rules), `11_turkmen_camp.md` (#11). Note numbers are NOT board issue numbers. The full tooling notes are in `docs/HANDOVER.md` of `Horschix/Modding_DAC-EUR`,
 section "How the tooling behaves" - look there only when a tool misbehaves.
 On the PC: `D:\Steam\steamapps\common\Medieval II Total War\mods\sship` (the user allowed writing there, 10 Oct).
 
@@ -42,13 +42,15 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
+- #11 Turkmen Camp (rum/turks/zengid, only source of Oghuz HA, Turcoman Javelinmen, Turkmen Cavalry, new Turkmen
+  Alps) + Kurdish Javelinmen for Rum only in zengid/abbasid regions. NEW campaign. Tool `docs/tools/turkmen_camp.py`, note 11.
 - #10 Ertugrul / Osman / Ottoman Domain: test 2 worked (user, 15 Oct); FINAL installed (TEST = false, turns 198 / 252 /
   296). Fort rules + outpost-founding fix (agents, ambush crash) installed; watch FORTRULE / FORTSETT in play. Note 10. golden_horde.lua is FINAL now (TEST = false, 15 Oct).
 - #6 Golden Horde fix 1 (mosque texts, imams, Kasogi) + #4 Cuman villages moved / map round 11 / Volterra Pisan
   (user must delete map.rwm, NEW campaign). TEST = false set 15 Oct (final turns 221 / 361).
 - #7 army_costs.lua (ARMYCOST lines, "The Cost of War" report each turn).
 - Campaign AI test 2 and the Karahisar repair bug (BDIAG, not reproduced) - see note 06 / 04.
-Open issues on the board: #4, #5, #6, #7, #8 (Lithuania Orthodox, not started), #9 (Thessalonica / Lisbon attacks, not started), #10.
+Open issues on the board: #4, #5, #6, #7, #8 (Lithuania Orthodox, not started), #9 (Thessalonica / Lisbon attacks, not started), #10, #11.
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
 - Campaign AI (15 Oct 2026): Gracul AI installed; test 1 passive -> FIX installed 15 Oct: VH label switch OFF,

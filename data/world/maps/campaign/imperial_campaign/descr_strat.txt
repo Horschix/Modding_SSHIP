@@ -3524,6 +3524,10 @@ settlement
 	faction_creator turks
 	building
 	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
+	building
+	{
 		type core_building large_stone_wall
 	}
 	building
@@ -3614,6 +3618,10 @@ settlement castle
 	faction_creator turks
 	building
 	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
+	building
+	{
 		type core_castle_building citadel
 	}
 	building
@@ -3689,6 +3697,10 @@ settlement
 	faction_creator turks
 	building
 	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
+	building
+	{
 		type core_building stone_wall
 	}
 	building
@@ -3760,6 +3772,10 @@ settlement
 	faction_creator turks
 	building
 	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
+	building
+	{
 		type core_building wooden_wall
 	}
 	building
@@ -3821,6 +3837,10 @@ settlement
 	population 43600
 	plan_set default_set
 	faction_creator turks
+	building
+	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
 	building
 	{
 		type core_building large_stone_wall
@@ -3916,6 +3936,10 @@ settlement
 	population 51500
 	plan_set default_set
 	faction_creator turks
+	building
+	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
 	building
 	{
 		type core_building large_stone_wall
@@ -4014,6 +4038,10 @@ settlement castle
 	faction_creator turks
 	building
 	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
+	building
+	{
 		type core_castle_building wooden_castle
 	}
 	building
@@ -4055,6 +4083,10 @@ settlement
 	population 38570
 	plan_set default_set
 	faction_creator turks
+	building
+	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
 	building
 	{
 		type core_building large_stone_wall
@@ -11329,6 +11361,10 @@ settlement
 	faction_creator rum
 	building
 	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
+	building
+	{
 		type core_building large_stone_wall
 	}
 	building
@@ -11406,6 +11442,10 @@ settlement castle
 	population 9140
 	plan_set default_set
 	faction_creator rum	
+	building
+	{
+		type turkmen_camp turkmen_oba	; Modding_SSHIP #11 Turkmen Camp
+	}
 	building
 	{
 		type core_castle_building castle

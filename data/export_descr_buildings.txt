@@ -13,7 +13,7 @@
 ;---------------------------- HISTORICAL DATES (for reference while coding)
 ;---- Descriptions of the rosters
 
-;; CURRENTLY:   119 BUILDINGS, planned to be removed 19 (hardcoded limit: 128)
+;; CURRENTLY:   120 BUILDINGS, planned to be removed 19 (hardcoded limit: 128)
 
 ;       HIDDEN RESOURCES
 
@@ -25,6 +25,109 @@
 ;---- Roads
 ;---- Agriculture (farms)
 ;---- Nomads (ex-grassland)
+
+;==================================================================================================================
+;---- Turkmen Camp (Modding_SSHIP #11 Turkmen Camp, user 15 Oct 2026) -------------------------------------------
+; Rum, Seljuqs (turks) and Zengids: buildable everywhere. The ONLY source of Oghuz Horse Archers, Turcoman
+; Javelinmen, Turkmen Cavalry and Turkmen Alps for these three factions. Trade income and growth, but unrest.
+; No link to farms / builders / town halls (unlike the Cuman grasslands chain).
+;==================================================================================================================
+building turkmen_camp
+{
+  convert_to turkmen_camp
+  levels turkmen_oba turkmen_encampment turkmen_beylik
+  {
+    turkmen_oba requires factions { rum, turks, zengid, }
+    {
+      convert_to 0
+      capability
+      {
+		trade_base_income_bonus bonus 1
+		population_growth_bonus bonus 1
+		law_bonus bonus -1
+		cavalry_bonus 1
+
+		recruit_pool	"Turkish Horse Archers"		1	0.1	2  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
+		recruit_pool	"Turkish Horse Archers"		1	0.08	2  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Horse Archers"		1	0.06	2  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Javelinmen"		1	0.15	2  0  requires factions { rum, turks, zengid, }
+      }
+      material wooden
+      construction  6
+      cost  1000
+      settlement_min village
+      upgrades
+      {
+        turkmen_encampment
+      }
+    }
+    turkmen_encampment requires factions { rum, turks, zengid, }
+    {
+      convert_to 1
+      capability
+      {
+		trade_base_income_bonus bonus 2
+		population_growth_bonus bonus 2
+		law_bonus bonus -2
+		cavalry_bonus 2
+
+		recruit_pool	"Turkish Horse Archers"		1	0.14	2  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
+		recruit_pool	"Turkish Horse Archers"		1	0.12	2  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Horse Archers"		1	0.1	2  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Javelinmen"		1	0.2	3  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkmen Alps"		1	0.1	2  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkomans"		1	0.06	2  0  requires factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1
+		recruit_pool	"Turkomans"		1	0.03	2  0  requires factions { rum, turks, zengid, } and event_counter the_mongols_emerge 1
+
+		; AI support (every 4 turns)
+		recruit_pool	"Turkish Horse Archers"		0	0.2	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+		recruit_pool	"Turkmen Alps"		0	0.15	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+      }
+      material wooden
+      construction  10
+      cost  3000
+      settlement_min town
+      upgrades
+      {
+        turkmen_beylik
+      }
+    }
+    turkmen_beylik requires factions { rum, turks, zengid, }
+    {
+      convert_to 2
+      capability
+      {
+		trade_base_income_bonus bonus 3
+		population_growth_bonus bonus 3
+		law_bonus bonus -3
+		cavalry_bonus 3
+
+		recruit_pool	"Turkish Horse Archers"		1	0.18	3  0  requires factions { rum, turks, zengid, } and not event_counter ISLAM_BARID 1
+		recruit_pool	"Turkish Horse Archers"		1	0.16	3  0  requires factions { rum, turks, zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Horse Archers"		1	0.14	3  0  requires factions { rum, turks, zengid, } and event_counter KANKAN_MUSA 1
+		recruit_pool	"Turkish Javelinmen"		1	0.25	3  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkmen Alps"		1	0.14	3  0  requires factions { rum, turks, zengid, }
+		recruit_pool	"Turkomans"		1	0.09	2  0  requires factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1
+		recruit_pool	"Turkomans"		1	0.045	2  0  requires factions { rum, turks, zengid, } and event_counter the_mongols_emerge 1
+
+		; AI support (every 4 turns)
+		recruit_pool	"Turkish Horse Archers"		0	0.3	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+		recruit_pool	"Turkmen Alps"		0	0.2	0  0  requires factions { rum, turks, zengid, } and not event_counter is_the_player 1 and event_counter leap_year_counter_1 1
+      }
+      material wooden
+      construction  12
+      cost  6000
+      settlement_min large_town
+      upgrades
+      {
+      }
+    }
+  }
+  plugins
+  {
+  }
+}
+
 ;---- Builders
 
 ; 4     POLICIES
@@ -8698,7 +8801,8 @@ building barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -9867,7 +9971,8 @@ building barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -10972,7 +11077,8 @@ building barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -12225,7 +12331,8 @@ building barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -13504,7 +13611,8 @@ building barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -14838,7 +14946,8 @@ building barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -16183,7 +16292,8 @@ building barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -17538,7 +17648,8 @@ building castle_barracks
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -18314,7 +18425,8 @@ recruit_pool	"Dismounted Arab Cavalry"  1   0.08   2  0  requires factions { zen
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -18988,8 +19100,6 @@ recruit_pool	"Dismounted Arab Cavalry"  1   0.1   2  0  requires factions { egyp
 ;- RUM castle barracks garrison_quarters  & TURKS castle barracks garrison_quarters ---------------------------------------------
 recruit_pool	"Ahdath Militia"  1   0.15   2  0  requires factions { turks, rum, }
 
-recruit_pool	"Turkish Javelinmen"  0   0.05   2  0  requires factions { turks, rum, } and not hidden_resource rum and not hidden_resource turks
-recruit_pool	"Turkish Javelinmen"  1   0.2   2  0  requires factions { turks, rum, } and hidden_resource rum or hidden_resource turks
 
 recruit_pool	"Janissary Heavy Inf"		0.9		0.14	3  0  requires factions { rum, } and event_counter HALF_PLATE_ARMOR 1
 
@@ -19006,7 +19116,7 @@ recruit_pool	"Shurtah Militia"  1   0.35   3  1  requires factions { zengid, abb
 recruit_pool	"Armored Spearmen"  1   0.05   2  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and hidden_resource turks or hidden_resource abbasid
 recruit_pool	"Armored Spearmen"  1   0.04   2  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and not hidden_resource turks and not hidden_resource abbasid
 
-recruit_pool	"Turkish Javelinmen"  1   0.15   3  0  requires factions { zengid, abbasid, } and hidden_resource turks or hidden_resource rum
+recruit_pool	"Turkish Javelinmen"  1   0.15   3  0  requires factions { abbasid, } and hidden_resource turks or hidden_resource rum
 
 recruit_pool  	"ME Heavy Spearmen"  1   0.1   2  0  requires factions { zengid, abbasid, } and event_counter HEAVY_MAIL_ARMOR 1
 
@@ -19211,7 +19321,8 @@ recruit_pool	"Dismounted Arab Cavalry"  1   0.1   2  0  requires factions { zeng
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -19942,8 +20053,6 @@ recruit_pool	"Dismounted Ghulams"  0   0   1  0  requires factions { rum, turks,
 recruit_pool	"Dismounted Ghulams"  0   0   1  0  requires factions { mongols, } and event_counter mongols_islam 1
 recruit_pool	"Dismounted Ghulams"  0   0   1  0  requires factions { cumans, } and event_counter cumans_islam 1
 
-recruit_pool	"Turkish Javelinmen"  0   0.06   2  0  requires factions { turks, rum, } and not hidden_resource rum and not hidden_resource turks
-recruit_pool	"Turkish Javelinmen"  1   0.3   2  0  requires factions { turks, rum, } and hidden_resource rum or hidden_resource turks
 
 recruit_pool 	"ME Heavy Spearmen"  1   0.34   2  0  requires factions { turks, rum, } and event_counter HEAVY_MAIL_ARMOR 1
 
@@ -19965,7 +20074,7 @@ recruit_pool	"Dismounted Ghulams"  0   0   1  0  requires factions { zengid, abb
 recruit_pool	"Armored Spearmen"  1   0.13   2  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and hidden_resource turks or hidden_resource abbasid
 recruit_pool	"Armored Spearmen"  1   0.09   1  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and not hidden_resource turks and not hidden_resource abbasid
 
-recruit_pool	"Turkish Javelinmen"  1   0.17   3  0  requires factions { zengid, abbasid, } and hidden_resource turks or hidden_resource rum
+recruit_pool	"Turkish Javelinmen"  1   0.17   3  0  requires factions { abbasid, } and hidden_resource turks or hidden_resource rum
 
 recruit_pool  	"ME Heavy Spearmen"  1   0.34   2  0  requires factions { zengid, abbasid, } and event_counter HEAVY_MAIL_ARMOR 1
 
@@ -20221,7 +20330,8 @@ recruit_pool 	"Tabardariyya"  1   0.06   2  0  requires factions { egypt, } and 
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -21018,8 +21128,6 @@ recruit_pool	"Armored Spearmen"  1   0.09   1  0  requires factions { turks, } a
 recruit_pool	"Dismounted Imperial Guard"  1   0.18   2  0  requires factions { turks, } and event_counter CANNONS 1 and hidden_resource persia
 recruit_pool	"Dismounted Imperial Guard"  1   0.09   1  0  requires factions { turks, } and event_counter CANNONS 1 and not hidden_resource persia
 
-recruit_pool	"Turkish Javelinmen"  0   0.07   2  0  requires factions { turks, rum, } and not hidden_resource rum and not hidden_resource turks
-recruit_pool	"Turkish Javelinmen"  1   0.4   2  1  requires factions { turks, rum, } and hidden_resource rum or hidden_resource turks
 
 	;----- AoR units additional recruitment in Persia ----------------------------
 
@@ -21035,7 +21143,7 @@ recruit_pool	"Dismounted Ghulams"  0   0   1  2  requires factions { zengid, abb
 recruit_pool	"Armored Spearmen"  1   0.13   2  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and hidden_resource turks or hidden_resource abbasid
 recruit_pool	"Armored Spearmen"  1   0.09   1  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and not hidden_resource turks and not hidden_resource abbasid
 
-recruit_pool	"Turkish Javelinmen"  1   0.2   3  1  requires factions { zengid, abbasid, } and hidden_resource turks or hidden_resource rum
+recruit_pool	"Turkish Javelinmen"  1   0.2   3  1  requires factions { abbasid, } and hidden_resource turks or hidden_resource rum
 
 recruit_pool  	"ME Heavy Spearmen"  1   0.34   2  0  requires factions { zengid, abbasid, } and event_counter HEAVY_MAIL_ARMOR 1
 
@@ -21300,7 +21408,8 @@ recruit_pool 	"Tabardariyya"  1   0.07   2  0  requires factions { egypt, } and 
 ; number of recruits does not grow with the urbanization level
 
 	; Muslims and a few factions using this unit: in Anatolia, Levant and Persia
-		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { moors, egypt, turks, abbasid, mongols, cumans, georgia, slave, } and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Kurdish Javelinmen"		1	0.05	2  0  requires factions { rum, } and hidden_resource zengid or hidden_resource abbasid	; Rum: Kurdish lands only (Modding_SSHIP #11 Turkmen Camp)
 
 	; Christians and a few other factions: recruitable in Persia and Levant, except for the KoJ core provinces
 		recruit_pool	"Kurdish Javelinmen"		1	0.04	2  0  requires factions { scotland, england, jerusalem, france, hre, norway, denmark, pisa, papal_states, sicily, venice, portugal, spain, aragon, poland, hungary, russia, kievan_rus, byzantium, serbia, } and not event_counter FL_policy_strictly_religious 1 and not hidden_resource jerusalem and hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
@@ -22158,8 +22267,6 @@ recruit_pool 	"Tabardariyya"  1   0.07   2  0  requires factions { egypt, } and 
 ;- Rum barracks castle armoury & Turks barracks castle armoury-----------------------------------------------------------------
 recruit_pool	"Ahdath Militia"  1   0.3   3  0  requires factions { turks, rum, }
 
-recruit_pool	"Turkish Javelinmen"  0   0.08   2  0  requires factions { turks, rum, } and not hidden_resource rum and not hidden_resource turks
-recruit_pool	"Turkish Javelinmen"  1   0.5   2  1  requires factions { turks, rum, } and hidden_resource rum or hidden_resource turks
 
 recruit_pool	"Dismounted Ghulams"  0   0   1  4  requires factions { rum, turks, }
 recruit_pool	"Dismounted Ghulams"  0   0   1  4  requires factions { mongols, } and event_counter mongols_islam 1
@@ -22186,7 +22293,7 @@ recruit_pool	"Dismounted Ghulams"  0   0   1  4  requires factions { zengid, abb
 recruit_pool	"Armored Spearmen"  1   0.17   2  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and hidden_resource turks or hidden_resource abbasid
 recruit_pool	"Armored Spearmen"  1   0.13   1  0  requires factions { abbasid, } and event_counter HEAVY_MAIL_ARMOR 1 and not hidden_resource turks and not hidden_resource abbasid
 
-recruit_pool	"Turkish Javelinmen"  1   0.25   3  1  requires factions { zengid, abbasid, } and hidden_resource turks or hidden_resource rum
+recruit_pool	"Turkish Javelinmen"  1   0.25   3  1  requires factions { abbasid, } and hidden_resource turks or hidden_resource rum
 
 recruit_pool  	"ME Heavy Spearmen"  1   0.34   2  0  requires factions { zengid, abbasid, } and event_counter HEAVY_MAIL_ARMOR 1
 
@@ -22401,11 +22508,11 @@ building equestrian
 ; decrease after the Mongols emerge - the potential recruits would join their armies
 ; cease after Timur invasion
 
-		recruit_pool	"Turkomans"	1	0.06	2  0  requires factions { all, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
-		recruit_pool	"Turkomans"	1	0.03	2  0  requires factions { all, } and event_counter the_mongols_emerge 1 and not event_counter THE_TIMURIDS_EMERGE 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	1	0.06	2  0  requires factions { all, } and not factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	1	0.03	2  0  requires factions { all, } and not factions { rum, turks, zengid, } and event_counter the_mongols_emerge 1 and not event_counter THE_TIMURIDS_EMERGE 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
 
-		recruit_pool	"Turkomans"	0	0.03	0  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
-		recruit_pool	"Turkomans"	0	0.015	0  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, } and event_counter the_mongols_emerge 1 and not event_counter THE_TIMURIDS_EMERGE 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	0	0.03	0  0  requires factions { moors, egypt, abbasid, mongols, cumans, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	0	0.015	0  0  requires factions { moors, egypt, abbasid, mongols, cumans, } and event_counter the_mongols_emerge 1 and not event_counter THE_TIMURIDS_EMERGE 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
 
 
 ; ************************************************************************************************************************************
@@ -22761,25 +22868,13 @@ building equestrian
 ; mind that the "Turkomans" are an AoR unit in the Turkish lands for everybody, with additional recruitment for the Muslim factions
 
 
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { rum, } and not event_counter ISLAM_BARID 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { rum, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { rum, } and event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
 
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { rum, } and not event_counter ISLAM_BARID 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.07   2  0  requires factions { rum, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.05   2  0  requires factions { rum, } and event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
 
 
 ;==============================================================================================================================
 ;- Turks stables stables ------------------------------------------------------------------------------------------------------
 
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { turks, } and not event_counter ISLAM_BARID 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { turks, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { turks, } and event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
 
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { turks, } and not event_counter ISLAM_BARID 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.07   2  0  requires factions { turks, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.05   2  0  requires factions { turks, } and event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
 
 
 ;==============================================================================================================================
@@ -22807,13 +22902,7 @@ building equestrian
 
 ; mind that the "Turkomans" are an AoR unit in the Turkish lands for everybody, with additional recruitment for the Muslim factions
 
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { zengid, } and not event_counter ISLAM_BARID 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { zengid, } and event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
 
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { zengid, } and not event_counter ISLAM_BARID 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.07   2  0  requires factions { zengid, } and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
-		recruit_pool	"Turkish Horse Archers"  1   0.05   2  0  requires factions { zengid, } and event_counter KANKAN_MUSA 1 and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia
 
 
 ;==============================================================================================================================
@@ -22964,8 +23053,8 @@ building equestrian
 ; Anatolia and Levant (32 provinces)
 ; they cease to come after the Mongols emerge - the potential recruits would join their armies
 
-		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
-		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
 
 
 ; ************************************************************************************************************************************
@@ -23229,13 +23318,7 @@ building equestrian
 ;==============================================================================================================================
 ;- Turks stables knights_stables ----------------------------------------------------------------------------------------------
 
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.07   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.1   2  0  requires factions { rum, turks, } and hidden_resource moors or hidden_resource zengid or hidden_resource egypt or hidden_resource abbasid
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.08   2  0  requires factions { rum, turks, } and not hidden_resource moors and not hidden_resource zengid and not hidden_resource egypt and not hidden_resource abbasid
@@ -23250,13 +23333,7 @@ building equestrian
 
 ; mind that the "Turkomans" are an AoR unit in the Turkish lands for everybody, with additional recruitment for the Muslim factions
 
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.07   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 ;==============================================================================================================================
@@ -23283,13 +23360,7 @@ building equestrian
 
 ; mind that the "Turkomans" are an AoR unit in the Turkish lands for everybody, with additional recruitment for the Muslim factions
 
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.11   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.09   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.07   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 ;==============================================================================================================================
@@ -23458,8 +23529,8 @@ building equestrian
 ; Anatolia and Levant (32 provinces)
 ; they cease to come after the Mongols emerge - the potential recruits would join their armies
 
-		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
-		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
 
 
 ; ************************************************************************************************************************************
@@ -23756,13 +23827,7 @@ building equestrian
 
 ; mind that the "Turkomans" are an AoR unit in the Turkish lands for everybody, with additional recruitment for the Muslim factions
 
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.12   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.10   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 ;==============================================================================================================================
@@ -23770,13 +23835,7 @@ building equestrian
 
 ; mind that the "Turkomans" are an AoR unit in the Turkish lands for everybody, with additional recruitment for the Muslim factions
 
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.12   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.10   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 ;- Rum stables barons & Turks stables barons----------------------------------------------------------------------------
@@ -23822,13 +23881,7 @@ building equestrian
 ;==============================================================================================================================
 ;- ZENGID stables barons_stables --------------------------------------------------
 
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.12   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.10   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 ;==============================================================================================================================
@@ -24018,8 +24071,8 @@ building equestrian
 ; Anatolia and Levant (32 provinces)
 ; they cease to come after the Mongols emerge - the potential recruits would join their armies
 
-		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
-		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
 
 
 ; ************************************************************************************************************************************
@@ -24374,22 +24427,10 @@ building equestrian
 ;==============================================================================================================================
 ;- Rum stables earls_stables & Turks stables earls_stables --------------------------------------------------------------------
 
-		recruit_pool	"Turkish Horse Archers"  1   0.19   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
-
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.12   2  0  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
-		recruit_pool	"Turkish Horse Archers"  1   0.19   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.12   2  0  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
+
 
 
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.14   2  0  requires factions { rum, turks, } and hidden_resource moors or hidden_resource zengid or hidden_resource egypt or hidden_resource abbasid
@@ -24437,13 +24478,7 @@ building equestrian
 ;==============================================================================================================================
 ;- ZENGID stables earls_stables -----------------------------------------------------------------------------------------------
 
-		recruit_pool	"Turkish Horse Archers"  1   0.19   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.13   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.12   2  0  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 ;==============================================================================================================================
@@ -24654,8 +24689,8 @@ building equestrian
 ; Anatolia and Levant (32 provinces)
 ; they cease to come after the Mongols emerge - the potential recruits would join their armies
 
-		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
-		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, rum, turks, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	1	0.04	2  0  requires factions { all, } and not factions { rum, turks, zengid, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turkomans"	0	0.037	0  0  requires factions { moors, egypt, abbasid, mongols, cumans, slave, } and not event_counter the_mongols_emerge 1 and hidden_resource rum or hidden_resource zengid or hidden_resource abbasid or hidden_resource turks
 
 
 ; ************************************************************************************************************************************
@@ -25074,21 +25109,9 @@ building equestrian
 
 ; mind that the "Turkomans" are an AoR unit in the Turkish lands for everybody, with additional recruitment for the Muslim factions
 
-		recruit_pool	"Turkish Horse Archers"  1   0.22   2  1  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.19   2  1  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  1  requires factions { rum, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  1  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  1  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  1  requires factions { rum, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.22   2  1  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.19   2  1  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  1  requires factions { turks, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  1  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  1  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  1  requires factions { turks, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.16   2  0  requires factions { rum, turks, } and hidden_resource moors or hidden_resource zengid or hidden_resource egypt or hidden_resource abbasid
@@ -25142,13 +25165,7 @@ building equestrian
 ;==============================================================================================================================
 ;- ZENGID stables kings_stables ---------------------------------------------------
 
-		recruit_pool	"Turkish Horse Archers"  1   0.22   2  1  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.19   2  1  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  1  requires factions { zengid, } and hidden_resource turks or hidden_resource abbasid or hidden_resource zengid or hidden_resource rum or hidden_resource cumans or hidden_resource georgia and event_counter KANKAN_MUSA 1
 
-		recruit_pool	"Turkish Horse Archers"  1   0.17   2  1  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and not event_counter ISLAM_BARID 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  1  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter ISLAM_BARID 1 and not event_counter KANKAN_MUSA 1
-		recruit_pool	"Turkish Horse Archers"  1   0.15   2  1  requires factions { zengid, } and not hidden_resource turks and not hidden_resource abbasid and not hidden_resource zengid and not hidden_resource rum and not hidden_resource cumans and not hidden_resource georgia and event_counter KANKAN_MUSA 1
 
 
 ;==============================================================================================================================
