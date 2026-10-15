@@ -28,5 +28,6 @@ islam (log line "religion was ... set again" would show a reset). Final: `TEST =
 
 ## Status
 - 15 Oct: test version installed, read back identical. Waiting for the user's test (NEW campaign).
+- 15 Oct: CONVERT_TURN 340 -> 327 (Ilkhanate), Muslim units by script - see 08_golden_horde.md.
 - 15 Oct, TEST worked (user): test army sacked Urgench (went rebel), then took Merv turn 10, converted turn 12.
   FINAL installed 15 Oct (TEST = false -> turn 340, no test spawn), read back identical.

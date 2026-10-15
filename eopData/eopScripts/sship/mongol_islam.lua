@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------------------------
 -- mongol_islam.lua  (Modding_SSHIP, 15 Oct 2026)
--- The Mongols (emerging AI-only faction, pagan) convert to Islam at turn 340 (~1301; Ghazan 1295, Ozbeg 1313).
+-- The Mongols (emerging AI-only faction, pagan; they stand for the Ilkhanate) convert to Islam at turn 327 (Ghazan,
+-- 1295; user, 15 Oct 2026 - was 340). The Cumans (Golden Horde) convert separately in golden_horde.lua (turn 361).
+--   * also from then on (15 Oct 2026): Mutatawwi Warriors, Ahdath Militia, Naffatun, Ghulams, Dismounted Ghulams
+--     owned by script (ownership is not saved -> set again at every Mongol turn start and map load)
 --   * condition: turn >= CONVERT_TURN, Mongols alive (own at least one settlement)
 --   * faction religion -> islam (EOP field factionStruct.religion), script counter mongols_islam = 1
 --     (export_descr_buildings: Mongols may then build mosques, no new Tengri temples)
@@ -12,7 +15,7 @@
 -- Log prefix: MONGISL (in full.log).
 ---------------------------------------------------------------------------------------------------------------------
 local TEST = false
-local CONVERT_TURN = TEST and 2 or 340
+local CONVERT_TURN = TEST and 2 or 327
 local TEST_SPAWN_TURN = 2
 local C_DONE = "mongols_islam"          -- 1 = converted (also used in export_descr_buildings)
 local C_TEST_SPAWNED = "mongols_islam_test_spawn"
@@ -26,6 +29,8 @@ local TEMPLE_MAP = {
     c_tengir_altar   = "c_small_masjid",
 }
 
+local ISLAM_UNITS = { "Mutatawwi Warriors", "Ahdath Militia", "Naffatun", "Ghulams", "Dismounted Ghulams" }
+
 local TEST_ARMY = {
     "Merguen Archers", "Merguen Archers", "Disamounted Turhagut", "Disamounted Turhagut", "Disamounted Turhagut",
     "Hoschuchi Lancers", "Hoschuchi Lancers", "Lubchiten Horse Archers", "Lubchiten Horse Archers",
@@ -33,11 +38,11 @@ local TEST_ARMY = {
 }
 
 local EVENT_TITLE = "The Mongols embrace Islam"
-local EVENT_BODY = "\nThe Mongol khans of the West have turned to the faith of their Muslim subjects.\n\n"
+local EVENT_BODY = "\nThe Mongol khans of Persia have turned to the faith of their Muslim subjects.\n\n"
     .. "In the Ilkhanate, Ghazan Khan converted to Islam in 1295 when he took the throne, and his Mongol nobles followed "
-    .. "him. In the Golden Horde, Berke Khan had already become a Muslim, but it was Ozbeg Khan who made Islam the "
-    .. "religion of the state in 1313. The shamans of Tengri give way to imams, and the old temples of the steppe "
-    .. "become mosques.\n\nGAME: The Mongols are now a Muslim faction. Their Tengri temples have become mosques."
+    .. "him. The shamans of Tengri give way to imams, and the old temples of the steppe become mosques.\n\n"
+    .. "GAME: The Mongols are now a Muslim faction. Their Tengri temples have become mosques; Mutatawwi Warriors, "
+    .. "Ahdath Militia, Naffatun and Ghulams can be recruited."
 
 ---------------------------------------------------------------------------------------------------------------------
 -- helpers (a wrong field name must never crash the game)
@@ -92,6 +97,23 @@ local function playerFactionNames()
     return names
 end
 
+-- Muslim units owned by script (not stored in the save)
+local function ownIslamUnits(f)
+    local fid = get(f, "factionID")
+    if fid == nil then return end
+    local changed = 0
+    for _, u in ipairs(ISLAM_UNITS) do
+        local okE, e = pcall(function() return M2TWEOPDU.getEduEntryByType(u) end)
+        if okE and e then
+            local okH, has = pcall(function() return e:hasOwnership(fid) end)
+            if not (okH and has) and pcall(function() e:setOwnership(fid, true) end) then changed = changed + 1 end
+        else
+            log("ownership: unit not found " .. u)
+        end
+    end
+    if changed > 0 then log("ownership set for " .. changed .. " Muslim units") end
+end
+
 ---------------------------------------------------------------------------------------------------------------------
 -- Tengri temples -> mosques
 ---------------------------------------------------------------------------------------------------------------------
@@ -140,6 +162,7 @@ end
 local function convert(f)
     local okSet = setIslam(f)
     setCounter(C_DONE, 1)
+    ownIslamUnits(f)
     local temples = convertAllTemples(f)
     log("CONVERTED at turn " .. turnNow() .. " (" .. (get(f, "settlementsNum") or 0) .. " settlements, "
         .. temples .. " temples converted, religion ok = " .. tostring(okSet) .. ")")
@@ -205,6 +228,7 @@ local function onTurnStart(eventData)
         return
     end
 
+    ownIslamUnits(fac)
     -- already converted: keep the religion (e.g. after loading a save) and convert temples in newly taken settlements
     if get(fac, "religion") ~= islamID() then
         log("religion was " .. tostring(get(fac, "religion")) .. " after conversion - set again")
@@ -228,6 +252,9 @@ end
 if not MI.installed then
     MI.installed = true
     afterHook("onFactionTurnStart", onTurnStart)
+    afterHook("onCampaignMapLoaded", function()
+        if counter(C_DONE) == 1 then ownIslamUnits(mongols()) end
+    end)
     log("loaded (TEST = " .. tostring(TEST) .. ", convert turn " .. CONVERT_TURN .. ")")
 end
 

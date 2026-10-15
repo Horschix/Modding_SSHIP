@@ -23,9 +23,13 @@ require('sship.starting_settlements')
 -- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
 require('sship.historic_invasions')
 
--- Mongols convert to Islam at turn 340 (Modding_SSHIP, 15 Oct 2026).
+-- Mongols (Ilkhanate) convert to Islam at turn 327 (Modding_SSHIP, 15 Oct 2026).
 -- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
 require('sship.mongol_islam')
+
+-- Cumans become the Golden Horde (turn 221) and turn Muslim (turn 361) (Modding_SSHIP, 15 Oct 2026).
+-- Must stay AFTER require('sship.main'). To switch it off, delete the next line.
+require('sship.golden_horde')
 
 -- TEMPORARY: logs damaged buildings + build queue of player settlements (Karahisar repair bug). Delete when done.
 require('sship.building_diag')

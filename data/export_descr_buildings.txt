@@ -596,6 +596,7 @@ building core_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -812,6 +813,7 @@ building core_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -1031,6 +1033,7 @@ building core_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -1251,6 +1254,7 @@ building core_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -1467,6 +1471,7 @@ building core_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -1672,6 +1677,7 @@ building core_castle_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -1876,6 +1882,7 @@ building core_castle_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -2081,6 +2088,7 @@ building core_castle_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -2282,6 +2290,7 @@ building core_castle_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -2482,6 +2491,7 @@ building core_castle_building
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { abbasid, } and event_counter hx_player_abbasid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { egypt, } and event_counter hx_player_egypt 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { turks, } and event_counter hx_player_turks 1
+        recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter hx_player_cumans 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { moors, } and event_counter hx_player_moors 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { zengid, } and event_counter hx_player_zengid 1
         recruit_pool "Muslim Settlers"  2   1   2  0  requires factions { rum, } and event_counter hx_player_rum 1
@@ -3281,6 +3291,7 @@ building grasslands
 		recruit_pool	"Dismounted Bekh Druzhina"	0	0.02	0  0  requires factions { cumans, } and hidden_resource cumans
 
 		recruit_pool	"Keshikten Bodyguard"  0.75   0.07   2  0  requires factions { mongols, }
+		recruit_pool	"Keshikten Bodyguard"  0.75   0.07   2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"Cuman Bodyguard"  0.75   0.07   2  0  requires factions { cumans, }
 
 		recruit_pool	"Magyar Cavalry"		1	0.15	2  0  requires factions { hungary, } and not event_counter HEAVY_MAIL_ARMOR 1
@@ -4859,7 +4870,11 @@ recruit_pool 	"Dismounted Fari Archers"  0.9   0.04	2  0  requires factions { eg
 ; these should also be moved to the Grasslands
 
 		recruit_pool	"Hoschuchi Lancers"				1	0.04  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"				1	0.04  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"				1	0.04  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Dismounted Khorchi Archers"	1	0.04  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.04  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.04  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 
 ;================================================================================================================================
 ; not units from landowners for CUMANS & SLAVE
@@ -5883,7 +5898,11 @@ recruit_pool 	"Dismounted Fari Archers"  0.9   0.05	2  0  requires factions { eg
 ; these should also be moved to the Grasslands
 
 		recruit_pool	"Hoschuchi Lancers"					1	0.07  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"					1	0.07  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"					1	0.07  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Dismounted Khorchi Archers"		1	0.07  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Dismounted Khorchi Archers"		1	0.07  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Dismounted Khorchi Archers"		1	0.07  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 
 ;================================================================================================================================
 ; not units from landowners for CUMANS & SLAVE
@@ -7043,7 +7062,11 @@ recruit_pool 	"Dismounted Fari Archers"  0.9   0.06	2  0  requires factions { eg
 ;- MONGOLS landowners4 --------------------------------------------------------------------------------------------------------
 
 		recruit_pool	"Hoschuchi Lancers"			1	0.10  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"			1	0.10  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"			1	0.10  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Dismounted Khorchi Archers"	1	0.10  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.10  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.10  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 
 ;================================================================================================================================
 ; not units from landowners for CUMANS & SLAVE
@@ -8201,7 +8224,11 @@ recruit_pool 	"Dismounted Fari Archers"  0.9   0.08	2  0  requires factions { eg
 ;- MONGOLS landowners5 --------------------------------------------------------------------------------------------------------
 
 		recruit_pool	"Hoschuchi Lancers"			1	0.13  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"			1	0.13  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"			1	0.13  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Dismounted Khorchi Archers"	1	0.13  2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource turks
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.13  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.13  2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 
 ;================================================================================================================================
 ; not units from landowners for CUMANS & SLAVE
@@ -9566,6 +9593,8 @@ building barracks
 ;
 
 		recruit_pool	"Ahdath Militia"		0.5	0.13	2  0  requires factions { abbasid, zengid, }
+		recruit_pool	"Ahdath Militia"		0.5	0.13	2  0  requires factions { mongols, } and event_counter mongols_islam 1
+		recruit_pool	"Ahdath Militia"		0.5	0.13	2  0  requires factions { cumans, } and event_counter cumans_islam 1
 		recruit_pool	"Shurtah Militia"		1	0.17	2  0  requires factions { abbasid, zengid, }
 
 ;==============================================================================================================================
@@ -9624,7 +9653,9 @@ building barracks
 ;- MONGOLS city barracks town_watch -------------------------------------------------------------------------------------------
 
 		recruit_pool	"Kashtim Thralls"		1	0.13	2  0  requires factions { mongols, } and hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"		1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
 		recruit_pool	"Kashtim Thralls"		1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"		1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars
 
 
 ;==============================================================================================================================
@@ -10655,6 +10686,8 @@ building barracks
 ;- ZENGID city barracks town_guard & ABBASID city barracks town_guard ----------------------------------------------------
 
 		recruit_pool	"Ahdath Militia"		0.5	0.17	3	0  requires factions { abbasid, zengid, }
+		recruit_pool	"Ahdath Militia"		0.5	0.17	3	0  requires factions { mongols, } and event_counter mongols_islam 1
+		recruit_pool	"Ahdath Militia"		0.5	0.17	3	0  requires factions { cumans, } and event_counter cumans_islam 1
 		recruit_pool	"Shurtah Militia"		1	0.25	3	0  requires factions { abbasid, zengid, }
 
 ;==============================================================================================================================
@@ -10721,9 +10754,12 @@ building barracks
 ;- MONGOLS city barracks town_guard -------------------------------------------------------------------------------------------
 
 		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { mongols, } and hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
 		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars
 
 		recruit_pool	"Sibiryaki Junior Militia"	1	0.07	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Junior Militia"	1	0.07	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 
 ;==============================================================================================================================
@@ -11882,6 +11918,8 @@ building barracks
 
 		recruit_pool	"ME Halberd Militia"  1   0.25   2  0  requires factions { abbasid, zengid, } and event_counter FULL_PLATE_ARMOR 1
 		recruit_pool	"Ahdath Militia"  1   0.23   2  0  requires factions { abbasid, zengid, }
+		recruit_pool	"Ahdath Militia"  1   0.23   2  0  requires factions { mongols, } and event_counter mongols_islam 1
+		recruit_pool	"Ahdath Militia"  1   0.23   2  0  requires factions { cumans, } and event_counter cumans_islam 1
 		recruit_pool	"Shurtah Militia"  1   0.17   2  0  requires factions { abbasid, zengid, } and event_counter FULL_PLATE_ARMOR 1
 		recruit_pool	"Shurtah Militia"  1   0.34   3  0  requires factions { abbasid, zengid, } and not event_counter FULL_PLATE_ARMOR 1
 
@@ -11966,10 +12004,14 @@ building barracks
 ;- MONGOLS city barracks city_watch -------------------------------------------------------------------------------------------
 
 		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { mongols, } and hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
 		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars
 
 		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 
 ;==============================================================================================================================
@@ -13240,12 +13282,17 @@ building barracks
 ;- MONGOLS city barracks militia_drill_square ---------------------------------------------------------------------------------
 
 		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { mongols, } and hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
 		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars
 
 		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 ;==============================================================================================================================
 ;- SLAVE city barracks militia_drill_square -----------------------------------------------------------------------------------------------------------
@@ -14480,6 +14527,8 @@ building barracks
 		recruit_pool	"Al Haqa Infantry"  1   0.4   3  0  requires factions { zengid, } and event_counter mamluks_established 1 and hidden_resource egypt and hidden_resource capital
 		recruit_pool	"Al Haqa Infantry"  0   0.1   2  0  requires factions { zengid, } and event_counter mamluks_established 1 and not hidden_resource egypt and not hidden_resource capital
 		recruit_pool	"Ahdath Militia"  1   0.29   3  0  requires factions { abbasid, zengid, }
+		recruit_pool	"Ahdath Militia"  1   0.29   3  0  requires factions { mongols, } and event_counter mongols_islam 1
+		recruit_pool	"Ahdath Militia"  1   0.29   3  0  requires factions { cumans, } and event_counter cumans_islam 1
 		recruit_pool	"Shurtah Militia"  1   0.34   3  0  requires factions { abbasid, zengid, } and not event_counter new_era_begins 1
 
 ;==============================================================================================================================
@@ -14565,12 +14614,17 @@ building barracks
 ;- MONGOLS city barracks  militia_barracks ---------------------------------------------------------------------------------------------------------
 
 		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { mongols, } and hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
 		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars
 
 		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 
 ;==============================================================================================================================
@@ -15816,6 +15870,8 @@ building barracks
 		recruit_pool	"Al Haqa Infantry"  0   0.15   2  0  requires factions { zengid, } and event_counter mamluks_established 1 and not hidden_resource egypt and not hidden_resource capital
 
 		recruit_pool	"Ahdath Militia"  1   0.32   4  0  requires factions { abbasid, zengid, }
+		recruit_pool	"Ahdath Militia"  1   0.32   4  0  requires factions { mongols, } and event_counter mongols_islam 1
+		recruit_pool	"Ahdath Militia"  1   0.32   4  0  requires factions { cumans, } and event_counter cumans_islam 1
 		recruit_pool	"ME Halberd Militia"  1   0.67   5  0  requires factions { abbasid, zengid, } and event_counter FULL_PLATE_ARMOR 1
 		recruit_pool	"ME Halberd Militia"  1   0.5   4  0  requires factions { abbasid, zengid, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter FULL_PLATE_ARMOR 1
 		recruit_pool	"Shurtah Militia"  1   0.34   3  0  requires factions { abbasid, zengid, } and not event_counter new_era_begins 1
@@ -15903,12 +15959,17 @@ building barracks
 ;- MONGOLS city barracks army_barracks ----------------------------------------------------------------------------------------
 
 		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { mongols, } and hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
 		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars
 
 		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 
 ;==============================================================================================================================
@@ -17222,12 +17283,17 @@ building barracks
 ;- MONGOLS city barracks royal_armoury ----------------------------------------------------------------------------------------
 
 		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { mongols, } and hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
 		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars
+		recruit_pool	"Kashtim Thralls"			1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars
 
 		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Junior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.07	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"Sibiryaki Senior Militia"	1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 
 ;==============================================================================================================================
@@ -19873,6 +19939,8 @@ recruit_pool	"Dismounted Arab Cavalry"  1   0.1   2  0  requires factions { zeng
 ;--RUM castle barracks drill_square  & TURKS barracks castle drill_square ---------------------------------------------------------
 recruit_pool	"Ahdath Militia"  1   0.3   3  0  requires factions { turks, rum, }
 recruit_pool	"Dismounted Ghulams"  0   0   1  0  requires factions { rum, turks, }
+recruit_pool	"Dismounted Ghulams"  0   0   1  0  requires factions { mongols, } and event_counter mongols_islam 1
+recruit_pool	"Dismounted Ghulams"  0   0   1  0  requires factions { cumans, } and event_counter cumans_islam 1
 
 recruit_pool	"Turkish Javelinmen"  0   0.06   2  0  requires factions { turks, rum, } and not hidden_resource rum and not hidden_resource turks
 recruit_pool	"Turkish Javelinmen"  1   0.3   2  0  requires factions { turks, rum, } and hidden_resource rum or hidden_resource turks
@@ -20941,6 +21009,8 @@ recruit_pool 	"Tabardariyya"  1   0.06   2  0  requires factions { egypt, } and 
 recruit_pool	"Ahdath Militia"  1   0.3   3  0  requires factions { turks, rum, }
 
 recruit_pool	"Dismounted Ghulams"  0   0   1  2  requires factions { rum, turks, }
+recruit_pool	"Dismounted Ghulams"  0   0   1  2  requires factions { mongols, } and event_counter mongols_islam 1
+recruit_pool	"Dismounted Ghulams"  0   0   1  2  requires factions { cumans, } and event_counter cumans_islam 1
 recruit_pool	"Janissary Heavy Inf"		0.9		0.09	3  0  requires factions { rum, } and event_counter HALF_PLATE_ARMOR 1
 recruit_pool  	"ME Heavy Spearmen"  1   0.34   2  0  requires factions { turks, rum, } and event_counter HEAVY_MAIL_ARMOR 1
 recruit_pool	"Armored Spearmen"  1   0.13   1  0  requires factions { turks, } and event_counter HEAVY_MAIL_ARMOR 1 and hidden_resource turks or hidden_resource abbasid
@@ -21043,7 +21113,11 @@ recruit_pool 	"Tabardariyya"  1   0.07   2  0  requires factions { egypt, } and 
 ;=============================================================================================================================================
 ;- Mongols barracks castle barracks ---------------------------------------------------------------------------------------------------
 		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Disamounted Turhagut"  0   0.085   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Disamounted Turhagut"  0   0.085   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 
 
 ;---------------------------------------------------------------------------------------------------------------------------------
@@ -22088,6 +22162,8 @@ recruit_pool	"Turkish Javelinmen"  0   0.08   2  0  requires factions { turks, r
 recruit_pool	"Turkish Javelinmen"  1   0.5   2  1  requires factions { turks, rum, } and hidden_resource rum or hidden_resource turks
 
 recruit_pool	"Dismounted Ghulams"  0   0   1  4  requires factions { rum, turks, }
+recruit_pool	"Dismounted Ghulams"  0   0   1  4  requires factions { mongols, } and event_counter mongols_islam 1
+recruit_pool	"Dismounted Ghulams"  0   0   1  4  requires factions { cumans, } and event_counter cumans_islam 1
 recruit_pool	"Janissary Heavy Inf"		0.9		0.14	3  0  requires factions { rum, } and event_counter HALF_PLATE_ARMOR 1
 recruit_pool  	"ME Heavy Spearmen"  1   0.34   2  0  requires factions { turks, rum, } and event_counter HEAVY_MAIL_ARMOR 1
 recruit_pool	"Dismounted Imperial Guard"  1   0.24   2  0  requires factions { turks, } and event_counter CANNONS 1 and hidden_resource persia
@@ -22190,7 +22266,11 @@ recruit_pool 	"Tabardariyya"  1   0.08   2  0  requires factions { egypt, } and 
 ;- MONGOLS barracks castle armoury --------------------------------------------------------------------------------------------
 
 		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Disamounted Turhagut"  1   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Disamounted Turhagut"  0   0.085   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Disamounted Turhagut"  0   0.085   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 
 ;-------------------------------------------------------------------------------------------------------------------------------
 ; UPKEEP/INCOME
@@ -22804,7 +22884,11 @@ building equestrian
 ;- Mongols stables ------------------------------------------------------------------------------------------------------------------
 
 		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 
 
 ;------------------------------------------------------------------------------------------------------------------------------------
@@ -23288,9 +23372,17 @@ building equestrian
 ;- Mongols stables knights_stables --------------------------------------------------------------------------------------------------
 
 		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; UPKEEP/INCOME
@@ -23692,6 +23784,8 @@ building equestrian
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.12   2  0  requires factions { rum, turks, } and hidden_resource moors or hidden_resource zengid or hidden_resource egypt or hidden_resource abbasid
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.1   2  0  requires factions { rum, turks, } and not hidden_resource moors and not hidden_resource zengid and not hidden_resource egypt and not hidden_resource abbasid
 		recruit_pool  	"Ghulams" 				 0   0   1  2  requires factions { rum, turks, } and not event_counter TRANSITIONAL_ARMOR 1
+		recruit_pool  	"Ghulams" 				 0   0   1  2  requires factions { mongols, } and event_counter mongols_islam 1 and not event_counter TRANSITIONAL_ARMOR 1
+		recruit_pool  	"Ghulams" 				 0   0   1  2  requires factions { cumans, } and event_counter cumans_islam 1 and not event_counter TRANSITIONAL_ARMOR 1
 		recruit_pool	"Turkish Ghulams"		0   0   1  0  requires factions { rum, turks, } and event_counter HEAVY_MAIL_ARMOR 1
 		recruit_pool	"Quapukulu"				0.8		0.07	2  0  requires factions { rum, turks, } and event_counter FULL_PLATE_ARMOR 1
 
@@ -23826,13 +23920,29 @@ building equestrian
 ;- Mongols baron_stables -------------------------------------------------------------------------------------------------------------
 
 		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Lubchiten Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Lubchiten Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Turhagut Lancers"  0   0.13   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Turhagut Lancers"  0   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 
 
 ;---------------------------------------------------------------------------------------------------------------------------------
@@ -24285,6 +24395,8 @@ building equestrian
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.14   2  0  requires factions { rum, turks, } and hidden_resource moors or hidden_resource zengid or hidden_resource egypt or hidden_resource abbasid
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.12   2  0  requires factions { rum, turks, } and not hidden_resource moors and not hidden_resource zengid and not hidden_resource egypt and not hidden_resource abbasid
 		recruit_pool  	"Ghulams" 				 0   0   1  4  requires factions { rum, turks, } and not event_counter TRANSITIONAL_ARMOR 1
+		recruit_pool  	"Ghulams" 				 0   0   1  4  requires factions { mongols, } and event_counter mongols_islam 1 and not event_counter TRANSITIONAL_ARMOR 1
+		recruit_pool  	"Ghulams" 				 0   0   1  4  requires factions { cumans, } and event_counter cumans_islam 1 and not event_counter TRANSITIONAL_ARMOR 1
 		recruit_pool	"Turkish Ghulams"		0   0   1  2  requires factions { rum, turks, } and event_counter HEAVY_MAIL_ARMOR 1
 		recruit_pool	"Quapukulu"				0.8		0.1	2  0  requires factions { rum, turks, } and event_counter FULL_PLATE_ARMOR 1
 
@@ -24414,17 +24526,41 @@ building equestrian
 ;- Mongols stables earls_stables --------------------------------------------------------------------
 
 		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Lubchiten Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Lubchiten Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Nukeri Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Nukeri Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Turhagut Lancers"  0   0.13   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Turhagut Lancers"  0   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Khorchi Horse Archers"  0   0.13   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Khorchi Horse Archers"  0   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 
 
 ;================================================================================================================================
@@ -24958,6 +25094,8 @@ building equestrian
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.16   2  0  requires factions { rum, turks, } and hidden_resource moors or hidden_resource zengid or hidden_resource egypt or hidden_resource abbasid
 		recruit_pool  	"Tawashi Light Cavalry"  0   0.14   2  0  requires factions { rum, turks, } and not hidden_resource moors and not hidden_resource zengid and not hidden_resource egypt and not hidden_resource abbasid
 		recruit_pool  	"Ghulams" 				 0   0   1  6  requires factions { rum, turks, } and not event_counter TRANSITIONAL_ARMOR 1
+		recruit_pool  	"Ghulams" 				 0   0   1  6  requires factions { mongols, } and event_counter mongols_islam 1 and not event_counter TRANSITIONAL_ARMOR 1
+		recruit_pool  	"Ghulams" 				 0   0   1  6  requires factions { cumans, } and event_counter cumans_islam 1 and not event_counter TRANSITIONAL_ARMOR 1
 		recruit_pool	"Turkish Ghulams"		0   0   1  4  requires factions { rum, turks, } and event_counter HEAVY_MAIL_ARMOR 1
 		recruit_pool	"Quapukulu"				0.8		0.1	2  0  requires factions { rum, turks, } and event_counter FULL_PLATE_ARMOR 1
 
@@ -25116,17 +25254,41 @@ building equestrian
 ;- Mongols stables kings_stables ----------------------------------------------------------------------------------------------
 
 		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoshiga Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoshiga Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Hoschuchi Lancers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Hoschuchi Lancers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Lubchiten Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Lubchiten Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Lubchiten Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Nukeri Horse Archers"  1   0.34   2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Nukeri Horse Archers"  0   0.17   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Nukeri Horse Archers"  0   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Turhagut Lancers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Turhagut Lancers"  0   0.13   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Turhagut Lancers"  0   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource cumans
+		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Khorchi Horse Archers"  1   0.17   1  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Khorchi Horse Archers"  0   0.13   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Khorchi Horse Archers"  0   0.13   1  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource cumans and not hidden_resource abbasid and not hidden_resource turks
 
 
 ;---------------------------------------------------------------------------------------------------------------------------------
@@ -25985,6 +26147,7 @@ building missiles
 ;- Mongols range bowyer -------------------------------------------------------------------------------------------------------
 
 		recruit_pool	"ME Peasant Archers"		1	0.11	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.11	2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 
 ;---------------------------------------------------------------------------------------------------------------------------------
@@ -26867,7 +27030,11 @@ recruit_pool 	"Turkish Crossbowmen"  1   0.27   2  0  requires factions { turks,
 ;- Mongols range practice_range -----------------------------------------------------------------------------------------------
 
 		recruit_pool	"ME Peasant Archers"		1	0.13	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.13	2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"Khabutu Archers"			1	0.06	2  0  requires factions { mongols, } and hidden_resource tartars or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Khabutu Archers"			1	0.06	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
+		recruit_pool	"Khabutu Archers"			1	0.06	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Khabutu Archers"			1	0.06	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 
 
 ;---------------------------------------------------------------------------------------------------------------------------------
@@ -27801,9 +27968,17 @@ recruit_pool	"Dismounted Mamluk Archers"  0   0   1  2  requires factions { egyp
 ;- Mongols range archery_range ------------------------------------------------------------------------------------------------
 
 		recruit_pool	"ME Peasant Archers"		1	0.15	2  0  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"		1	0.15	2  0  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"Khabutu Archers"			1	0.08	2  0  requires factions { mongols, } and hidden_resource tartars or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Khabutu Archers"			1	0.08	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
+		recruit_pool	"Khabutu Archers"			1	0.08	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Khabutu Archers"			1	0.08	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Merguen Archers"			1	0.08	2  0  requires factions { mongols, } and hidden_resource tartars or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Merguen Archers"			1	0.08	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
+		recruit_pool	"Merguen Archers"			1	0.08	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Merguen Archers"			1	0.08	2  0  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Merguen Archers"			1	0.04	2  0  requires factions { mongols, } and not hidden_resource tartars and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Merguen Archers"			1	0.04	2  0  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars and not hidden_resource abbasid and not hidden_resource turks
 
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; UPKEEP/INCOME
@@ -28726,11 +28901,23 @@ recruit_pool	"Dismounted Mamluk Archers"  0   0   1  4  requires factions { egyp
 ;- Mongols range marksmans_range ----------------------------------------------------------------------------------------------
 
 		recruit_pool	"ME Peasant Archers"			1	0.17	3  1  requires factions { mongols, }
+		recruit_pool	"ME Peasant Archers"			1	0.17	3  1  requires factions { cumans, } and event_counter golden_horde 1
 		recruit_pool	"Khabutu Archers"				1	0.10	3  1  requires factions { mongols, } and hidden_resource tartars or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Khabutu Archers"				1	0.10	3  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
+		recruit_pool	"Khabutu Archers"				1	0.10	3  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Khabutu Archers"				1	0.10	3  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Merguen Archers"				1	0.10	2  1  requires factions { mongols, } and hidden_resource tartars or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Merguen Archers"				1	0.10	2  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
+		recruit_pool	"Merguen Archers"				1	0.10	2  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Merguen Archers"				1	0.10	2  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Merguen Archers"				1	0.06	2  1  requires factions { mongols, } and not hidden_resource tartars and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Merguen Archers"				1	0.06	2  1  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars and not hidden_resource abbasid and not hidden_resource turks
 		recruit_pool	"Dismounted Khorchi Archers"	1	0.10	2  1  requires factions { mongols, } and hidden_resource tartars or hidden_resource abbasid or hidden_resource turks
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.10	2  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource tartars
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.10	2  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource abbasid
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.10	2  1  requires factions { cumans, } and event_counter golden_horde 1 and hidden_resource turks
 		recruit_pool	"Dismounted Khorchi Archers"	1	0.06	2  1  requires factions { mongols, } and not hidden_resource tartars and not hidden_resource abbasid and not hidden_resource turks
+		recruit_pool	"Dismounted Khorchi Archers"	1	0.06	2  1  requires factions { cumans, } and event_counter golden_horde 1 and not hidden_resource tartars and not hidden_resource abbasid and not hidden_resource turks
 
 
 ;---------------------------------------------------------------------------------------------------------------------------------
@@ -28850,6 +29037,7 @@ building siege
 		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { moors, } and event_counter is_the_player 1
 		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { egypt, abbasid, turks, rum, zengid, } and event_counter is_the_player 1
 		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { mongols, } and event_counter is_the_player 1
+		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { cumans, } and event_counter golden_horde 1 and event_counter is_the_player 1
 
 ; MANGONELS
 		recruit_pool	"Mangonel"  0.5  0.06  2  0  requires factions { pisa, venice, papal_states, sicily, jerusalem, } and event_counter is_the_player 1 and event_counter EDUCATION_PRIVILEGIUM_SCHOLASTICUM 1
@@ -28919,6 +29107,7 @@ building castle_siege
 		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { moors, } and event_counter is_the_player 1
 		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { egypt, abbasid, turks, rum, zengid, } and event_counter is_the_player 1
 		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { mongols, } and event_counter is_the_player 1
+		recruit_pool	"ME Trebuchet"  0.5  0.09  2  0  requires factions { cumans, } and event_counter golden_horde 1 and event_counter is_the_player 1
 
 ; MANGONELS
 		recruit_pool	"Mangonel"  0.5  0.06  2  0  requires factions { pisa, venice, papal_states, sicily, jerusalem, } and event_counter is_the_player 1 and event_counter EDUCATION_PRIVILEGIUM_SCHOLASTICUM 1
@@ -28988,6 +29177,7 @@ building cannon
 		recruit_pool	"ME Bombard"  1  0.15  2  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, cumans, } and event_counter CANNONS 1
 
 		recruit_pool	"AS Rocket Launcher"  1  0.1  1  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.1  1  0  requires factions { cumans, } and event_counter golden_horde 1
 
 ;-- gunsmith: HAND GUNNERS - it seems this unit is not available for the other factions - to be developed
 		recruit_pool	"Hand Gunners"  0   0.13  2  0  requires factions { hre, denmark, norway, spain, aragon, portugal, pisa, venice, georgia, papal_states, sicily, poland, serbia, } and event_counter HANDGUN 1 and not event_counter first_blast_furnace 1
@@ -29030,6 +29220,7 @@ building cannon
 		recruit_pool	"ME Grand Bombard"  1  0.15  1  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, cumans, } and event_counter SHATIR 1
 
 		recruit_pool	"AS Rocket Launcher"  1  0.15  1  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.15  1  0  requires factions { cumans, } and event_counter golden_horde 1
 
 ;-- cannon_maker: RIBAULT
 		recruit_pool	"NE Ribault"  1  0.15  1  0  requires factions { england, scotland, spain, aragon, portugal, pisa, venice, papal_states, sicily, } and event_counter first_blast_furnace 1
@@ -29083,6 +29274,7 @@ building cannon
 		recruit_pool	"NE Bombard"  1  0.1  1  0  requires factions { byzantium, georgia, } and event_counter first_blast_furnace 1
 		recruit_pool	"ME Bombard"  1  0.1  1  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, cumans, } and event_counter CANNONS 1
 		recruit_pool	"AS Rocket Launcher"  1  0.25  2  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.25  2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 ;-- cannon_foundry: RIBAULT
 
@@ -29143,6 +29335,7 @@ building cannon
 		recruit_pool	"NE Bombard"  1  0.1  1  0  requires factions { byzantium, georgia, } and event_counter first_blast_furnace 1
 		recruit_pool	"ME Bombard"  1  0.1  1  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, } and event_counter CANNONS 1
 		recruit_pool	"AS Rocket Launcher"  1  0.25  2  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.25  2  0  requires factions { cumans, } and event_counter golden_horde 1
 
 		recruit_pool	"Hand Gunners"  0   0.25  2  0  requires factions { hre, denmark, norway, spain, aragon, portugal, pisa, venice, georgia, papal_states, sicily, poland, serbia, } and event_counter HANDGUN 1 and not event_counter first_blast_furnace 1
 		recruit_pool	"Hand Gunners"  0   0.34  2  0  requires factions { hre, denmark, norway, spain, aragon, portugal, pisa, venice, georgia, papal_states, sicily, poland, serbia, } and event_counter first_blast_furnace 1 and not event_counter first_watch 1
@@ -29187,6 +29380,7 @@ building castle_cannon
 		recruit_pool	"NE Bombard"  1  0.13  1  0  requires factions { byzantium, georgia, } and event_counter first_blast_furnace 1
 		recruit_pool	"ME Bombard"  1  0.13  1  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, cumans, } and event_counter CANNONS 1
 		recruit_pool	"AS Rocket Launcher"  1  0.1  1  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.1  1  0  requires factions { cumans, } and event_counter golden_horde 1
       }
       material wooden
       construction  4
@@ -29214,6 +29408,7 @@ building castle_cannon
 		recruit_pool	"NE Bombard"  1  0.085  1  0  requires factions { byzantium, georgia, } and event_counter first_blast_furnace 1
 		recruit_pool	"ME Bombard"  1  0.085  1  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, cumans, } and event_counter CANNONS 1
 		recruit_pool	"AS Rocket Launcher"  1  0.15  1  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.15  1  0  requires factions { cumans, } and event_counter golden_horde 1
         weapon_naval_gunpowder 1
       }
       material wooden
@@ -29251,6 +29446,7 @@ building castle_cannon
 		recruit_pool	"NE Bombard"  1  0.085  1  0  requires factions { byzantium, georgia, } and event_counter first_blast_furnace 1
 		recruit_pool	"ME Bombard"  1  0.085  1  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, cumans, } and event_counter CANNONS 1
 		recruit_pool	"AS Rocket Launcher"  1  0.25  2  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.25  2  0  requires factions { cumans, } and event_counter golden_horde 1
         weapon_naval_gunpowder 1
       }
       material stone
@@ -29292,6 +29488,7 @@ building castle_cannon
 		recruit_pool	"NE Bombard"  1  0.085  1  0  requires factions { byzantium, georgia, } and event_counter first_blast_furnace 1
 		recruit_pool	"ME Bombard"  1  0.085  1  0  requires factions { moors, egypt, abbasid, turks, rum, zengid, } and event_counter CANNONS 1
 		recruit_pool	"AS Rocket Launcher"  1  0.13  2  0  requires factions { mongols, }
+		recruit_pool	"AS Rocket Launcher"  1  0.13  2  0  requires factions { cumans, } and event_counter golden_horde 1
         weapon_naval_gunpowder 1
       }
       material stone
@@ -30313,13 +30510,17 @@ building temple_muslim
   religion islam
   levels small_masjid masjid minareted_masjid jama great_jama
   {
-    small_masjid city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
+    small_masjid city requires factions { cumans, } and event_counter cumans_islam 1 or factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
     {
       convert_to 0
       capability
       {
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.09   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.09   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.09   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 
         agent priest  0  requires factions { middle_eastern, } and hidden_resource capital
         agent_limit priest 0
@@ -30345,13 +30546,17 @@ building temple_muslim
         masjid
       }
     }
-    masjid city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
+    masjid city requires factions { cumans, } and event_counter cumans_islam 1 or factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
     {
       convert_to 1
       capability
       {
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.11   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.11   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.11   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 
         agent priest  0  requires factions { middle_eastern, } and hidden_resource capital
         agent_limit priest 0
@@ -30377,12 +30582,16 @@ building temple_muslim
         minareted_masjid
       }
     }
-    minareted_masjid city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders3
+    minareted_masjid city requires factions { cumans, } and event_counter cumans_islam 1 or factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders3
     {
       capability
       {
 		recruit_pool	"Mutatawwi Warriors"  1   0.13   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  1   0.13   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  1   0.13   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
 
         agent priest  0  requires factions { middle_eastern, }
         agent_limit priest 0
@@ -30408,12 +30617,16 @@ building temple_muslim
         jama
       }
     }
-    jama city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
+    jama city requires factions { cumans, } and event_counter cumans_islam 1 or factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
     {
       capability
       {
 		recruit_pool	"Mutatawwi Warriors"  1   0.17   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  1   0.17   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  1   0.17   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
         agent priest  0  requires factions { middle_eastern, }
         agent_limit priest 0
 		agent_limit priest 1 requires factions { middle_eastern, }
@@ -30438,12 +30651,16 @@ building temple_muslim
         great_jama
       }
     }
-    great_jama city requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
+    great_jama city requires factions { cumans, } and event_counter cumans_islam 1 or factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders4
     {
       capability
       {
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.21   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.21   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.21   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1
 		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { turks, rum, abbasid, moors, zengid, egypt, } and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
+		recruit_pool	"Mutatawwi Warriors"  0.8   0.25   2  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter jihad_ongoing 1 and not event_counter is_the_player 1
         agent priest  0
         agent_limit priest 0
 		agent_limit priest 2 requires factions { middle_eastern, }
@@ -30479,7 +30696,7 @@ building temple_muslim_castle
   religion islam
   levels c_small_masjid c_masjid
   {
-    c_small_masjid castle requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
+    c_small_masjid castle requires factions { cumans, } and event_counter cumans_islam 1 or factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders1
     {
       convert_to 0
       capability
@@ -30505,7 +30722,7 @@ building temple_muslim_castle
         c_masjid
       }
     }
-    c_masjid castle requires factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
+    c_masjid castle requires factions { cumans, } and event_counter cumans_islam 1 or factions { mongols, } and event_counter mongols_islam 1 or factions { egypt, abbasid, moors, turks, rum, zengid, } and building_present_min_level builders builders2
     {
       convert_to 1
       capability
@@ -30962,7 +31179,7 @@ building temple_tengir
   religion pagan
   levels tengir_altar tengir_sanctuary tengir_temple
   {
-    tengir_altar city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
+    tengir_altar city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and not event_counter cumans_islam 1 and hidden_resource tartars
     {
       convert_to 0
       capability
@@ -30986,7 +31203,7 @@ building temple_tengir
         tengir_sanctuary
       }
     }
-    tengir_sanctuary city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
+    tengir_sanctuary city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and not event_counter cumans_islam 1 and hidden_resource tartars
     {
       capability
       {
@@ -31017,7 +31234,7 @@ building temple_tengir
         tengir_temple
       }
     }
-    tengir_temple city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
+    tengir_temple city requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and not event_counter cumans_islam 1 and hidden_resource tartars
     {
       capability
       {
@@ -31060,7 +31277,7 @@ building temple_tengir_castle
   religion pagan
   levels c_tengir_altar
   {
-    c_tengir_altar castle requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and hidden_resource tartars
+    c_tengir_altar castle requires factions { mongols, } and not event_counter mongols_islam 1 and hidden_resource tartars or factions { cumans, } and not event_counter cumans_islam 1 and hidden_resource tartars
     {
       convert_to 0
       capability
@@ -34823,6 +35040,8 @@ building academic
         weapon_missile_gunpowder 1
 
 		recruit_pool	"Naffatun"		0.5	0.02	2  0  requires factions { egypt, zengid, rum, turks, abbasid, }
+		recruit_pool	"Naffatun"		0.5	0.02	2  0  requires factions { mongols, } and event_counter mongols_islam 1
+		recruit_pool	"Naffatun"		0.5	0.02	2  0  requires factions { cumans, } and event_counter cumans_islam 1
 		recruit_pool	"Siphonatores"	0.5	0.02	2  0  requires factions { byzantium, } and hidden_resource byzantium
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; UPKEEP/INCOME
@@ -34845,6 +35064,8 @@ building academic
         weapon_artillery_gunpowder 1
 
 		recruit_pool	"Naffatun"		1	0.04	2  0  requires factions { egypt, zengid, rum, turks, abbasid, }
+		recruit_pool	"Naffatun"		1	0.04	2  0  requires factions { mongols, } and event_counter mongols_islam 1
+		recruit_pool	"Naffatun"		1	0.04	2  0  requires factions { cumans, } and event_counter cumans_islam 1
 		recruit_pool	"Siphonatores"	1	0.04	2  0  requires factions { byzantium, }
 ;---------------------------------------------------------------------------------------------------------------------------------
 ; UPKEEP/INCOME
@@ -35647,7 +35868,11 @@ building slavemarket
       {
 		; The recruitment pool below is a condition to build slave units by muslim factions
 		recruit_pool	"Dismounted Ghulams"	0.9   0.1   0  0  requires factions { turks, rum, } and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.1   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.1   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and not event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.15   0  0  requires factions { turks, rum, } and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.15   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.15   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.1   0  0  requires factions { egypt, } and not event_counter ayyubids_rise 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.15   0  0  requires factions { egypt, } and event_counter ayyubids_rise 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.1   0  0  requires factions { abbasid, } and not event_counter abbasids_rise 1
@@ -35655,7 +35880,11 @@ building slavemarket
 		recruit_pool	"Dismounted Ghulams"	0.9   0.1   0  0  requires factions { zengid, } and not event_counter zengids_rise 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.15   0  0  requires factions { zengid, } and event_counter zengids_rise 1
 		recruit_pool	"Ghulams"	0.9   0.08   0  0  requires factions { turks, rum, } and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.08   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.08   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and not event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Ghulams"	0.9   0.11   0  0  requires factions { turks, rum, } and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.11   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.11   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Ghulams"	0.9   0.08   0  0  requires factions { egypt, } and not event_counter ayyubids_rise 1
 		recruit_pool	"Ghulams"	0.9   0.11   0  0  requires factions { egypt, } and event_counter ayyubids_rise 1
 		recruit_pool	"Ghulams"	0.9   0.08   0  0  requires factions { abbasid, } and not event_counter abbasids_rise 1
@@ -35698,7 +35927,11 @@ building slavemarket
       {
 		; The recruitment pool below is a condition to build slave units by muslim factions
 		recruit_pool	"Dismounted Ghulams"	0.9   0.2   0  0  requires factions { turks, rum, } and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.2   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.2   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and not event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.25   0  0  requires factions { turks, rum, } and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.25   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Dismounted Ghulams"	0.9   0.25   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.2   0  0  requires factions { egypt, } and not event_counter ayyubids_rise 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.25   0  0  requires factions { egypt, } and event_counter ayyubids_rise 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.2   0  0  requires factions { abbasid, } and not event_counter abbasids_rise 1
@@ -35706,7 +35939,11 @@ building slavemarket
 		recruit_pool	"Dismounted Ghulams"	0.9   0.2   0  0  requires factions { zengid, } and not event_counter zengids_rise 1
 		recruit_pool	"Dismounted Ghulams"	0.9   0.25   0  0  requires factions { zengid, } and event_counter zengids_rise 1
 		recruit_pool	"Ghulams"	0.9   0.1   0  0  requires factions { turks, rum, } and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.1   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and not event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.1   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and not event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Ghulams"	0.9   0.15   0  0  requires factions { turks, rum, } and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.15   0  0  requires factions { mongols, } and event_counter mongols_islam 1 and event_counter HALF_PLATE_ARMOR 1
+		recruit_pool	"Ghulams"	0.9   0.15   0  0  requires factions { cumans, } and event_counter cumans_islam 1 and event_counter HALF_PLATE_ARMOR 1
 		recruit_pool	"Ghulams"	0.9   0.1   0  0  requires factions { egypt, } and not event_counter ayyubids_rise 1
 		recruit_pool	"Ghulams"	0.9   0.15   0  0  requires factions { egypt, } and event_counter ayyubids_rise 1
 		recruit_pool	"Ghulams"	0.9   0.1   0  0  requires factions { abbasid, } and not event_counter abbasids_rise 1

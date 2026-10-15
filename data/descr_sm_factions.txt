@@ -49,8 +49,8 @@ culture						middle_eastern
 religion					islam
 symbol						models_strat/symbol_abbasid.CAS
 rebel_symbol					models_strat/symbol_rebels.CAS
-primary_colour					red 13, green 12, blue 2
-secondary_colour				red 51, green 49, blue 13
+primary_colour					red 115, green 52, blue 23
+secondary_colour				red 77, green 29, blue 8
 loading_logo					loading_screen/symbols/symbol128_abbasid.tga
 standard_index					2
 logo_index					FACTION_LOGO_ABBASID
@@ -129,8 +129,8 @@ culture						eastern_european
 religion					pagan
 symbol						models_strat/symbol_aztecs.CAS
 rebel_symbol					models_strat/symbol_rebels.CAS
-primary_colour					red 115, green 52, blue 23
-secondary_colour				red 77, green 29, blue 8
+primary_colour					red 221, green 176, blue 69
+secondary_colour				red 164, green 125, blue 6
 loading_logo					loading_screen/symbols/symbol128_aztecs.tga
 standard_index					7
 logo_index					FACTION_LOGO_CUMANS
@@ -590,8 +590,8 @@ culture						middle_eastern
 religion					pagan
 symbol						models_strat/symbol_mongols.CAS
 rebel_symbol					models_strat/symbol_rebels.CAS
-primary_colour					red 221, green 176, blue 69
-secondary_colour				red 164, green 125, blue 6
+primary_colour					red 13, green 12, blue 2
+secondary_colour				red 51, green 49, blue 13
 loading_logo					loading_screen/symbols/symbol128_mongols.tga
 standard_index					8
 logo_index					FACTION_LOGO_MONGOLS
