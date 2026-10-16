@@ -57,6 +57,12 @@ local aiEasierLife = 35 -- this will be subtracted from ai rebelion points, to m
 local mongolsEasierLife = 150   -- Mongols conquers very big and diverse area very fast, pagans in the muslim and orthodox world, need a special relief  
 local playerEasierLife = 0  -- decrease civil war point on lower difficulties
 local SETTL_POINTS = 2.5  -- Horschix 14 Oct 2026: was 10 per settlement above the limit; a quarter now, because SSHIP_submod #4 adds many small towns (all settlements count the same)
+-- Horschix 16 Oct 2026: free settlement allowance = the faction's settlement count at campaign start (descr_strat +
+-- starting_settlements.lua, counted 16 Oct), at least SSHIP's 10; SSHIP's growth over time is added on top.
+-- Factions not listed (10 or fewer at start, or appearing later) keep SSHIP's 10.
+local START_SETTLEMENTS = { hre = 55, byzantium = 46, moors = 40, turks = 27, hungary = 21, england = 19, poland = 17, sicily = 16, egypt = 15, jerusalem = 14, cumans = 13, spain = 13, zengid = 13, kievan_rus = 12 }
+local AI_FIRST_TURN = 30  -- Horschix 16 Oct 2026: AI civil wars from this turn on (SSHIP: after turn 5)
+local AI_CHANCE = 25      -- Horschix 16 Oct 2026: % chance per turn once over the threshold (SSHIP: 33)
 ---------------------------------------------------------------------------------------------------------------------------------
 -- MARK: Main Function CivilWar
 ---------------------------------------------------------------------------------------------------------------------------------
@@ -104,7 +110,7 @@ function module.mainFunctionCivilWars(faction)
 		-- this works also in place of mongol decline script, so the powerful faction will not conquer the world too quickly
         local hitChance = helpers.randomNumber(0,100)
         local revoltPoints = module.countRevoltPoints(faction)
-        if M2TW.campaign.turnNumber > 5 and revoltPoints > civilWarThreshold and hitChance < 33 then
+        if M2TW.campaign.turnNumber >= AI_FIRST_TURN and revoltPoints > civilWarThreshold and hitChance < AI_CHANCE then
             module.civilWarRise(faction,0,'too big ai')
         end
     end
@@ -164,6 +170,8 @@ if faction.settlementsLost > 2 then
     return 0
 end
 
+-- Horschix 16 Oct 2026: reset the module-level sums (SSHIP reset them only after a player warning, so AI values carried over)
+corruption = 0; publUnrest = 0; publEntertainment = 0; publLaw = 0; loyaltySettlements = 0; relDiversity = 0
 --------------------------------------------------------------------------
 -- FIRST LOOP THROUGH THE CHARACTERS, COLLECT THE TRAITS VALUES
     local loyaltyCharacters = 0
@@ -193,11 +201,11 @@ end
         if settlem1.isCastle == 1 then
             isPresentCastle = settlem1:buildingPresentMinLevel("c_roads", false)
             log.debug("InternalA: Castle "..settlem1.name..": Roads present: "..tostring(isPresentCastle))
-            roadsNumber = roadsNumber + 1
+            if isPresentCastle then roadsNumber = roadsNumber + 1 end  -- Horschix 16 Oct 2026: SSHIP counted every settlement
         else
             isPresentCity = settlem1:buildingPresentMinLevel("roads", false)
             log.debug("InternalA: City "..settlem1.name..": Roads present: "..tostring(isPresentCity))
-            roadsNumber = roadsNumber + 1
+            if isPresentCity then roadsNumber = roadsNumber + 1 end
         end
         log.debug("InternalA: -------- settlement info: "..settlem1.name.." --------")
         log.debug("InternalA: corruption: "..settlem1.settlementStats.CorruptionExpense)
@@ -219,7 +227,7 @@ end
         corruption = corruption + corruptionSett
         publUnrest = publUnrest + publUnrestSett
         publEntertainment = publEntertainment + publEntertainmentSett
-        publLaw = publEntertainment + publLawSett
+        publLaw = publLaw + publLawSett  -- Horschix 16 Oct 2026: SSHIP had publEntertainment + publLawSett
         -- loyalty in settl. is above 100 -> means happy, or lower then 100 which means unrest, 100 is too easy to keep though
         loyaltySettlements = loyaltySettlements + (settlem1.settlementStats.PublicOrder - 125) 
     -- - distanceCapital is 0-10, so percentage divided by 10, its a good marker of how big the spreading area
@@ -257,23 +265,21 @@ end
     --------------------------------------------------------------------------
     -- settlements number, ex in first 50 turns more then 10 settlements will add rebelion points:
 
-    if M2TW.campaign.turnNumber < 50 then 
-        settlNumberFactor = faction.settlementsNum - 10
-    elseif M2TW.campaign.turnNumber < 100 and M2TW.campaign.turnNumber >= 50 then 
-        settlNumberFactor = faction.settlementsNum - 11
-    elseif M2TW.campaign.turnNumber < 150 and M2TW.campaign.turnNumber >= 100 then -- Mongols will arrive 
-        settlNumberFactor = faction.settlementsNum - 11
-    elseif M2TW.campaign.turnNumber < 200 and M2TW.campaign.turnNumber >= 150 then 
-        settlNumberFactor = faction.settlementsNum - 12
-    elseif M2TW.campaign.turnNumber < 250 and M2TW.campaign.turnNumber >= 200 then 
-        settlNumberFactor = faction.settlementsNum - 13
-    elseif M2TW.campaign.turnNumber < 300 and M2TW.campaign.turnNumber >= 250 then   
-        settlNumberFactor = faction.settlementsNum - 14
-    elseif M2TW.campaign.turnNumber < 400 and M2TW.campaign.turnNumber >= 300 then 
-        settlNumberFactor = faction.settlementsNum - 17
-    else 
-        settlNumberFactor = faction.settlementsNum - 30
+    -- Horschix 16 Oct 2026: SSHIP's schedule (10 / 11 / 11 / 12 / 13 / 14 / 17 / 30) is now growth on top of the
+    -- faction's starting size (START_SETTLEMENTS, at least 10).
+    local turn = M2TW.campaign.turnNumber
+    local growth
+    if turn < 50 then growth = 0
+    elseif turn < 150 then growth = 1
+    elseif turn < 200 then growth = 2
+    elseif turn < 250 then growth = 3
+    elseif turn < 300 then growth = 4
+    elseif turn < 400 then growth = 7
+    else growth = 20
     end
+    local allowance = math.max(10, START_SETTLEMENTS[faction.name] or 10) + growth
+    settlNumberFactor = faction.settlementsNum - allowance
+    log.debug("InternalA: Faction's settlement allowance "..allowance.." (owns "..faction.settlementsNum..")")
     --------------------------------------------------------------------------
     -- logs:
 

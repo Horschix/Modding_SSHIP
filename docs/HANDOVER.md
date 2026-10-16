@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 16 Oct 2026 (Dynasties note 13; Turkmen Camp #11; forts, Ottoman rise #10; Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
+Last updated 16 Oct 2026 (Civil wars fix 2; Dynasties note 13; Turkmen Camp #11; forts, Ottoman rise #10; Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5), `06_campaign_ai.md`, `07_mongol_islam.md`, `08_golden_horde.md` (#6),
@@ -42,6 +42,9 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
+- Civil wars FIX 2 (16 Oct, read back identical, script only - existing saves pick it up): `internalAffairs.lua` free
+  allowance = start size (table START_SETTLEMENTS: hre 55, byzantium 46, moors 40, ...) + SSHIP's growth; AI civil wars
+  from turn 30 at 25%/turn; SSHIP bugs fixed (law sum, road count, sums not reset for AI). Details: note 04, civil war section.
 - Dynasties (note 13, 16 Oct): tests OK, ALL FINAL (Eretnids 409); hover strings fixed (setExpandedString). Was: Egypt/Abbasid colours swapped;
   Egypt -> Ayyubid Sultanate (79) -> Mamluk Sultanate (237), Zengids -> Eretnids (409, Sivas, rest rebels);
   restores SSHIP's lost Zengid/Abbasid/Egypt reform counters (factionsEvolutions.lua is all a comment). Log DYNAST.

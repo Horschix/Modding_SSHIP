@@ -310,6 +310,14 @@ other game regions later. The candidate list and every decision are in issue #4.
 - FIX installed 14 Oct, read back identical (user's choice: modify SSHIP's script, every settlement counts the same,
   a quarter): `internalAffairs.lua` new `local SETTL_POINTS = 2.5` (was 10) used in the formula, the debug line and
   the player's warning text. Original in `backups/2026-10-14_before_civilwar/`. Byzantium now ~ -33 instead of 79.
+- FIX 2 installed 16 Oct, read back identical (user's choices): after all regions were added the start counts were hre 55,
+  byzantium 46, moors 40, turks 27 -> 112 / 90 / 75 / 42 settlement points at 2.5 each (threshold 20, AI -35, 33%/turn
+  after turn 5) = civil wars around turn 10. Now: allowance = max(10, START_SETTLEMENTS[faction]) + SSHIP's growth
+  (0 / +1 from 50 / +2 150 / +3 200 / +4 250 / +7 300 / +20 400); 2.5 points per settlement above it (kept); table
+  counted from descr_strat + starting_settlements.lua on 16 Oct (factions with <= 10 not listed; re-count if many
+  towns change owner). AI: AI_FIRST_TURN 30, AI_CHANCE 25. Player warnings 5-8 turns kept. SSHIP bugs fixed: publLaw
+  summed entertainment, roads counted for every settlement, module-level sums only reset after a player warning.
+  New log line `InternalA: Faction's settlement allowance`. Original still in `backups/2026-10-14_before_civilwar/`.
 - Starter pack (barracks town_watch + level-1 temple): user's idea, not built yet - waiting for his answer.
 
 ## BALKANS + GREECE (14 Oct 2026) - INSTALLED, read back identical, waiting for the user's test
