@@ -90,7 +90,7 @@ local SETTS = {
     { key = "van", x = 391, y = 122, capital = "Tabriz", level = 3, population = 15000,  -- moved 13 Oct: low-mountain tile not reachable in game
       names = { greek = "Van", middle_eastern = "Van", european = "Van", default = "Van" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "ganja", x = 411, y = 138, capital = "Tbilisi", ownerFrom = "Ani", level = 1, population = 1000,  -- EU5 town; Seljuk until 1138, starts Georgian (user)
+    { key = "ganja", x = 411, y = 139, capital = "Tbilisi", ownerFrom = "Ani", level = 1, population = 1000,  -- EU5 town; Seljuk until 1138, starts Georgian (user)
       names = { greek = "Ganja", middle_eastern = "Ganja", european = "Ganja", default = "Ganja" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
     { key = "gori", x = 395, y = 149, capital = "Tbilisi", level = 1, population = 1000,  -- GPS tile 396,148 is river
@@ -102,10 +102,10 @@ local SETTS = {
     { key = "telavi", x = 404, y = 146, capital = "Tbilisi", level = 1, population = 1000,  -- GPS tile dense forest
       names = { greek = "Telavi", middle_eastern = "Telavi", european = "Telavi", default = "Telavi" },
       rebels = { "Ahdath Militia", "Ahdath Militia" } },
-    { key = "sukhumi", x = 374, y = 155, capital = "Kutaisi", ownerFrom = "Ani", level = 1, population = 1000,
+    { key = "sukhumi", x = 373, y = 155, capital = "Kutaisi", ownerFrom = "Ani", level = 1, population = 1000,
       names = { greek = "Sukhumi", middle_eastern = "Sukhumi", european = "Sukhumi", default = "Sukhumi" },
       rebels = { "georgian light spearmen", "georgian light spearmen" } },
-    { key = "artanuji", x = 381, y = 142, capital = "Kutaisi", ownerFrom = "Ani", level = 1, population = 1000,
+    { key = "artanuji", x = 382, y = 141, capital = "Kutaisi", ownerFrom = "Ani", level = 1, population = 1000,
       names = { greek = "Art'anuji", middle_eastern = "Art'anuji", european = "Art'anuji", default = "Art'anuji" },
       rebels = { "georgian light spearmen", "georgian light spearmen" } },
     { key = "akhaltsikhe", x = 387, y = 145, capital = "Kutaisi", level = 1, population = 1000,  -- GPS tile 388,146 is river

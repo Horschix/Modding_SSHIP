@@ -73,3 +73,11 @@ SSHIP's live event table: `historicEvents` in globalEvents.lua (no Georgian or E
   SSHIP kept them at 1+ all game, which may have meant no bonus ever (if EDB reads "X 1" as ">= 1").
 - TEST turns: Becket / Golden Age 2, Magna Carta / Rustaveli / Pantokrator / Omar 3, Archers / Crossbow / Meteora 4,
   Revival / Liber / Scotland 5, Last United Kingdom 6; floods 100% (NL after 3, Mandrenke after 4, recovery 3).
+
+## Test 1 (user, 16 Oct, Georgia campaign to turn 7) and final turns
+- full.log: all DYNAST / LOSTEV steps of turns 2-6 fired, no errors; Egypt renamed Ayyubid (3) and Mamluk (5), reads
+  back. The Eretnids were NOT reached (log ends in Georgia's turn 6, before the Zengid turn).
+- 16 Oct: TEST = false in dynasties.lua and lost_events.lua (historical turns); dynasties.lua has ERETNID_TEST = true
+  (Eretnids at turn 6 only) until the user has seen them work - then set ERETNID_TEST = false (-> turn 409).
+- Same install: starting_settlements.lua - Sukhumi 374,155 -> 373,155; Artanuji 381,142 -> 382,141; Ganja 411,138 ->
+  411,139 (all were on low-mountain tiles and unreachable). Script only, NEW campaign, map.rwm stays.

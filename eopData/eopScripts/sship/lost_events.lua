@@ -29,7 +29,7 @@
 -- TEST = true: timed events at turns 2-6.
 -- Log prefix: LOSTEV (in full.log).
 ---------------------------------------------------------------------------------------------------------------------
-local TEST = true
+local TEST = false
 
 local CATHOLIC = { "france", "jerusalem", "hre", "england", "scotland", "denmark", "norway", "poland", "hungary", "sicily",
                    "venice", "pisa", "spain", "portugal", "aragon", "papal_states" }

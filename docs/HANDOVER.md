@@ -42,7 +42,8 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
-- Dynasties (note 13, 16 Oct, TEST = true, read back identical, NEW campaign): Egypt/Abbasid colours swapped;
+- Dynasties (note 13, 16 Oct): test 1 OK; FINAL turns installed, but ERETNID_TEST = true (Eretnids turn 6) until
+  the user sees them work, then set it false. Was: Egypt/Abbasid colours swapped;
   Egypt -> Ayyubid Sultanate (79) -> Mamluk Sultanate (237), Zengids -> Eretnids (409, Sivas, rest rebels);
   restores SSHIP's lost Zengid/Abbasid/Egypt reform counters (factionsEvolutions.lua is all a comment). Log DYNAST.
   + lost_events.lua (16 Oct, TEST = true, read back identical): Templars, Teutonic hospital, Amalfi, coat of arms,

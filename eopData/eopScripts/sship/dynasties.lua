@@ -28,7 +28,9 @@
 -- Names (localizedName) are not stored in the save -> set again at every turn start and map load.
 -- TEST = true: everything in the first turns (see below). Log prefix: DYNAST (in full.log).
 ---------------------------------------------------------------------------------------------------------------------
-local TEST = true
+local TEST = false
+-- ERETNID_TEST = true: only the Eretnids come early (turn 6) - their part was not reached in test 1 (16 Oct).
+local ERETNID_TEST = true
 
 local T = TEST and {
     ayyubid = 3, egypt_fm = 4, mamluk = 5,
@@ -41,6 +43,7 @@ local T = TEST and {
     abbasid = 51, abbasid_fm = 111, abbasid_est = 151,
     eretnid = 409,
 }
+if ERETNID_TEST then T.eretnid = 6 end
 
 local NAME_AYYUBID = "Ayyubid Sultanate"
 local NAME_MAMLUK = "Mamluk Sultanate"
@@ -433,7 +436,7 @@ if not DY.installed then
     afterHook("onFactionTurnStart", onTurnStart)
     afterHook("onEventCounter", onCounter)
     afterHook("onCampaignMapLoaded", applyNames)
-    log("loaded (TEST = " .. tostring(TEST) .. ", Ayyubids " .. T.ayyubid .. ", Mamluks " .. T.mamluk
+    log("loaded (TEST = " .. tostring(TEST) .. ", ERETNID_TEST = " .. tostring(ERETNID_TEST) .. ", Ayyubids " .. T.ayyubid .. ", Mamluks " .. T.mamluk
         .. ", Eretnids " .. T.eretnid .. ")")
 end
 

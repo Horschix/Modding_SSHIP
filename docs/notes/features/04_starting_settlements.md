@@ -628,3 +628,5 @@ other game regions later. The candidate list and every decision are in issue #4.
   crossing 325,189 (map_features), 84 dense forest tiles in x 318-341 / y 181-194 -> forest (map_ground_types).
 - Volterra starts Pisan (ownerFrom Florence removed). Cuman faction garrison Kasogi instead of EE Spear Militia.
 - Installed 15 Oct, read back identical. map.rwm must be deleted; NEW campaign.
+
+- 16 Oct (user, Georgia test): Sukhumi 1 west (373,155), Artanuji 1 south-east (382,141), Ganja 1 north (411,139) - were unreachable (low mountains). Installed, read back identical, NEW campaign.
