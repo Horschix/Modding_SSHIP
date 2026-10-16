@@ -568,7 +568,7 @@ end
 ---@param faction factionStruct
 function module.removeDeadSpouses(faction)
        -- check if the wife of the leader died, if so, remove her from the tree - that allows the leader to marry again
-        if faction.leader.spouse ~= nil and faction.leader.age < 50 and faction.leader.spouse.isAlive == false then
+        if faction.leader and faction.leader.spouse ~= nil and faction.leader.age < 50 and faction.leader.spouse.isAlive == false then
             log.debug("InternalA: Removing the dead wife/husband, spouse name is: "..faction.leader.spouse.fullName)
             local factions = {M2TW.campaign.currentFaction.name}
             local deadSpouseTitle = " Mourning for the dead spouse is over"
@@ -577,7 +577,7 @@ function module.removeDeadSpouses(faction)
             faction.leader.spouse = nil
         end
         -- check if the wife of the heir died, if so, remove her from the tree - that allows the heir to marry again
-        if faction.heir.spouse ~= nil and faction.heir.age < 50 and faction.heir.spouse.isAlive == false then
+        if faction.heir and faction.heir.spouse ~= nil and faction.heir.age < 50 and faction.heir.spouse.isAlive == false then
             log.debug("InternalA: Removing the dead wife/husband, spouse name is: "..faction.heir.spouse.fullName)
             local factions = {M2TW.campaign.currentFaction.name}
             local deadSpouseTitle = " Mourning for the dead spouse is over"
@@ -878,6 +878,7 @@ function module.usurperCalculation(faction)
     local usurperFound = false
     local usurperCharacter
     local currentCharacter
+    if not faction.leader then return end  -- (Oct 2026) SSHIP bug: no leader -> nil error
     local KingAuthority = faction.leader.authority
     local validCharacterList ={}
     local factionName = faction.name
@@ -887,6 +888,9 @@ function module.usurperCalculation(faction)
     local usurperHeirLevel
     if faction.leader then usurperLeaderLevel = faction.leader:getTraitLevel('Usurper') end
     if faction.heir then usurperHeirLevel = faction.heir:getTraitLevel('Usurper') end
+    -- (Oct 2026) SSHIP bug: a faction without an heir crashed here (compare number with nil)
+    usurperLeaderLevel = usurperLeaderLevel or 0
+    usurperHeirLevel = usurperHeirLevel or 0
     if usurperLeaderLevel > 0  then
         faction.leader:removeTrait("Usurper")
         log.debug("Usurper: Usurper level removed, FL: ")

@@ -42,6 +42,10 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
+- TURN-END CRASH FIX (16 Oct, read back identical): Lua exception internalAffairs.lua:893 usurperCalculation
+  "compare number with nil" - SSHIP's own bug, a faction with a family tree but no heir (hit at Sicily's turn start,
+  turn 22, Rum campaign). Guarded: no leader -> return; nil Usurper levels -> 0; removeDeadSpouses nil-checks leader/heir.
+  Same moment: EOP AI layer forced Sicily's assault on hxstart_lanciano - probably harmless, watch it.
 - Civil wars FIX 2 (16 Oct, read back identical, script only - existing saves pick it up): `internalAffairs.lua` free
   allowance = start size (table START_SETTLEMENTS: hre 55, byzantium 46, moors 40, ...) + SSHIP's growth; AI civil wars
   from turn 30 at 25%/turn; SSHIP bugs fixed (law sum, road count, sums not reset for AI). Details: note 04, civil war section.
