@@ -1,6 +1,6 @@
 # Handover - SSHIP submod
 
-Last updated 16 Oct 2026 (Civil wars fix 2; Dynasties note 13; Turkmen Camp #11; forts, Ottoman rise #10; Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
+Last updated 16 Oct 2026 (Enemy forts; Civil wars fix 2; Dynasties note 13; Turkmen Camp #11; forts, Ottoman rise #10; Golden Horde, army costs; first session 10-13 Oct). Read this file first in a new
 session - it is deliberately short and self-contained. Feature detail lives in `docs/notes/features/` and is read ONLY
 when a task needs it: `01_population_recruitment.md` (#1), `02_03_outposts_settlers.md` (#2, #3),
 `04_starting_settlements.md` (#4), `05_historic_invasions.md` (#5), `06_campaign_ai.md`, `07_mongol_islam.md`, `08_golden_horde.md` (#6),
@@ -42,6 +42,8 @@ calls are what burn it.
 
 ## Where things stand - START HERE
 WAITING FOR THE USER'S TEST (15 Oct, all installed and read back identical):
+- ENEMY FORTS (16 Oct, read back identical): `allow_enemy_forts` true in descr_campaign_db.xml - forts can be
+  placed in enemy territory (player and AI). Restart the game; works in existing saves. Note 10.
 - TURN-END CRASH FIX (16 Oct, read back identical): Lua exception internalAffairs.lua:893 usurperCalculation
   "compare number with nil" - SSHIP's own bug, a faction with a family tree but no heir (hit at Sicily's turn start,
   turn 22, Rum campaign). Guarded: no leader -> return; nil Usurper levels -> 0; removeDeadSpouses nil-checks leader/heir.

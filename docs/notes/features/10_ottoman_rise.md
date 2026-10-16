@@ -8,6 +8,8 @@
 - `eopScripts/sship/fort_rules.lua` (log FORTRULE): sets freeUpkeepForts = 4 at map load and every faction turn
   start; snapshot of all fort tiles at each faction turn start, at an AI faction's turn end every fort of that faction
   on a tile that had no fort -> +5000 (captured forts stood there before -> no refund).
+- 16 Oct: `descr_campaign_db.xml` `allow_enemy_forts` false -> true (forts may be built in enemy territory, player
+  and AI; installed, read back identical). Engine setting, no script; takes effect on game restart.
 - To test: read FORTRULE lines (freeUpkeepForts reads back 4? AI refunds?), check in game whether units in a fort
   show 0 upkeep.
 

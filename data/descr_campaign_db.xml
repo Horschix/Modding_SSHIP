@@ -314,7 +314,7 @@ so for cities the level should be "town" (as you should be able to attack villag
 		<army_devastation_distance uint="20"/>
 		<fort_devastation_modifier float="2.0"/>
 		<army_devastation_modifier float="1.0"/>
-		<allow_enemy_forts bool="false"/>
+		<allow_enemy_forts bool="true"/>
 		<siege_movement_points_modifier float="0.5"/>
 		<infantry_movement_points_modifier float="1.00"/>
 		<cavalry_movement_points_modifier float="1.4"/>

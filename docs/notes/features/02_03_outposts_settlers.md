@@ -8,7 +8,7 @@ upkeep 100, 500 men needed, player only).
 STEP 1 = TEST VERSION, INSTALLED 10 Oct (fix 13 Oct), WORKS in game (user, 13 Oct):
 - `data\descr_campaign_db.xml`: `can_build_forts` false -> true (`destroy_empty_forts` was already true: empty forts
   vanish). `data\descr_cultures.txt`: `fort_cost` 20000 -> 2000 (5 cultures). Originals in `backups/2026-10-10_original/data/`.
-  SSHIP's starting map has no forts. The AI may build forts now too (`allow_enemy_forts` stays false).
+  SSHIP's starting map has no forts. The AI may build forts now too (`allow_enemy_forts` was false; set true 16 Oct, see note 10).
 - `eopData\eopScripts\sship\fort_settlement.lua` (log prefix `FORTSETT`) + a second require line at the end of
   `luaPluginScript.lua`. `TEST = true` at the top: FREE and NO settlers - a general standing in one of the player's
   forts gets the window "Found an outpost" (draggable) with the button "Found settlement (test, free)". The army
