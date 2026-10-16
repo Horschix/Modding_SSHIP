@@ -81,3 +81,11 @@ SSHIP's live event table: `historicEvents` in globalEvents.lua (no Georgian or E
   (Eretnids at turn 6 only) until the user has seen them work - then set ERETNID_TEST = false (-> turn 409).
 - Same install: starting_settlements.lua - Sukhumi 374,155 -> 373,155; Artanuji 381,142 -> 382,141; Ganja 411,138 ->
   411,139 (all were on low-mountain tiles and unreachable). Script only, NEW campaign, map.rwm stays.
+
+## Test 2 (user, 16 Oct): Eretnids work. Fix installed 16 Oct (read back identical):
+- Hover strings (settlement types, agents, leader / heir titles, faction name key) for Egypt (Ayyubid / Mamluk
+  Sultanate, "Sultan") and Zengids (Eretnids, "Eretnid Sultan") via M2TWEOP.setExpandedString, as ottoman_rise.lua;
+  originals read at the first event call (never at file level) and put back when the level is 0; set at every map
+  load and Egypt / Zengid turn start. Log line "hover strings <faction> level N".
+- Eretnid question / message rewritten with more history (Abu Sa'id's death, Kose Peygamber, coins, title of Sultan).
+- ERETNID_TEST = false -> Eretnids at turn 409. Everything in dynasties.lua and lost_events.lua is FINAL now.

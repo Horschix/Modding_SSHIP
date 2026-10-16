@@ -30,7 +30,7 @@
 ---------------------------------------------------------------------------------------------------------------------
 local TEST = false
 -- ERETNID_TEST = true: only the Eretnids come early (turn 6) - their part was not reached in test 1 (16 Oct).
-local ERETNID_TEST = true
+local ERETNID_TEST = false   -- Eretnids seen working by the user (16 Oct) -> turn 409
 
 local T = TEST and {
     ayyubid = 3, egypt_fm = 4, mamluk = 5,
@@ -102,13 +102,62 @@ local MAM_T = "The Mamluks Rise in Egypt"
 local MAM_B = "\nThe Bahri Mamluks have murdered Turanshah, the last Ayyubid sultan of Egypt, and taken the throne.\n\n"
     .. "GAME: Egypt is now the Mamluk Sultanate. Mamluks, Dismounted Mamluk Archers, Al Haqa Infantry and "
     .. "Tabardariyya can be recruited."
-local ERE_Q = "\nThe Ilkhan Abu Sa'id has died without an heir and the Ilkhanate falls apart. Its governor in Anatolia, "
-    .. "the Uyghur general Eretna, makes himself master of Sivas and Kayseri. Our nobles offer him the throne.\n\n"
-    .. "YES: Sivas becomes ours, Eretna becomes faction leader and the faction is renamed Eretnids. Every settlement, "
-    .. "general and army outside Anatolia goes over to the rebels.\nNO: nothing changes."
-local ERE_T = "The Eretnids"
-local ERE_B = "\nThe Ilkhanate has fallen apart. Eretna, its governor in Anatolia, rules from Sivas and founds a new "
-    .. "dynasty.\n\nGAME: The Zengids are now the Eretnids. Their lands outside Anatolia have gone over to the rebels."
+local ERE_Q = "\nThe Ilkhan Abu Sa'id is dead, and with him the empire of Hulegu's line. No heir commands the loyalty of the "
+    .. "emirs; Chobanids and Jalayirids tear Persia apart, and the Mongol garrisons of Anatolia are left without a master.\n\n"
+    .. "In Sivas the Ilkhan's governor of Rum, Eretna - an Uyghur officer who rose in the service of the Chobanids - "
+    .. "holds the treasury, the roads and the loyalty of the Mongol tumens. The townsmen already call him Kose Peygamber, "
+    .. "the 'beardless prophet', for his justice. Our emirs are weary of a realm stretched from the Tigris to the "
+    .. "Euphrates, and many of them would rather serve a strong lord in the mountains of Rum than defend Mosul and "
+    .. "Aleppo against all comers.\n\n"
+    .. "YES: Eretna takes the throne and rules from Sivas, and the faction becomes the Eretnids. Our lands, generals "
+    .. "and armies outside Anatolia will not follow him and go over to the rebels.\n\nNO: we stay as we are."
+local ERE_T = "The Rise of Eretna"
+local ERE_B = "\nThe Ilkhanate is dead. In the high country of Rum its governor Eretna has gathered the Mongol garrisons, "
+    .. "the Turkmen begs and the merchants of the Sivas road under his own banner.\n\n"
+    .. "A learned man who speaks Arabic and keeps scholars at his court, he governs with a fairness the land has not "
+    .. "known for a generation - the people of Kayseri and Sivas call him Kose Peygamber, the 'beardless prophet'. "
+    .. "Within a few years he will strike coins in his own name, take the title of Sultan, and break a Chobanid army "
+    .. "sent to bring him back to heel.\n\n"
+    .. "The old Syrian and Mesopotamian lands would not accept a new master from the north; their emirs now rule "
+    .. "for themselves.\n\n"
+    .. "GAME: The Zengids are now the Eretnids, ruled by Eretna from Sivas. Their settlements, generals and armies "
+    .. "outside Anatolia have gone over to the rebels."
+
+-- expanded.txt hover strings (settlement types, agents, leader / heir titles) per dynasty; set with
+-- M2TWEOP.setExpandedString (as ottoman_rise.lua) - not stored in the save -> set at every map load and turn start.
+-- The originals are read once when the script loads, so a campaign without the change gets them back.
+local function hoverStrings(fac, realm, adj, ruler, realmWord)
+    local P = "EMT_" .. fac .. "_"
+    local s = {
+        [fac] = realm,
+        [P .. "CAPITAL"] = realm .. " Capital", [P .. "CASTLE"] = "Castle - " .. realm, [P .. "CITY"] = "City - " .. realm,
+        [P .. "DOCK"] = "Docks - " .. realm, [P .. "FISHING_VILLAGE"] = "Fishing Village - " .. realm,
+        [P .. "FORT"] = "Fort - " .. realm, [P .. "FORTRESS"] = "Citadel - " .. realm,
+        [P .. "HUGE_CITY"] = "Metropolis - " .. realm, [P .. "LARGE_CASTLE"] = "Fortress - " .. realm,
+        [P .. "LARGE_CITY"] = "Large City - " .. realm, [P .. "LARGE_TOWN"] = "Large Town - " .. realm,
+        [P .. "PORT"] = "Port - " .. realm, [P .. "STAR_FORT"] = "Star Fort - " .. realm,
+        [P .. "STONE_KEEP"] = "Wooden Castle - " .. realm, [P .. "TOWN"] = "Town - " .. realm,
+        [P .. "VILLAGE"] = "Village - " .. realm, [P .. "WATCHTOWER"] = "Watchtower - " .. realm,
+        [P .. "WOODEN_CASTLE"] = "Motte and Bailey - " .. realm,
+        [P .. "ADMIRAL"] = adj .. " Navy", [P .. "ASSASSIN"] = adj .. " Assassin", [P .. "DIPLOMAT"] = adj .. " Minister",
+        [P .. "GENERAL"] = adj .. " Army", [P .. "MERCHANT"] = adj .. " Merchant", [P .. "NAMED_CHARACTER"] = adj .. " Lord",
+        [P .. "NAMED_GENERAL"] = adj .. " Noble", [P .. "PRIEST"] = adj .. " Imam", [P .. "PRIEST_1"] = adj .. " Great Imam",
+        [P .. "PRIEST_2"] = adj .. " Grand Imam", [P .. "PRINCESS"] = adj .. " Princess", [P .. "SPY"] = adj .. " Spy",
+        [P .. "FACTION_LEADER"] = "The " .. adj .. " " .. ruler, [P .. "FACTION_LEADER_TITLE"] = adj .. " " .. ruler,
+        [P .. "FACTION_LEADER_NAME"] = "As-Sultan %S", [P .. "FORMER_FACTION_LEADER_TITLE"] = "Former " .. ruler,
+        [P .. "FACTION_HEIR"] = "The " .. adj .. " Heir", [P .. "FACTION_HEIR_TITLE"] = "Heir to the " .. realmWord,
+    }
+    if fac == "ZENGID" then
+        s[P .. "NAMED_CHARACTER_1"] = adj .. " Lord"; s[P .. "NAMED_CHARACTER_2"] = adj .. " Lord"
+    end
+    return s
+end
+local HOVER = {
+    egypt = { [1] = hoverStrings("EGYPT", NAME_AYYUBID, "Ayyubid", "Sultan", "Sultanate"),
+              [2] = hoverStrings("EGYPT", NAME_MAMLUK, "Mamluk", "Sultan", "Sultanate") },
+    zengid = { [1] = hoverStrings("ZENGID", NAME_ERETNID, "Eretnid", "Sultan", "Sultanate") },
+}
+local ORIGINAL = {}   -- [key] = string before any change (read at script load)
 
 local DY = Dynasties or {}
 
@@ -200,10 +249,48 @@ local function egyptName()
     return nil
 end
 
--- names are not stored in the save
+local function saveOriginals()
+    for _, levels in pairs(HOVER) do
+        for _, strings in pairs(levels) do
+            for key in pairs(strings) do
+                if ORIGINAL[key] == nil then
+                    local ok, v = pcall(function() return M2TWEOP.getExpandedString(key) end)
+                    if ok and type(v) == "string" then ORIGINAL[key] = v end
+                end
+            end
+        end
+    end
+end
+
+-- level 0 = SSHIP's own strings
+local function applyHover(facName, level)
+    if not DY.originalsSaved then saveOriginals(); DY.originalsSaved = true end   -- first event call, never at file level
+    local wanted = HOVER[facName][level]
+    local keys = {}
+    for _, strings in pairs(HOVER[facName]) do for key in pairs(strings) do keys[key] = true end end
+    local n, bad = 0, 0
+    for key in pairs(keys) do
+        local value = wanted and wanted[key] or ORIGINAL[key]
+        if value ~= nil then
+            local okG, now = pcall(function() return M2TWEOP.getExpandedString(key) end)
+            if not (okG and now == value) then
+                if pcall(function() M2TWEOP.setExpandedString(key, value) end) then n = n + 1 else bad = bad + 1 end
+            end
+        end
+    end
+    if n > 0 or bad > 0 then
+        local okR, title = pcall(function() return M2TWEOP.getExpandedString("EMT_" .. string.upper(facName) .. "_FACTION_LEADER_TITLE") end)
+        log("hover strings " .. facName .. " level " .. level .. ": " .. n .. " set" .. (bad > 0 and (", " .. bad .. " FAILED") or "")
+            .. "; leader title reads back " .. tostring(okR and title))
+    end
+end
+
+-- names and hover strings are not stored in the save
 local function applyNames()
     applyName(faction("egypt"), egyptName())
+    applyHover("egypt", counter(C_EGYPT_NAME))
     if counter(C_ERET) == 1 then applyName(faction("zengid"), NAME_ERETNID) end
+    applyHover("zengid", counter(C_ERET) == 1 and 1 or 0)
 end
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -229,6 +316,7 @@ local function renameEgypt(level, why)
     if counter(C_EGYPT_NAME) >= level then return end
     setCounter(C_EGYPT_NAME, level)
     applyName(f, egyptName())
+    applyHover("egypt", level)
     log("EGYPT renamed " .. egyptName() .. " at turn " .. turnNow() .. " (" .. why .. ")")
     if not alive(f) then return end
     if level == 1 then event("HX_AYYUBIDS_DONE", AYY_T, AYY_B) else event("HX_MAMLUKS_DONE", MAM_T, MAM_B) end
@@ -367,6 +455,7 @@ local function becomeEretnids(f, why)
     end
     setCounter(C_ERET, 1)
     applyName(f, NAME_ERETNID)
+    applyHover("zengid", 1)
     log("ERETNIDS at turn " .. turnNow() .. " (" .. why .. "): " .. nS .. "/" .. #outside .. " settlements and "
         .. nC .. "/" .. #movers .. " generals to the rebels, Zengid settlements left " .. tostring(get(f, "settlementsNum")))
     event("HX_ERETNIDS_DONE", ERE_T, ERE_B)
@@ -397,9 +486,11 @@ local function onTurnStart(eventData)
         if turn >= T.ayyubid then egyptStep(f, 1) end
         if turn >= T.mamluk then egyptStep(f, 2) end
         applyName(f, egyptName())
+        applyHover("egypt", counter(C_EGYPT_NAME))
     elseif name == "zengid" and alive(f) then
         if turn >= T.eretnid then eretnidStep(f) end
         if counter(C_ERET) == 1 then applyName(f, NAME_ERETNID) end
+        applyHover("zengid", counter(C_ERET) == 1 and 1 or 0)
     end
 end
 
