@@ -55,3 +55,7 @@ require('sship.dynasties')
 -- Lost SSHIP 0.98 events: Templars, Teutonic hospital, Amalfi, coat of arms, tourney, Ostsiedlung / Saint Sava /
 -- Shota Rustaveli player counters, Tatar Lancers reform, faction killer trait (16 Oct 2026). Delete to switch off.
 require('sship.lost_events')
+
+-- AI may attack the player's enemies: switches off the engine's dontAttackAiDefenders (ported from EUR #44,
+-- 17 Oct 2026). Log prefix AIFIX. Delete the next line to switch it off.
+require('sship.ai_attack_fix')

@@ -72,6 +72,8 @@ Open issues on the board: #4, #5, #6, #7, #9 (Thessalonica / Lisbon attacks, not
 Dropped by the user 15 Oct: #8 Lithuania Orthodox (closed, not planned); porting EUR's mason line (no issue).
 Repo `eopData/` and `data/` = what is installed in `mods\sship` (only the files we changed; every write read back
 and compared byte for byte). Issue board: https://github.com/Horschix/Modding_SSHIP/issues
+- AI attacks the player's enemies (17 Oct 2026): EUR #44 fix ported, `sship/ai_attack_fix.lua` (AIFIX), installed,
+  needs test - see note 06, last section.
 - Campaign AI (15 Oct 2026): Gracul AI installed; test 1 passive -> FIX installed 15 Oct: VH label switch OFF,
   slave target factor 6 (<15) / 3 (<50) / 1; awaiting test 2. See note 06. Karahisar repair bug: TEMPORARY
   `building_diag.lua` (log prefix BDIAG, require line at the end of luaPluginScript) installed 15 Oct. Details: `docs/notes/features/06_campaign_ai.md`.

@@ -41,3 +41,13 @@ User plays Very Hard (always). Decisions: changeAILabel switched OFF (`do return
 rebel target factor 6.0 until turn 15, 3.0 until turn 50, then 1.0 (as before). Needs a new campaign? No - both are
 read every turn, a running save picks them up; a new campaign is still cleaner for the label (the old save may hold
 'difficult' labels: they stay until the next new campaign).
+
+## AI attacks the player's enemies (17 Oct 2026) - installed, read back identical, needs test
+Ported from EUR issue #44 (`docs/notes/features/44_ai_attack_fix.md` in Horschix/Modding_DAC-EUR): the engine's
+difficulty switch `M2TWEOP.getCampaignDifficulty2().dontAttackAiDefenders` (on Very Hard: AI factions leave alone an
+AI faction that is at war with the player and borders him) is switched off at map load, every turn start, `onAiTurn`
+and `onCalculateLTGD` (the engine turns it back on before every faction's planning). File `sship/ai_attack_fix.lua`,
+`FIX = true`, last require line of `luaPluginScript.lua`; log prefix `AIFIX` (first look = value before any change,
+per-turn summary, `AIFIX ltgd` decisions with `[P]` = enemy of the player too, `AIFIX battle` unit lists).
+Works in a running save after a game restart. Not proven in EUR yet (second test there inconclusive).
+Test: play 5-10 turns at war with an AI neighbour, then `Select-String -Path full.log -Pattern "AIFIX" > hits.txt`.
